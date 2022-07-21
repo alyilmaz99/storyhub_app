@@ -11,6 +11,7 @@ class SplashScreenView extends StatefulWidget {
 }
 
 class _SplashScreenViewState extends SplashScreenViewModel {
+  @override
   Widget build(BuildContext context) {
     var screenSizeInfo = MediaQuery.of(context).size;
     var screenHeight = screenSizeInfo.height;
