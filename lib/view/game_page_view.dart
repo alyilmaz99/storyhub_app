@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
     var screenWidth = screenSize.width;
     return ElasticDrawer(
       mainColor: Colors.white,
-      drawerColor: Colors.redAccent.shade200,
+      drawerColor: Colors.black.withOpacity(0.3),
       markPosition: 0.80,
       mainChild: Scaffold(
         backgroundColor: Colors.redAccent.shade100,

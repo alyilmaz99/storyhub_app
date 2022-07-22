@@ -1,4 +1,7 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -7,6 +10,73 @@ class DrawerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      color: Colors.black87.withOpacity(0.2),
+      alignment: Alignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FlatButton(
+            color: Colors.white,
+            height: MediaQuery.of(context).size.height / 13,
+            minWidth: MediaQuery.of(context).size.width / 1.4,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0)),
+            onPressed: () => {},
+            child: const Text(
+              "YENİ OYUN",
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          FlatButton(
+            color: Colors.white,
+            height: MediaQuery.of(context).size.height / 13,
+            minWidth: MediaQuery.of(context).size.width / 1.4,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0)),
+            onPressed: () => {},
+            child: const Text(
+              "ANA MENÜ",
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          FlatButton(
+            color: Colors.white,
+            height: MediaQuery.of(context).size.height / 13,
+            minWidth: MediaQuery.of(context).size.width / 1.4,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0)),
+            onPressed: () => {},
+            child: const Text(
+              "AYARLAR",
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          FlatButton(
+            color: Colors.white,
+            height: MediaQuery.of(context).size.height / 13,
+            minWidth: MediaQuery.of(context).size.width / 1.4,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0)),
+            onPressed: () => {},
+            child: const Text(
+              "ÇIKIŞ",
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
