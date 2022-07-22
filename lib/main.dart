@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:storyhub/view/home_page.dart';
 import 'package:storyhub/view/selectscenarioview.dart';
 import 'package:storyhub/view/sliderinformationview.dart';
 import 'package:storyhub/view/splashscreenview.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       title: 'Flutter Demo',
-      home: const SelectScenarioView(),
+      home: const HomePage(),
     );
   }
 }
