@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:storyhub/view/home_page.dart';
+import 'package:storyhub/view/game_page_view.dart';
 import 'package:storyhub/view/selectscenarioview.dart';
 import 'package:storyhub/view/sliderinformationview.dart';
 import 'package:storyhub/view/splashscreenview.dart';
@@ -15,9 +15,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
+      /*theme: ThemeData(
         appBarTheme: AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarBrightness: Brightness.dark,
@@ -25,8 +26,8 @@ class MyApp extends StatelessWidget {
             statusBarIconBrightness: Brightness.dark,
           ),
         ),
-      ),
-      title: 'Flutter Demo',
+      ),*/
+      //title: 'Flutter Demo',
       home: const HomePage(),
     );
   }

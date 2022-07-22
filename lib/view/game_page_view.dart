@@ -18,6 +18,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    var screenHeight = screenSize.height;
+    var screenWidth = screenSize.width;
     return ElasticDrawer(
       mainColor: Colors.white,
       drawerColor: Colors.redAccent.shade200,
@@ -37,12 +40,12 @@ class _HomePageState extends State<HomePage> {
             ), */
             Container(
               alignment: Alignment.center,
-              width: 370,
-              height: 80,
+              width: screenWidth / 1.001,
+              height: screenHeight / 10,
               padding: EdgeInsets.only(left: 25, right: 25),
               margin: EdgeInsets.only(
                 left: 15,
-                top: 15,
+                top: screenHeight / 18,
                 right: 15,
               ),
               decoration: BoxDecoration(
@@ -61,8 +64,8 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                    height: 70,
-                    width: 70,
+                    height: (screenWidth / 1.001) / 5.8,
+                    width: (screenWidth / 1.001) / 5.8,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.blue,
@@ -72,8 +75,8 @@ class _HomePageState extends State<HomePage> {
                     width: 10,
                   ),
                   Container(
-                    height: 70,
-                    width: 70,
+                    height: (screenWidth / 1.001) / 5.8,
+                    width: (screenWidth / 1.001) / 5.8,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.green,
@@ -83,8 +86,8 @@ class _HomePageState extends State<HomePage> {
                     width: 10,
                   ),
                   Container(
-                    height: 70,
-                    width: 70,
+                    height: (screenWidth / 1.001) / 5.8,
+                    width: (screenWidth / 1.001) / 5.8,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.red,
@@ -94,8 +97,8 @@ class _HomePageState extends State<HomePage> {
                     width: 10,
                   ),
                   Container(
-                    height: 70,
-                    width: 70,
+                    height: (screenWidth / 1.001) / 5.8,
+                    width: (screenWidth / 1.001) / 5.8,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.red,
@@ -106,9 +109,9 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
               alignment: Alignment.center,
-              margin: EdgeInsets.only(top: 100),
-              width: 340,
-              height: 100,
+              margin: EdgeInsets.only(top: screenHeight / 9),
+              width: screenWidth / 1.1,
+              height: screenHeight / 8,
               decoration: BoxDecoration(
                 color: Colors.amber.shade200,
                 borderRadius: BorderRadius.circular(50),
@@ -131,9 +134,9 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Container(
-              width: 170,
-              height: 170,
-              margin: EdgeInsets.only(top: 70),
+              width: screenWidth / 2.2,
+              height: screenWidth / 2.2,
+              margin: EdgeInsets.only(top: screenHeight / 9),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: Colors.white,
@@ -171,10 +174,9 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 Container(
-                  width: 100,
-                  height: 100,
+                  width: screenWidth / 4,
+                  height: screenWidth / 4,
                   margin: EdgeInsets.only(
-                    top: 40,
                     left: 20,
                     bottom: 20,
                   ),

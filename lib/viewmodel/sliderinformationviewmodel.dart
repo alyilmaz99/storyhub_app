@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/view/home_page.dart';
+import 'package:storyhub/view/game_page_view.dart';
 import 'package:storyhub/view/sliderinformationview.dart';
 import 'package:intro_slider/intro_slider.dart';
 
@@ -12,7 +12,8 @@ abstract class SliderInformationViewModel extends State<SliderInformationView> {
     slides.add(
       Slide(
         title: "STORY HUB1",
-        description: "Allow miles wound place the leave had. To sitting subject no improve studied limited",
+        description:
+            "Allow miles wound place the leave had. To sitting subject no improve studied limited",
         pathImage: "assets/images/1.png",
         backgroundColor: const Color(0xfff5a623),
       ),
@@ -20,7 +21,8 @@ abstract class SliderInformationViewModel extends State<SliderInformationView> {
     slides.add(
       Slide(
         title: "STORY HUB2",
-        description: "Ye indulgence unreserved connection alteration appearance",
+        description:
+            "Ye indulgence unreserved connection alteration appearance",
         pathImage: "assets/images/2.jpg",
         backgroundColor: const Color(0xff203152),
       ),
@@ -38,6 +40,7 @@ abstract class SliderInformationViewModel extends State<SliderInformationView> {
 
   void onDonePress() {
     // Do what you want
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const HomePage()));
   }
 }
