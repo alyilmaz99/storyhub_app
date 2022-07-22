@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:storyhub/view/selectscenarioview.dart';
 import 'package:storyhub/view/sliderinformationview.dart';
 import 'package:storyhub/view/splashscreenview.dart';
 
@@ -12,10 +14,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarBrightness: Brightness.dark,
+            statusBarColor: Colors.grey.shade400,
+            statusBarIconBrightness: Brightness.dark,
+          ),
+        ),
+      ),
       title: 'Flutter Demo',
-      home: SplashScreenView(),
+      home: const SelectScenarioView(),
     );
   }
 }
