@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:storyhub/view/game_page_view.dart';
+import 'package:storyhub/view/how_to_page_view.dart';
 import 'package:storyhub/view/selectscenarioview.dart';
 import 'package:storyhub/view/sliderinformationview.dart';
 import 'package:storyhub/view/splashscreenview.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //title: 'Flutter Demo',
-      home: const SplashScreenView(),
+      home: const HowToPageView(),
     );
   }
 }
