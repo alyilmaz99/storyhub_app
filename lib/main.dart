@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //title: 'Flutter Demo',
-      home: const SelectScenarioView(),
+      home: const SplashScreenView(),
     );
   }
 }

@@ -20,18 +20,21 @@ class DrawerPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           SizedBox(
-            width : MediaQuery.of(context).size.width / 1.4,
+            width: MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
+                primary: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0)),
-                backgroundColor: Colors.white,
               ),
               child: const Text(
                 "YENİ OYUN",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
+                style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black),
               ),
             ),
           ),
@@ -39,18 +42,21 @@ class DrawerPage extends StatelessWidget {
             height: 20,
           ),
           SizedBox(
-            width : MediaQuery.of(context).size.width / 1.4,
+            width: MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
+                primary: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0)),
-                backgroundColor: Colors.white,
               ),
               child: const Text(
                 "ANA MENÜ",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
+                style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black),
               ),
             ),
           ),
@@ -58,18 +64,21 @@ class DrawerPage extends StatelessWidget {
             height: 20,
           ),
           SizedBox(
-            width : MediaQuery.of(context).size.width / 1.4,
+            width: MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
+                primary: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0)),
-                backgroundColor: Colors.white,
               ),
               child: const Text(
                 "AYARLAR",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
+                style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black),
               ),
             ),
           ),
@@ -77,17 +86,21 @@ class DrawerPage extends StatelessWidget {
             height: 20,
           ),
           SizedBox(
-            width : MediaQuery.of(context).size.width / 1.4,
+            width: MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0)),
-                  backgroundColor: Colors.white),
+                primary: Colors.white,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+              ),
               child: const Text(
                 "ÇIKIŞ",
-                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
+                style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.black),
               ),
             ),
           )
