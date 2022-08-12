@@ -10,6 +10,7 @@ class DrawerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Size( MediaQuery.of(context).size.width/ 1.4,MediaQuery.of(context).size.height/ 13);
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
@@ -18,52 +19,86 @@ class DrawerPage extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          FlatButton(
-            color: Colors.white,
+          SizedBox(
+            width : MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
-            minWidth: MediaQuery.of(context).size.width / 1.4,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0)),
-            onPressed: () => {},
-            child: const Text(
-              "YENİ OYUN",
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+                backgroundColor: Colors.white,
+              ),
+              child: const Text(
+                "YENİ OYUN",
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
+              ),
             ),
           ),
           const SizedBox(
             height: 20,
           ),
-          FlatButton(
-            color: Colors.white,
+          SizedBox(
+            width : MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
-            minWidth: MediaQuery.of(context).size.width / 1.4,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0)),
-            onPressed: () => {},
-            child: const Text(
-              "ANA MENÜ",
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+                backgroundColor: Colors.white,
+              ),
+              child: const Text(
+                "ANA MENÜ",
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
+              ),
             ),
           ),
           const SizedBox(
             height: 20,
           ),
-          FlatButton(
-            color: Colors.white,
+          SizedBox(
+            width : MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
-            minWidth: MediaQuery.of(context).size.width / 1.4,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0)),
-            onPressed: () => {},
-            child: const Text(
-              "AYARLAR",
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+                backgroundColor: Colors.white,
+              ),
+              child: const Text(
+                "AYARLAR",
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
+              ),
             ),
           ),
           const SizedBox(
             height: 20,
           ),
-          FlatButton(
+          SizedBox(
+            width : MediaQuery.of(context).size.width / 1.4,
+            height: MediaQuery.of(context).size.height / 13,
+            child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0)),
+                  backgroundColor: Colors.white),
+              child: const Text(
+                "ÇIKIŞ",
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
+              ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+/* FlatButton(
             color: Colors.white,
             height: MediaQuery.of(context).size.height / 13,
             minWidth: MediaQuery.of(context).size.width / 1.4,
@@ -74,9 +109,4 @@ class DrawerPage extends StatelessWidget {
               "ÇIKIŞ",
               style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
             ),
-          ),
-        ],
-      ),
-    );
-  }
-}
+          ), */
