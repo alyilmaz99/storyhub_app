@@ -13,7 +13,7 @@ class DrawerPage extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
-      color: Colors.black87.withOpacity(0.2),
+      color: Colors.white12.withOpacity(0.2),
       alignment: Alignment.center,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -6,8 +6,11 @@ abstract class SplashScreenViewModel extends State<SplashScreenView> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SliderInformationView()));
+    Future.delayed(const Duration(seconds: 10), () {
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const SliderInformationView()));
     });
   }
 }
