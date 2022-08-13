@@ -20,18 +20,10 @@ class HowToDetailView extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<HowToDetailView> createState() =>
-      _HowToDetailViewState(title2: title, body2: body, icons2: icons);
+  State<HowToDetailView> createState() => _HowToDetailViewState();
 }
 
 class _HowToDetailViewState extends HowToDetailViewModel {
-  String title2;
-  String body2;
-  IconData icons2;
-  _HowToDetailViewState(
-      {required this.title2, required this.body2, required this.icons2})
-      : super(title: title2, body: body2, icons: icons2);
-
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -75,16 +67,16 @@ class _HowToDetailViewState extends HowToDetailViewModel {
                         ),
                       ),
                       child: Icon(
-                        icons2,
+                        Icons.rule,
                         size: screenWidth / 7,
                       ),
                     ),
                     SizedBox(
                       width: screenWidth / 10,
                     ),
-                    Text(
-                      title2,
-                      style: const TextStyle(
+                    const Text(
+                      "Oyun Kuralları",
+                      style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w500,
                       ),
@@ -97,7 +89,7 @@ class _HowToDetailViewState extends HowToDetailViewModel {
                 Padding(
                   padding: const EdgeInsets.all(25),
                   child: Text(
-                    body2,
+                    HowToConst.gameRule1,
                     style: TextStyle(
                       fontSize: screenWidth / 20,
                     ),
