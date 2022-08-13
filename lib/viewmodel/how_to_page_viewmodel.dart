@@ -6,15 +6,54 @@ import 'package:storyhub/view/how_to_detail_view.dart';
 import 'package:storyhub/view/how_to_page_view.dart';
 
 abstract class HowToPageViewModal extends State<HowToPageView> {
-  void pushFuntion() {
+  void pushFunction(String title, String body, IconData icons) {
     Navigator.push(
       context,
       MaterialPageRoute(
           builder: (context) => HowToDetailView(
-                title: TextConst.howToPageTitleRule,
-                body: HowToConst.gameRule2,
-                icons: Icons.rule,
+                title: title,
+                body: body,
+                icons: icons,
               )),
     );
+  }
+
+  void pageCheck(String pageName) {
+    switch (pageName) {
+      case "oyunKuralları":
+        {
+          pushFunction(
+              TextConst.howToPageTitleRule, HowToConst.gameRule1, Icons.rule);
+        }
+        break;
+      case "oyuncuSayısı":
+        {
+          pushFunction(TextConst.howToPageTitleGamer, HowToConst.gameRule2,
+              Icons.person);
+        }
+        break;
+      case "kartDetayları":
+        {
+          pushFunction(TextConst.howToPageTitleDetail, HowToConst.gameRule3,
+              Icons.crop_original_outlined);
+        }
+        break;
+      case "puanlamaSistemi":
+        {
+          pushFunction(TextConst.howToPageTitlePoint, HowToConst.gameRule4,
+              Icons.star_border_outlined);
+        }
+        break;
+      case "nasılOynanır":
+        {
+          pushFunction(TextConst.howToPageTitlePlay, HowToConst.gameRule5,
+              Icons.question_mark);
+        }
+        break;
+      default:
+        {
+          print("detail page doesn't have data error: 1");
+        }
+    }
   }
 }

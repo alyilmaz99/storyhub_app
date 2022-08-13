@@ -22,7 +22,9 @@ class _HowToPageViewState extends HowToPageViewModal {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
-            onPressed: pushFuntion,
+            onPressed: () {
+              pageCheck("oyunKuralları");
+            },
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               shadowColor: Colors.transparent,
@@ -60,7 +62,9 @@ class _HowToPageViewState extends HowToPageViewModal {
             height: screenHeight / 20,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              pageCheck("oyuncuSayısı");
+            },
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               shadowColor: Colors.transparent,
@@ -98,7 +102,9 @@ class _HowToPageViewState extends HowToPageViewModal {
             height: screenHeight / 20,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              pageCheck("kartDetayları");
+            },
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               shadowColor: Colors.transparent,
@@ -136,7 +142,9 @@ class _HowToPageViewState extends HowToPageViewModal {
             height: screenHeight / 20,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              pageCheck("puanlamaSistemi");
+            },
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               shadowColor: Colors.transparent,
@@ -174,7 +182,9 @@ class _HowToPageViewState extends HowToPageViewModal {
             height: screenHeight / 20,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              pageCheck("nasılOynanır");
+            },
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               shadowColor: Colors.transparent,
