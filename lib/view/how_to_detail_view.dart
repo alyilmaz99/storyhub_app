@@ -5,19 +5,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:storyhub/const/how_to_const.dart';
+import 'package:storyhub/const/textconst.dart';
 import 'package:storyhub/viewmodel/how_to_detail_viewmodel.dart';
 
 class HowToDetailView extends StatefulWidget {
-  const HowToDetailView({Key? key}) : super(key: key);
+  String title;
+  String body;
+  IconData icons;
+  HowToDetailView({
+    Key? key,
+    required this.title,
+    required this.body,
+    required this.icons,
+  }) : super(key: key);
 
   @override
   State<HowToDetailView> createState() =>
-      _HowToDetailViewState(body: '', icon: Icons.abc, title: '');
+      _HowToDetailViewState(title2: title, body2: body, icons2: icons);
 }
 
 class _HowToDetailViewState extends HowToDetailViewModel {
+  String title2;
+  String body2;
+  IconData icons2;
   _HowToDetailViewState(
-      {required super.title, required super.icon, required super.body});
+      {required this.title2, required this.body2, required this.icons2})
+      : super(title: title2, body: body2, icons: icons2);
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +75,7 @@ class _HowToDetailViewState extends HowToDetailViewModel {
                         ),
                       ),
                       child: Icon(
-                        icon,
+                        icons2,
                         size: screenWidth / 7,
                       ),
                     ),
@@ -70,7 +83,7 @@ class _HowToDetailViewState extends HowToDetailViewModel {
                       width: screenWidth / 10,
                     ),
                     Text(
-                      title,
+                      title2,
                       style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w500,
@@ -84,7 +97,7 @@ class _HowToDetailViewState extends HowToDetailViewModel {
                 Padding(
                   padding: const EdgeInsets.all(25),
                   child: Text(
-                    body,
+                    body2,
                     style: TextStyle(
                       fontSize: screenWidth / 20,
                     ),

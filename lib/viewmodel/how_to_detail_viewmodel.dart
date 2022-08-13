@@ -2,13 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:storyhub/view/how_to_detail_view.dart';
 
 abstract class HowToDetailViewModel extends State<HowToDetailView> {
+  String title;
+  String body;
+  IconData icons;
   void popFuntion() {
     Navigator.pop(context);
   }
 
   HowToDetailViewModel(
-      {required this.title, required this.icon, required this.body});
-  final String title;
-  final IconData icon;
-  final String body;
+      {required this.title, required this.body, required this.icons});
 }
