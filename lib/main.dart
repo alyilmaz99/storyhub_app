@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/view/HomeCardsOrder.dart';
+import 'package:storyhub/view/tappedCard.dart';
 
-import 'home_page.dart';
+import 'view/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +17,9 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: HomePage(),
+      // home: HomePage(),
+      // home: TappedCard(),
+      home: HomeCardsOrder(),
     );
   }
 }
