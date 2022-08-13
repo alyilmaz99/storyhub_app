@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:storyhub/viewmodel/how_to_page_viewmodel.dart';
 
-class HowToPageView extends StatelessWidget {
+class HowToPageView extends StatefulWidget {
   const HowToPageView({Key? key}) : super(key: key);
 
+  @override
+  State<HowToPageView> createState() => _HowToPageViewState();
+}
+
+class _HowToPageViewState extends HowToPageViewModal {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -16,7 +22,7 @@ class HowToPageView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
-            onPressed: () {},
+            onPressed: pushFuntion,
             style: ElevatedButton.styleFrom(
               primary: Colors.transparent,
               shadowColor: Colors.transparent,

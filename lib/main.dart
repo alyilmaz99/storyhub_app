@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //title: 'Flutter Demo',
-      home: const HowToDetailView(),
+      home: HowToPageView(),
     );
   }
 }

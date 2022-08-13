@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:storyhub/const/how_to_const.dart';
+import 'package:storyhub/viewmodel/how_to_detail_viewmodel.dart';
 
-class HowToDetailView extends StatelessWidget {
+class HowToDetailView extends StatefulWidget {
   const HowToDetailView({Key? key}) : super(key: key);
 
+  @override
+  State<HowToDetailView> createState() => _HowToDetailViewState();
+}
+
+class _HowToDetailViewState extends HowToDetailViewModel {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -14,24 +20,18 @@ class HowToDetailView extends StatelessWidget {
     var screenWidth = screenSize.width;
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(
-                padding: EdgeInsets.only(
-                  left: screenWidth / 10,
-                ),
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Colors.black,
-                )),
             Expanded(child: Container()),
             Container(
                 padding: EdgeInsets.only(
                   right: screenWidth / 10,
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.menu,
                   color: Colors.black,
                 )),
@@ -78,7 +78,7 @@ class HowToDetailView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(25),
                   child: Text(
-                    HowToConst.gameRule,
+                    HowToConst.gameRule1,
                     style: TextStyle(
                       fontSize: screenWidth / 20,
                     ),
