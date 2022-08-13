@@ -1,3 +1,5 @@
+// ignore_for_file: no_logic_in_create_state
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -9,10 +11,14 @@ class HowToDetailView extends StatefulWidget {
   const HowToDetailView({Key? key}) : super(key: key);
 
   @override
-  State<HowToDetailView> createState() => _HowToDetailViewState();
+  State<HowToDetailView> createState() =>
+      _HowToDetailViewState(body: '', icon: Icons.abc, title: '');
 }
 
 class _HowToDetailViewState extends HowToDetailViewModel {
+  _HowToDetailViewState(
+      {required super.title, required super.icon, required super.body});
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -20,7 +26,7 @@ class _HowToDetailViewState extends HowToDetailViewModel {
     var screenWidth = screenSize.width;
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.transparent,
         shadowColor: Colors.transparent,
         title: Row(
@@ -56,16 +62,16 @@ class _HowToDetailViewState extends HowToDetailViewModel {
                         ),
                       ),
                       child: Icon(
-                        Icons.rule,
+                        icon,
                         size: screenWidth / 7,
                       ),
                     ),
                     SizedBox(
                       width: screenWidth / 10,
                     ),
-                    const Text(
-                      "Oyun Kuralları",
-                      style: TextStyle(
+                    Text(
+                      title,
+                      style: const TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.w500,
                       ),
@@ -78,7 +84,7 @@ class _HowToDetailViewState extends HowToDetailViewModel {
                 Padding(
                   padding: const EdgeInsets.all(25),
                   child: Text(
-                    HowToConst.gameRule1,
+                    body,
                     style: TextStyle(
                       fontSize: screenWidth / 20,
                     ),
