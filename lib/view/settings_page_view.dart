@@ -374,6 +374,6 @@ class _SettingsPageState extends State<SettingsPageView> {
           ), // Ses kontroller
         ],
       ),
-    );
+    ); //test
   }
 }
