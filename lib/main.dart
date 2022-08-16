@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:storyhub/view/about_us_view.dart';
 import 'package:storyhub/view/game_page_view.dart';
 import 'package:storyhub/view/how_to_detail_view.dart';
 import 'package:storyhub/view/how_to_page_view.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //title: 'Flutter Demo',
-      home: MainPageSettings(),
+      home: const AboutUsView(),
     );
   }
 }
