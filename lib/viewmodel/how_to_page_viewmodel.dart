@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:storyhub/const/how_to_const.dart';
-import 'package:storyhub/const/textconst.dart';
+import 'package:storyhub/core/const/text_const/how_to_const.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:storyhub/view/how_to_detail_view.dart';
 import 'package:storyhub/view/how_to_page_view.dart';
 
@@ -22,36 +21,32 @@ abstract class HowToPageViewModal extends State<HowToPageView> {
     switch (pageName) {
       case "oyunKuralları":
         {
-          pushFunction(
-              TextConst.howToPageTitleRule, HowToConst.gameRule1, Icons.rule);
+          pushFunction(TextConst.howToPageTitleRule, HowToConst.gameRule1, Icons.rule);
         }
         break;
       case "oyuncuSayısı":
         {
-          pushFunction(TextConst.howToPageTitleGamer, HowToConst.gameRule2,
-              Icons.person);
+          pushFunction(TextConst.howToPageTitleGamer, HowToConst.gameRule2, Icons.person);
         }
         break;
       case "kartDetayları":
         {
-          pushFunction(TextConst.howToPageTitleDetail, HowToConst.gameRule3,
-              Icons.crop_original_outlined);
+          pushFunction(TextConst.howToPageTitleDetail, HowToConst.gameRule3, Icons.crop_original_outlined);
         }
         break;
       case "puanlamaSistemi":
         {
-          pushFunction(TextConst.howToPageTitlePoint, HowToConst.gameRule4,
-              Icons.star_border_outlined);
+          pushFunction(TextConst.howToPageTitlePoint, HowToConst.gameRule4, Icons.star_border_outlined);
         }
         break;
       case "nasılOynanır":
         {
-          pushFunction(TextConst.howToPageTitlePlay, HowToConst.gameRule5,
-              Icons.question_mark);
+          pushFunction(TextConst.howToPageTitlePlay, HowToConst.gameRule5, Icons.question_mark);
         }
         break;
       default:
         {
+          // ignore: avoid_print
           print("detail page doesn't have data error: 1");
         }
     }

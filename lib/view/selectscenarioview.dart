@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluid_action_card/FluidActionCard/fluid_action_card.dart';
-import 'package:storyhub/const/textconst.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 
 class SelectScenarioView extends StatefulWidget {
   const SelectScenarioView({Key? key}) : super(key: key);

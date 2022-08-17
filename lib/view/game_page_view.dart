@@ -2,9 +2,6 @@
 
 import 'package:elastic_drawer/elastic_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:storyhub/view/selectscenarioview.dart';
 
 import 'drawer_page_view.dart';
 
@@ -208,8 +205,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Text(
                         "3",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w800, fontSize: 50),
+                        style: TextStyle(fontWeight: FontWeight.w800, fontSize: 50),
                       ),
                     ],
                   ),
