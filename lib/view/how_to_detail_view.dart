@@ -1,11 +1,6 @@
 // ignore_for_file: no_logic_in_create_state
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:storyhub/const/how_to_const.dart';
-import 'package:storyhub/const/textconst.dart';
 import 'package:storyhub/viewmodel/how_to_detail_viewmodel.dart';
 
 class HowToDetailView extends StatefulWidget {
@@ -20,16 +15,14 @@ class HowToDetailView extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<HowToDetailView> createState() =>
-      _HowToDetailViewState(title2: title, body2: body, icons2: icons);
+  State<HowToDetailView> createState() => _HowToDetailViewState(title2: title, body2: body, icons2: icons);
 }
 
 class _HowToDetailViewState extends HowToDetailViewModel {
   String title2;
   String body2;
   IconData icons2;
-  _HowToDetailViewState(
-      {required this.title2, required this.body2, required this.icons2})
+  _HowToDetailViewState({required this.title2, required this.body2, required this.icons2})
       : super(title: title2, body: body2, icons: icons2);
   @override
   Widget build(BuildContext context) {
