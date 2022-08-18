@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:storyhub/view/HomeCardsOrder.dart';
+import 'package:storyhub/view/game_page_view.dart';
 import 'package:storyhub/view/tappedCard.dart';
 
-import 'view/home_page.dart';
 import 'package:flutter/services.dart';
 import 'package:storyhub/view/game_screen.view.dart';
 
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       //title: 'Flutter Demo',
 
-      home: const GameScreen(),
+      home: const HomeCardsOrder(),
     );
   }
 }

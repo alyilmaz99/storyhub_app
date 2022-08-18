@@ -1,11 +1,11 @@
 import 'package:elastic_drawer/elastic_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:storyhub/view/tappedCard.dart';
 
 import 'drawer_page_view.dart';
 
-class HomeCardsOrder extends StatelessWidget {
-  const HomeCardsOrder({Key? key}) : super(key: key);
+
+class CardPage extends StatelessWidget {
+  const CardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,23 +13,10 @@ class HomeCardsOrder extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-    return ElasticDrawer(
-      mainColor: Colors.white,
-      drawerColor: Colors.white10.withOpacity(0.3),
-      markPosition: 0.18,
-      mainChild: Scaffold(
+    return Scaffold(
         backgroundColor: Color.fromRGBO(15, 61, 62, 1.0),
         body: Column(
           children: [
-            /* Container(
-              alignment: Alignment.centerLeft,
-              padding: EdgeInsets.only(top: 40, left: 25),
-              child: Icon(
-                Icons.menu,
-                color: Colors.black87,
-                size: 30,
-              ),
-            ), */
             Container(
               alignment: Alignment.center,
               width: screenWidth / 1.001,
@@ -100,42 +87,18 @@ class HomeCardsOrder extends StatelessWidget {
               ),
             ),
             Expanded(
-                child: Container(
-                  child: Center(
-                      child: SizedBox(
-                        height: 300,
-                        width: 300,
-                        child: Stack(
-                          clipBehavior: Clip.none,
-                          alignment: AlignmentDirectional.centerStart,
-                          children: const [
-                            SizedBox(
-                              height: 200,
-                              width: 160,
-                              child: TappedCard(),
-                            ),
-                            Positioned(
-                                left: 50,
-                                height: 200,
-                                width: 160,
-                                child: TappedCard()
-                            ),
-                            Positioned(
-                                left: 100,
-                                height: 200,
-                                width: 160,
-                                child: TappedCard()
-                            ),
-                            Positioned(
-                                left: 150,
-                                height: 200,
-                                width: 160,
-                                child: TappedCard()
-                            ),
-                          ],
+                  child: SizedBox(
+                    width: screenHeight / 2,
+                    height: screenHeight / 3,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                        image: DecorationImage(
+                            image:AssetImage("assets/images/front.png"),
+                            fit: BoxFit.cover
                         ),
-                      )
-                  ),
+                      ),
+                    ),
                 ),
             ),
             Row(
@@ -210,8 +173,6 @@ class HomeCardsOrder extends StatelessWidget {
             ),
           ],
         ),
-      ),
-      drawerChild: DrawerPage(),
-    );
+      );
   }
 }
