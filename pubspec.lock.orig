@@ -71,6 +71,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.0"
+<<<<<<< HEAD
   flip_card:
     dependency: "direct main"
     description:
@@ -78,6 +79,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.0"
+=======
   flag:
     dependency: "direct main"
     description:
@@ -92,6 +94,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0+5"
+>>>>>>> 23b4c18a148d1c009b0b4c9d2dafbbf3ac5b80cf
   flutter:
     dependency: "direct main"
     description: flutter
@@ -172,6 +175,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.1"
+<<<<<<< HEAD
+  playing_cards:
+    dependency: "direct main"
+    description:
+      name: playing_cards
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.1+9"
+=======
   path_drawing:
     dependency: transitive
     description:
@@ -200,6 +212,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+>>>>>>> 23b4c18a148d1c009b0b4c9d2dafbbf3ac5b80cf
   sky_engine:
     dependency: transitive
     description: flutter

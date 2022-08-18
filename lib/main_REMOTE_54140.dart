@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/view/HomeCardsOrder.dart';
-import 'package:storyhub/view/tappedCard.dart';
-
-import 'view/home_page.dart';
 import 'package:flutter/services.dart';
 import 'package:storyhub/view/game_page_view.dart';
 import 'package:storyhub/view/game_settings_view.dart';
