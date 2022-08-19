@@ -1,7 +1,7 @@
 import 'package:storyhub/model/stats_model.dart';
 
 class StatsViewModel extends StatsModel {
-  List<String>? catchData;
+  Map<String, String>? catchData;
 
   StatsViewModel(
       {required super.cardsNumber,
@@ -10,18 +10,26 @@ class StatsViewModel extends StatsModel {
       required super.totalTime,
       required super.tourNumber,
       this.catchData});
-
-  void AddData(String data) {
-    catchData?.add(data);
-    print("Data added: catchData= ${catchData?.length}");
+  void init() {
+    catchData = {
+      "cardsNumber": cardsNumber,
+      "playerNumber": playerNumber,
+      "scenario": scenario,
+      "totalTime": totalTime,
+      "tourNumber": tourNumber
+    };
   }
 
-  void DeleteData(String data) {
-    catchData?.remove(data);
-    print("Data deleted: catchdata = ${catchData?.length}");
+  void update(String cardsNumber, String playerNumber, String scenario,
+      String totalTime, String tourNumber) {
+    catchData?.update("cardsNumber", (value) => cardsNumber);
+    catchData?.update("playerNumber", (value) => playerNumber);
+    catchData?.update("scenario", (value) => scenario);
+    catchData?.update("totalTime", (value) => totalTime);
+    catchData?.update("tourNumber", (value) => tourNumber);
   }
 
-  void KillList() {
+  void clear() {
     catchData?.clear();
   }
 }
