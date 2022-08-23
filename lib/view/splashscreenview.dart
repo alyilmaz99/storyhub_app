@@ -16,7 +16,22 @@ class _SplashScreenViewState extends SplashScreenViewModel {
     var screenSizeInfo = MediaQuery.of(context).size;
     var screenHeight = screenSizeInfo.height;
     var screenWidth = screenSizeInfo.width;
-    return Container(
+    return Scaffold(
+      body: Container(
+        alignment: Alignment.center,
+        decoration: const BoxDecoration(
+          gradient: RadialGradient(center: Alignment.center, colors: [
+            Color.fromRGBO(36, 10, 63, 1),
+            Color.fromRGBO(13, 5, 38, 1),
+          ]),
+          image: DecorationImage(
+            image: AssetImage('assets/images/LogoV1.png'),
+          ),
+        ),
+      ),
+    );
+
+    /* Container(
       height: screenHeight,
       width: screenWidth,
       decoration: const BoxDecoration(
@@ -49,6 +64,6 @@ class _SplashScreenViewState extends SplashScreenViewModel {
           ),
         ],
       ),
-    );
+    );*/
   }
 }
