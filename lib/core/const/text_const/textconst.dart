@@ -34,4 +34,10 @@ class TextConst {
   static const String ourInstaUserName = "@vessac.software";
   static const String ourMailAddress = "contact@vessac.com";
   static const String ourWebSite = "vessac.com";
+  //STATS PAGE
+  static const String timeInfo = "Geçen Süre";
+  static const String tourInfo = "Tur Sayısı";
+  static const String gamerInfo = "Oyuncusu Sayısı";
+  static const String scenarioInfo = "Seçilen Senaryo";
+  static const String levelInfo = "Zorluk Seviyesi";
 }
