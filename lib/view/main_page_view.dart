@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/view/HomeCardsOrder.dart';
+import 'package:storyhub/view/about_us_view.dart';
+import 'package:storyhub/view/game_settings_view.dart';
+import 'package:storyhub/view/how_to_page_view.dart';
+import 'package:storyhub/view/main_page_settings.dart';
+import 'package:storyhub/view/selectscenarioview.dart';
+import 'package:storyhub/view/settings_page_view.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -48,7 +55,10 @@ class _MainPageState extends State<MainPage> {
     return Container(
       width: 300.0,
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => GameSettingsView()));
+        },
         child: Container(
           child: Text("Oyna"),
         ),
@@ -64,7 +74,10 @@ class _MainPageState extends State<MainPage> {
     return Container(
       width: 300.0,
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => HowToPageView()));
+        },
         child: Container(
           child: Text("Nasıl Oynanır"),
         ),
@@ -80,7 +93,10 @@ class _MainPageState extends State<MainPage> {
     return Container(
       width: 300.0,
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => AboutUsView()));
+        },
         child: Container(
           child: Text("Hakkımızda"),
         ),

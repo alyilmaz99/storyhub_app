@@ -2,17 +2,18 @@
 
 import 'package:elastic_drawer/elastic_drawer.dart';
 import 'package:flutter/material.dart';
+import 'package:storyhub/view/selectscenarioview.dart';
 
 import 'drawer_page_view.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class GamePage extends StatefulWidget {
+  const GamePage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<GamePage> createState() => _GamePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _GamePageState extends State<GamePage> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -205,7 +206,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Text(
                         "3",
-                        style: TextStyle(fontWeight: FontWeight.w800, fontSize: 50),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w800, fontSize: 50),
                       ),
                     ],
                   ),

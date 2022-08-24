@@ -23,7 +23,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                 alignment: Alignment.topRight,
                 child: IconButton(
                   onPressed: () {
-                    // Navigator.pop(context);
+                    Navigator.pop(context);
                   },
                   icon: const Icon(
                     Icons.arrow_back,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/view/selectscenarioview.dart';
 
 class GameSettingsView extends StatefulWidget {
   @override
@@ -39,8 +40,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
+            children: const [
+              Text(
                 "Oyun Ayarları",
                 style: TextStyle(
                     fontSize: 35,
@@ -57,7 +58,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
             children: [
               Container(
                 width: screenWidth / 10,
-                child: Icon(
+                child: const Icon(
                   Icons.image,
                   color: Colors.black,
                   size: 30.0,
@@ -79,13 +80,13 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.remove_circle_outline,
                             color: Colors.black,
                             size: 30.0,
                           ),
-                          const Text(
+                          Text(
                             "1",
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -112,7 +113,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
             children: [
               Container(
                 width: screenWidth / 10,
-                child: Icon(
+                child: const Icon(
                   Icons.image,
                   color: Colors.black,
                   size: 30.0,
@@ -134,13 +135,13 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.remove_circle_outline,
                             color: Colors.black,
                             size: 30.0,
                           ),
-                          const Text(
+                          Text(
                             "1",
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -167,7 +168,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
             children: [
               Container(
                 width: screenWidth / 10,
-                child: Icon(
+                child: const Icon(
                   Icons.image,
                   color: Colors.black,
                   size: 30.0,
@@ -189,13 +190,13 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.chevron_left,
                             color: Colors.black,
                             size: 30.0,
                           ),
-                          const Text(
+                          Text(
                             "Hızlı",
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -220,15 +221,15 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
+              SizedBox(
                 width: screenWidth / 10,
-                child: Icon(
+                child: const Icon(
                   Icons.image,
                   color: Colors.black,
                   size: 30.0,
                 ),
               ),
-              Container(
+              SizedBox(
                   width: screenWidth / 1.5,
                   height: screenHeight / 10,
                   child: Column(
@@ -244,7 +245,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.star,
                             color: Colors.black,
@@ -266,6 +267,15 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                   )),
             ],
           ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SelectScenarioView()));
+              },
+              child: const Text("START")),
         ],
       ),
     );
