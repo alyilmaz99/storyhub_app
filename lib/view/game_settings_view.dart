@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/viewmodel/game_settings_viewmodel.dart';
 
 class GameSettingsView extends StatefulWidget {
   @override
   State<GameSettingsView> createState() => _GameSettingsViewState();
 }
 
-class _GameSettingsViewState extends State<GameSettingsView> {
+class _GameSettingsViewState extends GameSettingsViewModel {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
+
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
@@ -39,8 +41,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
+            children: const [
+              Text(
                 "Oyun Ayarları",
                 style: TextStyle(
                     fontSize: 35,
@@ -50,22 +52,22 @@ class _GameSettingsViewState extends State<GameSettingsView> {
             ],
           ),
           SizedBox(
-            height: screenHeight / 20,
+            height: screenHeight / 25,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
+              SizedBox(
                 width: screenWidth / 10,
-                child: Icon(
+                child: const Icon(
                   Icons.image,
                   color: Colors.black,
                   size: 30.0,
                 ),
               ),
-              Container(
+              SizedBox(
                   width: screenWidth / 1.5,
-                  height: screenHeight / 10,
+                  height: screenHeight / 8,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -105,22 +107,22 @@ class _GameSettingsViewState extends State<GameSettingsView> {
             ],
           ),
           SizedBox(
-            height: screenHeight / 20,
+            height: screenHeight / 25,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
+              SizedBox(
                 width: screenWidth / 10,
-                child: Icon(
+                child: const Icon(
                   Icons.image,
                   color: Colors.black,
                   size: 30.0,
                 ),
               ),
-              Container(
+              SizedBox(
                   width: screenWidth / 1.5,
-                  height: screenHeight / 10,
+                  height: screenHeight / 8,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -135,23 +137,35 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Icon(
-                            Icons.remove_circle_outline,
-                            color: Colors.black,
-                            size: 30.0,
+                          IconButton(
+                            icon: const Icon(
+                              Icons.remove_circle_outline,
+                              color: Colors.black,
+                            ),
+                            iconSize: 30.0,
+                            onPressed: () {
+                              decreaseTimer();
+                              print(showtimer);
+                            },
                           ),
-                          const Text(
-                            "1",
+                          Text(
+                            showtimer,
                             textAlign: TextAlign.center,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.black),
                           ),
-                          Icon(
-                            Icons.add_circle_outline,
-                            color: Colors.black,
-                            size: 30.0,
+                          IconButton(
+                            icon: const Icon(
+                              Icons.add_circle_outline,
+                              color: Colors.black,
+                            ),
+                            iconSize: 30.0,
+                            onPressed: () {
+                              increaseTimer();
+                              print(showtimer);
+                            },
                           ),
                         ],
                       )
@@ -165,17 +179,17 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
+              SizedBox(
                 width: screenWidth / 10,
-                child: Icon(
+                child: const Icon(
                   Icons.image,
                   color: Colors.black,
                   size: 30.0,
                 ),
               ),
-              Container(
+              SizedBox(
                   width: screenWidth / 1.5,
-                  height: screenHeight / 10,
+                  height: screenHeight / 8,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -220,7 +234,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
+              SizedBox(
                 width: screenWidth / 10,
                 child: Icon(
                   Icons.image,
@@ -228,7 +242,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                   size: 30.0,
                 ),
               ),
-              Container(
+              SizedBox(
                   width: screenWidth / 1.5,
                   height: screenHeight / 10,
                   child: Column(
