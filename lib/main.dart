@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:storyhub/view/HomeCardsOrder.dart';
 import 'package:storyhub/view/about_us_view.dart';
 import 'package:storyhub/view/game_page_view.dart';
+import 'package:storyhub/view/main_page_view.dart';
 import 'package:storyhub/view/settings_page_view.dart';
 import 'package:storyhub/view/splashscreenview.dart';
 import 'package:storyhub/view/stats_page_view.dart';
 import 'package:storyhub/view/tappedCard.dart';
-
 import 'package:flutter/services.dart';
 import 'package:storyhub/view/game_screen.view.dart';
 
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       ),
       //title: 'Flutter Demo',
 
-      home: SplashScreenView(),
+      home: MainPage(),
     );
   }
 }
