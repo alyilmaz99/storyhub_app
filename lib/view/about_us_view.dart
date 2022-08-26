@@ -1,6 +1,9 @@
+// ignore_for_file: deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:storyhub/view/game_page_view.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutUsView extends StatefulWidget {
   const AboutUsView({super.key});
@@ -10,6 +13,14 @@ class AboutUsView extends StatefulWidget {
 }
 
 class _AboutUsViewState extends State<AboutUsView> {
+  launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'could not launch';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +34,10 @@ class _AboutUsViewState extends State<AboutUsView> {
                 alignment: Alignment.topRight,
                 child: IconButton(
                   onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const HomePage()));
                     Navigator.pop(context);
                   },
                   icon: const Icon(
@@ -55,19 +70,31 @@ class _AboutUsViewState extends State<AboutUsView> {
                   style: TextStyle(color: Colors.amberAccent, fontSize: 15),
                   textAlign: TextAlign.center,
                 ),
-                const Text(
-                  TextConst.ourMailAddress,
-                  style: TextStyle(color: Colors.amberAccent),
+                GestureDetector(
+                  onTap: () {
+                    const url = TextConst.ourMailAddress;
+                    launchURL('mailto:url?');
+                  },
+                  child: const Text(
+                    TextConst.ourMailAddress,
+                    style: TextStyle(color: Colors.amberAccent),
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.all(15.0),
-                      child: Icon(FontAwesomeIcons.instagramSquare,
-                          color: Colors.white),
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        const url =
+                            'https://www.instagram.com/vessac.software/';
+                        launchURL(url);
+                      },
+                      icon: const Icon(
+                        FontAwesomeIcons.instagram,
+                        color: Colors.white,
+                      ),
                     ),
-                    Text(
+                    const Text(
                       TextConst.ourInstaUserName,
                       style: TextStyle(color: Colors.white),
                     ),
@@ -75,15 +102,38 @@ class _AboutUsViewState extends State<AboutUsView> {
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Padding(
-                      padding: EdgeInsets.only(right: 13.0),
-                      child: Icon(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        const url = 'https://twitter.com/vessac_software';
+                        launchURL(url);
+                      },
+                      icon: const Icon(
+                        FontAwesomeIcons.twitter,
+                        color: Colors.white,
+                      ),
+                    ),
+                    const Text(
+                      "vessac_software",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        const url =
+                            'https://www.linkedin.com/company/vessac-software/';
+                        launchURL(url);
+                      },
+                      icon: const Icon(
                         FontAwesomeIcons.linkedin,
                         color: Colors.white,
                       ),
                     ),
-                    Text(
+                    const Text(
                       TextConst.ourLinkedin,
                       style: TextStyle(color: Colors.white),
                     ),
