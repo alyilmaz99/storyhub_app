@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:storyhub/viewmodel/game_settings_viewmodel.dart';
+import 'package:storyhub/view/selectscenarioview.dart';
 
 class GameSettingsView extends StatefulWidget {
   @override
@@ -81,13 +82,13 @@ class _GameSettingsViewState extends GameSettingsViewModel {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.remove_circle_outline,
                             color: Colors.black,
                             size: 30.0,
                           ),
-                          const Text(
+                          Text(
                             "1",
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -203,13 +204,13 @@ class _GameSettingsViewState extends GameSettingsViewModel {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.chevron_left,
                             color: Colors.black,
                             size: 30.0,
                           ),
-                          const Text(
+                          Text(
                             "Hızlı",
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -236,7 +237,7 @@ class _GameSettingsViewState extends GameSettingsViewModel {
             children: [
               SizedBox(
                 width: screenWidth / 10,
-                child: Icon(
+                child: const Icon(
                   Icons.image,
                   color: Colors.black,
                   size: 30.0,
@@ -258,7 +259,7 @@ class _GameSettingsViewState extends GameSettingsViewModel {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
+                        children: const [
                           Icon(
                             Icons.star,
                             color: Colors.black,
@@ -280,6 +281,15 @@ class _GameSettingsViewState extends GameSettingsViewModel {
                   )),
             ],
           ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SelectScenarioView()));
+              },
+              child: const Text("START")),
         ],
       ),
     );

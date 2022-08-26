@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluid_action_card/FluidActionCard/fluid_action_card.dart';
 import 'package:storyhub/core/const/text_const/textconst.dart';
+import 'package:storyhub/view/HomeCardsOrder.dart';
 
 class SelectScenarioView extends StatefulWidget {
   const SelectScenarioView({Key? key}) : super(key: key);
@@ -25,10 +26,8 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
         centerTitle: true,
         title: Text(
           TextConst.selectscenarioAppBarTitleText,
-          style: Theme.of(context)
-              .textTheme
-              .bodySmall
-              ?.copyWith(letterSpacing: 1.5, fontSize: 25.0, color: Colors.black54),
+          style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              letterSpacing: 1.5, fontSize: 25.0, color: Colors.black54),
         ),
       ),
       body: FluidActionCard(
@@ -61,7 +60,11 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
             width: 1.5,
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pop(context);
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => HomeCardsOrder()));
+        },
         child: Text(
           "OYNA",
           style: Theme.of(context).textTheme.bodySmall?.copyWith(

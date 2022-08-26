@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:storyhub/view/game_page_view.dart';
+import 'package:storyhub/view/main_page_view.dart';
 import 'package:storyhub/view/sliderinformationview.dart';
 import 'package:intro_slider/intro_slider.dart';
 
@@ -58,6 +59,6 @@ abstract class SliderInformationViewModel extends State<SliderInformationView> {
   void onDonePress() {
     // Do what you want
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const HomePage()));
+        context, MaterialPageRoute(builder: (context) => MainPage()));
   }
 }

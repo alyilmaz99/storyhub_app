@@ -38,6 +38,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const HomePage()));
+                    Navigator.pop(context);
                   },
                   icon: const Icon(
                     Icons.arrow_back,

@@ -9,13 +9,12 @@ class MainPageSettings extends StatefulWidget {
   State<MainPageSettings> createState() => _MainPageSettingsState();
 }
 
-class _MainPageSettingsState extends MainPageSettingsViewModel{
-  
+class _MainPageSettingsState extends MainPageSettingsViewModel {
   @override
   Widget build(BuildContext context) {
     double volControl = 50.0;
     double buttonVolControl = 50.0;
-    
+
     return Scaffold(
       backgroundColor: const Color.fromRGBO(15, 61, 62, 1.0),
       body: Column(
@@ -26,10 +25,12 @@ class _MainPageSettingsState extends MainPageSettingsViewModel{
               alignment: Alignment.topRight,
               child: IconButton(
                 onPressed: () {
-                  // Navigator.pop(context);
+                  Navigator.pop(context);
                 },
-                
-                icon: const Icon(Icons.arrow_back, color: Colors.amberAccent,),
+                icon: const Icon(
+                  Icons.arrow_back,
+                  color: Colors.amberAccent,
+                ),
               ),
             ),
           ),
