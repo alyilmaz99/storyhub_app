@@ -1,8 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
-import 'package:intro_slider/intro_slider.dart';
 
 class SettingsPageView extends StatefulWidget {
   const SettingsPageView({Key? key}) : super(key: key);

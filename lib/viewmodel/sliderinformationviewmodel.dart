@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:storyhub/view/game_page_view.dart';
-import 'package:storyhub/view/main_page_view.dart';
-import 'package:storyhub/view/sliderinformationview.dart';
+import '../view/game_page_view.dart';
+import '../view/main_page_view.dart';
+import '../view/sliderinformationview.dart';
 import 'package:intro_slider/intro_slider.dart';
 
 abstract class SliderInformationViewModel extends State<SliderInformationView> {

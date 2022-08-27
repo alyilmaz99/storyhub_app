@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/viewmodel/game_settings_viewmodel.dart';
-import 'package:storyhub/view/selectscenarioview.dart';
+import '../viewmodel/game_settings_viewmodel.dart';
+import 'selectscenarioview.dart';
 
 class GameSettingsView extends StatefulWidget {
   @override

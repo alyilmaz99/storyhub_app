@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:storyhub/core/const/text_const/textconst.dart';
+import '../core/const/text_const/textconst.dart';
 
 import '../viewmodel/stats_page_viewmodel.dart';
 

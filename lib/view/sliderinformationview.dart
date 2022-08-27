@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intro_slider/intro_slider.dart';
-import 'package:storyhub/viewmodel/sliderinformationviewmodel.dart';
+import '../viewmodel/sliderinformationviewmodel.dart';
 
 class SliderInformationView extends StatefulWidget {
   const SliderInformationView({Key? key}) : super(key: key);

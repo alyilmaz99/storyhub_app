@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/core/const/text_const/textconst.dart';
-import 'package:storyhub/product/model/game_screen_card_modal.dart';
-import 'package:storyhub/view/game_screen.view.dart';
+import '../core/const/text_const/textconst.dart';
+import '../product/model/game_screen_card_modal.dart';
+import '../view/game_screen.view.dart';
 
-abstract class GameScreenViewModel extends State<GameScreen> with TickerProviderStateMixin {
+abstract class GameScreenViewModel extends State<GameScreen>
+    with TickerProviderStateMixin {
   bool isAnimated = false;
 
   late AnimationController myAnimationControllerone;
@@ -35,60 +36,78 @@ abstract class GameScreenViewModel extends State<GameScreen> with TickerProvider
   @override
   void initState() {
     super.initState();
-    myAnimationControllerone = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    myAnimationControllertwo = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    myAnimationControllerthree = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    myAnimationControllerfour = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    myAnimationControllerfive = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    myAnimationControllersix = AnimationController(vsync: this, duration: const Duration(seconds: 1));
-    translateValueXone = Tween(begin: 0.0, end: -250.0).animate(myAnimationControllerone)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueYone = Tween(begin: 0.0, end: 100.0).animate(myAnimationControllerone)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueXtwo = Tween(begin: 0.0, end: -250.0).animate(myAnimationControllertwo)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueYtwo = Tween(begin: 0.0, end: 100.0).animate(myAnimationControllertwo)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueXthree = Tween(begin: 0.0, end: -250.0).animate(myAnimationControllerthree)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueYthree = Tween(begin: 0.0, end: 100.0).animate(myAnimationControllerthree)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueXfour = Tween(begin: 0.0, end: -250.0).animate(myAnimationControllerfour)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueYfour = Tween(begin: 0.0, end: 100.0).animate(myAnimationControllerfour)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueXfive = Tween(begin: 0.0, end: -250.0).animate(myAnimationControllerfive)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueYfive = Tween(begin: 0.0, end: 100.0).animate(myAnimationControllerfive)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueXsix = Tween(begin: 0.0, end: -250.0).animate(myAnimationControllersix)
-      ..addListener(() {
-        setState(() {});
-      });
-    translateValueYsix = Tween(begin: 0.0, end: 100.0).animate(myAnimationControllersix)
-      ..addListener(() {
-        setState(() {});
-      });
+    myAnimationControllerone =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    myAnimationControllertwo =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    myAnimationControllerthree =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    myAnimationControllerfour =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    myAnimationControllerfive =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    myAnimationControllersix =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    translateValueXone =
+        Tween(begin: 0.0, end: -250.0).animate(myAnimationControllerone)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueYone =
+        Tween(begin: 0.0, end: 100.0).animate(myAnimationControllerone)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueXtwo =
+        Tween(begin: 0.0, end: -250.0).animate(myAnimationControllertwo)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueYtwo =
+        Tween(begin: 0.0, end: 100.0).animate(myAnimationControllertwo)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueXthree =
+        Tween(begin: 0.0, end: -250.0).animate(myAnimationControllerthree)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueYthree =
+        Tween(begin: 0.0, end: 100.0).animate(myAnimationControllerthree)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueXfour =
+        Tween(begin: 0.0, end: -250.0).animate(myAnimationControllerfour)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueYfour =
+        Tween(begin: 0.0, end: 100.0).animate(myAnimationControllerfour)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueXfive =
+        Tween(begin: 0.0, end: -250.0).animate(myAnimationControllerfive)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueYfive =
+        Tween(begin: 0.0, end: 100.0).animate(myAnimationControllerfive)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueXsix =
+        Tween(begin: 0.0, end: -250.0).animate(myAnimationControllersix)
+          ..addListener(() {
+            setState(() {});
+          });
+    translateValueYsix =
+        Tween(begin: 0.0, end: 100.0).animate(myAnimationControllersix)
+          ..addListener(() {
+            setState(() {});
+          });
   }
 
   Future<void> selectCardone() async {

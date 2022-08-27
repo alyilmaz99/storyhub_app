@@ -2,7 +2,6 @@
 
 import 'package:elastic_drawer/elastic_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:storyhub/view/selectscenarioview.dart';
 
 import 'drawer_page_view.dart';
 

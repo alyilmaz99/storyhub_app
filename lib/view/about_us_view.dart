@@ -34,11 +34,13 @@ class _AboutUsViewState extends State<AboutUsView> {
                 alignment: Alignment.topRight,
                 child: IconButton(
                   onPressed: () {
+                    /*
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePage()));
+                            builder: (context) =>  HomePage()));
                     Navigator.pop(context);
+                    */
                   },
                   icon: const Icon(
                     Icons.arrow_back,

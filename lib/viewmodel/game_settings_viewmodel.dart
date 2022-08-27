@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
-import 'package:storyhub/view/game_settings_view.dart';
+import '../view/game_settings_view.dart';
 
 abstract class GameSettingsViewModel extends State<GameSettingsView> {
   int timer = 25;
@@ -27,16 +27,14 @@ abstract class GameSettingsViewModel extends State<GameSettingsView> {
   void increaseTimer() {
     setState(() {
       timer += 5;
-    showtimer = timer.toString();
+      showtimer = timer.toString();
     });
-    
   }
 
   void decreaseTimer() {
     setState(() {
-        timer -= 5;
-    showtimer = timer.toString();
+      timer -= 5;
+      showtimer = timer.toString();
     });
-  
   }
 }

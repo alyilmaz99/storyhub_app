@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:storyhub/core/const/text_const/textconst.dart';
-import 'package:storyhub/viewmodel/splashscreenviewmodel.dart';
+
+import '../viewmodel/splashscreenviewmodel.dart';
 
 class SplashScreenView extends StatefulWidget {
   const SplashScreenView({Key? key}) : super(key: key);

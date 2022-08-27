@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/view/sliderinformationview.dart';
-import 'package:storyhub/view/splashscreenview.dart';
+import '../view/sliderinformationview.dart';
+import '../view/splashscreenview.dart';
 
 abstract class SplashScreenViewModel extends State<SplashScreenView> {
   @override
