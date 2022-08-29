@@ -1,64 +1,63 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../view/game_page_view.dart';
 import '../view/main_page_view.dart';
 import '../view/sliderinformationview.dart';
-import 'package:intro_slider/intro_slider.dart';
+
+class OnboardingItem {
+  final String title;
+  final String subtitle;
+  final String image;
+  final Color color;
+
+  const OnboardingItem({
+    required this.title,
+    required this.subtitle,
+    required this.image,
+    required this.color,
+  });
+}
+
+class OnboardingItems {
+  static List<OnboardingItem> loadOnboardingItem() {
+    const inf = <OnboardingItem>[
+      OnboardingItem(
+          title: "STORY HUB1",
+          subtitle:
+              "Allow miles wound place the leave had. To sitting subject no improve studied limited",
+          image: "assets/images/1.png",
+          color: Color.fromRGBO(255, 255, 255, 1)),
+      OnboardingItem(
+          title: "STORY HUB2",
+          subtitle: "Ye indulgence unreserved connection alteration appearance",
+          image: "assets/images/4.png",
+          color: Color.fromRGBO(255, 255, 255, 1)),
+      OnboardingItem(
+          title: "STORY HUB3",
+          subtitle:
+              "Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our. Although finished blessing do of",
+          image: "assets/images/3.png",
+          color: Color.fromRGBO(255, 255, 255, 1)),
+    ];
+    return inf;
+  }
+}
 
 abstract class SliderInformationViewModel extends State<SliderInformationView> {
-  List<Slide> slides = [];
+  final controller = PageController(initialPage: 0);
 
   @override
-  void initState() {
-    super.initState();
-    slides.add(
-      Slide(
-        title: "STORY HUB1",
-        styleTitle: TextStyle(color: Colors.black, fontSize: 30),
-        description:
-            "Allow miles wound place the leave had. To sitting subject no improve studied limited",
-        pathImage: "assets/images/1.png",
-        styleDescription: GoogleFonts.montserrat(
-          textStyle:
-              const TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
-        ),
-        backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
-      ),
-    );
-    slides.add(
-      Slide(
-        title: "STORY HUB2",
-        styleTitle: TextStyle(color: Colors.black, fontSize: 30),
-        maxLineTitle: 2,
-        description:
-            "Ye indulgence unreserved connection alteration appearance",
-        styleDescription: GoogleFonts.montserrat(
-          textStyle:
-              const TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
-        ),
-        pathImage: "assets/images/4.png",
-        backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
-      ),
-    );
-    slides.add(
-      Slide(
-        title: "STORY HUB3",
-        styleTitle: TextStyle(color: Colors.black, fontSize: 30),
-        description:
-            "Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our. Although finished blessing do of",
-        styleDescription: GoogleFonts.montserrat(
-          textStyle:
-              const TextStyle(color: Colors.black, fontWeight: FontWeight.w500),
-        ),
-        pathImage: "assets/images/3.png",
-        backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
-      ),
-    );
-  }
-
   void onDonePress() {
     // Do what you want
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => MainPage()));
+  }
+
+  void previousSlide() {
+    controller.previousPage(
+        duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
+  }
+
+  void nextSlide() {
+    controller.nextPage(
+        duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
   }
 }
