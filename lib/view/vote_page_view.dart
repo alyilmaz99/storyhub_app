@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../model/Player.dart';
 
 class VotePage extends StatefulWidget {

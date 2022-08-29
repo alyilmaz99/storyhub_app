@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:storyhub/viewmodel/how_to_page_viewmodel.dart';
+import '../viewmodel/how_to_page_viewmodel.dart';
 
 class HowToPageView extends StatefulWidget {
   const HowToPageView({Key? key}) : super(key: key);

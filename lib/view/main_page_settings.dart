@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:storyhub/viewmodel/main_page_settings_viewmodel.dart';
+import '../viewmodel/main_page_settings_viewmodel.dart';
 
 class MainPageSettings extends StatefulWidget {
   const MainPageSettings({Key? key}) : super(key: key);

@@ -1,4 +1,4 @@
-import 'package:storyhub/model/stats_model.dart';
+import '../model/stats_model.dart';
 
 class StatsViewModel extends StatsModel {
   Map<String, String>? catchData;

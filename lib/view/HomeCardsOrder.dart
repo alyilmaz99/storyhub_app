@@ -1,7 +1,7 @@
 import 'package:elastic_drawer/elastic_drawer.dart';
 import 'package:flutter/material.dart';
-import 'package:storyhub/view/tappedCard.dart';
-import 'package:storyhub/viewmodel/home_cards_order_viewmodel.dart';
+import 'tappedCard.dart';
+import '../viewmodel/home_cards_order_viewmodel.dart';
 
 import 'drawer_page_view.dart';
 

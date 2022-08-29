@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/view/HomeCardsOrder.dart';
-import 'package:storyhub/view/about_us_view.dart';
-import 'package:storyhub/view/game_settings_view.dart';
-import 'package:storyhub/view/how_to_page_view.dart';
-import 'package:storyhub/view/main_page_settings.dart';
-import 'package:storyhub/view/selectscenarioview.dart';
-import 'package:storyhub/view/settings_page_view.dart';
+import 'HomeCardsOrder.dart';
+import 'about_us_view.dart';
+import 'game_settings_view.dart';
+import 'how_to_page_view.dart';
+import 'main_page_settings.dart';
+import 'selectscenarioview.dart';
+import 'settings_page_view.dart';
 
 class MainPage extends StatefulWidget {
   @override

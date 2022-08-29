@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/model/Player.dart';
+import '../model/Player.dart';
 
 class SortingPage extends StatefulWidget {
   @override

@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
-import 'package:storyhub/view/tappedCard.dart';
+import '../view/tappedCard.dart';
 
 abstract class HomeCardsOrderViewModel extends StatelessWidget {
   HomeCardsOrderViewModel(Key? key) : super(key: key);
