@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/view/CardPAge.dart';
+import 'package:storyhub/view/HomeCardsOrder.dart';
 import 'package:storyhub/view/splashscreenview.dart';
 import 'package:flutter/services.dart';
 
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
       ),
       //title: 'Flutter Demo',
 
-      home: const SplashScreenView(),
+      home: CardPage(),
     );
   }
 }

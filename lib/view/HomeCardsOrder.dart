@@ -100,30 +100,28 @@ class HomeCardsOrder extends HomeCardsOrderViewModel {
               ),
             ),
             Expanded(
-              child: Container(
-                child: Center(
-                    child: SizedBox(
-                  height: 300,
-                  width: 300,
-                  child: Stack(
-                    clipBehavior: Clip.none,
-                    alignment: AlignmentDirectional.centerStart,
-                    children: [
-                      SizedBox(
-                        height: 200,
-                        width: 160,
-                        child: newCard,
-                      ),
-                      Positioned(
-                          left: 50, height: 200, width: 160, child: newCard),
-                      Positioned(
-                          left: 100, height: 200, width: 160, child: newCard),
-                      Positioned(
-                          left: 150, height: 200, width: 160, child: newCard),
-                    ],
-                  ),
-                )),
-              ),
+              child: Center(
+                  child: SizedBox(
+                height: 300,
+                width: 300,
+                child: Stack(
+                  clipBehavior: Clip.none,
+                  alignment: AlignmentDirectional.centerStart,
+                  children: [
+                    SizedBox(
+                      height: 200,
+                      width: 160,
+                      child: newCard,
+                    ),
+                    Positioned(
+                        left: 50, height: 200, width: 160, child: newCard),
+                    Positioned(
+                        left: 100, height: 200, width: 160, child: newCard),
+                    Positioned(
+                        left: 150, height: 200, width: 160, child: newCard),
+                  ],
+                ),
+              )),
             ),
             Row(
               children: [
@@ -186,7 +184,7 @@ class HomeCardsOrder extends HomeCardsOrderViewModel {
                       ),
                     ],
                   ),
-                  child: Text(
+                  child: const Text(
                     "Next",
                     style: TextStyle(
                       fontSize: 30,
