@@ -1,8 +1,8 @@
 import 'dart:ffi';
-
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
-import 'package:intro_slider/intro_slider.dart';
+import 'package:provider/provider.dart';
+import 'package:storyhub/model/settings_model.dart';
 
 class SettingsPageView extends StatefulWidget {
   const SettingsPageView({Key? key}) : super(key: key);
@@ -12,10 +12,6 @@ class SettingsPageView extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPageView> {
-  double gameVolumeVal = 0.0;
-  double buttonVolumeVal = 0.0;
-  double bgMusicVolumeVal = 0.0;
-  double colorSetting = 0.0;
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -103,11 +99,12 @@ class _SettingsPageState extends State<SettingsPageView> {
                               max: 1.0,
                               min: 0.0,
                               divisions: 100,
-                              value: gameVolumeVal,
+                              value: Provider.of<SettingsModel>(context)
+                                  .gameVolumeVal,
                               onChanged: (value) {
-                                setState(() {
-                                  gameVolumeVal = value;
-                                });
+                                Provider.of<SettingsModel>(context,
+                                        listen: false)
+                                    .setGameVolumeVal(value);
                               },
                             ),
                           ),
@@ -159,11 +156,12 @@ class _SettingsPageState extends State<SettingsPageView> {
                               max: 1.0,
                               min: 0.0,
                               divisions: 100,
-                              value: buttonVolumeVal,
+                              value: Provider.of<SettingsModel>(context)
+                                  .buttonVolumeVal,
                               onChanged: (value) {
-                                setState(() {
-                                  buttonVolumeVal = value;
-                                });
+                                Provider.of<SettingsModel>(context,
+                                        listen: false)
+                                    .setButtonVolumeVal(value);
                               },
                             ),
                           ),
@@ -211,8 +209,8 @@ class _SettingsPageState extends State<SettingsPageView> {
                       ),
                       Container(
                         width: screenWidth / 1.2,
-                        child: const Text(
-                          "Fear",
+                        child: Text(
+                          '${Provider.of<SettingsModel>(context).bgMusicName}',
                           textAlign: TextAlign.start,
                           style: TextStyle(
                               fontSize: 16,
@@ -269,11 +267,12 @@ class _SettingsPageState extends State<SettingsPageView> {
                               max: 1.0,
                               min: 0.0,
                               divisions: 100,
-                              value: bgMusicVolumeVal,
+                              value: Provider.of<SettingsModel>(context)
+                                  .bgMusicVolumeVal,
                               onChanged: (value) {
-                                setState(() {
-                                  bgMusicVolumeVal = value;
-                                });
+                                Provider.of<SettingsModel>(context,
+                                        listen: false)
+                                    .setBgMusicVolumeVal(value);
                               },
                             ),
                           ),
@@ -308,7 +307,11 @@ class _SettingsPageState extends State<SettingsPageView> {
                             fontWeight: FontWeight.w500,
                             color: Colors.white),
                       ),
-                      PopupMenuButton<int>(
+                      PopupMenuButton<String>(
+                        onSelected: (value) => {
+                          Provider.of<SettingsModel>(context, listen: false)
+                              .setLanguage(value)
+                        },
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(8.0),
@@ -324,7 +327,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                         ),
                         itemBuilder: (context) => [
                           PopupMenuItem(
-                              value: 1,
+                              value: "TR",
                               child: Container(
                                 child: Row(
                                   mainAxisAlignment:
@@ -342,7 +345,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                                 ),
                               )),
                           PopupMenuItem(
-                            value: 2,
+                            value: "EN",
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -358,7 +361,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                             ),
                           ),
                           PopupMenuItem(
-                            value: 3,
+                            value: "DE",
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -374,7 +377,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                             ),
                           ),
                           PopupMenuItem(
-                            value: 4,
+                            value: "FR",
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
