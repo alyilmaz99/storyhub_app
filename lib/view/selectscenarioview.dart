@@ -1,6 +1,8 @@
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:fluid_action_card/FluidActionCard/fluid_action_card.dart';
 import '../core/const/text_const/textconst.dart';
+import 'package:vertical_card_pager/vertical_card_pager.dart';
 import 'HomeCardsOrder.dart';
 
 class SelectScenarioView extends StatefulWidget {
@@ -13,6 +15,72 @@ class SelectScenarioView extends StatefulWidget {
 class _SelectScenarioViewState extends State<SelectScenarioView> {
   @override
   Widget build(BuildContext context) {
+    final List<String> titles = [
+      "RED",
+      "YELLOW",
+      "BLACK",
+      "CYAN",
+      "BLUE",
+      "GREY",
+    ];
+
+    final List<Widget> images = [
+      Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          colorFilter: new ColorFilter.mode(
+              Colors.red.withOpacity(0.6), BlendMode.dstATop),
+          image: new AssetImage("assets/images/kovboy.png"),
+          fit: BoxFit.cover,
+        )),
+      ),
+      Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          colorFilter: new ColorFilter.mode(
+              Colors.yellow.withOpacity(0.6), BlendMode.dstATop),
+          image: new AssetImage("assets/images/kovboy.png"),
+          fit: BoxFit.cover,
+        )),
+      ),
+      Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          colorFilter: new ColorFilter.mode(
+              Colors.black.withOpacity(0.6), BlendMode.dstATop),
+          image: new AssetImage("assets/images/kovboy.png"),
+          fit: BoxFit.cover,
+        )),
+      ),
+      Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          colorFilter: new ColorFilter.mode(
+              Colors.cyan.withOpacity(0.6), BlendMode.dstATop),
+          image: new AssetImage("assets/images/kovboy.png"),
+          fit: BoxFit.cover,
+        )),
+      ),
+      Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          colorFilter: new ColorFilter.mode(
+              Colors.blue.withOpacity(0.6), BlendMode.dstATop),
+          image: new AssetImage("assets/images/kovboy.png"),
+          fit: BoxFit.cover,
+        )),
+      ),
+      Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          colorFilter: new ColorFilter.mode(
+              Colors.grey.withOpacity(0.6), BlendMode.dstATop),
+          image: new AssetImage("assets/images/kovboy.png"),
+          fit: BoxFit.cover,
+        )),
+      ),
+    ];
+
     return Scaffold(
       backgroundColor: Colors.redAccent.shade100,
       appBar: AppBar(
@@ -30,25 +98,105 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
               letterSpacing: 1.5, fontSize: 25.0, color: Colors.black54),
         ),
       ),
-      body: FluidActionCard(
-        color1: Colors.white,
-        color2: Colors.white60,
-        backgroundcolor: Colors.redAccent.shade100,
-        borderRadius1: BorderRadius.circular(20),
-        borderRadius2: BorderRadius.circular(20),
-        height: 400.0,
-        width: 240.0,
-        CardCount: 6,
-        Position: 100.0,
-        assetimage: "assets/images/kovboy.png",
-        shadow: const BoxShadow(
-          color: Colors.black45,
-          blurRadius: 10.0,
-          spreadRadius: 0.2,
-          offset: Offset(0, 3),
-        ),
-        ontap: () {},
-      ),
+
+      body: GridView.count(
+          // Create a grid with 2 columns. If you change the scrollDirection to
+          // horizontal, this produces 2 rows.
+          crossAxisCount: 1,
+          // Generate 100 widgets that display their index in the List.
+          children: List.generate(images.length, (index) {
+            return Center(
+                child: Padding(
+              padding: EdgeInsets.all(40.0),
+              child: FlipCard(
+                  front: images[index],
+                  back: Stack(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                            color: Colors.white,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                      ),
+                      Positioned(
+                          child: Container(
+                        child: Center(
+                          child: Text(
+                            titles[index],
+                            style: TextStyle(fontSize: 25),
+                          ),
+                        ),
+                      ))
+                    ],
+                  )),
+            ));
+          })),
+
+      // body: Center(
+      //   child: FlipCard(
+      //     direction: FlipDirection.HORIZONTAL,
+      //     front: Container(
+      //       width: 300,
+      //       height: 400,
+      //       color: Colors.red,
+      //     ),
+      //     back: Container(
+      //       width: 300,
+      //       height: 400,
+      //       color: Colors.blue,
+      //     ),
+      //   ),
+      // ),
+
+      // body: SafeArea(
+      //   child: Column(
+      //     children: <Widget>[
+      //       Expanded(
+      //         child: Container(
+      //             child: FlipCard(
+      //                 direction: FlipDirection.HORIZONTAL,
+      //                 front: VerticalCardPager(
+      //                     titles: titles, // required
+      //                     images: images, // required
+      //                     textStyle: TextStyle(
+      //                         color: Colors.white,
+      //                         fontWeight: FontWeight.bold), // optional
+      //                     onPageChanged: (page) {
+      //                       // optional
+      //                     },
+      //                     onSelectedItem: (index) {
+      //                       // optional
+      //                     },
+      //                     initialPage: 0, // optional
+      //                     align: ALIGN.CENTER // optional
+      //                     ),
+      //                 back: Container(
+      //                   child: Text("Murat"),
+      //                 ))),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+
+      // body: FluidActionCard(
+      //   color1: Colors.white,
+      //   color2: Colors.white60,
+      //   backgroundcolor: Colors.redAccent.shade100,
+      //   borderRadius1: BorderRadius.circular(20),
+      //   borderRadius2: BorderRadius.circular(20),
+      //   height: 400.0,
+      //   width: 240.0,
+      //   CardCount: 6,
+      //   Position: 100.0,
+      //   assetimage: "assets/images/kovboy.png",
+      //   shadow: const BoxShadow(
+      //     color: Colors.black45,
+      //     blurRadius: 10.0,
+      //     spreadRadius: 0.2,
+      //     offset: Offset(0, 3),
+      //   ),
+      //   ontap: () {},
+      // ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
         splashColor: Colors.pink.shade600,

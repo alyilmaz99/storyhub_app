@@ -1,6 +1,17 @@
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/components/card/game_screen_card.dart';
+import 'package:storyhub/view/CardPAge.dart';
+import 'package:storyhub/view/HomeCardsOrder.dart';
+import 'package:storyhub/view/about_us_view.dart';
+import 'package:storyhub/view/drawer_page_view.dart';
+import 'package:storyhub/view/game_page_view.dart';
+import 'package:storyhub/view/game_screen.view.dart';
+import 'package:storyhub/view/main_page_view.dart';
+import 'package:storyhub/view/selectscenarioview.dart';
 import 'package:storyhub/view/splashscreenview.dart';
 import 'package:flutter/services.dart';
+import 'package:storyhub/view/tappedCard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +37,7 @@ class MyApp extends StatelessWidget {
       ),
       //title: 'Flutter Demo',
 
-      home: const SplashScreenView(),
+      home: SelectScenarioView(),
     );
   }
 }
