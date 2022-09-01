@@ -269,7 +269,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                               max: 1.0,
                               min: 0.0,
                               divisions: 100,
-                              value: buttonVolumeVal,
+                              value: bgMusicVolumeVal,
                               onChanged: (value) {
                                 setState(() {
                                   bgMusicVolumeVal = value;
