@@ -103,3 +103,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: GamerStation
+      fonts: 
+        - asset: assets/fonts/Gamer_Station.ttf
+    - family: Montserrat
+      fonts: 
+        - asset: assets/fonts/Montserrat_Regular.ttf
+
+        
