@@ -5,6 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storyhub/view/game_page_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'main_page_view.dart';
+
 class AboutUsView extends StatefulWidget {
   const AboutUsView({super.key});
 
@@ -34,13 +36,8 @@ class _AboutUsViewState extends State<AboutUsView> {
                 alignment: Alignment.topRight,
                 child: IconButton(
                   onPressed: () {
-                    /*
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>  HomePage()));
-                    Navigator.pop(context);
-                    */
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => MainPage()));
                   },
                   icon: const Icon(
                     Icons.arrow_back,
