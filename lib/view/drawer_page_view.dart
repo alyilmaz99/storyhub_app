@@ -1,9 +1,13 @@
 // ignore_for_file: deprecated_member_use
 
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:storyhub/view/game_settings_view.dart';
+import 'package:storyhub/view/main_page_settings.dart';
 
 class DrawerPage extends StatelessWidget {
   const DrawerPage({Key? key}) : super(key: key);
@@ -23,7 +27,13 @@ class DrawerPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => GameSettingsView()));
+              },
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -45,7 +55,9 @@ class DrawerPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -67,7 +79,12 @@ class DrawerPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MainPageSettings()));
+              },
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 shape: RoundedRectangleBorder(
@@ -89,7 +106,7 @@ class DrawerPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => exit(0),
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 shape: RoundedRectangleBorder(

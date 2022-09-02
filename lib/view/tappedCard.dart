@@ -1,9 +1,16 @@
-import 'package:flutter/material.dart';
 import 'package:flip_card/flip_card.dart';
+import 'package:flutter/material.dart';
 
 import 'CardPAge.dart';
 
 class TappedCard extends StatelessWidget {
+  String? assetImageCardBack;
+  String? assetImageCardFront;
+  TappedCard({
+    Key? key,
+    required this.assetImageCardBack,
+    required this.assetImageCardFront,
+  }) : super(key: key);
   _renderContent(context) {
     bool isFlipped = true;
 
@@ -15,40 +22,30 @@ class TappedCard extends StatelessWidget {
 
         // sleep(Duration(seconds:1));
         // await Future.delayed(Duration(seconds: 1))
-        if(isFlipped == true)
-        {
+        if (isFlipped == true) {
           // _navigateToNextScreen(context);
           Navigator.push(context, ScaleRoute(page: CardPage()));
-          isFlipped=false;
-        }
-        else
-        {
+          isFlipped = false;
+        } else {
           isFlipped = true;
         }
       },
       front: Container(
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(8.0)),
           image: DecorationImage(
-              image:AssetImage("assets/images/back.png"),
-              fit: BoxFit.cover
-          ),
+              image: AssetImage(assetImageCardBack!), fit: BoxFit.cover),
         ),
       ),
       back: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          borderRadius: const BorderRadius.all(Radius.circular(8.0)),
           image: DecorationImage(
-              image:AssetImage("assets/images/front.png"),
-              fit: BoxFit.cover
-          ),
+              image: AssetImage(assetImageCardFront!), fit: BoxFit.cover),
         ),
       ),
     );
   }
-
-
-  const TappedCard({Key? key}) : super(key: key);
 
   // void _navigateToNextScreen(BuildContext context) {
   //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageRoute()));
@@ -71,31 +68,31 @@ class ScaleRoute extends PageRouteBuilder {
   final Widget page;
   ScaleRoute({required this.page})
       : super(
-    pageBuilder: (
-        BuildContext context,
-        Animation<double> animation,
-        Animation<double> secondaryAnimation,
-        ) =>
-    page,
-    transitionsBuilder: (
-        BuildContext context,
-        Animation<double> animation,
-        Animation<double> secondaryAnimation,
-        Widget child,
-        ) =>
-        ScaleTransition(
-          scale: Tween<double>(
-            begin: 0.0,
-            end: 1.0,
-          ).animate(
-            CurvedAnimation(
-              parent: animation,
-              curve: Curves.fastOutSlowIn,
+          pageBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+          ) =>
+              page,
+          transitionsBuilder: (
+            BuildContext context,
+            Animation<double> animation,
+            Animation<double> secondaryAnimation,
+            Widget child,
+          ) =>
+              ScaleTransition(
+            scale: Tween<double>(
+              begin: 0.0,
+              end: 1.0,
+            ).animate(
+              CurvedAnimation(
+                parent: animation,
+                curve: Curves.fastOutSlowIn,
+              ),
             ),
+            child: child,
           ),
-          child: child,
-        ),
-  );
+        );
 }
 
 // class CardPage extends StatelessWidget {

@@ -1,46 +1,63 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/view/game_page_view.dart';
-import 'package:storyhub/view/sliderinformationview.dart';
-import 'package:intro_slider/intro_slider.dart';
+import '../view/main_page_view.dart';
+import '../view/sliderinformationview.dart';
+
+class OnboardingItem {
+  final String title;
+  final String subtitle;
+  final String image;
+  final Color color;
+
+  const OnboardingItem({
+    required this.title,
+    required this.subtitle,
+    required this.image,
+    required this.color,
+  });
+}
+
+class OnboardingItems {
+  static List<OnboardingItem> loadOnboardingItem() {
+    const inf = <OnboardingItem>[
+      OnboardingItem(
+          title: "STORY HUB1",
+          subtitle:
+              "Allow miles wound place the leave had. To sitting subject no improve studied limited",
+          image: "assets/images/1.png",
+          color: Color.fromRGBO(255, 255, 255, 1)),
+      OnboardingItem(
+          title: "STORY HUB2",
+          subtitle: "Ye indulgence unreserved connection alteration appearance",
+          image: "assets/images/4.png",
+          color: Color.fromRGBO(255, 255, 255, 1)),
+      OnboardingItem(
+          title: "STORY HUB3",
+          subtitle:
+              "Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our. Although finished blessing do of",
+          image: "assets/images/3.png",
+          color: Color.fromRGBO(255, 255, 255, 1)),
+    ];
+    return inf;
+  }
+}
 
 abstract class SliderInformationViewModel extends State<SliderInformationView> {
-  List<Slide> slides = [];
+  final controller = PageController(initialPage: 0);
 
   @override
-  void initState() {
-    super.initState();
-    slides.add(
-      Slide(
-        title: "STORY HUB1",
-        description:
-            "Allow miles wound place the leave had. To sitting subject no improve studied limited",
-        pathImage: "assets/images/1.png",
-        backgroundColor: const Color(0xfff5a623),
-      ),
-    );
-    slides.add(
-      Slide(
-        title: "STORY HUB2",
-        description:
-            "Ye indulgence unreserved connection alteration appearance",
-        pathImage: "assets/images/2.jpg",
-        backgroundColor: const Color(0xff203152),
-      ),
-    );
-    slides.add(
-      Slide(
-        title: "STORY HUB3",
-        description:
-            "Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our. Although finished blessing do of",
-        pathImage: "assets/images/3.png",
-        backgroundColor: const Color(0xff9932CC),
-      ),
-    );
-  }
-
   void onDonePress() {
     // Do what you want
     Navigator.push(
-        context, MaterialPageRoute(builder: (context) => const HomePage()));
+        context, MaterialPageRoute(builder: (context) => MainPage()));
+  }
+
+  void previousSlide() {
+    controller.previousPage(
+        duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
+  }
+
+  void nextSlide() {
+    controller.nextPage(
+        duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
   }
 }

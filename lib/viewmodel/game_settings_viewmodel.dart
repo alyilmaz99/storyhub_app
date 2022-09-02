@@ -1,3 +1,4 @@
+
 import 'package:storyhub/model/game_settings_model.dart';
 
 class GameSettingsViewmodel extends GameSettingsModel {
@@ -26,5 +27,6 @@ class GameSettingsViewmodel extends GameSettingsModel {
 
   void clear() {
     catchData?.clear();
+
   }
 }

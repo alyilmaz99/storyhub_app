@@ -1,171 +1,157 @@
-import 'package:elastic_drawer/elastic_drawer.dart';
+// ignore: file_names
 import 'package:flutter/material.dart';
 
-import 'drawer_page_view.dart';
-
-
-class CardPage extends StatelessWidget {
+class CardPage extends StatefulWidget {
   const CardPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<CardPage> createState() => _CardPageState();
+}
 
+class _CardPageState extends State<CardPage> {
+  @override
+  Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
     return Scaffold(
-        backgroundColor: Color.fromRGBO(15, 61, 62, 1.0),
-        body: Column(
+      appBar: AppBar(
+        backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
+        shadowColor: Colors.transparent,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              alignment: Alignment.center,
-              width: screenWidth / 1.001,
-              height: screenHeight / 10,
-              padding: EdgeInsets.only(left: 25, right: 25),
-              margin: EdgeInsets.only(
-                left: 15,
-                top: screenHeight / 18,
-                right: 15,
-              ),
-              decoration: BoxDecoration(
+            Expanded(child: Container()),
+            IconButton(
+              onPressed: () {
+                //
+              },
+              icon: const Icon(
+                Icons.menu,
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(25),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.3),
-                    offset: Offset(0, 3),
-                    blurRadius: 7,
-                    spreadRadius: 1,
-                  ),
-                ],
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: (screenWidth / 1.001) / 5.8,
-                    width: (screenWidth / 1.001) / 5.8,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.blue,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Container(
-                    height: (screenWidth / 1.001) / 5.8,
-                    width: (screenWidth / 1.001) / 5.8,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.green,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Container(
-                    height: (screenWidth / 1.001) / 5.8,
-                    width: (screenWidth / 1.001) / 5.8,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.red,
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Container(
-                    height: (screenWidth / 1.001) / 5.8,
-                    width: (screenWidth / 1.001) / 5.8,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.red,
-                    ),
-                  )
-                ],
               ),
             ),
-            Expanded(
-                  child: SizedBox(
-                    width: screenHeight / 2,
-                    height: screenHeight / 3,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                        image: DecorationImage(
-                            image:AssetImage("assets/images/front.png"),
-                            fit: BoxFit.cover
-                        ),
-                      ),
-                    ),
+          ],
+        ),
+      ),
+      backgroundColor: Colors.transparent,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: RadialGradient(
+            radius: 0.8,
+            colors: [
+              Color.fromRGBO(59, 52, 114, 1),
+              Color.fromRGBO(37, 29, 58, 1),
+            ],
+          ),
+        ),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.arrow_back_ios_new_rounded,
+                      color: Colors.white),
+                  onPressed: () {},
                 ),
+                Container(
+                  width: screenWidth / 6,
+                  height: screenHeight / 12,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/human1.png'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: screenWidth / 4,
+                  height: screenHeight / 8,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/human2.png'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                Container(
+                  width: screenWidth / 6,
+                  height: screenHeight / 12,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/images/human3.png'),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.arrow_forward_ios_rounded,
+                      color: Colors.white),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            SizedBox(
+              height: screenHeight / 20,
+            ),
+            Card(
+              margin: const EdgeInsets.all(10),
+              semanticContainer: true,
+              clipBehavior: Clip.antiAliasWithSaveLayer,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(7.0),
+              ),
+              elevation: 5,
+              child: Container(
+                width: screenWidth / 2,
+                height: screenHeight / 2.5,
+                child: Image.asset(
+                  'assets/images/card3.png',
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: screenHeight / 30,
             ),
             Row(
               children: [
                 Container(
-                  width: screenWidth / 4,
-                  height: screenWidth / 4,
-                  margin: EdgeInsets.only(
-                    left: 20,
-                    bottom: 20,
-                  ),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        offset: Offset(0, 3),
-                        blurRadius: 7,
-                        spreadRadius: 1,
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "SÜRE",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 17,
-                          color: Colors.black.withOpacity(0.7),
-                        ),
-                      ),
-                      Text(
-                        "15",
-                        style: TextStyle(fontWeight: FontWeight.w800, fontSize: 50),
-                      ),
-                    ],
-                  ),
+                  alignment: Alignment.centerLeft,
+                  width: screenWidth / 2.6,
+                  height: screenHeight / 5,
+                  child: Stack(children: [
+                    Image.asset(
+                      'assets/images/timer.png',
+                      fit: BoxFit.fill,
+                    ),
+                    const Positioned(
+                        bottom: 75,
+                        right: 50,
+                        child: Text(
+                          "0:00",
+                          style: TextStyle(
+                              fontSize: 25, fontWeight: FontWeight.bold),
+                        )),
+                  ]),
                 ),
                 Container(
-                  alignment: Alignment.center,
-                  margin: EdgeInsets.only(left: screenHeight / 20),
-                  width: screenWidth / 1.9,
-                  height: screenHeight / 15,
-                  decoration: BoxDecoration(
-                    color: Colors.amber.shade200,
-                    borderRadius: BorderRadius.circular(50),
-                    // ignore: prefer_const_literals_to_create_immutables
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
-                        offset: Offset(0, 3),
-                        blurRadius: 7,
-                        spreadRadius: 1,
-                      ),
-                    ],
-                  ),
-                  child: Text(
-                    "Next",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w600,
+                  margin: EdgeInsets.only(bottom: screenHeight / 30),
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        onSurface: Colors.white,
+                        primary: const Color.fromRGBO(216, 91, 47, 0.7),
+                        minimumSize:
+                            Size(screenWidth / 1.8, screenHeight / 19)),
+                    child: const Text(
+                      "İLERİ",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                     ),
                   ),
                 ),
@@ -173,6 +159,7 @@ class CardPage extends StatelessWidget {
             ),
           ],
         ),
-      );
+      ),
+    );
   }
 }

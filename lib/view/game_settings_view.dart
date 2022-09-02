@@ -1,5 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import '../viewmodel/game_settings_viewmodel.dart';
+import 'selectscenarioview.dart';
 
 import 'package:provider/provider.dart';
 import 'package:storyhub/model/game_settings_model.dart';
@@ -60,6 +62,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                   child: const Icon(
                     Icons.menu,
                     color: Colors.white,
+
                   )),
             ],
           ),
@@ -109,6 +112,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                               color: Colors.white,
                               size: 30.0,
                             ),
+
                           ),
                           Container(
                               width: screenWidth / 1.5,
@@ -337,5 +341,6 @@ class _GameSettingsViewState extends State<GameSettingsView> {
             ],
           ),
         ));
+
   }
 }

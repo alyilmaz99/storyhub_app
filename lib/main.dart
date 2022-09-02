@@ -1,3 +1,4 @@
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/view/HomeCardsOrder.dart';
@@ -7,9 +8,8 @@ import 'package:storyhub/view/game_settings_view.dart';
 import 'package:storyhub/view/settings_page_view.dart';
 import 'package:storyhub/view/stats_page_view.dart';
 import 'package:storyhub/view/tappedCard.dart';
-
 import 'package:flutter/services.dart';
-import 'package:storyhub/view/game_screen.view.dart';
+import 'package:storyhub/view/tappedCard.dart';
 
 import 'model/game_settings_model.dart';
 import 'model/settings_model.dart';
@@ -49,8 +49,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //title: 'Flutter Demo',
-
-      home: GameSettingsView(),
+      home: SelectScenarioView(),
     );
   }
 }
