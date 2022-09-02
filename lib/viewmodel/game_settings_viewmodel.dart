@@ -1,40 +1,32 @@
-import 'dart:async';
-import 'package:flutter/cupertino.dart';
-import '../view/game_settings_view.dart';
 
-abstract class GameSettingsViewModel extends State<GameSettingsView> {
-  int timer = 25;
-  String showtimer = "25";
-  bool canceltimer = false;
+import 'package:storyhub/model/game_settings_model.dart';
 
-  void starttimer() async {
-    const onesec = Duration(seconds: 1);
-    Timer.periodic(onesec, (Timer t) {
-      setState(() {
-        if (timer < 1) {
-          t.cancel();
-          //tur dönecek
-        } else if (canceltimer == true) {
-          t.cancel();
-        } else {
-          timer = timer - 1;
-        }
-        showtimer = timer.toString();
-      });
-    });
+class GameSettingsViewmodel extends GameSettingsModel {
+  Map<String, int>? catchData;
+
+  GameSettingsViewmodel(
+      {required super.playerCount,
+      required super.timerValue,
+      required super.roundSpeedValue,
+      this.catchData});
+
+  void init() {
+    catchData = {
+      "playerCount": playerCount,
+      "timerValue": timerValue,
+      "roundSpeedValue": roundSpeedValue,
+    };
   }
 
-  void increaseTimer() {
-    setState(() {
-      timer += 5;
-      showtimer = timer.toString();
-    });
+  void update(String cardsNumber, String playerNumber, String scenario,
+      String totalTime, String tourNumber) {
+    catchData?.update("playerCount", (value) => playerCount);
+    catchData?.update("timerValue", (value) => timerValue);
+    catchData?.update("roundSpeedValue", (value) => roundSpeedValue);
   }
 
-  void decreaseTimer() {
-    setState(() {
-      timer -= 5;
-      showtimer = timer.toString();
-    });
+  void clear() {
+    catchData?.clear();
+
   }
 }

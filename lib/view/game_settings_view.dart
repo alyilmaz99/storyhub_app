@@ -1,13 +1,35 @@
+import 'dart:developer';
 import 'package:flutter/material.dart';
 import '../viewmodel/game_settings_viewmodel.dart';
 import 'selectscenarioview.dart';
 
+import 'package:provider/provider.dart';
+import 'package:storyhub/model/game_settings_model.dart';
+
 class GameSettingsView extends StatefulWidget {
+  const GameSettingsView({Key? key}) : super(key: key);
+
   @override
   State<GameSettingsView> createState() => _GameSettingsViewState();
 }
 
-class _GameSettingsViewState extends GameSettingsViewModel {
+class _GameSettingsViewState extends State<GameSettingsView> {
+  var roundSpeedString = '';
+  var diffuciltyValue = 0;
+
+  String roundSpeedName(roundSpeedValue) {
+    switch (roundSpeedValue) {
+      case 1:
+        return 'Yavaş';
+      case 2:
+        return 'Orta';
+      case 3:
+        return 'Hızlı';
+      default:
+        return 'Yavaş';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -15,283 +37,310 @@ class _GameSettingsViewState extends GameSettingsViewModel {
     var screenWidth = screenSize.width;
 
     return Scaffold(
-      appBar: AppBar(
-        iconTheme: const IconThemeData(color: Colors.black),
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.transparent,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Expanded(child: Container()),
-            Container(
-                padding: EdgeInsets.only(
-                  right: screenWidth / 10,
-                ),
-                child: const Icon(
-                  Icons.menu,
-                  color: Colors.black,
-                )),
-          ],
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.white),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                  padding: EdgeInsets.only(
+                    top: screenWidth / 20,
+                    left: screenWidth / 15,
+                  ),
+                  child: const Icon(
+                    Icons.arrow_back,
+                    color: Colors.white,
+                  )),
+              Container(
+                  padding: EdgeInsets.only(
+                    top: screenWidth / 20,
+                    right: screenWidth / 15,
+                  ),
+                  child: const Icon(
+                    Icons.menu,
+                    color: Colors.white,
+
+                  )),
+            ],
+          ),
         ),
-      ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: screenHeight / 20,
-          ),
-          Row(
+        body: Container(
+          decoration: BoxDecoration(
+              gradient: RadialGradient(radius: 1, colors: [
+            Color.fromARGB(255, 255, 149, 113),
+            Color.fromARGB(255, 216, 91, 47),
+            Color.fromARGB(255, 216, 91, 47)
+          ])),
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text(
-                "Oyun Ayarları",
-                style: TextStyle(
-                    fontSize: 35,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black54),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: screenHeight / 25,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               SizedBox(
-                width: screenWidth / 10,
-                child: const Icon(
-                  Icons.image,
-                  color: Colors.black,
-                  size: 30.0,
-                ),
+                height: screenHeight / 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    "Oyun Ayarları",
+                    style: TextStyle(
+                        fontFamily: 'GamerStation',
+                        fontSize: 22,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white),
+                  ),
+                ],
               ),
               SizedBox(
-                  width: screenWidth / 1.5,
-                  height: screenHeight / 8,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Text(
-                        "Oyuncu Sayısı",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                          Icon(
-                            Icons.remove_circle_outline,
-                            color: Colors.black,
-                            size: 30.0,
-                          ),
-                          Text(
-                            "1",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black),
-                          ),
-                          Icon(
-                            Icons.add_circle_outline,
-                            color: Colors.black,
-                            size: 30.0,
-                          ),
-                        ],
-                      )
-                    ],
-                  )),
-            ],
-          ),
-          SizedBox(
-            height: screenHeight / 25,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              SizedBox(
-                width: screenWidth / 10,
-                child: const Icon(
-                  Icons.image,
-                  color: Colors.black,
-                  size: 30.0,
-                ),
+                height: screenHeight / 20,
               ),
-              SizedBox(
-                  width: screenWidth / 1.5,
-                  height: screenHeight / 8,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Text(
-                        "Süre",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(50, 217, 217, 217),
+                          borderRadius: BorderRadius.all(Radius.circular(32))),
+                      child: Column(
                         children: [
-                          IconButton(
-                            icon: const Icon(
-                              Icons.remove_circle_outline,
-                              color: Colors.black,
+                          Container(
+                            width: screenWidth / 10,
+                            child: Icon(
+                              Icons.image,
+                              color: Colors.white,
+                              size: 30.0,
                             ),
-                            iconSize: 30.0,
-                            onPressed: () {
-                              decreaseTimer();
-                              print(showtimer);
-                            },
+
                           ),
-                          Text(
-                            showtimer,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black),
-                          ),
-                          IconButton(
-                            icon: const Icon(
-                              Icons.add_circle_outline,
-                              color: Colors.black,
-                            ),
-                            iconSize: 30.0,
-                            onPressed: () {
-                              increaseTimer();
-                              print(showtimer);
-                            },
-                          ),
+                          Container(
+                              width: screenWidth / 1.5,
+                              height: screenHeight / 10,
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  const Text(
+                                    "Oyuncu Sayısı",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w300,
+                                        color: Colors.white),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      IconButton(
+                                        icon: const Icon(
+                                          Icons.remove_circle_outline,
+                                          color: Colors.white,
+                                          size: 30.0,
+                                        ),
+                                        onPressed: () {
+                                          Provider.of<GameSettingsModel>(
+                                                  context,
+                                                  listen: false)
+                                              .decrementPlayerCount();
+                                        },
+                                      ),
+                                      Text(
+                                        '${Provider.of<GameSettingsModel>(context).playerCount.toString()}',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 25,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white),
+                                      ),
+                                      IconButton(
+                                        icon: const Icon(
+                                          Icons.add_circle_outline,
+                                          color: Colors.white,
+                                          size: 30.0,
+                                        ),
+                                        onPressed: () {
+                                          Provider.of<GameSettingsModel>(
+                                                  context,
+                                                  listen: false)
+                                              .incrementPlayerCount();
+                                        },
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              )),
                         ],
-                      )
-                    ],
-                  )),
-            ],
-          ),
-          SizedBox(
-            height: screenHeight / 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              SizedBox(
-                width: screenWidth / 10,
-                child: const Icon(
-                  Icons.image,
-                  color: Colors.black,
-                  size: 30.0,
-                ),
+                      )),
+                ],
               ),
               SizedBox(
-                  width: screenWidth / 1.5,
-                  height: screenHeight / 8,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Text(
-                        "Tur",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                          Icon(
-                            Icons.chevron_left,
-                            color: Colors.black,
-                            size: 30.0,
-                          ),
-                          Text(
-                            "Hızlı",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.w500,
-                                color: Colors.black),
-                          ),
-                          Icon(
-                            Icons.chevron_right,
-                            color: Colors.black,
-                            size: 30.0,
-                          ),
-                        ],
-                      )
-                    ],
-                  )),
-            ],
-          ),
-          SizedBox(
-            height: screenHeight / 20,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              SizedBox(
-                width: screenWidth / 10,
-                child: const Icon(
-                  Icons.image,
-                  color: Colors.black,
-                  size: 30.0,
-                ),
+                height: screenHeight / 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(50, 217, 217, 217),
+                        borderRadius: BorderRadius.all(Radius.circular(32))),
+                    child: Column(children: [
+                      Container(
+                          width: screenWidth / 1.5,
+                          height: screenHeight / 10,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                "Süre",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300,
+                                    color: Colors.white),
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.remove_circle_outline,
+                                      color: Colors.white,
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () {
+                                      Provider.of<GameSettingsModel>(context,
+                                              listen: false)
+                                          .decrementTimerValue();
+                                    },
+                                  ),
+                                  Text(
+                                    '${Provider.of<GameSettingsModel>(context).timerValue.toString()}',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white),
+                                  ),
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.add_circle_outline,
+                                      color: Colors.white,
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () {
+                                      Provider.of<GameSettingsModel>(context,
+                                              listen: false)
+                                          .incrementTimerValue();
+                                    },
+                                  ),
+                                ],
+                              )
+                            ],
+                          )),
+                    ]),
+                  )
+                ],
               ),
               SizedBox(
-                  width: screenWidth / 1.5,
-                  height: screenHeight / 10,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      const Text(
-                        "Zorluk",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                          Icon(
-                            Icons.star,
-                            color: Colors.black,
-                            size: 30.0,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.black,
-                            size: 30.0,
-                          ),
-                          Icon(
-                            Icons.star_border_outlined,
-                            color: Colors.black,
-                            size: 30.0,
-                          ),
-                        ],
-                      )
-                    ],
-                  )),
+                height: screenHeight / 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(50, 217, 217, 217),
+                        borderRadius: BorderRadius.all(Radius.circular(32))),
+                    child: Column(children: [
+                      Container(
+                          width: screenWidth / 1.5,
+                          height: screenHeight / 10,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Text(
+                                "Tur",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w300,
+                                    color: Colors.white),
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.chevron_left,
+                                      color: Colors.white,
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () {
+                                      Provider.of<GameSettingsModel>(context,
+                                              listen: false)
+                                          .decrementRoundSpeedValue();
+                                    },
+                                  ),
+                                  Text(
+                                    '${roundSpeedName(Provider.of<GameSettingsModel>(context).roundSpeedValue)}',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white),
+                                  ),
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.chevron_right,
+                                      color: Colors.white,
+                                      size: 30.0,
+                                    ),
+                                    onPressed: () {
+                                      Provider.of<GameSettingsModel>(context,
+                                              listen: false)
+                                          .incrementRoundSpeedValue();
+                                    },
+                                  ),
+                                ],
+                              )
+                            ],
+                          )),
+                    ]),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: screenHeight / 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    width: screenWidth / 2.2,
+                    height: screenHeight / 20,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 19, 6, 45),
+                        borderRadius: BorderRadius.all(Radius.circular(16))),
+                    child: Text(
+                      "Başla",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                          fontFamily: 'GamerStation',
+                          fontSize: 22,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.white),
+                    ),
+                  )
+                ],
+              ),
             ],
           ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context);
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SelectScenarioView()));
-              },
-              child: const Text("START")),
-        ],
-      ),
-    );
+        ));
+
   }
 }
