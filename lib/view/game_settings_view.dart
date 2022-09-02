@@ -1,6 +1,8 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'dart:ui';
+
+import 'package:provider/provider.dart';
+import 'package:storyhub/model/game_settings_model.dart';
 
 class GameSettingsView extends StatefulWidget {
   const GameSettingsView({Key? key}) : super(key: key);
@@ -10,110 +12,19 @@ class GameSettingsView extends StatefulWidget {
 }
 
 class _GameSettingsViewState extends State<GameSettingsView> {
-  var playerCount = 1;
-  var timerValue = 0;
-  var roundSpeedValue = 0;
   var roundSpeedString = '';
   var diffuciltyValue = 0;
-  var diffuciltyString = '';
 
-  void incrementPlayerCount() {
-    if (playerCount < 4) {
-      setState(() {
-        playerCount++;
-      });
-    }
-  }
-
-  void decrementPlayerCount() {
-    if (playerCount > 1) {
-      setState(() {
-        playerCount--;
-      });
-    }
-  }
-
-  void incrementTimerValue() {
-    if (timerValue <= 60) {
-      setState(() {
-        timerValue++;
-      });
-    }
-  }
-
-  void decrementTimerValue() {
-    if (timerValue > 1) {
-      setState(() {
-        timerValue--;
-      });
-    }
-  }
-
-  void incrementRoundSpeedValue() {
-    if (roundSpeedValue < 3) {
-      setState(() {
-        roundSpeedValue++;
-        roundSpeedName(roundSpeedValue);
-      });
-    }
-  }
-
-  void decrementRoundSpeedValue() {
-    if (roundSpeedValue > 1) {
-      setState(() {
-        roundSpeedValue--;
-        roundSpeedName(roundSpeedValue);
-      });
-    }
-  }
-
-  void roundSpeedName(roundSpeedValue) {
+  String roundSpeedName(roundSpeedValue) {
     switch (roundSpeedValue) {
       case 1:
-        roundSpeedString = 'Yavaş';
-        break;
-
+        return 'Yavaş';
       case 2:
-        roundSpeedString = 'Orta';
-        break;
+        return 'Orta';
       case 3:
-        roundSpeedString = 'Hızlı';
-        break;
+        return 'Hızlı';
       default:
-    }
-  }
-
-  void incrementDiffuciltyValue() {
-    if (diffuciltyValue < 3) {
-      setState(() {
-        diffuciltyValue++;
-        diffuciltyName(diffuciltyValue);
-      });
-    }
-  }
-
-  void decrementDiffuciltyValue() {
-    if (diffuciltyValue > 1) {
-      setState(() {
-        diffuciltyValue--;
-        diffuciltyName(diffuciltyValue);
-      });
-    }
-  }
-
-  void diffuciltyName(diffuciltyValue) {
-    switch (diffuciltyValue) {
-      case 1:
-        diffuciltyString = 'Kolay';
-        break;
-
-      case 2:
-        diffuciltyString = 'Orta';
-        break;
-      case 3:
-        diffuciltyString = 'Zor';
-        break;
-      default:
+        return 'Yavaş';
     }
   }
 
@@ -130,7 +41,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                   padding: EdgeInsets.only(
@@ -139,6 +50,15 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                   ),
                   child: const Icon(
                     Icons.arrow_back,
+                    color: Colors.white,
+                  )),
+              Container(
+                  padding: EdgeInsets.only(
+                    top: screenWidth / 20,
+                    right: screenWidth / 15,
+                  ),
+                  child: const Icon(
+                    Icons.menu,
                     color: Colors.white,
                   )),
             ],
@@ -216,11 +136,14 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                           size: 30.0,
                                         ),
                                         onPressed: () {
-                                          decrementPlayerCount();
+                                          Provider.of<GameSettingsModel>(
+                                                  context,
+                                                  listen: false)
+                                              .decrementPlayerCount();
                                         },
                                       ),
                                       Text(
-                                        playerCount.toString(),
+                                        '${Provider.of<GameSettingsModel>(context).playerCount.toString()}',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
                                             fontSize: 25,
@@ -234,7 +157,10 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                           size: 30.0,
                                         ),
                                         onPressed: () {
-                                          incrementPlayerCount();
+                                          Provider.of<GameSettingsModel>(
+                                                  context,
+                                                  listen: false)
+                                              .incrementPlayerCount();
                                         },
                                       ),
                                     ],
@@ -281,14 +207,16 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       size: 30.0,
                                     ),
                                     onPressed: () {
-                                      decrementTimerValue();
+                                      Provider.of<GameSettingsModel>(context,
+                                              listen: false)
+                                          .decrementTimerValue();
                                     },
                                   ),
                                   Text(
-                                    timerValue.toString(),
+                                    '${Provider.of<GameSettingsModel>(context).timerValue.toString()}',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 25,
+                                        fontSize: 22,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.white),
                                   ),
@@ -299,7 +227,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       size: 30.0,
                                     ),
                                     onPressed: () {
-                                      incrementTimerValue();
+                                      Provider.of<GameSettingsModel>(context,
+                                              listen: false)
+                                          .incrementTimerValue();
                                     },
                                   ),
                                 ],
@@ -346,14 +276,16 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       size: 30.0,
                                     ),
                                     onPressed: () {
-                                      decrementRoundSpeedValue();
+                                      Provider.of<GameSettingsModel>(context,
+                                              listen: false)
+                                          .decrementRoundSpeedValue();
                                     },
                                   ),
                                   Text(
-                                    roundSpeedString,
+                                    '${roundSpeedName(Provider.of<GameSettingsModel>(context).roundSpeedValue)}',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 25,
+                                        fontSize: 22,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.white),
                                   ),
@@ -364,7 +296,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       size: 30.0,
                                     ),
                                     onPressed: () {
-                                      incrementRoundSpeedValue();
+                                      Provider.of<GameSettingsModel>(context,
+                                              listen: false)
+                                          .incrementRoundSpeedValue();
                                     },
                                   ),
                                 ],
@@ -393,7 +327,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontFamily: 'GamerStation',
-                          fontSize: 14,
+                          fontSize: 22,
                           fontWeight: FontWeight.w300,
                           color: Colors.white),
                     ),

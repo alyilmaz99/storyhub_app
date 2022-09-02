@@ -20,6 +20,9 @@ void main() {
       providers: [
         ChangeNotifierProvider<SettingsModel>(
             create: (BuildContext context) => SettingsModel()),
+        ChangeNotifierProvider<GameSettingsModel>(
+            create: (BuildContext context) => GameSettingsModel(
+                playerCount: 1, timerValue: 20, roundSpeedValue: 1)),
       ],
       child: const MyApp(),
     ),
@@ -40,8 +43,8 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.transparent,
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarBrightness: Brightness.dark,
-            statusBarColor: Colors.grey.shade400,
-            statusBarIconBrightness: Brightness.dark,
+            statusBarColor: Color.fromARGB(0, 189, 189, 189),
+            statusBarIconBrightness: Brightness.light,
           ),
         ),
       ),
