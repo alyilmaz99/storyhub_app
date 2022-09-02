@@ -7,7 +7,6 @@ class GameSettingsViewmodel extends GameSettingsModel {
       {required super.playerCount,
       required super.timerValue,
       required super.roundSpeedValue,
-      required super.diffuciltyValue,
       this.catchData});
 
   void init() {
@@ -15,7 +14,6 @@ class GameSettingsViewmodel extends GameSettingsModel {
       "playerCount": playerCount,
       "timerValue": timerValue,
       "roundSpeedValue": roundSpeedValue,
-      "diffuciltyValue": diffuciltyValue,
     };
   }
 
@@ -24,7 +22,6 @@ class GameSettingsViewmodel extends GameSettingsModel {
     catchData?.update("playerCount", (value) => playerCount);
     catchData?.update("timerValue", (value) => timerValue);
     catchData?.update("roundSpeedValue", (value) => roundSpeedValue);
-    catchData?.update("diffuciltyValue", (value) => diffuciltyValue);
   }
 
   void clear() {

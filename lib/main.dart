@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
       ),
       //title: 'Flutter Demo',
 
-      home: SettingsPageView(),
+      home: GameSettingsView(),
     );
   }
 }
