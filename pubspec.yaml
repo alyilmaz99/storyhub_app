@@ -38,6 +38,9 @@ dependencies:
     #select scenario card actions
   fluid_action_card: ^1.0.0+5
 
+  vertical_card_pager: ^1.5.0
+
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -48,6 +51,7 @@ dependencies:
   flag: ^6.0.0
   flutter_colorpicker: ^1.0.3
   font_awesome_flutter: ^10.1.0
+  provider: ^6.0.3
   google_fonts: ^3.0.1
   url_launcher: ^6.1.5
 
@@ -103,3 +107,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  fonts:
+    - family: GamerStation
+      fonts: 
+        - asset: assets/fonts/Gamer_Station.ttf
+    - family: Montserrat
+      fonts: 
+        - asset: assets/fonts/Montserrat_Regular.ttf
+
+        

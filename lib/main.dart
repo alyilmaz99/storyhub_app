@@ -1,9 +1,22 @@
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:storyhub/view/splashscreenview.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:storyhub/feature/home/model/game_settings_model.dart';
+import 'package:storyhub/feature/home/model/settings_model.dart';
+import 'package:storyhub/feature/home/view/selectscenarioview.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<SettingsModel>(create: (BuildContext context) => SettingsModel()),
+        ChangeNotifierProvider<GameSettingsModel>(
+            create: (BuildContext context) => GameSettingsModel(playerCount: 1, timerValue: 20, roundSpeedValue: 1)),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -16,17 +29,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarBrightness: Brightness.dark,
-            statusBarColor: Colors.grey.shade400,
-            statusBarIconBrightness: Brightness.dark,
+            statusBarColor: Color.fromARGB(0, 189, 189, 189),
+            statusBarIconBrightness: Brightness.light,
           ),
         ),
       ),
       //title: 'Flutter Demo',
-
-      home: const SplashScreenView(),
+      home: const SelectScenarioView(),
     );
   }
 }
