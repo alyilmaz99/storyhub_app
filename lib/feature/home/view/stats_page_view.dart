@@ -1,11 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import '../core/const/text_const/textconst.dart';
-
-import '../viewmodel/stats_page_viewmodel.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
+import 'package:storyhub/feature/home/viewmodel/stats_page_viewmodel.dart';
 
 class StatsPageView extends StatefulWidget {
   const StatsPageView({Key? key}) : super(key: key);
@@ -87,65 +82,55 @@ class _StatsPageViewState extends StatsPageViewModel {
               ),
               Text(
                 TextConst.timeInfo,
-                style:
-                    TextStyle(fontSize: screenWidth / 12, color: Colors.white),
+                style: TextStyle(fontSize: screenWidth / 12, color: Colors.white),
               ),
               Text(
                 " 10 sn",
-                style:
-                    TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
+                style: TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
               ),
               SizedBox(
                 height: screenHeight / 13,
               ),
               Text(
                 TextConst.gamerInfo,
-                style:
-                    TextStyle(fontSize: screenWidth / 12, color: Colors.white),
+                style: TextStyle(fontSize: screenWidth / 12, color: Colors.white),
               ),
               Text(
                 " 15",
-                style:
-                    TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
+                style: TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
               ),
               SizedBox(
                 height: screenHeight / 14,
               ),
               Text(
                 TextConst.tourInfo,
-                style:
-                    TextStyle(fontSize: screenWidth / 12, color: Colors.white),
+                style: TextStyle(fontSize: screenWidth / 12, color: Colors.white),
               ),
               Text(
                 " 20 tur",
-                style:
-                    TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
+                style: TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
               ),
               SizedBox(
                 height: screenHeight / 14,
               ),
               Text(
                 TextConst.scenarioInfo,
-                style:
-                    TextStyle(fontSize: screenWidth / 12, color: Colors.white),
+                style: TextStyle(fontSize: screenWidth / 12, color: Colors.white),
               ),
               Text(
                 "Senaryo 1",
-                style:
-                    TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
+                style: TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
               ),
               SizedBox(
                 height: screenHeight / 14,
               ),
               Text(
                 TextConst.levelInfo,
-                style:
-                    TextStyle(fontSize: screenWidth / 12, color: Colors.white),
+                style: TextStyle(fontSize: screenWidth / 12, color: Colors.white),
               ),
               Text(
                 "Seviye 3",
-                style:
-                    TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
+                style: TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
               ),
               Expanded(child: Container()),
               Padding(

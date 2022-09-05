@@ -1,8 +1,6 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:fluid_action_card/FluidActionCard/fluid_action_card.dart';
-import '../core/const/text_const/textconst.dart';
-import 'package:vertical_card_pager/vertical_card_pager.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'HomeCardsOrder.dart';
 
 class SelectScenarioView extends StatefulWidget {
@@ -28,54 +26,48 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
       Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          colorFilter: new ColorFilter.mode(
-              Colors.red.withOpacity(0.6), BlendMode.dstATop),
-          image: new AssetImage("assets/images/kovboy.png"),
+          colorFilter: ColorFilter.mode(Colors.red.withOpacity(0.6), BlendMode.dstATop),
+          image: const AssetImage("assets/images/kovboy.png"),
           fit: BoxFit.cover,
         )),
       ),
       Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          colorFilter: new ColorFilter.mode(
-              Colors.yellow.withOpacity(0.6), BlendMode.dstATop),
-          image: new AssetImage("assets/images/kovboy.png"),
+          colorFilter: ColorFilter.mode(Colors.yellow.withOpacity(0.6), BlendMode.dstATop),
+          image: const AssetImage("assets/images/kovboy.png"),
           fit: BoxFit.cover,
         )),
       ),
       Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          colorFilter: new ColorFilter.mode(
-              Colors.black.withOpacity(0.6), BlendMode.dstATop),
-          image: new AssetImage("assets/images/kovboy.png"),
+          colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.6), BlendMode.dstATop),
+          image: const AssetImage("assets/images/kovboy.png"),
           fit: BoxFit.cover,
         )),
       ),
       Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          colorFilter: new ColorFilter.mode(
-              Colors.cyan.withOpacity(0.6), BlendMode.dstATop),
-          image: new AssetImage("assets/images/kovboy.png"),
+          colorFilter: ColorFilter.mode(Colors.cyan.withOpacity(0.6), BlendMode.dstATop),
+          image: const AssetImage("assets/images/kovboy.png"),
           fit: BoxFit.cover,
         )),
       ),
       Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          colorFilter: new ColorFilter.mode(
-              Colors.blue.withOpacity(0.6), BlendMode.dstATop),
-          image: new AssetImage("assets/images/kovboy.png"),
+          colorFilter: ColorFilter.mode(Colors.blue.withOpacity(0.6), BlendMode.dstATop),
+          image: const AssetImage("assets/images/kovboy.png"),
           fit: BoxFit.cover,
         )),
       ),
       Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          colorFilter: new ColorFilter.mode(
-              Colors.grey.withOpacity(0.6), BlendMode.dstATop),
-          image: new AssetImage("assets/images/kovboy.png"),
+          colorFilter: ColorFilter.mode(Colors.grey.withOpacity(0.6), BlendMode.dstATop),
+          image: const AssetImage("assets/images/kovboy.png"),
           fit: BoxFit.cover,
         )),
       ),
@@ -94,8 +86,10 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
         centerTitle: true,
         title: Text(
           TextConst.selectscenarioAppBarTitleText,
-          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              letterSpacing: 1.5, fontSize: 25.0, color: Colors.black54),
+          style: Theme.of(context)
+              .textTheme
+              .bodySmall
+              ?.copyWith(letterSpacing: 1.5, fontSize: 25.0, color: Colors.black54),
         ),
       ),
 
@@ -107,23 +101,21 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
           children: List.generate(images.length, (index) {
             return Center(
                 child: Padding(
-              padding: EdgeInsets.all(40.0),
+              padding: const EdgeInsets.all(40.0),
               child: FlipCard(
                   front: images[index],
                   back: Stack(
                     children: [
                       Container(
                         decoration: const BoxDecoration(
-                            color: Colors.white,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
+                            color: Colors.white, borderRadius: BorderRadius.all(Radius.circular(10))),
                       ),
                       Positioned(
                           child: Container(
                         child: Center(
                           child: Text(
                             titles[index],
-                            style: TextStyle(fontSize: 25),
+                            style: const TextStyle(fontSize: 25),
                           ),
                         ),
                       ))
@@ -210,8 +202,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
         ),
         onPressed: () {
           Navigator.pop(context);
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => HomeCardsOrder()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => HomeCardsOrder()));
         },
         child: Text(
           "OYNA",

@@ -1,4 +1,4 @@
-import '../model/stats_model.dart';
+import 'package:storyhub/feature/home/model/stats_model.dart';
 
 class StatsViewModel extends StatsModel {
   Map<String, String>? catchData;
@@ -20,8 +20,7 @@ class StatsViewModel extends StatsModel {
     };
   }
 
-  void update(String cardsNumber, String playerNumber, String scenario,
-      String totalTime, String tourNumber) {
+  void update(String cardsNumber, String playerNumber, String scenario, String totalTime, String tourNumber) {
     catchData?.update("cardsNumber", (value) => cardsNumber);
     catchData?.update("playerNumber", (value) => playerNumber);
     catchData?.update("scenario", (value) => scenario);

@@ -5,7 +5,7 @@ import 'package:storyhub/core/components/button/normal_button.dart';
 import 'package:storyhub/core/components/card/game_screen_card.dart';
 import 'package:storyhub/core/components/text/game_screen_card_text.dart';
 import 'package:storyhub/core/const/text_const/textconst.dart';
-import 'package:storyhub/viewmodel/game_screen.viewmodel.dart';
+import 'package:storyhub/feature/home/viewmodel/game_screen.viewmodel.dart';
 
 class GameScreen extends StatefulWidget {
   const GameScreen({Key? key}) : super(key: key);

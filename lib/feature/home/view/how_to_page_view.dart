@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import '../viewmodel/how_to_page_viewmodel.dart';
+import 'package:storyhub/feature/home/viewmodel/how_to_page_viewmodel.dart';
 
 class HowToPageView extends StatefulWidget {
   const HowToPageView({Key? key}) : super(key: key);
@@ -17,7 +15,7 @@ class _HowToPageViewState extends HowToPageViewModal {
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(15, 61, 62, 1.0),
+      backgroundColor: const Color.fromRGBO(15, 61, 62, 1.0),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -50,10 +48,7 @@ class _HowToPageViewState extends HowToPageViewModal {
                 ),
                 const Text(
                   "Oyun Kuralları",
-                  style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.amberAccent),
+                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.w500, color: Colors.amberAccent),
                 ),
               ],
             ),
@@ -90,10 +85,7 @@ class _HowToPageViewState extends HowToPageViewModal {
                 ),
                 const Text(
                   "Oyuncu Sayısı",
-                  style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.amberAccent),
+                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.w500, color: Colors.amberAccent),
                 ),
               ],
             ),
@@ -130,10 +122,7 @@ class _HowToPageViewState extends HowToPageViewModal {
                 ),
                 const Text(
                   "Kart Detayları ",
-                  style: TextStyle(
-                      fontSize: 35,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.amberAccent),
+                  style: TextStyle(fontSize: 35, fontWeight: FontWeight.w500, color: Colors.amberAccent),
                 ),
               ],
             ),
@@ -170,10 +159,7 @@ class _HowToPageViewState extends HowToPageViewModal {
                 ),
                 const Text(
                   "Puanlama Sistemi",
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.amberAccent),
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500, color: Colors.amberAccent),
                 ),
               ],
             ),
@@ -210,10 +196,7 @@ class _HowToPageViewState extends HowToPageViewModal {
                 ),
                 const Text(
                   "Nasıl Oynanır?",
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.amberAccent),
+                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.w500, color: Colors.amberAccent),
                 ),
               ],
             ),

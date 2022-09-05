@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../viewmodel/sliderinformationviewmodel.dart';
+import 'package:storyhub/feature/home/viewmodel/sliderinformationviewmodel.dart';
 
 class SliderInformationView extends StatefulWidget {
   const SliderInformationView({Key? key}) : super(key: key);
@@ -46,11 +46,9 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                       TextButton(
                           onPressed: onDonePress,
                           style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  const Color.fromARGB(255, 187, 171, 205)),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
+                              backgroundColor:
+                                  MaterialStateProperty.all<Color>(const Color.fromARGB(255, 187, 171, 205)),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ))),
                           child: const Text(
@@ -59,14 +57,12 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                           )),
                     ],
                   ),
-                  SizedBox(
-                      height: screenHeight * 0.3, child: Image.asset(oi.image)),
+                  SizedBox(height: screenHeight * 0.3, child: Image.asset(oi.image)),
                   Column(
                     children: [
                       Text(
                         oi.title,
-                        style:
-                            const TextStyle(color: Colors.black, fontSize: 30),
+                        style: const TextStyle(color: Colors.black, fontSize: 30),
                       ),
                       const SizedBox(
                         height: 20,
@@ -84,16 +80,11 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                   ElevatedButton(
                       onPressed: nextSlide,
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Colors.deepPurple),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.deepPurple)))),
-                      child:
-                          Text(index == 2 ? "Oynamaya Hazırsın!" : "Devam Et")),
+                          backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple),
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              side: const BorderSide(color: Colors.deepPurple)))),
+                      child: Text(index == 2 ? "Oynamaya Hazırsın!" : "Devam Et")),
                   SizedBox(
                     width: 50,
                     height: 10,
@@ -107,9 +98,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                             width: index == i ? 15 : 5,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
-                              color: index == i
-                                  ? const Color.fromRGBO(36, 10, 63, 1)
-                                  : Colors.grey,
+                              color: index == i ? const Color.fromRGBO(36, 10, 63, 1) : Colors.grey,
                             ),
                           ),
                         );

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../viewmodel/splashscreenviewmodel.dart';
+import 'package:storyhub/feature/home/viewmodel/splashscreenviewmodel.dart';
 
 class SplashScreenView extends StatefulWidget {
   const SplashScreenView({Key? key}) : super(key: key);

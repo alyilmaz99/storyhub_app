@@ -2,12 +2,9 @@
 
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:storyhub/view/game_settings_view.dart';
-import 'package:storyhub/view/main_page_settings.dart';
+import 'package:storyhub/feature/home/view/game_settings_view.dart';
+import 'package:storyhub/feature/home/view/main_page_settings.dart';
 
 class DrawerPage extends StatelessWidget {
   const DrawerPage({Key? key}) : super(key: key);
@@ -29,22 +26,15 @@ class DrawerPage extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => GameSettingsView()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const GameSettingsView()));
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
               ),
               child: const Text(
                 "YENİ OYUN",
-                style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black),
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
               ),
             ),
           ),
@@ -60,15 +50,11 @@ class DrawerPage extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
               ),
               child: const Text(
                 "ANA MENÜ",
-                style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black),
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
               ),
             ),
           ),
@@ -80,22 +66,15 @@ class DrawerPage extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => MainPageSettings()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPageSettings()));
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
               ),
               child: const Text(
                 "AYARLAR",
-                style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black),
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
               ),
             ),
           ),
@@ -109,15 +88,11 @@ class DrawerPage extends StatelessWidget {
               onPressed: () => exit(0),
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
               ),
               child: const Text(
                 "ÇIKIŞ",
-                style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black),
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700, color: Colors.black),
               ),
             ),
           )
@@ -126,17 +101,3 @@ class DrawerPage extends StatelessWidget {
     );
   }
 }
-
-
-/* FlatButton(
-            color: Colors.white,
-            height: MediaQuery.of(context).size.height / 13,
-            minWidth: MediaQuery.of(context).size.width / 1.4,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0)),
-            onPressed: () => {},
-            child: const Text(
-              "ÇIKIŞ",
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w700),
-            ),
-          ), */

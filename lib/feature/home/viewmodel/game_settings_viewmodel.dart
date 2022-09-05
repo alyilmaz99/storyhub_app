@@ -1,14 +1,10 @@
-
-import 'package:storyhub/model/game_settings_model.dart';
+import 'package:storyhub/feature/home/model/game_settings_model.dart';
 
 class GameSettingsViewmodel extends GameSettingsModel {
   Map<String, int>? catchData;
 
   GameSettingsViewmodel(
-      {required super.playerCount,
-      required super.timerValue,
-      required super.roundSpeedValue,
-      this.catchData});
+      {required super.playerCount, required super.timerValue, required super.roundSpeedValue, this.catchData});
 
   void init() {
     catchData = {
@@ -18,8 +14,7 @@ class GameSettingsViewmodel extends GameSettingsModel {
     };
   }
 
-  void update(String cardsNumber, String playerNumber, String scenario,
-      String totalTime, String tourNumber) {
+  void update(String cardsNumber, String playerNumber, String scenario, String totalTime, String tourNumber) {
     catchData?.update("playerCount", (value) => playerCount);
     catchData?.update("timerValue", (value) => timerValue);
     catchData?.update("roundSpeedValue", (value) => roundSpeedValue);
@@ -27,6 +22,5 @@ class GameSettingsViewmodel extends GameSettingsModel {
 
   void clear() {
     catchData?.clear();
-
   }
 }

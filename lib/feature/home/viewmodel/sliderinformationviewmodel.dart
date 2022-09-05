@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../view/main_page_view.dart';
-import '../view/sliderinformationview.dart';
+import 'package:storyhub/feature/home/view/main_page_view.dart';
+import 'package:storyhub/feature/home/view/sliderinformationview.dart';
 
 class OnboardingItem {
   final String title;
@@ -21,8 +21,7 @@ class OnboardingItems {
     const inf = <OnboardingItem>[
       OnboardingItem(
           title: "STORY HUB1",
-          subtitle:
-              "Allow miles wound place the leave had. To sitting subject no improve studied limited",
+          subtitle: "Allow miles wound place the leave had. To sitting subject no improve studied limited",
           image: "assets/images/1.png",
           color: Color.fromRGBO(255, 255, 255, 1)),
       OnboardingItem(
@@ -47,17 +46,14 @@ abstract class SliderInformationViewModel extends State<SliderInformationView> {
   @override
   void onDonePress() {
     // Do what you want
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => MainPage()));
+    Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
   }
 
   void previousSlide() {
-    controller.previousPage(
-        duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
+    controller.previousPage(duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
   }
 
   void nextSlide() {
-    controller.nextPage(
-        duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
+    controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../model/Player.dart';
+import 'package:storyhub/feature/home/model/Player.dart';
 
 class VotePage extends StatefulWidget {
   @override
@@ -28,16 +27,16 @@ class _VotePageState extends State<VotePage> {
             return Center(
                 child: ElevatedButton(
                     onPressed: () {},
-                    style: ElevatedButton.styleFrom(shape: CircleBorder()),
+                    style: ElevatedButton.styleFrom(shape: const CircleBorder()),
                     child: Padding(
-                      padding: EdgeInsets.all(40.0),
+                      padding: const EdgeInsets.all(40.0),
                       child: Text(players[index].firstName),
                     )));
           })),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(Icons.check),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+        child: const Icon(Icons.check),
       ),
     );
   }

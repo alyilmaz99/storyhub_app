@@ -1,7 +1,7 @@
 // ignore_for_file: no_logic_in_create_state
 
 import 'package:flutter/material.dart';
-import 'package:storyhub/viewmodel/how_to_detail_viewmodel.dart';
+import 'package:storyhub/feature/home/viewmodel/how_to_detail_viewmodel.dart';
 
 class HowToDetailView extends StatefulWidget {
   String title;

@@ -1,10 +1,10 @@
 import 'package:elastic_drawer/elastic_drawer.dart';
 import 'package:flutter/material.dart';
-import 'tappedCard.dart';
-import '../viewmodel/home_cards_order_viewmodel.dart';
+import 'package:storyhub/feature/home/viewmodel/home_cards_order_viewmodel.dart';
 
 import 'drawer_page_view.dart';
 
+// ignore: must_be_immutable
 class HomeCardsOrder extends HomeCardsOrderViewModel {
   HomeCardsOrder({Key? key}) : super(null);
 
@@ -113,12 +113,9 @@ class HomeCardsOrder extends HomeCardsOrderViewModel {
                       width: 160,
                       child: newCard,
                     ),
-                    Positioned(
-                        left: 50, height: 200, width: 160, child: newCard),
-                    Positioned(
-                        left: 100, height: 200, width: 160, child: newCard),
-                    Positioned(
-                        left: 150, height: 200, width: 160, child: newCard),
+                    Positioned(left: 50, height: 200, width: 160, child: newCard),
+                    Positioned(left: 100, height: 200, width: 160, child: newCard),
+                    Positioned(left: 150, height: 200, width: 160, child: newCard),
                   ],
                 ),
               )),
@@ -160,8 +157,7 @@ class HomeCardsOrder extends HomeCardsOrderViewModel {
                       ),
                       const Text(
                         "15",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w800, fontSize: 50),
+                        style: TextStyle(fontWeight: FontWeight.w800, fontSize: 50),
                       ),
                     ],
                   ),
