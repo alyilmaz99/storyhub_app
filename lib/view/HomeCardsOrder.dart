@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:elastic_drawer/elastic_drawer.dart';
 import 'package:flutter/material.dart';
 import 'tappedCard.dart';
@@ -100,30 +102,42 @@ class HomeCardsOrder extends HomeCardsOrderViewModel {
               ),
             ),
             Expanded(
-              child: Container(
                 child: Center(
-                    child: SizedBox(
-                  height: 300,
-                  width: 300,
-                  child: Stack(
-                    clipBehavior: Clip.none,
-                    alignment: AlignmentDirectional.centerStart,
-                    children: [
-                      SizedBox(
-                        height: 200,
-                        width: 160,
-                        child: newCard,
+                  child: SizedBox(
+                    height: screenHeight/2.0,
+                    child: GridView(
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        mainAxisExtent: 190,
+                        crossAxisSpacing: 0,
+                        mainAxisSpacing: 0,
                       ),
-                      Positioned(
-                          left: 50, height: 200, width: 160, child: newCard),
-                      Positioned(
-                          left: 100, height: 200, width: 160, child: newCard),
-                      Positioned(
-                          left: 150, height: 200, width: 160, child: newCard),
-                    ],
+                      physics: NeverScrollableScrollPhysics(),
+                      primary: false,
+                      padding: const EdgeInsets.all(0),
+                      children: <Widget>[
+                        Container(
+                          child: newCard,
+                        ),
+                        Container(
+                          child: newCard,
+                        ),
+                        Container(
+                          child: newCard,
+                        ),
+                        Container(
+                          child: newCard,
+                        ),
+                        Container(
+                          child: newCard,
+                        ),
+                        Container(
+                          child: newCard,
+                        ),
+                      ],
+                    ),
                   ),
-                )),
-              ),
+                ),
             ),
             Row(
               children: [

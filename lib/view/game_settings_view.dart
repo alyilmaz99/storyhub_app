@@ -3,11 +3,14 @@ import '../viewmodel/game_settings_viewmodel.dart';
 import 'selectscenarioview.dart';
 
 class GameSettingsView extends StatefulWidget {
+  int startTimer =20;
   @override
-  State<GameSettingsView> createState() => _GameSettingsViewState();
+  State<GameSettingsView> createState() => _GameSettingsViewState(startTimer);
 }
 
 class _GameSettingsViewState extends GameSettingsViewModel {
+  _GameSettingsViewState(super.startTime);
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -146,11 +149,11 @@ class _GameSettingsViewState extends GameSettingsViewModel {
                             iconSize: 30.0,
                             onPressed: () {
                               decreaseTimer();
-                              print(showtimer);
+                              print(TimerText());
                             },
                           ),
                           Text(
-                            showtimer,
+                            TimerText(),
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                                 fontSize: 25,
@@ -165,7 +168,7 @@ class _GameSettingsViewState extends GameSettingsViewModel {
                             iconSize: 30.0,
                             onPressed: () {
                               increaseTimer();
-                              print(showtimer);
+                              print(TimerText());
                             },
                           ),
                         ],

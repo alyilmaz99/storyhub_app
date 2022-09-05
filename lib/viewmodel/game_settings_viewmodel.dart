@@ -1,40 +1,48 @@
 import 'dart:async';
 import 'package:flutter/cupertino.dart';
+import '../core/components/TimerContreller.dart';
 import '../view/game_settings_view.dart';
 
 abstract class GameSettingsViewModel extends State<GameSettingsView> {
-  int timer = 25;
-  String showtimer = "25";
+
+  GameSettingsViewModel(int startTime)
+  {
+    this.startTimer = startTime;
+  }
+
+  late int startTimer ;
+  int maxTimerTime = 80;
+  int minTimerTime = 20;
   bool canceltimer = false;
+
 
   void starttimer() async {
     const onesec = Duration(seconds: 1);
     Timer.periodic(onesec, (Timer t) {
       setState(() {
-        if (timer < 1) {
-          t.cancel();
-          //tur dönecek
-        } else if (canceltimer == true) {
-          t.cancel();
-        } else {
-          timer = timer - 1;
+        TimerContreller timeContreller = TimerContreller(t);
+        if(timeContreller.isCanceledTimer(canceltimer)){
+          timeContreller.controleTimer(startTimer);
         }
-        showtimer = timer.toString();
       });
     });
   }
 
   void increaseTimer() {
     setState(() {
-      timer += 5;
-      showtimer = timer.toString();
+      if(startTimer < maxTimerTime)
+        startTimer += 5;
     });
   }
 
   void decreaseTimer() {
     setState(() {
-      timer -= 5;
-      showtimer = timer.toString();
+      if(startTimer > minTimerTime)
+        startTimer -= 5;
     });
+  }
+
+  String TimerText() {
+    return startTimer.toString();
   }
 }
