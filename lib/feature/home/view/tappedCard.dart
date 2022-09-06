@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +22,7 @@ class TappedCard extends StatelessWidget {
       onFlipDone: (status) {
         print(status);
 
-        // sleep(Duration(seconds:1));
+        sleep(Duration(seconds:1));
         // await Future.delayed(Duration(seconds: 1))
         if (isFlipped == true) {
           // _navigateToNextScreen(context);
@@ -41,7 +43,7 @@ class TappedCard extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(8.0)),
           image: DecorationImage(
-              image: AssetImage(assetImageCardFront!), fit: BoxFit.cover),
+              image: AssetImage(assetImageCardFront!), fit: BoxFit.contain),
         ),
       ),
     );
