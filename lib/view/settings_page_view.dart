@@ -1,4 +1,3 @@
-
 import 'dart:ffi';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
@@ -25,17 +24,15 @@ class _SettingsPageState extends State<SettingsPageView> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                  padding: EdgeInsets.only(
-                    top: screenWidth / 20,
-                    left: screenWidth / 15,
-                  ),
-                  child: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                  )),
+                height: screenHeight / 20,
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/images/LogoV1.png'),
+                ),
+              )
             ],
           ),
         ),
@@ -221,36 +218,67 @@ class _SettingsPageState extends State<SettingsPageView> {
                         ),
                       ),
                       Container(
-                        width: screenWidth / 1.8,
+                        width: screenWidth / 1.4,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Icon(
-                              Icons.skip_previous_outlined,
-                              color: Color.fromARGB(255, 255, 188, 165),
-                              size: 40.0,
-                            ),
-                            Container(
-                                width: screenWidth / 3,
-                                decoration: BoxDecoration(
-                                    gradient: RadialGradient(
-                                        radius: 1,
-                                        colors: [
-                                          Color.fromARGB(255, 255, 210, 194),
-                                          Color.fromARGB(255, 255, 149, 113)
-                                        ]),
-                                    borderRadius: BorderRadius.circular(16.0),
-                                    color: Color.fromARGB(255, 255, 188, 165)),
-                                child: Icon(
-                                  Icons.play_circle_outline_outlined,
-                                  color: Colors.white,
+                            IconButton(
+                                icon: Icon(
+                                  Icons.skip_previous_outlined,
+                                  color: Color.fromARGB(255, 255, 188, 165),
                                   size: 40.0,
-                                )),
-                            Icon(
-                              Icons.skip_next_outlined,
-                              color: Color.fromARGB(255, 255, 188, 165),
-                              size: 40.0,
+                                ),
+                                onPressed: () {}),
+                            Container(
+                              width: screenWidth / 3.5,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16),
+                                child: Stack(
+                                  children: <Widget>[
+                                    Positioned.fill(
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            gradient: RadialGradient(
+                                                radius: 1,
+                                                colors: [
+                                                  Color.fromARGB(
+                                                      255, 255, 210, 194),
+                                                  Color.fromARGB(
+                                                      255, 255, 149, 113)
+                                                ]),
+                                            borderRadius:
+                                                BorderRadius.circular(16.0),
+                                            color: Color.fromARGB(
+                                                255, 255, 188, 165)),
+                                      ),
+                                    ),
+                                    TextButton(
+                                      style: TextButton.styleFrom(
+                                        foregroundColor: Colors.white,
+                                        textStyle:
+                                            const TextStyle(fontSize: 20),
+                                      ),
+                                      onPressed: () {},
+                                      child: Container(
+                                        width: screenWidth / 3,
+                                        child: Icon(
+                                          Icons.play_circle_outline_outlined,
+                                          color: Colors.white,
+                                          size: 40.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
+                            IconButton(
+                                icon: Icon(
+                                  Icons.skip_next_outlined,
+                                  color: Color.fromARGB(255, 255, 188, 165),
+                                  size: 40.0,
+                                ),
+                                onPressed: () {}),
                           ],
                         ),
                       ), // Müzik kontroller
@@ -313,6 +341,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                           Provider.of<SettingsModel>(context, listen: false)
                               .setLanguage(value)
                         },
+                        color: Color.fromARGB(255, 255, 188, 165),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(8.0),
@@ -395,7 +424,6 @@ class _SettingsPageState extends State<SettingsPageView> {
                           ),
                         ],
                         offset: Offset(0, 100),
-                        color: Colors.grey,
                         elevation: 2,
                       ),
                     ],
