@@ -35,7 +35,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-
+    var sizedBoxHeight = screenHeight / 40;
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
@@ -43,27 +43,15 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                  padding: EdgeInsets.only(
-                    top: screenWidth / 20,
-                    left: screenWidth / 15,
-                  ),
-                  child: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                  )),
-              Container(
-                  padding: EdgeInsets.only(
-                    top: screenWidth / 20,
-                    right: screenWidth / 15,
-                  ),
-                  child: const Icon(
-                    Icons.menu,
-                    color: Colors.white,
-
-                  )),
+                height: screenHeight / 20,
+                child: Image(
+                  fit: BoxFit.cover,
+                  image: AssetImage('assets/images/LogoV1.png'),
+                ),
+              )
             ],
           ),
         ),
@@ -78,7 +66,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: screenHeight / 10,
+                height: sizedBoxHeight,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +82,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                 ],
               ),
               SizedBox(
-                height: screenHeight / 20,
+                height: sizedBoxHeight,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -106,13 +94,11 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       child: Column(
                         children: [
                           Container(
-                            width: screenWidth / 10,
-                            child: Icon(
-                              Icons.image,
-                              color: Colors.white,
-                              size: 30.0,
+                            child: Image(
+                              image: AssetImage('assets/images/human1.png'),
+                              fit: BoxFit.cover,
+                              height: screenHeight / 10,
                             ),
-
                           ),
                           Container(
                               width: screenWidth / 1.5,
@@ -129,9 +115,95 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         fontWeight: FontWeight.w300,
                                         color: Colors.white),
                                   ),
-                                  Row(
+                                  Container(
+                                      width: screenWidth / 2,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          IconButton(
+                                            icon: const Icon(
+                                              Icons.remove_circle_outline,
+                                              color: Colors.white,
+                                              size: 30.0,
+                                            ),
+                                            onPressed: () {
+                                              Provider.of<GameSettingsModel>(
+                                                      context,
+                                                      listen: false)
+                                                  .decrementPlayerCount();
+                                            },
+                                          ),
+                                          Text(
+                                            '${Provider.of<GameSettingsModel>(context).playerCount.toString()}',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontFamily: 'GamerStation',
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.white),
+                                          ),
+                                          IconButton(
+                                            icon: const Icon(
+                                              Icons.add_circle_outline,
+                                              color: Colors.white,
+                                              size: 30.0,
+                                            ),
+                                            onPressed: () {
+                                              Provider.of<GameSettingsModel>(
+                                                      context,
+                                                      listen: false)
+                                                  .incrementPlayerCount();
+                                            },
+                                          ),
+                                        ],
+                                      )),
+                                ],
+                              )),
+                        ],
+                      )),
+                ],
+              ),
+              SizedBox(
+                height: sizedBoxHeight,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(50, 217, 217, 217),
+                        borderRadius: BorderRadius.all(Radius.circular(32))),
+                    child: Column(children: [
+                      Container(
+                          width: screenWidth / 1.5,
+                          height: screenHeight / 10,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              RichText(
+                                  textAlign: TextAlign.center,
+                                  text: TextSpan(
+                                    text: "Süre",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w300,
+                                        color: Colors.white),
+                                    children: const <TextSpan>[
+                                      TextSpan(
+                                        text: ' (sn.)',
+                                        style: TextStyle(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w300,
+                                            color: Colors.white),
+                                      ),
+                                    ],
+                                  )),
+                              Container(
+                                  width: screenWidth / 2,
+                                  child: Row(
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       IconButton(
                                         icon: const Icon(
@@ -143,14 +215,15 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                           Provider.of<GameSettingsModel>(
                                                   context,
                                                   listen: false)
-                                              .decrementPlayerCount();
+                                              .decrementTimerValue();
                                         },
                                       ),
                                       Text(
-                                        '${Provider.of<GameSettingsModel>(context).playerCount.toString()}',
+                                        '${Provider.of<GameSettingsModel>(context).timerValue.toString()}',
                                         textAlign: TextAlign.center,
                                         style: TextStyle(
-                                            fontSize: 25,
+                                            fontSize: 22,
+                                            fontFamily: 'GamerStation',
                                             fontWeight: FontWeight.w500,
                                             color: Colors.white),
                                       ),
@@ -164,19 +237,19 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                           Provider.of<GameSettingsModel>(
                                                   context,
                                                   listen: false)
-                                              .incrementPlayerCount();
+                                              .incrementTimerValue();
                                         },
                                       ),
                                     ],
-                                  )
-                                ],
-                              )),
-                        ],
-                      )),
+                                  )),
+                            ],
+                          )),
+                    ]),
+                  )
                 ],
               ),
               SizedBox(
-                height: screenHeight / 20,
+                height: sizedBoxHeight,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -192,52 +265,55 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Text(
-                                "Süre",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300,
-                                    color: Colors.white),
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  IconButton(
-                                    icon: const Icon(
-                                      Icons.remove_circle_outline,
-                                      color: Colors.white,
-                                      size: 30.0,
-                                    ),
-                                    onPressed: () {
-                                      Provider.of<GameSettingsModel>(context,
-                                              listen: false)
-                                          .decrementTimerValue();
-                                    },
-                                  ),
-                                  Text(
-                                    '${Provider.of<GameSettingsModel>(context).timerValue.toString()}',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.white),
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(
-                                      Icons.add_circle_outline,
-                                      color: Colors.white,
-                                      size: 30.0,
-                                    ),
-                                    onPressed: () {
-                                      Provider.of<GameSettingsModel>(context,
-                                              listen: false)
-                                          .incrementTimerValue();
-                                    },
-                                  ),
-                                ],
-                              )
+                              Text("Tur Sayısı",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w300,
+                                      color: Colors.white)),
+                              Container(
+                                  width: screenWidth / 2,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      IconButton(
+                                        icon: const Icon(
+                                          Icons.remove_circle_outline,
+                                          color: Colors.white,
+                                          size: 30.0,
+                                        ),
+                                        onPressed: () {
+                                          Provider.of<GameSettingsModel>(
+                                                  context,
+                                                  listen: false)
+                                              .decrementRoundCount();
+                                        },
+                                      ),
+                                      Text(
+                                        '${Provider.of<GameSettingsModel>(context).roundCount.toString()}',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 22,
+                                            fontFamily: 'GamerStation',
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white),
+                                      ),
+                                      IconButton(
+                                        icon: const Icon(
+                                          Icons.add_circle_outline,
+                                          color: Colors.white,
+                                          size: 30.0,
+                                        ),
+                                        onPressed: () {
+                                          Provider.of<GameSettingsModel>(
+                                                  context,
+                                                  listen: false)
+                                              .incrementRoundCount();
+                                        },
+                                      ),
+                                    ],
+                                  )),
                             ],
                           )),
                     ]),
@@ -245,7 +321,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                 ],
               ),
               SizedBox(
-                height: screenHeight / 20,
+                height: sizedBoxHeight,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -257,56 +333,100 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                     child: Column(children: [
                       Container(
                           width: screenWidth / 1.5,
-                          height: screenHeight / 10,
+                          height: screenHeight / 8,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Text(
-                                "Tur",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w300,
-                                    color: Colors.white),
+                              Container(
+                                height: screenHeight / 20,
+                                padding: EdgeInsets.only(
+                                  left: screenWidth / 10,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      "Zorluk",
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w300,
+                                          color: Colors.white),
+                                    ),
+                                    IconButton(
+                                      icon: const Icon(
+                                        Icons.info_outline,
+                                        color: Colors.white,
+                                        size: 20.0,
+                                      ),
+                                      onPressed: () {
+                                        showDialog(
+                                            context: context,
+                                            builder: (BuildContext context) {
+                                              return AlertDialog(
+                                                title: const Text(
+                                                    "Zorluk Seviyesi"),
+                                                content: const Text(
+                                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"),
+                                                actions: [
+                                                  TextButton(
+                                                    child: const Text("Tamam"),
+                                                    onPressed: () {
+                                                      Navigator.of(context)
+                                                          .pop();
+                                                    },
+                                                  ),
+                                                ],
+                                              );
+                                            });
+                                      },
+                                    ),
+                                  ],
+                                ),
                               ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  IconButton(
-                                    icon: const Icon(
-                                      Icons.chevron_left,
-                                      color: Colors.white,
-                                      size: 30.0,
-                                    ),
-                                    onPressed: () {
-                                      Provider.of<GameSettingsModel>(context,
-                                              listen: false)
-                                          .decrementRoundSpeedValue();
-                                    },
-                                  ),
-                                  Text(
-                                    '${roundSpeedName(Provider.of<GameSettingsModel>(context).roundSpeedValue)}',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.white),
-                                  ),
-                                  IconButton(
-                                    icon: const Icon(
-                                      Icons.chevron_right,
-                                      color: Colors.white,
-                                      size: 30.0,
-                                    ),
-                                    onPressed: () {
-                                      Provider.of<GameSettingsModel>(context,
-                                              listen: false)
-                                          .incrementRoundSpeedValue();
-                                    },
-                                  ),
-                                ],
-                              )
+                              Container(
+                                  width: screenWidth / 2,
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      IconButton(
+                                        icon: const Icon(
+                                          Icons.chevron_left,
+                                          color: Colors.white,
+                                          size: 30.0,
+                                        ),
+                                        onPressed: () {
+                                          Provider.of<GameSettingsModel>(
+                                                  context,
+                                                  listen: false)
+                                              .decrementRoundSpeedValue();
+                                        },
+                                      ),
+                                      Text(
+                                        '${roundSpeedName(Provider.of<GameSettingsModel>(context).roundSpeedValue)}',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                            fontSize: 22,
+                                            fontFamily: 'GamerStation',
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.white),
+                                      ),
+                                      IconButton(
+                                        icon: const Icon(
+                                          Icons.chevron_right,
+                                          color: Colors.white,
+                                          size: 30.0,
+                                        ),
+                                        onPressed: () {
+                                          Provider.of<GameSettingsModel>(
+                                                  context,
+                                                  listen: false)
+                                              .incrementRoundSpeedValue();
+                                        },
+                                      ),
+                                    ],
+                                  )),
                             ],
                           )),
                     ]),
@@ -314,33 +434,41 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                 ],
               ),
               SizedBox(
-                height: screenHeight / 20,
+                height: sizedBoxHeight,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(
-                    width: screenWidth / 2.2,
-                    height: screenHeight / 20,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 19, 6, 45),
-                        borderRadius: BorderRadius.all(Radius.circular(16))),
-                    child: Text(
-                      "Başla",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontFamily: 'GamerStation',
-                          fontSize: 22,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.white),
+                  TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(
+                          Color.fromARGB(255, 19, 6, 45)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                      ),
                     ),
-                  )
+                    onPressed: () {},
+                    child: Container(
+                      width: screenWidth / 2.2,
+                      height: screenHeight / 30,
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Başla",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontFamily: 'GamerStation',
+                            fontSize: 22,
+                            fontWeight: FontWeight.w300,
+                            color: Colors.white),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ],
           ),
         ));
-
   }
 }

@@ -5,6 +5,7 @@ import 'package:storyhub/view/HomeCardsOrder.dart';
 import 'package:storyhub/view/about_us_view.dart';
 import 'package:storyhub/view/game_page_view.dart';
 import 'package:storyhub/view/game_settings_view.dart';
+import 'package:storyhub/view/selectscenarioview.dart';
 import 'package:storyhub/view/settings_page_view.dart';
 import 'package:storyhub/view/stats_page_view.dart';
 import 'package:storyhub/view/tappedCard.dart';
@@ -22,7 +23,10 @@ void main() {
             create: (BuildContext context) => SettingsModel()),
         ChangeNotifierProvider<GameSettingsModel>(
             create: (BuildContext context) => GameSettingsModel(
-                playerCount: 1, timerValue: 20, roundSpeedValue: 1)),
+                playerCount: 2,
+                timerValue: 20,
+                roundSpeedValue: 1,
+                roundCount: 3)),
       ],
       child: const MyApp(),
     ),
@@ -49,7 +53,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //title: 'Flutter Demo',
-      home: SelectScenarioView(),
+      home: GameSettingsView(),
     );
   }
 }
