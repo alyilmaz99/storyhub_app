@@ -2,31 +2,57 @@ import 'dart:io';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/components/GameContreller.dart';
+import 'package:storyhub/feature/home/view/HomeCardsOrder.dart';
 
 import 'CardPAge.dart';
 
-class TappedCard extends StatelessWidget {
+class TappedCard extends StatefulWidget{
   String? assetImageCardBack;
   String? assetImageCardFront;
+  Widget? routeToPage;
   TappedCard({
     Key? key,
     required this.assetImageCardBack,
     required this.assetImageCardFront,
+    required this.routeToPage,
   }) : super(key: key);
-  _renderContent(context) {
-    bool isFlipped = true;
+  @override
+  _TappedCardState createState() => _TappedCardState(assetImageCardFront: assetImageCardFront, routeToPage: routeToPage, assetImageCardBack: assetImageCardBack);
+}
 
+class _TappedCardState extends State<TappedCard>{
+  String? assetImageCardBack;
+  String? assetImageCardFront;
+  Widget? routeToPage;
+
+  _TappedCardState({
+    Key? key,
+    required this.assetImageCardBack,
+    required this.assetImageCardFront,
+    required this.routeToPage,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    bool isFlipped = true;
     return FlipCard(
       direction: FlipDirection.HORIZONTAL,
       speed: 1000,
+      flipOnTouch: !(GameContreller().cancelFlipCard),
       onFlipDone: (status) {
         print(status);
 
-        sleep(Duration(seconds:1));
+
+        GameContreller().setCancelCard(true);
+
+        setState(() {});
+
+        // sleep(Duration(seconds:1));
         // await Future.delayed(Duration(seconds: 1))
         if (isFlipped == true) {
           // _navigateToNextScreen(context);
-          Navigator.push(context, ScaleRoute(page: CardPage()));
+          Navigator.push(context, ScaleRoute(page: this.routeToPage!));
           isFlipped = false;
         } else {
           isFlipped = true;
@@ -46,22 +72,6 @@ class TappedCard extends StatelessWidget {
               image: AssetImage(assetImageCardFront!), fit: BoxFit.contain),
         ),
       ),
-    );
-  }
-
-  // void _navigateToNextScreen(BuildContext context) {
-  //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => PageRoute()));
-  // }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: <Widget>[
-        Expanded(
-          child: _renderContent(context),
-        ),
-      ],
     );
   }
 }

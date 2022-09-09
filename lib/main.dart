@@ -6,6 +6,8 @@ import 'package:storyhub/feature/home/model/game_settings_model.dart';
 import 'package:storyhub/feature/home/model/settings_model.dart';
 import 'package:storyhub/feature/home/view/selectscenarioview.dart';
 
+import 'core/components/GameContreller.dart';
+
 void main() {
   runApp(
     MultiProvider(
@@ -13,6 +15,7 @@ void main() {
         ChangeNotifierProvider<SettingsModel>(create: (BuildContext context) => SettingsModel()),
         ChangeNotifierProvider<GameSettingsModel>(
             create: (BuildContext context) => GameSettingsModel(playerCount: 1, timerValue: 20, roundSpeedValue: 1)),
+        ChangeNotifierProvider<GameContreller>(create: (BuildContext context) => GameContreller()),
       ],
       child: const MyApp(),
     ),
