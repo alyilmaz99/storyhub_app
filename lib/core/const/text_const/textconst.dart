@@ -40,4 +40,21 @@ class TextConst {
   static const String gamerInfo = "Oyuncusu Sayısı";
   static const String scenarioInfo = "Seçilen Senaryo";
   static const String levelInfo = "Zorluk Seviyesi";
+  static const String hakkimizda =
+      """Vessac Software ekibinin ilk oyunu olan Storyhub, çocukluğumuzda oynadığımız kulaktan kulağa hikaye devam ettirme oyunlarının dijital hali niteliğinde. Grup halinde oynanan, her yaştan kesime hitap eden bu oyunu oynarken yaratıcılığınız ve hayalgücünüzle çok eğleneceğinize emin olabilirsiniz.
+
+Oyuna katkı sağlamak ve kendi isteğiniz kartları yaratmak için iletişime geçebilir
+mail adresi 
+
+oyunun web sitesini inceleyebilir,
+web site adresi
+
+sosyal medya hesaplarımızdan oyunu takip edebilir
+sosyal medya hesapları
+
+ve yeniliklerden haberdar olabilirsiniz.
+
+  Hikaye yaratma zamanı!
+   Vessac Software tarafından geliştirilmiştir
+                                                                  tüm hakları saklıdır""";
 }

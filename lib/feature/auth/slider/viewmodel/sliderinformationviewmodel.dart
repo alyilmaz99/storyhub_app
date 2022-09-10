@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../gamepage/view/main_page_view.dart';
+
+import '../../../home/mainpage/view/main_page_view.dart';
 import '../view/sliderinformationview.dart';
 
 class OnboardingItem {
