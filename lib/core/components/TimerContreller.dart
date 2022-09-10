@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'dart:async';
 
 class TimerContreller {
   late Timer timer;
 
-  static final TimerContreller _timerContreller= TimerContreller._internal();
+  static final TimerContreller _timerContreller = TimerContreller._internal();
 
   TimerContreller._internal();
 
@@ -16,12 +15,12 @@ class TimerContreller {
   void controleTimer(int startTimer) {
     if (startTimer < 1) {
       timer.cancel();
-    }else {
+    } else {
       startTimer = startTimer - 1;
     }
   }
 
-  bool isCanceledTimer(bool isCanceled){
+  bool isCanceledTimer(bool isCanceled) {
     this.timer.cancel();
     return isCanceled;
   }

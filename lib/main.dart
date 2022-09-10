@@ -2,17 +2,19 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/model/game_settings_model.dart';
-import 'package:storyhub/feature/home/model/settings_model.dart';
-import 'package:storyhub/feature/home/view/selectscenarioview.dart';
+import 'feature/settings/model/game_settings_model.dart';
+import 'feature/settings/model/settings_model.dart';
+import 'feature/home/scenario/view/selectscenarioview.dart';
 
 void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider<SettingsModel>(create: (BuildContext context) => SettingsModel()),
+        ChangeNotifierProvider<SettingsModel>(
+            create: (BuildContext context) => SettingsModel()),
         ChangeNotifierProvider<GameSettingsModel>(
-            create: (BuildContext context) => GameSettingsModel(playerCount: 1, timerValue: 20, roundSpeedValue: 1)),
+            create: (BuildContext context) => GameSettingsModel(
+                playerCount: 1, timerValue: 20, roundSpeedValue: 1)),
       ],
       child: const MyApp(),
     ),
