@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../home/slider/view/sliderinformationview.dart';
+
+import '../../slider/view/sliderinformationview.dart';
 import '../view/splashscreenview.dart';
 
 abstract class SplashScreenViewModel extends State<SplashScreenView> {
