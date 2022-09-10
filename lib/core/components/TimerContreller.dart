@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'dart:async';
 
 class TimerContreller {
@@ -21,7 +23,7 @@ class TimerContreller {
   }
 
   bool isCanceledTimer(bool isCanceled) {
-    this.timer.cancel();
+    timer.cancel();
     return isCanceled;
   }
 }

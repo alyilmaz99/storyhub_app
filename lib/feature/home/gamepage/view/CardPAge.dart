@@ -1,6 +1,8 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 
+import '../../../drawer/view/drawer_view.dart';
+
 class CardPage extends StatefulWidget {
   const CardPage({super.key});
 
@@ -24,7 +26,7 @@ class _CardPageState extends State<CardPage> {
             Expanded(child: Container()),
             IconButton(
               onPressed: () {
-                //
+                Navigator.of(context).push(FullScreenModal());
               },
               icon: const Icon(
                 Icons.menu,
@@ -60,7 +62,7 @@ class _CardPageState extends State<CardPage> {
                   height: screenHeight / 12,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/human1.png'),
+                      image: AssetImage('assets/images//human/human1.png'),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -70,7 +72,7 @@ class _CardPageState extends State<CardPage> {
                   height: screenHeight / 8,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/human2.png'),
+                      image: AssetImage('assets/images//human/human2.png'),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -80,7 +82,7 @@ class _CardPageState extends State<CardPage> {
                   height: screenHeight / 12,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/human3.png'),
+                      image: AssetImage('assets/images/human/human3.png'),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -107,7 +109,7 @@ class _CardPageState extends State<CardPage> {
                 width: screenWidth / 2,
                 height: screenHeight / 2.5,
                 child: Image.asset(
-                  'assets/images/card3.png',
+                  'assets/images/cards/card3.png',
                   fit: BoxFit.fill,
                 ),
               ),

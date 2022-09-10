@@ -23,18 +23,18 @@ class OnboardingItems {
           title: "STORY HUB1",
           subtitle:
               "Allow miles wound place the leave had. To sitting subject no improve studied limited",
-          image: "assets/images/1.png",
+          image: "assets/images/splash/1.png",
           color: Color.fromRGBO(255, 255, 255, 1)),
       OnboardingItem(
           title: "STORY HUB2",
           subtitle: "Ye indulgence unreserved connection alteration appearance",
-          image: "assets/images/4.png",
+          image: "assets/images/splash/4.png",
           color: Color.fromRGBO(255, 255, 255, 1)),
       OnboardingItem(
           title: "STORY HUB3",
           subtitle:
               "Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our. Although finished blessing do of",
-          image: "assets/images/3.png",
+          image: "assets/images/splash/3.png",
           color: Color.fromRGBO(255, 255, 255, 1)),
     ];
     return inf;

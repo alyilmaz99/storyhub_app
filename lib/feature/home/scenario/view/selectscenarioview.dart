@@ -28,7 +28,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
             image: DecorationImage(
           colorFilter:
               ColorFilter.mode(Colors.red.withOpacity(0.6), BlendMode.dstATop),
-          image: const AssetImage("assets/images/kovboy.png"),
+          image: const AssetImage("assets/images/front.png"),
           fit: BoxFit.cover,
         )),
       ),
@@ -37,7 +37,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
             image: DecorationImage(
           colorFilter: ColorFilter.mode(
               Colors.yellow.withOpacity(0.6), BlendMode.dstATop),
-          image: const AssetImage("assets/images/kovboy.png"),
+          image: const AssetImage("assets/images/front.png"),
           fit: BoxFit.cover,
         )),
       ),
@@ -46,7 +46,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
             image: DecorationImage(
           colorFilter: ColorFilter.mode(
               Colors.black.withOpacity(0.6), BlendMode.dstATop),
-          image: const AssetImage("assets/images/kovboy.png"),
+          image: const AssetImage("assets/images/front.png"),
           fit: BoxFit.cover,
         )),
       ),
@@ -55,7 +55,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
             image: DecorationImage(
           colorFilter:
               ColorFilter.mode(Colors.cyan.withOpacity(0.6), BlendMode.dstATop),
-          image: const AssetImage("assets/images/kovboy.png"),
+          image: const AssetImage("assets/images/front.png"),
           fit: BoxFit.cover,
         )),
       ),
@@ -64,7 +64,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
             image: DecorationImage(
           colorFilter:
               ColorFilter.mode(Colors.blue.withOpacity(0.6), BlendMode.dstATop),
-          image: const AssetImage("assets/images/kovboy.png"),
+          image: const AssetImage("assets/images/front.png"),
           fit: BoxFit.cover,
         )),
       ),
@@ -73,7 +73,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
             image: DecorationImage(
           colorFilter:
               ColorFilter.mode(Colors.grey.withOpacity(0.6), BlendMode.dstATop),
-          image: const AssetImage("assets/images/kovboy.png"),
+          image: const AssetImage("assets/images/front.png"),
           fit: BoxFit.cover,
         )),
       ),

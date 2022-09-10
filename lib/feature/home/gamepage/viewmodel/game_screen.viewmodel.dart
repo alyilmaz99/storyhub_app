@@ -143,21 +143,21 @@ abstract class GameScreenViewModel extends State<GameScreen>
       ));
   var card2 = GameScreenCardModel(
       TextConst.cardOne,
-      "assets/images/kovboy.png",
+      "assets/images/front.png",
       ElevatedButton(
         onPressed: () {},
         child: const Text("SELECT CARD"),
       ));
   var card3 = GameScreenCardModel(
       TextConst.cardOne,
-      "assets/images/kovboy.png",
+      "assets/images/front.png",
       ElevatedButton(
         onPressed: () {},
         child: const Text("SELECT CARD"),
       ));
   var card4 = GameScreenCardModel(
       TextConst.cardOne,
-      "assets/images/kovboy.png",
+      "assets/images/front.png",
       ElevatedButton(
         onPressed: () {},
         child: const Text("SELECT CARD"),

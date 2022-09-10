@@ -22,10 +22,11 @@ class TappedCard extends StatelessWidget {
       onFlipDone: (status) {
         print(status);
 
-        sleep(Duration(seconds:1));
+        sleep(Duration(seconds: 1));
         // await Future.delayed(Duration(seconds: 1))
         if (isFlipped == true) {
           // _navigateToNextScreen(context);
+          Navigator.pop(context);
           Navigator.push(context, ScaleRoute(page: CardPage()));
           isFlipped = false;
         } else {

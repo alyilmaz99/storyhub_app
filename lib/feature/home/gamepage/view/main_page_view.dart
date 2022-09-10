@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../settings/view/game_settings_view.dart';
 import '../../howtopage/view/how_to_page_view.dart';
 import 'about_us_view.dart';
+import '../../../drawer/viewmodel/drawer_viewmodel.dart';
+import '../../../drawer/view/drawer_view.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -13,7 +15,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   @override
-  Widget build(Object context) {
+  Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
             decoration: const BoxDecoration(
@@ -24,19 +26,21 @@ class _MainPageState extends State<MainPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Column(
                   children: [
                     IconButton(
-                        onPressed: () {},
-                        icon: Icon(
+                        onPressed: () {
+                          Navigator.of(context).push(FullScreenModal());
+                        },
+                        icon: const Icon(
                           Icons.menu,
                           color: Colors.white,
                           size: 35,
                         )),
                   ],
                 ),
-                SizedBox(height: 100),
+                const SizedBox(height: 100),
                 Column(
                   children: [
                     Center(
@@ -45,11 +49,11 @@ class _MainPageState extends State<MainPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           buildIcon(),
-                          SizedBox(height: 70),
+                          const SizedBox(height: 70),
                           buildFirstButton(),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           buildSecondButton(),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           buildThirdButton()
                         ],
                       ),
@@ -61,86 +65,81 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget buildFirstButton() {
-    return Container(
+    return SizedBox(
       width: 300.0,
       height: 50.0,
       child: OutlinedButton(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => GameSettingsView()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const GameSettingsView()));
         },
-        child: Container(
-          child: Text(
-            "Giriş",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-        ),
         style: ButtonStyle(
-          backgroundColor:
-              MaterialStateProperty.all<Color>(Color.fromRGBO(217, 82, 4, 0.9)),
+          backgroundColor: MaterialStateProperty.all<Color>(
+              const Color.fromRGBO(217, 82, 4, 0.9)),
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0))),
+        ),
+        child: const Text(
+          "Giriş",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),
     );
   }
 
   Widget buildSecondButton() {
-    return Container(
+    return SizedBox(
       width: 300.0,
       height: 50.0,
       child: OutlinedButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => HowToPageView()));
+              MaterialPageRoute(builder: (context) => const HowToPageView()));
         },
-        child: Container(
-            child: Text(
-          "Nasıl Oynanır?",
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        )),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(
-              Color.fromRGBO(155, 87, 223, 0.5)),
+              const Color.fromRGBO(155, 87, 223, 0.5)),
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0))),
+        ),
+        child: const Text(
+          "Nasıl Oynanır?",
+          style: const TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),
     );
   }
 
   Widget buildThirdButton() {
-    return Container(
+    return SizedBox(
       width: 300.0,
       height: 50.0,
       child: OutlinedButton(
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => AboutUsView()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const AboutUsView()));
         },
-        child: Container(
-          child: Text(
-            "Hakkımızda",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-        ),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(
-              Color.fromRGBO(155, 87, 223, 0.5)),
+              const Color.fromRGBO(155, 87, 223, 0.5)),
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0))),
+        ),
+        child: const Text(
+          "Hakkımızda",
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),
     );
   }
 
   Widget buildIcon() {
-    return Container(
-      child: IconButton(
-        icon: Image.asset("assets/images/LogoV1.png"),
-        iconSize: 100,
-        onPressed: () {},
-      ),
+    return IconButton(
+      icon: Image.asset("assets/images/LogoV1.png"),
+      iconSize: 100,
+      onPressed: () {},
     );
   }
 }

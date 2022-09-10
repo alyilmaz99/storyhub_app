@@ -1,10 +1,11 @@
-import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
+import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
+import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
-import 'feature/home/scenario/view/selectscenarioview.dart';
 
 void main() {
   runApp(
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //title: 'Flutter Demo',
-      home: const SelectScenarioView(),
+      home: SelectScenarioView(),
     );
   }
 }
