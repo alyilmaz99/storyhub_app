@@ -62,7 +62,7 @@ class _CardPageState extends State<CardPage> {
                   height: screenHeight / 12,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images//human/human1.png'),
+                      image: AssetImage('assets/images/human/human1.png'),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -72,7 +72,7 @@ class _CardPageState extends State<CardPage> {
                   height: screenHeight / 8,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images//human/human2.png'),
+                      image: AssetImage('assets/images/human/human2.png'),
                       fit: BoxFit.fill,
                     ),
                   ),

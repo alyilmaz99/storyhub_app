@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'main_page_view.dart';
+import '../../mainpage/view/main_page_view.dart';
 
 class AboutUsView extends StatefulWidget {
   const AboutUsView({super.key});

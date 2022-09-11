@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+<<<<<<< HEAD
 import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
+=======
+import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
+import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
+import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
+import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
+>>>>>>> 5bf21e381379fc1b49259faf12149b640ea3af08
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
@@ -38,7 +45,11 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //title: 'Flutter Demo',
+<<<<<<< HEAD
       home: const CreatePlayerView(),
+=======
+      home: MainPage(),
+>>>>>>> 5bf21e381379fc1b49259faf12149b640ea3af08
     );
   }
 }
