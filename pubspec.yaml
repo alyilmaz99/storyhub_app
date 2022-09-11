@@ -54,6 +54,7 @@ dependencies:
   provider: ^6.0.3
   google_fonts: ^3.0.1
   url_launcher: ^6.1.5
+  sliding_up_panel: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +81,9 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images/splash/
+    - assets/images/cards/
+    - assets/images/human/
   #   - images/a_dot_ham.jpeg
     - assets/images/front.png
     - assets/images/back.png

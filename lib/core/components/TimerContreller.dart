@@ -1,46 +1,29 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: file_names
+
 import 'dart:async';
 
 class TimerContreller {
-  Timer? countdownTimer;
-  Duration myDuration = Duration(days: 5);
+  late Timer timer;
 
-  static final TimerContreller _timerContreller= TimerContreller._internal();
+  static final TimerContreller _timerContreller = TimerContreller._internal();
 
   TimerContreller._internal();
 
-  factory TimerContreller(Timer countdownTimer) {
-    _timerContreller.countdownTimer = countdownTimer;
+  factory TimerContreller(Timer timer) {
+    _timerContreller.timer = timer;
     return _timerContreller;
   }
-  //
-  // void stopTimer() {
-  //   setState(() => countdownTimer!.cancel());
-  // }
-  //
-  // void resetTimer() {
-  //   stopTimer();
-  //   setState(() => myDuration = Duration(days: 5));
-  // }
-  //
-  // void startTimer() {
-  //   countdownTimer =
-  //       Timer.periodic(Duration(seconds: 1), (_) => setCountDown());
-  // }
-  //
-  // void setCountDown() {
-  //   final reduceSecondsBy = 1;
-  //   setState(() {
-  //     final seconds = myDuration.inSeconds - reduceSecondsBy;
-  //     if (seconds < 0) {
-  //       countdownTimer!.cancel();
-  //     } else {
-  //       myDuration = Duration(seconds: seconds);
-  //     }
-  //   });
-  // }
 
+  void controleTimer(int startTimer) {
+    if (startTimer < 1) {
+      timer.cancel();
+    } else {
+      startTimer = startTimer - 1;
+    }
+  }
 
-
-
+  bool isCanceledTimer(bool isCanceled) {
+    timer.cancel();
+    return isCanceled;
+  }
 }
