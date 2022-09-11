@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../../settings/view/game_settings_view.dart';
 import '../../howtopage/view/how_to_page_view.dart';
 import 'about_us_view.dart';
-import '../../../drawer/viewmodel/drawer_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
 
 class MainPage extends StatefulWidget {
@@ -19,9 +18,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
         body: Container(
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/Vector.png"),
-                    fit: BoxFit.cover)),
+                image: DecorationImage(image: AssetImage("assets/images/Vector.png"), fit: BoxFit.cover)),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.end,
@@ -70,16 +67,11 @@ class _MainPageState extends State<MainPage> {
       height: 50.0,
       child: OutlinedButton(
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const GameSettingsView()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const GameSettingsView()));
         },
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(
-              const Color.fromRGBO(217, 82, 4, 0.9)),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.0))),
+          backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(217, 82, 4, 0.9)),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
         ),
         child: const Text(
           "Giriş",
@@ -95,18 +87,15 @@ class _MainPageState extends State<MainPage> {
       height: 50.0,
       child: OutlinedButton(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const HowToPageView()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const HowToPageView()));
         },
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(
-              const Color.fromRGBO(155, 87, 223, 0.5)),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.0))),
+          backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(155, 87, 223, 0.5)),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
         ),
         child: const Text(
           "Nasıl Oynanır?",
-          style: const TextStyle(color: Colors.white, fontSize: 20),
+          style: TextStyle(color: Colors.white, fontSize: 20),
         ),
       ),
     );
@@ -118,14 +107,11 @@ class _MainPageState extends State<MainPage> {
       height: 50.0,
       child: OutlinedButton(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const AboutUsView()));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutUsView()));
         },
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(
-              const Color.fromRGBO(155, 87, 223, 0.5)),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16.0))),
+          backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(155, 87, 223, 0.5)),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))),
         ),
         child: const Text(
           "Hakkımızda",

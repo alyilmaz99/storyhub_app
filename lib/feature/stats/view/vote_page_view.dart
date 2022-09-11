@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../home/gamepage/model/Player.dart';
+import '../../../product/model/Player.dart';
 
 class VotePage extends StatefulWidget {
   @override
@@ -27,8 +27,7 @@ class _VotePageState extends State<VotePage> {
             return Center(
                 child: ElevatedButton(
                     onPressed: () {},
-                    style:
-                        ElevatedButton.styleFrom(shape: const CircleBorder()),
+                    style: ElevatedButton.styleFrom(shape: const CircleBorder()),
                     child: Padding(
                       padding: const EdgeInsets.all(40.0),
                       child: Text(players[index].firstName),
