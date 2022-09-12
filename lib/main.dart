@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
@@ -38,7 +37,10 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //title: 'Flutter Demo',
+
       home: const CreatePlayerView(),
+
+
     );
   }
 }
