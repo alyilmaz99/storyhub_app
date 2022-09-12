@@ -37,7 +37,10 @@ class MyApp extends StatelessWidget {
         ),
       ),
       //title: 'Flutter Demo',
-      home: MainPage(),
+
+      home: const CreatePlayerView(),
+
+
     );
   }
 }
