@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:storyhub/feature/home/mainpage/view/about_us_view.dart';
+import 'package:storyhub/product/widgets/container/background_dark_gradient.dart';
 import '../viewmodel/main_page_viewmodel.dart';
 
 class MainPage extends StatefulWidget {
+  const MainPage({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _MainPageState();
@@ -14,12 +17,7 @@ class _MainPageState extends MainPageViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
-          gradient: RadialGradient(center: Alignment.center, colors: [
-            Color.fromRGBO(61, 16, 91, 1),
-            Color.fromRGBO(19, 6, 45, 1),
-          ]),
-        ),
+        decoration: BackgroundDarkGradient(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.end,

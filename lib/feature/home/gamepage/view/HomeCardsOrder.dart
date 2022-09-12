@@ -16,8 +16,8 @@ class HomeCardsOrder extends StatefulWidget {
 }
 
 class _HomeCardsOrderState extends HomeCardsOrderViewModel {
-
-  CountdownTimer timer = CountdownTimer(startTimerFrom: 50,pageText: "HomeCardsOrder");
+  CountdownTimer timer =
+      CountdownTimer(startTimerFrom: 50, pageText: "HomeCardsOrder");
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
             IconButton(
               onPressed: () {
                 setState(() {
-                  timer.stopTimer();
+                  //   timer.stopTimer();
                 });
                 Navigator.of(context).push(FullScreenModal());
               },

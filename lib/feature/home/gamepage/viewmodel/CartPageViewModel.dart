@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'CardPAge.dart';
-
+import '../view/CardPAge.dart';
 
 abstract class CartPageViewModel extends State<CardPage> {
-
   String? assetImageCardBack;
   String? assetImageCardFront;
-
 
   CartPageViewModel({
     Key? key,

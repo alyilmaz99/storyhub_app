@@ -2,8 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'gameTimeVİew.dart';
-import 'CartPageViewModel.dart';
-
+import '../viewmodel/CartPageViewModel.dart';
 
 class CardPage extends StatefulWidget {
   String? assetImageCardBack;
@@ -16,12 +15,14 @@ class CardPage extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _CardPageState createState() => _CardPageState(assetImageCardBack: this.assetImageCardBack, assetImageCardFront: this.assetImageCardFront);
+  _CardPageState createState() => _CardPageState(
+      assetImageCardBack: this.assetImageCardBack,
+      assetImageCardFront: this.assetImageCardFront);
 }
 
 class _CardPageState extends CartPageViewModel {
-  _CardPageState({required super.assetImageCardBack, required super.assetImageCardFront});
-
+  _CardPageState(
+      {required super.assetImageCardBack, required super.assetImageCardFront});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,6 @@ class _CardPageState extends CartPageViewModel {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
-
         shadowColor: Colors.transparent,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -133,7 +133,7 @@ class _CardPageState extends CartPageViewModel {
             ),
             Row(
               children: [
-                CountdownTimer(startTimerFrom: 10,pageText: "CardPage"),
+                CountdownTimer(startTimerFrom: 10, pageText: "CardPage"),
                 Container(
                   margin: EdgeInsets.only(bottom: screenHeight / 30),
                   child: ElevatedButton(
@@ -145,11 +145,11 @@ class _CardPageState extends CartPageViewModel {
                         onSurface: Colors.white,
                         primary: const Color.fromRGBO(216, 91, 47, 0.7),
                         minimumSize:
-                        Size(screenWidth / 1.8, screenHeight / 19)),
+                            Size(screenWidth / 1.8, screenHeight / 19)),
                     child: const Text(
                       "İLERİ",
                       style:
-                      TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                     ),
                   ),
                 ),

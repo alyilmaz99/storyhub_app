@@ -5,7 +5,6 @@ import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 
 import '../view/gameTimeVİew.dart';
 
-
 abstract class CountdownTimerViewModel extends State<CountdownTimer> {
   // Step 2
   int startTimerFrom = 10;
@@ -13,8 +12,6 @@ abstract class CountdownTimerViewModel extends State<CountdownTimer> {
 
   Timer? countdownTimer;
   Duration myDuration = Duration(seconds: 50);
-
-
 
   CountdownTimerViewModel({
     Key? key,
@@ -38,22 +35,24 @@ abstract class CountdownTimerViewModel extends State<CountdownTimer> {
     super.dispose();
   }
 
-
   /// Timer related methods ///
   // Step 3
   void startTimer() {
     countdownTimer =
         Timer.periodic(Duration(seconds: 1), (_) => setCountDown());
   }
+
   // Step 4
   void stopTimer() {
     setState(() => countdownTimer!.cancel());
   }
+
   // Step 5
   void resetTimer() {
     stopTimer();
     setState(() => myDuration = Duration(seconds: this.startTimerFrom));
   }
+
   // Step 6
   void setCountDown() {
     final reduceSecondsBy = 1;
@@ -61,7 +60,7 @@ abstract class CountdownTimerViewModel extends State<CountdownTimer> {
       final seconds = myDuration.inSeconds - reduceSecondsBy;
       if (seconds < 0) {
         countdownTimer!.cancel();
-        if(this.pageText == "HomeCardsOrder"){
+        if (this.pageText == "HomeCardsOrder") {
           Navigator.pop(context);
           // Navigator.push(context, MaterialPageRoute(builder: (context) => SelectScenarioView()));
           Navigator.pushAndRemoveUntil(
@@ -69,22 +68,17 @@ abstract class CountdownTimerViewModel extends State<CountdownTimer> {
             MaterialPageRoute(
               builder: (BuildContext context) => SelectScenarioView(),
             ),
-                (route) => false,
+            (route) => false,
           );
-
         }
-        if(this.pageText == "CardPage"){
+        if (this.pageText == "CardPage") {
           if (widget != null) {
             Navigator.pop(context);
-          }else{
-            if (widget == null) {
-            }
-
+          } else {
+            if (widget == null) {}
           }
         }
-        if(this.pageText == null){
-        }
-
+        if (this.pageText == null) {}
       } else {
         myDuration = Duration(seconds: seconds);
       }
