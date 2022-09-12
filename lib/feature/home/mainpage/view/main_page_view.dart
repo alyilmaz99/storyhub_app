@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:storyhub/feature/settings/viewmodel/main_page_settings_viewmodel.dart';
-
-import '../../../settings/view/game_settings_view.dart';
-import '../../howtopage/view/how_to_page_view.dart';
-import '../../gamepage/view/about_us_view.dart';
-import '../../../drawer/viewmodel/drawer_viewmodel.dart';
-import '../../../drawer/view/drawer_view.dart';
+import 'package:storyhub/feature/home/mainpage/view/about_us_view.dart';
 import '../viewmodel/main_page_viewmodel.dart';
 
 class MainPage extends StatefulWidget {
@@ -17,10 +10,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends MainPageViewModel {
-  double _initFabHeight = 120.0;
-  double _fabHeight = 0;
-  double _panelHeightOpen = 0;
-  double _panelHeightClosed = 95.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,9 +37,24 @@ class _MainPageState extends MainPageViewModel {
                         size: 35,
                       )),
                 ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: IconButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AboutUsView()));
+                      },
+                      icon: const Icon(
+                        Icons.contact_support,
+                        color: Colors.white,
+                        size: 35,
+                      )),
+                ),
               ],
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 10),
+            SizedBox(height: MediaQuery.of(context).size.height / 15),
             Column(
               children: [
                 Center(
