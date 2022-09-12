@@ -15,19 +15,15 @@ class TextConst {
   static const String cardSix = "Card6";
   static const String buttonText = "SELECT CARD";
   //about us
-  static const String aboutUs = "Biz Kimiz?";
+  static const String aboutUs = "Hakkımızda";
   static const String aboutUsDetail =
-      "Vessac Software 2022 yılında kurulmuş genç ve dinamik bir yazılım şirketidir. "
-      "Yurtdışında şuanda 4 ülkeden (İngiltere, Almanya, Ukrayna ve Azerbaycan) müşterilerle, yurtiçinde de birçok kurum ve kişilerle çalışmaktayız. "
-      " Kullanıcılarımıza;"
-      "	Mobil Yazılım,"
-      "	Web Yazılım/Tasarım,"
-      " Oyun geliştirme(mobile/web),"
-      " E-ticaret sitesi kurulumu ve SEO "
-      "danışmanlığı ve özelleştirilmiş çözüm hizmetleri sunmaktayız. "
-      "Ekip arkadaşlarımızın fikirlerine çok önem veriyoruz. "
-      "Ekibimiz içinden aynı zamanda şuanda çalışmaları devam eden start-up projelerimiz bulunmaktadır. "
-      "Bu projeler ekip arkadaşlarımızın gördükleri inovatif fikirler doğrultusunda geliştirilmektedir.";
+      """ Vessac Software ekibinin ilk oyunu olan Storyhub, çocukluğumuzda oynadığımız kulaktan kulağa hikaye devam ettirme oyunlarının dijital hali niteliğinde. Grup halinde oynanan, her yaştan kesime hitap eden bu oyunu oynarken yaratıcılığınız ve hayalgücünüzle çok eğleneceğinize emin olabilirsiniz.
+      
+Oyuna katkı sağlamak ve kendi isteğiniz kartları yaratmak için iletişime geçebilirsiniz.
+sosyal medya hesaplarımızdan oyunu takip edebilir ve yeniliklerden haberdar olabilirsiniz.
+Hikaye yaratma zamanı!
+
+Vessac Software tarafından geliştirilmiştir tüm hakları saklıdır""";
 
   static const String contactUs = "Bize Ulaşabilirsin!";
   static const String ourLinkedin = "vessac-software";
@@ -40,21 +36,4 @@ class TextConst {
   static const String gamerInfo = "Oyuncusu Sayısı";
   static const String scenarioInfo = "Seçilen Senaryo";
   static const String levelInfo = "Zorluk Seviyesi";
-  static const String hakkimizda =
-      """Vessac Software ekibinin ilk oyunu olan Storyhub, çocukluğumuzda oynadığımız kulaktan kulağa hikaye devam ettirme oyunlarının dijital hali niteliğinde. Grup halinde oynanan, her yaştan kesime hitap eden bu oyunu oynarken yaratıcılığınız ve hayalgücünüzle çok eğleneceğinize emin olabilirsiniz.
-
-Oyuna katkı sağlamak ve kendi isteğiniz kartları yaratmak için iletişime geçebilir
-mail adresi 
-
-oyunun web sitesini inceleyebilir,
-web site adresi
-
-sosyal medya hesaplarımızdan oyunu takip edebilir
-sosyal medya hesapları
-
-ve yeniliklerden haberdar olabilirsiniz.
-
-  Hikaye yaratma zamanı!
-   Vessac Software tarafından geliştirilmiştir
-                                                                  tüm hakları saklıdır""";
 }
