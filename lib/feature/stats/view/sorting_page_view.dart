@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../home/gamepage/model/Player.dart';
+import '../../../product/model/Player.dart';
 
 class SortingPage extends StatefulWidget {
   @override
@@ -37,8 +37,7 @@ class _SortingPage extends State<SortingPage> {
                 itemCount: players.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    title: Text(
-                        "${players[index].firstName} ${players[index].lastName}"),
+                    title: Text("${players[index].firstName} ${players[index].lastName}"),
                     subtitle: Text("Score : ${players[index].score}"),
                     leading: const CircleAvatar(
                         backgroundImage: NetworkImage(

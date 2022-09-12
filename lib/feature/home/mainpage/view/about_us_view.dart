@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../mainpage/view/main_page_view.dart';
+import 'main_page_view.dart';
 
 class AboutUsView extends StatefulWidget {
   const AboutUsView({super.key});
@@ -25,12 +25,12 @@ class _AboutUsViewState extends State<AboutUsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(15, 61, 62, 1.0),
+      backgroundColor: const Color.fromRGBO(35, 35, 35, 1.0),
       body: Center(
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20, bottom: 50, right: 20),
+              padding: const EdgeInsets.only(top: 20, right: 20),
               child: Align(
                 alignment: Alignment.topRight,
                 child: IconButton(
@@ -40,7 +40,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                   },
                   icon: const Icon(
                     Icons.arrow_back,
-                    color: Colors.amberAccent,
+                    color: Colors.white,
                   ),
                 ),
               ),
@@ -52,11 +52,16 @@ class _AboutUsViewState extends State<AboutUsView> {
                   padding: EdgeInsets.all(8.0),
                   child: Text(
                     TextConst.aboutUs,
-                    style: TextStyle(color: Colors.amberAccent, fontSize: 25),
+                    style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ),
+                IconButton(
+                  icon: Image.asset("assets/images/LogoV1.png"),
+                  iconSize: 100,
+                  onPressed: () => Navigator.pop(context),
+                ),
                 const Padding(
-                  padding: EdgeInsets.all(15.0),
+                  padding: EdgeInsets.all(10.0),
                   child: Text(
                     TextConst.aboutUsDetail,
                     textAlign: TextAlign.center,
