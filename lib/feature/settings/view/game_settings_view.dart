@@ -91,13 +91,14 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                           borderRadius: BorderRadius.all(Radius.circular(32))),
                       child: Column(
                         children: [
-                          Container(
-                            child: Image(
-                              image: AssetImage('assets/images/human1.png'),
-                              fit: BoxFit.cover,
-                              height: screenHeight / 10,
-                            ),
-                          ),
+                          // Container(
+                          //   child: Image(
+                          //     image:
+                          //         AssetImage('assets/images/human/human1.png'),
+                          //     fit: BoxFit.cover,
+                          //     height: screenHeight / 10,
+                          //   ),
+                          // ),
                           Container(
                               width: screenWidth / 1.5,
                               height: screenHeight / 10,
@@ -331,12 +332,11 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                     child: Column(children: [
                       Container(
                           width: screenWidth / 1.5,
-                          height: screenHeight / 8,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Container(
-                                height: screenHeight / 20,
+                                height: screenHeight / 25,
                                 padding: EdgeInsets.only(
                                   left: screenWidth / 10,
                                 ),
@@ -432,7 +432,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                 ],
               ),
               SizedBox(
-                height: sizedBoxHeight,
+                height: sizedBoxHeight * 3,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
