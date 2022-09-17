@@ -1,19 +1,9 @@
-import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:storyhub/view/HomeCardsOrder.dart';
-import 'package:storyhub/view/about_us_view.dart';
-import 'package:storyhub/view/game_page_view.dart';
-import 'package:storyhub/view/game_settings_view.dart';
-import 'package:storyhub/view/selectscenarioview.dart';
-import 'package:storyhub/view/settings_page_view.dart';
-import 'package:storyhub/view/stats_page_view.dart';
-import 'package:storyhub/view/tappedCard.dart';
 import 'package:flutter/services.dart';
-import 'package:storyhub/view/tappedCard.dart';
-
-import 'model/game_settings_model.dart';
-import 'model/settings_model.dart';
+import 'package:provider/provider.dart';
+import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
+import 'feature/settings/model/game_settings_model.dart';
+import 'feature/settings/model/settings_model.dart';
 
 void main() {
   runApp(
@@ -43,7 +33,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
           systemOverlayStyle: SystemUiOverlayStyle(
             statusBarBrightness: Brightness.dark,
@@ -52,8 +42,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      //title: 'Flutter Demo',
-      home: SettingsPageView(),
+      home: const MainPage(),
     );
   }
 }
