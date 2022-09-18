@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/components/popup/SettingsPopup.dart';
 import 'package:storyhub/feature/home/mainpage/view/about_us_view.dart';
 import 'package:storyhub/product/widgets/container/background_dark_gradient.dart';
 import '../viewmodel/main_page_viewmodel.dart';
@@ -28,12 +29,33 @@ class _MainPageState extends MainPageViewModel {
                 Padding(
                   padding: const EdgeInsets.only(right: 20),
                   child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.settings,
-                        color: Colors.white,
-                        size: 35,
-                      )),
+                    icon: const Icon(
+                      Icons.settings,
+                      color: Colors.white,
+                      size: 35.0,
+                    ),
+                    onPressed: () {
+                      showGeneralDialog(
+                        context: context,
+                        barrierDismissible: true,
+                        barrierLabel: MaterialLocalizations.of(context)
+                            .modalBarrierDismissLabel,
+                        barrierColor: Colors.black.withOpacity(0.5),
+                        pageBuilder: (context, animation1, animation2) =>
+                            SettingsPopup(),
+                        transitionDuration: Duration(milliseconds: 250),
+                        transitionBuilder: (context, a1, a2, widget) {
+                          return Transform.scale(
+                            scale: a1.value,
+                            child: Opacity(
+                              opacity: a1.value,
+                              child: widget,
+                            ),
+                          );
+                        },
+                      );
+                    },
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right: 20),

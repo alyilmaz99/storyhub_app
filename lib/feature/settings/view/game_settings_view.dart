@@ -4,6 +4,8 @@ import 'package:storyhub/feature/settings/viewmodel/game_settings_viewmodel.dart
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/settings/model/game_settings_model.dart';
 
+import '../../../core/components/popup/DifficultyPopup.dart';
+
 class GameSettingsView extends StatefulWidget {
   const GameSettingsView({Key? key}) : super(key: key);
 
@@ -358,25 +360,30 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         size: 20.0,
                                       ),
                                       onPressed: () {
-                                        showDialog(
-                                            context: context,
-                                            builder: (BuildContext context) {
-                                              return AlertDialog(
-                                                title: const Text(
-                                                    "Zorluk Seviyesi"),
-                                                content: const Text(
-                                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud"),
-                                                actions: [
-                                                  TextButton(
-                                                    child: const Text("Tamam"),
-                                                    onPressed: () {
-                                                      Navigator.of(context)
-                                                          .pop();
-                                                    },
-                                                  ),
-                                                ],
-                                              );
-                                            });
+                                        showGeneralDialog(
+                                          context: context,
+                                          barrierDismissible: true,
+                                          barrierLabel:
+                                              MaterialLocalizations.of(context)
+                                                  .modalBarrierDismissLabel,
+                                          barrierColor:
+                                              Colors.black.withOpacity(0.5),
+                                          pageBuilder: (context, animation1,
+                                                  animation2) =>
+                                              DifficultyPopup(),
+                                          transitionDuration:
+                                              Duration(milliseconds: 250),
+                                          transitionBuilder:
+                                              (context, a1, a2, widget) {
+                                            return Transform.scale(
+                                              scale: a1.value,
+                                              child: Opacity(
+                                                opacity: a1.value,
+                                                child: widget,
+                                              ),
+                                            );
+                                          },
+                                        );
                                       },
                                     ),
                                   ],
