@@ -33,9 +33,9 @@ class _SliderInformationViewState extends SliderInformationViewModel {
               Align(
                 alignment: Alignment.center,
                 child: Padding(
-                  padding: EdgeInsets.only(top: screenHeight / 15),
+                  padding: EdgeInsets.only(top: screenHeight / 13),
                   child: SizedBox(
-                    height: screenHeight / 9,
+                   // height: screenHeight / 10,
                     width: screenWidth / 4,
                     child: Image.asset(
                       'assets/images/LogoV1.png',
@@ -48,7 +48,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                 alignment: Alignment.centerRight,
                 child: Padding(
                   padding: EdgeInsets.only(
-                    top: screenHeight / 150,
+                    top: screenHeight / 13,
                   ),
                   child: IconButton(
                     onPressed: () {},
@@ -90,7 +90,8 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                   Icons.arrow_back_ios,
                                   color: Colors.white,
                                 )),
-                            Image.asset(oi.image),
+                            SizedBox( width: screenWidth/1.7,
+                              child: Image.asset(oi.image)),
                             IconButton(
                                 onPressed: nextSlide,
                                 icon: const Icon(
