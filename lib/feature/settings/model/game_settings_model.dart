@@ -4,15 +4,18 @@ class GameSettingsModel with ChangeNotifier {
   int playerCount;
   int timerValue;
   int roundSpeedValue;
+  int roundCount;
 
   GameSettingsModel({
     required this.playerCount,
     required this.timerValue,
     required this.roundSpeedValue,
+    required this.roundCount,
   }) {
-    playerCount = 1;
+    playerCount = 2;
     timerValue = 20;
     roundSpeedValue = 1;
+    roundCount = 3;
   }
 
   void setPlayerCount(int value) {
@@ -31,14 +34,14 @@ class GameSettingsModel with ChangeNotifier {
   }
 
   void incrementPlayerCount() {
-    if (playerCount < 4) {
+    if (playerCount < 10) {
       playerCount++;
       notifyListeners();
     }
   }
 
   void decrementPlayerCount() {
-    if (playerCount > 1) {
+    if (playerCount > 2) {
       playerCount--;
       notifyListeners();
     }
@@ -68,6 +71,20 @@ class GameSettingsModel with ChangeNotifier {
   void decrementRoundSpeedValue() {
     if (roundSpeedValue > 1) {
       roundSpeedValue--;
+      notifyListeners();
+    }
+  }
+
+  void incrementRoundCount() {
+    if (roundCount < 10) {
+      roundCount++;
+      notifyListeners();
+    }
+  }
+
+  void decrementRoundCount() {
+    if (roundCount > 1) {
+      roundCount--;
       notifyListeners();
     }
   }
