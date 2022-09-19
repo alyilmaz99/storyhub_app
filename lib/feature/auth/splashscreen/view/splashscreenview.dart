@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../viewmodel/splashscreenviewmodel.dart';
 
 class SplashScreenView extends StatefulWidget {
@@ -12,20 +11,34 @@ class SplashScreenView extends StatefulWidget {
 class _SplashScreenViewState extends SplashScreenViewModel {
   @override
   Widget build(BuildContext context) {
-    var screenSizeInfo = MediaQuery.of(context).size;
-    var screenHeight = screenSizeInfo.height;
-    var screenWidth = screenSizeInfo.width;
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
         decoration: const BoxDecoration(
-          gradient: RadialGradient(center: Alignment.center, colors: [
-            Color.fromRGBO(36, 10, 63, 1),
-            Color.fromRGBO(13, 5, 38, 1),
-          ]),
-          image: DecorationImage(
-            image: AssetImage('assets/images/LogoV1.png'),
-          ),
+          color: Color.fromRGBO(127, 188, 210, 1),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const  [
+            Text(
+              "VESSAC",
+              style: TextStyle(
+                fontFamily: 'SharyBold',
+                fontSize: 30,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              "GAME STUDIOS",
+              style: TextStyle(
+                fontFamily: 'SharyBold',
+                fontSize: 20,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ],
         ),
       ),
     );
