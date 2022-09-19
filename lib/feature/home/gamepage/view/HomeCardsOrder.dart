@@ -19,11 +19,17 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
   CountdownTimer timer =
       CountdownTimer(startTimerFrom: 50, pageText: "HomeCardsOrder");
 
+
+  _HomeCardsOrderState(){
+    initCards();
+  }
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
@@ -129,24 +135,30 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                       physics: const NeverScrollableScrollPhysics(),
                       primary: false,
                       children: <Widget>[
-                        Container(
-                          child: newCard,
-                        ),
-                        Container(
-                          child: newCard2,
-                        ),
-                        Container(
-                          child: newCard3,
-                        ),
-                        Container(
-                          child: newCard,
-                        ),
-                        Container(
-                          child: newCard2,
-                        ),
-                        Container(
-                          child: newCard3,
-                        ),
+                        if(isLoadedCards)
+                          Container(
+                            child: newCard,
+                          ),
+                        if(isLoadedCards)
+                          Container(
+                            child: newCard2,
+                          ),
+                        if(isLoadedCards)
+                          Container(
+                            child: newCard3,
+                          ),
+                        if(isLoadedCards)
+                          Container(
+                            child: newCard4,
+                          ),
+                        if(isLoadedCards)
+                          Container(
+                            child: newCard5,
+                          ),
+                        if(isLoadedCards)
+                          Container(
+                            child: newCard6,
+                          ),
                       ],
                     ),
                   ),
