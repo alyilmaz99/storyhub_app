@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/feature/home/gamepage/view/CardPAge.dart';
 import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
 import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
+import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
+import 'package:storyhub/feature/settings/view/game_settings_view.dart';
+import 'package:storyhub/feature/settings/view/settings_page_view.dart';
+import 'package:storyhub/feature/settings/viewmodel/game_settings_viewmodel.dart';
+import 'package:vertical_card_pager/vertical_card_pager.dart';
+import 'core/Service/CardService.dart';
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
@@ -14,7 +21,10 @@ void main() {
             create: (BuildContext context) => SettingsModel()),
         ChangeNotifierProvider<GameSettingsModel>(
             create: (BuildContext context) => GameSettingsModel(
-                playerCount: 1, timerValue: 20, roundSpeedValue: 1)),
+                playerCount: 2,
+                timerValue: 20,
+                roundSpeedValue: 1,
+                roundCount: 3)),
       ],
       child: const MyApp(),
     ),
@@ -27,6 +37,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -40,7 +51,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const HomeCardsOrder(),
+      home: CardPage(assetImageCardBack: "assets/images/cards/7.png", assetImageCardFront: "assets/images/cards/110.png"),
     );
   }
 }
