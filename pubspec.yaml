@@ -86,6 +86,7 @@ flutter:
     - assets/images/cards/
     - assets/images/human/
     - assets/images/slider/
+    - assets/images/profiles/
     #   - images/a_dot_ham.jpeg
     - assets/images/front.png
     - assets/images/back.png
