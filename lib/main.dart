@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
+import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
 import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
 import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
 import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
@@ -47,7 +49,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: DisplayScenario(),
+      home: const SplashScreenView(),
     );
   }
 }
