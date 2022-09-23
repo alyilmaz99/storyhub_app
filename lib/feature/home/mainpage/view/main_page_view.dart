@@ -18,7 +18,12 @@ class _MainPageState extends MainPageViewModel {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BackgroundDarkGradient(),
+        decoration: const BoxDecoration(
+          gradient: RadialGradient(center: Alignment.center, colors: [
+            Color.fromRGBO(61, 16, 91, 1),
+            Color.fromRGBO(19, 6, 45, 1),
+          ]),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -67,7 +72,7 @@ class _MainPageState extends MainPageViewModel {
                                 builder: (context) => const AboutUsView()));
                       },
                       icon: const Icon(
-                        Icons.contact_support,
+                        Icons.info,
                         color: Colors.white,
                         size: 35,
                       )),

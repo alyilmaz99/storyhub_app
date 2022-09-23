@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
 import '../viewmodel/sliderinformationviewmodel.dart';
 
 class SliderInformationView extends StatefulWidget {
@@ -33,9 +34,9 @@ class _SliderInformationViewState extends SliderInformationViewModel {
               Align(
                 alignment: Alignment.center,
                 child: Padding(
-                  padding: EdgeInsets.only(top: screenHeight / 15),
+                  padding: EdgeInsets.only(top: screenHeight / 13),
                   child: SizedBox(
-                    height: screenHeight / 9,
+                    // height: screenHeight / 10,
                     width: screenWidth / 4,
                     child: Image.asset(
                       'assets/images/LogoV1.png',
@@ -48,10 +49,10 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                 alignment: Alignment.centerRight,
                 child: Padding(
                   padding: EdgeInsets.only(
-                    top: screenHeight / 150,
+                    top: screenHeight / 13,
                   ),
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: endSlide,
                     icon: const ImageIcon(
                         AssetImage("assets/icons/fast_forward_icon.png"),
                         color: Colors.white),
@@ -90,7 +91,9 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                   Icons.arrow_back_ios,
                                   color: Colors.white,
                                 )),
-                            Image.asset(oi.image),
+                            SizedBox(
+                                width: screenWidth / 1.7,
+                                child: Image.asset(oi.image)),
                             IconButton(
                                 onPressed: nextSlide,
                                 icon: const Icon(
@@ -116,7 +119,13 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                             )),
                         index == numPages
                             ? ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const MainPage()));
+                                },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor:
                                       const Color.fromRGBO(59, 29, 76, 1),
