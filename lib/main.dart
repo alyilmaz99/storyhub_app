@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
 import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
 import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
+import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
+import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 import 'package:storyhub/feature/settings/view/game_settings_view.dart';
 import 'package:storyhub/feature/settings/view/settings_page_view.dart';
 import 'package:storyhub/feature/settings/viewmodel/game_settings_viewmodel.dart';

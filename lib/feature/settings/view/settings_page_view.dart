@@ -254,7 +254,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                                     ),
                                     TextButton(
                                       style: TextButton.styleFrom(
-                                        foregroundColor: Colors.white,
+                                        backgroundColor: Colors.white,
                                         textStyle:
                                             const TextStyle(fontSize: 20),
                                       ),
