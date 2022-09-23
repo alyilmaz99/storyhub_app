@@ -93,6 +93,10 @@ abstract class SliderInformationViewModel extends State<SliderInformationView> {
     controller.nextPage(
         duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
   }
+
+  void endSlide() {
+    controller.jumpToPage(8);
+  }
 }
 
 class TextArea extends StatelessWidget {
