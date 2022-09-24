@@ -32,7 +32,6 @@ void main() {
                 choosenImgPath: "assets/images/blankPerson.jpg")),
         ChangeNotifierProvider<PlayerSelectionModel>(
             create: (BuildContext context) => PlayerSelectionModel(
-                selected: false,
                 imgPath: "assets/images/human/human1.png",
                 playerName: "Player 1")),
       ],
