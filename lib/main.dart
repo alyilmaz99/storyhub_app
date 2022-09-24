@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
-import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
+import 'package:storyhub/feature/home/final/model/player_selection_model.dart';
 import 'package:storyhub/feature/home/final/view/final_page_view.dart';
+import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
@@ -27,6 +27,16 @@ void main() {
                 timerValue: 20,
                 roundSpeedValue: 1,
                 roundCount: 3)),
+        ChangeNotifierProvider<FinalPageViewModel>(
+            create: (BuildContext context) => FinalPageViewModel(
+                playerList: [],
+                map: {},
+                choosenName: "isim",
+                choosenImgPath: "assets/images/blankPerson.jpg")),
+        ChangeNotifierProvider<PlayerSelectionModel>(
+            create: (BuildContext context) => PlayerSelectionModel(
+                imgPath: "assets/images/human/human1.png",
+                playerName: "Player 1")),
       ],
       child: const MyApp(),
     ),
@@ -52,7 +62,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const GamePageWithTimer(),
+      home: FinalPageView(),
     );
   }
 }

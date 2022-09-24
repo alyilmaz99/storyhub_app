@@ -1,6 +1,9 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/popup/FinalPopup.dart';
+import 'package:storyhub/feature/home/final/model/player_selection_model.dart';
+import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'package:storyhub/feature/settings/model/settings_model.dart';
 
 class FinalPageView extends StatefulWidget {
@@ -16,6 +19,47 @@ class _FinalPageState extends State<FinalPageView> {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
+
+    /* ----- GEÇİCİ ----- */
+    /* ----- Kullanıcıların sayfada nasıl gözüktüğünü görmek için şimdilik buradaki listede tutuluyor ----- */
+    /* ----- Normalde dışarıdan gelecek ----- */
+
+    List<PlayerSelectionModel> tempList = [
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human1.png", playerName: "Player 1"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human2.png", playerName: "Player 2"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human3.png", playerName: "Player 3"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human1.png", playerName: "Player 4"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human2.png", playerName: "Player 5"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human3.png", playerName: "Player 7"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human2.png", playerName: "Player 8"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human3.png", playerName: "Player 9"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human3.png", playerName: "Player 9"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human1.png", playerName: "Player 10"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human2.png", playerName: "Player 11"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human3.png", playerName: "Player 12"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human1.png", playerName: "Player 13"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human2.png", playerName: "Player 14"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human3.png", playerName: "Player 15"),
+    ];
+
+    /* ----- Gelen liste bu sayfanın viewmodeline işlenebilmesi için bu fonksiyonla atılacak ----- */
+    Provider.of<FinalPageViewModel>(context).setPlayerList(tempList);
+
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
@@ -38,7 +82,7 @@ class _FinalPageState extends State<FinalPageView> {
         body: Container(
             decoration: BoxDecoration(
                 gradient: RadialGradient(radius: 1, colors: [
-              // Color.fromARGB(255, 61, 16, 91),
+              // Color.fromARGB(255, 61, 16, 91), Eski renkler
               // Color.fromARGB(255, 36, 10, 63),
               // Color.fromARGB(255, 19, 6, 45),
               // Color.fromARGB(255, 13, 5, 38),
@@ -50,11 +94,14 @@ class _FinalPageState extends State<FinalPageView> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Padding(padding: EdgeInsets.only(top: screenHeight / 10)),
                 Container(
                   child: CircleAvatar(
                     radius: screenHeight / 15,
-                    backgroundImage:
-                        AssetImage('assets/images/human/human1.png'),
+                    backgroundImage: AssetImage(
+                        /* ----- Seçilen kullanıcının profil resmi ----- */
+                        Provider.of<FinalPageViewModel>(context)
+                            .choosenImgPath),
                   ),
                 ),
                 Padding(
@@ -101,7 +148,8 @@ class _FinalPageState extends State<FinalPageView> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8)),
                         child: Text(
-                          "isim",
+                          /* ----- Seçilen kullanıcının ismi ----- */
+                          Provider.of<FinalPageViewModel>(context).choosenName,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontFamily: 'Montserrat',
@@ -119,87 +167,65 @@ class _FinalPageState extends State<FinalPageView> {
                           ),
                           onPressed: () {},
                           child: Container(
-                            child: Icon(
+                              child: IconButton(
+                            icon: Icon(
                               Icons.shuffle_outlined,
                               color: Colors.white,
-                              size: 40.0,
+                              size: 35.0,
                             ),
-                          ),
+                            onPressed: () {
+                              /* ----- Burada random bir kullanıcı seçiliyor----- */
+                              Provider.of<FinalPageViewModel>(context,
+                                      listen: false)
+                                  .randomChoose();
+                            },
+                          )),
                         ),
                       ),
                     ],
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.fromLTRB(60, 0, 60, 0),
-                  child: GridView.count(
-                    shrinkWrap: true,
-                    padding: EdgeInsets.only(top: screenHeight / 30),
-                    primary: false,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
-                    crossAxisCount: 3,
-                    children: <Widget>[
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
+                Container(
+                    height: screenHeight / 2,
+                    padding: EdgeInsets.fromLTRB(50, 0, 50, 0),
+                    child: GridView.builder(
+                        shrinkWrap: true,
+                        padding: EdgeInsets.only(top: screenHeight / 30),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisSpacing: 15,
+                          mainAxisSpacing: 15,
+                          crossAxisCount: 3,
                         ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: screenHeight / 10),
-                ),
+                        itemCount: Provider.of<FinalPageViewModel>(context)
+                            .playerList
+                            .length,
+                        /* ----- Burada kullanıcıların listesi build ediliyor ----- */
+                        itemBuilder: (context, index) {
+                          var data =
+                              Provider.of<FinalPageViewModel>(context).getMap();
+                          var data2 = Provider.of<FinalPageViewModel>(context)
+                              .getPlayerList();
+                          return GestureDetector(
+                            onTap: () {
+                              Provider.of<FinalPageViewModel>(context,
+                                      listen: false)
+                                  .changeMap(index);
+                            },
+                            child: Container(
+                              padding: EdgeInsets.all(4),
+                              decoration: BoxDecoration(
+                                  color: data[index] == true
+                                      ? Colors.orange
+                                      : Colors.transparent,
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: CircleAvatar(
+                                backgroundImage:
+                                    AssetImage(data2[index].imgPath),
+                              ),
+                            ),
+                          );
+                        })),
+                Padding(padding: EdgeInsets.only(top: screenHeight / 30)),
                 TextButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
