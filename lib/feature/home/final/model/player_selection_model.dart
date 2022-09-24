@@ -7,5 +7,5 @@ class PlayerSelectionModel with ChangeNotifier {
   PlayerSelectionModel({
     required this.imgPath,
     required this.playerName,
-  }) {}
+  });
 }

@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:storyhub/feature/home/final/model/player_selection_model.dart';
+import '../model/player_selection_model.dart';
 
 class FinalPageViewModel with ChangeNotifier {
   List<PlayerSelectionModel> playerList;

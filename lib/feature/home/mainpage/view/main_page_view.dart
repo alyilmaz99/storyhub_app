@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/core/components/popup/SettingsPopup.dart';
-import 'package:storyhub/feature/home/mainpage/view/about_us_view.dart';
-import 'package:storyhub/product/widgets/container/background_dark_gradient.dart';
+import '../../../../core/components/popup/SettingsPopup.dart';
+import 'about_us_view.dart';
+import '../../../../product/widgets/container/background_dark_gradient.dart';
 import '../viewmodel/main_page_viewmodel.dart';
 
 class MainPage extends StatefulWidget {

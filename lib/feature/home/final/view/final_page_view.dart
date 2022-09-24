@@ -1,10 +1,8 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/core/components/popup/FinalPopup.dart';
-import 'package:storyhub/feature/home/final/model/player_selection_model.dart';
-import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
-import 'package:storyhub/feature/settings/model/settings_model.dart';
+import '../../../../core/components/popup/FinalPopup.dart';
+import '../model/player_selection_model.dart';
+import '../viewmodel/final_page_viewmodel.dart';
 
 class FinalPageView extends StatefulWidget {
   const FinalPageView({Key? key}) : super(key: key);
@@ -43,18 +41,6 @@ class _FinalPageState extends State<FinalPageView> {
           imgPath: "assets/images/human/human3.png", playerName: "Player 9"),
       PlayerSelectionModel(
           imgPath: "assets/images/human/human3.png", playerName: "Player 9"),
-      PlayerSelectionModel(
-          imgPath: "assets/images/human/human1.png", playerName: "Player 10"),
-      PlayerSelectionModel(
-          imgPath: "assets/images/human/human2.png", playerName: "Player 11"),
-      PlayerSelectionModel(
-          imgPath: "assets/images/human/human3.png", playerName: "Player 12"),
-      PlayerSelectionModel(
-          imgPath: "assets/images/human/human1.png", playerName: "Player 13"),
-      PlayerSelectionModel(
-          imgPath: "assets/images/human/human2.png", playerName: "Player 14"),
-      PlayerSelectionModel(
-          imgPath: "assets/images/human/human3.png", playerName: "Player 15"),
     ];
 
     /* ----- Gelen liste bu sayfanın viewmodeline işlenebilmesi için bu fonksiyonla atılacak ----- */
@@ -69,9 +55,9 @@ class _FinalPageState extends State<FinalPageView> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
+              SizedBox(
                 height: screenHeight / 20,
-                child: Image(
+                child: const Image(
                   fit: BoxFit.cover,
                   image: AssetImage('assets/images/LogoV1.png'),
                 ),
@@ -80,7 +66,7 @@ class _FinalPageState extends State<FinalPageView> {
           ),
         ),
         body: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 gradient: RadialGradient(radius: 1, colors: [
               // Color.fromARGB(255, 61, 16, 91), Eski renkler
               // Color.fromARGB(255, 36, 10, 63),
@@ -95,21 +81,18 @@ class _FinalPageState extends State<FinalPageView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(padding: EdgeInsets.only(top: screenHeight / 10)),
-                Container(
-                  child: CircleAvatar(
-                    radius: screenHeight / 15,
-                    backgroundImage: AssetImage(
-                        /* ----- Seçilen kullanıcının profil resmi ----- */
-                        Provider.of<FinalPageViewModel>(context)
-                            .choosenImgPath),
-                  ),
+                CircleAvatar(
+                  radius: screenHeight / 15,
+                  backgroundImage: AssetImage(
+                      /* ----- Seçilen kullanıcının profil resmi ----- */
+                      Provider.of<FinalPageViewModel>(context).choosenImgPath),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                         width: screenWidth / 5,
                         child: IconButton(
                           icon: const Icon(
@@ -126,7 +109,8 @@ class _FinalPageState extends State<FinalPageView> {
                               barrierColor: Colors.black.withOpacity(0.5),
                               pageBuilder: (context, animation1, animation2) =>
                                   FinalPopup(),
-                              transitionDuration: Duration(milliseconds: 250),
+                              transitionDuration:
+                                  const Duration(milliseconds: 250),
                               transitionBuilder: (context, a1, a2, widget) {
                                 return Transform.scale(
                                   scale: a1.value,
@@ -151,14 +135,14 @@ class _FinalPageState extends State<FinalPageView> {
                           /* ----- Seçilen kullanıcının ismi ----- */
                           Provider.of<FinalPageViewModel>(context).choosenName,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontFamily: 'Montserrat',
                               fontSize: 22,
                               fontWeight: FontWeight.w300,
                               color: Colors.black),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: screenWidth / 5,
                         child: TextButton(
                           style: TextButton.styleFrom(
@@ -166,9 +150,8 @@ class _FinalPageState extends State<FinalPageView> {
                             textStyle: const TextStyle(fontSize: 30),
                           ),
                           onPressed: () {},
-                          child: Container(
-                              child: IconButton(
-                            icon: Icon(
+                          child: IconButton(
+                            icon: const Icon(
                               Icons.shuffle_outlined,
                               color: Colors.white,
                               size: 35.0,
@@ -179,7 +162,7 @@ class _FinalPageState extends State<FinalPageView> {
                                       listen: false)
                                   .randomChoose();
                             },
-                          )),
+                          ),
                         ),
                       ),
                     ],
@@ -187,11 +170,12 @@ class _FinalPageState extends State<FinalPageView> {
                 ),
                 Container(
                     height: screenHeight / 2,
-                    padding: EdgeInsets.fromLTRB(50, 0, 50, 0),
+                    padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
                     child: GridView.builder(
                         shrinkWrap: true,
                         padding: EdgeInsets.only(top: screenHeight / 30),
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisSpacing: 15,
                           mainAxisSpacing: 15,
                           crossAxisCount: 3,
@@ -212,7 +196,7 @@ class _FinalPageState extends State<FinalPageView> {
                                   .changeMap(index);
                             },
                             child: Container(
-                              padding: EdgeInsets.all(4),
+                              padding: const EdgeInsets.all(4),
                               decoration: BoxDecoration(
                                   color: data[index] == true
                                       ? Colors.orange
@@ -229,7 +213,7 @@ class _FinalPageState extends State<FinalPageView> {
                 TextButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                        Color.fromARGB(255, 23, 12, 51)),
+                        const Color.fromARGB(255, 23, 12, 51)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(0),
@@ -241,7 +225,7 @@ class _FinalPageState extends State<FinalPageView> {
                     width: screenWidth,
                     height: screenHeight / 30,
                     alignment: Alignment.center,
-                    child: Text(
+                    child: const Text(
                       "FİNALE BAĞLA",
                       textAlign: TextAlign.center,
                       style: TextStyle(

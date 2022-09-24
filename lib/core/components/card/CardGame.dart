@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 class CardGame {
   final int cardNumber;
   final bool isFront;
   final String imageUrl;
-
 
   CardGame(this.cardNumber, this.isFront, this.imageUrl);
 
@@ -14,8 +11,8 @@ class CardGame {
         imageUrl = json['imageUrl'];
 
   Map<String, dynamic> toJson() => {
-    'cardNumber': cardNumber,
-    'isFront': isFront,
-    'imageUrl': imageUrl,
-  };
+        'cardNumber': cardNumber,
+        'isFront': isFront,
+        'imageUrl': imageUrl,
+      };
 }

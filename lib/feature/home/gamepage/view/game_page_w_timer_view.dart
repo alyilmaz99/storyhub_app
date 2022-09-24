@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:storyhub/feature/home/gamepage/viewmodel/game_page_w_timer_viewmodel.dart';
+import '../viewmodel/game_page_w_timer_viewmodel.dart';
 
 import '../../../drawer/view/drawer_view.dart';
 import 'HomeCardsOrder.dart';

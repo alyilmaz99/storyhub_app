@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:storyhub/feature/home/gamepage/view/tappedCard.dart';
 
-import 'gameTimeVİew.dart';
 import '../viewmodel/CartPageViewModel.dart';
 
 class CardPage extends StatefulWidget {
@@ -70,54 +69,55 @@ class _CardPageState extends CartPageViewModel {
                   top: screenHeight / 25,
                   right: screenWidth / 12),
               child: Center(
-                    child: Column(
-                      children: [
-                        Container(
-                          child: Column(
-                            children: [
-                              Container(
-                                width: screenWidth / 5,
-                                height: screenHeight / 10,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage('assets/images/human/human3.png'),
-                                    fit: BoxFit.fill,
-                                  ),
-                                ),
+                child: Column(
+                  children: [
+                    Container(
+                      child: Column(
+                        children: [
+                          Container(
+                            width: screenWidth / 5,
+                            height: screenHeight / 10,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/images/human/human3.png'),
+                                fit: BoxFit.fill,
                               ),
-                              ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    onSurface: Colors.white,
-                                    primary: const Color.fromRGBO(216, 91, 47, 0.7),
-                                    minimumSize:
-                                    Size(screenWidth / 4, screenHeight / 40)),
-                                child: const Text(
-                                  "İsim",
-                                  style: TextStyle(
-                                      fontSize: 15, fontWeight: FontWeight.w400),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: screenHeight / 40,
-                        ),
-                        Text(
-                          "Kart Seçimi",
-                          style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ],
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                onSurface: Colors.white,
+                                primary: const Color.fromRGBO(216, 91, 47, 0.7),
+                                minimumSize:
+                                    Size(screenWidth / 4, screenHeight / 40)),
+                            child: const Text(
+                              "İsim",
+                              style: TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.w400),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+                    SizedBox(
+                      height: screenHeight / 40,
+                    ),
+                    Text(
+                      "Kart Seçimi",
+                      style: TextStyle(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
+            ),
             SizedBox(
               height: screenHeight / 40,
             ),
@@ -125,8 +125,11 @@ class _CardPageState extends CartPageViewModel {
                 color: Colors.transparent,
                 width: screenWidth / 1.7,
                 height: screenHeight / 2.1,
-                child: TappedCard(assetImageCardBack: assetImageCardBack, assetImageCardFront: assetImageCardFront, routeToPage: null,)
-            ),
+                child: TappedCard(
+                  assetImageCardBack: assetImageCardBack,
+                  assetImageCardFront: assetImageCardFront,
+                  routeToPage: null,
+                )),
             SizedBox(
               height: screenHeight / 30,
             ),

@@ -2,11 +2,11 @@ import 'dart:io';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:storyhub/core/components/GameContreller.dart';
+import '../../../../core/components/GameContreller.dart';
 
 import 'CardPAge.dart';
 
-class TappedCard extends StatefulWidget{
+class TappedCard extends StatefulWidget {
   String? assetImageCardBack;
   String? assetImageCardFront;
   Widget? routeToPage;
@@ -17,10 +17,13 @@ class TappedCard extends StatefulWidget{
     required this.routeToPage,
   }) : super(key: key);
   @override
-  _TappedCardState createState() => _TappedCardState(assetImageCardFront: assetImageCardFront, routeToPage: routeToPage, assetImageCardBack: assetImageCardBack);
+  _TappedCardState createState() => _TappedCardState(
+      assetImageCardFront: assetImageCardFront,
+      routeToPage: routeToPage,
+      assetImageCardBack: assetImageCardBack);
 }
 
-class _TappedCardState extends State<TappedCard>{
+class _TappedCardState extends State<TappedCard> {
   String? assetImageCardBack;
   String? assetImageCardFront;
   Widget? routeToPage;
@@ -41,7 +44,6 @@ class _TappedCardState extends State<TappedCard>{
       flipOnTouch: !(GameContreller().cancelFlipCard),
       onFlipDone: (status) {
         print(status);
-
 
         GameContreller().setCancelCard(true);
 
@@ -105,5 +107,3 @@ class ScaleRoute extends PageRouteBuilder {
           ),
         );
 }
-
-

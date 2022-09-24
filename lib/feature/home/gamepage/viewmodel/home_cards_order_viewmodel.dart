@@ -4,16 +4,14 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:storyhub/core/Service/CardService.dart';
-import 'package:storyhub/core/components/card/CardGame.dart';
+import '../../../../core/Service/CardService.dart';
+import '../../../../core/components/card/CardGame.dart';
 
 import '../view/CardPAge.dart';
 import '../view/HomeCardsOrder.dart';
 import '../view/tappedCard.dart';
 
 abstract class HomeCardsOrderViewModel extends State<HomeCardsOrder> {
-
-
   late TappedCard newCard;
   late TappedCard newCard2;
   late TappedCard newCard3;

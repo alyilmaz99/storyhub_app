@@ -1,10 +1,7 @@
-import 'dart:convert';
-
 class Senaryo {
   final int senaryoNumber;
   final String senaryoText;
   final String imageUrl;
-
 
   Senaryo(this.imageUrl, this.senaryoNumber, this.senaryoText);
 
@@ -14,8 +11,8 @@ class Senaryo {
         imageUrl = json['imageUrl'];
 
   Map<String, dynamic> toJson() => {
-    'senaryoNumber': senaryoNumber,
-    'senaryoText': senaryoText,
-    'imageUrl': imageUrl,
-  };
+        'senaryoNumber': senaryoNumber,
+        'senaryoText': senaryoText,
+        'imageUrl': imageUrl,
+      };
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/core/components/container/create_player_page/create_player_container_core.dart';
+import '../../../core/components/container/create_player_page/create_player_container_core.dart';
 
 class CreatePlayerContainer extends CreatePlayerContainerCore {
   // ignore: use_key_in_widget_constructors

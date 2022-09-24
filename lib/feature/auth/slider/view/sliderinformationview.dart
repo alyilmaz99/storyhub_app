@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
+import '../../../home/mainpage/view/main_page_view.dart';
 import '../viewmodel/sliderinformationviewmodel.dart';
 
 class SliderInformationView extends StatefulWidget {

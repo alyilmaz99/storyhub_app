@@ -2,12 +2,9 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/services.dart';
-import 'package:storyhub/core/components/senaryo/Senaryo.dart';
-
-
+import '../components/senaryo/Senaryo.dart';
 
 class SenaryoService {
-
   var jsonst;
   late List<Senaryo> _senaryolar;
   bool isLoadedSenaryolar = false;
@@ -17,7 +14,7 @@ class SenaryoService {
     _senaryolar = senaryolar;
   }
 
-  static final SenaryoService _senaryolarService= SenaryoService._internal();
+  static final SenaryoService _senaryolarService = SenaryoService._internal();
 
   SenaryoService._internal();
 
@@ -29,20 +26,17 @@ class SenaryoService {
     jsonst = await rootBundle.loadString('assets/senaryolar.json');
 
     Iterable iterateSenaryo = json.decode(jsonst);
-    senaryolar = List<Senaryo>.from(iterateSenaryo.map((model)=> Senaryo.fromJson(model)));
+    senaryolar = List<Senaryo>.from(
+        iterateSenaryo.map((model) => Senaryo.fromJson(model)));
 
     isLoadedSenaryolar = true;
   }
 
   List<Senaryo> getSenaryolar() {
-    if(senaryolar.isEmpty)
-    {
+    if (senaryolar.isEmpty) {
       initSenaryolar();
     }
 
     return senaryolar;
   }
-
-
-
 }

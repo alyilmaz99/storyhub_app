@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
+import '../../home/scenario/view/selectscenarioview.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/settings/model/game_settings_model.dart';
+import '../model/game_settings_model.dart';
 
 import '../../../core/components/popup/DifficultyPopup.dart';
 

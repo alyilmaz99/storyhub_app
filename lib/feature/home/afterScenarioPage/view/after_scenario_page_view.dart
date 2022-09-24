@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/feature/home/afterScenarioPage/viewmodel/after_scenario_page_viewmodel.dart';
+import '../viewmodel/after_scenario_page_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
 import '../../gamepage/view/HomeCardsOrder.dart';
 

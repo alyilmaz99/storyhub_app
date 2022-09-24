@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/createplayer/viewmodel/create_player_viewmodel.dart';
-import 'package:storyhub/feature/settings/model/game_settings_model.dart';
-import 'package:storyhub/product/widgets/button/soru_isareti_button.dart';
+import '../viewmodel/create_player_viewmodel.dart';
+import '../../../settings/model/game_settings_model.dart';
+import '../../../../product/widgets/button/soru_isareti_button.dart';
 
 class CreatePlayerView extends StatefulWidget {
   const CreatePlayerView({Key? key}) : super(key: key);
@@ -137,15 +137,20 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30),
-            child: SizedBox(height: 30, width: 130, child: playerNameCreateTextField(context)),
+            child: SizedBox(
+                height: 30,
+                width: 130,
+                child: playerNameCreateTextField(context)),
           ),
           isEmpty
               ? Padding(
                   padding: const EdgeInsets.only(left: 20),
-                  child: IconButton(onPressed: () {}, icon: const Icon(Icons.check)))
+                  child: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.check)))
               : Padding(
                   padding: const EdgeInsets.only(left: 20),
-                  child: IconButton(onPressed: () {}, icon: const Icon(Icons.cancel)),
+                  child: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.cancel)),
                 ),
         ],
       ),
