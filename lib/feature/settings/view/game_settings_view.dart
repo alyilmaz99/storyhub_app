@@ -1,6 +1,5 @@
-import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:storyhub/feature/settings/viewmodel/game_settings_viewmodel.dart';
+import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/settings/model/game_settings_model.dart';
 
@@ -45,9 +44,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
+              SizedBox(
                 height: screenHeight / 20,
-                child: Image(
+                child: const Image(
                   fit: BoxFit.cover,
                   image: AssetImage('assets/images/LogoV1.png'),
                 ),
@@ -56,7 +55,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           ),
         ),
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               gradient: RadialGradient(radius: 1, colors: [
             Color.fromARGB(255, 255, 149, 113),
             Color.fromARGB(255, 216, 91, 47),
@@ -70,8 +69,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
+                children: const [
+                  Text(
                     "Oyun Ayarları",
                     style: TextStyle(
                         fontFamily: 'GamerStation',
@@ -88,7 +87,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           color: Color.fromARGB(50, 217, 217, 217),
                           borderRadius: BorderRadius.all(Radius.circular(32))),
                       child: Column(
@@ -101,7 +100,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                           //     height: screenHeight / 10,
                           //   ),
                           // ),
-                          Container(
+                          SizedBox(
                               width: screenWidth / 1.5,
                               height: screenHeight / 10,
                               child: Column(
@@ -116,7 +115,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         fontWeight: FontWeight.w300,
                                         color: Colors.white),
                                   ),
-                                  Container(
+                                  SizedBox(
                                       width: screenWidth / 2,
                                       child: Row(
                                         mainAxisAlignment:
@@ -136,9 +135,12 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                             },
                                           ),
                                           Text(
-                                            '${Provider.of<GameSettingsModel>(context).playerCount.toString()}',
+                                            Provider.of<GameSettingsModel>(
+                                                    context)
+                                                .playerCount
+                                                .toString(),
                                             textAlign: TextAlign.center,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 fontSize: 22,
                                                 fontFamily: 'GamerStation',
                                                 fontWeight: FontWeight.w500,
@@ -172,11 +174,11 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Color.fromARGB(50, 217, 217, 217),
                         borderRadius: BorderRadius.all(Radius.circular(32))),
                     child: Column(children: [
-                      Container(
+                      SizedBox(
                           width: screenWidth / 1.5,
                           height: screenHeight / 10,
                           child: Column(
@@ -184,13 +186,13 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                             children: [
                               RichText(
                                   textAlign: TextAlign.center,
-                                  text: TextSpan(
+                                  text: const TextSpan(
                                     text: "Süre",
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w300,
                                         color: Colors.white),
-                                    children: const <TextSpan>[
+                                    children: <TextSpan>[
                                       TextSpan(
                                         text: ' (sn.)',
                                         style: TextStyle(
@@ -200,7 +202,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       ),
                                     ],
                                   )),
-                              Container(
+                              SizedBox(
                                   width: screenWidth / 2,
                                   child: Row(
                                     mainAxisAlignment:
@@ -220,9 +222,11 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         },
                                       ),
                                       Text(
-                                        '${Provider.of<GameSettingsModel>(context).timerValue.toString()}',
+                                        Provider.of<GameSettingsModel>(context)
+                                            .timerValue
+                                            .toString(),
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 22,
                                             fontFamily: 'GamerStation',
                                             fontWeight: FontWeight.w500,
@@ -256,23 +260,23 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Color.fromARGB(50, 217, 217, 217),
                         borderRadius: BorderRadius.all(Radius.circular(32))),
                     child: Column(children: [
-                      Container(
+                      SizedBox(
                           width: screenWidth / 1.5,
                           height: screenHeight / 10,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Tur Sayısı",
+                              const Text("Tur Sayısı",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.w300,
                                       color: Colors.white)),
-                              Container(
+                              SizedBox(
                                   width: screenWidth / 2,
                                   child: Row(
                                     mainAxisAlignment:
@@ -292,9 +296,11 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         },
                                       ),
                                       Text(
-                                        '${Provider.of<GameSettingsModel>(context).roundCount.toString()}',
+                                        Provider.of<GameSettingsModel>(context)
+                                            .roundCount
+                                            .toString(),
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 22,
                                             fontFamily: 'GamerStation',
                                             fontWeight: FontWeight.w500,
@@ -328,11 +334,11 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: Color.fromARGB(50, 217, 217, 217),
                         borderRadius: BorderRadius.all(Radius.circular(32))),
                     child: Column(children: [
-                      Container(
+                      SizedBox(
                           width: screenWidth / 1.5,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -372,7 +378,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                                   animation2) =>
                                               DifficultyPopup(),
                                           transitionDuration:
-                                              Duration(milliseconds: 250),
+                                              const Duration(milliseconds: 250),
                                           transitionBuilder:
                                               (context, a1, a2, widget) {
                                             return Transform.scale(
@@ -389,7 +395,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                   ],
                                 ),
                               ),
-                              Container(
+                              SizedBox(
                                   width: screenWidth / 2,
                                   child: Row(
                                     mainAxisAlignment:
@@ -409,9 +415,12 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         },
                                       ),
                                       Text(
-                                        '${roundSpeedName(Provider.of<GameSettingsModel>(context).roundSpeedValue)}',
+                                        roundSpeedName(
+                                            Provider.of<GameSettingsModel>(
+                                                    context)
+                                                .roundSpeedValue),
                                         textAlign: TextAlign.center,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 22,
                                             fontFamily: 'GamerStation',
                                             fontWeight: FontWeight.w500,
@@ -447,19 +456,25 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                   TextButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all<Color>(
-                          Color.fromARGB(255, 19, 6, 45)),
+                          const Color.fromARGB(255, 19, 6, 45)),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(16.0),
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const SelectScenarioView()));
+                    },
                     child: Container(
                       width: screenWidth / 2.2,
                       height: screenHeight / 30,
                       alignment: Alignment.center,
-                      child: Text(
+                      child: const Text(
                         "Başla",
                         textAlign: TextAlign.center,
                         style: TextStyle(
