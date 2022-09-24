@@ -1,6 +1,9 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/popup/FinalPopup.dart';
+import 'package:storyhub/feature/home/final/model/player_selection_model.dart';
+import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'package:storyhub/feature/settings/model/settings_model.dart';
 
 class FinalPageView extends StatefulWidget {
@@ -16,6 +19,48 @@ class _FinalPageState extends State<FinalPageView> {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
+
+    /* ----- GEÇİCİ ----- */
+    /* ----- Kullanıcılar sayfada gözüksün diye listede tutuluyor ----- */
+    /* ----- Normalde dışarıdan gelecek ----- */
+
+    List<PlayerSelectionModel> tempList = [
+      PlayerSelectionModel(
+          selected: false,
+          imgPath: "assets/images/human/human1.png",
+          playerName: "Player 1"),
+      PlayerSelectionModel(
+          selected: false,
+          imgPath: "assets/images/human/human2.png",
+          playerName: "Player 2"),
+      PlayerSelectionModel(
+          selected: false,
+          imgPath: "assets/images/human/human3.png",
+          playerName: "Player 3"),
+      PlayerSelectionModel(
+          selected: false,
+          imgPath: "assets/images/human/human1.png",
+          playerName: "Player 4"),
+      PlayerSelectionModel(
+          selected: false,
+          imgPath: "assets/images/human/human2.png",
+          playerName: "Player 5"),
+      PlayerSelectionModel(
+          selected: false,
+          imgPath: "assets/images/human/human3.png",
+          playerName: "Player 7"),
+      PlayerSelectionModel(
+          selected: false,
+          imgPath: "assets/images/human/human2.png",
+          playerName: "Player 8"),
+      PlayerSelectionModel(
+          selected: false,
+          imgPath: "assets/images/human/human3.png",
+          playerName: "Player 9"),
+    ];
+
+    Provider.of<FinalPageViewModel>(context).setPlayerList(tempList);
+
     return Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
@@ -53,8 +98,9 @@ class _FinalPageState extends State<FinalPageView> {
                 Container(
                   child: CircleAvatar(
                     radius: screenHeight / 15,
-                    backgroundImage:
-                        AssetImage('assets/images/human/human1.png'),
+                    backgroundImage: AssetImage(
+                        Provider.of<FinalPageViewModel>(context)
+                            .choosenImgPath),
                   ),
                 ),
                 Padding(
@@ -101,7 +147,7 @@ class _FinalPageState extends State<FinalPageView> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8)),
                         child: Text(
-                          "isim",
+                          Provider.of<FinalPageViewModel>(context).choosenName,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontFamily: 'Montserrat',
@@ -119,12 +165,18 @@ class _FinalPageState extends State<FinalPageView> {
                           ),
                           onPressed: () {},
                           child: Container(
-                            child: Icon(
+                              child: IconButton(
+                            icon: Icon(
                               Icons.shuffle_outlined,
                               color: Colors.white,
                               size: 40.0,
                             ),
-                          ),
+                            onPressed: () {
+                              Provider.of<FinalPageViewModel>(context,
+                                      listen: false)
+                                  .randomChoose();
+                            },
+                          )),
                         ),
                       ),
                     ],
@@ -132,71 +184,81 @@ class _FinalPageState extends State<FinalPageView> {
                 ),
                 Padding(
                   padding: EdgeInsets.fromLTRB(60, 0, 60, 0),
-                  child: GridView.count(
-                    shrinkWrap: true,
-                    padding: EdgeInsets.only(top: screenHeight / 30),
-                    primary: false,
-                    crossAxisSpacing: 20,
-                    mainAxisSpacing: 20,
-                    crossAxisCount: 3,
-                    children: <Widget>[
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
+                  child: GridView.builder(
+                      shrinkWrap: true,
+                      physics: BouncingScrollPhysics(),
+                      padding: EdgeInsets.only(top: screenHeight / 30),
+                      primary: false,
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisSpacing: 20,
+                        mainAxisSpacing: 20,
+                        crossAxisCount: 3,
                       ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      ),
-                      Container(
-                        child: CircleAvatar(
-                          backgroundImage:
-                              AssetImage('assets/images/human/human1.png'),
-                        ),
-                      )
-                    ],
-                  ),
+                      itemCount: Provider.of<FinalPageViewModel>(context)
+                          .playerList
+                          .length,
+                      itemBuilder: (context, index) {
+                        var data =
+                            Provider.of<FinalPageViewModel>(context).getMap();
+                        var data2 = Provider.of<FinalPageViewModel>(context)
+                            .getPlayerList();
+                        return GestureDetector(
+                          onTap: () {
+                            Provider.of<FinalPageViewModel>(context,
+                                    listen: false)
+                                .changeMap(index);
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(3),
+                            decoration: BoxDecoration(
+                                color: data[index] == true
+                                    ? Colors.orange
+                                    : Colors.transparent,
+                                borderRadius: BorderRadius.circular(40)),
+                            child: CircleAvatar(
+                              backgroundImage: AssetImage(data2[index].imgPath),
+                            ),
+                          ),
+                        );
+                      }),
                 ),
+                // Padding(
+                //   padding: EdgeInsets.fromLTRB(60, 0, 60, 0),
+                //   child: GridView.count(
+                //     shrinkWrap: true,
+                //     physics: BouncingScrollPhysics(),
+                //     padding: EdgeInsets.only(top: screenHeight / 30),
+                //     primary: false,
+                //     crossAxisSpacing: 20,
+                //     mainAxisSpacing: 20,
+                //     crossAxisCount: 3,
+                //     children: tempList.map((PlayerSelectionModel player) {
+                //       return InkWell(
+                //         onTap: () {
+                //           Provider.of<FinalPageViewModel>(context,
+                //                   listen: false)
+                //               .changeSelected(player);
+                //           tempList.forEach((element) {
+                //             print(tempList.indexOf(element).toString() +
+                //                 " " +
+                //                 element.selected.toString());
+                //           });
+                //         },
+                //         child: Container(
+                //           padding: EdgeInsets.all(3),
+                //           decoration: BoxDecoration(
+                //               color: player.selected
+                //                   ? Colors.orange
+                //                   : Colors.transparent,
+                //               borderRadius: BorderRadius.circular(40)),
+                //           child: CircleAvatar(
+                //             backgroundImage: AssetImage(player.imgPath),
+                //           ),
+                //         ),
+                //       );
+                //     }).toList(),
+                //   ),
+                // ),
                 Padding(
                   padding: EdgeInsets.only(top: screenHeight / 10),
                 ),
