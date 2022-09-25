@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/product/widgets/timer/timer_design.dart';
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 
 import '../../../drawer/view/drawer_view.dart';
@@ -138,18 +139,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 ),
               ),
             ),
-            Container(
-              width: screenWidth / 1.5,
-              height: screenHeight / 3,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/timer1.png'),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: screenHeight / 20,
-            ),
+            //const TimerDesign(seconds: 20),
+            const TimerDesign(seconds: 20),
             buildFirstButton(
               context,
               'SONRAKI',

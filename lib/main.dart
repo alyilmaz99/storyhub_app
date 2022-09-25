@@ -3,11 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
 import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
+import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 import 'product/model/player_selection_model.dart';
 import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
-
 void main() {
   runApp(
     MultiProvider(
@@ -55,7 +55,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const SplashScreenView(),
+      home: const GamePageWithTimer(),
     );
+
   }
 }
