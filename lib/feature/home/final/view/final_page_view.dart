@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../core/components/popup/FinalPopup.dart';
-import '../model/player_selection_model.dart';
+import '../../../../product/model/player_selection_model.dart';
 import '../viewmodel/final_page_viewmodel.dart';
 
 class FinalPageView extends StatefulWidget {
