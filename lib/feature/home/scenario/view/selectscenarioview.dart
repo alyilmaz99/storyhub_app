@@ -1,6 +1,7 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:fluid_action_card/FluidActionCard/fluid_action_card.dart';
+import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
 import '../../gamepage/view/HomeCardsOrder.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
 
@@ -332,7 +333,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                       context,
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              HomeCardsOrder()));
+                                                              DisplayScenario()));
                                                 },
                                                 child: Text(
                                                   "OYNA",
