@@ -58,16 +58,19 @@ class _GameSettingsViewState extends State<GameSettingsView> {
       ),
       body: Container(
         decoration: const BoxDecoration(
-            gradient: RadialGradient(radius: 1, colors: [
-          Color.fromARGB(255, 255, 149, 113),
-          Color.fromARGB(255, 216, 91, 47),
-          Color.fromARGB(255, 216, 91, 47)
-        ])),
+          gradient: RadialGradient(
+            radius: 0.7,
+            colors: [
+              Color.fromRGBO(255, 149, 113, 1),
+              Color.fromRGBO(216, 91, 47, 1)
+            ],
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: sizedBoxHeight,
+              height: screenHeight / 8,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -83,7 +86,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
               ],
             ),
             SizedBox(
-              height: sizedBoxHeight,
+              height: screenHeight / 20,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -103,8 +106,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                         //   ),
                         // ),
                         SizedBox(
-                            width: screenWidth / 1.5,
-                            height: screenHeight / 10,
+                            width: screenWidth / 1.3,
+                            height: screenHeight / 8,
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
@@ -112,7 +115,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                   "Oyuncu Sayısı",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w300,
                                       color: Colors.white),
                                 ),
@@ -124,9 +127,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       children: [
                                         IconButton(
                                           icon: const Icon(
-                                            Icons.remove_circle_outline,
+                                            Icons.remove_circle,
                                             color: Colors.white,
-                                            size: 30.0,
+                                            size: 35.0,
                                           ),
                                           onPressed: () {
                                             Provider.of<GameSettingsModel>(
@@ -142,16 +145,18 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                               .toString(),
                                           textAlign: TextAlign.center,
                                           style: const TextStyle(
-                                              fontSize: 22,
-                                              fontFamily: 'GamerStation',
-                                              fontWeight: FontWeight.w500,
-                                              color: Colors.white),
+                                            fontSize: 30,
+                                            fontFamily: 'GamerStation',
+                                            fontWeight: FontWeight.w500,
+                                            color:
+                                                Color.fromRGBO(129, 77, 58, 1),
+                                          ),
                                         ),
                                         IconButton(
                                           icon: const Icon(
-                                            Icons.add_circle_outline,
+                                            Icons.add_circle,
                                             color: Colors.white,
-                                            size: 30.0,
+                                            size: 35.0,
                                           ),
                                           onPressed: () {
                                             Provider.of<GameSettingsModel>(
@@ -172,7 +177,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
               height: sizedBoxHeight,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
                   decoration: const BoxDecoration(
@@ -180,17 +185,17 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       borderRadius: BorderRadius.all(Radius.circular(32))),
                   child: Column(children: [
                     SizedBox(
-                        width: screenWidth / 1.5,
-                        height: screenHeight / 10,
+                        width: screenWidth / 1.3,
+                        height: screenHeight / 8,
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             RichText(
                                 textAlign: TextAlign.center,
                                 text: const TextSpan(
                                   text: "Süre",
                                   style: TextStyle(
-                                      fontSize: 14,
+                                      fontSize: 17,
                                       fontWeight: FontWeight.w300,
                                       color: Colors.white),
                                   children: <TextSpan>[
@@ -211,9 +216,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                   children: [
                                     IconButton(
                                       icon: const Icon(
-                                        Icons.remove_circle_outline,
+                                        Icons.remove_circle,
                                         color: Colors.white,
-                                        size: 30.0,
+                                        size: 35.0,
                                       ),
                                       onPressed: () {
                                         Provider.of<GameSettingsModel>(context,
@@ -227,16 +232,17 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                           .toString(),
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
-                                          fontSize: 22,
-                                          fontFamily: 'GamerStation',
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white),
+                                        fontSize: 30,
+                                        fontFamily: 'GamerStation',
+                                        fontWeight: FontWeight.w500,
+                                        color: Color.fromRGBO(129, 77, 58, 1),
+                                      ),
                                     ),
                                     IconButton(
                                       icon: const Icon(
-                                        Icons.add_circle_outline,
+                                        Icons.add_circle,
                                         color: Colors.white,
-                                        size: 30.0,
+                                        size: 35.0,
                                       ),
                                       onPressed: () {
                                         Provider.of<GameSettingsModel>(context,
@@ -264,15 +270,15 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       borderRadius: BorderRadius.all(Radius.circular(32))),
                   child: Column(children: [
                     SizedBox(
-                        width: screenWidth / 1.5,
-                        height: screenHeight / 10,
+                        width: screenWidth / 1.3,
+                        height: screenHeight / 8,
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             const Text("Tur Sayısı",
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: 17,
                                     fontWeight: FontWeight.w300,
                                     color: Colors.white)),
                             SizedBox(
@@ -283,9 +289,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                   children: [
                                     IconButton(
                                       icon: const Icon(
-                                        Icons.remove_circle_outline,
+                                        Icons.remove_circle,
                                         color: Colors.white,
-                                        size: 30.0,
+                                        size: 35.0,
                                       ),
                                       onPressed: () {
                                         Provider.of<GameSettingsModel>(context,
@@ -299,16 +305,17 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                           .toString(),
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
-                                          fontSize: 22,
-                                          fontFamily: 'GamerStation',
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white),
+                                        fontSize: 30,
+                                        fontFamily: 'GamerStation',
+                                        fontWeight: FontWeight.w500,
+                                        color: Color.fromRGBO(129, 77, 58, 1),
+                                      ),
                                     ),
                                     IconButton(
                                       icon: const Icon(
-                                        Icons.add_circle_outline,
+                                        Icons.add_circle,
                                         color: Colors.white,
-                                        size: 30.0,
+                                        size: 35.0,
                                       ),
                                       onPressed: () {
                                         Provider.of<GameSettingsModel>(context,
@@ -336,7 +343,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       borderRadius: BorderRadius.all(Radius.circular(32))),
                   child: Column(children: [
                     SizedBox(
-                        width: screenWidth / 1.5,
+                        width: screenWidth / 1.3,
+                        height: screenHeight / 8,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -352,13 +360,13 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                     "Zorluk",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                        fontSize: 14,
+                                        fontSize: 17,
                                         fontWeight: FontWeight.w300,
                                         color: Colors.white),
                                   ),
                                   IconButton(
                                     icon: const Icon(
-                                      Icons.info_outline,
+                                      Icons.info,
                                       color: Colors.white,
                                       size: 20.0,
                                     ),
@@ -399,11 +407,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     IconButton(
-                                      icon: const Icon(
-                                        Icons.chevron_left,
-                                        color: Colors.white,
-                                        size: 30.0,
-                                      ),
+                                      iconSize: 30,
+                                      icon:
+                                          Image.asset('assets/images/left.png'),
                                       onPressed: () {
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
@@ -417,17 +423,16 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                               .roundSpeedValue),
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
-                                          fontSize: 22,
-                                          fontFamily: 'GamerStation',
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.white),
+                                        fontSize: 27,
+                                        fontFamily: 'GamerStation',
+                                        fontWeight: FontWeight.w500,
+                                        color: Color.fromRGBO(129, 77, 58, 1),
+                                      ),
                                     ),
                                     IconButton(
-                                      icon: const Icon(
-                                        Icons.chevron_right,
-                                        color: Colors.white,
-                                        size: 30.0,
-                                      ),
+                                      iconSize: 30,
+                                      icon: Image.asset(
+                                          'assets/images/right.png'),
                                       onPressed: () {
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
@@ -443,7 +448,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
               ],
             ),
             SizedBox(
-              height: sizedBoxHeight * 3,
+              height: sizedBoxHeight * 2,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

@@ -19,10 +19,15 @@ class _MainPageState extends MainPageViewModel {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
-          gradient: RadialGradient(center: Alignment.center, colors: [
-            Color.fromRGBO(61, 16, 91, 1),
-            Color.fromRGBO(19, 6, 45, 1),
-          ]),
+          gradient: RadialGradient(
+              center: Alignment.center,
+              colors: [
+                Color.fromRGBO(138, 97, 166, 1),
+                Color.fromRGBO(58, 29, 88, 1),
+                Color.fromRGBO(13, 5, 38, 1),
+              ],
+              radius: 1,
+              tileMode: TileMode.clamp),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

@@ -13,12 +13,16 @@ class _DisplayScenario extends State<DisplayScenario> {
     return Scaffold(
       body: Container(
           decoration: const BoxDecoration(
-              gradient: RadialGradient(radius: 1, colors: [
-            Color.fromRGBO(59, 52, 114, 1),
-            Color.fromRGBO(59, 52, 114, 1),
-            Color.fromRGBO(42, 37, 80, 1),
-            Color.fromRGBO(37, 29, 58, 1)
-          ])),
+            gradient: RadialGradient(
+                center: Alignment.center,
+                colors: [
+                  Color.fromRGBO(138, 97, 166, 1),
+                  Color.fromRGBO(58, 29, 88, 1),
+                  Color.fromRGBO(13, 5, 38, 1),
+                ],
+                radius: 1,
+                tileMode: TileMode.clamp),
+          ),
           child: Column(children: [
             const SizedBox(height: 30),
             Center(
