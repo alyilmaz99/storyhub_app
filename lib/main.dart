@@ -18,6 +18,7 @@ import 'package:storyhub/product/model/player_selection_model.dart';
 import 'package:storyhub/product/widgets/timer/timer_design.dart';
 import 'package:storyhub/product/widgets/timer/timer_test_screen.dart';
 import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
+import 'feature/home/scenario/view/selectscenarioview.dart';
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
@@ -57,20 +58,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.transparent,
-            systemOverlayStyle: SystemUiOverlayStyle(
-              statusBarBrightness: Brightness.dark,
-              statusBarColor: Color.fromARGB(0, 189, 189, 189),
-              statusBarIconBrightness: Brightness.light,
-            ),
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarBrightness: Brightness.dark,
+            statusBarColor: Color.fromARGB(0, 189, 189, 189),
+            statusBarIconBrightness: Brightness.light,
           ),
         ),
       ),
       home: SelectScenarioView(),
     );
-
   }
 }
