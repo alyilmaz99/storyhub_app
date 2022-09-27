@@ -1,6 +1,5 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-import 'package:storyhub/product/widgets/timer/timer_design.dart';
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 
 import '../../../drawer/view/drawer_view.dart';
@@ -20,7 +19,9 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
     CountDownController controller = CountDownController();
-    TimerDesign timer = TimerDesign(myController: controller,);
+    // TimerDesign timer = TimerDesign(
+    //   myController: controller,
+    // );
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
@@ -48,7 +49,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               child: IconButton(
                 onPressed: () {
                   setState(() {
-                   // timer.pauseTimer();
+                    // timer.pauseTimer();
                   });
                   Navigator.of(context).push(FullScreenModal());
                 },
@@ -102,30 +103,18 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                               color: Colors.grey,
                               size: screenWidth / 20,
                             )),
-                        crateHeroImage(
-                            context,
-                            'assets/images/question.png',
-                            MediaQuery.of(context).size.width / 6,
-                            MediaQuery.of(context).size.height / 12,
-                            0.5),
+                        crateHeroImage(context, 'assets/images/question.png', MediaQuery.of(context).size.width / 6,
+                            MediaQuery.of(context).size.height / 12, 0.5),
                         SizedBox(
                           width: screenWidth / 23,
                         ),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/2.png',
-                            MediaQuery.of(context).size.width / 4,
-                            MediaQuery.of(context).size.height / 8,
-                            1.0),
+                        crateHeroImage(context, 'assets/images/profiles/2.png', MediaQuery.of(context).size.width / 4,
+                            MediaQuery.of(context).size.height / 8, 1.0),
                         SizedBox(
                           width: screenWidth / 23,
                         ),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/3.png',
-                            MediaQuery.of(context).size.width / 6,
-                            MediaQuery.of(context).size.height / 12,
-                            0.5),
+                        crateHeroImage(context, 'assets/images/profiles/3.png', MediaQuery.of(context).size.width / 6,
+                            MediaQuery.of(context).size.height / 12, 0.5),
                         IconButton(
                             onPressed: () {},
                             icon: Icon(
@@ -142,7 +131,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 ),
               ),
             ),
-            timer,
+            // timer,
             buildFirstButton(
               context,
               'SONRAKI',
@@ -165,8 +154,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
             ),
             const Text(
               'TUR 1',
-              style: TextStyle(
-                  fontFamily: 'Montserrat', fontSize: 20, color: Colors.white),
+              style: TextStyle(fontFamily: 'Montserrat', fontSize: 20, color: Colors.white),
             ),
           ],
         ),
