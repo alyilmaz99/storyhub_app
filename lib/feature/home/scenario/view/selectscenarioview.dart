@@ -508,7 +508,6 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                           size: 40,
                         )
                       ]),
-                      Divider()
                     ])),
               ],
             ),
