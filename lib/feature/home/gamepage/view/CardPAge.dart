@@ -2,6 +2,7 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:storyhub/core/components/GameContreller.dart';
+import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 import 'package:storyhub/feature/home/gamepage/view/tappedCard.dart';
 
 import '../../scenario/view/selectscenarioview.dart';
@@ -19,8 +20,8 @@ class CardPage extends StatefulWidget {
 
   @override
   _CardPageState createState() => _CardPageState(
-      assetImageCardBack: this.assetImageCardBack,
-      assetImageCardFront: this.assetImageCardFront);
+      assetImageCardBack: assetImageCardBack,
+      assetImageCardFront: assetImageCardFront);
 }
 
 class _CardPageState extends CartPageViewModel {
@@ -35,15 +36,14 @@ class _CardPageState extends CartPageViewModel {
   void initState() {
     super.initState();
     TappedCard tappedCard = TappedCard(
-          assetImageCardBack: assetImageCardBack,
-          assetImageCardFront: assetImageCardFront,
-          routeToPage: null,
-          callback: () => {callback()},
-        );
+      assetImageCardBack: assetImageCardBack,
+      assetImageCardFront: assetImageCardFront,
+      routeToPage: null,
+      callback: () => {callback()},
+    );
 
     currentPage = tappedCard;
   }
-
 
   void callback() {
     setState(() {
@@ -51,7 +51,7 @@ class _CardPageState extends CartPageViewModel {
     });
   }
 
-  void timeUp(){
+  void timeUp() {
     setState(() {
       _isTimeUp = true;
     });
@@ -62,7 +62,6 @@ class _CardPageState extends CartPageViewModel {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-
 
     return Scaffold(
       appBar: AppBar(
@@ -100,73 +99,76 @@ class _CardPageState extends CartPageViewModel {
             Padding(
               padding: EdgeInsets.only(
                   left: screenWidth / 18,
-                  top: screenHeight / 25,
+                  top: screenHeight / 50,
                   right: screenWidth / 12),
               child: Center(
                 child: Column(
                   children: [
-                    Container(
-                      child: Column(
-                        children: [
-
-                          Stack(children: [
-                            Center(
-                              child: Container(
-                                width: screenWidth / 5,
-                                height: screenHeight / 10,
-                                decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/images/human/human3.png'),
-                                    fit: BoxFit.fill,
-                                  ),
+                    Column(
+                      children: [
+                        Stack(children: [
+                          Center(
+                            child: Container(
+                              width: screenWidth / 5,
+                              height: screenHeight / 10,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/human/human3.png'),
+                                  fit: BoxFit.fill,
                                 ),
                               ),
                             ),
-                            Center(
-                                child: _isCardTurned ?
-                                            CircularCountDownTimer(
-                                              autoStart: true,
-                                              isReverse: true,
-                                              width: screenWidth / 5,
-                                              height: screenHeight / 10,
-                                              duration: 15,
-                                              fillColor: Colors.red,
-                                              ringColor: Colors.green,
-                                              strokeWidth: 6,
-                                              isTimerTextShown: false,
-                                              onComplete: () {
-                                                setState(() {
-                                                  this.timeUp();
-                                                });
-                                              },
-                                            ) :
-                                              Container(),
-                            ),
-                          ]),
-                          ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                onSurface: Colors.white,
-                                primary: const Color.fromRGBO(251, 251, 251, 0.9),
-                                minimumSize:
-                                    Size(screenWidth / 4, screenHeight / 40)),
-                            child: const Text(
-                              "İsim",
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.w400, color: Color.fromRGBO(19, 6, 5, 1)),
-                            ),
                           ),
-                        ],
-                      ),
+                          Center(
+                            child: _isCardTurned
+                                ? CircularCountDownTimer(
+                                    autoStart: true,
+                                    isReverse: true,
+                                    width: screenWidth / 5,
+                                    height: screenHeight / 10,
+                                    duration: 15,
+                                    fillColor: Colors.red,
+                                    ringColor: Colors.green,
+                                    strokeWidth: 6,
+                                    isTimerTextShown: false,
+                                    onComplete: () {
+                                      setState(() {
+                                        timeUp();
+                                      });
+                                    },
+                                  )
+                                : Container(),
+                          ),
+                        ]),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              backgroundColor:
+                                  const Color.fromRGBO(251, 251, 251, 0.9),
+                              disabledForegroundColor:
+                                  Colors.white.withOpacity(0.38),
+                              disabledBackgroundColor:
+                                  Colors.white.withOpacity(0.12),
+                              minimumSize:
+                                  Size(screenWidth / 4, screenHeight / 40)),
+                          child: const Text(
+                            "İsim",
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                color: Color.fromRGBO(19, 6, 5, 1)),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       height: screenHeight / 40,
                     ),
-                    Text(
+                    const Text(
                       "Kart Seçimi",
                       style: TextStyle(
                           fontSize: 25,
@@ -188,37 +190,40 @@ class _CardPageState extends CartPageViewModel {
             SizedBox(
               height: screenHeight / 30,
             ),
-        SizedBox(
+            SizedBox(
               width: MediaQuery.of(context).size.width / 1.4,
-              height: MediaQuery.of(context).size.height /26,
+              height: MediaQuery.of(context).size.height / 20,
               child: ElevatedButton(
-              onPressed: () => {
-                if(_isTimeUp)
-                  {
-                    Navigator.push(context, ScaleRoute(page: SelectScenarioView()))
-                  }
-              },
-              style: ElevatedButton.styleFrom(
-                    primary: _isTimeUp ? Color.fromRGBO(223, 105, 64, 1) : Color.fromRGBO(251, 251, 251, 0.5),
-                    shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                  ),
-              child: _isTimeUp ?
-                        Text(
-                          "Kartı kullanarak senaryoyu bağla.",
-                          style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w700,
-                          color: Color.fromRGBO(251, 251, 251, 0.9)),
-                        ) :
-                        Text(
-                          "Kartı kullanarak senaryoyu bağla.",
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w700,
-                              color: Color.fromRGBO(251, 251, 251, 1)),
-                        ),
+                onPressed: () => {
+                  if (_isTimeUp)
+                    {
+                      Navigator.push(
+                          context, ScaleRoute(page: const GamePageWithTimer()))
+                    }
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: _isTimeUp
+                      ? const Color.fromRGBO(223, 105, 64, 1)
+                      : const Color.fromRGBO(251, 251, 251, 0.5),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(7.0)),
                 ),
+                child: _isTimeUp
+                    ? const Text(
+                        "Kartı kullanarak senaryoyu bağla.",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: Color.fromRGBO(251, 251, 251, 0.9)),
+                      )
+                    : const Text(
+                        "Kartı kullanarak senaryoyu bağla.",
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                            color: Color.fromRGBO(251, 251, 251, 1)),
+                      ),
+              ),
             ),
             SizedBox(
               height: screenHeight / 30,
