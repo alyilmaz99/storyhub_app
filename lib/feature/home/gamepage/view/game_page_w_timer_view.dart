@@ -20,7 +20,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
     CountDownController controller = CountDownController();
-    TimerDesign timer = TimerDesign(myController: controller,);
+    TimerDesign timer = TimerDesign(seconds: 15,);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
