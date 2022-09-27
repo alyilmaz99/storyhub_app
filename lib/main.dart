@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: DisplayScenario(),
+      home: SelectScenarioView(),
     );
   }
 }
