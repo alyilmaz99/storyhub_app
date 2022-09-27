@@ -41,7 +41,8 @@ dependencies:
   vertical_card_pager: ^1.5.0
   page_animation_transition: ^0.0.9
   im_animations: ^0.1.2
-  
+  #rate star
+  flutter_rating_stars: ^1.0.3+4
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -93,7 +94,6 @@ flutter:
     - assets/cards.json
     - assets/icons/
 
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
@@ -125,5 +125,5 @@ flutter:
       fonts:
         - asset: assets/fonts/Montserrat_Regular.ttf
     - family: SharyBold
-      fonts: 
+      fonts:
         - asset: assets/fonts/Shary_Bold.ttf

@@ -54,10 +54,7 @@ class FullScreenModal extends DrawerViewModel {
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const MainPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPage()));
                 },
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
