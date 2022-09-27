@@ -145,7 +145,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                               .withOpacity(1),
                                       minimumSize: Size(
                                           screenWidth / 1.7, screenHeight / 18),
-                                      backgroundColor:
+                                      primary:
                                           const Color.fromRGBO(91, 49, 134, 1),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(10),

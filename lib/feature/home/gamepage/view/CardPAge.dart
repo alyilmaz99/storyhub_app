@@ -147,12 +147,10 @@ class _CardPageState extends CartPageViewModel {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              backgroundColor:
-                                  const Color.fromRGBO(251, 251, 251, 0.9),
-                              disabledForegroundColor:
-                                  Colors.white.withOpacity(0.38),
-                              disabledBackgroundColor:
-                                  Colors.white.withOpacity(0.12),
+                              primary: const Color.fromRGBO(251, 251, 251, 0.9),
+                              onSurface: Colors.white.withOpacity(0.38),
+                              // disabledBackgroundColor:
+                              //     Colors.white.withOpacity(0.12),
                               minimumSize:
                                   Size(screenWidth / 4, screenHeight / 40)),
                           child: const Text(
@@ -202,7 +200,7 @@ class _CardPageState extends CartPageViewModel {
                     }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: _isTimeUp
+                  onPrimary: _isTimeUp
                       ? const Color.fromRGBO(223, 105, 64, 1)
                       : const Color.fromRGBO(251, 251, 251, 0.5),
                   shape: RoundedRectangleBorder(
