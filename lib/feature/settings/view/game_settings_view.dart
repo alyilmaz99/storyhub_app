@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 import '../../home/scenario/view/selectscenarioview.dart';
 import 'package:provider/provider.dart';
 import '../model/game_settings_model.dart';
@@ -461,7 +462,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const SelectScenarioView()));
+                            builder: (context) => const /*SelectScenarioView*/ GamePageWithTimer()));
                   },
                   child: Container(
                     width: screenWidth / 2.2,
