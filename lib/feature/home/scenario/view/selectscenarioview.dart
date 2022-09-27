@@ -407,6 +407,8 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                     width: 70,
                                                     height: 40,
                                                     child: FloatingActionButton(
+                                                      heroTag: "btn" +
+                                                          (index).toString(),
                                                       splashColor:
                                                           Colors.pink.shade600,
                                                       backgroundColor:

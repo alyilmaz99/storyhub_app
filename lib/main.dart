@@ -54,6 +54,8 @@ class MyApp extends StatelessWidget {
             statusBarIconBrightness: Brightness.light,
           ),
         ),
-        home: const SplashScreenView());
+      ),
+      home: const SplashScreenView(),
+    );
   }
 }
