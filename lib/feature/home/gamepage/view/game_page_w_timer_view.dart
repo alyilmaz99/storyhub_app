@@ -1,4 +1,6 @@
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:storyhub/product/widgets/timer/timer_design.dart';
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 
 import '../../../drawer/view/drawer_view.dart';
@@ -17,6 +19,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
+    CountDownController controller = CountDownController();
+    TimerDesign timer = TimerDesign(myController: controller,);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
@@ -44,7 +48,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               child: IconButton(
                 onPressed: () {
                   setState(() {
-                    //   timer.stopTimer();
+                   // timer.pauseTimer();
                   });
                   Navigator.of(context).push(FullScreenModal());
                 },
@@ -138,18 +142,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 ),
               ),
             ),
-            Container(
-              width: screenWidth / 1.5,
-              height: screenHeight / 3,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/timer1.png'),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: screenHeight / 20,
-            ),
+            timer,
             buildFirstButton(
               context,
               'SONRAKI',

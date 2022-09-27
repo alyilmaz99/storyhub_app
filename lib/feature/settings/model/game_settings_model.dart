@@ -88,4 +88,7 @@ class GameSettingsModel with ChangeNotifier {
       notifyListeners();
     }
   }
+  int getTimerValue(){
+    return timerValue;
+  }
 }
