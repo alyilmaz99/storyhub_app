@@ -1,9 +1,15 @@
+import 'dart:convert';
+
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:fluid_action_card/FluidActionCard/fluid_action_card.dart';
+import 'package:flutter/services.dart';
+import 'package:storyhub/core/Service/SenaryoServise.dart';
+import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
 import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
-import '../../gamepage/view/HomeCardsOrder.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
+
+import '../../../../core/components/senaryo/Senaryo.dart';
 
 class SelectScenarioView extends StatefulWidget {
   const SelectScenarioView({Key? key}) : super(key: key);
@@ -13,6 +19,15 @@ class SelectScenarioView extends StatefulWidget {
 }
 
 class _SelectScenarioViewState extends State<SelectScenarioView> {
+  String category = "All";
+
+  Future<List<Senaryo>> readJsonData() async {
+    final jsondata = await rootBundle.loadString("assets/senaryolar.json");
+    final list = json.decode(jsondata) as List<dynamic>;
+
+    return list.map((e) => Senaryo.fromJson(e)).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height;
@@ -256,109 +271,194 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                 child: buildIcon2(),
               ),
             ]),
-            Expanded(
-              child: Scrollbar(
-                  child: GridView.count(
-                      physics: ScrollPhysics(),
-                      // Create a grid with 2 columns. If you change the scrollDirection to
-                      // horizontal, this produces 2 rows.
-                      crossAxisCount: 1,
-                      // Generate 100 widgets that display their index in the List.
-                      children: List.generate(images.length, (index) {
-                        return Center(
-                            child: Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 25.0, vertical: 15.0),
-                          child: FlipCard(
-                              front: images[index],
-                              back: Stack(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        color: colors[index],
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10))),
-                                  ),
-                                  Positioned(
-                                      child: Container(
-                                    child: Column(
-                                      children: [
-                                        SizedBox(height: 50),
-                                        Align(
-                                          alignment: Alignment.topCenter,
-                                          child: Text(
-                                            titles[index],
-                                            style: TextStyle(
-                                                fontSize: 25,
-                                                fontFamily: "GamerStation"),
+            FutureBuilder(
+              future: readJsonData(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var items = snapshot.data as List<Senaryo>;
+                  List<Senaryo> filteredList = snapshot.data as List<Senaryo>;
+
+                  if (category == "Korku") {
+                    filteredList = items
+                        .where((element) => element.category == "Korku")
+                        .toList();
+                  } else if (category == 'Eglence') {
+                    filteredList = items
+                        .where((element) => element.category == "Eglence")
+                        .toList();
+                  } else if (category == "Fantastik") {
+                    filteredList = items
+                        .where((element) => element.category == "Fantastik")
+                        .toList();
+                  } else if (category == "Macera") {
+                    filteredList = items
+                        .where((element) => element.category == "Macera")
+                        .toList();
+                  } else if (category == "Dram") {
+                    filteredList = items
+                        .where((element) => element.category == "Dram")
+                        .toList();
+                  } else {
+                    filteredList = items;
+                  }
+
+                  return Expanded(
+                    child: Scrollbar(
+                        child: GridView.count(
+                            physics: ScrollPhysics(),
+                            // Create a grid with 2 columns. If you change the scrollDirection to
+                            // horizontal, this produces 2 rows.
+                            crossAxisCount: 1,
+                            // Generate 100 widgets that display their index in the List.
+                            children:
+                                List.generate(filteredList.length, (index) {
+                              return Center(
+                                  child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 25.0, vertical: 15.0),
+                                child: FlipCard(
+                                    front: Container(
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                            image: new AssetImage(
+                                                "assets/images/senaryolar/${filteredList[index].senaryoNumber}.png"),
+                                            fit: BoxFit.fill,
                                           ),
-                                        ),
-                                        SizedBox(height: 25),
-                                        Container(
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 20.0),
-                                          child: Align(
-                                            alignment: Alignment.center,
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(20))),
+                                      child: Align(
+                                        alignment: Alignment.bottomCenter,
+                                        child: Container(
+                                          width: w / 2.5,
+                                          child: OutlinedButton(
+                                            onPressed: () {},
                                             child: Text(
-                                                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis   ",
-                                                style: TextStyle(
-                                                    fontSize: 15,
-                                                    fontFamily: "Montserrat")),
+                                              filteredList[index].senaryoText,
+                                              style: TextStyle(
+                                                  fontFamily: "GamerStation",
+                                                  color: Colors.black),
+                                            ),
+                                            style: ButtonStyle(
+                                                backgroundColor:
+                                                    MaterialStateProperty.all(
+                                                        Color.fromRGBO(
+                                                            217, 217, 217, 1)),
+                                                shape: MaterialStateProperty.all<
+                                                        RoundedRectangleBorder>(
+                                                    RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                                    18.0)))),
                                           ),
                                         ),
-                                        Spacer(),
+                                      ),
+                                    ),
+                                    back: Stack(
+                                      children: [
                                         Container(
-                                          margin: EdgeInsets.symmetric(
-                                              horizontal: 20.0, vertical: 15.0),
-                                          child: Align(
-                                            alignment: Alignment.bottomRight,
-                                            child: SizedBox(
-                                              width: 70,
-                                              height: 40,
-                                              child: FloatingActionButton(
-                                                heroTag:
-                                                    "btn" + (index).toString(),
-                                                splashColor:
-                                                    Colors.pink.shade600,
-                                                backgroundColor: Color.fromRGBO(
-                                                    232, 114, 73, 1),
-                                                shape:
-                                                    const RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(
-                                                              20.0)),
-                                                ),
-                                                onPressed: () {
-                                                  Navigator.pop(context);
-                                                  Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                          builder: (context) =>
-                                                              DisplayScenario()));
-                                                },
+                                          decoration: BoxDecoration(
+                                              color: Colors.amber,
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(10))),
+                                        ),
+                                        Positioned(
+                                            child: Container(
+                                          child: Column(
+                                            children: [
+                                              SizedBox(height: 50),
+                                              Align(
+                                                alignment: Alignment.topCenter,
                                                 child: Text(
-                                                  "OYNA",
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .bodySmall
-                                                      ?.copyWith(
-                                                          color: Colors.white,
-                                                          letterSpacing: 1.5,
-                                                          fontFamily:
-                                                              "GamerStation"),
+                                                  //titles[index],
+                                                  filteredList[index]
+                                                      .senaryoText
+                                                      .toString(),
+                                                  style: TextStyle(
+                                                      fontSize: 25,
+                                                      fontFamily:
+                                                          "GamerStation"),
                                                 ),
                                               ),
-                                            ),
+                                              SizedBox(height: 25),
+                                              Container(
+                                                margin: EdgeInsets.symmetric(
+                                                    horizontal: 20.0),
+                                                child: Align(
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                      filteredList[index]
+                                                          .shortText,
+                                                      style: TextStyle(
+                                                          fontSize: 15,
+                                                          fontFamily:
+                                                              "Montserrat")),
+                                                ),
+                                              ),
+                                              Spacer(),
+                                              Container(
+                                                margin: EdgeInsets.symmetric(
+                                                    horizontal: 20.0,
+                                                    vertical: 15.0),
+                                                child: Align(
+                                                  alignment:
+                                                      Alignment.bottomRight,
+                                                  child: SizedBox(
+                                                    width: 70,
+                                                    height: 40,
+                                                    child: FloatingActionButton(
+                                                      splashColor:
+                                                          Colors.pink.shade600,
+                                                      backgroundColor:
+                                                          Color.fromRGBO(
+                                                              232, 114, 73, 1),
+                                                      shape:
+                                                          const RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius.all(
+                                                                Radius.circular(
+                                                                    20.0)),
+                                                      ),
+                                                      onPressed: () {
+                                                        Navigator.pop(context);
+                                                        Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        DisplayScenario()));
+                                                      },
+                                                      child: Text(
+                                                        "OYNA",
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .bodySmall
+                                                            ?.copyWith(
+                                                                color: Colors
+                                                                    .white,
+                                                                letterSpacing:
+                                                                    1.5,
+                                                                fontFamily:
+                                                                    "GamerStation"),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              )
+                                            ],
                                           ),
-                                        )
+                                        ))
                                       ],
-                                    ),
-                                  ))
-                                ],
-                              )),
-                        ));
-                      }))),
+                                    )),
+                              ));
+                            }))),
+                  );
+                } else {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
             )
           ],
         ),
@@ -411,7 +511,11 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
               backgroundColor: Color.fromRGBO(255, 163, 114, 1),
               children: [
                 SimpleDialogOption(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        category = "Korku";
+                      });
+                    },
                     child: Column(children: [
                       Row(children: [
                         Text(
@@ -431,7 +535,11 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       Divider()
                     ])),
                 SimpleDialogOption(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        category = "Eglence";
+                      });
+                    },
                     child: Column(
                       children: [
                         Row(children: [
@@ -451,7 +559,11 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       ],
                     )),
                 SimpleDialogOption(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        category = "Fantastik";
+                      });
+                    },
                     child: Column(children: [
                       Row(children: [
                         Text(
@@ -471,7 +583,11 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       Divider()
                     ])),
                 SimpleDialogOption(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        category = "Macera";
+                      });
+                    },
                     child: Column(children: [
                       Row(children: [
                         Text(
@@ -491,7 +607,11 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       Divider()
                     ])),
                 SimpleDialogOption(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        category = "Dram";
+                      });
+                    },
                     child: Column(children: [
                       Row(children: [
                         Text(
