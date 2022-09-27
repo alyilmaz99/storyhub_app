@@ -1,66 +1,50 @@
+
+
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:provider/provider.dart';
-import 'package:storyhub/feature/settings/model/game_settings_model.dart';
-import 'package:storyhub/feature/settings/viewmodel/game_settings_viewmodel.dart';
-import 'package:storyhub/main.dart';
 
 class TimerDesign extends StatelessWidget {
-   TimerDesign(
-      {super.key, required myController});
-      CountDownController? myController;
-    void pauseTimer(){
-       myController!.pause();
-    }
+  const TimerDesign({super.key, required this.seconds});
 
-    void resumeTimer(){
-      myController!.resume();
-    }
-
+  final int seconds;
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-    return Expanded(
-      flex: 5,
-      child: Stack(
-      children: [
+    return Stack(children: [
       Center(
-        child: Image.asset(
-          'assets/images/timer_border.png',
-          fit: BoxFit.fill,
-          height: screenHeight / 2.6,
-         // width: screenHeight /3,
+        child: SizedBox(
+          height: screenHeight / 2.2,
+          //width: screenHeight /2.2,
+          child: Image.asset(
+            'assets/images/timerborder.png',
+            fit: BoxFit.fill,
+          ),
         ),
       ),
       Center(
-        child: Consumer<GameSettingsModel>(
-          builder: (context, value, child){
-            return CircularCountDownTimer(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 30),
+          child: CircularCountDownTimer(
             isReverse: true,
-            width: screenWidth /2.6,
-            height: screenWidth / 2.6,
-            duration: value.getTimerValue(),
+            width: screenWidth * 0.50,
+            height: screenWidth * 0.50,
+            duration: seconds,
             fillColor: Colors.red,
             ringColor: Colors.green,
             strokeWidth: 17,
             textStyle: TextStyle(
               color: Colors.white,
               fontFamily: 'GamerStation',
-              fontSize: screenWidth / 5,
+              fontSize: screenWidth / 4,
             ),
             onComplete: () {
               //
             },
-            
-          );
-          } ,
-         
+          ),
         ),
       )
-        ]),
-    );
+    ]);
   }
 }
