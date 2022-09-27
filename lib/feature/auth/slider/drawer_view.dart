@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/feature/drawer/viewmodel/drawer_viewmodel.dart';
+import '../../drawer/viewmodel/drawer_viewmodel.dart';
 
 class FullScreenModal extends DrawerViewModel {
   @override

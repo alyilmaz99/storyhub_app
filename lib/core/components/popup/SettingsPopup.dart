@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/settings/model/settings_model.dart';
+import '../../../feature/settings/model/settings_model.dart';
 
 class SettingsPopup extends StatefulWidget {
   @override

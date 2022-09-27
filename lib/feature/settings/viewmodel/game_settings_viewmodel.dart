@@ -1,4 +1,4 @@
-import 'package:storyhub/feature/settings/model/game_settings_model.dart';
+import '../model/game_settings_model.dart';
 
 class GameSettingsViewmodel extends GameSettingsModel {
   Map<String, int>? catchData;

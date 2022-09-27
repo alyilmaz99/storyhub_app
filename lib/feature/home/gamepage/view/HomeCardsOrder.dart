@@ -1,12 +1,9 @@
 // ignore_for_file: file_names
 
-import 'package:elastic_drawer/elastic_drawer.dart';
 import 'package:flutter/material.dart';
 import '../../../drawer/view/drawer_view.dart';
 import 'gameTimeVİew.dart';
 import '../viewmodel/home_cards_order_viewmodel.dart';
-
-import 'drawer_page_view.dart';
 
 class HomeCardsOrder extends StatefulWidget {
   const HomeCardsOrder({super.key});
@@ -24,6 +21,9 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
+
+    loadCards();
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
@@ -129,24 +129,30 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                       physics: const NeverScrollableScrollPhysics(),
                       primary: false,
                       children: <Widget>[
-                        Container(
-                          child: newCard,
-                        ),
-                        Container(
-                          child: newCard2,
-                        ),
-                        Container(
-                          child: newCard3,
-                        ),
-                        Container(
-                          child: newCard,
-                        ),
-                        Container(
-                          child: newCard2,
-                        ),
-                        Container(
-                          child: newCard3,
-                        ),
+                        if (isLoaded)
+                          Container(
+                            child: newCard,
+                          ),
+                        if (isLoaded)
+                          Container(
+                            child: newCard2,
+                          ),
+                        if (isLoaded)
+                          Container(
+                            child: newCard3,
+                          ),
+                        if (isLoaded)
+                          Container(
+                            child: newCard4,
+                          ),
+                        if (isLoaded)
+                          Container(
+                            child: newCard5,
+                          ),
+                        if (isLoaded)
+                          Container(
+                            child: newCard6,
+                          ),
                       ],
                     ),
                   ),
