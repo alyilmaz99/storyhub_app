@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../gamepage/view/CardPAge.dart';
+import '../../scenario/view/displayscenario.dart';
 import '../view/after_scenario_page_view.dart';
 
 abstract class AfterScenarioViewModel extends State<AfterScenarioView> {}
@@ -40,13 +42,26 @@ Widget crateHeroImage(BuildContext context, String path, double width,
 }
 
 Widget buildFirstButton(BuildContext context, String text, double height,
-    double width, Color color, Function function) {
+    double width, Color color, int function) {
   return SizedBox(
     width: width,
     height: height,
     child: OutlinedButton(
       onPressed: () {
-        function;
+        if (function == 1) {
+          Navigator.pop(context);
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => DisplayScenario()));
+        } else {
+          Navigator.pop(context);
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CardPage(
+                    assetImageCardBack: 'assets/images/cards/7.png',
+                    assetImageCardFront: 'assets/images/cards/11.png'),
+              ));
+        }
       },
       style: ButtonStyle(
         shadowColor: MaterialStateProperty.all<Color>(

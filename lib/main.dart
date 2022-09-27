@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
+import 'package:storyhub/feature/home/final/view/final_page_view.dart';
 import 'package:storyhub/product/model/player_selection_model.dart';
 import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'feature/home/scenario/view/selectscenarioview.dart';
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const SplashScreenView(),
+      home: const FinalPageView(),
     );
   }
 }
