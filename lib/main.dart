@@ -68,8 +68,9 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-      ),
-
-      home:  CardPage(assetImageCardBack: 'assets/images/cards/7.png', assetImageCardFront: 'assets/images/cards/36.png',)    );
+        home: CardPage(
+          assetImageCardBack: 'assets/images/cards/7.png',
+          assetImageCardFront: 'assets/images/cards/36.png',
+        ));
   }
 }
