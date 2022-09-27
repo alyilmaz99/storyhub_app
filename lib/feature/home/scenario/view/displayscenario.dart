@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 
 import '../../gamepage/view/HomeCardsOrder.dart';
 
@@ -47,7 +48,7 @@ class _DisplayScenario extends State<DisplayScenario> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const HomeCardsOrder()));
+                          builder: (context) => const GamePageWithTimer()));
                 },
                 child: Card(
                     color: Colors.transparent,

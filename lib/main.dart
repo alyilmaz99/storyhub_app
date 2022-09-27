@@ -1,22 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/auth/slider/view/sliderinformationview.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
-import 'package:storyhub/feature/home/gamepage/view/CardPAge.dart';
-import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
-import 'package:storyhub/feature/home/gamepage/view/gameTimeV%C4%B0ew.dart';
-import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
-import 'package:storyhub/feature/home/gamepage/view/game_screen.view.dart';
-import 'package:storyhub/feature/home/gamepage/view/tappedCard.dart';
-import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
-import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
-import 'package:storyhub/feature/settings/view/game_settings_view.dart';
-import 'package:storyhub/feature/settings/view/settings_page_view.dart';
-import 'package:storyhub/feature/settings/viewmodel/game_settings_viewmodel.dart';
 import 'package:storyhub/product/model/player_selection_model.dart';
-import 'package:storyhub/product/widgets/timer/timer_design.dart';
-import 'package:storyhub/product/widgets/timer/timer_test_screen.dart';
 import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
@@ -68,9 +54,6 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-      ),
-      home: SelectScenarioView(),
-    );
-
+        home: const SplashScreenView());
   }
 }

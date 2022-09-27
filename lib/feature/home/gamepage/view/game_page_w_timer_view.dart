@@ -21,6 +21,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
     var screenWidth = screenSize.width;
     CountDownController controller = CountDownController();
     TimerDesign timer = TimerDesign(
+      myController: controller,
       seconds: 20,
     );
     return Scaffold(
@@ -50,9 +51,10 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               child: IconButton(
                 onPressed: () {
                   setState(() {
-                    // timer.pauseTimer();
+                    timer.pauseTimer();
                   });
-                  Navigator.of(context).push(FullScreenModal());
+                  Navigator.of(context).push(
+                      FullScreenModal(controller2: controller, timer: timer));
                 },
                 icon: const Icon(
                   Icons.menu,
