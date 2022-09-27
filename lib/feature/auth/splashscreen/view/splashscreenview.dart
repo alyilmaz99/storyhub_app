@@ -19,21 +19,30 @@ class _SplashScreenViewState extends SplashScreenViewModel {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const  [
+          children: const [
             Text(
               "VESSAC",
               style: TextStyle(
                 fontFamily: 'SharyBold',
-                fontSize: 30,
+                fontSize: 50,
                 color: Colors.white,
               ),
               textAlign: TextAlign.center,
             ),
             Text(
-              "GAME STUDIOS",
+              "GAME",
               style: TextStyle(
                 fontFamily: 'SharyBold',
-                fontSize: 20,
+                fontSize: 40,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              "STUDIOS",
+              style: TextStyle(
+                fontFamily: 'SharyBold',
+                fontSize: 40,
                 color: Colors.white,
               ),
               textAlign: TextAlign.center,
