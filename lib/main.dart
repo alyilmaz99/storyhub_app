@@ -13,7 +13,6 @@ import 'package:storyhub/feature/settings/viewmodel/game_settings_viewmodel.dart
 import 'package:storyhub/product/widgets/timer/timer_test_screen.dart';
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
-
 void main() {
   runApp(
     MultiProvider(
@@ -26,6 +25,16 @@ void main() {
                 timerValue: 20,
                 roundSpeedValue: 1,
                 roundCount: 3)),
+        ChangeNotifierProvider<FinalPageViewModel>(
+            create: (BuildContext context) => FinalPageViewModel(
+                playerList: [],
+                map: {},
+                choosenName: "isim",
+                choosenImgPath: "assets/images/blankPerson.jpg")),
+        ChangeNotifierProvider<PlayerSelectionModel>(
+            create: (BuildContext context) => PlayerSelectionModel(
+                imgPath: "assets/images/human/human1.png",
+                playerName: "Player 1")),
       ],
       child: const MyApp(),
     ),
@@ -51,6 +60,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+
       home:  TimerTest()    );
   }
 }

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:ffi';
 import 'package:flutter/material.dart';
-import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
+import '../../scenario/view/selectscenarioview.dart';
 
 import '../view/gameTimeVİew.dart';
 

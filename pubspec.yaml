@@ -42,7 +42,6 @@ dependencies:
   page_animation_transition: ^0.0.9
   im_animations: ^0.1.2
   circular_countdown_timer: ^0.2.2
-
   
 
   # The following adds the Cupertino Icons font to your application.
@@ -88,6 +87,7 @@ flutter:
     - assets/images/cards/
     - assets/images/human/
     - assets/images/slider/
+    - assets/images/profiles/
     #   - images/a_dot_ham.jpeg
     - assets/images/front.png
     - assets/images/back.png

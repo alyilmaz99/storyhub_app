@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../../home/mainpage/view/main_page_view.dart';
 import '../view/sliderinformationview.dart';
 
@@ -92,6 +93,10 @@ abstract class SliderInformationViewModel extends State<SliderInformationView> {
   void nextSlide() {
     controller.nextPage(
         duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
+  }
+
+  void endSlide() {
+    controller.jumpToPage(8);
   }
 }
 

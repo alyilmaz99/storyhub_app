@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../viewmodel/gradientsplashscreenviewmodel.dart';
 import 'package:im_animations/im_animations.dart';
+
+import '../viewmodel/gradientsplashscreenviewmodel.dart';
 
 class GradientSplashScreen extends StatefulWidget {
   const GradientSplashScreen({super.key});

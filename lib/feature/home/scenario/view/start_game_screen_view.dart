@@ -1,6 +1,6 @@
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:storyhub/feature/home/scenario/viewmodel/start_game_screen_viewmodel.dart';
+import '../viewmodel/start_game_screen_viewmodel.dart';
 
 class StartGameView extends StartGameScreenViewModel {
   const StartGameView({super.key});

@@ -2,7 +2,7 @@ import 'dart:ffi';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/settings/model/settings_model.dart';
+import '../model/settings_model.dart';
 
 class SettingsPageView extends StatefulWidget {
   const SettingsPageView({Key? key}) : super(key: key);
@@ -254,7 +254,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                                     ),
                                     TextButton(
                                       style: TextButton.styleFrom(
-                                        foregroundColor: Colors.white,
+                                        // foregroundColor: Colors.white,
                                         textStyle:
                                             const TextStyle(fontSize: 20),
                                       ),

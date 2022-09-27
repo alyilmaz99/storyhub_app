@@ -1,4 +1,5 @@
 
+
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,6 @@ class TimerDesign extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-
     return Stack(children: [
       Center(
         child: SizedBox(

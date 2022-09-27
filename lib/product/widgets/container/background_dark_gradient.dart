@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:storyhub/core/components/color/background_gradient_core.dart';
+import '../../../core/components/color/background_gradient_core.dart';
 
 class BackgroundDarkGradient extends BackgroundGradient {
   BackgroundDarkGradient({super.alignmentGeometry, super.color1, super.color2});
