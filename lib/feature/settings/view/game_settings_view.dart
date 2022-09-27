@@ -459,10 +459,12 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                     ),
                   ),
                   onPressed: () {
+                    Navigator.pop(context);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const /*SelectScenarioView*/ GamePageWithTimer()));
+                            builder: (context) =>
+                                const /*SelectScenarioView*/ SelectScenarioView()));
                   },
                   child: Container(
                     width: screenWidth / 2.2,

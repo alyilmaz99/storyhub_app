@@ -28,10 +28,10 @@ class _DisplayScenario extends State<DisplayScenario> {
                 onPressed: () {},
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 25),
-            Container(
+            SizedBox(height: MediaQuery.of(context).size.height / 50),
+            SizedBox(
               width: MediaQuery.of(context).size.width / 1,
-              height: MediaQuery.of(context).size.height / (1.5),
+              height: MediaQuery.of(context).size.height / (1.3),
               //decoration: BoxDecoration(
 
               //borderRadius: BorderRadius.circular(15),
@@ -43,21 +43,21 @@ class _DisplayScenario extends State<DisplayScenario> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => HomeCardsOrder()));
+                          builder: (context) => const HomeCardsOrder()));
                 },
                 child: Card(
-                    color: Color.fromRGBO(47, 13, 75, 1),
+                    color: Colors.transparent,
+                    shadowColor: Colors.transparent,
                     elevation: 6,
                     margin: const EdgeInsets.all(12),
                     child: Padding(
                         padding: const EdgeInsets.all(16),
                         child: Container(
                             width: double.infinity,
-                            //height: 200,
                             decoration: const BoxDecoration(
                                 image: DecorationImage(
-                                    image: NetworkImage(
-                                        "https://picsum.photos/600"),
+                                    image: AssetImage(
+                                        "assets/images/cards/emptycard.png"),
                                     fit: BoxFit.cover)),
                             child: Container(
                                 alignment: Alignment.bottomRight,
@@ -65,36 +65,43 @@ class _DisplayScenario extends State<DisplayScenario> {
                                 child: Column(
                                   children: [
                                     SizedBox(
-                                      height: 25,
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              9,
                                     ),
                                     Container(
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 15),
-                                      child: Align(
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 15),
+                                      child: const Align(
                                         alignment: Alignment.topCenter,
                                         child: Text(
                                           "Denizaltı",
                                           style: TextStyle(
-                                            fontSize: 20,
-                                            fontFamily: "GamerStation",
-                                            //color: Colors.white
-                                          ),
+                                              fontSize: 20,
+                                              fontFamily: "GamerStation",
+                                              color: Colors.white),
                                         ),
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 20,
+                                      height:
+                                          MediaQuery.of(context).size.height /
+                                              30,
                                     ),
                                     Container(
-                                      margin:
-                                          EdgeInsets.symmetric(horizontal: 20),
-                                      child: Align(
+                                      color: Colors.transparent,
+                                      margin: const EdgeInsets.symmetric(
+                                          horizontal: 35),
+                                      child: const Align(
                                         alignment: Alignment.center,
                                         child: Text(
                                             "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacusf",
+                                            textAlign: TextAlign.center,
                                             style: TextStyle(
-                                                fontSize: 15,
-                                                fontFamily: "Montserrat")),
+                                              fontSize: 14,
+                                              fontFamily: "Montserrat",
+                                              color: Colors.white,
+                                            )),
                                       ),
                                     )
                                   ],
