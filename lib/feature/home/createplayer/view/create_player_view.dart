@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
 import '../viewmodel/create_player_viewmodel.dart';
 import '../../../settings/model/game_settings_model.dart';
 import '../../../../product/widgets/button/nasil_oynanir_soru_isareti_button.dart';
@@ -14,11 +15,6 @@ class CreatePlayerView extends StatefulWidget {
 class _CreatePlayerViewState extends CreatePlayerViewModel {
   var textFieldController = TextEditingController();
   bool isEmpty = false;
-  Map<dynamic, dynamic> playersMap = <dynamic, dynamic>{};
-
-  Future<Map> recallPlayersMap(Map) async {
-    return playersMap;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +22,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
     int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
-    Future<void> createPlayerfunc() async {
-      for (var i = 1; i <= userNumber; i++) {
-        playersMap[i] = i;
-        playersMap["name"] = textFieldController.value.text;
-      }
-    }
+    Map? myPlayersMap = Provider.of<Player>(context).playersMap;
+    Future<void> mycreatePlayerfunc = Provider.of<Player>(context).createPlayerfunc(userNumber, textFieldController);
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(242, 128, 106, 1.0),
@@ -113,9 +105,9 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                     ),
                     onPressed: () {
                       setState(() {
-                        createPlayerfunc();
+                        mycreatePlayerfunc;
                         // ignore: avoid_print
-                        print(playersMap);
+                        print(myPlayersMap);
                       });
                     },
                   ),
