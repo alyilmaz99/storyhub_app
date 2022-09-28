@@ -1,5 +1,6 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:storyhub/product/widgets/timer/timer_design.dart';
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 
 import '../../../drawer/view/drawer_view.dart';
@@ -53,8 +54,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                   setState(() {
                     timer.pauseTimer();
                   });
-                  Navigator.of(context).push(
-                      FullScreenModal(controller2: controller, timer: timer));
+                  Navigator.of(context).push(FullScreenModal(controller2: controller, timer: timer));
                 },
                 icon: const Icon(
                   Icons.menu,
@@ -134,7 +134,6 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 ),
               ),
             ),
-
             timer,
             SizedBox(
               height: screenHeight / 40,
