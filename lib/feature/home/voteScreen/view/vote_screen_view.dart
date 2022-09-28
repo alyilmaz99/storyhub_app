@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
 import 'package:storyhub/feature/settings/model/game_settings_model.dart';
 import 'package:storyhub/product/widgets/button/nasil_oylama_soru_isareti_button.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
@@ -13,25 +14,22 @@ class VoteScreenView extends StatefulWidget {
 
 class _VoteScreenViewState extends State<VoteScreenView> {
   @override
-  void initState() {
-    super.initState();
-    getPlayerImages();
-  }
-
-  List playerImages = <String>[];
-  Map<dynamic, dynamic>? selfplayersMap;
-
-  Future<List> getPlayerImages() async {
-    for (var i = 0; i < 10; i++) {}
-    return playerImages;
-  }
-
-  @override
   Widget build(BuildContext context) {
-    int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
     var screenInfo = MediaQuery.of(context);
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
+    List nameList = <String>[];
+    int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
+    Map? myPlayerMap = Provider.of<Player>(context).playersMap;
+    var entryList = myPlayerMap?.entries.toList();
+    Future<List> getNameToList() async {
+      for (var element in entryList!) {
+        if (element.key == 'name') {
+          nameList.add(element.value);
+        }
+      }
+      return entryList;
+    }
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(242, 128, 106, 1.0),
@@ -66,9 +64,31 @@ class _VoteScreenViewState extends State<VoteScreenView> {
           ),
           SizedBox(
               height: screenHeight / 7, width: screenWidth / 3, child: Image.asset('assets/images/profiles/1.png')),
-          Padding(
-            padding: EdgeInsets.only(bottom: screenHeight / 20, top: screenHeight / 20),
-            child: PlayerVoteRateContainer(screenWidth: screenWidth, screenHeight: screenHeight),
+          Scrollbar(
+            radius: const Radius.circular(20.0),
+            thumbVisibility: true,
+            thickness: 5,
+            child: SizedBox(
+              height: 400,
+              width: 350,
+              child: Padding(
+                padding: EdgeInsets.only(top: screenHeight / 50),
+                child: ListView.builder(
+                  itemCount: userNumber,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.only(bottom: screenHeight / 20),
+                      child: PlayerVoteRateContainer(
+                        screenWidth: screenWidth,
+                        screenHeight: screenHeight,
+                        nameListContainer: nameList,
+                        name: nameList[index].toString(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
           ),
         ],
       ),
@@ -81,11 +101,14 @@ class PlayerVoteRateContainer extends StatelessWidget {
     Key? key,
     required this.screenWidth,
     required this.screenHeight,
+    required this.nameListContainer,
+    required this.name,
   }) : super(key: key);
 
   final double screenWidth;
   final double screenHeight;
-
+  final List nameListContainer;
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -102,7 +125,7 @@ class PlayerVoteRateContainer extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.only(left: screenWidth / 7, top: screenHeight / 40),
-                child: Text("İsim",
+                child: Text(name,
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Colors.white,
                           fontSize: 25.0,
