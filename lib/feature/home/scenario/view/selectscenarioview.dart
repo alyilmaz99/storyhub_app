@@ -53,169 +53,169 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
 
     final List<Widget> images = [
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
-              image: new AssetImage("assets/images/denizalti.png"),
+              image: AssetImage("assets/images/denizalti.png"),
               fit: BoxFit.fill,
             ),
             borderRadius: BorderRadius.all(Radius.circular(20))),
         child: Align(
           alignment: Alignment.bottomCenter,
-          child: Container(
+          child: SizedBox(
             width: w / 2.5,
             child: OutlinedButton(
               onPressed: () {},
-              child: Text(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      const Color.fromRGBO(217, 217, 217, 1)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0)))),
+              child: const Text(
                 "DENİZALTI",
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
             ),
           ),
         ),
       ),
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
-              image: new AssetImage("assets/images/sirket.png"),
+              image: AssetImage("assets/images/sirket.png"),
               fit: BoxFit.fill,
             ),
             borderRadius: BorderRadius.all(Radius.circular(20))),
         child: Align(
           alignment: Alignment.bottomCenter,
-          child: Container(
+          child: SizedBox(
             width: w / 2.5,
             child: OutlinedButton(
               onPressed: () {},
-              child: Text(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      const Color.fromRGBO(217, 217, 217, 1)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0)))),
+              child: const Text(
                 "ŞİRKET",
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
             ),
           ),
         ),
       ),
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
-              image: new AssetImage("assets/images/marskolonisi.png"),
+              image: AssetImage("assets/images/marskolonisi.png"),
               fit: BoxFit.fill,
             ),
             borderRadius: BorderRadius.all(Radius.circular(20))),
         child: Align(
           alignment: Alignment.bottomCenter,
-          child: Container(
+          child: SizedBox(
             width: w / 2.5,
             child: OutlinedButton(
               onPressed: () {},
-              child: Text(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      const Color.fromRGBO(217, 217, 217, 1)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0)))),
+              child: const Text(
                 "MARS KOLONİSİ",
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
             ),
           ),
         ),
       ),
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
-              image: new AssetImage("assets/images/uzay.png"),
+              image: AssetImage("assets/images/uzay.png"),
               fit: BoxFit.fill,
             ),
             borderRadius: BorderRadius.all(Radius.circular(20))),
         child: Align(
           alignment: Alignment.bottomCenter,
-          child: Container(
+          child: SizedBox(
             width: w / 2.5,
             child: OutlinedButton(
               onPressed: () {},
-              child: Text(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      const Color.fromRGBO(217, 217, 217, 1)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0)))),
+              child: const Text(
                 "UZAY",
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
             ),
           ),
         ),
       ),
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
-              image: new AssetImage("assets/images/beyazsaray.png"),
+              image: AssetImage("assets/images/beyazsaray.png"),
               fit: BoxFit.fill,
             ),
             borderRadius: BorderRadius.all(Radius.circular(20))),
         child: Align(
           alignment: Alignment.bottomCenter,
-          child: Container(
+          child: SizedBox(
             width: w / 2.5,
             child: OutlinedButton(
               onPressed: () {},
-              child: Text(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      const Color.fromRGBO(217, 217, 217, 1)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0)))),
+              child: const Text(
                 "BEYAZ SARAY",
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
             ),
           ),
         ),
       ),
       Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             image: DecorationImage(
-              image: new AssetImage("assets/images/ahir.png"),
+              image: AssetImage("assets/images/ahir.png"),
               fit: BoxFit.fill,
             ),
             borderRadius: BorderRadius.all(Radius.circular(20))),
         child: Align(
           alignment: Alignment.bottomCenter,
-          child: Container(
+          child: SizedBox(
             width: w / 2.5,
             child: OutlinedButton(
               onPressed: () {},
-              child: Text(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      const Color.fromRGBO(217, 217, 217, 1)),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0)))),
+              child: const Text(
                 "AHIR",
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
             ),
           ),
         ),
@@ -232,40 +232,36 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
         ])),
         child: Column(
           children: [
-            Container(
-              child: Row(
-                children: [
-                  Spacer(
-                    flex: 4,
-                  ),
-                  Align(alignment: Alignment.center, child: buildIcon()),
-                  Spacer(
-                    flex: 2,
-                  ),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: buildIcon1(),
-                  ),
-                ],
-              ),
+            Row(
+              children: [
+                const Spacer(
+                  flex: 4,
+                ),
+                Align(alignment: Alignment.center, child: buildIcon()),
+                const Spacer(
+                  flex: 2,
+                ),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: buildIcon1(),
+                ),
+              ],
             ),
             Row(children: [
-              Spacer(flex: 2),
-              Align(
+              const Spacer(flex: 2),
+              const Align(
                 alignment: Alignment.center,
-                child: Container(
-                  child: Text("SENARYO SEÇ",
-                      style: TextStyle(
-                          fontFamily: 'GamerStation',
-                          letterSpacing: 0.5,
-                          fontSize: 25.0,
-                          color: Colors.white)
-                      //  Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      //     letterSpacing: 1.5, fontSize: 25.0, color: Colors.white),
-                      ),
-                ),
+                child: Text("SENARYO SEÇ",
+                    style: TextStyle(
+                        fontFamily: 'GamerStation',
+                        letterSpacing: 0.5,
+                        fontSize: 25.0,
+                        color: Colors.white)
+                    //  Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    //     letterSpacing: 1.5, fontSize: 25.0, color: Colors.white),
+                    ),
               ),
-              Spacer(),
+              const Spacer(),
               Align(
                 alignment: Alignment.centerRight,
                 child: buildIcon2(),
@@ -305,7 +301,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                   return Expanded(
                     child: Scrollbar(
                         child: GridView.count(
-                            physics: ScrollPhysics(),
+                            physics: const ScrollPhysics(),
                             // Create a grid with 2 columns. If you change the scrollDirection to
                             // horizontal, this produces 2 rows.
                             crossAxisCount: 1,
@@ -314,42 +310,41 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                 List.generate(filteredList.length, (index) {
                               return Center(
                                   child: Padding(
-                                padding: EdgeInsets.symmetric(
+                                padding: const EdgeInsets.symmetric(
                                     horizontal: 25.0, vertical: 15.0),
                                 child: FlipCard(
                                     front: Container(
                                       decoration: BoxDecoration(
                                           image: DecorationImage(
-                                            image: new AssetImage(
+                                            image: AssetImage(
                                                 "assets/images/senaryolar/${filteredList[index].senaryoNumber}.png"),
                                             fit: BoxFit.fill,
                                           ),
-                                          borderRadius: BorderRadius.all(
+                                          borderRadius: const BorderRadius.all(
                                               Radius.circular(20))),
                                       child: Align(
                                         alignment: Alignment.bottomCenter,
-                                        child: Container(
+                                        child: SizedBox(
                                           width: w / 2.5,
                                           child: OutlinedButton(
                                             onPressed: () {},
-                                            child: Text(
-                                              filteredList[index].senaryoText,
-                                              style: TextStyle(
-                                                  fontFamily: "GamerStation",
-                                                  color: Colors.black),
-                                            ),
                                             style: ButtonStyle(
                                                 backgroundColor:
                                                     MaterialStateProperty.all(
-                                                        Color.fromRGBO(
+                                                        const Color.fromRGBO(
                                                             217, 217, 217, 1)),
                                                 shape: MaterialStateProperty.all<
                                                         RoundedRectangleBorder>(
                                                     RoundedRectangleBorder(
                                                         borderRadius:
-                                                            BorderRadius
-                                                                .circular(
-                                                                    18.0)))),
+                                                            BorderRadius.circular(
+                                                                18.0)))),
+                                            child: Text(
+                                              filteredList[index].senaryoText,
+                                              style: const TextStyle(
+                                                  fontFamily: "GamerStation",
+                                                  color: Colors.black),
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -357,98 +352,96 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                     back: Stack(
                                       children: [
                                         Container(
-                                          decoration: BoxDecoration(
+                                          decoration: const BoxDecoration(
                                               color: Colors.amber,
                                               borderRadius: BorderRadius.all(
                                                   Radius.circular(10))),
                                         ),
                                         Positioned(
-                                            child: Container(
-                                          child: Column(
-                                            children: [
-                                              SizedBox(height: 50),
-                                              Align(
-                                                alignment: Alignment.topCenter,
+                                            child: Column(
+                                          children: [
+                                            const SizedBox(height: 50),
+                                            Align(
+                                              alignment: Alignment.topCenter,
+                                              child: Text(
+                                                //titles[index],
+                                                filteredList[index]
+                                                    .senaryoText
+                                                    .toString(),
+                                                style: const TextStyle(
+                                                    fontSize: 25,
+                                                    fontFamily: "GamerStation"),
+                                              ),
+                                            ),
+                                            const SizedBox(height: 25),
+                                            Container(
+                                              margin:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 20.0),
+                                              child: Align(
+                                                alignment: Alignment.center,
                                                 child: Text(
-                                                  //titles[index],
-                                                  filteredList[index]
-                                                      .senaryoText
-                                                      .toString(),
-                                                  style: TextStyle(
-                                                      fontSize: 25,
-                                                      fontFamily:
-                                                          "GamerStation"),
-                                                ),
+                                                    filteredList[index]
+                                                        .shortText,
+                                                    style: const TextStyle(
+                                                        fontSize: 15,
+                                                        fontFamily:
+                                                            "Montserrat")),
                                               ),
-                                              SizedBox(height: 25),
-                                              Container(
-                                                margin: EdgeInsets.symmetric(
-                                                    horizontal: 20.0),
-                                                child: Align(
-                                                  alignment: Alignment.center,
-                                                  child: Text(
-                                                      filteredList[index]
-                                                          .shortText,
-                                                      style: TextStyle(
-                                                          fontSize: 15,
-                                                          fontFamily:
-                                                              "Montserrat")),
-                                                ),
-                                              ),
-                                              Spacer(),
-                                              Container(
-                                                margin: EdgeInsets.symmetric(
-                                                    horizontal: 20.0,
-                                                    vertical: 15.0),
-                                                child: Align(
-                                                  alignment:
-                                                      Alignment.bottomRight,
-                                                  child: SizedBox(
-                                                    width: 70,
-                                                    height: 40,
-                                                    child: FloatingActionButton(
-                                                      heroTag: "btn" +
-                                                          (index).toString(),
-                                                      splashColor:
-                                                          Colors.pink.shade600,
-                                                      backgroundColor:
-                                                          Color.fromRGBO(
-                                                              232, 114, 73, 1),
-                                                      shape:
-                                                          const RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius.all(
-                                                                Radius.circular(
-                                                                    20.0)),
-                                                      ),
-                                                      onPressed: () {
-                                                        Navigator.pop(context);
-                                                        Navigator.push(
-                                                            context,
-                                                            MaterialPageRoute(
-                                                                builder:
-                                                                    (context) =>
-                                                                        DisplayScenario()));
-                                                      },
-                                                      child: Text(
-                                                        "OYNA",
-                                                        style: Theme.of(context)
-                                                            .textTheme
-                                                            .bodySmall
-                                                            ?.copyWith(
-                                                                color: Colors
-                                                                    .white,
-                                                                letterSpacing:
-                                                                    1.5,
-                                                                fontFamily:
-                                                                    "GamerStation"),
-                                                      ),
+                                            ),
+                                            const Spacer(),
+                                            Container(
+                                              margin:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 20.0,
+                                                      vertical: 15.0),
+                                              child: Align(
+                                                alignment:
+                                                    Alignment.bottomRight,
+                                                child: SizedBox(
+                                                  width: 70,
+                                                  height: 40,
+                                                  child: FloatingActionButton(
+                                                    heroTag: "btn$index",
+                                                    splashColor:
+                                                        Colors.pink.shade600,
+                                                    backgroundColor:
+                                                        const Color.fromRGBO(
+                                                            232, 114, 73, 1),
+                                                    shape:
+                                                        const RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.all(
+                                                              Radius.circular(
+                                                                  20.0)),
+                                                    ),
+                                                    onPressed: () {
+                                                      Navigator.pop(context);
+                                                      Navigator.pop(context);
+                                                      Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  DisplayScenario()));
+                                                    },
+                                                    child: Text(
+                                                      "OYNA",
+                                                      style: Theme.of(context)
+                                                          .textTheme
+                                                          .bodySmall
+                                                          ?.copyWith(
+                                                              color:
+                                                                  Colors.white,
+                                                              letterSpacing:
+                                                                  1.5,
+                                                              fontFamily:
+                                                                  "GamerStation"),
                                                     ),
                                                   ),
                                                 ),
-                                              )
-                                            ],
-                                          ),
+                                              ),
+                                            )
+                                          ],
                                         ))
                                       ],
                                     )),
@@ -456,7 +449,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                             }))),
                   );
                 } else {
-                  return Center(
+                  return const Center(
                     child: CircularProgressIndicator(),
                   );
                 }
@@ -504,13 +497,13 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
     await showDialog(
         context: context,
         builder: (BuildContext context) {
-          return Container(
+          return SizedBox(
             width: MediaQuery.of(context).size.width / 2,
             child: SimpleDialog(
               insetPadding: EdgeInsets.only(
                   bottom: 2 * (MediaQuery.of(context).size.height / 8),
                   left: (MediaQuery.of(context).size.width / 10)),
-              backgroundColor: Color.fromRGBO(255, 163, 114, 1),
+              backgroundColor: const Color.fromRGBO(255, 163, 114, 1),
               children: [
                 SimpleDialogOption(
                     onPressed: () {
@@ -520,21 +513,21 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     },
                     child: Column(children: [
                       Row(children: [
-                        Text(
+                        const Text(
                           "KORKU - 6",
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
                               fontSize: 20.0),
                         ),
-                        Spacer(),
-                        Icon(
+                        const Spacer(),
+                        const Icon(
                           Icons.abc,
                           color: Colors.white,
                           size: 40,
                         )
                       ]),
-                      Divider()
+                      const Divider()
                     ])),
                 SimpleDialogOption(
                     onPressed: () {
@@ -545,19 +538,19 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     child: Column(
                       children: [
                         Row(children: [
-                          Text("EĞLENCE - 4 ",
+                          const Text("EĞLENCE - 4 ",
                               style: TextStyle(
                                   fontFamily: "GamerStation",
                                   color: Colors.white,
                                   fontSize: 20.0)),
-                          Spacer(),
-                          Icon(
+                          const Spacer(),
+                          const Icon(
                             Icons.ac_unit_outlined,
                             color: Colors.white,
                             size: 40,
                           )
                         ]),
-                        Divider()
+                        const Divider()
                       ],
                     )),
                 SimpleDialogOption(
@@ -568,21 +561,21 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     },
                     child: Column(children: [
                       Row(children: [
-                        Text(
+                        const Text(
                           "FANTASTİK - 2",
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
                               fontSize: 20.0),
                         ),
-                        Spacer(),
-                        Icon(
+                        const Spacer(),
+                        const Icon(
                           Icons.add_alarm_sharp,
                           color: Colors.white,
                           size: 40,
                         )
                       ]),
-                      Divider()
+                      const Divider()
                     ])),
                 SimpleDialogOption(
                     onPressed: () {
@@ -592,21 +585,21 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     },
                     child: Column(children: [
                       Row(children: [
-                        Text(
+                        const Text(
                           "MACERA - 8",
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
                               fontSize: 20.0),
                         ),
-                        Spacer(),
-                        Icon(
+                        const Spacer(),
+                        const Icon(
                           Icons.access_alarm_rounded,
                           color: Colors.white,
                           size: 40,
                         )
                       ]),
-                      Divider()
+                      const Divider()
                     ])),
                 SimpleDialogOption(
                     onPressed: () {
@@ -616,15 +609,15 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     },
                     child: Column(children: [
                       Row(children: [
-                        Text(
+                        const Text(
                           "DRAM - 3",
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
                               fontSize: 20.0),
                         ),
-                        Spacer(),
-                        Icon(
+                        const Spacer(),
+                        const Icon(
                           Icons.accessibility_new_sharp,
                           color: Colors.white,
                           size: 40,

@@ -80,6 +80,7 @@ class FullScreenModal extends DrawerViewModel {
                     ),
                     disabledForegroundColor: Colors.white,
                     disabledBackgroundColor: Colors.white,
+
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                 child: const Text(
                   "Yeni Oyun",
