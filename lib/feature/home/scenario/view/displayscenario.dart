@@ -45,7 +45,7 @@ class _DisplayScenario extends State<DisplayScenario> {
 
               child: InkWell(
                 onTap: () {
-                  Navigator.pop(this.context);
+                  Navigator.pop(context);
                   Navigator.push(
                       context,
                       MaterialPageRoute(
