@@ -7,6 +7,7 @@ import '../../../../core/components/GameContreller.dart';
 import 'CardPAge.dart';
 
 class TappedCard extends StatefulWidget {
+  Function callback;
   String? assetImageCardBack;
   String? assetImageCardFront;
   Widget? routeToPage;
@@ -15,6 +16,7 @@ class TappedCard extends StatefulWidget {
     required this.assetImageCardBack,
     required this.assetImageCardFront,
     required this.routeToPage,
+    required this.callback,
   }) : super(key: key);
   @override
   _TappedCardState createState() => _TappedCardState(
@@ -53,7 +55,9 @@ class _TappedCardState extends State<TappedCard> {
         // await Future.delayed(Duration(seconds: 1))
         if (isFlipped == true) {
           // _navigateToNextScreen(context);
-          Navigator.push(context, ScaleRoute(page: this.routeToPage!));
+          // Navigator.push(context, ScaleRoute(page: this.routeToPage!));
+          this.widget.callback();
+
           isFlipped = false;
         } else {
           isFlipped = true;

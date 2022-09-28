@@ -1,3 +1,4 @@
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import '../viewmodel/after_scenario_page_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
@@ -16,6 +17,7 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
+    CountDownController controller2 = CountDownController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
@@ -45,7 +47,7 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
                   setState(() {
                     //   timer.stopTimer();
                   });
-                  Navigator.of(context).push(FullScreenModal());
+                  Navigator.of(context).push(FullScreenModal(controller2: controller2));
                 },
                 icon: const Icon(
                   Icons.menu,

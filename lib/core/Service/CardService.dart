@@ -57,6 +57,7 @@ class CardService {
       assetImageCardBack: "assets/images/cards/" + backCardImageUrl,
       assetImageCardFront: "assets/images/cards/"+ cardFront.imageUrl,
       routeToPage: CardPage(assetImageCardBack: "assets/images/"+ backCardImageUrl,assetImageCardFront: "assets/images/cards/"+ cardFront.imageUrl),
+      callback: () => {},
     );
 
     return newTappedCard;
