@@ -18,130 +18,133 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
 
   @override
   Widget build(BuildContext context) {
+    bool _isCheckOkay = false;
     var screenInfo = MediaQuery.of(context);
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
     int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
     Map? myPlayersMap = Provider.of<Player>(context).playersMap;
-    Future<void> mycreatePlayerfunc = Provider.of<Player>(context).createPlayerfunc(userNumber, textFieldController);
+    /* Future<void> mycreatePlayerfunc = Provider.of<Player>(context)
+        .createPlayerfunc(userNumber, textFieldController);*/
 
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(242, 128, 106, 1.0),
-      body: SizedBox(
-        height: screenHeight,
-        width: screenWidth,
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: EdgeInsets.only(top: screenHeight / 15),
-                child: SizedBox(
-                  height: screenHeight / 9,
-                  width: screenWidth / 4,
-                  child: Image.asset(
-                    'assets/images/LogoV1.png',
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.topRight,
-              child: Padding(
-                padding: EdgeInsets.only(
-                  right: screenWidth / 10,
-                  top: screenHeight / 150,
-                ),
-                child: NasilOynanirSoruIsaretiButton(
-                  myHeight: screenHeight / 2,
-                  myWidth: screenWidth / 1.5,
-                ),
-              ),
-            ),
-            Scrollbar(
-              radius: const Radius.circular(20.0),
-              thumbVisibility: true,
-              thickness: 5,
-              child: SizedBox(
-                height: 400,
-                width: 350,
+      resizeToAvoidBottomInset: false,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: RadialGradient(
+            radius: 0.7,
+            colors: [
+              Color.fromRGBO(255, 149, 113, 1),
+              Color.fromRGBO(216, 91, 47, 1)
+            ],
+          ),
+        ),
+        child: SizedBox(
+          height: screenHeight,
+          width: screenWidth,
+          child: Column(
+            children: [
+              Align(
+                alignment: Alignment.topCenter,
                 child: Padding(
-                  padding: EdgeInsets.only(top: screenHeight / 50),
-                  child: ListView.builder(
-                    itemCount: userNumber,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                          padding: EdgeInsets.only(bottom: screenHeight / 20),
-                          child: playerNameCreateContainer(context));
-                    },
+                  padding: EdgeInsets.only(top: screenHeight / 20),
+                  child: SizedBox(
+                    height: screenHeight / 16,
+                    width: screenWidth / 4.5,
+                    child: Image.asset(
+                      'assets/images/LogoV1.png',
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: EdgeInsets.only(top: screenHeight / 15),
+              /*
+              Align(
+                alignment: Alignment.topRight,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    right: screenWidth / 10,
+                    top: screenHeight / 150,
+                  ),
+                  child: NasilOynanirSoruIsaretiButton(
+                    myHeight: screenHeight / 2,
+                    myWidth: screenWidth / 1.5,
+                  ),
+                ),
+              ),*/
+              Scrollbar(
+                radius: const Radius.circular(20.0),
+                thumbVisibility: true,
+                thickness: 5,
                 child: SizedBox(
-                  height: screenHeight / 10,
-                  width: screenWidth / 2,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(216, 91, 47, 1),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0),
-                      ),
+                  height: screenHeight / 1.40,
+                  width: screenWidth / 1.15,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: screenHeight / 200),
+                    child: ListView.builder(
+                      itemCount: userNumber,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                            padding: EdgeInsets.only(bottom: screenHeight / 45),
+                            child:
+                                playerNameCreateContainer(context, index + 1));
+                      },
                     ),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/DEVAm.png',
-                          fit: BoxFit.fill,
-                        ),
-                      ],
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        mycreatePlayerfunc;
-                        // ignore: avoid_print
-                        print(myPlayersMap);
-                      });
-                    },
                   ),
                 ),
               ),
-            )
-          ],
+              SizedBox(
+                height: screenHeight / 30,
+              ),
+              buildFirstButton(context, _isCheckOkay),
+            ],
+          ),
         ),
       ),
     );
   }
 
-  Container playerNameCreateContainer(BuildContext context) {
+  Container playerNameCreateContainer(BuildContext context, int number) {
     return Container(
-      height: 90,
-      width: 350,
+      height: MediaQuery.of(context).size.height / 9,
+      width: MediaQuery.of(context).size.width / 1.2,
       decoration: playerNameCreateContainerDecoration(),
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: Image.asset('assets/images/human/human1.png'),
+            padding:
+                EdgeInsets.only(left: MediaQuery.of(context).size.width / 20),
+            child: SizedBox(
+                width: 80,
+                height: 80,
+                child: Image.asset('assets/images/profiles/$number.png')),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 30),
-            child: SizedBox(height: 30, width: 130, child: playerNameCreateTextField(context)),
+            padding:
+                EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
+            child: SizedBox(
+                height: 50,
+                width: 160,
+                child: playerNameCreateTextField(context)),
           ),
           isEmpty
               ? Padding(
-                  padding: const EdgeInsets.only(left: 20),
-                  child: IconButton(onPressed: () {}, icon: const Icon(Icons.check)))
+                  padding: const EdgeInsets.only(left: 10),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Image(
+                      image: AssetImage('assets/images/check1.png'),
+                    ),
+                  ),
+                )
               : Padding(
                   padding: const EdgeInsets.only(left: 20),
-                  child: IconButton(onPressed: () {}, icon: const Icon(Icons.cancel)),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: const Image(
+                      image: AssetImage('assets/images/check0.png'),
+                    ),
+                  ),
                 ),
         ],
       ),
@@ -174,15 +177,25 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
               fontWeight: FontWeight.w500,
             ),
         enabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+          borderRadius: BorderRadius.all(Radius.circular(20.0)),
           borderSide: BorderSide(
             color: Colors.white,
-            width: 1.5,
+            width: 1.1,
           ),
         ),
+        focusedBorder: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+            borderSide: BorderSide(
+              color: Color.fromRGBO(223, 97, 50, 1),
+              width: 4,
+            )),
         fillColor: Colors.red,
         border: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(25.0)),
+          borderSide: BorderSide(
+            color: Color.fromRGBO(223, 97, 50, 1),
+            width: 1.1,
+          ),
+          borderRadius: BorderRadius.all(Radius.circular(20.0)),
         ),
       ),
     );

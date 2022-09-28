@@ -133,11 +133,10 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                   SizedBox(height: screenHeight / 20),
                                   ElevatedButton(
                                     onPressed: () {
-                                      Navigator.of(context).pushAndRemoveUntil(
+                                      Navigator.of(context).push(
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  const MainPage()),
-                                          (Route<dynamic> route) => false);
+                                                  const MainPage()));
                                     },
                                     style: ElevatedButton.styleFrom(
                                       elevation: 7,
