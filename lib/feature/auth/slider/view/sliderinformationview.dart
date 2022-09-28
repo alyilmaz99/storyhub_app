@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import '../../../home/mainpage/view/main_page_view.dart';
 import '../viewmodel/sliderinformationviewmodel.dart';
@@ -30,7 +32,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const SizedBox(width: 20),
+              SizedBox(width: screenWidth / 7),
               Align(
                 alignment: Alignment.center,
                 child: Padding(
@@ -58,6 +60,9 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                 ),
               ),
             ],
+          ),
+          SizedBox(
+            height: screenHeight / 25,
           ),
           SizedBox(
               height: screenHeight / 1.5,
@@ -97,6 +102,9 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                 )),
                           ],
                         ),
+                        SizedBox(
+                          height: screenHeight / 20,
+                        ),
                         TextArea(
                             myWidth: screenWidth / 1.2,
                             myHeight: screenWidth / 5,
@@ -113,27 +121,48 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                               ),
                             )),
                         index == numPages
-                            ? ElevatedButton(
-                                onPressed: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPage()));
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color.fromRGBO(59, 29, 76, 1),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                ),
-                                child: const Padding(
-                                  padding: EdgeInsets.only(left: 12, top: 7, right: 12, bottom: 7),
-                                  child: Text(
-                                    "DEVAM ET",
-                                    style: TextStyle(
-                                      fontFamily: 'GamerStation',
-                                      fontSize: 22,
-                                      color: Colors.white,
+                            ? Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox(height: screenHeight / 20),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const MainPage()));
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      elevation: 7,
+                                      shadowColor:
+                                          const Color.fromRGBO(91, 49, 134, 1)
+                                              .withOpacity(1),
+                                      minimumSize: Size(
+                                          screenWidth / 1.7, screenHeight / 18),
+                                      primary:
+                                          const Color.fromRGBO(91, 49, 134, 1),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                    child: const Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 12,
+                                          top: 7,
+                                          right: 12,
+                                          bottom: 7),
+                                      child: Text(
+                                        "OYUNA GEÇ",
+                                        style: TextStyle(
+                                          fontFamily: 'GamerStation',
+                                          fontSize: 24,
+                                          color: Colors.white,
+                                        ),
+                                      ),
                                     ),
                                   ),
-                                ),
+                                ],
                               )
                             : const SizedBox(
                                 width: 5,

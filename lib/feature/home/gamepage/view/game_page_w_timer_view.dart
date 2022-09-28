@@ -19,9 +19,11 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
     CountDownController controller = CountDownController();
-    // TimerDesign timer = TimerDesign(
-    //   myController: controller,
-    // );
+    TimerDesign timer = TimerDesign(
+      myController: controller,
+      seconds: 20,
+    );
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
@@ -49,9 +51,10 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               child: IconButton(
                 onPressed: () {
                   setState(() {
-                    // timer.pauseTimer();
+                    timer.pauseTimer();
                   });
-                  Navigator.of(context).push(FullScreenModal());
+                  Navigator.of(context).push(
+                      FullScreenModal(controller2: controller, timer: timer));
                 },
                 icon: const Icon(
                   Icons.menu,
@@ -131,7 +134,11 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 ),
               ),
             ),
-            // timer,
+
+            timer,
+            SizedBox(
+              height: screenHeight / 40,
+            ),
             buildFirstButton(
               context,
               'SONRAKI',
@@ -150,7 +157,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               'OYUNCU',
             ),
             SizedBox(
-              height: screenHeight / 30,
+              height: screenHeight / 40,
             ),
             const Text(
               'TUR 1',
