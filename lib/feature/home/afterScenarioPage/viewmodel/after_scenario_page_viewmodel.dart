@@ -6,7 +6,8 @@ import '../view/after_scenario_page_view.dart';
 
 abstract class AfterScenarioViewModel extends State<AfterScenarioView> {}
 
-Widget crateHeroImage(BuildContext context, String path, double width, double height, double opacity) {
+Widget crateHeroImage(BuildContext context, String path, double width,
+    double height, double opacity) {
   return Column(
     children: [
       Container(
@@ -29,7 +30,8 @@ Widget crateHeroImage(BuildContext context, String path, double width, double he
             ),
             shadowColor: Colors.transparent,
             backgroundColor: Colors.transparent,
-            minimumSize: Size(MediaQuery.of(context).size.width / 5, MediaQuery.of(context).size.height / 30)),
+            minimumSize: Size(MediaQuery.of(context).size.width / 5,
+                MediaQuery.of(context).size.height / 30)),
         child: const Text(
           "İsim",
           style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
@@ -74,7 +76,8 @@ Widget buildFirstButton(BuildContext context, String text, double height,
       ),
       child: Text(
         text,
-        style: const TextStyle(color: Colors.white, fontSize: 23, fontFamily: 'GamerStation'),
+        style: const TextStyle(
+            color: Colors.white, fontSize: 23, fontFamily: 'GamerStation'),
       ),
     ),
   );

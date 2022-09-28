@@ -95,6 +95,8 @@ class _CardPageState extends CartPageViewModel {
           ),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Padding(
               padding: EdgeInsets.only(
@@ -127,7 +129,7 @@ class _CardPageState extends CartPageViewModel {
                                     isReverse: true,
                                     width: screenWidth / 5,
                                     height: screenHeight / 10,
-                                    duration: 15,
+                                    duration: 5,
                                     fillColor: Colors.red,
                                     ringColor: Colors.green,
                                     strokeWidth: 6,
@@ -147,8 +149,16 @@ class _CardPageState extends CartPageViewModel {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              primary: const Color.fromRGBO(251, 251, 251, 0.9),
-                              onSurface: Colors.white.withOpacity(0.38),
+
+                              backgroundColor:
+                                  const Color.fromRGBO(251, 251, 251, 0.9),
+                              disabledForegroundColor: Colors.white
+                                  .withOpacity(0.38)
+                                  .withOpacity(0.38),
+
+                              disabledBackgroundColor: Colors.white
+                                  .withOpacity(0.38)
+                                  .withOpacity(0.12),
                               // disabledBackgroundColor:
                               //     Colors.white.withOpacity(0.12),
                               minimumSize:
@@ -163,65 +173,55 @@ class _CardPageState extends CartPageViewModel {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: screenHeight / 40,
-                    ),
-                    const Text(
-                      "Kart Seçimi",
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
-                    ),
+                    _isCardTurned == false
+                        ? const Text(
+                            "Kart Seçimi",
+                            style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.white),
+                          )
+                        : const SizedBox()
                   ],
                 ),
               ),
             ),
-            SizedBox(
-              height: screenHeight / 40,
-            ),
             Container(
                 color: Colors.transparent,
-                width: screenWidth / 1.7,
-                height: screenHeight / 2.1,
+                width: screenWidth / 2.1,
+                height: screenHeight / 2.6,
                 child: currentPage),
-            SizedBox(
+            /*  SizedBox(
               height: screenHeight / 30,
-            ),
+            ),*/
             SizedBox(
               width: MediaQuery.of(context).size.width / 1.4,
               height: MediaQuery.of(context).size.height / 20,
-              child: ElevatedButton(
-                onPressed: () => {
-                  if (_isTimeUp)
-                    {
-                      Navigator.push(
-                          context, ScaleRoute(page: const GamePageWithTimer()))
-                    }
-                },
-                style: ElevatedButton.styleFrom(
-                  onPrimary: _isTimeUp
-                      ? const Color.fromRGBO(223, 105, 64, 1)
-                      : const Color.fromRGBO(251, 251, 251, 0.5),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(7.0)),
-                ),
-                child: _isTimeUp
-                    ? const Text(
+              child: _isCardTurned
+                  ? ElevatedButton(
+                      onPressed: () => {
+                            if (_isTimeUp)
+                              {
+                                Navigator.push(context,
+                                    ScaleRoute(page: const GamePageWithTimer()))
+                              }
+                          },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: _isTimeUp
+                            ? const Color.fromRGBO(223, 105, 64, 1)
+                            : const Color.fromRGBO(251, 251, 251, 0.5),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(7.0)),
+                      ),
+                      child: const Text(
+
                         "Kartı kullanarak senaryoyu bağla.",
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                             color: Color.fromRGBO(251, 251, 251, 0.9)),
-                      )
-                    : const Text(
-                        "Kartı kullanarak senaryoyu bağla.",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            color: Color.fromRGBO(251, 251, 251, 1)),
-                      ),
-              ),
+                      ))
+                  : const SizedBox(),
             ),
             SizedBox(
               height: screenHeight / 30,

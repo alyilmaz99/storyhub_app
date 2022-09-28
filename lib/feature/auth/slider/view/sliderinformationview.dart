@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:im_animations/main.dart';
 import '../../../home/mainpage/view/main_page_view.dart';
 import '../viewmodel/sliderinformationviewmodel.dart';
 
@@ -55,7 +56,9 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                   ),
                   child: IconButton(
                     onPressed: endSlide,
-                    icon: const ImageIcon(AssetImage("assets/icons/fast_forward_icon.png"), color: Colors.white),
+                    icon: const ImageIcon(
+                        AssetImage("assets/icons/fast_forward_icon.png"),
+                        color: Colors.white),
                   ),
                 ),
               ),
@@ -70,7 +73,8 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                   controller: controller,
                   itemCount: OnboardingItems.loadOnboardingItem().length,
                   itemBuilder: (BuildContext context, int index) {
-                    OnboardingItem oi = OnboardingItems.loadOnboardingItem()[index];
+                    OnboardingItem oi =
+                        OnboardingItems.loadOnboardingItem()[index];
                     return Column(
                       //mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -93,7 +97,9 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                   Icons.arrow_back_ios,
                                   color: Colors.white,
                                 )),
-                            SizedBox(width: screenWidth / 1.7, child: Image.asset(oi.image)),
+                            SizedBox(
+                                width: screenWidth / 1.7,
+                                child: Image.asset(oi.image)),
                             IconButton(
                                 onPressed: nextSlide,
                                 icon: const Icon(
@@ -127,21 +133,21 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                   SizedBox(height: screenHeight / 20),
                                   ElevatedButton(
                                     onPressed: () {
-                                      Navigator.push(
-                                          context,
+                                      Navigator.of(context).pushAndRemoveUntil(
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  const MainPage()));
+                                                  const MainPage()),
+                                          (Route<dynamic> route) => false);
                                     },
                                     style: ElevatedButton.styleFrom(
                                       elevation: 7,
+                                      backgroundColor:
+                                          const Color.fromRGBO(91, 49, 134, 1),
                                       shadowColor:
                                           const Color.fromRGBO(91, 49, 134, 1)
                                               .withOpacity(1),
                                       minimumSize: Size(
                                           screenWidth / 1.7, screenHeight / 18),
-                                      primary:
-                                          const Color.fromRGBO(91, 49, 134, 1),
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(10),
                                       ),
