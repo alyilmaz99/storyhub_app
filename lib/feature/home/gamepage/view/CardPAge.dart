@@ -149,13 +149,11 @@ class _CardPageState extends CartPageViewModel {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-
                               backgroundColor:
                                   const Color.fromRGBO(251, 251, 251, 0.9),
                               disabledForegroundColor: Colors.white
                                   .withOpacity(0.38)
                                   .withOpacity(0.38),
-
                               disabledBackgroundColor: Colors.white
                                   .withOpacity(0.38)
                                   .withOpacity(0.12),
@@ -214,7 +212,6 @@ class _CardPageState extends CartPageViewModel {
                             borderRadius: BorderRadius.circular(7.0)),
                       ),
                       child: const Text(
-
                         "Kartı kullanarak senaryoyu bağla.",
                         style: TextStyle(
                             fontSize: 16,
