@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../viewmodel/create_player_viewmodel.dart';
 import '../../../settings/model/game_settings_model.dart';
-import '../../../../product/widgets/button/soru_isareti_button.dart';
+import '../../../../product/widgets/button/nasil_oynanir_soru_isareti_button.dart';
 
 class CreatePlayerView extends StatefulWidget {
   const CreatePlayerView({Key? key}) : super(key: key);
@@ -14,6 +14,11 @@ class CreatePlayerView extends StatefulWidget {
 class _CreatePlayerViewState extends CreatePlayerViewModel {
   var textFieldController = TextEditingController();
   bool isEmpty = false;
+  Map<dynamic, dynamic> playersMap = <dynamic, dynamic>{};
+
+  Future<Map> recallPlayersMap(Map) async {
+    return playersMap;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +26,6 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
     int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
-    Map<dynamic, dynamic> playersMap = <dynamic, dynamic>{};
     Future<void> createPlayerfunc() async {
       for (var i = 1; i <= userNumber; i++) {
         playersMap[i] = i;
@@ -57,7 +61,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   right: screenWidth / 10,
                   top: screenHeight / 150,
                 ),
-                child: SoruIsaretiButton(
+                child: NasilOynanirSoruIsaretiButton(
                   myHeight: screenHeight / 2,
                   myWidth: screenWidth / 1.5,
                 ),
@@ -92,7 +96,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   width: screenWidth / 2,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: const Color.fromRGBO(216, 91, 47, 1),
+                      backgroundColor: const Color.fromRGBO(216, 91, 47, 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       ),
@@ -137,20 +141,15 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30),
-            child: SizedBox(
-                height: 30,
-                width: 130,
-                child: playerNameCreateTextField(context)),
+            child: SizedBox(height: 30, width: 130, child: playerNameCreateTextField(context)),
           ),
           isEmpty
               ? Padding(
                   padding: const EdgeInsets.only(left: 20),
-                  child: IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.check)))
+                  child: IconButton(onPressed: () {}, icon: const Icon(Icons.check)))
               : Padding(
                   padding: const EdgeInsets.only(left: 20),
-                  child: IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.cancel)),
+                  child: IconButton(onPressed: () {}, icon: const Icon(Icons.cancel)),
                 ),
         ],
       ),

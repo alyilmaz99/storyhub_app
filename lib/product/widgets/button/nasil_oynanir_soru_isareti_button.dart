@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SoruIsaretiButton extends StatelessWidget {
-  const SoruIsaretiButton({Key? key, required this.myHeight, required this.myWidth}) : super(key: key);
+class NasilOynanirSoruIsaretiButton extends StatelessWidget {
+  const NasilOynanirSoruIsaretiButton({Key? key, required this.myHeight, required this.myWidth}) : super(key: key);
   final double myHeight;
   final double myWidth;
   @override
