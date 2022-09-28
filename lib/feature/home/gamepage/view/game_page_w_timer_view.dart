@@ -50,11 +50,13 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               alignment: Alignment.centerRight,
               child: IconButton(
                 onPressed: () {
-                  setState(() {
-                    timer.pauseTimer();
-                  });
-                  Navigator.of(context).push(
+                   
+                      timer.pauseTimer();
+                      //timer.stopEnable1 == false;
+                    
+                    Navigator.of(context).push(
                       FullScreenModal(controller2: controller, timer: timer));
+                 
                 },
                 icon: const Icon(
                   Icons.menu,

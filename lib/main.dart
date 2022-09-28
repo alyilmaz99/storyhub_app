@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
+import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
 import 'package:storyhub/product/model/player_selection_model.dart';
 import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
-import 'feature/home/scenario/view/selectscenarioview.dart';
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
