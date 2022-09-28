@@ -50,17 +50,15 @@ class FullScreenModal extends DrawerViewModel {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    disabledForegroundColor:
-                        Colors.white.withOpacity(0.12).withOpacity(0.38),
-                    disabledBackgroundColor:
-                        Colors.white.withOpacity(0.12).withOpacity(0.12),
+                    disabledForegroundColor: Colors.white.withOpacity(0.9),
+                    disabledBackgroundColor: Colors.white.withOpacity(0.9),
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                 child: const Text(
                   "DEVAM ET",
                   style: TextStyle(
-                    fontSize: 30,
-                    fontFamily: 'GamerStation',
-                  ),
+                      fontSize: 30,
+                      fontFamily: 'GamerStation',
+                      color: Colors.white,)
                 ),
               ),
               const SizedBox(
@@ -80,16 +78,16 @@ class FullScreenModal extends DrawerViewModel {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    disabledForegroundColor:
-                        Colors.white.withOpacity(0.12).withOpacity(0.38),
-                    disabledBackgroundColor:
-                        Colors.white.withOpacity(0.12).withOpacity(0.12),
+                    disabledForegroundColor: Colors.white,
+                    disabledBackgroundColor: Colors.white,
+
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                 child: const Text(
                   "Yeni Oyun",
                   style: TextStyle(
                     fontSize: 30,
                     fontFamily: 'GamerStation',
+                    color: Colors.white
                   ),
                 ),
               ),
