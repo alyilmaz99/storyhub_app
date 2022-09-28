@@ -51,11 +51,8 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-<<<<<<< HEAD
       home: CardPage(assetImageCardBack: "assets/images/cards/7.png", assetImageCardFront: "assets/images/cards/110.png"),
-=======
       home: const HomeCardsOrder(),
->>>>>>> 17f3b1f8add94306ea02f7efad5216e98a5aaeb7
     );
   }
 }

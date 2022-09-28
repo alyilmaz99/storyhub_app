@@ -55,9 +55,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                   ),
                   child: IconButton(
                     onPressed: endSlide,
-                    icon: const ImageIcon(
-                        AssetImage("assets/icons/fast_forward_icon.png"),
-                        color: Colors.white),
+                    icon: const ImageIcon(AssetImage("assets/icons/fast_forward_icon.png"), color: Colors.white),
                   ),
                 ),
               ),
@@ -72,8 +70,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                   controller: controller,
                   itemCount: OnboardingItems.loadOnboardingItem().length,
                   itemBuilder: (BuildContext context, int index) {
-                    OnboardingItem oi =
-                        OnboardingItems.loadOnboardingItem()[index];
+                    OnboardingItem oi = OnboardingItems.loadOnboardingItem()[index];
                     return Column(
                       //mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -96,9 +93,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                   Icons.arrow_back_ios,
                                   color: Colors.white,
                                 )),
-                            SizedBox(
-                                width: screenWidth / 1.7,
-                                child: Image.asset(oi.image)),
+                            SizedBox(width: screenWidth / 1.7, child: Image.asset(oi.image)),
                             IconButton(
                                 onPressed: nextSlide,
                                 icon: const Icon(
