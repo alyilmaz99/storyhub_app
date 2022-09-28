@@ -34,7 +34,7 @@ class GameSettingsModel with ChangeNotifier {
   }
 
   void incrementPlayerCount() {
-    if (playerCount < 10) {
+    if (playerCount < 9) {
       playerCount++;
       notifyListeners();
     }
@@ -49,14 +49,14 @@ class GameSettingsModel with ChangeNotifier {
 
   void incrementTimerValue() {
     if (timerValue < 60) {
-      timerValue++;
+      timerValue = timerValue + 5;
       notifyListeners();
     }
   }
 
   void decrementTimerValue() {
-    if (timerValue > 1) {
-      timerValue--;
+    if (timerValue > 20) {
+      timerValue = timerValue - 5;
       notifyListeners();
     }
   }
@@ -83,12 +83,13 @@ class GameSettingsModel with ChangeNotifier {
   }
 
   void decrementRoundCount() {
-    if (roundCount > 1) {
+    if (roundCount > 3) {
       roundCount--;
       notifyListeners();
     }
   }
-  int getTimerValue(){
+
+  int getTimerValue() {
     return timerValue;
   }
 }
