@@ -7,19 +7,26 @@ import '../viewmodel/drawer_viewmodel.dart';
 import '../../home/mainpage/view/main_page_view.dart';
 
 class FullScreenModal extends DrawerViewModel {
-  CountDownController? controller2;
+  
+  CountDownController controller2;
   TimerDesign? timer;
-  FullScreenModal({this.controller2, this.timer});
+  FullScreenModal({required this.controller2, this.timer});
+    
   @override
   Widget buildPage(
+    
+
     BuildContext context,
     Animation<double> animation,
     Animation<double> secondaryAnimation,
   ) {
-    timer = TimerDesign(myController: controller2, seconds: 20);
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
+    TimerDesign timer = TimerDesign(
+      myController: controller2,
+      seconds: 20
+    );
     return Material(
       type: MaterialType.transparency,
       child: Center(
@@ -41,8 +48,9 @@ class FullScreenModal extends DrawerViewModel {
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
-
-                  timer!.resumeTimer();
+                     timer.resumeTimer();
+                  
+                 
                 },
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
