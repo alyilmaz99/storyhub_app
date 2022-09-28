@@ -28,6 +28,7 @@ Widget crateHeroImage(BuildContext context, String path, double width, double he
             shadowColor: Colors.transparent,
             backgroundColor: Colors.transparent,
             minimumSize: Size(MediaQuery.of(context).size.width / 5, MediaQuery.of(context).size.height / 30)),
+
         child: const Text(
           "İsim",
           style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),

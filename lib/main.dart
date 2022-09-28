@@ -5,6 +5,7 @@ import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
 import 'product/model/player_selection_model.dart';
 import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
+
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
@@ -49,6 +50,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const VoteScreenView(),
+
     );
   }
 }

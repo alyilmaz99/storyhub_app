@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/feature/home/gamepage/view/CardPAge.dart';
+import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
 import '../viewmodel/after_scenario_page_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
 import '../../gamepage/view/HomeCardsOrder.dart';
@@ -45,7 +47,7 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
                   setState(() {
                     //   timer.stopTimer();
                   });
-                  Navigator.of(context).push(FullScreenModal());
+                  //Navigator.of(context).push(FullScreenModal());
                 },
                 icon: const Icon(
                   Icons.menu,
@@ -135,25 +137,19 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
               MediaQuery.of(context).size.height / 11,
               MediaQuery.of(context).size.width / 1.6,
               const Color.fromRGBO(223, 105, 64, 1).withOpacity(0.9),
-              () {
-                Navigator.pop(context);
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const HomeCardsOrder()));
-              },
+              2,
             ),
             SizedBox(
               height: screenHeight / 15,
             ),
             buildFirstButton(
-                context,
-                'Senaryo',
-                MediaQuery.of(context).size.height / 15,
-                MediaQuery.of(context).size.width / 1.95,
-                const Color.fromRGBO(143, 85, 203, 1).withOpacity(0.9), () {
-              //
-            }),
+              context,
+              'Senaryo',
+              MediaQuery.of(context).size.height / 15,
+              MediaQuery.of(context).size.width / 1.95,
+              const Color.fromRGBO(143, 85, 203, 1).withOpacity(0.9),
+              1,
+            ),
           ],
         ),
       ),
