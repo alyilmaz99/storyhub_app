@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
+import '../../../../product/model/player_selection_model.dart';
+import '../../scenario/view/selectscenarioview.dart';
 import '../viewmodel/create_player_viewmodel.dart';
 import '../../../settings/model/game_settings_model.dart';
 import '../../../../product/widgets/button/nasil_oynanir_soru_isareti_button.dart';
@@ -86,8 +88,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                       itemBuilder: (context, index) {
                         return Padding(
                             padding: EdgeInsets.only(bottom: screenHeight / 45),
-                            child:
-                                playerNameCreateContainer(context, index + 1));
+                            child: playerNameCreateContainer(
+                                context, index + 1, _isCheckOkay));
                       },
                     ),
                   ),
@@ -104,7 +106,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     );
   }
 
-  Container playerNameCreateContainer(BuildContext context, int number) {
+  Container playerNameCreateContainer(
+      BuildContext context, int number, bool isCheckOkay) {
     return Container(
       height: MediaQuery.of(context).size.height / 9,
       width: MediaQuery.of(context).size.width / 1.2,
@@ -115,9 +118,36 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
             padding:
                 EdgeInsets.only(left: MediaQuery.of(context).size.width / 20),
             child: SizedBox(
-                width: 80,
-                height: 80,
-                child: Image.asset('assets/images/profiles/$number.png')),
+              width: 80,
+              height: 80,
+              child: Container(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                  image: AssetImage('assets/images/profiles/$number.png'),
+                  opacity: 1,
+                  fit: BoxFit.fill,
+                )),
+                child: isCheckOkay
+                    ? const Center(
+                        child: Text(
+                          'HAZIR!',
+                          style: TextStyle(
+                            shadows: [
+                              Shadow(
+                                color: Colors.black,
+                                offset: Offset.infinite,
+                                blurRadius: 5,
+                              ),
+                            ],
+                            fontFamily: 'GamerStation',
+                            color: Colors.white,
+                            fontSize: 18,
+                          ),
+                        ),
+                      )
+                    : const Center(),
+              ),
+            ),
           ),
           Padding(
             padding:
