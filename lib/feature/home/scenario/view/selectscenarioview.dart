@@ -1,11 +1,12 @@
 import 'dart:convert';
-
+import 'package:provider/provider.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:fluid_action_card/FluidActionCard/fluid_action_card.dart';
 import 'package:flutter/services.dart';
 import 'package:storyhub/core/Service/SenaryoServise.dart';
 import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
+import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
 import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
 
@@ -233,18 +234,17 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
         child: Column(
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Spacer(
-                  flex: 4,
+                Padding(
+                  padding: EdgeInsets.only(top: w / 20),
+                  child: Align(alignment: Alignment.center, child: buildIcon()),
                 ),
-                Align(alignment: Alignment.center, child: buildIcon()),
-                const Spacer(
-                  flex: 2,
-                ),
-                Align(
+
+                /* Align(
                   alignment: Alignment.centerRight,
                   child: buildIcon1(),
-                ),
+                ),*/
               ],
             ),
             Row(children: [
@@ -308,144 +308,214 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                             // Generate 100 widgets that display their index in the List.
                             children:
                                 List.generate(filteredList.length, (index) {
-                              return Center(
-                                  child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 25.0, vertical: 15.0),
-                                child: FlipCard(
-                                    front: Container(
-                                      decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                                "assets/images/senaryolar/${filteredList[index].senaryoNumber}.png"),
-                                            fit: BoxFit.fill,
-                                          ),
-                                          borderRadius: const BorderRadius.all(
-                                              Radius.circular(20))),
-                                      child: Align(
-                                        alignment: Alignment.bottomCenter,
-                                        child: SizedBox(
-                                          width: w / 2.5,
-                                          child: OutlinedButton(
-                                            onPressed: () {},
-                                            style: ButtonStyle(
-                                                backgroundColor:
-                                                    MaterialStateProperty.all(
-                                                        const Color.fromRGBO(
-                                                            217, 217, 217, 1)),
-                                                shape: MaterialStateProperty.all<
-                                                        RoundedRectangleBorder>(
-                                                    RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius.circular(
-                                                                18.0)))),
-                                            child: Text(
-                                              filteredList[index].senaryoText,
-                                              style: const TextStyle(
-                                                  fontFamily: "GamerStation",
-                                                  color: Colors.black),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                    back: Stack(
-                                      children: [
-                                        Container(
-                                          decoration: const BoxDecoration(
-                                              color: Colors.amber,
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(10))),
-                                        ),
-                                        Positioned(
-                                            child: Column(
-                                          children: [
-                                            const SizedBox(height: 50),
-                                            Align(
-                                              alignment: Alignment.topCenter,
-                                              child: Text(
-                                                //titles[index],
-                                                filteredList[index]
-                                                    .senaryoText
-                                                    .toString(),
-                                                style: const TextStyle(
-                                                    fontSize: 25,
-                                                    fontFamily: "GamerStation"),
+                              return Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  FlipCard(
+                                      front: SizedBox(
+                                        width: w / 1.2,
+                                        height: h / 3,
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                              image: DecorationImage(
+                                                image: AssetImage(
+                                                    "assets/images/senaryolar/${filteredList[index].senaryoNumber}.png"),
+                                                fit: BoxFit.fill,
                                               ),
-                                            ),
-                                            const SizedBox(height: 25),
-                                            Container(
-                                              margin:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 20.0),
-                                              child: Align(
-                                                alignment: Alignment.center,
-                                                child: Text(
-                                                    filteredList[index]
-                                                        .shortText,
-                                                    style: const TextStyle(
-                                                        fontSize: 15,
-                                                        fontFamily:
-                                                            "Montserrat")),
-                                              ),
-                                            ),
-                                            const Spacer(),
-                                            Container(
-                                              margin:
-                                                  const EdgeInsets.symmetric(
-                                                      horizontal: 20.0,
-                                                      vertical: 15.0),
-                                              child: Align(
-                                                alignment:
-                                                    Alignment.bottomRight,
-                                                child: SizedBox(
-                                                  width: 70,
-                                                  height: 40,
-                                                  child: FloatingActionButton(
-                                                    heroTag: "btn$index",
-                                                    splashColor:
-                                                        Colors.pink.shade600,
-                                                    backgroundColor:
-                                                        const Color.fromRGBO(
-                                                            232, 114, 73, 1),
-                                                    shape:
-                                                        const RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.all(
-                                                              Radius.circular(
-                                                                  20.0)),
-                                                    ),
-                                                    onPressed: () {
-                                                      Navigator.pop(context);
-                                                      Navigator.pop(context);
-                                                      Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                              builder: (context) =>
-                                                                  DisplayScenario()));
-                                                    },
-                                                    child: Text(
-                                                      "OYNA",
-                                                      style: Theme.of(context)
-                                                          .textTheme
-                                                          .bodySmall
-                                                          ?.copyWith(
-                                                              color:
-                                                                  Colors.white,
-                                                              letterSpacing:
-                                                                  1.5,
-                                                              fontFamily:
-                                                                  "GamerStation"),
+                                              borderRadius:
+                                                  const BorderRadius.all(
+                                                      Radius.circular(20))),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Align(
+                                                alignment: Alignment.topRight,
+                                                child: Padding(
+                                                  padding: EdgeInsets.only(
+                                                      top: w / 20),
+                                                  child: Container(
+                                                     color:
+                                                              const Color.fromRGBO(208,
+                                                                  33, 33, 1),
+                                                    child: Padding(
+                                                      padding:  EdgeInsets.symmetric(horizontal: w/90, vertical: w/150),
+                                                      child: Text(
+                                                        filteredList[index]
+                                                            .category,
+                                                        style: const TextStyle(
+                                                            fontFamily:
+                                                                "GamerStation",
+                                                            color: Colors.white,
+                                                            fontSize: 18,
+                                                            fontWeight: FontWeight.normal,
+                                                           ),
+                                                      ),
                                                     ),
                                                   ),
                                                 ),
                                               ),
-                                            )
+                                              Align(
+                                                child: SizedBox(
+                                                  width: w / 2.5,
+                                                  child: OutlinedButton(
+                                                    onPressed: () {},
+                                                    style: ButtonStyle(
+                                                        backgroundColor:
+                                                            MaterialStateProperty.all(
+                                                               const Color.fromRGBO(251, 251, 251, 0.6)),
+                                                        shape: MaterialStateProperty.all<
+                                                                RoundedRectangleBorder>(
+                                                            RoundedRectangleBorder(
+                                                                borderRadius:
+                                                                    BorderRadius.circular(
+                                                                        18.0)))),
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: Text(
+                                                        filteredList[index]
+                                                            .senaryoText,
+                                                        style: const TextStyle(
+                                                            fontFamily:
+                                                                "GamerStation",
+                                                            color:
+                                                                Colors.black),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      back: SizedBox(
+                                        width: w / 1.2,
+                                        height: h / 2.8,
+                                        child: Stack(
+                                          children: [
+                                            Container(
+                                              width: w / 1.2,
+                                              height: h / 3,
+                                              decoration: const BoxDecoration(
+                                                  color: Colors.amber,
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(20))),
+                                            ),
+                                            Positioned(
+                                                child: Column(
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsets.only(
+                                                      top: w / 25),
+                                                  child: Align(
+                                                    alignment:
+                                                        Alignment.topCenter,
+                                                    child: Text(
+                                                      //titles[index],
+                                                      filteredList[index]
+                                                          .senaryoText
+                                                          .toString(),
+                                                      style: const TextStyle(
+                                                          fontSize: 25,
+                                                          fontFamily:
+                                                              "GamerStation"),
+                                                    ),
+                                                  ),
+                                                ),
+                                                Container(
+                                                  margin: const EdgeInsets
+                                                          .symmetric(
+                                                      horizontal: 0.0),
+                                                  child: Align(
+                                                    alignment: Alignment.center,
+                                                    child: Text(
+                                                        filteredList[index]
+                                                            .shortText,
+                                                        style: const TextStyle(
+                                                            
+                                                            fontSize: 15,
+                                                            fontFamily:
+                                                                "Montserrat")),
+                                                  ),
+                                                ),
+                                                const Spacer(),
+                                                Container(
+                                                  margin: const EdgeInsets
+                                                          .symmetric(
+                                                      horizontal: 20.0,
+                                                      vertical: 30.0),
+                                                  child: Align(
+                                                    alignment:
+                                                        Alignment.bottomRight,
+                                                    child: SizedBox(
+                                                      width: 70,
+                                                      height: 40,
+                                                      child:
+                                                          FloatingActionButton(
+                                                        heroTag: "btn$index",
+                                                        splashColor: const Color.fromRGBO(251, 251, 251, 1),
+                                                            
+                                                        backgroundColor:
+                                                            const Color
+                                                                    .fromRGBO(
+                                                                226,
+                                                                105,
+                                                                63,
+                                                                1),
+                                                        shape:
+                                                            const RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius.all(
+                                                                  Radius
+                                                                      .circular(
+                                                                          20.0)),
+                                                        ),
+                                                        onPressed: () {
+                                                          Navigator.pop(
+                                                              context);
+                                                          Navigator.pop(
+                                                              context);
+                                                          Navigator.push(
+                                                              context,
+                                                              MaterialPageRoute(
+                                                                  builder:
+                                                                      (context) =>
+                                                                          DisplayScenario()));
+                                                          Provider.of<SelectScenarioModel>(
+                                                                  context,
+                                                                  listen: false)
+                                                              .setScenarioIndex(
+                                                                  index);
+                                                        },
+                                                        child: Text(
+                                                          "OYNA",
+                                                          style: Theme.of(
+                                                                  context)
+                                                              .textTheme
+                                                              .bodySmall
+                                                              ?.copyWith(
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      1.5,
+                                                                  fontFamily:
+                                                                      "GamerStation"),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ))
                                           ],
-                                        ))
-                                      ],
-                                    )),
-                              ));
+                                        ),
+                                      )),
+                                ],
+                              );
                             }))),
                   );
                 } else {
