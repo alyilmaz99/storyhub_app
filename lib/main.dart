@@ -4,6 +4,9 @@ import 'package:provider/provider.dart';
 
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
 import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
+import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
+import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
+import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
 import 'feature/home/createplayer/model/player_model.dart';
@@ -16,6 +19,9 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider<SelectScenarioModel>(
+          create: (BuildContext context) => SelectScenarioModel(),
+        ),
         ChangeNotifierProvider<SettingsModel>(
             create: (BuildContext context) => SettingsModel()),
         ChangeNotifierProvider<GameSettingsModel>(
@@ -61,7 +67,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const CreatePlayerView(),
+      home:  SplashScreenView(),
     );
   }
 }
