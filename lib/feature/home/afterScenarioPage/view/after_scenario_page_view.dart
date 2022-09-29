@@ -24,39 +24,16 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
         shadowColor: Colors.transparent,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              width: screenWidth / 6,
-              height: screenHeight / 16,
-            ),
-            Align(
-              alignment: Alignment.center,
-              child: SizedBox(
-                // height: screenHeight / 10,
-                width: screenWidth / 4.5,
-                child: Image.asset(
-                  'assets/images/LogoV1.png',
-                  fit: BoxFit.fill,
-                ),
+            Container(
+              padding: EdgeInsets.only(right: screenWidth / 7),
+              height: screenHeight / 17,
+              child: const Image(
+                fit: BoxFit.cover,
+                image: AssetImage('assets/images/LogoV1.png'),
               ),
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: IconButton(
-                onPressed: () {
-                  setState(() {
-                    //   timer.stopTimer();
-                  });
-                  Navigator.of(context)
-                      .push(FullScreenModal(controller2: controller2));
-                },
-                icon: const Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            )
           ],
         ),
       ),
