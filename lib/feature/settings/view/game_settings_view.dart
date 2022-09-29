@@ -470,7 +470,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
+
                                 const /*SelectScenarioView*/ SelectScenarioView()));
+
                   },
                   child: Container(
                     width: screenWidth / 2.2,
