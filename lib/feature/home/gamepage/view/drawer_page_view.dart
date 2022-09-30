@@ -3,6 +3,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:storyhub/feature/settings/view/game_settings_view.dart';
 import 'package:storyhub/feature/settings/view/main_page_settings.dart';
 
@@ -37,7 +38,7 @@ class DrawerPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30.0)),
               ),
               child: const Text(
-                "YENİ OYUN",
+                TextConst.newGameTxt,
                 style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.w700,
@@ -61,7 +62,7 @@ class DrawerPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30.0)),
               ),
               child: const Text(
-                "ANA MENÜ",
+                TextConst.mainMenuTxt,
                 style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.w700,
@@ -88,7 +89,7 @@ class DrawerPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30.0)),
               ),
               child: const Text(
-                "AYARLAR",
+                TextConst.settingsTxt,
                 style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.w700,
@@ -110,7 +111,7 @@ class DrawerPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30.0)),
               ),
               child: const Text(
-                "ÇIKIŞ",
+                TextConst.exitTxt,
                 style: TextStyle(
                     fontSize: 40,
                     fontWeight: FontWeight.w700,

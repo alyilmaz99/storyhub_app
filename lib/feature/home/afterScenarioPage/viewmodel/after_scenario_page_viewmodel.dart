@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 
 import '../../gamepage/view/CardPAge.dart';
 import '../../scenario/view/displayscenario.dart';
@@ -33,7 +34,7 @@ Widget crateHeroImage(BuildContext context, String path, double width,
             minimumSize: Size(MediaQuery.of(context).size.width / 5,
                 MediaQuery.of(context).size.height / 30)),
         child: const Text(
-          "İsim",
+          TextConst.nameTxt,
           style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
         ),
       ),

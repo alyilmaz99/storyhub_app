@@ -8,6 +8,8 @@ import '../viewmodel/game_page_w_timer_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
 import 'HomeCardsOrder.dart';
 
+import 'package:storyhub/core/const/text_const/textconst.dart';
+
 class GamePageWithTimer extends StatefulWidget {
   const GamePageWithTimer({super.key});
 
@@ -89,7 +91,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 child: Column(
                   children: [
                     const Text(
-                      "MEZAR TASI",
+                      TextConst.graveStoneTxt,
                       style: TextStyle(
                         color: Colors.white,
                         fontFamily: 'GamerStation',
@@ -155,7 +157,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
             ),
             buildFirstButton(
               context,
-              'SONRAKI',
+              TextConst.nextTxt,
               MediaQuery.of(context).size.height / 12,
               MediaQuery.of(context).size.width / 1.7,
               const Color.fromRGBO(223, 105, 64, 1).withOpacity(0.9),
@@ -168,13 +170,13 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                   ),
                 );
               },
-              'OYUNCU',
+              TextConst.playerTxt,
             ),
             SizedBox(
               height: screenHeight / 40,
             ),
             const Text(
-              'TUR 1',
+              TextConst.tourOneTxt,
               style: TextStyle(
                   fontFamily: 'Montserrat', fontSize: 20, color: Colors.white),
             ),

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluid_action_card/FluidActionCard/fluid_action_card.dart';
 import 'package:flutter/services.dart';
 import 'package:storyhub/core/Service/SenaryoServise.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
 import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
@@ -72,7 +73,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0)))),
               child: const Text(
-                "DENİZALTI",
+                TextConst.submarineCapsLockTxt,
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
@@ -100,7 +101,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0)))),
               child: const Text(
-                "ŞİRKET",
+                TextConst.companyTxt,
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
@@ -128,7 +129,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0)))),
               child: const Text(
-                "MARS KOLONİSİ",
+                TextConst.marsColonyTxt,
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
@@ -156,7 +157,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0)))),
               child: const Text(
-                "UZAY",
+                TextConst.spaceTxt,
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
@@ -184,7 +185,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0)))),
               child: const Text(
-                "BEYAZ SARAY",
+                TextConst.whiteHouseTxt,
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
@@ -212,7 +213,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0)))),
               child: const Text(
-                "AHIR",
+                TextConst.barnTxt,
                 style:
                     TextStyle(fontFamily: "GamerStation", color: Colors.black),
               ),
@@ -251,7 +252,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
               const Spacer(flex: 2),
               const Align(
                 alignment: Alignment.center,
-                child: Text("SENARYO SEÇ",
+                child: Text(TextConst.selectscenarioAppBarTitleText,
                     style: TextStyle(
                         fontFamily: 'GamerStation',
                         letterSpacing: 0.5,
@@ -425,7 +426,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                                   DisplayScenario()));
                                                     },
                                                     child: Text(
-                                                      "OYNA",
+                                                      TextConst.playTxt,
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .bodySmall
@@ -514,7 +515,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     child: Column(children: [
                       Row(children: [
                         const Text(
-                          "KORKU - 6",
+                          TextConst.horrorSixTxt,
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
@@ -538,7 +539,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     child: Column(
                       children: [
                         Row(children: [
-                          const Text("EĞLENCE - 4 ",
+                          const Text(TextConst.funFourTxt,
                               style: TextStyle(
                                   fontFamily: "GamerStation",
                                   color: Colors.white,
@@ -562,7 +563,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     child: Column(children: [
                       Row(children: [
                         const Text(
-                          "FANTASTİK - 2",
+                          TextConst.fantasticTwoTxt,
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
@@ -586,7 +587,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     child: Column(children: [
                       Row(children: [
                         const Text(
-                          "MACERA - 8",
+                          TextConst.adventureEightTxt,
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
@@ -610,7 +611,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     child: Column(children: [
                       Row(children: [
                         const Text(
-                          "DRAM - 3",
+                          TextConst.dramaThreeTxt,
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,

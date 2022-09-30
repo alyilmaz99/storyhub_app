@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import '../viewmodel/splashscreenviewmodel.dart';
 
 class SplashScreenView extends StatefulWidget {
@@ -21,7 +22,7 @@ class _SplashScreenViewState extends SplashScreenViewModel {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             Text(
-              "VESSAC",
+              TextConst.vessacTxt,
               style: TextStyle(
                 fontFamily: 'SharyBold',
                 fontSize: 50,
@@ -30,7 +31,7 @@ class _SplashScreenViewState extends SplashScreenViewModel {
               textAlign: TextAlign.center,
             ),
             Text(
-              "GAME",
+              TextConst.gameTxt,
               style: TextStyle(
                 fontFamily: 'SharyBold',
                 fontSize: 40,
@@ -39,7 +40,7 @@ class _SplashScreenViewState extends SplashScreenViewModel {
               textAlign: TextAlign.center,
             ),
             Text(
-              "STUDIOS",
+              TextConst.studiosTxt,
               style: TextStyle(
                 fontFamily: 'SharyBold',
                 fontSize: 40,

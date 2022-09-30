@@ -2,6 +2,7 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:storyhub/core/components/GameContreller.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 import 'package:storyhub/feature/home/gamepage/view/tappedCard.dart';
 
@@ -162,7 +163,7 @@ class _CardPageState extends CartPageViewModel {
                               minimumSize:
                                   Size(screenWidth / 4, screenHeight / 40)),
                           child: const Text(
-                            "İsim",
+                            TextConst.nameTxt,
                             style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400,
@@ -173,7 +174,7 @@ class _CardPageState extends CartPageViewModel {
                     ),
                     _isCardTurned == false
                         ? const Text(
-                            "Kart Seçimi",
+                            TextConst.chooseCardTxt,
                             style: TextStyle(
                                 fontSize: 25,
                                 fontWeight: FontWeight.normal,
@@ -212,7 +213,7 @@ class _CardPageState extends CartPageViewModel {
                             borderRadius: BorderRadius.circular(7.0)),
                       ),
                       child: const Text(
-                        "Kartı kullanarak senaryoyu bağla.",
+                        TextConst.scenarioConnectionExpTxt,
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,

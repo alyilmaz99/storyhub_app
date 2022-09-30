@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
 import '../../../../product/model/player_selection_model.dart';
 import '../../scenario/view/selectscenarioview.dart';
@@ -130,7 +131,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                 child: isCheckOkay
                     ? const Center(
                         child: Text(
-                          'HAZIR!',
+                          TextConst.readyTxt,
                           style: TextStyle(
                             shadows: [
                               Shadow(
@@ -201,7 +202,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
       cursorColor: Colors.white,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.all(0),
-        hintText: "İsim",
+        hintText: TextConst.nameTxt,
         hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.w500,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../viewmodel/how_to_page_viewmodel.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 
 class HowToPageView extends StatefulWidget {
   const HowToPageView({Key? key}) : super(key: key);
@@ -48,7 +49,7 @@ class _HowToPageViewState extends HowToPageViewModal {
                   width: screenWidth / 13,
                 ),
                 const Text(
-                  "Oyun Kuralları",
+                  TextConst.howToPageTitleRule,
                   style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.w500,
@@ -88,7 +89,7 @@ class _HowToPageViewState extends HowToPageViewModal {
                   width: screenWidth / 13,
                 ),
                 const Text(
-                  "Oyuncu Sayısı",
+                  TextConst.howToPageTitleGamer,
                   style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.w500,
@@ -128,7 +129,7 @@ class _HowToPageViewState extends HowToPageViewModal {
                   width: screenWidth / 13,
                 ),
                 const Text(
-                  "Kart Detayları ",
+                  TextConst.howToPageTitleDetail,
                   style: TextStyle(
                       fontSize: 35,
                       fontWeight: FontWeight.w500,
@@ -168,7 +169,7 @@ class _HowToPageViewState extends HowToPageViewModal {
                   width: screenWidth / 35,
                 ),
                 const Text(
-                  "Puanlama Sistemi",
+                  TextConst.howToPageTitlePoint,
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w500,
@@ -208,7 +209,7 @@ class _HowToPageViewState extends HowToPageViewModal {
                   width: screenWidth / 7,
                 ),
                 const Text(
-                  "Nasıl Oynanır?",
+                  TextConst.howToPageTitlePlay,
                   style: TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.w500,

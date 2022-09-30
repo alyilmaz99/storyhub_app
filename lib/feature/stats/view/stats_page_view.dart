@@ -87,7 +87,7 @@ class _StatsPageViewState extends StatsPageViewModel {
                     TextStyle(fontSize: screenWidth / 12, color: Colors.white),
               ),
               Text(
-                " 10 sn",
+                TextConst.tenSecondsTxt,
                 style:
                     TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
               ),
@@ -100,7 +100,7 @@ class _StatsPageViewState extends StatsPageViewModel {
                     TextStyle(fontSize: screenWidth / 12, color: Colors.white),
               ),
               Text(
-                " 15",
+                TextConst.fifteenTxt,
                 style:
                     TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
               ),
@@ -113,7 +113,7 @@ class _StatsPageViewState extends StatsPageViewModel {
                     TextStyle(fontSize: screenWidth / 12, color: Colors.white),
               ),
               Text(
-                " 20 tur",
+                TextConst.twentyTourTxt,
                 style:
                     TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
               ),
@@ -126,7 +126,7 @@ class _StatsPageViewState extends StatsPageViewModel {
                     TextStyle(fontSize: screenWidth / 12, color: Colors.white),
               ),
               Text(
-                "Senaryo 1",
+                TextConst.scenarioOneTxt,
                 style:
                     TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
               ),
@@ -139,7 +139,7 @@ class _StatsPageViewState extends StatsPageViewModel {
                     TextStyle(fontSize: screenWidth / 12, color: Colors.white),
               ),
               Text(
-                "Seviye 3",
+                TextConst.levelThreeTxt,
                 style:
                     TextStyle(fontSize: screenWidth / 16, color: Colors.grey),
               ),
@@ -153,7 +153,7 @@ class _StatsPageViewState extends StatsPageViewModel {
                       primary: const Color.fromRGBO(217, 82, 4, 1),
                       minimumSize: Size(screenWidth / 2, screenHeight / 18)),
                   child: const Text(
-                    "Devam Et",
+                    TextConst.continueCapsLockOffTxt,
                     style: TextStyle(fontSize: 20),
                   ),
                 ),

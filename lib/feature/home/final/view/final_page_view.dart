@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import '../../../../core/components/popup/FinalPopup.dart';
 import '../../../../product/model/player_selection_model.dart';
 import '../viewmodel/final_page_viewmodel.dart';
@@ -23,15 +24,24 @@ class _FinalPageState extends State<FinalPageView> {
     /* ----- Normalde dışarıdan gelecek ----- */
 
     List<PlayerSelectionModel> tempList = [
-      PlayerSelectionModel(imgPath: "assets/images/human/human1.png", playerName: "Player 1"),
-      PlayerSelectionModel(imgPath: "assets/images/human/human2.png", playerName: "Player 2"),
-      PlayerSelectionModel(imgPath: "assets/images/human/human3.png", playerName: "Player 3"),
-      PlayerSelectionModel(imgPath: "assets/images/human/human1.png", playerName: "Player 4"),
-      PlayerSelectionModel(imgPath: "assets/images/human/human2.png", playerName: "Player 5"),
-      PlayerSelectionModel(imgPath: "assets/images/human/human3.png", playerName: "Player 7"),
-      PlayerSelectionModel(imgPath: "assets/images/human/human2.png", playerName: "Player 8"),
-      PlayerSelectionModel(imgPath: "assets/images/human/human3.png", playerName: "Player 9"),
-      PlayerSelectionModel(imgPath: "assets/images/human/human3.png", playerName: "Player 9"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human1.png", playerName: "Player 1"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human2.png", playerName: "Player 2"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human3.png", playerName: "Player 3"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human1.png", playerName: "Player 4"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human2.png", playerName: "Player 5"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human3.png", playerName: "Player 7"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human2.png", playerName: "Player 8"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human3.png", playerName: "Player 9"),
+      PlayerSelectionModel(
+          imgPath: "assets/images/human/human3.png", playerName: "Player 9"),
     ];
 
     /* ----- Gelen liste bu sayfanın viewmodeline işlenebilmesi için bu fonksiyonla atılacak ----- */
@@ -95,10 +105,13 @@ class _FinalPageState extends State<FinalPageView> {
                             showGeneralDialog(
                               context: context,
                               barrierDismissible: true,
-                              barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
+                              barrierLabel: MaterialLocalizations.of(context)
+                                  .modalBarrierDismissLabel,
                               barrierColor: Colors.black.withOpacity(0.5),
-                              pageBuilder: (context, animation1, animation2) => FinalPopup(),
-                              transitionDuration: const Duration(milliseconds: 250),
+                              pageBuilder: (context, animation1, animation2) =>
+                                  FinalPopup(),
+                              transitionDuration:
+                                  const Duration(milliseconds: 250),
                               transitionBuilder: (context, a1, a2, widget) {
                                 return Transform.scale(
                                   scale: a1.value,
@@ -116,13 +129,18 @@ class _FinalPageState extends State<FinalPageView> {
                         width: (screenWidth / 5) * 2,
                         height: screenHeight / 30,
                         alignment: Alignment.center,
-                        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(8)),
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8)),
                         child: Text(
                           /* ----- Seçilen kullanıcının ismi ----- */
                           Provider.of<FinalPageViewModel>(context).choosenName,
                           textAlign: TextAlign.center,
                           style: const TextStyle(
-                              fontFamily: 'Montserrat', fontSize: 22, fontWeight: FontWeight.w300, color: Colors.black),
+                              fontFamily: 'Montserrat',
+                              fontSize: 22,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.black),
                         ),
                       ),
                       SizedBox(
@@ -141,7 +159,9 @@ class _FinalPageState extends State<FinalPageView> {
                             ),
                             onPressed: () {
                               /* ----- Burada random bir kullanıcı seçiliyor----- */
-                              Provider.of<FinalPageViewModel>(context, listen: false).randomChoose();
+                              Provider.of<FinalPageViewModel>(context,
+                                      listen: false)
+                                  .randomChoose();
                             },
                           ),
                         ),
@@ -155,27 +175,37 @@ class _FinalPageState extends State<FinalPageView> {
                     child: GridView.builder(
                         shrinkWrap: true,
                         padding: EdgeInsets.only(top: screenHeight / 30),
-                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisSpacing: 15,
                           mainAxisSpacing: 15,
                           crossAxisCount: 3,
                         ),
-                        itemCount: Provider.of<FinalPageViewModel>(context).playerList.length,
+                        itemCount: Provider.of<FinalPageViewModel>(context)
+                            .playerList
+                            .length,
                         /* ----- Burada kullanıcıların listesi build ediliyor ----- */
                         itemBuilder: (context, index) {
-                          var data = Provider.of<FinalPageViewModel>(context).getMap();
-                          var data2 = Provider.of<FinalPageViewModel>(context).getPlayerList();
+                          var data =
+                              Provider.of<FinalPageViewModel>(context).getMap();
+                          var data2 = Provider.of<FinalPageViewModel>(context)
+                              .getPlayerList();
                           return GestureDetector(
                             onTap: () {
-                              Provider.of<FinalPageViewModel>(context, listen: false).changeMap(index);
+                              Provider.of<FinalPageViewModel>(context,
+                                      listen: false)
+                                  .changeMap(index);
                             },
                             child: Container(
                               padding: const EdgeInsets.all(4),
                               decoration: BoxDecoration(
-                                  color: data[index] == true ? Colors.orange : Colors.transparent,
+                                  color: data[index] == true
+                                      ? Colors.orange
+                                      : Colors.transparent,
                                   borderRadius: BorderRadius.circular(50)),
                               child: CircleAvatar(
-                                backgroundImage: AssetImage(data2[index].imgPath),
+                                backgroundImage:
+                                    AssetImage(data2[index].imgPath),
                               ),
                             ),
                           );
@@ -183,7 +213,8 @@ class _FinalPageState extends State<FinalPageView> {
                 Padding(padding: EdgeInsets.only(top: screenHeight / 30)),
                 TextButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(const Color.fromARGB(255, 23, 12, 51)),
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        const Color.fromARGB(255, 23, 12, 51)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(0),
@@ -196,10 +227,13 @@ class _FinalPageState extends State<FinalPageView> {
                     height: screenHeight / 30,
                     alignment: Alignment.center,
                     child: const Text(
-                      "FİNALE BAĞLA",
+                      TextConst.connectFinalTxt,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                          fontFamily: 'GamerStation', fontSize: 22, fontWeight: FontWeight.w300, color: Colors.white),
+                          fontFamily: 'GamerStation',
+                          fontSize: 22,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.white),
                     ),
                   ),
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 import '../../home/scenario/view/selectscenarioview.dart';
@@ -77,7 +78,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Text(
-                  "Oyun Ayarları",
+                  TextConst.gameSettingsTxt,
                   style: TextStyle(
                       fontFamily: 'GamerStation',
                       fontSize: 22,
@@ -113,7 +114,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 const Text(
-                                  "Oyuncu Sayısı",
+                                  TextConst.howToPageTitleGamer,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontSize: 17,
@@ -194,14 +195,14 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                             RichText(
                                 textAlign: TextAlign.center,
                                 text: const TextSpan(
-                                  text: "Süre",
+                                  text: TextConst.timeTxt,
                                   style: TextStyle(
                                       fontSize: 17,
                                       fontWeight: FontWeight.w300,
                                       color: Colors.white),
                                   children: <TextSpan>[
                                     TextSpan(
-                                      text: ' (sn.)',
+                                      text: TextConst.secondTxt,
                                       style: TextStyle(
                                           fontSize: 11,
                                           fontWeight: FontWeight.w300,
@@ -276,7 +277,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            const Text("Tur Sayısı",
+                            const Text(TextConst.tourInfo,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 17,
@@ -358,7 +359,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   const Text(
-                                    "Zorluk",
+                                    TextConst.difficultyTxt,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: 17,
@@ -477,7 +478,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                     height: screenHeight / 30,
                     alignment: Alignment.center,
                     child: const Text(
-                      "Başla",
+                      TextConst.startCapsLockOffTxt,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontFamily: 'GamerStation',

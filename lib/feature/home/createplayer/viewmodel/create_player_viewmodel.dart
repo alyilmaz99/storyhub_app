@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 
 import '../view/create_player_view.dart';
@@ -34,7 +35,7 @@ Widget buildFirstButton(context, isCheck) {
         ),
       ),
       child: const Text(
-        "DEVAM",
+        TextConst.continueTxt,
         style: TextStyle(
           fontFamily: 'GamerStation',
           color: Colors.white,

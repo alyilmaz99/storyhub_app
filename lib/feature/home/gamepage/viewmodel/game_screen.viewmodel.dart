@@ -139,28 +139,28 @@ abstract class GameScreenViewModel extends State<GameScreen>
       "assets/images/kovboy.png",
       ElevatedButton(
         onPressed: () {},
-        child: const Text("SELECT CARD"),
+        child: const Text(TextConst.buttonText),
       ));
   var card2 = GameScreenCardModel(
       TextConst.cardOne,
       "assets/images/front.png",
       ElevatedButton(
         onPressed: () {},
-        child: const Text("SELECT CARD"),
+        child: const Text(TextConst.buttonText),
       ));
   var card3 = GameScreenCardModel(
       TextConst.cardOne,
       "assets/images/front.png",
       ElevatedButton(
         onPressed: () {},
-        child: const Text("SELECT CARD"),
+        child: const Text(TextConst.buttonText),
       ));
   var card4 = GameScreenCardModel(
       TextConst.cardOne,
       "assets/images/front.png",
       ElevatedButton(
         onPressed: () {},
-        child: const Text("SELECT CARD"),
+        child: const Text(TextConst.buttonText),
       ));
 
   Future<List<GameScreenCardModel>?> addItemtoList() async {

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../view/game_page_w_timer_view.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 
 abstract class GamePageWithTimerViewModel extends State<GamePageWithTimer> {}
 
-Widget crateHeroImage(BuildContext context, String path, double width, double height, double opacity) {
+Widget crateHeroImage(BuildContext context, String path, double width,
+    double height, double opacity) {
   return Column(
     children: [
       Container(
@@ -27,10 +29,10 @@ Widget crateHeroImage(BuildContext context, String path, double width, double he
             ),
             shadowColor: Colors.transparent,
             backgroundColor: Colors.transparent,
-            minimumSize: Size(MediaQuery.of(context).size.width / 5, MediaQuery.of(context).size.height / 30)),
-
+            minimumSize: Size(MediaQuery.of(context).size.width / 5,
+                MediaQuery.of(context).size.height / 30)),
         child: const Text(
-          "İsim",
+          TextConst.nameTxt,
           style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
         ),
       ),
@@ -38,8 +40,8 @@ Widget crateHeroImage(BuildContext context, String path, double width, double he
   );
 }
 
-Widget buildFirstButton(
-    BuildContext context, String text, double height, double width, Color color, Function function, String secondText) {
+Widget buildFirstButton(BuildContext context, String text, double height,
+    double width, Color color, Function function, String secondText) {
   return SizedBox(
     width: width,
     height: height,
@@ -63,11 +65,13 @@ Widget buildFirstButton(
         children: [
           Text(
             text,
-            style: const TextStyle(color: Colors.white, fontSize: 23, fontFamily: 'GamerStation'),
+            style: const TextStyle(
+                color: Colors.white, fontSize: 23, fontFamily: 'GamerStation'),
           ),
           Text(
             secondText,
-            style: const TextStyle(color: Colors.white, fontSize: 23, fontFamily: 'GamerStation'),
+            style: const TextStyle(
+                color: Colors.white, fontSize: 23, fontFamily: 'GamerStation'),
           ),
         ],
       ),

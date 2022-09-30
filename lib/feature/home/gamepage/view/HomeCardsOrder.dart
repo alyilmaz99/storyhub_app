@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../../drawer/view/drawer_view.dart';
 import 'gameTimeVİew.dart';
 import '../viewmodel/home_cards_order_viewmodel.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 
 class HomeCardsOrder extends StatefulWidget {
   const HomeCardsOrder({super.key});
@@ -38,7 +39,8 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                 setState(() {
                   //   timer.stopTimer();
                 });
-                Navigator.of(context).push(FullScreenModal(controller2: controller2));
+                Navigator.of(context)
+                    .push(FullScreenModal(controller2: controller2));
               },
               icon: const Icon(
                 Icons.menu,
@@ -91,7 +93,7 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                             minimumSize:
                                 Size(screenWidth / 4, screenHeight / 40)),
                         child: const Text(
-                          "İsim",
+                          TextConst.nameTxt,
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.w400),
                         ),
@@ -101,7 +103,7 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                   const Expanded(
                     child: Center(
                       child: Text(
-                        "Kart Seçimi",
+                        TextConst.chooseCardTxt,
                         style: TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.bold,
@@ -176,7 +178,7 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                         minimumSize:
                             Size(screenWidth / 1.8, screenHeight / 19)),
                     child: const Text(
-                      "İLERİ",
+                      TextConst.skipTxt,
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
                     ),

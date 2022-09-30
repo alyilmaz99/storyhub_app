@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import '../../../product/widgets/timer/timer_design.dart';
 import '../viewmodel/drawer_viewmodel.dart';
 import '../../home/mainpage/view/main_page_view.dart';
@@ -30,7 +31,7 @@ class FullScreenModal extends DrawerViewModel {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               const Text(
-                'DURAKLATILDI',
+                TextConst.pauseTxt,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 40.0,
@@ -53,13 +54,12 @@ class FullScreenModal extends DrawerViewModel {
                     disabledForegroundColor: Colors.white.withOpacity(0.9),
                     disabledBackgroundColor: Colors.white.withOpacity(0.9),
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
-                child: const Text(
-                  "DEVAM ET",
-                  style: TextStyle(
+                child: const Text(TextConst.continueCapsLockTxt,
+                    style: TextStyle(
                       fontSize: 30,
                       fontFamily: 'GamerStation',
-                      color: Colors.white,)
-                ),
+                      color: Colors.white,
+                    )),
               ),
               const SizedBox(
                 height: 70,
@@ -80,15 +80,13 @@ class FullScreenModal extends DrawerViewModel {
                     ),
                     disabledForegroundColor: Colors.white,
                     disabledBackgroundColor: Colors.white,
-
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                 child: const Text(
-                  "Yeni Oyun",
+                  TextConst.newGameCapsLockOffTxt,
                   style: TextStyle(
-                    fontSize: 30,
-                    fontFamily: 'GamerStation',
-                    color: Colors.white
-                  ),
+                      fontSize: 30,
+                      fontFamily: 'GamerStation',
+                      color: Colors.white),
                 ),
               ),
             ],

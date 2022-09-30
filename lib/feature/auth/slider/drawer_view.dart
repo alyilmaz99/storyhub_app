@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import '../../drawer/viewmodel/drawer_viewmodel.dart';
 
 class FullScreenModal extends DrawerViewModel {
@@ -18,7 +19,7 @@ class FullScreenModal extends DrawerViewModel {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'DURAKLATILDI',
+              TextConst.pauseTxt,
               style: TextStyle(color: Colors.white, fontSize: 40.0),
             ),
             ElevatedButton(
@@ -31,7 +32,7 @@ class FullScreenModal extends DrawerViewModel {
                   primary: const Color.fromRGBO(216, 91, 47, 0.7),
                   minimumSize: Size(screenWidth / 1.8, screenHeight / 19)),
               child: const Text(
-                "DEVAM ET",
+                TextConst.continueCapsLockTxt,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
               ),
             ),

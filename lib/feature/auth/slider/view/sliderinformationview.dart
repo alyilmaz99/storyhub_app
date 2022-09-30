@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:im_animations/main.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import '../../../home/mainpage/view/main_page_view.dart';
 import '../viewmodel/sliderinformationviewmodel.dart';
 
@@ -158,7 +159,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                           right: 12,
                                           bottom: 7),
                                       child: Text(
-                                        "OYUNA GEÇ",
+                                        TextConst.goToGameTxt,
                                         style: TextStyle(
                                           fontFamily: 'GamerStation',
                                           fontSize: 24,

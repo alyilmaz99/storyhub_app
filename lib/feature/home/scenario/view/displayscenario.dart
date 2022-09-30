@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 
@@ -81,7 +82,7 @@ class _DisplayScenario extends State<DisplayScenario> {
                                       child: const Align(
                                         alignment: Alignment.topCenter,
                                         child: Text(
-                                          "Denizaltı",
+                                          TextConst.submarineTxt,
                                           style: TextStyle(
                                               fontSize: 20,
                                               fontFamily: "GamerStation",

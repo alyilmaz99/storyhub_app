@@ -2,6 +2,7 @@ import 'dart:ffi';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 import '../model/settings_model.dart';
 
 class SettingsPageView extends StatefulWidget {
@@ -51,7 +52,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                   height: screenHeight / 10,
                 ),
                 const Text(
-                  "Ayarlar",
+                  TextConst.settingCapsLockOffTxt,
                   style: TextStyle(
                       fontFamily: 'GamerStation',
                       fontSize: 35,
@@ -74,7 +75,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                       Container(
                         width: screenWidth / 1.2,
                         child: const Text(
-                          "Oyun Sesi",
+                          TextConst.soundOfGameTxt,
                           textAlign: TextAlign.start,
                           style: TextStyle(
                               fontFamily: 'Montserrat',
@@ -131,7 +132,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                       Container(
                         width: screenWidth / 1.2,
                         child: const Text(
-                          "Buton Sesi",
+                          TextConst.soundOfButtonTxt,
                           textAlign: TextAlign.start,
                           style: TextStyle(
                               fontSize: 16,
@@ -193,7 +194,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                       Container(
                         width: screenWidth / 1.2,
                         child: const Text(
-                          "Arka Plan Müziği",
+                          TextConst.bgMusicTxt,
                           textAlign: TextAlign.start,
                           style: TextStyle(
                               fontSize: 16,
@@ -328,7 +329,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        "Dil Ayarları",
+                        TextConst.languageSettingsTxt,
                         textAlign: TextAlign.center,
                         style: TextStyle(
                             fontSize: 16,

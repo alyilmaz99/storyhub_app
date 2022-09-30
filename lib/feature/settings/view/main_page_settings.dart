@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/const/text_const/textconst.dart';
 
 import '../viewmodel/main_page_settings_viewmodel.dart';
 
@@ -38,7 +39,7 @@ class _MainPageSettingsState extends MainPageSettingsViewModel {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Oyun Sesi",
+                TextConst.soundOfGameTxt,
                 style: TextStyle(color: Colors.amberAccent),
               ),
               Row(
@@ -67,7 +68,7 @@ class _MainPageSettingsState extends MainPageSettingsViewModel {
                 ],
               ),
               const Text(
-                "Buton Sesi",
+                TextConst.soundOfButtonTxt,
                 style: TextStyle(color: Colors.amberAccent),
               ),
               Row(
@@ -110,7 +111,7 @@ class _MainPageSettingsState extends MainPageSettingsViewModel {
                         border: Border.all(color: Colors.black, width: 2),
                         borderRadius: BorderRadius.circular(12)),
                     child: const Text(
-                      "Music",
+                      TextConst.musicTxt,
                       style: TextStyle(fontSize: 20),
                       textAlign: TextAlign.center,
                     ),
@@ -122,7 +123,7 @@ class _MainPageSettingsState extends MainPageSettingsViewModel {
                 ],
               ),
               const Text(
-                "Renk Ayarı",
+                TextConst.colorSettingsTxt,
                 style: TextStyle(color: Colors.amberAccent),
               ),
               ElevatedButton(
@@ -130,7 +131,7 @@ class _MainPageSettingsState extends MainPageSettingsViewModel {
                 // ignore: deprecated_member_use
                 style: ElevatedButton.styleFrom(primary: Colors.white),
                 child: const Text(
-                  "Bir Renk Seç!",
+                  TextConst.chooseColorTxt,
                   style: TextStyle(color: Color.fromRGBO(15, 61, 62, 1.0)),
                 ),
               )
