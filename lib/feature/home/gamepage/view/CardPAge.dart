@@ -14,19 +14,14 @@ class CardPage extends StatefulWidget {
 
   CardPage({
     Key? key,
-    required this.assetImageCardBack,
-    required this.assetImageCardFront,
   }) : super(key: key);
 
   @override
-  _CardPageState createState() => _CardPageState(
-      assetImageCardBack: assetImageCardBack,
-      assetImageCardFront: assetImageCardFront);
+  _CardPageState createState() => _CardPageState();
 }
 
 class _CardPageState extends CartPageViewModel {
-  _CardPageState(
-      {required super.assetImageCardBack, required super.assetImageCardFront});
+  _CardPageState({Key? key}) : super();
 
   Widget? currentPage;
   bool _isCardTurned = false;
@@ -35,14 +30,15 @@ class _CardPageState extends CartPageViewModel {
   @override
   void initState() {
     super.initState();
-    TappedCard tappedCard = TappedCard(
+
+    /*TappedCard tappedCard = TappedCard(
       assetImageCardBack: assetImageCardBack,
       assetImageCardFront: assetImageCardFront,
       routeToPage: null,
       callback: () => {callback()},
-    );
+    );*/
 
-    currentPage = tappedCard;
+    // currentPage = newCard;
   }
 
   void callback() {
@@ -63,6 +59,7 @@ class _CardPageState extends CartPageViewModel {
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
 
+    loadCards(callback);
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Container(
@@ -180,7 +177,7 @@ class _CardPageState extends CartPageViewModel {
               child: SizedBox(
                 width: screenWidth / 1.6,
                 height: screenHeight / 2,
-                child: currentPage,
+                child: isLoaded ? newCard : Container(),
               ),
             ),
             /*
@@ -199,6 +196,7 @@ class _CardPageState extends CartPageViewModel {
                             onPressed: () => {
                                   if (_isTimeUp)
                                     {
+                                      GameContreller().setCancelCard(false),
                                       Navigator.of(context).pushAndRemoveUntil(
                                           MaterialPageRoute(
                                               builder: (context) =>

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import '../../../product/widgets/timer/timer_design.dart';
@@ -20,7 +18,10 @@ class FullScreenModal extends DrawerViewModel {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-    TimerDesign timer = TimerDesign(myController: controller2, seconds: 20);
+    TimerDesign timer = TimerDesign(
+      myController: controller2,
+      seconds: 20,
+    );
     return Material(
       type: MaterialType.transparency,
       child: Center(
@@ -53,13 +54,12 @@ class FullScreenModal extends DrawerViewModel {
                     disabledForegroundColor: Colors.white.withOpacity(0.9),
                     disabledBackgroundColor: Colors.white.withOpacity(0.9),
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
-                child: const Text(
-                  "DEVAM ET",
-                  style: TextStyle(
+                child: const Text("DEVAM ET",
+                    style: TextStyle(
                       fontSize: 30,
                       fontFamily: 'GamerStation',
-                      color: Colors.white,)
-                ),
+                      color: Colors.white,
+                    )),
               ),
               const SizedBox(
                 height: 70,
@@ -80,15 +80,13 @@ class FullScreenModal extends DrawerViewModel {
                     ),
                     disabledForegroundColor: Colors.white,
                     disabledBackgroundColor: Colors.white,
-
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                 child: const Text(
                   "Yeni Oyun",
                   style: TextStyle(
-                    fontSize: 30,
-                    fontFamily: 'GamerStation',
-                    color: Colors.white
-                  ),
+                      fontSize: 30,
+                      fontFamily: 'GamerStation',
+                      color: Colors.white),
                 ),
               ),
             ],

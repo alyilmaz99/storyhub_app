@@ -1,5 +1,6 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:storyhub/feature/home/gamepage/view/CardPAge.dart';
 
 import 'package:storyhub/product/widgets/timer/timer_design.dart';
 
@@ -18,6 +19,13 @@ class GamePageWithTimer extends StatefulWidget {
 class _GamePageWithTimerState extends GamePageWithTimerViewModel {
   @override
   Widget build(BuildContext context) {
+    bool isFinish = false;
+    void callback() {
+      setState(() {
+        isFinish = true;
+      });
+    }
+
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
@@ -158,15 +166,19 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               'SONRAKI',
               MediaQuery.of(context).size.height / 12,
               MediaQuery.of(context).size.width / 1.7,
-              const Color.fromRGBO(223, 105, 64, 1).withOpacity(0.9),
+              timer.myController.isPaused
+                  ? const Color.fromRGBO(223, 105, 64, 1).withOpacity(0.9)
+                  : const Color.fromRGBO(251, 251, 251, 0.5),
               () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const HomeCardsOrder(),
-                  ),
-                );
+                if (timer.myController.getTime() == '20') {
+                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CardPage(),
+                    ),
+                  );
+                }
               },
               'OYUNCU',
             ),
