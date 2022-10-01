@@ -1,73 +1,102 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:storyhub/feature/stats/viewmodel/sorting_page_viewmodel.dart';
 
-// class SortingPage extends StatefulWidget {
-//   @override
-//   State<StatefulWidget> createState() {
-//     return _SortingPage();
-//   }
-// }
-
-// class _SortingPage extends State<SortingPage> {
-//   List<Player> players = [
-//     Player("Abdullah", "Dündar", 90),
-//     Player("Murat", "Arslan", 100),
-//     Player("Ahmet", "Özyörük", 25)
-//   ];
-
-  
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       title: const Text("Sıralama"),
-  //       centerTitle: true,
-  //     ),
-  //     body: buildBody(),
-  //   );
-  // }
-
-  // Widget buildBody() {
-  //   return Column(
-  //     children: [
-  //       const SizedBox(
-  //         height: 10,
-  //       ),
-  //       Expanded(
-  //           child: ListView.builder(
-  //               itemCount: players.length,
-  //               itemBuilder: (BuildContext context, int index) {
-  //                 return ListTile(
-  //                   title: Text("${players[index].firstName} ${players[index].lastName}"),
-  //                   subtitle: Text("Score : ${players[index].score}"),
-  //                   leading: const CircleAvatar(
-  //                       backgroundImage: NetworkImage(
-  //                           "https://www.google.com/search?q=1.cilik+icon&tbm=isch&chips=q:1+cilik+icon,online_chips:png:VHrCFeKmQHU%3D&hl=tr&sa=X&ved=2ahUKEwjahLnQpcj5AhWMNewKHZXUBccQ4lYoAXoECAEQJg&biw=1903&bih=938#imgrc=gsz0Koy_N-bMvM")),
-  //                   trailing: const Icon(Icons.abc_rounded),
-  //                 );
-  //               })),
-  //       Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-  //         const Flexible(fit: FlexFit.tight, flex: 1, child: SizedBox()),
-  //         Flexible(
-  //           fit: FlexFit.tight,
-  //           flex: 3,
-  //           child: ElevatedButton(
-  //             onPressed: () {},
-  //             child: const Text('Ana Memü'),
-  //             //style: ElevatedButton.styleFrom(shape: StadiumBorder()),
-  //           ),
-  //         ),
-  //         const Flexible(fit: FlexFit.tight, flex: 2, child: SizedBox()),
-  //         Flexible(
-  //           fit: FlexFit.tight,
-  //           flex: 3,
-  //           child: ElevatedButton(
-  //             onPressed: () {},
-  //             child: const Text('Yeni Oyun'),
-  //             //style: ElevatedButton.styleFrom(shape: StadiumBorder()),
-  //           ),
-  //         ),
-  //         const Flexible(fit: FlexFit.tight, flex: 1, child: SizedBox()),
-  //       ]),
-  //       const SizedBox(height: 20),
-  //     ],
-  //   );
-  // }
-// }
+class SortingPageView extends SortingPageViewModel {
+  @override
+  Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWidth = MediaQuery.of(context).size.width;
+    return Scaffold(
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: RadialGradient(
+            center: Alignment.center,
+            colors: [
+              Color.fromARGB(255, 253, 163, 133),
+              Color.fromRGBO(216, 91, 47, 1),
+            ],
+            radius: 0.7,
+          ),
+        ),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Align(
+                  alignment: Alignment.center,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: screenHeight / 13),
+                    child: SizedBox(
+                      // height: screenHeight / 10,
+                      width: screenWidth / 4,
+                      child: Image.asset(
+                        'assets/images/LogoV1.png',
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: screenHeight / 20,
+            ),
+            Text(
+              'SIRALAMA',
+              style: TextStyle(
+                fontFamily: 'GamerStation',
+                fontSize: 40,
+                color: Colors.white,
+                shadows: <Shadow>[
+                  Shadow(
+                    offset: const Offset(0, 5.0),
+                    blurRadius: 6.0,
+                    color: Colors.black.withOpacity(0.2),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: screenHeight / 25,
+            ),
+            buildContainer(context, const Color.fromRGBO(255, 221, 85, 1),
+                'assets/images/profiles/1.png', 'assets/images/first.png'),
+            SizedBox(
+              height: screenHeight / 25,
+            ),
+            buildContainer(context, const Color.fromRGBO(220, 229, 246, 1),
+                'assets/images/profiles/2.png', 'assets/images/second.png'),
+            SizedBox(
+              height: screenHeight / 25,
+            ),
+            buildContainer(context, const Color.fromRGBO(232, 93, 70, 1),
+                'assets/images/profiles/3.png', 'assets/images/third.png'),
+            SizedBox(
+              height: screenHeight / 15,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  elevation: 5,
+                  minimumSize: Size(screenWidth / 1.7, screenHeight / 15),
+                  backgroundColor: const Color.fromRGBO(216, 91, 47, 1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18),
+                  )),
+              child: const Text(
+                'SIRALAMA TABLOSU',
+                style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    color: Colors.white,
+                    fontSize: 18),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
