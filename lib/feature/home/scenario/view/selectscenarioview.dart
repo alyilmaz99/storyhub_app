@@ -305,6 +305,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                             // Create a grid with 2 columns. If you change the scrollDirection to
                             // horizontal, this produces 2 rows.
                             crossAxisCount: 1,
+
                             // Generate 100 widgets that display their index in the List.
                             children:
                                 List.generate(filteredList.length, (index) {
@@ -335,21 +336,28 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                   padding: EdgeInsets.only(
                                                       top: w / 20),
                                                   child: Container(
-                                                     color:
-                                                              const Color.fromRGBO(208,
-                                                                  33, 33, 1),
+                                                    color: const Color.fromRGBO(
+                                                        208, 33, 33, 1),
                                                     child: Padding(
-                                                      padding:  EdgeInsets.symmetric(horizontal: w/90, vertical: w/150),
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              horizontal:
+                                                                  w / 90,
+                                                              vertical:
+                                                                  w / 150),
                                                       child: Text(
+                                                        textAlign:
+                                                            TextAlign.center,
                                                         filteredList[index]
                                                             .category,
                                                         style: const TextStyle(
-                                                            fontFamily:
-                                                                "GamerStation",
-                                                            color: Colors.white,
-                                                            fontSize: 18,
-                                                            fontWeight: FontWeight.normal,
-                                                           ),
+                                                          fontFamily:
+                                                              "GamerStation",
+                                                          color: Colors.white,
+                                                          fontSize: 18,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -363,7 +371,11 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                     style: ButtonStyle(
                                                         backgroundColor:
                                                             MaterialStateProperty.all(
-                                                               const Color.fromRGBO(251, 251, 251, 0.6)),
+                                                                const Color.fromRGBO(
+                                                                    251,
+                                                                    251,
+                                                                    251,
+                                                                    0.6)),
                                                         shape: MaterialStateProperty.all<
                                                                 RoundedRectangleBorder>(
                                                             RoundedRectangleBorder(
@@ -374,14 +386,18 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                       padding:
                                                           const EdgeInsets.all(
                                                               8.0),
-                                                      child: Text(
-                                                        filteredList[index]
-                                                            .senaryoText,
-                                                        style: const TextStyle(
-                                                            fontFamily:
-                                                                "GamerStation",
-                                                            color:
-                                                                Colors.black),
+                                                      child: Center(
+                                                        child: Text(
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          filteredList[index]
+                                                              .senaryoText,
+                                                          style: const TextStyle(
+                                                              fontFamily:
+                                                                  "GamerStation",
+                                                              color:
+                                                                  Colors.black),
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -410,7 +426,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsets.only(
-                                                      top: w / 25),
+                                                      top: w / 15),
                                                   child: Align(
                                                     alignment:
                                                         Alignment.topCenter,
@@ -426,20 +442,25 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                     ),
                                                   ),
                                                 ),
+                                                SizedBox(
+                                                  height: h / 40,
+                                                ),
                                                 Container(
                                                   margin: const EdgeInsets
                                                           .symmetric(
-                                                      horizontal: 0.0),
+                                                      horizontal: 30.0),
                                                   child: Align(
                                                     alignment: Alignment.center,
                                                     child: Text(
+                                                        textAlign:
+                                                            TextAlign.center,
                                                         filteredList[index]
                                                             .shortText,
                                                         style: const TextStyle(
-                                                            
-                                                            fontSize: 15,
-                                                            fontFamily:
-                                                                "Montserrat")),
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontSize: 15,
+                                                        )),
                                                   ),
                                                 ),
                                                 const Spacer(),
@@ -457,8 +478,9 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                       child:
                                                           FloatingActionButton(
                                                         heroTag: "btn$index",
-                                                        splashColor: const Color.fromRGBO(251, 251, 251, 1),
-                                                            
+                                                        splashColor: const Color
+                                                                .fromRGBO(
+                                                            251, 251, 251, 1),
                                                         backgroundColor:
                                                             const Color
                                                                     .fromRGBO(
@@ -475,10 +497,6 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                                           20.0)),
                                                         ),
                                                         onPressed: () {
-                                                          Navigator.pop(
-                                                              context);
-                                                          Navigator.pop(
-                                                              context);
                                                           Navigator.push(
                                                               context,
                                                               MaterialPageRoute(

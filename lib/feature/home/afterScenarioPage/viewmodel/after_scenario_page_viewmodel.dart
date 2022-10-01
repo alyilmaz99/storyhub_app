@@ -53,14 +53,9 @@ Widget buildFirstButton(BuildContext context, String text, double height,
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => DisplayScenario()));
         } else {
-          Navigator.pop(context);
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => CardPage(
-                    assetImageCardBack: 'assets/images/cards/7.png',
-                    assetImageCardFront: 'assets/images/cards/11.png'),
-              ));
+          Navigator.of(context).pushAndRemoveUntil(
+              MaterialPageRoute(builder: (context) => CardPage()),
+              (Route<dynamic> route) => false);
         }
       },
       style: ButtonStyle(

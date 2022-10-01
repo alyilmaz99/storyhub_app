@@ -56,7 +56,7 @@ class _TappedCardState extends State<TappedCard> {
         if (isFlipped == true) {
           // _navigateToNextScreen(context);
           // Navigator.push(context, ScaleRoute(page: this.routeToPage!));
-          this.widget.callback();
+          widget.callback();
 
           isFlipped = false;
         } else {

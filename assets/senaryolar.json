@@ -1,316 +1,168 @@
 [
 	{
 		"senaryoNumber":10,
-		"senaryoText":"Çöl",
+		"senaryoText":"Kumlar Vadisi ",
 		"imageUrl":"10.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":11,
-		"senaryoText":"Han",
-		"imageUrl":"11.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
+		"long-text":"Yılın en sıcak zamanları geri gelmişti. Bedevi grubu güneşin tepeden gitmesini hasır çadırlarda bekliyorlardı. Aylardır çöl tepelerindeki huzursuzluğun sebebi olan yaratığı arıyorlardı. Sadece birkaçı daha önce o yaratıkla karşılaşmıştı ve onları ne beklediğinin farkında değillerdi. Huzursuz bekleme sürerken yakın tepelerdeki kumlar hareket etmeye başladı. Hiddetle irkilen bedevi grubu çadırlardan dışarıya fırladılar.Karşılarında gördükleri devasa…",
+		"short-text":"Yılın en sıcak zamanları geri gelmişti. Bedevi grubu güneşin tepeden gitmesini hasır çadırlarda bekliyorlardı. ",
 		"category":"Fantastik"
 	},	
-	{
-		"senaryoNumber":12,
-		"senaryoText":"Sirk",
-		"imageUrl":"12.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Macera"
-	},	
-	{
-		"senaryoNumber":13,
-		"senaryoText":"Perili Ev",
-		"imageUrl":"13.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Dram"
-	},	
+	
 	{
 		"senaryoNumber":14,
-		"senaryoText":"Şirket",
+		"senaryoText":"Suç ve Para ",
 		"imageUrl":"14.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
+		"long-text":"Ülkenin büyük yayın şirketlerinden birinin yöneticisi vergi kaçırmaktan suçlu bulunmuştu. Sabah mesaisine gelen çalışanlar, haciz memurlarının şirketlerini boşaltmasını kısa süre izleyip evlerine geri dönüyorlardı. Genel müdür gelen çalışanlara tazminatlarının ödenemeyceğini söyleyip yollamak zorunda kalıyordu. Çalışanlar mağdurdu, hakları istismar edilmişti. Birkaç gün sonra eylem yapmak için eski şirketlerinin önünde toplandılar. Kalabalık grup haklarını istediklerini belirterek slogan atıyorlardı. O sırada üstlerine para yağmaya başladı. Binanın üst katlarından biri tarafından atılıyordu. Bu durum…",
+		"short-text":"Ülkenin büyük yayın şirketlerinden birinin yöneticisi vergi kaçırmaktan suçlu bulunmuştu. Sabah mesaisine gelen çalışanlar, haciz memurlarının şirketlerini boşaltmasını kısa süre izleyip evlerine geri dönüyorlardı.",
+		"category":"Eglence"
 	},	
-	{
-		"senaryoNumber":15,
-		"senaryoText":"Yemek Salonu",
-		"imageUrl":"15.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
+
 	{
 		"senaryoNumber":16,
-		"senaryoText":"Keplert53",
+		"senaryoText":"Kepler T-53 ",
 		"imageUrl":"16.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
+		"long-text":"Varış koordinatları girilmişti fakat mürettabatın içinde bir huzursuluk hakimdi. Uzay boşluğunda sürükleniyor gibilerdi. Karşılarındaki gezegen inecekleri yerden farklıydı. Toz bulutları gibi gözüken geniş bir uydusu vardı. Durumlarını üsse bildirmek için bağlantı kuracakları telsizlerdeki bağlantı tiz bir cızırtıyla bölünüyordu. Artık sadece onlar vardı. Yoğun toz bulutlarını geçip uzay gemisini indirmekten başka çareleri yoktu. Zor ve sarsıntılı olan iniş yakıtlarının büyük kısmını kaybetmelerine sebep olmuştu. Bu yabancı gezegen hakkında bilgi toplamak için keşif robotunu gönderip beklemeye koyuldular. Robotun getirdiği örnekler bu gezegenin…",
+		"short-text":"Varış koordinatları girilmişti fakat mürettabatın içinde bir huzursuluk hakimdi. Uzay boşluğunda sürükleniyor gibilerdi. ",
 		"category":"Korku"
 	},	
 	{
 		"senaryoNumber":17,
-		"senaryoText":"Mahkeme Salonu",
+		"senaryoText":"Çalıntı",
 		"imageUrl":"17.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
+		"long-text":"Kapı sertçe açıldı. İçeriye uzun cübbesiyle hakim girdi. Uzun bir tanık listesi vardı önünde. Tecrübeli bir hakim olmasına karşın bu dava daha önceden gördüklerinden farklıydı. Evsiz bir ressama açılan bir davaydı. Adam sanat eseri hırsızlığından suçlanıyordu. Yakın zamanda müzeden birkaç değerli tablo çalınmıştı ve bunların bir tanesini de sabah işine giden müze müdürü adamın sattığı tablolar arasında görmüştü. Zavallı adam ne kadar inkar edip kendi çizimi olduğunu iddia etse de inanılmamıştı. Çünkü tablo orijinal resimle birebir aynıydı. Taraflar dinlenilmiş, dava görülmüş. Karar verilmeye gelince hakim tokmağını sertçe vurmuş, ressamı suçlu bulmuştu çünkü…",
+		"short-text":"Kapı sertçe açıldı. İçeriye uzun cübbesiyle hakim girdi. Uzun bir tanık listesi vardı önünde. Tecrübeli bir hakim olmasına karşın bu dava daha önceden gördüklerinden farklıydı.",
 		"category":"Korku"
 	},	
-	{
-		"senaryoNumber":18,
-		"senaryoText":"Issı Kütüphane",
-		"imageUrl":"18.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":19,
-		"senaryoText":"Terk Edilmiş Salon",
-		"imageUrl":"19.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
+
 	{
 		"senaryoNumber":1,
-		"senaryoText":"Ada",
+		"senaryoText":"Adanın Çığlıkları",
 		"imageUrl":"1.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
+		"long-text":"Gözlerini zorla açarken ne olup bittiğinin farkında değildi. Kıyıda onunla birlikte baygın yatan birkaç gemici, suda yüzen tahtalar ve yelkenden kalan birkaç parça… Gemi yolculuk yaparken büyük bir kaya parçasıyla çarpışmış, batmış; su da gemiden geriye kalanları karaya savuruyor gibiydi. Ağır haraketlerle kalkıp en yanında yatan kişiye doğru ilerledi. Çok fazla su yutmuş ve baygın gibiydi. Çevresinde neler olduğunu, nerede olduklarını anlamaya çalışırken arkalarındaki ormandan bir grubun bağırarak üzerlerine doğru koştuğunu farketti. Gemici o anda…",
+		"short-text":"Gözlerini zorla açarken ne olup bittiğinin farkında değildi. Kıyıda onunla birlikte baygın yatan birkaç gemici, suda yüzen tahtalar ve yelkenden kalan birkaç parça…",
+		"category":"Macera"
 	},	
 	{
 		"senaryoNumber":20,
-		"senaryoText":"Taht Odası",
+		"senaryoText":"Taht Oyunu",
 		"imageUrl":"20.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
+		"long-text":"Diyarların birinde kralın tek kızı olan güzeller güzeli prenses onun kalbini kazanacak hediyeyi getiren kişiyle evlenmeye karar vermiş. Krallığın dört bir yanından gençler güzel prensesin kalbini kazanmak için hediyeleriyle saraya gelmişlerdi. Diyarın en güzel çiçeklerini, elbiselerini, mücevherlerini prensese sunmuşlar. Prenses istediğinin bu olmadığını, gerçekten onu mutlu edecek birini istediğini söylemiş. O anda içeriye giren kişi herkesi enerjisiyle büyüleyen cinste biriymiş. Prensesin önünde eğilerek: Prensesim benim size sunabileceğim…",
+		"short-text":"Diyarların birinde kralın tek kızı olan güzeller güzeli prenses onun kalbini kazanacak hediyeyi getiren kişiyle evlenmeye karar vermiş.",
 		"category":"Eglence"
 	},	
 	{
 		"senaryoNumber":21,
-		"senaryoText":"Hastane Odası",
+		"senaryoText":"Laboratuvar W",
 		"imageUrl":"21.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
+		"long-text":"Bir grup bilim insanı insani güçleri on kat arttıran bir virüs geliştirdiler. Fakat bu virüs insanlarda hayvana benzer form değişikliğine sebep oluyordu. Bu virüse karşı tekrar bir insanın özelliklerine döndüren bir de panzehir geliştirdiler. Fakat panzehir virüs kadar hızlı etki etmiyor, bir süre daha vahşi hayvani özellikleri gösteriyordu. Denek grubu içinde kendine gardiyan diyen bir virüslü laboratuvardan kaçıp tüm aşı ve panzehirleri çaldı. Bu aşılarla…",
+		"short-text":"Bir grup bilim insanı insani güçleri on kat arttıran bir virüs geliştirdiler.",
 		"category":"Korku"
 	},	
 	{
 		"senaryoNumber":22,
-		"senaryoText":"Robot Fabrika",
+		"senaryoText":"Peluş Robot",
 		"imageUrl":"22.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
+		"long-text":"Üretimin işlediği ve gezilerin olduğu bir gün aniden tüm fabrikanın elektriği kesildi. Jenaratörlerin de devreye girmemesiyle bir anda ortalığı karanlığa boğuldu. Kablo kopmasına benzeyen cızırtı sesleri yükseldi. Birkaç dakika sonra geç de olsa jenaretörler çalıştı. Yüzlerce robotun arasında biri gözüküyordu. Küçük biri. Bir çocuk robotların arasında elinde oyuncak ayısıyla duruyordu. Uzaktan robotla bir şeyler konuşuyormuş gibi duruyorlardı. Küçük kız oyuncak ayısını robota uzattı. Sistemi aktif edilmemiş robot o sırada harekete geçip ayıcığı aldı, sarıldı ve…",
+		"short-text":"Üretimin işlediği ve gezilerin olduğu bir gün aniden tüm fabrikanın elektriği kesildi. Jenaratörlerin de devreye girmemesiyle bir anda ortalığı karanlığa boğuldu.",
+		"category":"Eglence"
 	},	
 	{
 		"senaryoNumber":23,
-		"senaryoText":"Terzi Atolyesi",
+		"senaryoText":"İplikten Hayatlar",
 		"imageUrl":"23.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
+		"long-text":"Terzi, Masanın üzerinde dünden kalan çay bardağını eliyle itip aceleyle bir şeyler dikmeye başladı . Birkaç dakika sonra dükkanın  kapısında duran küçük zilin çınlamasıyla içeriye fransızlara benzeyen uzun bıyıklı bir beyefendi girdi. Terzi hafifçe kafasını kaldırdı, gelen kişiden pek hoşlanmayan tavırla yüzünü ekşitti.   Arkasını dönüp raflarda bir şeyler karıştırdı ve masaya  deriden yapılmış bir zarf bıraktı. Zarf…",
+		"short-text":"Terzi, Masanın üzerinde dünden kalan çay bardağını eliyle itip aceleyle bir şeyler dikmeye başladı.",
+		"category":"Dram"
 	},	
 	{
 		"senaryoNumber":24,
-		"senaryoText":"Balıkçı Teknesi",
+		"senaryoText":"Büyük Balık",
 		"imageUrl":"24.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":25,
-		"senaryoText":"Korsan Gemisi",
-		"imageUrl":"25.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":26,
-		"senaryoText":"Havaalanı",
-		"imageUrl":"26.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":27,
-		"senaryoText":"Hapishane",
-		"imageUrl":"27.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":28,
-		"senaryoText":"Zindan",
-		"imageUrl":"28.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":29,
-		"senaryoText":"Karakol",
-		"imageUrl":"29.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":2,
-		"senaryoText":"Alışveriş Merkezi",
-		"imageUrl":"2.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":30,
-		"senaryoText":"Vahşi Batı",
-		"imageUrl":"30.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":31,
-		"senaryoText":"Lunapark",
-		"imageUrl":"31.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":32,
-		"senaryoText":"Otel",
-		"imageUrl":"32.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
+		"long-text":"Fakir kıyı kasabasında yaşayan ailenin tek geçim kaynağı ağlarına takılan balıklardı. Ailelerine yeni katılan bebekleri sürekli hastalanıyor ve ebeveynlerini  korkutuyordu. Balıkçı yine sıradan birgün gibi ağlarını toplamış, yakaladıkları balıkları hasır çuvalın içine dolduruyordu. Çok bereketli bir av değildi, pek balık yoktu.  Ağda son kalan birkaç balığın arasında bir istiridye de vardı. Balıkçı umursamazca istiridye üzerindeki birkaç yosunu temizledi. Tüm gücüyle zorlayarak istiridyenin kabuklarını ayırmaya çalıştı.Zor da olsa istiridye açılmıştı ve içinden bir ışık hüzmesi yayılıyordu. Balıkçı istiridyenin içine baktığında…",
+		"short-text":"Fakir kıyı kasabasında yaşayan ailenin tek geçim kaynağı ağlarına takılan balıklardı.",
 		"category":"Fantastik"
 	},	
 	{
-		"senaryoNumber":33,
-		"senaryoText":"Piramitleri Çalan Uzay Gemisi",
-		"imageUrl":"33.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":34,
-		"senaryoText":"Sinama Salonu",
-		"imageUrl":"34.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":35,
-		"senaryoText":"Uzay Gemisi",
-		"imageUrl":"35.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
+		"senaryoNumber":25,
+		"senaryoText":"İncili Geçit",
+		"imageUrl":"25.png",
+		"long-text":"Savaştan yeni çıkmış krallık ellerindeki haritanın birkaç parçasını korsanlara kaptırmıştı. Ellerindeki hazine haritası için fırtınalı okyanusu geçecek zayıf donanmalarıyla korsanlardan önce hazineyi bulmalıydılar. Korsanların aksak yürüyen kaptanı, elindeki birkaç parçayla hazineyi bulacağından emindi. İki tarafta en hızlı şekilde hazinenin peşine düşüp, fırtınalı okyanusa yelken açtılar. Şans eseri ki iki donanma da incili geçit önünde karşılaştılar. Korsan gemisinin kaptanı ağzından tükürükler saçarak mürettebatına bağırdı:…",
+		"short-text":"Savaştan yeni çıkmış krallık ellerindeki haritanın birkaç parçasını korsanlara kaptırmıştı.",
+		"category":"Macera"
 	},	
 	{
 		"senaryoNumber":36,
-		"senaryoText":"Beyaz Saray",
+		"senaryoText":"Çantada Tehdit",
 		"imageUrl":"36.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
+		"long-text":"Başkentin her köşesinden siren sesleri yükseliyordu. Halk sokaklara dökülmüş, dükkanlar talan edilmiş, şehirden kaçmaya çalışanların uzun araç kuyruklarının sonu yok gibiydi. Gökyüzündeki güneşi kapatan yüzlerce uzay gemisinden yeryüze bir şeyler iniyor gibiydi. Ülkenin tehlike altında olduğu açıktı. Odasının camından bakan başkan havadaki kasvetin farkındaydı. Arkasındaki masada sıralanmış danışmanlarına dönerek masada duran çantayı işaret etti. Danışmanlarından biri çantaya uzanıp yavaşça kilidini açtı. Çantanın içinden…",
+		"short-text":"Başkentin her köşesinden siren sesleri yükseliyordu. Halk sokaklara dökülmüş, dükkanlar talan edilmiş, şehirden kaçmaya çalışanların uzun araç kuyruklarının sonu yok gibiydi.",
+		"category":"Fantastik"
 	},	
 	{
 		"senaryoNumber":37,
-		"senaryoText":"Cadının Evi",
+		"senaryoText":"Şeker Kulübe",
 		"imageUrl":"37.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
+		"long-text":"Diyarların birinde şeker hırsızı bir cadı varmış. Cadı çocukların şekerlerini çalıp ormanın derinliklerinde saklarmış. Günlerden bir gün iki kardeş ormanda bir tavşan görmüşler. Tavşanın peşinden koşarken şekerden yapılmış kocaman olan cadının kulübesini bulmuşlar. Çocuklar heyecanla eve yaklaşmışlar. Camdan bakmışlar, içeride kimseyi görememişler. Kapıyı çalıp beklemişler. O anda kapı aralanıp yaşlı cadı buruşuk suratını kapıdan çıkartmış ve tiz bir sesle çocuklara…",
+		"short-text":"Diyarların birinde şeker hırsızı bir cadı varmış. Cadı çocukların şekerlerini çalıp ormanın derinliklerinde saklarmış.",
 		"category":"Korku"
 	},	
 	{
 		"senaryoNumber":38,
 		"senaryoText":"Ahır",
 		"imageUrl":"38.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
+		"long-text":"Yaşlı çiftçi, hayvanlarını beslemek için gündoğumuyla evinden ayrıldı. Geniş verandanın girişinde duran çamurlu çizmeleri ayağına geçirdi. Yürürken çizmelerinden çıkan komik ses rüzgarın uğultusu tarafından bastırılıyordu. Gaz lambasının titrek ışığı zayıf bir görüş alanı tanıyordu. Alet çantasını gürültülü bir şekilde karıştırıp zorlukla bulduğu el feneri yaktığında...",
+		"short-text":"Yaşlı çiftçi, hayvanlarını beslemek için gündoğumuyla evinden ayrıldı. Geniş verandanın girişinde duran çamurlu çizmeleri ayağına geçirdi.",
 		"category":"Korku"
 	},	
 	{
-		"senaryoNumber":39,
-		"senaryoText":"Anaokulu Bahçesi",
-		"imageUrl":"39.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
+		"senaryoNumber":40,
+		"senaryoText":"Tren Garı",
+		"imageUrl":"40.png",
+		"long-text":"Arkasından gelen ağır bavulları zorla çekiştiren genç kız tren garına geldi. Veznedeki adamla birkaç şey konuştuktan sonra derin bir nefes alıp rahatladı. Kış tatili için ailesinin yanına döneceği tren arıza yapmış ve kalkış birkaç saat ertelenmişti. Bavullarını geçirip yaşlı adamın yanındaki banka oturdu. Adam gazete okuyor bir yandan da kurabiye yiyordu. O sırada gazetenin arkasında duran bir manşet kızın ilgisini çekti. Manşette kocaman harflerle…",
+		"short-text":"Arkasından gelen ağır bavulları zorla çekiştiren genç kız tren garına geldi. Veznedeki adamla birkaç şey konuştuktan sonra derin bir nefes alıp rahatladı.",
+		"category":"Dram"
 	},	
 	{
 		"senaryoNumber":3,
-		"senaryoText":"Mars Kolonisi",
+		"senaryoText":"Hızlı Bir İçki",
 		"imageUrl":"3.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
+		"long-text":"Öğlen saatleriydi, içeride çok müşteri yoktu. Cama vuran yağmur damlaları ve arkadaki taş plakta çalan hafif tempolu şarkı eşliğinde barmen tezgahı siliyordu. Birden kapı açıldı ve ortamdaki tüm ilgiyi üzerine çekecek derecede güzel bir kadın içeri girdi. Bara yaklaşıp tabureye oturdu. Hızlıca bir içecek ve kalem istedi. Barmen kalemi kadına uzatıp içeceği hazırlamak için döndüğünde dışarıdan siren sesleri yükseldi. Bir grup polis hiddetle içeri daldı. Barmen ve müşteriler hayretler içinde olanları izliyordu. Kadın ortadan kaybolmuştu. Masaya bir peçete ve biraz para bırakmıştı. Peçetenin üzerinde yazan yazı…",
+		"short-text":"Öğlen saatleriydi, içeride çok müşteri yoktu. Cama vuran yağmur damlaları ve arkadaki taş plakta çalan hafif tempolu şarkı eşliğinde barmen tezgahı siliyordu.",
+		"category":"Eglence"
+	},	
+	{
+		"senaryoNumber":41,
+		"senaryoText":"Zombi Mezarlık",
+		"imageUrl":"41.png",
+		"long-text":"Şehrin batısında yaşayan insanlara huzursuzluk hakimdi. Geceleri mezarlıktan gelen ürkünç sesler ve gölgeler bölge halkını dehşete düşürmüştü. Mezarlık görevlisinin bir gece gördüklerinden sonra korkudan konuşma yetisini kaybetmesi, ve sürekli olan kayıp ilanları paranormal olaylar döndüğünün kesin olarak kanıtlar nitelikteydi. Bilinmezliği çözmek isteyen bir grup gece yarısı meşalelerle, tırmıklarla mezarlığa geldiler. Görünürde bir şey yoktu. İlerledikçe artan uluma sesleri git gide cesaretlerinin yerine korku dolduruyordu. İlerledikçe birkaç açık mezar buldular. Birkaç kemik ve kötü bir koku… O anda mezarlığın diğer ucundan bir çığlık duyuldu…",
+		"short-text":"Şehrin batısında yaşayan insanlara huzursuzluk hakimdi. Geceleri mezarlıktan gelen ürkünç sesler ve gölgeler bölge halkını dehşete düşürmüştü.",
 		"category":"Korku"
 	},	
 	{
-		"senaryoNumber":4,
-		"senaryoText":"Sahil",
-		"imageUrl":"4.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":5,
-		"senaryoText":"Park",
-		"imageUrl":"5.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":6,
-		"senaryoText":"Okul",
-		"imageUrl":"6.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
+		"senaryoNumber":42,
+		"senaryoText":"Büyülü Orman",
+		"imageUrl":"42.png",
+		"long-text":"Kralın şehrini günden güne daha az tüccar ziyaret ediyordu. Kulaktan kulağa dolaşan bir dedikodu vardı. Kralın şehrine gelen tüccarlar ve askerler ormandan geçerken garip ışıklar ve sesler duyduklarını ve birkaçının da mallarının çalındığı şikayetiyle krala gelmişti. Kral gözcü birliklerini ormanı incelemeleri için göndermişti. Gözcü birliklerinin başında yaşlı kısa boylu bir okçu görevlendirmişti. Birlikler dağılıp sesleri aramaya başladılar. Ormanın içindeki seslere doğru ilerledikçe sesler hareket ediyordu. Uzun arayış sonunda birlik lideri ağaçlarla konuşan pelerinli bir kadın gördü. Yavaş adımlarla kadına doğru ilerlediğinde…",
+		"short-text":"Kralın şehrini günden güne daha az tüccar ziyaret ediyordu. Kulaktan kulağa dolaşan bir dedikodu vardı. Kralın şehrine gelen tüccarlar ve askerler ormandan geçerken garip ışıklar ve sesler duyduklarını ve birkaçının da mallarının çalındığı şikayetiyle krala gelmişti.",
+		"category":"Macera"
 	},	
 	{
 		"senaryoNumber":7,
-		"senaryoText":"Resim Sergisi",
+		"senaryoText":"Sanat Çığlıkları",
 		"imageUrl":"7.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
-	},	
-	{
-		"senaryoNumber":8,
-		"senaryoText":"Hayvanat Bahçesi",
-		"imageUrl":"8.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
+		"long-text":"Dünyaca ünlü ressamların sanat eserlerinin olduğu sergi yoğun ilgi görüyordu. Gruplar halinde gelen öğrenciler, aileler, çiftler ile doluydu. Bembeyaz duvarların üzerinde renkli tablolar şenlik havası yaşatıyordu. O anda kısa süreli elektrik kesintisi yaşandı. Işıklar tekrar yandığında bağırışmalar yükseldi. Güvenliklerin telsiz konuşmaları ve koşuşturmalar duyuldu. Bir güvenlik görevlisi adamın birini vurmuştu. Adam vurulduğunda yanında bir yangın söndürme tüpü vardı. Vurulan adamın eşi: Bir şey çalmıyordu, o sadece…",
+		"short-text":"Dünyaca ünlü ressamların sanat eserlerinin olduğu sergi yoğun ilgi görüyordu. Gruplar halinde gelen öğrenciler, aileler, çiftler ile doluydu.",
+		"category":"Dram"
 	},	
 	{
 		"senaryoNumber":9,
 		"senaryoText":"Mahvolmuş Şehir",
 		"imageUrl":"9.png",
-		"long-text":"wadawdawdwadawdawdawdawdwadawdwadawdawdawdawdawdawdawdawdawdawdawdawd",
-		"short-text":"adwadawdawdwadwad",
-		"category":"Korku"
+		"long-text":"İnsan nüfusunun önlenemez artışı Dünya kaynakları için sorun yaratmaya başlamıştı. Bilinmeyen bir laboratuvarda geliştirilen virüs ile kontrollü şekilde insan nüfusu yarıya düşürülecekti. Büyük Dünya ülkeleri bu projeye büyük fonlamalar yatırmıştı. Fakat plan ters tepti. Bu ilaç insan dışı davranışlara ve vahşiliğe yol açtı. Birçok şehir yağmalandı, yönetimler düşürüldü. Virüse maruz kalmamış insanların oluşturduğu bir grup bu yıkıma karşı direnmeye çalıştı. ….",
+		"short-text":"İnsan nüfusunun önlenemez artışı Dünya kaynakları için sorun yaratmaya başlamıştı. ",
+		"category":"Macera"
 	}
+	
 ]
 
 

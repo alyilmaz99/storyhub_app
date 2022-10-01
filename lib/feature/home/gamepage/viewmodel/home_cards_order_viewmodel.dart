@@ -27,14 +27,14 @@ abstract class HomeCardsOrderViewModel extends State<HomeCardsOrder> {
     await cardService.initCards();
     setState(() {
       var cards = cardService.getCards();
-
+/*
       newCard = cardService.createTappedCards(cards);
       newCard2 = cardService.createTappedCards(cards);
       newCard3 = cardService.createTappedCards(cards);
       newCard4 = cardService.createTappedCards(cards);
       newCard5 = cardService.createTappedCards(cards);
       newCard6 = cardService.createTappedCards(cards);
-
+*/
       isLoaded = true;
     });
   }

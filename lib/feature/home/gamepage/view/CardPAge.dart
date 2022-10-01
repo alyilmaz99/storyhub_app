@@ -14,19 +14,14 @@ class CardPage extends StatefulWidget {
 
   CardPage({
     Key? key,
-    required this.assetImageCardBack,
-    required this.assetImageCardFront,
   }) : super(key: key);
 
   @override
-  _CardPageState createState() => _CardPageState(
-      assetImageCardBack: assetImageCardBack,
-      assetImageCardFront: assetImageCardFront);
+  _CardPageState createState() => _CardPageState();
 }
 
 class _CardPageState extends CartPageViewModel {
-  _CardPageState(
-      {required super.assetImageCardBack, required super.assetImageCardFront});
+  _CardPageState({Key? key}) : super();
 
   Widget? currentPage;
   bool _isCardTurned = false;
@@ -35,21 +30,21 @@ class _CardPageState extends CartPageViewModel {
   @override
   void initState() {
     super.initState();
-    TappedCard tappedCard = TappedCard(
+
+    /*TappedCard tappedCard = TappedCard(
       assetImageCardBack: assetImageCardBack,
       assetImageCardFront: assetImageCardFront,
       routeToPage: null,
       callback: () => {callback()},
-    );
+    );*/
 
-    currentPage = tappedCard;
+    // currentPage = newCard;
   }
 
   void callback() {
     setState(() {
       _isCardTurned = true;
     });
-    
   }
 
   void timeUp() {
@@ -64,8 +59,8 @@ class _CardPageState extends CartPageViewModel {
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
 
+    loadCards(callback);
     return Scaffold(
-      
       backgroundColor: Colors.transparent,
       body: Container(
         decoration: const BoxDecoration(
@@ -82,36 +77,18 @@ class _CardPageState extends CartPageViewModel {
           //mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding:  EdgeInsets.only(top: screenWidth/10),
+              padding: EdgeInsets.only(top: screenWidth / 10),
               child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-              IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(
-                  Icons.arrow_back,
-                  color: Colors.white,
-                ),
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(child: Container()),
+                ],
               ),
-              Expanded(child: Container()),
-              IconButton(
-                onPressed: () {
-                  //
-                },
-                icon: const Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                ),
-              ),
-                      ],
-                    ),
             ),
             Padding(
               padding: EdgeInsets.only(
                   left: screenWidth / 18,
-                  top: screenHeight / 50,
+                  top: screenHeight / 10,
                   right: screenWidth / 12),
               child: Center(
                 child: Column(
@@ -195,13 +172,15 @@ class _CardPageState extends CartPageViewModel {
               ),
             ),
             Padding(
-              padding:  EdgeInsets.only(top: screenWidth/20, bottom: screenWidth/20),
+              padding: EdgeInsets.only(
+                  top: screenWidth / 20, bottom: screenWidth / 20),
               child: SizedBox(
-                width: screenWidth/1.6,
-                height: screenHeight/2,
-                child: currentPage,
+                width: screenWidth / 1.6,
+                height: screenHeight / 2,
+                child: isLoaded ? newCard : Container(),
               ),
-            ),/*
+            ),
+            /*
               SizedBox(
               height: screenHeight / 10,
             ),*/
@@ -210,37 +189,38 @@ class _CardPageState extends CartPageViewModel {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width / 1.4,
-                  height: MediaQuery.of(context).size.height / 20,
-                  child: _isCardTurned
-                      ? ElevatedButton(
-                          onPressed: () => {
-                                if (_isTimeUp)
-                                  {
-                                    Navigator.push(context,
-                                        ScaleRoute(page: const GamePageWithTimer())),
-                                    
-                                  }
-                              },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: _isTimeUp
-                                ? const Color.fromRGBO(223, 105, 64, 1)
-                                : const Color.fromRGBO(251, 251, 251, 0.5),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(7.0)),
-                          ),
-                          child: const Text(
-                            "Kartı kullanarak senaryoyu bağla.",
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                color: Color.fromRGBO(251, 251, 251, 0.9)),
-                          ))
-                      : const SizedBox() 
-                ),
+                    width: MediaQuery.of(context).size.width / 1.4,
+                    height: MediaQuery.of(context).size.height / 20,
+                    child: _isCardTurned
+                        ? ElevatedButton(
+                            onPressed: () => {
+                                  if (_isTimeUp)
+                                    {
+                                      GameContreller().setCancelCard(false),
+                                      Navigator.of(context).pushAndRemoveUntil(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const GamePageWithTimer()),
+                                          (Route<dynamic> route) => false),
+                                    }
+                                },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: _isTimeUp
+                                  ? const Color.fromRGBO(223, 105, 64, 1)
+                                  : const Color.fromRGBO(251, 251, 251, 0.5),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(7.0)),
+                            ),
+                            child: const Text(
+                              "Kartı kullanarak senaryoyu bağla.",
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromRGBO(251, 251, 251, 0.9)),
+                            ))
+                        : const SizedBox()),
               ),
             ),
-          
           ],
         ),
       ),
