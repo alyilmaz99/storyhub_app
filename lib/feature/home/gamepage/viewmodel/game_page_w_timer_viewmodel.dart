@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../view/CardPAge.dart';
 import '../view/game_page_w_timer_view.dart';
 
 abstract class GamePageWithTimerViewModel extends State<GamePageWithTimer> {}

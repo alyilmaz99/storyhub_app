@@ -10,6 +10,7 @@ import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
 import 'package:storyhub/feature/stats/view/sorting_page_view.dart';
+import 'package:storyhub/feature/stats/view/sorting_table_view.dart';
 import 'feature/home/createplayer/model/player_model.dart';
 import 'product/model/player_selection_model.dart';
 import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
@@ -68,7 +69,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: SortingPageView(),
+      home: SortingTableView(),
     );
   }
 }
