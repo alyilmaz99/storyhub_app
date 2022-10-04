@@ -7,7 +7,8 @@ class Player with ChangeNotifier {
   int? score;
   int? rank;
   Map<dynamic, dynamic>? playersMap = <dynamic, dynamic>{};
-  Player({this.id, this.name, this.image, this.score, this.rank, this.playersMap});
+  Player(
+      {this.id, this.name, this.image, this.score, this.rank, this.playersMap});
 
   Player.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -19,6 +20,7 @@ class Player with ChangeNotifier {
 
   Future<Map<dynamic, dynamic>> createPlayerfunc(int userNumber, TextEditingController textFieldController, int? score,
       int? rank, String? imagepath, int? id) async {
+      
     for (var i = 1; i <= userNumber; i++) {
       playersMap![i] = id;
       playersMap!['name'] = textFieldController.value.text;

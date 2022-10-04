@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
+
+import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
+import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
+import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
+import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
+import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
+
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
+import 'package:storyhub/feature/stats/view/sorting_page_view.dart';
+import 'package:storyhub/feature/stats/view/sorting_table_view.dart';
+import 'feature/home/createplayer/model/player_model.dart';
 import 'product/model/player_selection_model.dart';
 import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
-
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
@@ -13,17 +21,29 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider<SettingsModel>(create: (BuildContext context) => SettingsModel()),
+        ChangeNotifierProvider<SelectScenarioModel>(
+          create: (BuildContext context) => SelectScenarioModel(),
+        ),
+        ChangeNotifierProvider<SettingsModel>(
+            create: (BuildContext context) => SettingsModel()),
         ChangeNotifierProvider<GameSettingsModel>(
-            create: (BuildContext context) =>
-                GameSettingsModel(playerCount: 2, timerValue: 20, roundSpeedValue: 1, roundCount: 3)),
+            create: (BuildContext context) => GameSettingsModel(
+                playerCount: 2,
+                timerValue: 20,
+                roundSpeedValue: 1,
+                roundCount: 3)),
         ChangeNotifierProvider<FinalPageViewModel>(
             create: (BuildContext context) => FinalPageViewModel(
-                playerList: [], map: {}, choosenName: "isim", choosenImgPath: "assets/images/blankPerson.jpg")),
+                playerList: [],
+                map: {},
+                choosenName: "isim",
+                choosenImgPath: "assets/images/blankPerson.jpg")),
         ChangeNotifierProvider<PlayerSelectionModel>(
-            create: (BuildContext context) =>
-                PlayerSelectionModel(imgPath: "assets/images/human/human1.png", playerName: "Player 1")),
-        ChangeNotifierProvider<Player>(create: (BuildContext context) => Player()),
+            create: (BuildContext context) => PlayerSelectionModel(
+                imgPath: "assets/images/human/human1.png",
+                playerName: "Player 1")),
+        ChangeNotifierProvider<Player>(
+            create: (BuildContext context) => Player()),
       ],
       child: const MyApp(),
     ),
@@ -49,7 +69,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const VoteScreenView(),
+
+      home: SortingTableView(),
+
     );
   }
 }

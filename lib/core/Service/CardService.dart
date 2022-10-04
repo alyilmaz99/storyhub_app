@@ -9,7 +9,6 @@ import '../../feature/home/gamepage/view/tappedCard.dart';
 import '../components/card/CardGame.dart';
 
 class CardService {
-
   var jsonst;
   late List<CardGame> _cards;
   bool isLoadedCards = false;
@@ -19,7 +18,7 @@ class CardService {
     _cards = cards;
   }
 
-  static final CardService _cardService= CardService._internal();
+  static final CardService _cardService = CardService._internal();
 
   CardService._internal();
 
@@ -31,7 +30,8 @@ class CardService {
     jsonst = await rootBundle.loadString('assets/cards.json');
 
     Iterable iterateCards = json.decode(jsonst);
-    cards = List<CardGame>.from(iterateCards.map((model)=> CardGame.fromJson(model)));
+    cards = List<CardGame>.from(
+        iterateCards.map((model) => CardGame.fromJson(model)));
 
     isLoadedCards = true;
 
@@ -39,29 +39,27 @@ class CardService {
   }
 
   List<CardGame> getCards() {
-    if(cards.isEmpty)
-      {
-        initCards();
-      }
+    if (cards.isEmpty) {
+      initCards();
+    }
 
     return cards;
   }
 
-  TappedCard createTappedCards(List<CardGame> cardsParam){
+  TappedCard createTappedCards(List<CardGame> cardsParam, Function callback) {
     final _random = new Random();
     var cardFront = cardsParam[_random.nextInt(cardsParam.length)];
 
-    String backCardImageUrl = cardsParam.firstWhere((element) => element.cardNumber == 7).imageUrl;
+    String backCardImageUrl =
+        cardsParam.firstWhere((element) => element.cardNumber == 7).imageUrl;
 
     TappedCard newTappedCard = TappedCard(
       assetImageCardBack: "assets/images/cards/" + backCardImageUrl,
-      assetImageCardFront: "assets/images/cards/"+ cardFront.imageUrl,
-      routeToPage: CardPage(assetImageCardBack: "assets/images/"+ backCardImageUrl,assetImageCardFront: "assets/images/cards/"+ cardFront.imageUrl),
-      callback: () => {},
+      assetImageCardFront: "assets/images/cards/" + cardFront.imageUrl,
+      routeToPage: CardPage(),
+      callback: callback,
     );
 
     return newTappedCard;
   }
-
-
 }

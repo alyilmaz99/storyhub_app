@@ -5,17 +5,30 @@ import 'package:provider/provider.dart';
 import '../../../feature/settings/model/game_settings_model.dart';
 
 class TimerDesign extends StatelessWidget {
-  TimerDesign({super.key, required this.myController, required this.seconds});
-  CountDownController? myController;
+  TimerDesign({
+    super.key,
+    required this.myController,
+    required this.seconds,
+  });
+  CountDownController myController = CountDownController();
+
   void pauseTimer() {
-    myController!.pause();
+    myController.pause();
   }
 
   void resumeTimer() {
-    myController!.resume();
+    myController.resume();
   }
 
   final int seconds;
+  /*
+  initState(){  
+     
+     pauseTimer();
+     resumeTimer();
+
+
+  } */
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -52,9 +65,7 @@ class TimerDesign extends StatelessWidget {
                   fontFamily: 'GamerStation',
                   fontSize: screenWidth / 4.5,
                 ),
-                onComplete: () {
-                  //
-                },
+                onComplete: () => {print(value.getTimerValue())},
               );
             },
           ),
