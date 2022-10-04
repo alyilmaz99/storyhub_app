@@ -1,8 +1,8 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/gamepage/view/CardPAge.dart';
-import '../../../settings/model/game_settings_model.dart';
+
+import 'package:storyhub/product/widgets/timer/timer_design.dart';
+
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
 
@@ -53,11 +53,15 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               alignment: Alignment.centerRight,
               child: IconButton(
                 onPressed: () {
+
                   controller.pause();
                   //timer.stopEnable1 == false;
 
+
                   Navigator.of(context)
                       .push(FullScreenModal(controller2: controller));
+
+
                 },
                 icon: const Icon(
                   Icons.menu,
@@ -109,30 +113,18 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                               color: Colors.grey,
                               size: screenWidth / 20,
                             )),
-                        crateHeroImage(
-                            context,
-                            'assets/images/question.png',
-                            MediaQuery.of(context).size.width / 6,
-                            MediaQuery.of(context).size.height / 12,
-                            0.5),
+                        crateHeroImage(context, 'assets/images/question.png', MediaQuery.of(context).size.width / 6,
+                            MediaQuery.of(context).size.height / 12, 0.5),
                         SizedBox(
                           width: screenWidth / 23,
                         ),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/2.png',
-                            MediaQuery.of(context).size.width / 4,
-                            MediaQuery.of(context).size.height / 8,
-                            1.0),
+                        crateHeroImage(context, 'assets/images/profiles/2.png', MediaQuery.of(context).size.width / 4,
+                            MediaQuery.of(context).size.height / 8, 1.0),
                         SizedBox(
                           width: screenWidth / 23,
                         ),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/3.png',
-                            MediaQuery.of(context).size.width / 6,
-                            MediaQuery.of(context).size.height / 12,
-                            0.5),
+                        crateHeroImage(context, 'assets/images/profiles/3.png', MediaQuery.of(context).size.width / 6,
+                            MediaQuery.of(context).size.height / 12, 0.5),
                         IconButton(
                             onPressed: () {},
                             icon: Icon(
@@ -149,6 +141,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 ),
               ),
             ),
+
             Stack(children: [
               Center(
                 child: SizedBox(
@@ -162,8 +155,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               ),
               Center(
                 child: Padding(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 11.5),
+                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 11.5),
                   child: Consumer<GameSettingsModel>(
                     builder: (context, value, child) {
                       return CircularCountDownTimer(
@@ -191,6 +183,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 ),
               )
             ]),
+
             SizedBox(
               height: screenHeight / 40,
             ),
@@ -212,10 +205,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: isFinish
                         ? const Color.fromRGBO(223, 105, 64, 1)
-                        : const Color.fromRGBO(251, 251, 251, 0.4)
-                            .withOpacity(0.5),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(7.0)),
+                        : const Color.fromRGBO(251, 251, 251, 0.4).withOpacity(0.5),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.0)),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -244,8 +235,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
             ),
             const Text(
               'TUR 1',
-              style: TextStyle(
-                  fontFamily: 'Montserrat', fontSize: 20, color: Colors.white),
+              style: TextStyle(fontFamily: 'Montserrat', fontSize: 20, color: Colors.white),
             ),
           ],
         ),

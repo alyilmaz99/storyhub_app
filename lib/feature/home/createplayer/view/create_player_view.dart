@@ -17,17 +17,22 @@ class CreatePlayerView extends StatefulWidget {
 class _CreatePlayerViewState extends CreatePlayerViewModel {
   var textFieldController = TextEditingController();
   bool isEmpty = false;
-
+  Future<void> initial(BuildContext context) async {}
   @override
   Widget build(BuildContext context) {
-    bool _isCheckOkay = false;
+    bool isCheckOkay = false;
     var screenInfo = MediaQuery.of(context);
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
+    int? myId = Provider.of<Player>(context).id;
+    int? myScore = Provider.of<Player>(context).score;
+    int? myRank = Provider.of<Player>(context).rank;
+    String? myImageString = Provider.of<Player>(context).image;
     int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
     Map? myPlayersMap = Provider.of<Player>(context).playersMap;
-    /* Future<void> mycreatePlayerfunc = Provider.of<Player>(context)
-        .createPlayerfunc(userNumber, textFieldController);*/
+
+    Future<void> mycreatePlayerfunc = Provider.of<Player>(context)
+        .createPlayerfunc(userNumber, textFieldController, myScore, myRank, myImageString, myId);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -35,10 +40,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
         decoration: const BoxDecoration(
           gradient: RadialGradient(
             radius: 0.7,
-            colors: [
-              Color.fromRGBO(255, 149, 113, 1),
-              Color.fromRGBO(216, 91, 47, 1)
-            ],
+            colors: [Color.fromRGBO(255, 149, 113, 1), Color.fromRGBO(216, 91, 47, 1)],
           ),
         ),
         child: SizedBox(
@@ -88,8 +90,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                       itemBuilder: (context, index) {
                         return Padding(
                             padding: EdgeInsets.only(bottom: screenHeight / 45),
-                            child: playerNameCreateContainer(
-                                context, index + 1, _isCheckOkay));
+                            child: playerNameCreateContainer(context, index + 1, isCheckOkay));
                       },
                     ),
                   ),
@@ -98,7 +99,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
               SizedBox(
                 height: screenHeight / 30,
               ),
-              buildFirstButton(context, _isCheckOkay),
+              buildFirstButton(context, isCheckOkay),
             ],
           ),
         ),
@@ -106,8 +107,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     );
   }
 
-  Container playerNameCreateContainer(
-      BuildContext context, int number, bool isCheckOkay) {
+  Container playerNameCreateContainer(BuildContext context, int number, bool isCheckOkay) {
     return Container(
       height: MediaQuery.of(context).size.height / 9,
       width: MediaQuery.of(context).size.width / 1.2,
@@ -115,8 +115,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
       child: Row(
         children: [
           Padding(
-            padding:
-                EdgeInsets.only(left: MediaQuery.of(context).size.width / 20),
+            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 20),
             child: SizedBox(
               width: 80,
               height: 80,
@@ -150,12 +149,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
             ),
           ),
           Padding(
-            padding:
-                EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
-            child: SizedBox(
-                height: 50,
-                width: 160,
-                child: playerNameCreateTextField(context)),
+            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
+            child: SizedBox(height: 50, width: 160, child: playerNameCreateTextField(context)),
           ),
           isEmpty
               ? Padding(
