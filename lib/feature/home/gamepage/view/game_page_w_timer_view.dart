@@ -57,8 +57,10 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                   controller.pause();
                   //timer.stopEnable1 == false;
 
+
                   Navigator.of(context)
                       .push(FullScreenModal(controller2: controller));
+
 
                 },
                 icon: const Icon(
@@ -111,30 +113,18 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                               color: Colors.grey,
                               size: screenWidth / 20,
                             )),
-                        crateHeroImage(
-                            context,
-                            'assets/images/question.png',
-                            MediaQuery.of(context).size.width / 6,
-                            MediaQuery.of(context).size.height / 12,
-                            0.5),
+                        crateHeroImage(context, 'assets/images/question.png', MediaQuery.of(context).size.width / 6,
+                            MediaQuery.of(context).size.height / 12, 0.5),
                         SizedBox(
                           width: screenWidth / 23,
                         ),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/2.png',
-                            MediaQuery.of(context).size.width / 4,
-                            MediaQuery.of(context).size.height / 8,
-                            1.0),
+                        crateHeroImage(context, 'assets/images/profiles/2.png', MediaQuery.of(context).size.width / 4,
+                            MediaQuery.of(context).size.height / 8, 1.0),
                         SizedBox(
                           width: screenWidth / 23,
                         ),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/3.png',
-                            MediaQuery.of(context).size.width / 6,
-                            MediaQuery.of(context).size.height / 12,
-                            0.5),
+                        crateHeroImage(context, 'assets/images/profiles/3.png', MediaQuery.of(context).size.width / 6,
+                            MediaQuery.of(context).size.height / 12, 0.5),
                         IconButton(
                             onPressed: () {},
                             icon: Icon(
@@ -165,8 +155,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               ),
               Center(
                 child: Padding(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height / 11.5),
+                  padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 11.5),
                   child: Consumer<GameSettingsModel>(
                     builder: (context, value, child) {
                       return CircularCountDownTimer(
@@ -216,10 +205,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: isFinish
                         ? const Color.fromRGBO(223, 105, 64, 1)
-                        : const Color.fromRGBO(251, 251, 251, 0.4)
-                            .withOpacity(0.5),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(7.0)),
+                        : const Color.fromRGBO(251, 251, 251, 0.4).withOpacity(0.5),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.0)),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -248,8 +235,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
             ),
             const Text(
               'TUR 1',
-              style: TextStyle(
-                  fontFamily: 'Montserrat', fontSize: 20, color: Colors.white),
+              style: TextStyle(fontFamily: 'Montserrat', fontSize: 20, color: Colors.white),
             ),
           ],
         ),
