@@ -17,17 +17,22 @@ class CreatePlayerView extends StatefulWidget {
 class _CreatePlayerViewState extends CreatePlayerViewModel {
   var textFieldController = TextEditingController();
   bool isEmpty = false;
-
+  Future<void> initial(BuildContext context) async {}
   @override
   Widget build(BuildContext context) {
     bool _isCheckOkay = false;
     var screenInfo = MediaQuery.of(context);
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
+    int? myId = Provider.of<Player>(context).id;
+    int? myScore = Provider.of<Player>(context).score;
+    int? myRank = Provider.of<Player>(context).rank;
+    String? myImageString = Provider.of<Player>(context).image;
     int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
     Map? myPlayersMap = Provider.of<Player>(context).playersMap;
-    /* Future<void> mycreatePlayerfunc = Provider.of<Player>(context)
-        .createPlayerfunc(userNumber, textFieldController);*/
+
+    Future<void> mycreatePlayerfunc = Provider.of<Player>(context)
+        .createPlayerfunc(userNumber, textFieldController, myScore, myRank, myImageString, myId);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,

@@ -18,13 +18,61 @@ class Player with ChangeNotifier {
     rank = json['rank'];
   }
 
-  Future<void> createPlayerfunc(
-      int userNumber, TextEditingController textFieldController) async {
+  Future<Map<dynamic, dynamic>> createPlayerfunc(int userNumber, TextEditingController textFieldController, int? score,
+      int? rank, String? imagepath, int? id) async {
+      
     for (var i = 1; i <= userNumber; i++) {
-      playersMap![i] = i;
-      playersMap!["name"] = textFieldController.value.text;
+      playersMap![i] = id;
+      playersMap!['name'] = textFieldController.value.text;
+      playersMap!['image'] = imagepath;
+      playersMap!['score'] = score;
+      playersMap!['rank'] = rank;
     }
-    notifyListeners();
+    return playersMap!;
+  }
+
+  Future<List> getPlayerName(int id) async {
+    var entryList = playersMap!.entries.toList();
+    List playerName = <String>[];
+    for (var element in entryList) {
+      if (element.key == 'name' && element.key['i'] == id) {
+        playerName.add(element.value);
+      }
+    }
+    return playerName;
+  }
+
+  Future<List> getPlayerImages(int id) async {
+    var entryList = playersMap!.entries.toList();
+    List playerImages = <String>[];
+    for (var element in entryList) {
+      if (element.key == 'image' && element.key['i'] == id) {
+        playerImages.add(element.value);
+      }
+    }
+    return playerImages;
+  }
+
+  Future<List> getPlayerScore(int id) async {
+    var entryList = playersMap!.entries.toList();
+    List playerScores = <String>[];
+    for (var element in entryList) {
+      if (element.key == 'score' && element.key['id'] == id) {
+        playerScores.add(element.value);
+      }
+    }
+    return playerScores;
+  }
+
+  Future<List> getPlayerRank(int id) async {
+    var entryList = playersMap!.entries.toList();
+    List playerRank = <String>[];
+    for (var element in entryList) {
+      if (element.key == 'rank' && element.key['id'] == id) {
+        playerRank.add(element.value);
+      }
+    }
+    return playerRank;
   }
 
   Map<String, dynamic> toJson() {

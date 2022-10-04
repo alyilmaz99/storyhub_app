@@ -69,7 +69,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+
       home: SortingTableView(),
+
     );
   }
 }
