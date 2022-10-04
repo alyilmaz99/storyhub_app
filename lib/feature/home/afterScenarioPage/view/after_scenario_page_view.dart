@@ -1,6 +1,6 @@
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:storyhub/feature/home/gamepage/view/CardPAge.dart';
-import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
 import '../viewmodel/after_scenario_page_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
 import '../../gamepage/view/HomeCardsOrder.dart';
@@ -18,43 +18,22 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
+    CountDownController controller2 = CountDownController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
         shadowColor: Colors.transparent,
         title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
-              width: screenWidth / 6,
-              height: screenHeight / 16,
-            ),
-            Align(
-              alignment: Alignment.center,
-              child: SizedBox(
-                // height: screenHeight / 10,
-                width: screenWidth / 4.5,
-                child: Image.asset(
-                  'assets/images/LogoV1.png',
-                  fit: BoxFit.fill,
-                ),
+            Container(
+              padding: EdgeInsets.only(right: screenWidth / 7),
+              height: screenHeight / 17,
+              child: const Image(
+                fit: BoxFit.cover,
+                image: AssetImage('assets/images/LogoV1.png'),
               ),
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: IconButton(
-                onPressed: () {
-                  setState(() {
-                    //   timer.stopTimer();
-                  });
-                  //Navigator.of(context).push(FullScreenModal());
-                },
-                icon: const Icon(
-                  Icons.menu,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            )
           ],
         ),
       ),

@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
-import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
+import 'dart:convert';
 
-import '../../gamepage/view/HomeCardsOrder.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:storyhub/core/components/senaryo/Senaryo.dart';
+import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
+import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
 
 class DisplayScenario extends StatefulWidget {
   @override
@@ -10,6 +13,13 @@ class DisplayScenario extends StatefulWidget {
 }
 
 class _DisplayScenario extends State<DisplayScenario> {
+  Future<List<Senaryo>> readJsonData() async {
+    final jsondata = await rootBundle.loadString("assets/senaryolar.json");
+    final list = json.decode(jsondata) as List<dynamic>;
+
+    return list.map((e) => Senaryo.fromJson(e)).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,76 +54,101 @@ class _DisplayScenario extends State<DisplayScenario> {
               //color: Color.fromRGBO(47, 13, 75, 1)),
 
               child: InkWell(
-                onTap: () {
-                  Navigator.pop(this.context);
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const AfterScenarioView()));
-                },
-                child: Card(
-                    color: Colors.transparent,
-                    shadowColor: Colors.transparent,
-                    elevation: 6,
-                    margin: const EdgeInsets.all(12),
-                    child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Container(
-                            width: double.infinity,
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        "assets/images/cards/emptycard.png"),
-                                    fit: BoxFit.cover)),
-                            child: Container(
-                                alignment: Alignment.bottomRight,
-                                padding: const EdgeInsets.all(12),
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              9,
-                                    ),
-                                    Container(
-                                      margin: const EdgeInsets.symmetric(
-                                          horizontal: 15),
-                                      child: const Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Text(
-                                          "Denizaltı",
-                                          style: TextStyle(
-                                              fontSize: 20,
-                                              fontFamily: "GamerStation",
-                                              color: Colors.white),
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              30,
-                                    ),
-                                    Container(
-                                      color: Colors.transparent,
-                                      margin: const EdgeInsets.symmetric(
-                                          horizontal: 35),
-                                      child: const Align(
-                                        alignment: Alignment.center,
-                                        child: Text(
-                                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci sagittis eu volutpat odio facilisis mauris sit amet massa vitae tortor condimentum lacinia quis vel eros donec ac odio tempor orci dapibus ultrices in iaculis nunc sed augue lacusf",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              fontSize: 14,
-                                              fontFamily: "Montserrat",
-                                              color: Colors.white,
-                                            )),
-                                      ),
-                                    )
-                                  ],
-                                ))))),
-              ),
-            )
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AfterScenarioView()));
+                  },
+                  child: FutureBuilder(
+                      future: readJsonData(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          var scenarioList = snapshot.data as List<Senaryo>;
+                          List.generate(scenarioList.length, (index) => index);
+                          return Card(
+                              color: Colors.transparent,
+                              shadowColor: Colors.transparent,
+                              elevation: 6,
+                              margin: const EdgeInsets.all(12),
+                              child: Padding(
+                                  padding: const EdgeInsets.all(16),
+                                  child: Container(
+                                      width: double.infinity,
+                                      decoration: const BoxDecoration(
+                                          image: DecorationImage(
+                                              image: AssetImage(
+                                                  "assets/images/cards/emptycard.png"),
+                                              fit: BoxFit.cover)),
+                                      child: Container(
+                                        alignment: Alignment.bottomRight,
+                                        padding: const EdgeInsets.all(12),
+                                        child: Consumer<SelectScenarioModel>(
+                                            builder: (context, value, child) {
+                                          return Column(
+                                            children: [
+                                              SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height /
+                                                    9,
+                                              ),
+                                              Container(
+                                                margin:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 15),
+                                                child: Align(
+                                                  alignment:
+                                                      Alignment.topCenter,
+                                                  child: Text(
+                                                    scenarioList[
+                                                            value.getIndex()]
+                                                        .senaryoText,
+                                                    style: const TextStyle(
+                                                        fontSize: 25,
+                                                        fontFamily:
+                                                            "GamerStation",
+                                                        color: Colors.white),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height /
+                                                    30,
+                                              ),
+                                              Container(
+                                                color: Colors.transparent,
+                                                margin:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 35),
+                                                child: Align(
+                                                  alignment: Alignment.center,
+                                                  child: Text(
+                                                      scenarioList[
+                                                              value.getIndex()]
+                                                          .longText,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      style: const TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        fontSize: 15,
+                                                        color: Colors.white,
+                                                      )),
+                                                ),
+                                              )
+                                            ],
+                                          );
+                                        }),
+                                      ))));
+                        } else {
+                          return Container();
+                        }
+                      })),
+            ),
           ])),
     );
   }

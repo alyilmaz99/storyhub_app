@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:storyhub/feature/stats/viewmodel/sorting_page_viewmodel.dart';
+import 'package:storyhub/feature/stats/viewmodel/sorting_table_viewmodel.dart';
 
-class SortingPageView extends SortingPageViewModel {
+class SortingTableView extends StatefulWidget {
+  const SortingTableView({super.key});
+
+  @override
+  State<SortingTableView> createState() => _SortingTableViewState();
+}
+
+class _SortingTableViewState extends State<SortingTableView> {
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
+    var screenSize = MediaQuery.of(context).size;
+    var screenHeight = screenSize.height;
+    var screenWidth = screenSize.width;
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -42,56 +48,43 @@ class SortingPageView extends SortingPageViewModel {
               ],
             ),
             SizedBox(
-              height: screenHeight / 20,
-            ),
-            Text(
-              'SIRALAMA',
-              style: TextStyle(
-                fontFamily: 'GamerStation',
-                fontSize: 40,
-                color: Colors.white,
-                shadows: <Shadow>[
-                  Shadow(
-                    offset: const Offset(0, 5.0),
-                    blurRadius: 6.0,
-                    color: Colors.black.withOpacity(0.2),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: screenHeight / 25,
-            ),
-            buildContainer(context, const Color.fromRGBO(255, 221, 85, 1),
-                'assets/images/profiles/1.png', 'assets/images/first.png'),
-            SizedBox(
-              height: screenHeight / 25,
-            ),
-            buildContainer(context, const Color.fromRGBO(220, 229, 246, 1),
-                'assets/images/profiles/2.png', 'assets/images/second.png'),
-            SizedBox(
-              height: screenHeight / 25,
-            ),
-            buildContainer(context, const Color.fromRGBO(232, 93, 70, 1),
-                'assets/images/profiles/3.png', 'assets/images/third.png'),
-            SizedBox(
               height: screenHeight / 15,
+            ),
+            buildContainers(context, 'assets/images/profiles/2.png',
+                'assets/images/third.png'),
+            SizedBox(
+              height: screenHeight / 40,
+            ),
+            buildContainers(context, 'assets/images/profiles/1.png',
+                'assets/images/third.png'),
+            SizedBox(
+              height: screenHeight / 40,
+            ),
+            buildContainers(context, 'assets/images/profiles/3.png',
+                'assets/images/third.png'),
+            SizedBox(
+              height: screenHeight / 40,
+            ),
+            buildContainers(context, 'assets/images/profiles/9.png',
+                'assets/images/third.png'),
+            SizedBox(
+              height: screenHeight / 20,
             ),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                   elevation: 5,
-                  minimumSize: Size(screenWidth / 1.7, screenHeight / 15),
-                  backgroundColor: const Color.fromRGBO(216, 91, 47, 1),
+                  minimumSize: Size(screenWidth / 1.6, screenHeight / 12),
+                  backgroundColor: const Color.fromRGBO(143, 85, 203, 1),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18),
                   )),
               child: const Text(
-                'SIRALAMA TABLOSU',
+                'YENİ OYUN',
                 style: TextStyle(
-                    fontFamily: 'Montserrat',
+                    fontFamily: 'GamerStation',
                     color: Colors.white,
-                    fontSize: 18),
+                    fontSize: 35),
               ),
             ),
           ],

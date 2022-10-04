@@ -1,5 +1,6 @@
 // ignore_for_file: unused_element
 
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:storyhub/feature/drawer/view/drawer_view.dart';
 
@@ -27,9 +28,9 @@ class DrawerViewModel extends ModalRoute {
       Animation<double> secondaryAnimation) {
     throw UnimplementedError();
   }
-
+  CountDownController controller2 = CountDownController();
   void _showModal(BuildContext context) {
-    Navigator.of(context).push(FullScreenModal());
+    Navigator.of(context).push(FullScreenModal(controller2: controller2));
   }
 
   @override

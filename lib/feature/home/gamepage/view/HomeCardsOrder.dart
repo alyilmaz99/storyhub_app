@@ -1,5 +1,6 @@
 // ignore_for_file: file_names
 
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import '../../../drawer/view/drawer_view.dart';
 import 'gameTimeVİew.dart';
@@ -21,7 +22,7 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-
+    CountDownController controller2 = CountDownController();
     loadCards();
 
     return Scaffold(
@@ -37,7 +38,7 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                 setState(() {
                   //   timer.stopTimer();
                 });
-                Navigator.of(context).push(FullScreenModal());
+                Navigator.of(context).push(FullScreenModal(controller2: controller2));
               },
               icon: const Icon(
                 Icons.menu,

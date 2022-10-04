@@ -21,10 +21,7 @@ class _GradientSplashScreenState extends GradientSplashScreenViewModel {
         Color.fromARGB(255, 60, 10, 63),
         Color.fromRGBO(13, 5, 38, 1),
       ])),
-      child: HeartBeat(
-        beatsPerMinute: 70,
-        child: Image.asset('assets/images/LogoV1.png'),
-      ),
+      child: Image.asset('assets/images/LogoV1.png'),
     ));
   }
 }
