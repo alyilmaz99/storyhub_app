@@ -1,14 +1,22 @@
+import 'dart:async';
+
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-import 'package:storyhub/feature/drawer/viewmodel/drawer_viewmodel.dart';
-import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
+import '../../../product/widgets/timer/timer_design.dart';
+import '../viewmodel/drawer_viewmodel.dart';
+import '../../home/mainpage/view/main_page_view.dart';
 
 class FullScreenModal extends DrawerViewModel {
+  CountDownController? controller2;
+  TimerDesign? timer;
+  FullScreenModal({this.controller2, this.timer});
   @override
   Widget buildPage(
     BuildContext context,
     Animation<double> animation,
     Animation<double> secondaryAnimation,
   ) {
+    timer = TimerDesign(myController: controller2, seconds: 20);
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
@@ -16,7 +24,7 @@ class FullScreenModal extends DrawerViewModel {
       type: MaterialType.transparency,
       child: Center(
         child: Padding(
-          padding: EdgeInsets.only(top: screenHeight / 10),
+          padding: EdgeInsets.only(top: screenHeight / 4),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -28,16 +36,21 @@ class FullScreenModal extends DrawerViewModel {
                 ),
               ),
               SizedBox(
-                height: screenHeight / 4,
+                height: screenHeight / 8,
               ),
               ElevatedButton(
-                onPressed: () => Navigator.pop(context),
+                onPressed: () {
+                  Navigator.pop(context);
+
+                  timer!.resumeTimer();
+                },
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    onSurface: Colors.white,
                     primary: const Color.fromRGBO(223, 105, 64, 1),
+                    onPrimary: Colors.white.withOpacity(0.38),
+                    onSurface: Colors.white.withOpacity(0.12),
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                 child: const Text(
                   "DEVAM ET",
@@ -53,15 +66,15 @@ class FullScreenModal extends DrawerViewModel {
               ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => MainPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const MainPage()));
                 },
                 style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    onSurface: Colors.white,
                     primary: const Color.fromRGBO(177, 113, 199, 1),
+                    onPrimary: Colors.white.withOpacity(0.38),
+                    onSurface: Colors.white.withOpacity(0.12),
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                 child: const Text(
                   "Yeni Oyun",

@@ -2,11 +2,12 @@ import 'dart:io';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:storyhub/core/components/GameContreller.dart';
+import '../../../../core/components/GameContreller.dart';
 
 import 'CardPAge.dart';
 
-class TappedCard extends StatefulWidget{
+class TappedCard extends StatefulWidget {
+  Function callback;
   String? assetImageCardBack;
   String? assetImageCardFront;
   Widget? routeToPage;
@@ -15,12 +16,16 @@ class TappedCard extends StatefulWidget{
     required this.assetImageCardBack,
     required this.assetImageCardFront,
     required this.routeToPage,
+    required this.callback,
   }) : super(key: key);
   @override
-  _TappedCardState createState() => _TappedCardState(assetImageCardFront: assetImageCardFront, routeToPage: routeToPage, assetImageCardBack: assetImageCardBack);
+  _TappedCardState createState() => _TappedCardState(
+      assetImageCardFront: assetImageCardFront,
+      routeToPage: routeToPage,
+      assetImageCardBack: assetImageCardBack);
 }
 
-class _TappedCardState extends State<TappedCard>{
+class _TappedCardState extends State<TappedCard> {
   String? assetImageCardBack;
   String? assetImageCardFront;
   Widget? routeToPage;
@@ -42,7 +47,6 @@ class _TappedCardState extends State<TappedCard>{
       onFlipDone: (status) {
         print(status);
 
-
         GameContreller().setCancelCard(true);
 
         setState(() {});
@@ -51,7 +55,9 @@ class _TappedCardState extends State<TappedCard>{
         // await Future.delayed(Duration(seconds: 1))
         if (isFlipped == true) {
           // _navigateToNextScreen(context);
-          Navigator.push(context, ScaleRoute(page: this.routeToPage!));
+          // Navigator.push(context, ScaleRoute(page: this.routeToPage!));
+          this.widget.callback();
+
           isFlipped = false;
         } else {
           isFlipped = true;
@@ -105,5 +111,3 @@ class ScaleRoute extends PageRouteBuilder {
           ),
         );
 }
-
-

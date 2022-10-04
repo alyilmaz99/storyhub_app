@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/createplayer/viewmodel/create_player_viewmodel.dart';
-import 'package:storyhub/feature/settings/model/game_settings_model.dart';
-import 'package:storyhub/product/widgets/button/soru_isareti_button.dart';
+import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
+import '../viewmodel/create_player_viewmodel.dart';
+import '../../../settings/model/game_settings_model.dart';
+import '../../../../product/widgets/button/nasil_oynanir_soru_isareti_button.dart';
 
 class CreatePlayerView extends StatefulWidget {
   const CreatePlayerView({Key? key}) : super(key: key);
@@ -14,20 +15,20 @@ class CreatePlayerView extends StatefulWidget {
 class _CreatePlayerViewState extends CreatePlayerViewModel {
   var textFieldController = TextEditingController();
   bool isEmpty = false;
-
+  Future<void> initial(BuildContext context) async {}
   @override
   Widget build(BuildContext context) {
     var screenInfo = MediaQuery.of(context);
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
+    int? myId = Provider.of<Player>(context).id;
+    int? myScore = Provider.of<Player>(context).score;
+    int? myRank = Provider.of<Player>(context).rank;
+    String? myImageString = Provider.of<Player>(context).image;
     int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
-    Map<dynamic, dynamic> playersMap = <dynamic, dynamic>{};
-    Future<void> createPlayerfunc() async {
-      for (var i = 1; i <= userNumber; i++) {
-        playersMap[i] = i;
-        playersMap["name"] = textFieldController.value.text;
-      }
-    }
+    Map? myPlayersMap = Provider.of<Player>(context).playersMap;
+    Future<void> mycreatePlayerfunc = Provider.of<Player>(context)
+        .createPlayerfunc(userNumber, textFieldController, myScore, myRank, myImageString, myId);
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(242, 128, 106, 1.0),
@@ -57,7 +58,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   right: screenWidth / 10,
                   top: screenHeight / 150,
                 ),
-                child: SoruIsaretiButton(
+                child: NasilOynanirSoruIsaretiButton(
                   myHeight: screenHeight / 2,
                   myWidth: screenWidth / 1.5,
                 ),
@@ -92,7 +93,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   width: screenWidth / 2,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: const Color.fromRGBO(216, 91, 47, 1),
+                      backgroundColor: const Color.fromRGBO(216, 91, 47, 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0),
                       ),
@@ -109,9 +110,9 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                     ),
                     onPressed: () {
                       setState(() {
-                        createPlayerfunc();
+                        mycreatePlayerfunc;
                         // ignore: avoid_print
-                        print(playersMap);
+                        print(myPlayersMap);
                       });
                     },
                   ),

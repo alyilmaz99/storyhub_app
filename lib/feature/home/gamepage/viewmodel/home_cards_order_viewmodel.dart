@@ -1,35 +1,41 @@
+import 'dart:convert';
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import '../../../../core/Service/CardService.dart';
+import '../../../../core/components/card/CardGame.dart';
 
 import '../view/CardPAge.dart';
 import '../view/HomeCardsOrder.dart';
 import '../view/tappedCard.dart';
 
 abstract class HomeCardsOrderViewModel extends State<HomeCardsOrder> {
-  Map<int, String> ImageList = {
-    1: "assets/images/cards/front.png",
-    2: "assets/images/cards/back.png",
-  };
+  late TappedCard newCard;
+  late TappedCard newCard2;
+  late TappedCard newCard3;
+  late TappedCard newCard4;
+  late TappedCard newCard5;
+  late TappedCard newCard6;
 
-  String? RandomImageFunction(Map<int, String> imageList) {
-    var values = imageList.values.toList()..shuffle();
-    return imageList[0];
+  bool isLoaded = false;
+
+  CardService cardService = CardService();
+
+  void loadCards() async {
+    await cardService.initCards();
+    setState(() {
+      var cards = cardService.getCards();
+
+      newCard = cardService.createTappedCards(cards);
+      newCard2 = cardService.createTappedCards(cards);
+      newCard3 = cardService.createTappedCards(cards);
+      newCard4 = cardService.createTappedCards(cards);
+      newCard5 = cardService.createTappedCards(cards);
+      newCard6 = cardService.createTappedCards(cards);
+
+      isLoaded = true;
+    });
   }
-
-  TappedCard newCard = TappedCard(
-    assetImageCardBack: "assets/images/cards/CardBack.png",
-    assetImageCardFront: "assets/images/cards/card2.png",
-    routeToPage: CardPage(assetImageCardBack: "assets/images/CardBack.png",assetImageCardFront: "assets/images/cards/card2.png"),
-  );
-
-  TappedCard newCard2 = TappedCard(
-    assetImageCardBack: "assets/images/cards/CardBack.png",
-    assetImageCardFront: "assets/images/cards/card2.png",
-    routeToPage: CardPage(assetImageCardBack: "assets/images/cards/CardBack.png",assetImageCardFront: "assets/images/cards/card2.png"),
-  );
-
-  TappedCard newCard3 = TappedCard(
-    assetImageCardBack: "assets/images/cards/CardBack.png",
-    assetImageCardFront: "assets/images/cards/card3.png",
-    routeToPage: CardPage(assetImageCardBack: "assets/images/cards/CardBack.png",assetImageCardFront: "assets/images/cards/card3.png"),
-  );
 }
