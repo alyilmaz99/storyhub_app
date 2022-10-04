@@ -1,6 +1,8 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-
+import 'package:provider/provider.dart';
+import 'package:storyhub/feature/home/gamepage/view/CardPAge.dart';
+import '../../../settings/model/game_settings_model.dart';
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
 
@@ -51,12 +53,10 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               alignment: Alignment.centerRight,
               child: IconButton(
                 onPressed: () {
-                  setState(() {
-                    timer.pauseTimer();
-                  });
-                  Navigator.of(context).push(FullScreenModal(
-                    controller2: controller,
-                  ));
+                  controller.pause();
+                  //timer.stopEnable1 == false;
+
+                  Navigator.of(context).push(FullScreenModal(controller2: controller));
                 },
                 icon: const Icon(
                   Icons.menu,
