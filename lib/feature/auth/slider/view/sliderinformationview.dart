@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:im_animations/main.dart';
+import '../../../home/mainpage/view/main_page_view.dart';
 import '../viewmodel/sliderinformationviewmodel.dart';
 
 class SliderInformationView extends StatefulWidget {
@@ -17,109 +20,164 @@ class _SliderInformationViewState extends SliderInformationViewModel {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      body: PageView.builder(
-          controller: controller,
-          itemCount: OnboardingItems.loadOnboardingItem().length,
-          itemBuilder: (BuildContext context, int index) {
-            OnboardingItem oi = OnboardingItems.loadOnboardingItem()[index];
-            return Container(
-              height: screenHeight,
-              width: screenWidth,
-              color: oi.color,
-              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      index != 0
-                          ? IconButton(
-                              onPressed: previousSlide,
-                              icon: const Icon(Icons.chevron_left),
-                              color: const Color.fromRGBO(36, 10, 63, 1),
-                            )
-                          : const SizedBox(
-                              width: 5,
-                              height: 5,
-                            ),
-                      TextButton(
-                          onPressed: onDonePress,
-                          style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  const Color.fromARGB(255, 187, 171, 205)),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ))),
-                          child: const Text(
-                            "Tanıtımı Atla",
-                            style: TextStyle(color: Colors.white, fontSize: 12),
-                          )),
-                    ],
-                  ),
-                  SizedBox(
-                      height: screenHeight * 0.3, child: Image.asset(oi.image)),
-                  Column(
-                    children: [
-                      Text(
-                        oi.title,
-                        style:
-                            const TextStyle(color: Colors.black, fontSize: 30),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      Text(
-                        oi.subtitle,
-                        style: GoogleFonts.montserrat(
-                          textStyle: Theme.of(context).textTheme.bodyMedium,
-                          fontWeight: FontWeight.w500,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
-                  ),
-                  ElevatedButton(
-                      onPressed: nextSlide,
-                      style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Colors.deepPurple),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20),
-                                      side: const BorderSide(
-                                          color: Colors.deepPurple)))),
-                      child:
-                          Text(index == 2 ? "Oynamaya Hazırsın!" : "Devam Et")),
-                  SizedBox(
-                    width: 50,
-                    height: 10,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: OnboardingItems.loadOnboardingItem().length,
-                      itemBuilder: (BuildContext context, int i) {
-                        return Padding(
-                          padding: const EdgeInsets.all(2.0),
-                          child: Container(
-                            width: index == i ? 15 : 5,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(12),
-                              color: index == i
-                                  ? const Color.fromRGBO(36, 10, 63, 1)
-                                  : Colors.grey,
-                            ),
-                          ),
-                        );
-                      },
+        body: Container(
+      decoration: const BoxDecoration(
+        gradient: RadialGradient(center: Alignment.center, colors: [
+          Color.fromRGBO(250, 141, 104, 1.0),
+          Color.fromRGBO(216, 91, 47, 1),
+        ]),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              SizedBox(width: screenWidth / 7),
+              Align(
+                alignment: Alignment.center,
+                child: Padding(
+                  padding: EdgeInsets.only(top: screenHeight / 13),
+                  child: SizedBox(
+                    // height: screenHeight / 10,
+                    width: screenWidth / 4,
+                    child: Image.asset(
+                      'assets/images/LogoV1.png',
+                      fit: BoxFit.fill,
                     ),
                   ),
-                ],
+                ),
               ),
-            );
-          }),
-    );
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: EdgeInsets.only(
+                    top: screenHeight / 13,
+                  ),
+                  child: IconButton(
+                    onPressed: endSlide,
+                    icon: const ImageIcon(
+                        AssetImage("assets/icons/fast_forward_icon.png"),
+                        color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: screenHeight / 25,
+          ),
+          SizedBox(
+              height: screenHeight / 1.5,
+              child: PageView.builder(
+                  controller: controller,
+                  itemCount: OnboardingItems.loadOnboardingItem().length,
+                  itemBuilder: (BuildContext context, int index) {
+                    OnboardingItem oi =
+                        OnboardingItems.loadOnboardingItem()[index];
+                    return Column(
+                      //mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                      children: [
+                        Text(
+                          oi.title,
+                          style: const TextStyle(
+                            fontFamily: 'GamerStation',
+                            fontSize: 22,
+                            color: Colors.white,
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            IconButton(
+                                onPressed: previousSlide,
+                                icon: const Icon(
+                                  Icons.arrow_back_ios,
+                                  color: Colors.white,
+                                )),
+                            SizedBox(
+                                width: screenWidth / 1.7,
+                                child: Image.asset(oi.image)),
+                            IconButton(
+                                onPressed: nextSlide,
+                                icon: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: Colors.white,
+                                )),
+                          ],
+                        ),
+                        SizedBox(
+                          height: screenHeight / 20,
+                        ),
+                        TextArea(
+                            myWidth: screenWidth / 1.2,
+                            myHeight: screenWidth / 5,
+                            textPadding: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Text(
+                                oi.subtitle,
+                                style: const TextStyle(
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 15,
+                                  color: Colors.white,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            )),
+                        index == numPages
+                            ? Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  SizedBox(height: screenHeight / 20),
+                                  ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const MainPage()));
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      elevation: 7,
+                                      backgroundColor:
+                                          const Color.fromRGBO(91, 49, 134, 1),
+                                      shadowColor:
+                                          const Color.fromRGBO(91, 49, 134, 1)
+                                              .withOpacity(1),
+                                      minimumSize: Size(
+                                          screenWidth / 1.7, screenHeight / 18),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                    ),
+                                    child: const Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 12,
+                                          top: 7,
+                                          right: 12,
+                                          bottom: 7),
+                                      child: Text(
+                                        "OYUNA GEÇ",
+                                        style: TextStyle(
+                                          fontFamily: 'GamerStation',
+                                          fontSize: 24,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            : const SizedBox(
+                                width: 5,
+                                height: 5,
+                              ),
+                      ],
+                    );
+                  }))
+        ],
+      ),
+    ));
   }
 }

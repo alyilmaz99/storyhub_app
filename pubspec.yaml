@@ -39,7 +39,11 @@ dependencies:
   fluid_action_card: ^1.0.0+5
 
   vertical_card_pager: ^1.5.0
-
+  page_animation_transition: ^0.0.9
+  im_animations: ^0.1.2
+  #rate star
+  flutter_rating_stars: ^1.0.3+4
+  circular_countdown_timer: ^0.2.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -76,7 +80,6 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
 
-
   # To add assets to your application, add an assets section, like this:
   uses-material-design: true
   assets:
@@ -84,9 +87,15 @@ flutter:
     - assets/images/splash/
     - assets/images/cards/
     - assets/images/human/
-  #   - images/a_dot_ham.jpeg
+    - assets/images/slider/
+    - assets/images/profiles/
+    #   - images/a_dot_ham.jpeg
     - assets/images/front.png
     - assets/images/back.png
+    - assets/cards.json
+    - assets/icons/
+    - assets/senaryolar.json
+    - assets/images/senaryolar/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -113,10 +122,11 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   fonts:
     - family: GamerStation
-      fonts: 
+      fonts:
         - asset: assets/fonts/Gamer_Station.ttf
     - family: Montserrat
-      fonts: 
+      fonts:
         - asset: assets/fonts/Montserrat_Regular.ttf
-
-        
+    - family: SharyBold
+      fonts:
+        - asset: assets/fonts/Shary_Bold.ttf

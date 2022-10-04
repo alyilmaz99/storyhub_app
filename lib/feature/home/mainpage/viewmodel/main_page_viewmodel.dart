@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:storyhub/core/const/text_const/textconst.dart';
-import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
+import '../../../../core/const/text_const/textconst.dart';
+import '../../../auth/slider/view/sliderinformationview.dart';
+import '../../../auth/splashscreen/view/splashscreenview.dart';
+import '../view/main_page_view.dart';
 
 import '../../../settings/view/game_settings_view.dart';
 import '../../howtopage/view/how_to_page_view.dart';
@@ -47,8 +49,10 @@ abstract class MainPageViewModel extends State<MainPage> {
       height: MediaQuery.of(context).size.height / 17,
       child: OutlinedButton(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const HowToPageView()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const SliderInformationView()));
         },
         style: ButtonStyle(
           shadowColor: MaterialStateProperty.all<Color>(
