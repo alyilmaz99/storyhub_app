@@ -19,6 +19,7 @@ class Player with ChangeNotifier {
 
   Future<Map<dynamic, dynamic>> createPlayerfunc(int userNumber, TextEditingController textFieldController, int? score,
       int? rank, String? imagepath, int? id) async {
+
     for (var i = 1; i <= userNumber; i++) {
       playersMap![i] = id;
       playersMap!['name'] = textFieldController.value.text;

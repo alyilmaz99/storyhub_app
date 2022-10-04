@@ -1,8 +1,8 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/gamepage/view/CardPAge.dart';
-import '../../../settings/model/game_settings_model.dart';
+
+import 'package:storyhub/product/widgets/timer/timer_design.dart';
+
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
 
@@ -53,10 +53,15 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               alignment: Alignment.centerRight,
               child: IconButton(
                 onPressed: () {
+
                   controller.pause();
                   //timer.stopEnable1 == false;
 
-                  Navigator.of(context).push(FullScreenModal(controller2: controller));
+
+                  Navigator.of(context)
+                      .push(FullScreenModal(controller2: controller));
+
+
                 },
                 icon: const Icon(
                   Icons.menu,
@@ -136,6 +141,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 ),
               ),
             ),
+
             Stack(children: [
               Center(
                 child: SizedBox(
@@ -177,6 +183,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 ),
               )
             ]),
+
             SizedBox(
               height: screenHeight / 40,
             ),
