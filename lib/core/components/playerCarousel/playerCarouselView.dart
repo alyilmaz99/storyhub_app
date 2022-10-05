@@ -3,11 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 
-abstract class CarouselItemView {}
-
 Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
-  Provider.of<PlayerCarouselViewModel>(context).randomChoose();
-
   return Padding(
     padding: EdgeInsets.only(
       top: screenHeight / 15,
@@ -26,7 +22,7 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                   icon: Icon(
                     Icons.arrow_back_ios,
                     color: Colors.grey,
-                    size: screenWidth / 20,
+                    size: screenWidth / 10,
                   )),
               carouselItem(
                   context,
@@ -81,7 +77,7 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                   icon: Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.grey,
-                    size: screenWidth / 20,
+                    size: screenWidth / 10,
                   )),
             ],
           ),

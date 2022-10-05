@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
-
-abstract class CarouselItemView extends State<AfterScenarioView> {}
 
 Widget carouselItem(BuildContext context, String path, double width,
     double height, double opacity, String name) {

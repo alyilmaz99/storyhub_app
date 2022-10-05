@@ -17,6 +17,13 @@ class AfterScenarioView extends StatefulWidget {
 
 class _AfterScenarioViewState extends AfterScenarioViewModel {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Provider.of<PlayerCarouselViewModel>(context, listen: false).randomChoose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
@@ -53,7 +60,7 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
         ),
         child: Column(
           children: [
-            carousel(context, screenHeight, screenWidth),
+            carousel(context, screenHeight, (screenWidth / 5) * 3),
             SizedBox(
               height: screenHeight / 10,
             ),
