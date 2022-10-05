@@ -1,6 +1,9 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:storyhub/core/components/playerCarousel/playerCarouselView.dart';
 import 'package:storyhub/feature/home/gamepage/view/CardPAge.dart';
+import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../viewmodel/after_scenario_page_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
 import '../../gamepage/view/HomeCardsOrder.dart';
@@ -50,63 +53,7 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
         ),
         child: Column(
           children: [
-            Padding(
-              padding: EdgeInsets.only(
-                top: screenHeight / 15,
-              ),
-              child: Center(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.arrow_back_ios,
-                              color: Colors.grey,
-                              size: screenWidth / 20,
-                            )),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/1.png',
-                            MediaQuery.of(context).size.width / 6,
-                            MediaQuery.of(context).size.height / 12,
-                            0.5),
-                        SizedBox(
-                          width: screenWidth / 23,
-                        ),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/2.png',
-                            MediaQuery.of(context).size.width / 4,
-                            MediaQuery.of(context).size.height / 8,
-                            1.0),
-                        SizedBox(
-                          width: screenWidth / 23,
-                        ),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/3.png',
-                            MediaQuery.of(context).size.width / 6,
-                            MediaQuery.of(context).size.height / 12,
-                            0.5),
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.grey,
-                              size: screenWidth / 20,
-                            )),
-                      ],
-                    ),
-                    SizedBox(
-                      height: screenHeight / 40,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            carousel(context, screenHeight, screenWidth),
             SizedBox(
               height: screenHeight / 10,
             ),
