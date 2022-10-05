@@ -15,6 +15,8 @@ import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
 void main() {
+  /* GELİŞTİRME İÇİN GEÇİCİ LİSTE
+     LİSTE GEREKLİ PARAMETLERE DIŞARIDAN VERİLİNCE BU KALDIRILACAK */
   List<PlayerSelectionModel> tempList = [
     PlayerSelectionModel(
         imgPath: "assets/images/human/human1.png", playerName: "Player 1"),
@@ -52,7 +54,7 @@ void main() {
             create: (BuildContext context) => SettingsModel()),
         ChangeNotifierProvider<GameSettingsModel>(
             create: (BuildContext context) => GameSettingsModel(
-                playerCount: 2,
+                playerCount: 3,
                 timerValue: 20,
                 roundSpeedValue: 1,
                 roundCount: 3)),
