@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import '../../feature/home/gamepage/view/CardPAge.dart';
 import '../../feature/home/gamepage/view/tappedCard.dart';
 import '../components/card/CardGame.dart';
+import '../components/senaryo/Senaryo.dart';
 
 class CardService {
   var jsonst;
@@ -46,12 +47,29 @@ class CardService {
     return cards;
   }
 
+  // TappedCard randomScenaricCards(List<Senaryo> scenariosParam, Function callback) {
+  //   final _random = new Random();
+  //   var cardFront = scenariosParam[_random.nextInt(scenariosParam.length)];
+  //
+  //   // String backCardImageUrl =
+  //   //     scenariosParam.firstWhere((element) => element.cardNumber == 7).imageUrl;
+  //
+  //   TappedCard newTappedCard = TappedCard(
+  //     assetImageCardBack: "assets/images/cards/" + backCardImageUrl,
+  //     assetImageCardFront: "assets/images/cards/" + cardFront.imageUrl,
+  //     routeToPage: CardPage(),
+  //     callback: callback,
+  //   );
+  //
+  //   return newTappedCard;
+  // }
+
   TappedCard createTappedCards(List<CardGame> cardsParam, Function callback) {
     final _random = new Random();
     var cardFront = cardsParam[_random.nextInt(cardsParam.length)];
 
     String backCardImageUrl =
-        cardsParam.firstWhere((element) => element.cardNumber == 7).imageUrl;
+        cardsParam.firstWhere((element) => element.name == "arka kart").imageUrl;
 
     TappedCard newTappedCard = TappedCard(
       assetImageCardBack: "assets/images/cards/" + backCardImageUrl,
