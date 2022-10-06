@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../../../product/model/player_selection_model.dart';
 
 class PlayerCarouselViewModel with ChangeNotifier {
@@ -7,16 +8,34 @@ class PlayerCarouselViewModel with ChangeNotifier {
   String choosenName = "";
   String choosenImgPath = "";
   Map<int, bool> map;
-
+  int index;
   PlayerCarouselViewModel({
     required this.playerList,
     required this.map,
     required this.choosenName,
     required this.choosenImgPath,
-  }) {}
+    required this.index,
+  });
+  int counter = 0;
+  void countCheck(context) {
+    print(counter.toString());
+    if (counter < 0) {
+      for (int i = counter; i < 0; i++) {
+        Provider.of<PlayerCarouselViewModel>(context, listen: false)
+            .carouselNext();
+      }
+    } else if (counter > 0) {
+      for (int i = counter; i > 0; i--) {
+        Provider.of<PlayerCarouselViewModel>(context, listen: false)
+            .carouselPrevious();
+      }
+    } else {
+      print("everthing is okay");
+    }
+    counter = 0;
+  }
 
   void carouselNext() {
-    int index = 0;
     for (int i = 0; i < map.length; i++) {
       if (map[i] == true) {
         index = i;
@@ -37,7 +56,6 @@ class PlayerCarouselViewModel with ChangeNotifier {
   }
 
   void carouselPrevious() {
-    int index = 0;
     for (int i = 0; i < map.length; i++) {
       if (map[i] == true) {
         index = i;
@@ -73,7 +91,6 @@ class PlayerCarouselViewModel with ChangeNotifier {
   }
 
   int selectedIndex() {
-    int index = 0;
     for (int i = 0; i < map.length; i++) {
       if (map[i] == true) {
         index = i;
@@ -83,7 +100,6 @@ class PlayerCarouselViewModel with ChangeNotifier {
   }
 
   int firstIndex() {
-    int index = 0;
     for (int i = 0; i < map.length; i++) {
       if (map[i] == true) {
         index = i;
@@ -97,7 +113,6 @@ class PlayerCarouselViewModel with ChangeNotifier {
   }
 
   int thirdIndex() {
-    int index = 0;
     for (int i = 0; i < map.length; i++) {
       if (map[i] == true) {
         index = i;

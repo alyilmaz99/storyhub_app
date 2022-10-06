@@ -1,10 +1,12 @@
 // ignore: file_names
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/GameContreller.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 import 'package:storyhub/feature/home/gamepage/view/tappedCard.dart';
 
+import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../../scenario/view/selectscenarioview.dart';
 import '../viewmodel/CartPageViewModel.dart';
 
@@ -77,7 +79,7 @@ class _CardPageState extends CartPageViewModel {
           //mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.only(top: screenWidth / 10),
+              padding: EdgeInsets.only(top: screenWidth / 25),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -98,12 +100,17 @@ class _CardPageState extends CartPageViewModel {
                         Stack(children: [
                           Center(
                             child: Container(
-                              width: screenWidth / 5,
-                              height: screenHeight / 10,
-                              decoration: const BoxDecoration(
+                              width: screenWidth / 4,
+                              height: screenHeight / 8,
+                              decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image: AssetImage(
-                                      'assets/images/human/human3.png'),
+                                  image: AssetImage(Provider.of<
+                                          PlayerCarouselViewModel>(context)
+                                      .playerList[
+                                          Provider.of<PlayerCarouselViewModel>(
+                                                  context)
+                                              .selectedIndex()]
+                                      .imgPath),
                                   fit: BoxFit.fill,
                                 ),
                               ),
@@ -114,8 +121,8 @@ class _CardPageState extends CartPageViewModel {
                                 ? CircularCountDownTimer(
                                     autoStart: true,
                                     isReverse: true,
-                                    width: screenWidth / 5,
-                                    height: screenHeight / 10,
+                                    width: screenWidth / 4,
+                                    height: screenHeight / 8,
                                     duration: 5,
                                     fillColor: Colors.red,
                                     ringColor: Colors.green,
@@ -148,9 +155,14 @@ class _CardPageState extends CartPageViewModel {
                               //     Colors.white.withOpacity(0.12),
                               minimumSize:
                                   Size(screenWidth / 4, screenHeight / 40)),
-                          child: const Text(
-                            "İsim",
-                            style: TextStyle(
+                          child: Text(
+                            Provider.of<PlayerCarouselViewModel>(context)
+                                .playerList[
+                                    Provider.of<PlayerCarouselViewModel>(
+                                            context)
+                                        .selectedIndex()]
+                                .playerName,
+                            style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400,
                                 color: Color.fromRGBO(19, 6, 5, 1)),

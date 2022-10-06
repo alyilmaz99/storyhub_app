@@ -4,6 +4,8 @@ import 'package:provider/provider.dart';
 
 import 'package:storyhub/product/widgets/timer/timer_design.dart';
 
+import '../../../../core/components/playerCarousel/playerCarouselView.dart';
+import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../../../settings/model/game_settings_model.dart';
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
@@ -99,54 +101,9 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                         fontSize: 20,
                       ),
                     ),
+                    carousel(context, screenHeight, (screenWidth / 5) * 3),
                     SizedBox(
-                      height: screenHeight / 30,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.arrow_back_ios,
-                              color: Colors.grey,
-                              size: screenWidth / 20,
-                            )),
-                        crateHeroImage(
-                            context,
-                            'assets/images/question.png',
-                            MediaQuery.of(context).size.width / 6,
-                            MediaQuery.of(context).size.height / 12,
-                            0.5),
-                        SizedBox(
-                          width: screenWidth / 23,
-                        ),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/2.png',
-                            MediaQuery.of(context).size.width / 4,
-                            MediaQuery.of(context).size.height / 8,
-                            1.0),
-                        SizedBox(
-                          width: screenWidth / 23,
-                        ),
-                        crateHeroImage(
-                            context,
-                            'assets/images/profiles/3.png',
-                            MediaQuery.of(context).size.width / 6,
-                            MediaQuery.of(context).size.height / 12,
-                            0.5),
-                        IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.white,
-                              size: screenWidth / 20,
-                            )),
-                      ],
-                    ),
-                    SizedBox(
-                      height: screenHeight / 40,
+                      height: screenHeight / 70,
                     ),
                   ],
                 ),
@@ -169,33 +126,36 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                       top: MediaQuery.of(context).size.height / 11.5),
                   child: Consumer<GameSettingsModel>(
                     builder: (context, value, child) {
-                      return CircularCountDownTimer(
-                          controller: controller,
-                          isReverse: true,
-                          width: screenWidth * 0.40,
-                          height: screenWidth * 0.40,
-                          duration: value.getTimerValue(),
-                          fillColor: Colors.red,
-                          ringColor: Colors.green,
-                          strokeWidth: 16,
-                          textStyle: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'GamerStation',
-                            fontSize: screenWidth / 4.5,
-                          ),
-                          onComplete: () => {
-                                setState(() {
-                                  callback();
+                      return Center(
+                        child: CircularCountDownTimer(
+                            controller: controller,
+                            isReverse: true,
+                            width: screenWidth * 0.40,
+                            height: screenWidth * 0.40,
+                            duration: value.getTimerValue(),
+                            fillColor: Colors.red,
+                            ringColor: Colors.green,
+                            strokeWidth: 16,
+                            textStyle: TextStyle(
+                              textBaseline: TextBaseline.alphabetic,
+                              color: Colors.white,
+                              fontFamily: 'GamerStation',
+                              fontSize: screenWidth / 5,
+                            ),
+                            onComplete: () => {
+                                  setState(() {
+                                    callback();
+                                  }),
+                                  print(value.getTimerValue()),
                                 }),
-                                print(value.getTimerValue()),
-                              });
+                      );
                     },
                   ),
                 ),
               )
             ]),
             SizedBox(
-              height: screenHeight / 40,
+              height: screenHeight / 90,
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height / 12,
@@ -203,6 +163,12 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               child: ElevatedButton(
                   onPressed: () {
                     if (isFinish == true) {
+                      Provider.of<PlayerCarouselViewModel>(context,
+                              listen: false)
+                          .carouselNext();
+                      Provider.of<PlayerCarouselViewModel>(context,
+                              listen: false)
+                          .countCheck(context);
                       Navigator.pop(context);
                       Navigator.push(
                         context,

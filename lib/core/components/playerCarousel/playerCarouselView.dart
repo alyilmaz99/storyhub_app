@@ -6,7 +6,7 @@ import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.
 Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
   return Padding(
     padding: EdgeInsets.only(
-      top: screenHeight / 15,
+      top: screenHeight / 40,
     ),
     child: Center(
       child: Column(
@@ -18,6 +18,8 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                   onPressed: () {
                     Provider.of<PlayerCarouselViewModel>(context, listen: false)
                         .carouselPrevious();
+                    Provider.of<PlayerCarouselViewModel>(context, listen: false)
+                        .counter--;
                   },
                   icon: Icon(
                     Icons.arrow_back_ios,
@@ -73,6 +75,8 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                   onPressed: () {
                     Provider.of<PlayerCarouselViewModel>(context, listen: false)
                         .carouselNext();
+                    Provider.of<PlayerCarouselViewModel>(context, listen: false)
+                        .counter++;
                   },
                   icon: Icon(
                     Icons.arrow_forward_ios,

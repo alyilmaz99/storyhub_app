@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/Service/CardService.dart';
+import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../view/CardPAge.dart';
 import '../view/tappedCard.dart';
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../view/game_page_w_timer_view.dart';
 
 abstract class GamePageWithTimerViewModel extends State<GamePageWithTimer> {}

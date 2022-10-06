@@ -19,34 +19,37 @@ void main() {
      LİSTE GEREKLİ PARAMETLERE DIŞARIDAN VERİLİNCE BU KALDIRILACAK */
   List<PlayerSelectionModel> tempList = [
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human1.png", playerName: "Player 1"),
+        imgPath: "assets/images/profiles/1.png", playerName: "Player 1"),
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human2.png", playerName: "Player 2"),
+        imgPath: "assets/images/profiles/2.png", playerName: "Player 2"),
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human3.png", playerName: "Player 3"),
+        imgPath: "assets/images/profiles/3.png", playerName: "Player 3"),
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human1.png", playerName: "Player 4"),
+        imgPath: "assets/images/profiles/4.png", playerName: "Player 4"),
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human2.png", playerName: "Player 5"),
+        imgPath: "assets/images/profiles/5.png", playerName: "Player 5"),
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human3.png", playerName: "Player 6"),
+        imgPath: "assets/images/profiles/6.png", playerName: "Player 6"),
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human2.png", playerName: "Player 7"),
+        imgPath: "assets/images/profiles/7.png", playerName: "Player 7"),
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human3.png", playerName: "Player 8"),
+        imgPath: "assets/images/profiles/8.png", playerName: "Player 8"),
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human3.png", playerName: "Player 9"),
+        imgPath: "assets/images/profiles/9.png", playerName: "Player 9"),
   ];
 
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider<PlayerCarouselViewModel>(
-            create: (BuildContext context) => PlayerCarouselViewModel(
-                playerList: tempList,
-                map: {},
-                choosenName: "isim",
-                choosenImgPath: "assets/images/blankPerson.jpg")),
+          create: (BuildContext context) => PlayerCarouselViewModel(
+            playerList: tempList,
+            map: {},
+            choosenName: "isim",
+            choosenImgPath: "assets/images/blankPerson.jpg",
+            index: 0,
+          ),
+        ),
         ChangeNotifierProvider<SelectScenarioModel>(
           create: (BuildContext context) => SelectScenarioModel(),
         ),
@@ -95,7 +98,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const AfterScenarioView(),
+      home: const SplashScreenView(),
     );
   }
 }
