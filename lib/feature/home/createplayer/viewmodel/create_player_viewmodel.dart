@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
-
 import '../view/create_player_view.dart';
 
 abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
+  static bool isEmpty = false;
+  static bool isReady = false;
+
   TextField playerNameCreateTextField(
     BuildContext context,
     List<TextEditingController>? textEditingControllers,
-    bool isEmpty,
+    List<bool>? textValueisEmpty,
     int? order,
   ) {
     return TextField(
       onChanged: (value) {
         setState(() {
           if (value.isEmpty) {
-            isEmpty = false;
+            textValueisEmpty![order!] = false;
           } else {
-            isEmpty = true;
+            textValueisEmpty![order!] = true;
           }
         });
       },
@@ -68,7 +70,12 @@ abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
   }
 }
 
-Widget buildFirstButton(BuildContext context, bool isCheck, Future function) {
+Widget buildFirstButton(
+  BuildContext context,
+  bool isCheck,
+  Future function,
+  Future writefunc,
+) {
   return SizedBox(
     width: MediaQuery.of(context).size.width / 1.4,
     height: MediaQuery.of(context).size.height / 13,
@@ -76,6 +83,7 @@ Widget buildFirstButton(BuildContext context, bool isCheck, Future function) {
       onPressed: () {
         if (isCheck == true) {
           function;
+          writefunc;
           Navigator.push(context, MaterialPageRoute(builder: (context) => const SelectScenarioView()));
         }
       },

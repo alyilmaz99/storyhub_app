@@ -16,14 +16,23 @@ class Player with ChangeNotifier {
     score = json['score'];
     rank = json['rank'];
   }
+  Future<String> getimagePath(int? number) async {
+    image = 'assets/images/profiles/$number.png';
+    return image!;
+  }
 
-  Future<Map<dynamic, dynamic>> createPlayerfunc(int userNumber, TextEditingController? textFieldController, int? score,
-      int? rank, String? imagepath, int? id) async {
-
+  Future<Map<dynamic, dynamic>> createPlayerfunc(
+    int userNumber,
+    TextEditingController? textFieldController,
+    int? score,
+    int? rank,
+    String? image,
+    int? id,
+  ) async {
     for (var i = 1; i <= userNumber; i++) {
       playersMap![i] = id;
       playersMap!['name'] = textFieldController?.value.text;
-      playersMap!['image'] = imagepath;
+      playersMap!['image'] = image;
       playersMap!['score'] = score;
       playersMap!['rank'] = rank;
     }
@@ -82,5 +91,18 @@ class Player with ChangeNotifier {
     data['score'] = score;
     data['rank'] = rank;
     return data;
+  }
+
+  Future<bool> arePlayerDone(List<bool> textValueisEmpty) async {
+    bool? isCheck;
+    for (var element in textValueisEmpty) {
+      if (element == true) {
+        isCheck = true;
+      } else if (element == false) {
+        isCheck = false;
+        break;
+      }
+    }
+    return isCheck!;
   }
 }

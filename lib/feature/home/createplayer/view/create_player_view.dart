@@ -14,14 +14,16 @@ class CreatePlayerView extends StatefulWidget {
 class _CreatePlayerViewState extends CreatePlayerViewModel {
   var textFieldController = TextEditingController();
   final List<TextEditingController> _textEditingControllers = [TextEditingController()];
-  Future<void> additemtoTextEditingControllerList(int index, int maxnumber) async {
+  final List<bool> _textValueisEmpty = [];
+
+  Future<void> additemtoList(int index, int maxnumber) async {
     while (index <= maxnumber) {
       _textEditingControllers.add(TextEditingController());
+      _textValueisEmpty.add(CreatePlayerViewModel.isEmpty);
       index++;
     }
   }
 
-  bool isEmpty = false;
   @override
   Widget build(BuildContext context) {
     bool isCheckOkay = false;
@@ -33,10 +35,25 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     int? myRank = Provider.of<Player>(context).rank;
     String? myImageString = Provider.of<Player>(context).image;
     int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
-    Map? myPlayersMap = Provider.of<Player>(context).playersMap;
+    Map<dynamic, dynamic>? myPlayersMap = Provider.of<Player>(context).playersMap;
 
-    Future<void> mycreatePlayerfunc = Provider.of<Player>(context)
-        .createPlayerfunc(userNumber, textFieldController, myScore, myRank, myImageString, myId);
+    Future<void> mycreatePlayerfunc = Provider.of<Player>(context).createPlayerfunc(
+      userNumber,
+      textFieldController,
+      myScore,
+      myRank,
+      myImageString,
+      myId,
+    );
+
+    Future<String> writemaps(Map<dynamic, dynamic>? writemap) async {
+      return writemap!.values.toString();
+    }
+
+    Future<String> getImagePath(int number) async {
+      myImageString = 'assets/images/profiles/$number.png';
+      return myImageString!;
+    }
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -78,13 +95,18 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                     child: ListView.builder(
                       itemCount: userNumber,
                       itemBuilder: (context, index) {
-                        additemtoTextEditingControllerList(
+                        additemtoList(
                           index,
                           userNumber,
                         );
+                        getImagePath(index);
                         return Padding(
                             padding: EdgeInsets.only(bottom: screenHeight / 45),
-                            child: playerNameCreateContainer(context, index + 1, isCheckOkay));
+                            child: playerNameCreateContainer(
+                              context,
+                              index + 1,
+                              isCheckOkay,
+                            ));
                       },
                     ),
                   ),
@@ -93,7 +115,12 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
               SizedBox(
                 height: screenHeight / 30,
               ),
-              buildFirstButton(context, isCheckOkay, mycreatePlayerfunc),
+              buildFirstButton(
+                context,
+                isCheckOkay,
+                mycreatePlayerfunc,
+                writemaps(myPlayersMap),
+              ),
             ],
           ),
         ),
@@ -101,7 +128,11 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     );
   }
 
-  Container playerNameCreateContainer(BuildContext context, int number, bool isCheckOkay) {
+  Container playerNameCreateContainer(
+    BuildContext context,
+    int numberforimages,
+    bool isCheckOkay,
+  ) {
     return Container(
       height: MediaQuery.of(context).size.height / 9,
       width: MediaQuery.of(context).size.width / 1.2,
@@ -116,11 +147,11 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
               child: Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                  image: AssetImage('assets/images/profiles/$number.png'),
+                  image: AssetImage('assets/images/profiles/$numberforimages.png'),
                   opacity: 1,
                   fit: BoxFit.fill,
                 )),
-                child: isCheckOkay
+                child: _textValueisEmpty[numberforimages]
                     ? const Center(
                         child: Text(
                           'HAZIR!',
@@ -150,11 +181,11 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                 child: playerNameCreateTextField(
                   context,
                   _textEditingControllers,
-                  isEmpty,
-                  number,
+                  _textValueisEmpty,
+                  numberforimages,
                 )),
           ),
-          isEmpty
+          _textValueisEmpty[numberforimages]
               ? Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: IconButton(
