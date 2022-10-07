@@ -1,5 +1,7 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:page_animation_transition/animations/fade_animation_transition.dart';
+import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
@@ -18,7 +20,6 @@ class GamePageWithTimer extends StatefulWidget {
 
 class _GamePageWithTimerState extends GamePageWithTimerViewModel {
   bool isFinish = false;
-
   void callback() {
     setState(() {
       isFinish = true;
@@ -161,11 +162,24 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                               fontFamily: 'GamerStation',
                               fontSize: screenWidth / 5,
                             ),
+                            onChange: (value) {
+                              Provider.of<FinalPageViewModel>(context)
+                                          .isFinal ==
+                                      true
+                                  ? halfTimerChechk2(value, callback)
+                                  : halfTimerChechk(value, callback);
+                            },
                             onComplete: () => {
                                   setState(() {
-                                    callback();
+                                    if (Provider.of<FinalPageViewModel>(
+                                      context,
+                                      listen: false,
+                                    ).isFinal) {
+                                      finishGame();
+                                    } else {
+                                      nextPlayerFunctions(isFinish);
+                                    }
                                   }),
-                                  print(value.getTimerValue()),
                                 }),
                       );
                     },

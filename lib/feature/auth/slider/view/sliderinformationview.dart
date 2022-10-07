@@ -119,8 +119,8 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                               child: Text(
                                 oi.subtitle,
                                 style: const TextStyle(
-                                  fontFamily: 'Montserrat',
                                   fontSize: 15,
+                                  fontWeight: FontWeight.w600,
                                   color: Colors.white,
                                 ),
                                 textAlign: TextAlign.center,

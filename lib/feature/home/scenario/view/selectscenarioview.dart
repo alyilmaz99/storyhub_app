@@ -249,10 +249,18 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
             ),
             Row(children: [
               const Spacer(flex: 2),
-              const Align(
+              Align(
                 alignment: Alignment.center,
                 child: Text("SENARYO SEÇ",
                     style: TextStyle(
+                        shadows: <Shadow>[
+                          Shadow(
+                            offset: const Offset(0.0, 5.0),
+                            blurRadius: 7.0,
+                            color: const Color.fromARGB(255, 0, 0, 0)
+                                .withOpacity(0.5),
+                          ),
+                        ],
                         fontFamily: 'GamerStation',
                         letterSpacing: 0.5,
                         fontSize: 25.0,
@@ -301,6 +309,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                   return Expanded(
                     child: Scrollbar(
                         child: GridView.count(
+                            padding: EdgeInsets.zero,
                             physics: const ScrollPhysics(),
                             // Create a grid with 2 columns. If you change the scrollDirection to
                             // horizontal, this produces 2 rows.
@@ -443,7 +452,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                   ),
                                                 ),
                                                 SizedBox(
-                                                  height: h / 40,
+                                                  height: h / 35,
                                                 ),
                                                 Container(
                                                   margin: const EdgeInsets
@@ -550,34 +559,28 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
   }
 
   Widget buildIcon() {
-    return Container(
-      child: IconButton(
-        icon: Image.asset("assets/images/LogoV1.png"),
-        iconSize: 100,
-        onPressed: () {},
-      ),
+    return IconButton(
+      icon: Image.asset("assets/images/LogoV1.png"),
+      iconSize: 100,
+      onPressed: () {},
     );
   }
 
   Widget buildIcon1() {
-    return Container(
-      child: IconButton(
-        icon: Image.asset("assets/images/Frame.png"),
-        iconSize: 50,
-        onPressed: () {},
-      ),
+    return IconButton(
+      icon: Image.asset("assets/images/Frame.png"),
+      iconSize: 50,
+      onPressed: () {},
     );
   }
 
   Widget buildIcon2() {
-    return Container(
-      child: IconButton(
-        icon: Image.asset("assets/images/Group12.png"),
-        iconSize: 50,
-        onPressed: () {
-          selectCategory();
-        },
-      ),
+    return IconButton(
+      icon: Image.asset("assets/images/Group12.png"),
+      iconSize: 50,
+      onPressed: () {
+        selectCategory();
+      },
     );
   }
 
@@ -600,20 +603,22 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       });
                     },
                     child: Column(children: [
-                      Row(children: [
-                        const Text(
-                          "KORKU - 6",
+                      Row(children: const [
+                        Text(
+                          "KORKU - 4",
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
                               fontSize: 20.0),
                         ),
-                        const Spacer(),
-                        const Icon(
-                          Icons.abc,
-                          color: Colors.white,
-                          size: 40,
-                        )
+                        Spacer(),
+                        SizedBox(
+                          height: 40,
+                          width: 40,
+                          child: Image(
+                            image: AssetImage('assets/images/icons/icon5.png'),
+                          ),
+                        ),
                       ]),
                       const Divider()
                     ])),
@@ -625,18 +630,21 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                     },
                     child: Column(
                       children: [
-                        Row(children: [
-                          const Text("EĞLENCE - 4 ",
+                        Row(children: const [
+                          Text("EĞLENCE - 4 ",
                               style: TextStyle(
                                   fontFamily: "GamerStation",
                                   color: Colors.white,
                                   fontSize: 20.0)),
-                          const Spacer(),
-                          const Icon(
-                            Icons.ac_unit_outlined,
-                            color: Colors.white,
-                            size: 40,
-                          )
+                          Spacer(),
+                          SizedBox(
+                            height: 40,
+                            width: 40,
+                            child: Image(
+                              image:
+                                  AssetImage('assets/images/icons/icon1.png'),
+                            ),
+                          ),
                         ]),
                         const Divider()
                       ],
@@ -648,20 +656,22 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       });
                     },
                     child: Column(children: [
-                      Row(children: [
-                        const Text(
-                          "FANTASTİK - 2",
+                      Row(children: const [
+                        Text(
+                          "FANTASTİK - 4",
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
                               fontSize: 20.0),
                         ),
-                        const Spacer(),
-                        const Icon(
-                          Icons.add_alarm_sharp,
-                          color: Colors.white,
-                          size: 40,
-                        )
+                        Spacer(),
+                        SizedBox(
+                          height: 40,
+                          width: 40,
+                          child: Image(
+                            image: AssetImage('assets/images/icons/icon2.png'),
+                          ),
+                        ),
                       ]),
                       const Divider()
                     ])),
@@ -672,20 +682,22 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       });
                     },
                     child: Column(children: [
-                      Row(children: [
-                        const Text(
-                          "MACERA - 8",
+                      Row(children: const [
+                        Text(
+                          "MACERA - 4",
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
                               fontSize: 20.0),
                         ),
-                        const Spacer(),
-                        const Icon(
-                          Icons.access_alarm_rounded,
-                          color: Colors.white,
-                          size: 40,
-                        )
+                        Spacer(),
+                        SizedBox(
+                          height: 40,
+                          width: 40,
+                          child: Image(
+                            image: AssetImage('assets/images/icons/icon3.png'),
+                          ),
+                        ),
                       ]),
                       const Divider()
                     ])),
@@ -696,20 +708,22 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                       });
                     },
                     child: Column(children: [
-                      Row(children: [
-                        const Text(
-                          "DRAM - 3",
+                      Row(children: const [
+                        Text(
+                          "DRAM - 4",
                           style: TextStyle(
                               fontFamily: "GamerStation",
                               color: Colors.white,
                               fontSize: 20.0),
                         ),
-                        const Spacer(),
-                        const Icon(
-                          Icons.accessibility_new_sharp,
-                          color: Colors.white,
-                          size: 40,
-                        )
+                        Spacer(),
+                        SizedBox(
+                          height: 40,
+                          width: 40,
+                          child: Image(
+                            image: AssetImage('assets/images/icons/icon4.png'),
+                          ),
+                        ),
                       ]),
                     ])),
               ],
