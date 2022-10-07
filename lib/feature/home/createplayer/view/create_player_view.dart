@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
-import '../../../../product/model/player_selection_model.dart';
-import '../../scenario/view/selectscenarioview.dart';
 import '../viewmodel/create_player_viewmodel.dart';
 import '../../../settings/model/game_settings_model.dart';
-import '../../../../product/widgets/button/nasil_oynanir_soru_isareti_button.dart';
 
 class CreatePlayerView extends StatefulWidget {
   const CreatePlayerView({Key? key}) : super(key: key);
@@ -16,18 +13,30 @@ class CreatePlayerView extends StatefulWidget {
 
 class _CreatePlayerViewState extends CreatePlayerViewModel {
   var textFieldController = TextEditingController();
-  bool isEmpty = false;
+  final List<TextEditingController> _textEditingControllers = [TextEditingController()];
+  Future<void> additemtoTextEditingControllerList(int index, int maxnumber) async {
+    while (index <= maxnumber) {
+      _textEditingControllers.add(TextEditingController());
+      index++;
+    }
+  }
 
+  bool isEmpty = false;
   @override
   Widget build(BuildContext context) {
-    bool _isCheckOkay = false;
+    bool isCheckOkay = false;
     var screenInfo = MediaQuery.of(context);
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
+    int? myId = Provider.of<Player>(context).id;
+    int? myScore = Provider.of<Player>(context).score;
+    int? myRank = Provider.of<Player>(context).rank;
+    String? myImageString = Provider.of<Player>(context).image;
     int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
     Map? myPlayersMap = Provider.of<Player>(context).playersMap;
-    /* Future<void> mycreatePlayerfunc = Provider.of<Player>(context)
-        .createPlayerfunc(userNumber, textFieldController);*/
+
+    Future<void> mycreatePlayerfunc = Provider.of<Player>(context)
+        .createPlayerfunc(userNumber, textFieldController, myScore, myRank, myImageString, myId);
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -35,10 +44,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
         decoration: const BoxDecoration(
           gradient: RadialGradient(
             radius: 0.7,
-            colors: [
-              Color.fromRGBO(255, 149, 113, 1),
-              Color.fromRGBO(216, 91, 47, 1)
-            ],
+            colors: [Color.fromRGBO(255, 149, 113, 1), Color.fromRGBO(216, 91, 47, 1)],
           ),
         ),
         child: SizedBox(
@@ -60,20 +66,6 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   ),
                 ),
               ),
-              /*
-              Align(
-                alignment: Alignment.topRight,
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    right: screenWidth / 10,
-                    top: screenHeight / 150,
-                  ),
-                  child: NasilOynanirSoruIsaretiButton(
-                    myHeight: screenHeight / 2,
-                    myWidth: screenWidth / 1.5,
-                  ),
-                ),
-              ),*/
               Scrollbar(
                 radius: const Radius.circular(20.0),
                 thumbVisibility: true,
@@ -86,10 +78,13 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                     child: ListView.builder(
                       itemCount: userNumber,
                       itemBuilder: (context, index) {
+                        additemtoTextEditingControllerList(
+                          index,
+                          userNumber,
+                        );
                         return Padding(
                             padding: EdgeInsets.only(bottom: screenHeight / 45),
-                            child: playerNameCreateContainer(
-                                context, index + 1, _isCheckOkay));
+                            child: playerNameCreateContainer(context, index + 1, isCheckOkay));
                       },
                     ),
                   ),
@@ -98,7 +93,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
               SizedBox(
                 height: screenHeight / 30,
               ),
-              buildFirstButton(context, _isCheckOkay),
+              buildFirstButton(context, isCheckOkay, mycreatePlayerfunc),
             ],
           ),
         ),
@@ -106,8 +101,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     );
   }
 
-  Container playerNameCreateContainer(
-      BuildContext context, int number, bool isCheckOkay) {
+  Container playerNameCreateContainer(BuildContext context, int number, bool isCheckOkay) {
     return Container(
       height: MediaQuery.of(context).size.height / 9,
       width: MediaQuery.of(context).size.width / 1.2,
@@ -115,8 +109,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
       child: Row(
         children: [
           Padding(
-            padding:
-                EdgeInsets.only(left: MediaQuery.of(context).size.width / 20),
+            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 20),
             child: SizedBox(
               width: 80,
               height: 80,
@@ -150,12 +143,16 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
             ),
           ),
           Padding(
-            padding:
-                EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
+            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
             child: SizedBox(
                 height: 50,
                 width: 160,
-                child: playerNameCreateTextField(context)),
+                child: playerNameCreateTextField(
+                  context,
+                  _textEditingControllers,
+                  isEmpty,
+                  number,
+                )),
           ),
           isEmpty
               ? Padding(
@@ -178,64 +175,6 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                 ),
         ],
       ),
-    );
-  }
-
-  TextField playerNameCreateTextField(BuildContext context) {
-    return TextField(
-      onChanged: (value) {
-        setState(() {
-          if (value.isEmpty) {
-            isEmpty = false;
-          } else {
-            isEmpty = true;
-          }
-        });
-      },
-      maxLines: 1,
-      textAlign: TextAlign.center,
-      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-            color: Colors.white,
-          ),
-      controller: textFieldController,
-      cursorColor: Colors.white,
-      decoration: InputDecoration(
-        contentPadding: const EdgeInsets.all(0),
-        hintText: "İsim",
-        hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.w500,
-            ),
-        enabledBorder: const OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-          borderSide: BorderSide(
-            color: Colors.white,
-            width: 1.1,
-          ),
-        ),
-        focusedBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(20.0)),
-            borderSide: BorderSide(
-              color: Color.fromRGBO(223, 97, 50, 1),
-              width: 4,
-            )),
-        fillColor: Colors.red,
-        border: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Color.fromRGBO(223, 97, 50, 1),
-            width: 1.1,
-          ),
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-        ),
-      ),
-    );
-  }
-
-  BoxDecoration playerNameCreateContainerDecoration() {
-    return const BoxDecoration(
-      color: Color.fromRGBO(218, 153, 115, 0.8),
-      shape: BoxShape.rectangle,
-      borderRadius: BorderRadius.all(Radius.circular(30.0)),
     );
   }
 }

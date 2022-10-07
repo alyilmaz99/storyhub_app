@@ -19,6 +19,11 @@ class _VoteScreenViewState extends State<VoteScreenView> {
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
     List nameList = <String>[];
+    int? myId = Provider.of<Player>(context).id;
+    int? myScore = Provider.of<Player>(context).score;
+    int? myRank = Provider.of<Player>(context).rank;
+    String? myImageString = Provider.of<Player>(context).image;
+    Map? myPlayersMap = Provider.of<Player>(context).playersMap;
     int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
     Map? myPlayerMap = Provider.of<Player>(context).playersMap;
     var entryList = myPlayerMap?.entries.toList();
@@ -79,8 +84,8 @@ class _VoteScreenViewState extends State<VoteScreenView> {
                     return Padding(
                       padding: EdgeInsets.only(bottom: screenHeight / 20),
                       child: PlayerVoteRateContainer(
-                        screenWidth: screenWidth,
-                        screenHeight: screenHeight,
+                        screenWidth: screenWidth / 10,
+                        screenHeight: screenHeight / 15,
                         nameListContainer: nameList,
                         name: nameList[index].toString(),
                       ),

@@ -1,5 +1,7 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import '../../../product/widgets/timer/timer_design.dart';
 import '../viewmodel/drawer_viewmodel.dart';
 import '../../home/mainpage/view/main_page_view.dart';
@@ -19,7 +21,7 @@ class FullScreenModal extends DrawerViewModel {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-   /* TimerDesign timer = TimerDesign(
+    /* TimerDesign timer = TimerDesign(
       myController: controller2,
       seconds: 20,
     ); */
@@ -67,6 +69,8 @@ class FullScreenModal extends DrawerViewModel {
               ),
               ElevatedButton(
                 onPressed: () {
+                  Provider.of<FinalPageViewModel>(context, listen: false)
+                      .isFinal = false;
                   Navigator.pop(context);
                   Navigator.push(
                       context,
