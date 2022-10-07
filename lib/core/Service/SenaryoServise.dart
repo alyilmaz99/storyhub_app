@@ -22,7 +22,7 @@ class SenaryoService {
     return _senaryolarService;
   }
 
-  void initSenaryolar() async {
+  Future<bool> initSenaryolar() async {
     jsonst = await rootBundle.loadString('assets/senaryolar.json');
 
     Iterable iterateSenaryo = json.decode(jsonst);
@@ -30,6 +30,8 @@ class SenaryoService {
         iterateSenaryo.map((model) => Senaryo.fromJson(model)));
 
     isLoadedSenaryolar = true;
+
+    return true;
   }
 
   List<Senaryo> getSenaryolar() {
@@ -39,4 +41,5 @@ class SenaryoService {
 
     return senaryolar;
   }
+
 }
