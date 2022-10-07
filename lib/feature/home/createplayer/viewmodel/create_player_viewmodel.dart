@@ -70,20 +70,22 @@ abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
   }
 }
 
+Future<String> writefunc(Map<dynamic, dynamic> myMap) async {
+  return myMap.values.toString();
+}
+
 Widget buildFirstButton(
   BuildContext context,
   bool isCheck,
-  Future function,
-  Future writefunc,
+  Map<dynamic, dynamic>? myMap,
 ) {
   return SizedBox(
     width: MediaQuery.of(context).size.width / 1.4,
     height: MediaQuery.of(context).size.height / 13,
     child: OutlinedButton(
       onPressed: () {
+        writefunc(myMap!);
         if (isCheck == true) {
-          function;
-          writefunc;
           Navigator.push(context, MaterialPageRoute(builder: (context) => const SelectScenarioView()));
         }
       },

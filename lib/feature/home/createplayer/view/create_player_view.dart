@@ -36,23 +36,14 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     String? myImageString = Provider.of<Player>(context).image;
     int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
     Map<dynamic, dynamic>? myPlayersMap = Provider.of<Player>(context).playersMap;
+    // Future<void> myEqualMap = Provider.of<Player>(context).equalMaps();
+    // Future<String> writemaps(Map<dynamic, dynamic> writemap) async {
+    //   return writemap.values.toString();
+    // }
 
-    Future<void> mycreatePlayerfunc = Provider.of<Player>(context).createPlayerfunc(
-      userNumber,
-      textFieldController,
-      myScore,
-      myRank,
-      myImageString,
-      myId,
-    );
-
-    Future<String> writemaps(Map<dynamic, dynamic>? writemap) async {
-      return writemap!.values.toString();
-    }
-
-    Future<String> getImagePath(int number) async {
-      myImageString = 'assets/images/profiles/$number.png';
-      return myImageString!;
+    Future<String>? getImagePath(int number) async {
+      String myImageString = 'assets/images/profiles/$number.png';
+      return myImageString;
     }
 
     return Scaffold(
@@ -99,7 +90,16 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                           index,
                           userNumber,
                         );
-                        getImagePath(index);
+                        //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
+                        Provider.of<Player>(context).createPlayerfunc(
+                          userNumber,
+                          _textEditingControllers,
+                          myScore,
+                          myRank,
+                          getImagePath(index),
+                          index,
+                        );
+                        //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
                         return Padding(
                             padding: EdgeInsets.only(bottom: screenHeight / 45),
                             child: playerNameCreateContainer(
@@ -118,8 +118,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
               buildFirstButton(
                 context,
                 isCheckOkay,
-                mycreatePlayerfunc,
-                writemaps(myPlayersMap),
+                myPlayersMap,
               ),
             ],
           ),

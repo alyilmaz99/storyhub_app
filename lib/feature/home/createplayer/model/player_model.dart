@@ -7,7 +7,8 @@ class Player with ChangeNotifier {
   int? score;
   int? rank;
   Map<dynamic, dynamic>? playersMap = <dynamic, dynamic>{};
-  Player({this.id, this.name, this.image, this.score, this.rank, this.playersMap});
+  Map<dynamic, dynamic>? backupPlayersMap = <dynamic, dynamic>{};
+  Player({this.id, this.name, this.image, this.score, this.rank, this.playersMap, this.backupPlayersMap});
 
   Player.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -15,28 +16,35 @@ class Player with ChangeNotifier {
     image = json['image'];
     score = json['score'];
     rank = json['rank'];
+    playersMap = json['playersMap'];
+    backupPlayersMap = json['backupPlayersMap'];
   }
+
   Future<String> getimagePath(int? number) async {
     image = 'assets/images/profiles/$number.png';
     return image!;
   }
 
-  Future<Map<dynamic, dynamic>> createPlayerfunc(
+  Future<Map<dynamic, dynamic>?> createPlayerfunc(
     int userNumber,
-    TextEditingController? textFieldController,
+    List<TextEditingController> textEditingControllers,
     int? score,
     int? rank,
-    String? image,
-    int? id,
+    Future<String>? getimagepathfunc,
+    int id,
   ) async {
     for (var i = 1; i <= userNumber; i++) {
-      playersMap![i] = id;
-      playersMap!['name'] = textFieldController?.value.text;
-      playersMap!['image'] = image;
+      playersMap!['id'] = i;
+      playersMap!['name'] = textEditingControllers[i].toString();
+      playersMap!['image'] = getimagepathfunc;
       playersMap!['score'] = score;
       playersMap!['rank'] = rank;
     }
     return playersMap!;
+  }
+
+  Future<void> equalMaps() async {
+    playersMap = backupPlayersMap;
   }
 
   Future<List> getPlayerName(int id) async {
