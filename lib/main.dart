@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
 import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
 
 import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
+import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
 
 import 'feature/home/createplayer/model/player_model.dart';
@@ -14,7 +16,9 @@ import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
-void main() {
+Future main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
   /* GELİŞTİRME İÇİN GEÇİCİ LİSTE
      LİSTE GEREKLİ PARAMETLERE DIŞARIDAN VERİLİNCE BU KALDIRILACAK */
   List<PlayerSelectionModel> tempList = [
@@ -25,6 +29,8 @@ void main() {
     PlayerSelectionModel(
         imgPath: "assets/images/profiles/3.png", playerName: "Player 3"),
   ];
+  final prefs = await SharedPreferences.getInstance();
+  final showMainPage = prefs.getBool('showMainPage') ?? false;
 
   runApp(
     MultiProvider(
@@ -65,13 +71,14 @@ void main() {
         ChangeNotifierProvider<Player>(
             create: (BuildContext context) => Player()),
       ],
-      child: const MyApp(),
+      child: MyApp( showMainPage: showMainPage,),
     ),
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final bool showMainPage;
+  const MyApp({Key? key, required this.showMainPage}) : super(key: key);
 
   // This widget is the root of your application.
   @override
@@ -89,7 +96,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const SplashScreenView(),
+      home: showMainPage ? const MainPage() : const SplashScreenView(),
     );
   }
 }

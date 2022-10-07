@@ -10,7 +10,7 @@ abstract class GradientSplashScreenViewModel
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).push(PageAnimationTransition(
+      Navigator.of(context).pushReplacement(PageAnimationTransition(
           page: const SliderInformationView(),
           pageAnimationType: FadeAnimationTransition()));
 

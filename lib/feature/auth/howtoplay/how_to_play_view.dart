@@ -2,18 +2,18 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:im_animations/main.dart';
-import '../../../home/mainpage/view/main_page_view.dart';
-import '../viewmodel/sliderinformationviewmodel.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:storyhub/feature/auth/howtoplay/how_to_play_viewmodel.dart';
 
-class SliderInformationView extends StatefulWidget {
-  const SliderInformationView({Key? key}) : super(key: key);
+import '../../home/mainpage/view/main_page_view.dart';
+
+class HowToPlayView extends StatefulWidget {
+  const HowToPlayView({Key? key}) : super(key: key);
 
   @override
-  State<SliderInformationView> createState() => _SliderInformationViewState();
+  State<HowToPlayView> createState() => _HowToPlayViewState();
 }
 
-class _SliderInformationViewState extends SliderInformationViewModel {
+class _HowToPlayViewState extends HowToPlayViewModel {
   @override
   @override
   Widget build(BuildContext context) {
