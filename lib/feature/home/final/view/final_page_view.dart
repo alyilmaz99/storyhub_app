@@ -58,7 +58,7 @@ class _FinalPageState extends State<FinalPageView> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(padding: EdgeInsets.only(top: screenHeight / 10)),
+                Padding(padding: EdgeInsets.only(top: screenHeight / 7)),
                 CircleAvatar(
                   radius: screenHeight / 15,
                   backgroundImage: AssetImage(
@@ -147,7 +147,12 @@ class _FinalPageState extends State<FinalPageView> {
                   ),
                 ),
                 Container(
-                    height: screenHeight / 2,
+                    height: Provider.of<FinalPageViewModel>(context)
+                                .playerList
+                                .length <=
+                            4
+                        ? screenHeight / 3
+                        : screenHeight / 2,
                     padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
                     child: GridView.builder(
                         shrinkWrap: true,
@@ -187,7 +192,6 @@ class _FinalPageState extends State<FinalPageView> {
                             ),
                           );
                         })),
-                Padding(padding: EdgeInsets.only(top: screenHeight / 30)),
                 TextButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(

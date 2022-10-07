@@ -29,7 +29,13 @@
 		"imageUrl":"16.png",
 		"long-text":"Varış koordinatları girilmişti fakat mürettabatın içinde bir huzursuluk hakimdi. Uzay boşluğunda sürükleniyor gibilerdi. Karşılarındaki gezegen inecekleri yerden farklıydı. Toz bulutları gibi gözüken geniş bir uydusu vardı. Durumlarını üsse bildirmek için bağlantı kuracakları telsizlerdeki bağlantı tiz bir cızırtıyla bölünüyordu. Artık sadece onlar vardı. Yoğun toz bulutlarını geçip uzay gemisini indirmekten başka çareleri yoktu. Zor ve sarsıntılı olan iniş yakıtlarının büyük kısmını kaybetmelerine sebep olmuştu. Bu yabancı gezegen hakkında bilgi toplamak için keşif robotunu gönderip beklemeye koyuldular. Robotun getirdiği örnekler bu gezegenin…",
 		"short-text":"Varış koordinatları girilmişti fakat mürettabatın içinde bir huzursuluk hakimdi. Uzay boşluğunda sürükleniyor gibilerdi. ",
-		"category":"Fantastik"
+		"category":"Fantastik",
+		"tip1":[
+			"uzaylı.png","ışın kılıcı.png","ışın tabancası.png","gezegen.png","robot.png","uydu.png","bayrak.png","oksijen tüpü.png","uzay gemisi.png","meteor yağmuru.png"
+		],
+		"tip2":[
+			"keşif.png","ışınlanma.png","astranot kedi.png","teleskop.png","astreoid.png","elmas çuvalı.png","ayna.png","iksir.png","telsiz.png","paskalya yumurtası.png","teleskop.png","oksijen tüpü.png","uydu.png" ,"bayrak.png","güneş.png","radyasyon.png","rapor.png","keşif.png","meteor.png","teleskop.png","radyo sinyali.png","bilinmeyen mesaj.png","çığlık.png","hizmetçi robot.png","uzaylı.png","başkan.png"
+		]
 	},	
 	{
 		"senaryoNumber":17,
@@ -37,7 +43,13 @@
 		"imageUrl":"17.png",
 		"long-text":"Kapı sertçe açıldı. İçeriye uzun cübbesiyle hakim girdi. Uzun bir tanık listesi vardı önünde. Tecrübeli bir hakim olmasına karşın bu dava daha önceden gördüklerinden farklıydı. Evsiz bir ressama açılan bir davaydı. Adam sanat eseri hırsızlığından suçlanıyordu. Yakın zamanda müzeden birkaç değerli tablo çalınmıştı ve bunların bir tanesini de sabah işine giden müze müdürü adamın sattığı tablolar arasında görmüştü. Zavallı adam ne kadar inkar edip kendi çizimi olduğunu iddia etse de inanılmamıştı. Çünkü tablo orijinal resimle birebir aynıydı. Taraflar dinlenilmiş, dava görülmüş. Karar verilmeye gelince hakim tokmağını sertçe vurmuş, ressamı suçlu bulmuştu çünkü…",
 		"short-text":"Kapı sertçe açıldı. İçeriye uzun cübbesiyle hakim girdi. Uzun bir tanık listesi vardı önünde. Tecrübeli bir hakim olmasına karşın bu dava daha önceden gördüklerinden farklıydı.",
-		"category":"Dram"
+		"category":"Dram",
+		"tip1":[
+			"gardiyan.png","suçlu.png","idam.png","hapis.png","polis.png","parmaklık.png","kelepçe.png","avukat.png" ,"mektup.png","görüş saati.png"
+		],
+		"tip2":[
+			"idam sehpası.png","ranza.png" ,"hapishane.png","soyguncu.png","hırsız.png","hakim tokmağı.png","mum.png","ayna.png","idam sehpası.png","ranza.png","silah.png","delil dosyası.png","büyüteç.png","telsiz.png","para kesesi.png","zar.png","çakmak.png","ödül çeki.png","alkol şişesi.png","güldürme büyüsü.png","bileklik.png","serum.png","kelepçe.png","mektup.png","bilinmeyen resimler.png","soyguncu.png","güvenlik.png","gardiyan.png","çiçekçi.png","köprü.png","asansör.png","hapishane.png","tartışma.png","bıçaklı gösteri.png","cenaze.png"
+		]
 	},	
 
 	{
@@ -46,7 +58,13 @@
 		"imageUrl":"1.png",
 		"long-text":"Gözlerini zorla açarken ne olup bittiğinin farkında değildi. Kıyıda onunla birlikte baygın yatan birkaç gemici, suda yüzen tahtalar ve yelkenden kalan birkaç parça… Gemi yolculuk yaparken büyük bir kaya parçasıyla çarpışmış, batmış; su da gemiden geriye kalanları karaya savuruyor gibiydi. Ağır haraketlerle kalkıp en yanında yatan kişiye doğru ilerledi. Çok fazla su yutmuş ve baygın gibiydi. Çevresinde neler olduğunu, nerede olduklarını anlamaya çalışırken arkalarındaki ormandan bir grubun bağırarak üzerlerine doğru koştuğunu farketti. Gemici o anda…",
 		"short-text":"Gözlerini zorla açarken ne olup bittiğinin farkında değildi. Kıyıda onunla birlikte baygın yatan birkaç gemici, suda yüzen tahtalar ve yelkenden kalan birkaç parça…",
-		"category":"Macera"
+		"category":"Macera",
+		"tip1":[
+			"palmiye.png","hindistan cevizi.png","sandal.png","sahil.png","baraka.png","güneş.png","kamp ateşi.png","yolcu gemisi.png","işaret fişeği.png","zıpkın.png"
+		],
+		"tip2":[
+			"papağan.png","yengeç.png","güneş gözlüğü.png","hazine.png","harita.png","meşale.png","su yansıması.png","hindistan cevizi.png","japon balığı.png","kürek.png","harita.png","deniz kabuğu kolye.png","yılan balığı.png","fanus.png","para kesesi.png","banyo ördeği.png","örümcek ağı.png","oksijen tüpü.png","olta.png","inci.png","kül tablası.png","soda.png","sigara.png","palmiye.png","fıçı.png","güneş.png","kafes.png","flama.png" ,"kaptan şapkası.png","at nalı.png","ağ.png","filika.png","keşif.png","odun ateşi.png","meşale.png","halat.png","denizkızı.png","korsan.png","posta güvercini.png","denizcanavarı.png","kaptan.png","denizaltı.png","bıçaklı gösteri.png","yanardağ.png","okyanus.png","batan gemi.png"
+		]
 	},	
 	{
 		"senaryoNumber":20,
@@ -54,7 +72,13 @@
 		"imageUrl":"20.png",
 		"long-text":"Diyarların birinde kralın tek kızı olan güzeller güzeli prenses onun kalbini kazanacak hediyeyi getiren kişiyle evlenmeye karar vermiş. Krallığın dört bir yanından gençler güzel prensesin kalbini kazanmak için hediyeleriyle saraya gelmişlerdi. Diyarın en güzel çiçeklerini, elbiselerini, mücevherlerini prensese sunmuşlar. Prenses istediğinin bu olmadığını, gerçekten onu mutlu edecek birini istediğini söylemiş. O anda içeriye giren kişi herkesi enerjisiyle büyüleyen cinste biriymiş. Prensesin önünde eğilerek: Prensesim benim size sunabileceğim…",
 		"short-text":"Diyarların birinde kralın tek kızı olan güzeller güzeli prenses onun kalbini kazanacak hediyeyi getiren kişiyle evlenmeye karar vermiş.",
-		"category":"Eglence"
+		"category":"Eglence",
+		"tip1":[
+			"mezartasşı.png","mum.png","kürek.png","idam sehpası.png","mancınık.png","iksir.png","madenci kaskı.png","kaşağı.png","parşomen.png","çamurlu bot.png","maymun.png"
+		],
+		"tip2":[
+			"peri asası.png","zehirli mantar.png","kemik.png","parfüm.png","olta.png","hazine.png","güneş.png","at nalı.png","kuraklık.png","su kuyusu.png","kamp ateşi.png" ,"mektup.png","köprü.png","yel değirmeni.png","labirent.png","silah deposu.png","düello.png","harabe.png","ejderha.png","posta güvercini.png","korsan.png","kraliçe.png","konuşan kaya.png","bedevi.png","hırsız.png","satıcı.png","zıpkın.png","kum fırtınası.png","kuş yuvası.png","kova.png","kılıç.png","alkol şişesi.png","antika.png","ayakizi.png","yılanbalığı.png","tohum.png","sihirli küre.png"
+		]
 	},	
 	{
 		"senaryoNumber":21,
@@ -62,7 +86,13 @@
 		"imageUrl":"21.png",
 		"long-text":"Bir grup bilim insanı insani güçleri on kat arttıran bir virüs geliştirdiler. Fakat bu virüs insanlarda hayvana benzer form değişikliğine sebep oluyordu. Bu virüse karşı tekrar bir insanın özelliklerine döndüren bir de panzehir geliştirdiler. Fakat panzehir virüs kadar hızlı etki etmiyor, bir süre daha vahşi hayvani özellikleri gösteriyordu. Denek grubu içinde kendine gardiyan diyen bir virüslü laboratuvardan kaçıp tüm aşı ve panzehirleri çaldı. Bu aşılarla…",
 		"short-text":"Bir grup bilim insanı insani güçleri on kat arttıran bir virüs geliştirdiler.",
-		"category":"Korku"
+		"category":"Korku",
+		"tip1":[
+			"ilaç.png","hasta.png","hemşire.png","iğne.png","elektroşok.png","serum.png","sedye.png","kanama.png"
+		],
+		"tip2":[
+			"japon balığı.png","iksir.png","bitki.png","delil dosyası.png","gözlük.png","telsiz.png","küvet.png","serum.png","sigara.png","iğne.png","elektroşok.png","sedye.png","kahve makinası.png","gizli dosya.png","rapor.png","şeker.png","steteskop.png","fotoğraf.png","gazete.png","hizmetçi robot.png","hasta bakıcı.png","sekreter.png","güvenlik.png","hasta.png"  ,"zombi.png","tartışma.png","labirent.png","resepsiyon.png","kilise.png","tren.png"
+		]
 	},	
 	{
 		"senaryoNumber":22,
@@ -70,7 +100,13 @@
 		"imageUrl":"22.png",
 		"long-text":"Üretimin işlediği ve gezilerin olduğu bir gün aniden tüm fabrikanın elektriği kesildi. Jenaratörlerin de devreye girmemesiyle bir anda ortalığı karanlığa boğuldu. Kablo kopmasına benzeyen cızırtı sesleri yükseldi. Birkaç dakika sonra geç de olsa jenaretörler çalıştı. Yüzlerce robotun arasında biri gözüküyordu. Küçük biri. Bir çocuk robotların arasında elinde oyuncak ayısıyla duruyordu. Uzaktan robotla bir şeyler konuşuyormuş gibi duruyorlardı. Küçük kız oyuncak ayısını robota uzattı. Sistemi aktif edilmemiş robot o sırada harekete geçip ayıcığı aldı, sarıldı ve…",
 		"short-text":"Üretimin işlediği ve gezilerin olduğu bir gün aniden tüm fabrikanın elektriği kesildi. Jenaratörlerin de devreye girmemesiyle bir anda ortalığı karanlığa boğuldu.",
-		"category":"Eglence"
+		"category":"Eglence",
+		"tip1":[
+			"elektrik kablosu.png","mühendis.png","robot.png","gizli üs.png","bilimadamı.png","kullanım klavuzu.png","kod hatası.png","arıza.png","yangın.png"
+		],
+		"tip2":[
+			"ayna.png","ankesörlü telefon.png","kanca.png","silah.png","parşomen.png","diş fırçası.png","ödül çeki.png","tablo.png","kullanım kılavuzu.png","arıza.png","uzay gemisi.png","uydu.png","fatura.png","radyasyon.png","dans etmek.png","hata kodu.png","gizli dosya.png","rapor.png","ataç.png","elektirik kablosu.png","yangın.png","ışın tabancası.png","radyo sinyali.png","halat.png","hizmetçi robot.png","uzaylı.png","güvenlik.png","mühendis.png","bilim insanı.png","başkan.png","bilinmeyen mesaj.png","nükleer reaktör.png","gezegen.png","ışınlama.png","yolcu gemisi.png","okyanus.png"
+		]
 	},	
 	{
 		"senaryoNumber":23,
@@ -78,7 +114,13 @@
 		"imageUrl":"23.png",
 		"long-text":"Terzi, Masanın üzerinde dünden kalan çay bardağını eliyle itip aceleyle bir şeyler dikmeye başladı . Birkaç dakika sonra dükkanın  kapısında duran küçük zilin çınlamasıyla içeriye fransızlara benzeyen uzun bıyıklı bir beyefendi girdi. Terzi hafifçe kafasını kaldırdı, gelen kişiden pek hoşlanmayan tavırla yüzünü ekşitti.   Arkasını dönüp raflarda bir şeyler karıştırdı ve masaya  deriden yapılmış bir zarf bıraktı. Zarf…",
 		"short-text":"Terzi, Masanın üzerinde dünden kalan çay bardağını eliyle itip aceleyle bir şeyler dikmeye başladı.",
-		"category":"Dram"
+		"category":"Dram",
+		"tip1":[
+			"ip.png" ,"iğne.png" ,"kumaş.png","papyon.png","havlu.png","toka.png","tişört.png","elbise.png","dikiş makinesi.png","yumak.png"
+		],
+		"tip2":[
+			"ayna.png","askılık.png" ,"cansız manken.png","pırlanta.png","şapka.png","parfüm.png","elmas çuvalı.png","mum.png","ayna.png","pencere.png","jaluzi.png","abajur.png","askılık.png","gözlük.png","para kesesi.png","kurdele.png","havlu.png","sihirli küre.png","ödül çeki.png","akvrayum.png","duvar saati.png","parfüm.png","şemsiye.png","sigara.png","kül tablası.png","fatura.png","eski telsiz.png","kaptan şapkası.png","uçan balon.png","yangın.png","tabure.png","posta kutusu.png","gazete.png","bilinmeyen resimler.png","sanatçı.png","polis.png","bilim insanı.png","başkan.png","asansör.png","tartışma.png","resim sergisi.png","yolcu gemisi.png","hapishane.png","manken.png","satıcı.png","avukat.png","kum saati.png","hediye.png","tablo.png"
+		]
 	},	
 	{
 		"senaryoNumber":24,
@@ -86,7 +128,13 @@
 		"imageUrl":"24.png",
 		"long-text":"Fakir kıyı kasabasında yaşayan ailenin tek geçim kaynağı ağlarına takılan balıklardı. Ailelerine yeni katılan bebekleri sürekli hastalanıyor ve ebeveynlerini  korkutuyordu. Balıkçı yine sıradan birgün gibi ağlarını toplamış, yakaladıkları balıkları hasır çuvalın içine dolduruyordu. Çok bereketli bir av değildi, pek balık yoktu.  Ağda son kalan birkaç balığın arasında bir istiridye de vardı. Balıkçı umursamazca istiridye üzerindeki birkaç yosunu temizledi. Tüm gücüyle zorlayarak istiridyenin kabuklarını ayırmaya çalıştı.Zor da olsa istiridye açılmıştı ve içinden bir ışık hüzmesi yayılıyordu. Balıkçı istiridyenin içine baktığında…",
 		"short-text":"Fakir kıyı kasabasında yaşayan ailenin tek geçim kaynağı ağlarına takılan balıklardı.",
-		"category":"Fantastik"
+		"category":"Fantastik",
+		"tip1": [
+			"balık.png"  ,"ağ.png","olta.png","yılan balığı.png","istiridye.png","inci.png","denizkızı.png","harita.png","kapalı sandık.png"
+		],
+		"tip2":[
+			"su yansıması.png","hindistan cevizi.png","yosun.png","istiridye.png","elmas çuvalı.png","kürek.png","deniz kabuğu kolye.png","çorap.png","iksir.png","yılanbalığı.png","fanus.png","tohum.png","çamurlu bot.png","tarak.png","banyo ördeği.png","maymun.png","çakmak.png","alkol şişesi.png","olta.png","inci.png","hazine.png","palmiye.png","fıçı.png","güneş.png","kafes.png","flama.png","kaptan şapkası.png","ağ.png","at nalı.png","zıpkın.png","filika.png","halat.png","kuş yuvası.png","posta güvercini.png","denizkızı.png","denizcanavarı.png","korsan.png","konuşan kaya.png","ağlayan çınar.png","köprü.png","deniazltı.png","yanardağ.png","kümes.png","batan gemi.png","okyanus.png","yolcu gemisi.png","baraka.png","satıcı.png","polis.png","uçan balon.png","denizci.png","kaptan.png","cam bardak.png","zıpkın.png"
+		]
 	},	
 	{
 		"senaryoNumber":25,
@@ -94,7 +142,13 @@
 		"imageUrl":"25.png",
 		"long-text":"Savaştan yeni çıkmış krallık ellerindeki haritanın birkaç parçasını korsanlara kaptırmıştı. Ellerindeki hazine haritası için fırtınalı okyanusu geçecek zayıf donanmalarıyla korsanlardan önce hazineyi bulmalıydılar. Korsanların aksak yürüyen kaptanı, elindeki birkaç parçayla hazineyi bulacağından emindi. İki tarafta en hızlı şekilde hazinenin peşine düşüp, fırtınalı okyanusa yelken açtılar. Şans eseri ki iki donanma da incili geçit önünde karşılaştılar. Korsan gemisinin kaptanı ağzından tükürükler saçarak mürettebatına bağırdı:…",
 		"short-text":"Savaştan yeni çıkmış krallık ellerindeki haritanın birkaç parçasını korsanlara kaptırmıştı.",
-		"category":"Macera"
+		"category":"Macera",
+		"tip1":[
+			"korsan.png","mürettbat.png","flama.png","filika.png","kaptan.png","kıyı.png","okyanus.png","hazine.png","batan gemi.png","kılıç.png"
+		],
+		"tip2":[
+			"kaptan şapkası.png","deniz canavarı.png","sahil köyü.png","su yansıması.png","japon balığı.png","hindistan cevizi.png","istiridye.png","deniz yıldızı.png","denizkabuğu kolye.png","kürek.png","dan simidi.png","yılan balığı.png","havuz filosu.png","para kesesi.png","çamurlu bot.png","banyo ördeği.png","havlu.png","maymun.png","güldürme büyüsü.png","olta.png","oksijen tüpü.png","kibrit.png","palmiye.png","hazine.png","güneş.png","flama.png","kaptan şapkası.png","zıpkın.png","gaz lambası.png","sandal.png","meşale.png","yabani ot.png","çığlık.png","posta güvercini.png","denizkızı.png","deniz canavarı.png","korsan.png","kaptan.png","denizaltı.png","bilinmeyen mesaj.png","tartışma.png","batan gemi.png","okyanus.png","yolcu gemisi.png"
+		]
 	},	
 	{
 		"senaryoNumber":36,
@@ -102,7 +156,13 @@
 		"imageUrl":"36.png",
 		"long-text":"Başkentin her köşesinden siren sesleri yükseliyordu. Halk sokaklara dökülmüş, dükkanlar talan edilmiş, şehirden kaçmaya çalışanların uzun araç kuyruklarının sonu yok gibiydi. Gökyüzündeki güneşi kapatan yüzlerce uzay gemisinden yeryüze bir şeyler iniyor gibiydi. Ülkenin tehlike altında olduğu açıktı. Odasının camından bakan başkan havadaki kasvetin farkındaydı. Arkasındaki masada sıralanmış danışmanlarına dönerek masada duran çantayı işaret etti. Danışmanlarından biri çantaya uzanıp yavaşça kilidini açtı. Çantanın içinden…",
 		"short-text":"Başkentin her köşesinden siren sesleri yükseliyordu. Halk sokaklara dökülmüş, dükkanlar talan edilmiş, şehirden kaçmaya çalışanların uzun araç kuyruklarının sonu yok gibiydi.",
-		"category":"Fantastik"
+		"category":"Fantastik",
+		"tip1":[
+			"koruma.png","başkan.png","fıskiye.png","bayrak.png","sekreter.png","bilinmeyen mesaj.png","keskin nişancı.png","heykel.png","silah deposu.png","yasak.png"
+		],
+		"tip2":[
+			"nükleer başlık.png","siyah çanta.png","elmas çuvalı.png","ayna.png","ankesörlü telefon.png","çeşme.png" ,"fikir.png","silah.png","telsiz.png","diş fırçası.png","ananas.png","zar.png","çakmak.png","ödül çeki.png","buton.png","küvet.png","arıza.png","parmaklık.png","papyon.png","gizli dosya.png","kelepçe.png","helikopter.png","radyo sinyali.png","gazete.png","nişan almak.png","uzaylı.png","sekreter.png","polis.png","başkan.png","asansör.png","denizaltı.png","hapishane.png","labirent.png","bilinmeyen mesaj.png","toplantı salonu.png","nükleer reaktör.png"
+		]
 	},	
 	{
 		"senaryoNumber":37,
@@ -124,7 +184,13 @@
 		"imageUrl":"38.png",
 		"long-text":"Yaşlı çiftçi, hayvanlarını beslemek için gündoğumuyla evinden ayrıldı. Geniş verandanın girişinde duran çamurlu çizmeleri ayağına geçirdi. Yürürken çizmelerinden çıkan komik ses rüzgarın uğultusu tarafından bastırılıyordu. Gaz lambasının titrek ışığı zayıf bir görüş alanı tanıyordu. Alet çantasını gürültülü bir şekilde karıştırıp zorlukla bulduğu el feneri yaktığında...",
 		"short-text":"Yaşlı çiftçi, hayvanlarını beslemek için gündoğumuyla evinden ayrıldı. Geniş verandanın girişinde duran çamurlu çizmeleri ayağına geçirdi.",
-		"category":"Korku"
+		"category":"Korku",
+		"tip1":[
+			"çiftçi.png","saman balyası.png","kümes.png","mısır tarlası.png","kova.png","yel değirmeni.png","at nalı.png","kovboy şapkası.png","korkuluk.png","traktör.png"
+		],
+		"tip2":[
+			"çit.png","meyve bahçesi.png","posta güvercini.png","el arabası.png","gaz lambası.png","samanlık.png","kuyu.png","bilgebaykuş.png","su yansıması.png","mezartaşı.png","mum.png","kürek.png","merdane.png","pencere.png","şemsiye.png","boya.png","çeşme.png","havuz filesi.png","kaşağı.png","çamurlu bot.png","yumak.png","iskambil.png","çakmak.png","örümcek ağı.png","turşu.png","perde.png","sigara.png","kova.png","fıçı.png","traktör.png","güneş.png","ip.png","su kuyusu.png","el arabası.png","odun ateşi.png","çit.png","halat.png","kuş yuvası.png","soyguncu.png","köylü fare.png","çiftçi.png","çiçekçi.png","yel değirmeni.png","kravan.png","mağara.png","kümes.png","cadı kulübesi.png","bataklık.png","baraka.png"
+		]
 	},	
 	{
 		"senaryoNumber":40,
@@ -132,7 +198,13 @@
 		"imageUrl":"40.png",
 		"long-text":"Arkasından gelen ağır bavulları zorla çekiştiren genç kız tren garına geldi. Veznedeki adamla birkaç şey konuştuktan sonra derin bir nefes alıp rahatladı. Kış tatili için ailesinin yanına döneceği tren arıza yapmış ve kalkış birkaç saat ertelenmişti. Bavullarını geçirip yaşlı adamın yanındaki banka oturdu. Adam gazete okuyor bir yandan da kurabiye yiyordu. O sırada gazetenin arkasında duran bir manşet kızın ilgisini çekti. Manşette kocaman harflerle…",
 		"short-text":"Arkasından gelen ağır bavulları zorla çekiştiren genç kız tren garına geldi. Veznedeki adamla birkaç şey konuştuktan sonra derin bir nefes alıp rahatladı.",
-		"category":"Dram"
+		"category":"Dram",
+		"tip1":[
+			"tren.png","demiryolu.png","bilet.png","gazete.png","soyguncu.png","bavul.png","koltuk.png","fotoğraf.png","hediye.png"
+		],
+		"tip2":[
+			"japon balığı.png","elmas çuvalı.png","köpek maması.png","pencere.png","jaluzi.png","ranza.png","kurdele.png","oyuncak ayı.png","zar.png","kase.png","soda.png","kül tablası.png","bayrak.png","kafes.png","kahve makinası.png","gizli dosya.png","telsiz.png","topuklu ayakkabı.png","kovboy şapkası.png","posta kutusu.png","gazete.png","demiryolu.png","çığlık.png","hizmetçi robot.png","kaptan.png","sanatçı.png","çiftçi.png","polis.png","başkan.png","köprü.png","tren garı.png","yel değirmeni.png","karavan.png","lunapark.png","tren.png"  ,"fıçı.png","hediye.png","kaptan.png","kovboy.png","mühendis.png","temizlikçi.png","msıır tarlası.png","demiryolu.png","tuzak.png","flama.png","radyo sinyali.png"
+		]
 	},	
 	{
 		"senaryoNumber":3,
@@ -152,7 +224,7 @@
 		"short-text":"Şehrin batısında yaşayan insanlara huzursuzluk hakimdi. Geceleri mezarlıktan gelen ürkünç sesler ve gölgeler bölge halkını dehşete düşürmüştü.",
 		"category":"Korku",
 		"tip1":[
-			"zombi.png","mezartaşı.png","kürek.png","ayna.png","mumya.png","büyücü asası.png","cadı kazanı.png","çamurlu bot.png","labirent.png","yarasa adam(vampir).png","örümcek ağı.png","mağara.png","mezarcı.png","kutsal kitap.png","sihirli küre.png","harabe.png"
+			"zombi.png","mezartaşı.png","kürek.png","ayna.png","mumya.png","büyücü asası.png","cadı kazanı.png","çamurlu bot.png","labirent.png","örümcek ağı.png","mağara.png","mezarcı.png","kutsal kitap.png","sihirli küre.png","harabe.png"
 		],"tip2":[
 			"su yansıması.png","yosun.png","mezartaşı.png","mum.png","kürek.png","ayna.png","büyü kazanı.png","idam sehpası.png","mancınık.png","bıçak.png","mantar.png","iksir.png","yılan balığı.png","fanus.png","bitki.png","sihirli şapka.png","sihirli küre.png","örümcek ağı.png","pasklaya yumurtası.png","kemik.png","kase.png","inci.png","hazine.png","güneş.png","şeker.png","kanama.png","şekil değiştirici.png","büyü kitabı.png","meteor.png","yangın.png","meşale.png","yabani ot.png","radyo sinyali.png","çığlık.png","mumya.png","köy bilgesi.png","soyguncu.png","şakacı bal kabağı.png","köylü fare.png","posta güvercini.png","ejderha.png","konuşan kaya.png","ağlayan çınar.png","bilge baykuş.png","vampir.png","zombi.png","köprü.png","yel değirmeni.png","bıçaklı gösteri.png","labirent.png" ,"bilinmeyen mesaj.png","kilise.png","mağara.png","cenaze.png","cadı kulübesi.png","bataklık.png","kraliçe.png" ,"yarasa.png","gaz almbası.png","zombi.png"
 		]
@@ -163,7 +235,13 @@
 		"imageUrl":"42.png",
 		"long-text":"Kralın şehrini günden güne daha az tüccar ziyaret ediyordu. Kulaktan kulağa dolaşan bir dedikodu vardı. Kralın şehrine gelen tüccarlar ve askerler ormandan geçerken garip ışıklar ve sesler duyduklarını ve birkaçının da mallarının çalındığı şikayetiyle krala gelmişti. Kral gözcü birliklerini ormanı incelemeleri için göndermişti. Gözcü birliklerinin başında yaşlı kısa boylu bir okçu görevlendirmişti. Birlikler dağılıp sesleri aramaya başladılar. Ormanın içindeki seslere doğru ilerledikçe sesler hareket ediyordu. Uzun arayış sonunda birlik lideri ağaçlarla konuşan pelerinli bir kadın gördü. Yavaş adımlarla kadına doğru ilerlediğinde…",
 		"short-text":"Kralın şehrini günden güne daha az tüccar ziyaret ediyordu. Kulaktan kulağa dolaşan bir dedikodu vardı. Kralın şehrine gelen tüccarlar ve askerler ormandan geçerken garip ışıklar ve sesler duyduklarını ve birkaçının da mallarının çalındığı şikayetiyle krala gelmişti.",
-		"category":"Macera"
+		"category":"Macera",
+		"tip1":[
+			"mağara.png","canavar.png","ayı.png","köy bilgesi.png","güldürme büyüsü.png","yanardağ.png","ayak izi.png","çığlık.png","meşale.png","tuzak.png"
+		],
+		"tip2":[
+			"halat.png","bilinmeyen çizimler.png","kuş yuvası.png","yosun.png","mezartaşı.png","mum.png","kürek.png","büyü kazanı.png","idam sehpası.png","mantar.png" ,"iksir.png","madenci kaskı.png","tohum.png","parşomen.png","çamurlu bot.png","sihirli küre.png","güldürme büyüsü.png","kemik.png","kılınç.png","fıçı.png","kafes.png","gaz lambası.png","büyü kitabı.png","el arabası.png","meşale.png","yabani ot.png","çit.png","heykel.png" ,"çığlık.png","köy bilgesi.png","soyguncu.png","köylü fare.png","posta güvercini.png","ejderha.png","konuşan kaya.png","büyücü.png","muhafız.png","çiftçi.png","labirent.png","bıçaklı gösteri.png","cadı kulübesi.png","samanlık.png","mısır tarlası.png","baraka.png"
+		]
 	},	
 	{
 		"senaryoNumber":7,
@@ -171,7 +249,13 @@
 		"imageUrl":"7.png",
 		"long-text":"Dünyaca ünlü ressamların sanat eserlerinin olduğu sergi yoğun ilgi görüyordu. Gruplar halinde gelen öğrenciler, aileler, çiftler ile doluydu. Bembeyaz duvarların üzerinde renkli tablolar şenlik havası yaşatıyordu. O anda kısa süreli elektrik kesintisi yaşandı. Işıklar tekrar yandığında bağırışmalar yükseldi. Güvenliklerin telsiz konuşmaları ve koşuşturmalar duyuldu. Bir güvenlik görevlisi adamın birini vurmuştu. Adam vurulduğunda yanında bir yangın söndürme tüpü vardı. Vurulan adamın eşi: Bir şey çalmıyordu, o sadece…",
 		"short-text":"Dünyaca ünlü ressamların sanat eserlerinin olduğu sergi yoğun ilgi görüyordu. Gruplar halinde gelen öğrenciler, aileler, çiftler ile doluydu.",
-		"category":"Dram"
+		"category":"Dram",
+		"tip1":[
+			"sanatçı.png","heykel.png","müze.png","fotoğraf.png","resim atölyesi.png","atölye.png","boya.png","fırça.png","fotoğraf makinesi.png"
+		],
+		"tip2":[
+			"manken.png","su yansıması.png","elmas çuvalı.png","ayna.png","bitki.png","abajur.png","askılık.png","ruj.png","yumak.png","iskambil.png","tablo.png","duvar saati.png","paskalya yumurtası.png","parfüm.png","şeker.png","pano.png","kokteyl.png","pipet.png","hediye.png","heykel.png","bilinmeyen resimler.png","gazete.png","sanatçı.png","soyguncu.png","asansör.png","bıçaklı gösteri.png","resim sergisi.png","toplantı salonu.png","tren.png"
+		]
 	},	
 	{
 		"senaryoNumber":9,
@@ -179,7 +263,13 @@
 		"imageUrl":"9.png",
 		"long-text":"İnsan nüfusunun önlenemez artışı Dünya kaynakları için sorun yaratmaya başlamıştı. Bilinmeyen bir laboratuvarda geliştirilen virüs ile kontrollü şekilde insan nüfusu yarıya düşürülecekti. Büyük Dünya ülkeleri bu projeye büyük fonlamalar yatırmıştı. Fakat plan ters tepti. Bu ilaç insan dışı davranışlara ve vahşiliğe yol açtı. Birçok şehir yağmalandı, yönetimler düşürüldü. Virüse maruz kalmamış insanların oluşturduğu bir grup bu yıkıma karşı direnmeye çalıştı. ….",
 		"short-text":"İnsan nüfusunun önlenemez artışı Dünya kaynakları için sorun yaratmaya başlamıştı. ",
-		"category":"Macera"
+		"category":"Macera",
+		"tip1":[
+			"mum.png","kürek.png","harabe.png","ışınlanma.png","dinamit.png","silah deposu.png","soyguncu.png","başkan.png","uydu.png","bayrak.png","radyasyon.png"
+		],
+		"tip2":[
+			"posta kutusu.png","mum.png","kürek.png","harabe.png","ışınlanma.png","bilim insanı.png","mühendis.png","temizlikçi.png","yargıç.png","zombi.png","mumya.png","çöplük.png","samanlık.png","cenaze.png","kanca.png","büyüteç.png","zar.png","ödül çeki.png","klozet.png","arıza.png","kullanım kılavızu.png","buton.png","baret.png","ayaykizi.png","radyo sinyali.png","robot.png","uzay kapsülü.png","gezegen.png","nükleer reaktör.png","çöplük.png","yanardağ.png","güldürme büyüsü.png","hedef.png","gizli dosya.png","gazete.png","yabani ot.png","yarasa.png"
+		]
 	}
 	
 ]
