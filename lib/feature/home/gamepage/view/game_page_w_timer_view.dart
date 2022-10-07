@@ -1,15 +1,13 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'package:storyhub/product/widgets/timer/timer_design.dart';
-
+import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
+import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import '../../../../core/components/playerCarousel/playerCarouselView.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../../../settings/model/game_settings_model.dart';
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
-import 'CardPAge.dart';
 
 class GamePageWithTimer extends StatefulWidget {
   const GamePageWithTimer({super.key});
@@ -20,6 +18,7 @@ class GamePageWithTimer extends StatefulWidget {
 
 class _GamePageWithTimerState extends GamePageWithTimerViewModel {
   bool isFinish = false;
+
   void callback() {
     setState(() {
       isFinish = true;
@@ -28,9 +27,11 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
 
   @override
   Widget build(BuildContext context) {
+    int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
+
     CountDownController controller = CountDownController();
     return Scaffold(
       appBar: AppBar(
@@ -101,7 +102,21 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                         fontSize: 20,
                       ),
                     ),
-                    carousel(context, screenHeight, (screenWidth / 5) * 3),
+                    isFinalSizedBox(),
+                    Provider.of<FinalPageViewModel>(context).isFinal == true
+                        ? carouselItem(
+                            context,
+                            isFinalRouter(
+                                Provider.of<FinalPageViewModel>(context)
+                                    .isFinal),
+                            MediaQuery.of(context).size.width / 4,
+                            MediaQuery.of(context).size.height / 8,
+                            1.0,
+                            isFinalRouterName(
+                                Provider.of<FinalPageViewModel>(context)
+                                    .isFinal))
+                        : carousel(
+                            context, screenHeight, (screenWidth / 5) * 3),
                     SizedBox(
                       height: screenHeight / 70,
                     ),
@@ -132,7 +147,11 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                             isReverse: true,
                             width: screenWidth * 0.40,
                             height: screenWidth * 0.40,
-                            duration: value.getTimerValue(),
+                            duration: Provider.of<FinalPageViewModel>(context)
+                                        .isFinal ==
+                                    true
+                                ? value.getTimerValue() * 2
+                                : value.getTimerValue(),
                             fillColor: Colors.red,
                             ringColor: Colors.green,
                             strokeWidth: 16,
@@ -162,20 +181,13 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               width: MediaQuery.of(context).size.width / 1.7,
               child: ElevatedButton(
                   onPressed: () {
-                    if (isFinish == true) {
-                      Provider.of<PlayerCarouselViewModel>(context,
-                              listen: false)
-                          .carouselNext();
-                      Provider.of<PlayerCarouselViewModel>(context,
-                              listen: false)
-                          .countCheck(context);
-                      Navigator.pop(context);
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CardPage(),
-                        ),
-                      );
+                    if (Provider.of<FinalPageViewModel>(
+                      context,
+                      listen: false,
+                    ).isFinal) {
+                      finishGame();
+                    } else {
+                      nextPlayerFunctions(isFinish);
                     }
                   },
                   style: ElevatedButton.styleFrom(
@@ -211,9 +223,11 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
             SizedBox(
               height: screenHeight / 40,
             ),
-            const Text(
-              'TUR 1',
-              style: TextStyle(
+            Text(
+              Provider.of<FinalPageViewModel>(context).isFinal == true
+                  ? 'FINAL TURU'
+                  : 'TUR ${Provider.of<PlayerCarouselViewModel>(context, listen: false).countTour}',
+              style: const TextStyle(
                   fontFamily: 'Montserrat', fontSize: 20, color: Colors.white),
             ),
           ],

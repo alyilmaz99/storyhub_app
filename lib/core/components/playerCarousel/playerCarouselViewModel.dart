@@ -9,13 +9,16 @@ class PlayerCarouselViewModel with ChangeNotifier {
   String choosenImgPath = "";
   Map<int, bool> map;
   int index;
+  int countTour;
   PlayerCarouselViewModel({
     required this.playerList,
     required this.map,
     required this.choosenName,
     required this.choosenImgPath,
     required this.index,
+    required this.countTour,
   });
+  int useForTourCountChechk = 1;
   int counter = 0;
   void countCheck(context) {
     print(counter.toString());
@@ -33,6 +36,10 @@ class PlayerCarouselViewModel with ChangeNotifier {
       print("everthing is okay");
     }
     counter = 0;
+  }
+
+  List<PlayerSelectionModel> postPlayerList() {
+    return playerList;
   }
 
   void carouselNext() {
@@ -87,7 +94,9 @@ class PlayerCarouselViewModel with ChangeNotifier {
     map[random] = true;
     choosenName = playerList[random].playerName;
     choosenImgPath = playerList[random].imgPath;
-    notifyListeners();
+    Future.delayed(Duration.zero, () async {
+      notifyListeners();
+    });
   }
 
   int selectedIndex() {

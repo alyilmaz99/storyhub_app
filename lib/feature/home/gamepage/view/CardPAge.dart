@@ -3,6 +3,7 @@ import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/GameContreller.dart';
+import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 import 'package:storyhub/feature/home/gamepage/view/tappedCard.dart';
 
@@ -104,13 +105,9 @@ class _CardPageState extends CartPageViewModel {
                               height: screenHeight / 8,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
-                                  image: AssetImage(Provider.of<
-                                          PlayerCarouselViewModel>(context)
-                                      .playerList[
-                                          Provider.of<PlayerCarouselViewModel>(
-                                                  context)
-                                              .selectedIndex()]
-                                      .imgPath),
+                                  image: AssetImage(isFinalRouter(
+                                      Provider.of<FinalPageViewModel>(context)
+                                          .isFinal)),
                                   fit: BoxFit.fill,
                                 ),
                               ),
@@ -156,12 +153,10 @@ class _CardPageState extends CartPageViewModel {
                               minimumSize:
                                   Size(screenWidth / 4, screenHeight / 40)),
                           child: Text(
-                            Provider.of<PlayerCarouselViewModel>(context)
-                                .playerList[
-                                    Provider.of<PlayerCarouselViewModel>(
-                                            context)
-                                        .selectedIndex()]
-                                .playerName,
+                            isFinalRouterName(Provider.of<FinalPageViewModel>(
+                                    context,
+                                    listen: false)
+                                .isFinal),
                             style: const TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400,
@@ -212,7 +207,7 @@ class _CardPageState extends CartPageViewModel {
                                       Navigator.of(context).pushAndRemoveUntil(
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  const GamePageWithTimer()),
+                                                  GamePageWithTimer()),
                                           (Route<dynamic> route) => false),
                                     }
                                 },
