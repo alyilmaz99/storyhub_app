@@ -95,21 +95,24 @@ abstract class GamePageWithTimerViewModel extends State<GamePageWithTimer> {
     }
   }
 
-  void finishGame() {
-    Provider.of<FinalPageViewModel>(
-      context,
-      listen: false,
-    ).isFinal = false;
-    Provider.of<PlayerCarouselViewModel>(context, listen: false).countTour = 1;
-    Provider.of<PlayerCarouselViewModel>(context, listen: false)
-        .useForTourCountChechk = 1;
-    Navigator.pop(context);
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const MainPage(),
-      ),
-    );
+  void finishGame(bool isFinish) {
+    if (isFinish == true) {
+      Provider.of<FinalPageViewModel>(
+        context,
+        listen: false,
+      ).isFinal = false;
+      Provider.of<PlayerCarouselViewModel>(context, listen: false).countTour =
+          1;
+      Provider.of<PlayerCarouselViewModel>(context, listen: false)
+          .useForTourCountChechk = 1;
+      Navigator.pop(context);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const MainPage(),
+        ),
+      );
+    }
   }
 
   void finalPageRoute() {
@@ -118,7 +121,8 @@ abstract class GamePageWithTimerViewModel extends State<GamePageWithTimer> {
       () {
         Navigator.of(context).pushAndRemoveUntil(
             PageAnimationTransition(
-                page: CardPage(), pageAnimationType: FadeAnimationTransition()),
+                page: FinalPageView(),
+                pageAnimationType: FadeAnimationTransition()),
             (Route<dynamic> route) => false);
       },
     );

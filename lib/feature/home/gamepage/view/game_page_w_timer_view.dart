@@ -64,7 +64,6 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                   controller.pause();
                   //timer.stopEnable1 == false;
 
-
                   Navigator.of(context)
                       .push(FullScreenModal(controller2: controller));
                 },
@@ -177,7 +176,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                       context,
                                       listen: false,
                                     ).isFinal) {
-                                      finishGame();
+                                      finishGame(isFinish);
                                     } else {
                                       nextPlayerFunctions(isFinish);
                                     }
@@ -197,14 +196,29 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               width: MediaQuery.of(context).size.width / 1.7,
               child: ElevatedButton(
                   onPressed: () {
-                    if (Provider.of<FinalPageViewModel>(
-                      context,
-                      listen: false,
-                    ).isFinal) {
-                      finishGame();
-                    } else {
-                      nextPlayerFunctions(isFinish);
-                    }
+                    setState(() {
+                      print(
+                        "Tur: ${Provider.of<PlayerCarouselViewModel>(context, listen: false).countTour}",
+                      );
+                      print(
+                        "isFinal: ${Provider.of<FinalPageViewModel>(
+                          context,
+                          listen: false,
+                        ).isFinal}",
+                      );
+                      print(
+                        "Tour game count: ${Provider.of<PlayerCarouselViewModel>(context, listen: false).useForTourCountChechk}",
+                      );
+
+                      if (Provider.of<FinalPageViewModel>(
+                        context,
+                        listen: false,
+                      ).isFinal) {
+                        finishGame(isFinish);
+                      } else {
+                        nextPlayerFunctions(isFinish);
+                      }
+                    });
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: isFinish

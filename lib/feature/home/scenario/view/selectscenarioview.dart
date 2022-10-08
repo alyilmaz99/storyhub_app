@@ -457,7 +457,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                 Container(
                                                   margin: const EdgeInsets
                                                           .symmetric(
-                                                      horizontal: 30.0),
+                                                      horizontal: 10.0),
                                                   child: Align(
                                                     alignment: Alignment.center,
                                                     child: Text(

@@ -1,18 +1,29 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 
 import '../../../settings/model/game_settings_model.dart';
 
 class Player with ChangeNotifier {
+  List<Player> playerList = [];
   int? id;
-  String? name;
-  String? image;
-  int? score;
-  int? rank;
+  String name = '';
+  String image = '';
+  int score = 1;
+  int rank = 1;
   final List<bool> textValueisEmpty = [];
   Map<String, dynamic>? playersMap = <String, dynamic>{};
   Map<dynamic, dynamic>? backupPlayersMap = <dynamic, dynamic>{};
-  Player({this.id, this.name, this.image, this.score, this.rank, this.playersMap, this.backupPlayersMap});
+  Player(
+      {this.id,
+      required this.playerList,
+      required this.name,
+      required this.image,
+      required this.score,
+      required this.rank,
+      this.playersMap,
+      this.backupPlayersMap});
   Player.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
@@ -35,16 +46,18 @@ class Player with ChangeNotifier {
 
   Map<String, dynamic> createPlayerfunc(
     BuildContext context,
-    List<TextEditingController> textEditingControllers,
+    String text,
     int? score,
     int? rank,
-    Future<String>? getimagepathfunc,
+    String getimagepathfunc,
     int id,
   ) {
-    for (var i = 1; i <= Provider.of<GameSettingsModel>(context).playerCount; i++) {
+    for (var i = 1;
+        i <= Provider.of<GameSettingsModel>(context).playerCount;
+        i++) {
       id = i;
       playersMap?['id'] = id;
-      playersMap?['name'] = textEditingControllers[i].toString();
+      playersMap?['name'] = text;
       playersMap?['image'] = getimagepathfunc;
       playersMap?['score'] = score;
       playersMap?['rank'] = rank;
@@ -52,9 +65,25 @@ class Player with ChangeNotifier {
     return playersMap!;
   }
 
-  Future<String> getimagePath(int? number) async {
+  void createList(BuildContext context,
+      List<TextEditingController> textEditingControllers, int rank, int score) {
+    for (int i = 1;
+        i <= Provider.of<GameSettingsModel>(context, listen: false).playerCount;
+        i++) {
+      playerList.add(
+        Player(
+            playerList: playerList,
+            image: getimagePath(i),
+            name: textEditingControllers[i].text,
+            rank: rank,
+            score: score),
+      );
+    }
+  }
+
+  String getimagePath(int? number) {
     image = 'assets/images/profiles/$number.png';
-    return image!;
+    return image;
   }
 
   Future<bool> arePlayerDone(List<bool> textValueisEmpty) async {

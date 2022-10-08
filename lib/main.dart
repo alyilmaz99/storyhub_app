@@ -6,7 +6,6 @@ import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
 import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
 
-
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
 
 import 'feature/home/createplayer/model/player_model.dart';
@@ -44,7 +43,6 @@ void main() {
           create: (BuildContext context) => SelectScenarioModel(),
         ),
         ChangeNotifierProvider<SettingsModel>(
-
             create: (BuildContext context) => SettingsModel()),
         ChangeNotifierProvider<GameSettingsModel>(
             create: (BuildContext context) => GameSettingsModel(
@@ -60,11 +58,14 @@ void main() {
                 choosenName: "isim",
                 choosenImgPath: "assets/images/blankPerson.jpg")),
         ChangeNotifierProvider<PlayerSelectionModel>(
-          create: (BuildContext context) =>
-              PlayerSelectionModel(imgPath: "assets/images/human/human1.png", playerName: "Player 1"),
+          create: (BuildContext context) => PlayerSelectionModel(
+            imgPath: "assets/images/human/human1.png",
+            playerName: "Player 1",
+          ),
         ),
         ChangeNotifierProvider<Player>(
           create: (BuildContext context) => Player(
+            playerList: [],
             backupPlayersMap: {},
             id: 1,
             image: '',
@@ -74,7 +75,6 @@ void main() {
             score: 1,
           ),
         ),
-
       ],
       child: const MyApp(),
     ),
