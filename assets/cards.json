@@ -1,997 +1,1544 @@
 [
-	{ 
-		"cardNumber":100,
+	{
+		"name":"abajur",
 		"isFront":true,
-		"imageUrl":"100.png" 
+		"imageUrl":"abajur.png"
 	},
-	{ 
-		"cardNumber":108,
+	{
+		"name":"ağlayan çınar",
 		"isFront":true,
-		"imageUrl":"108.png" 
+		"imageUrl":"ağlayan çınar.png"
 	},
-	{ 
-		"cardNumber":110,
+	{
+		"name":"ağ",
 		"isFront":true,
-		"imageUrl":"110.png" 
+		"imageUrl":"ağ.png"
 	},
-	{ 
-		"cardNumber":111,
+	{
+		"name":"akvaryum",
 		"isFront":true,
-		"imageUrl":"111.png" 
+		"imageUrl":"akvaryum.png"
 	},
-	{ 
-		"cardNumber":112,
+	{
+		"name":"alkol şişesi",
 		"isFront":true,
-		"imageUrl":"112.png" 
+		"imageUrl":"alkol şişesi.png"
 	},
-	{ 
-		"cardNumber":113,
+	{
+		"name":"ananas",
 		"isFront":true,
-		"imageUrl":"113.png" 
+		"imageUrl":"ananas.png"
 	},
-	{ 
-		"cardNumber":114,
+	{
+		"name":"ankesörlü telefon",
 		"isFront":true,
-		"imageUrl":"114.png" 
+		"imageUrl":"ankesörlü telefon.png"
 	},
-	{ 
-		"cardNumber":115,
+	{
+		"name":"antika",
 		"isFront":true,
-		"imageUrl":"115.png" 
+		"imageUrl":"antika.png"
 	},
-	{ 
-		"cardNumber":116,
+	{
+		"name":"arıza",
 		"isFront":true,
-		"imageUrl":"116.png" 
+		"imageUrl":"arıza.png"
 	},
-	{ 
-		"cardNumber":117,
+	{
+		"name":"asansör",
 		"isFront":true,
-		"imageUrl":"117.png" 
+		"imageUrl":"asansör.png"
 	},
-	{ 
-		"cardNumber":118,
+	{
+		"name":"asa",
 		"isFront":true,
-		"imageUrl":"118.png" 
+		"imageUrl":"asa.png"
 	},
-	{ 
-		"cardNumber":119,
+	{
+		"name":"askılık",
 		"isFront":true,
-		"imageUrl":"119.png" 
+		"imageUrl":"askılık.png"
 	},
-	{ 
-		"cardNumber":11,
+	{
+		"name":"asteroid",
 		"isFront":true,
-		"imageUrl":"11.png" 
+		"imageUrl":"asteroid.png"
 	},
-	{ 
-		"cardNumber":120,
+	{
+		"name":"astronot kedi",
 		"isFront":true,
-		"imageUrl":"120.png" 
+		"imageUrl":"astronot kedi.png"
 	},
-	{ 
-		"cardNumber":121,
+	{
+		"name":"ataç",
 		"isFront":true,
-		"imageUrl":"121.png" 
+		"imageUrl":"ataç.png"
 	},
-	{ 
-		"cardNumber":122,
+	{
+		"name":"at nalı",
 		"isFront":true,
-		"imageUrl":"122.png" 
+		"imageUrl":"at nalı.png"
 	},
-	{ 
-		"cardNumber":123,
+	{
+		"name":"avukat",
 		"isFront":true,
-		"imageUrl":"123.png" 
+		"imageUrl":"avukat.png"
 	},
-	{ 
-		"cardNumber":124,
+	{
+		"name":"ayak izi",
 		"isFront":true,
-		"imageUrl":"124.png" 
+		"imageUrl":"ayak izi.png"
 	},
-	{ 
-		"cardNumber":125,
+	{
+		"name":"ayna",
 		"isFront":true,
-		"imageUrl":"125.png" 
+		"imageUrl":"ayna.png"
 	},
-	{ 
-		"cardNumber":126,
+	{
+		"name":"banyo ördeği",
 		"isFront":true,
-		"imageUrl":"126.png" 
+		"imageUrl":"banyo ördeği.png"
 	},
-	{ 
-		"cardNumber":127,
+	{
+		"name":"baraka",
 		"isFront":true,
-		"imageUrl":"127.png" 
+		"imageUrl":"baraka.png"
 	},
-	{ 
-		"cardNumber":128,
+	{
+		"name":"baret",
 		"isFront":true,
-		"imageUrl":"128.png" 
+		"imageUrl":"baret.png"
 	},
-	{ 
-		"cardNumber":129,
+	{
+		"name":"barmen",
 		"isFront":true,
-		"imageUrl":"129.png" 
+		"imageUrl":"barmen.png"
 	},
-	{ 
-		"cardNumber":12,
+	{
+		"name":"başkan",
 		"isFront":true,
-		"imageUrl":"12.png" 
+		"imageUrl":"başkan.png"
 	},
-	{ 
-		"cardNumber":130,
+	{
+		"name":"bataklık",
 		"isFront":true,
-		"imageUrl":"130.png" 
+		"imageUrl":"bataklık.png"
 	},
-	{ 
-		"cardNumber":131,
+	{
+		"name":"batan gemi",
 		"isFront":true,
-		"imageUrl":"131.png" 
+		"imageUrl":"batan gemi.png"
 	},
-	{ 
-		"cardNumber":132,
+	{
+		"name":"bateri",
 		"isFront":true,
-		"imageUrl":"132.png" 
+		"imageUrl":"bateri.png"
 	},
-	{ 
-		"cardNumber":133,
+	{
+		"name":"bavul",
 		"isFront":true,
-		"imageUrl":"133.png" 
+		"imageUrl":"bavul.png"
 	},
-	{ 
-		"cardNumber":134,
+	{
+		"name":"bayrak",
 		"isFront":true,
-		"imageUrl":"134.png" 
+		"imageUrl":"bayrak.png"
 	},
-	{ 
-		"cardNumber":135,
+	{
+		"name":"bedevi",
 		"isFront":true,
-		"imageUrl":"135.png" 
+		"imageUrl":"bedevi.png"
 	},
-	{ 
-		"cardNumber":136,
+	{
+		"name":"bileklik",
 		"isFront":true,
-		"imageUrl":"136.png" 
+		"imageUrl":"bileklik.png"
 	},
-	{ 
-		"cardNumber":137,
+	{
+		"name":"bilge baykuş",
 		"isFront":true,
-		"imageUrl":"137.png" 
+		"imageUrl":"bilge baykuş.png"
 	},
-	{ 
-		"cardNumber":138,
+	{
+		"name":"bilim insanı",
 		"isFront":true,
-		"imageUrl":"138.png" 
+		"imageUrl":"bilim insanı.png"
 	},
-	{ 
-		"cardNumber":139,
+	{
+		"name":"bilinmeyen mesaj",
 		"isFront":true,
-		"imageUrl":"139.png" 
+		"imageUrl":"bilinmeyen mesaj.png"
 	},
-	{ 
-		"cardNumber":13,
+	{
+		"name":"bilinmeyen resimler",
 		"isFront":true,
-		"imageUrl":"13.png" 
+		"imageUrl":"bilinmeyen resimler.png"
 	},
-	{ 
-		"cardNumber":140,
+	{
+		"name":"bitki",
 		"isFront":true,
-		"imageUrl":"140.png" 
+		"imageUrl":"bitki.png"
 	},
-	{ 
-		"cardNumber":141,
+	{
+		"name":"bıçaklı gösteri",
 		"isFront":true,
-		"imageUrl":"141.png" 
+		"imageUrl":"bıçaklı gösteri.png"
 	},
-	{ 
-		"cardNumber":142,
+	{
+		"name":"bıçak",
 		"isFront":true,
-		"imageUrl":"142.png" 
+		"imageUrl":"bıçak.png"
 	},
-	{ 
-		"cardNumber":144,
+	{
+		"name":"bowling",
 		"isFront":true,
-		"imageUrl":"144.png" 
+		"imageUrl":"bowling.png"
 	},
-	{ 
-		"cardNumber":145,
+	{
+		"name":"boya",
 		"isFront":true,
-		"imageUrl":"145.png" 
+		"imageUrl":"boya.png"
 	},
-	{ 
-		"cardNumber":147,
+	{
+		"name":"buton",
 		"isFront":true,
-		"imageUrl":"147.png" 
+		"imageUrl":"buton.png"
 	},
-	{ 
-		"cardNumber":148,
+	{
+		"name":"büyücü asası",
 		"isFront":true,
-		"imageUrl":"148.png" 
+		"imageUrl":"büyücü asası.png"
 	},
-	{ 
-		"cardNumber":149,
+	{
+		"name":"büyücü",
 		"isFront":true,
-		"imageUrl":"149.png" 
+		"imageUrl":"büyücü.png"
 	},
-	{ 
-		"cardNumber":150,
+	{
+		"name":"büyü kazanı",
 		"isFront":true,
-		"imageUrl":"150.png" 
+		"imageUrl":"büyü kazanı.png"
 	},
-	{ 
-		"cardNumber":151,
+	{
+		"name":"büyü kitabı",
 		"isFront":true,
-		"imageUrl":"151.png" 
+		"imageUrl":"büyü kitabı.png"
 	},
-	{ 
-		"cardNumber":152,
+	{
+		"name":"büyüteç",
 		"isFront":true,
-		"imageUrl":"152.png" 
+		"imageUrl":"büyüteç.png"
 	},
-	{ 
-		"cardNumber":153,
+	{
+		"name":"buzdolabı",
 		"isFront":true,
-		"imageUrl":"153.png" 
+		"imageUrl":"buzdolabı.png"
 	},
-	{ 
-		"cardNumber":154,
+	{
+		"name":"buz",
 		"isFront":true,
-		"imageUrl":"154.png" 
+		"imageUrl":"buz.png"
 	},
-	{ 
-		"cardNumber":155,
+	{
+		"name":"cadı kazanı",
 		"isFront":true,
-		"imageUrl":"155.png" 
+		"imageUrl":"cadı kazanı.png"
 	},
-	{ 
-		"cardNumber":156,
+	{
+		"name":"cadı kulubesi",
 		"isFront":true,
-		"imageUrl":"156.png" 
+		"imageUrl":"cadı kulubesi.png"
 	},
-	{ 
-		"cardNumber":157,
+	{
+		"name":"çakmak",
 		"isFront":true,
-		"imageUrl":"157.png" 
+		"imageUrl":"çakmak.png"
 	},
-	{ 
-		"cardNumber":158,
+	{
+		"name":"cam bardak",
 		"isFront":true,
-		"imageUrl":"158.png" 
+		"imageUrl":"cam bardak.png"
 	},
-	{ 
-		"cardNumber":159,
+	{
+		"name":"çamurlu bot",
 		"isFront":true,
-		"imageUrl":"159.png" 
+		"imageUrl":"çamurlu bot.png"
 	},
-	{ 
-		"cardNumber":15,
+	{
+		"name":"can simidi",
 		"isFront":true,
-		"imageUrl":"15.png" 
+		"imageUrl":"can simidi.png"
 	},
-	{ 
-		"cardNumber":160,
+	{
+		"name":"cenaze",
 		"isFront":true,
-		"imageUrl":"160.png" 
+		"imageUrl":"cenaze.png"
 	},
-	{ 
-		"cardNumber":161,
+	{
+		"name":"çeşme",
 		"isFront":true,
-		"imageUrl":"161.png" 
+		"imageUrl":"çeşme.png"
 	},
-	{ 
-		"cardNumber":162,
+	{
+		"name":"çiftçi",
 		"isFront":true,
-		"imageUrl":"162.png" 
+		"imageUrl":"çiftçi.png"
 	},
-	{ 
-		"cardNumber":163,
+	{
+		"name":"çit",
 		"isFront":true,
-		"imageUrl":"163.png" 
+		"imageUrl":"çit.png"
 	},
-	{ 
-		"cardNumber":164,
+	{
+		"name":"çığlık",
 		"isFront":true,
-		"imageUrl":"164.png" 
+		"imageUrl":"çığlık.png"
 	},
-	{ 
-		"cardNumber":165,
+	{
+		"name":"çöplük",
 		"isFront":true,
-		"imageUrl":"165.png" 
+		"imageUrl":"çöplük.png"
 	},
-	{ 
-		"cardNumber":166,
+	{
+		"name":"çorap",
 		"isFront":true,
-		"imageUrl":"166.png" 
+		"imageUrl":"çorap.png"
 	},
-	{ 
-		"cardNumber":167,
+	{
+		"name":"dans etmek",
 		"isFront":true,
-		"imageUrl":"167.png" 
+		"imageUrl":"dans etmek.png"
 	},
-	{ 
-		"cardNumber":168,
+	{
+		"name":"dansöz",
 		"isFront":true,
-		"imageUrl":"168.png" 
+		"imageUrl":"dansöz.png"
 	},
-	{ 
-		"cardNumber":169,
+	{
+		"name":"delil dosyası",
 		"isFront":true,
-		"imageUrl":"169.png" 
+		"imageUrl":"delil dosyası.png"
 	},
-	{ 
-		"cardNumber":16,
+	{
+		"name":"demir yolu",
 		"isFront":true,
-		"imageUrl":"16.png" 
+		"imageUrl":"demir yolu.png"
 	},
-	{ 
-		"cardNumber":170,
+	{
+		"name":"deniz altı",
 		"isFront":true,
-		"imageUrl":"170.png" 
+		"imageUrl":"deniz altı.png"
 	},
-	{ 
-		"cardNumber":171,
+	{
+		"name":"deniz canavarı",
 		"isFront":true,
-		"imageUrl":"171.png" 
+		"imageUrl":"deniz canavarı.png"
 	},
-	{ 
-		"cardNumber":172,
+	{
+		"name":"denizci",
 		"isFront":true,
-		"imageUrl":"172.png" 
+		"imageUrl":"denizci.png"
 	},
-	{ 
-		"cardNumber":173,
+	{
+		"name":"deniz kabuğu kolye",
 		"isFront":true,
-		"imageUrl":"173.png" 
+		"imageUrl":"deniz kabuğu kolye.png"
 	},
-	{ 
-		"cardNumber":174,
+	{
+		"name":"deniz kızı",
 		"isFront":true,
-		"imageUrl":"174.png" 
+		"imageUrl":"deniz kızı.png"
 	},
-	{ 
-		"cardNumber":175,
+	{
+		"name":"deniz yıldızı",
 		"isFront":true,
-		"imageUrl":"175.png" 
+		"imageUrl":"deniz yıldızı.png"
 	},
-	{ 
-		"cardNumber":176,
+	{
+		"name":"deve",
 		"isFront":true,
-		"imageUrl":"176.png" 
+		"imageUrl":"deve.png"
 	},
-	{ 
-		"cardNumber":177,
+	{
+		"name":"dikiş makinesi",
 		"isFront":true,
-		"imageUrl":"177.png" 
+		"imageUrl":"dikiş makinesi.png"
 	},
-	{ 
-		"cardNumber":178,
+	{
+		"name":"dinamit",
 		"isFront":true,
-		"imageUrl":"178.png" 
+		"imageUrl":"dinamit.png"
 	},
-	{ 
-		"cardNumber":179,
+	{
+		"name":"diş fırçası",
 		"isFront":true,
-		"imageUrl":"179.png" 
+		"imageUrl":"diş fırçası.png"
 	},
-	{ 
-		"cardNumber":17,
+	{
+		"name":"disko topu",
 		"isFront":true,
-		"imageUrl":"17.png" 
+		"imageUrl":"disko topu.png"
 	},
-	{ 
-		"cardNumber":180,
+	{
+		"name":"diş macunu",
 		"isFront":true,
-		"imageUrl":"180.png" 
+		"imageUrl":"diş macunu.png"
 	},
-	{ 
-		"cardNumber":181,
+	{
+		"name":"düello",
 		"isFront":true,
-		"imageUrl":"181.png" 
+		"imageUrl":"düello.png"
 	},
-	{ 
-		"cardNumber":182,
+	{
+		"name":"duvar saati",
 		"isFront":true,
-		"imageUrl":"182.png" 
+		"imageUrl":"duvar saati.png"
 	},
-	{ 
-		"cardNumber":183,
+	{
+		"name":"ejderha",
 		"isFront":true,
-		"imageUrl":"183.png" 
+		"imageUrl":"ejderha.png"
 	},
-	{ 
-		"cardNumber":186,
+	{
+		"name":"el arabası",
 		"isFront":true,
-		"imageUrl":"186.png" 
+		"imageUrl":"el arabası.png"
 	},
-	{ 
-		"cardNumber":187,
+	{
+		"name":"elektrik kablosu",
 		"isFront":true,
-		"imageUrl":"187.png" 
+		"imageUrl":"elektrik kablosu.png"
 	},
-	{ 
-		"cardNumber":188,
+	{
+		"name":"elektroşok",
 		"isFront":true,
-		"imageUrl":"188.png" 
+		"imageUrl":"elektroşok.png"
 	},
-	{ 
-		"cardNumber":189,
+	{
+		"name":"elmas çuvalı",
 		"isFront":true,
-		"imageUrl":"189.png" 
+		"imageUrl":"elmas çuvalı.png"
 	},
-	{ 
-		"cardNumber":18,
+	{
+		"name":"fanus",
 		"isFront":true,
-		"imageUrl":"18.png" 
+		"imageUrl":"fanus.png"
 	},
-	{ 
-		"cardNumber":190,
+	{
+		"name":"fatura",
 		"isFront":true,
-		"imageUrl":"190.png" 
+		"imageUrl":"fatura.png"
 	},
-	{ 
-		"cardNumber":191,
+	{
+		"name":"fikir",
 		"isFront":true,
-		"imageUrl":"191.png" 
+		"imageUrl":"fikir.png"
 	},
-	{ 
-		"cardNumber":192,
+	{
+		"name":"filika",
 		"isFront":true,
-		"imageUrl":"192.png" 
+		"imageUrl":"filika.png"
 	},
-	{ 
-		"cardNumber":193,
+	{
+		"name":"fıçı",
 		"isFront":true,
-		"imageUrl":"193.png" 
+		"imageUrl":"fıçı.png"
 	},
-	{ 
-		"cardNumber":194,
+	{
+		"name":"flama",
 		"isFront":true,
-		"imageUrl":"194.png" 
+		"imageUrl":"flama.png"
 	},
-	{ 
-		"cardNumber":195,
+	{
+		"name":"fosforlu kalem",
 		"isFront":true,
-		"imageUrl":"195.png" 
+		"imageUrl":"fosforlu kalem.png"
 	},
-	{ 
-		"cardNumber":196,
+	{
+		"name":"fotoğraf makinesi",
 		"isFront":true,
-		"imageUrl":"196.png" 
+		"imageUrl":"fotoğraf makinesi.png"
 	},
-	{ 
-		"cardNumber":197,
+	{
+		"name":"fotoğraf",
 		"isFront":true,
-		"imageUrl":"197.png" 
+		"imageUrl":"fotoğraf.png"
 	},
-	{ 
-		"cardNumber":198,
+	{
+		"name":"fotokopi makinesi",
 		"isFront":true,
-		"imageUrl":"198.png" 
+		"imageUrl":"fotokopi makinesi.png"
 	},
-	{ 
-		"cardNumber":199,
+	{
+		"name":"gardiyan",
 		"isFront":true,
-		"imageUrl":"199.png" 
+		"imageUrl":"gardiyan.png"
 	},
-	{ 
-		"cardNumber":200,
+	{
+		"name":"gazete",
 		"isFront":true,
-		"imageUrl":"200.png" 
+		"imageUrl":"gazete.png"
 	},
-	{ 
-		"cardNumber":201,
+	{
+		"name":"gaz lambası",
 		"isFront":true,
-		"imageUrl":"201.png" 
+		"imageUrl":"gaz lambası.png"
 	},
-	{ 
-		"cardNumber":202,
+	{
+		"name":"gezegen",
 		"isFront":true,
-		"imageUrl":"202.png" 
+		"imageUrl":"gezegen.png"
 	},
-	{ 
-		"cardNumber":203,
+	{
+		"name":"gitar",
 		"isFront":true,
-		"imageUrl":"203.png" 
+		"imageUrl":"gitar.png"
 	},
-	{ 
-		"cardNumber":204,
+	{
+		"name":"gizli dosya",
 		"isFront":true,
-		"imageUrl":"204.png" 
+		"imageUrl":"gizli dosya.png"
 	},
-	{ 
-		"cardNumber":205,
+	{
+		"name":"gözlük",
 		"isFront":true,
-		"imageUrl":"205.png" 
+		"imageUrl":"gözlük.png"
 	},
-	{ 
-		"cardNumber":206,
+	{
+		"name":"güldürme büyüsü",
 		"isFront":true,
-		"imageUrl":"206.png" 
+		"imageUrl":"güldürme büyüsü.png"
 	},
-	{ 
-		"cardNumber":207,
+	{
+		"name":"güneş",
 		"isFront":true,
-		"imageUrl":"207.png" 
+		"imageUrl":"güneş.png"
 	},
-	{ 
-		"cardNumber":208,
+	{
+		"name":"güvenlik",
 		"isFront":true,
-		"imageUrl":"208.png" 
+		"imageUrl":"güvenlik.png"
 	},
-	{ 
-		"cardNumber":209,
+	{
+		"name":"halat",
 		"isFront":true,
-		"imageUrl":"209.png" 
+		"imageUrl":"halat.png"
 	},
-	{ 
-		"cardNumber":20,
+	{
+		"name":"hamburger",
 		"isFront":true,
-		"imageUrl":"20.png" 
+		"imageUrl":"hamburger.png"
 	},
-	{ 
-		"cardNumber":210,
+	{
+		"name":"harabe",
 		"isFront":true,
-		"imageUrl":"210.png" 
+		"imageUrl":"harabe.png"
 	},
-	{ 
-		"cardNumber":211,
+	{
+		"name":"hasta bakıcı",
 		"isFront":true,
-		"imageUrl":"211.png" 
+		"imageUrl":"hasta bakıcı.png"
 	},
-	{ 
-		"cardNumber":212,
+	{
+		"name":"hasta",
 		"isFront":true,
-		"imageUrl":"212.png" 
+		"imageUrl":"hasta.png"
 	},
-	{ 
-		"cardNumber":213,
+	{
+		"name":"hata kodu",
 		"isFront":true,
-		"imageUrl":"213.png" 
+		"imageUrl":"hata kodu.png"
 	},
-	{ 
-		"cardNumber":214,
+	{
+		"name":"havlu",
 		"isFront":true,
-		"imageUrl":"214.png" 
+		"imageUrl":"havlu.png"
 	},
-	{ 
-		"cardNumber":215,
+	{
+		"name":"havuz filesi",
 		"isFront":true,
-		"imageUrl":"215.png" 
+		"imageUrl":"havuz filesi.png"
 	},
-	{ 
-		"cardNumber":216,
+	{
+		"name":"hazine",
 		"isFront":true,
-		"imageUrl":"216.png" 
+		"imageUrl":"hazine.png"
 	},
-	{ 
-		"cardNumber":217,
+	{
+		"name":"hedef",
 		"isFront":true,
-		"imageUrl":"217.png" 
+		"imageUrl":"hedef.png"
 	},
-	{ 
-		"cardNumber":218,
+	{
+		"name":"hediye",
 		"isFront":true,
-		"imageUrl":"218.png" 
+		"imageUrl":"hediye.png"
 	},
-	{ 
-		"cardNumber":219,
+	{
+		"name":"helikopter",
 		"isFront":true,
-		"imageUrl":"219.png" 
+		"imageUrl":"helikopter.png"
 	},
-	{ 
-		"cardNumber":232,
+	{
+		"name":"heykel",
 		"isFront":true,
-		"imageUrl":"232.png" 
+		"imageUrl":"heykel.png"
 	},
-	{ 
-		"cardNumber":233,
+	{
+		"name":"hindistan cevizi",
 		"isFront":true,
-		"imageUrl":"233.png" 
+		"imageUrl":"hindistan cevizi.png"
 	},
-	{ 
-		"cardNumber":234,
+	{
+		"name":"hizmetçi robot",
 		"isFront":true,
-		"imageUrl":"234.png" 
+		"imageUrl":"hizmetçi robot.png"
 	},
-	{ 
-		"cardNumber":235,
+	{
+		"name":"hırsız",
 		"isFront":true,
-		"imageUrl":"235.png" 
+		"imageUrl":"hırsız.png"
 	},
-	{ 
-		"cardNumber":236,
+	{
+		"name":"hırsız uzaylı",
 		"isFront":true,
-		"imageUrl":"236.png" 
+		"imageUrl":"hırsız uzaylı.png"
 	},
-	{ 
-		"cardNumber":237,
+	{
+		"name":"idam sehpası",
 		"isFront":true,
-		"imageUrl":"237.png" 
+		"imageUrl":"idam sehpası.png"
 	},
-	{ 
-		"cardNumber":238,
+	{
+		"name":"iğne",
 		"isFront":true,
-		"imageUrl":"238.png" 
+		"imageUrl":"iğne.png"
 	},
-	{ 
-		"cardNumber":239,
+	{
+		"name":"iksir",
 		"isFront":true,
-		"imageUrl":"239.png" 
+		"imageUrl":"iksir.png"
 	},
-	{ 
-		"cardNumber":23,
+	{
+		"name":"inci",
 		"isFront":true,
-		"imageUrl":"23.png" 
+		"imageUrl":"inci.png"
 	},
-	{ 
-		"cardNumber":240,
+	{
+		"name":"iplik",
 		"isFront":true,
-		"imageUrl":"240.png" 
+		"imageUrl":"iplik.png"
 	},
-	{ 
-		"cardNumber":241,
+	{
+		"name":"iskambil",
 		"isFront":true,
-		"imageUrl":"241.png" 
+		"imageUrl":"iskambil.png"
 	},
-	{ 
-		"cardNumber":242,
+	{
+		"name":"istiridye",
 		"isFront":true,
-		"imageUrl":"242.png" 
+		"imageUrl":"istiridye.png"
 	},
-	{ 
-		"cardNumber":243,
+	{
+		"name":"ışın kılıcı",
 		"isFront":true,
-		"imageUrl":"243.png" 
+		"imageUrl":"ışın kılıcı.png"
 	},
-	{ 
-		"cardNumber":244,
+	{
+		"name":"ışınlanma",
 		"isFront":true,
-		"imageUrl":"244.png" 
+		"imageUrl":"ışınlanma.png"
 	},
-	{ 
-		"cardNumber":245,
+	{
+		"name":"jaluzi",
 		"isFront":true,
-		"imageUrl":"245.png" 
+		"imageUrl":"jaluzi.png"
 	},
-	{ 
-		"cardNumber":246,
+	{
+		"name":"japon balığı",
 		"isFront":true,
-		"imageUrl":"246.png" 
+		"imageUrl":"japon balığı.png"
 	},
-	{ 
-		"cardNumber":247,
+	{
+		"name":"kafes",
 		"isFront":true,
-		"imageUrl":"247.png" 
+		"imageUrl":"kafes.png"
 	},
-	{ 
-		"cardNumber":248,
+	{
+		"name":"kahve makinası",
 		"isFront":true,
-		"imageUrl":"248.png" 
+		"imageUrl":"kahve makinası.png"
 	},
-	{ 
-		"cardNumber":249,
+	{
+		"name":"kaktüs",
 		"isFront":true,
-		"imageUrl":"249.png" 
+		"imageUrl":"kaktüs.png"
 	},
-	{ 
-		"cardNumber":250,
+	{
+		"name":"kamp ateşi",
 		"isFront":true,
-		"imageUrl":"250.png" 
+		"imageUrl":"kamp ateşi.png"
 	},
-	{ 
-		"cardNumber":251,
+	{
+		"name":"kanama",
 		"isFront":true,
-		"imageUrl":"251.png" 
+		"imageUrl":"kanama.png"
 	},
-	{ 
-		"cardNumber":252,
+	{
+		"name":"kanca",
 		"isFront":true,
-		"imageUrl":"252.png" 
+		"imageUrl":"kanca.png"
 	},
-	{ 
-		"cardNumber":253,
+	{
+		"name":"kaptan",
 		"isFront":true,
-		"imageUrl":"253.png" 
+		"imageUrl":"kaptan.png"
 	},
-	{ 
-		"cardNumber":254,
+	{
+		"name":"karavan",
 		"isFront":true,
-		"imageUrl":"254.png" 
+		"imageUrl":"karavan.png"
 	},
-	{ 
-		"cardNumber":255,
+	{
+		"name":"kargo",
 		"isFront":true,
-		"imageUrl":"255.png" 
+		"imageUrl":"kargo.png"
 	},
-	{ 
-		"cardNumber":256,
+	{
+		"name":"karlı hava",
 		"isFront":true,
-		"imageUrl":"256.png" 
+		"imageUrl":"karlı hava.png"
 	},
-	{ 
-		"cardNumber":27,
+	{
+		"name":"kar maskesi",
 		"isFront":true,
-		"imageUrl":"27.png" 
+		"imageUrl":"kar maskesi.png"
 	},
-	{ 
-		"cardNumber":31,
+	{
+		"name":"kaşağı",
 		"isFront":true,
-		"imageUrl":"31.png" 
+		"imageUrl":"kaşağı.png"
 	},
-	{ 
-		"cardNumber":32,
+	{
+		"name":"kase",
 		"isFront":true,
-		"imageUrl":"32.png" 
+		"imageUrl":"kase.png"
 	},
-	{ 
-		"cardNumber":33,
+	{
+		"name":"kaşık",
 		"isFront":true,
-		"imageUrl":"33.png" 
+		"imageUrl":"kaşık.png"
 	},
-	{ 
-		"cardNumber":34,
+	{
+		"name":"kedi",
 		"isFront":true,
-		"imageUrl":"34.png" 
+		"imageUrl":"kedi.png"
 	},
-	{ 
-		"cardNumber":36,
+	{
+		"name":"kelepçe",
 		"isFront":true,
-		"imageUrl":"36.png" 
+		"imageUrl":"kelepçe.png"
 	},
-	{ 
-		"cardNumber":37,
+	{
+		"name":"kemik",
 		"isFront":true,
-		"imageUrl":"37.png" 
+		"imageUrl":"kemik.png"
 	},
-	{ 
-		"cardNumber":38,
+	{
+		"name":"keşif",
 		"isFront":true,
-		"imageUrl":"38.png" 
+		"imageUrl":"keşif.png"
 	},
-	{ 
-		"cardNumber":40,
+	{
+		"name":"kesme tahtası",
 		"isFront":true,
-		"imageUrl":"40.png" 
+		"imageUrl":"kesme tahtası.png"
 	},
-	{ 
-		"cardNumber":41,
+	{
+		"name":"ketçap",
 		"isFront":true,
-		"imageUrl":"41.png" 
+		"imageUrl":"ketçap.png"
 	},
-	{ 
-		"cardNumber":42,
+	{
+		"name":"kibrit",
 		"isFront":true,
-		"imageUrl":"42.png" 
+		"imageUrl":"kibrit.png"
 	},
-	{ 
-		"cardNumber":43,
+	{
+		"name":"kilise",
 		"isFront":true,
-		"imageUrl":"43.png" 
+		"imageUrl":"kilise.png"
 	},
-	{ 
-		"cardNumber":44,
+	{
+		"name":"kitaplık",
 		"isFront":true,
-		"imageUrl":"44.png" 
+		"imageUrl":"kitaplık.png"
 	},
-	{ 
-		"cardNumber":45,
+	{
+		"name":"kılıç",
 		"isFront":true,
-		"imageUrl":"45.png" 
+		"imageUrl":"kılıç.png"
 	},
-	{ 
-		"cardNumber":46,
+	{
+		"name":"klozet",
 		"isFront":true,
-		"imageUrl":"46.png" 
+		"imageUrl":"klozet.png"
 	},
-	{ 
-		"cardNumber":47,
+	{
+		"name":"kokteyl",
 		"isFront":true,
-		"imageUrl":"47.png" 
+		"imageUrl":"kokteyl.png"
 	},
-	{ 
-		"cardNumber":48,
+	{
+		"name":"koltuk",
 		"isFront":true,
-		"imageUrl":"48.png" 
+		"imageUrl":"koltuk.png"
 	},
-	{ 
-		"cardNumber":50,
+	{
+		"name":"konuşan kaya",
 		"isFront":true,
-		"imageUrl":"50.png" 
+		"imageUrl":"konuşan kaya.png"
 	},
-	{ 
-		"cardNumber":52,
+	{
+		"name":"köpek maması",
 		"isFront":true,
-		"imageUrl":"52.png" 
+		"imageUrl":"köpek maması.png"
 	},
-	{ 
-		"cardNumber":53,
+	{
+		"name":"köprü",
 		"isFront":true,
-		"imageUrl":"53.png" 
+		"imageUrl":"köprü.png"
 	},
-	{ 
-		"cardNumber":54,
+	{
+		"name":"korsan",
 		"isFront":true,
-		"imageUrl":"54.png" 
+		"imageUrl":"korsan.png"
 	},
-	{ 
-		"cardNumber":55,
+	{
+		"name":"kova",
 		"isFront":true,
-		"imageUrl":"55.png" 
+		"imageUrl":"kova.png"
 	},
-	{ 
-		"cardNumber":56,
+	{
+		"name":"kovboy",
 		"isFront":true,
-		"imageUrl":"56.png" 
+		"imageUrl":"kovboy.png"
 	},
-	{ 
-		"cardNumber":57,
+	{
+		"name":"kovboy şapkası",
 		"isFront":true,
-		"imageUrl":"57.png" 
+		"imageUrl":"kovboy şapkası.png"
 	},
-	{ 
-		"cardNumber":60,
+	{
+		"name":"köy bilgesi",
 		"isFront":true,
-		"imageUrl":"60.png" 
+		"imageUrl":"köy bilgesi.png"
 	},
-	{ 
-		"cardNumber":61,
+	{
+		"name":"köylü fare",
 		"isFront":true,
-		"imageUrl":"61.png" 
+		"imageUrl":"köylü fare.png"
 	},
-	{ 
-		"cardNumber":64,
+	{
+		"name":"kraliçe",
 		"isFront":true,
-		"imageUrl":"64.png" 
+		"imageUrl":"kraliçe.png"
 	},
-	{ 
-		"cardNumber":69,
+	{
+		"name":"kullanım kılavuzu",
 		"isFront":true,
-		"imageUrl":"69.png" 
+		"imageUrl":"kullanım kılavuzu.png"
 	},
-	{ 
-		"cardNumber":71,
+	{
+		"name":"kül tablası",
 		"isFront":true,
-		"imageUrl":"71.png" 
+		"imageUrl":"kül tablası.png"
 	},
-	{ 
-		"cardNumber":72,
+	{
+		"name":"kümes",
 		"isFront":true,
-		"imageUrl":"72.png" 
+		"imageUrl":"kümes.png"
 	},
-	{ 
-		"cardNumber":73,
+	{
+		"name":"kum fırtınası",
 		"isFront":true,
-		"imageUrl":"73.png" 
+		"imageUrl":"kum fırtınası.png"
 	},
-	{ 
-		"cardNumber":74,
+	{
+		"name":"kum saati",
 		"isFront":true,
-		"imageUrl":"74.png" 
+		"imageUrl":"kum saati.png"
 	},
-	{ 
-		"cardNumber":76,
+	{
+		"name":"kuraklık",
 		"isFront":true,
-		"imageUrl":"76.png" 
+		"imageUrl":"kuraklık.png"
 	},
-	{ 
-		"cardNumber":77,
+	{
+		"name":"kurdele",
 		"isFront":true,
-		"imageUrl":"77.png" 
+		"imageUrl":"kurdele.png"
 	},
-	{ 
-		"cardNumber":79,
+	{
+		"name":"kürek",
 		"isFront":true,
-		"imageUrl":"79.png" 
+		"imageUrl":"kürek.png"
 	},
-	{ 
-		"cardNumber":80,
+	{
+		"name":"kuş yuvası",
 		"isFront":true,
-		"imageUrl":"80.png" 
+		"imageUrl":"kuş yuvası.png"
 	},
-	{ 
-		"cardNumber":81,
+	{
+		"name":"küvet",
 		"isFront":true,
-		"imageUrl":"81.png" 
+		"imageUrl":"küvet.png"
 	},
-	{ 
-		"cardNumber":82,
+	{
+		"name":"labirent",
 		"isFront":true,
-		"imageUrl":"82.png" 
+		"imageUrl":"labirent.png"
 	},
-	{ 
-		"cardNumber":83,
+	{
+		"name":"lavabo",
 		"isFront":true,
-		"imageUrl":"83.png" 
+		"imageUrl":"lavabo.png"
 	},
-	{ 
-		"cardNumber":84,
+	{
+		"name":"limon",
 		"isFront":true,
-		"imageUrl":"84.png" 
+		"imageUrl":"limon.png"
 	},
-	{ 
-		"cardNumber":85,
+	{
+		"name":"lunapark",
 		"isFront":true,
-		"imageUrl":"85.png" 
+		"imageUrl":"lunapark.png"
 	},
-	{ 
-		"cardNumber":86,
+	{
+		"name":"madenci kaskı",
 		"isFront":true,
-		"imageUrl":"86.png" 
+		"imageUrl":"madenci kaskı.png"
 	},
-	{ 
-		"cardNumber":87,
+	{
+		"name":"mağara",
 		"isFront":true,
-		"imageUrl":"87.png" 
+		"imageUrl":"mağara.png"
 	},
-	{ 
-		"cardNumber":89,
+	{
+		"name":"mancınık",
 		"isFront":true,
-		"imageUrl":"89.png" 
+		"imageUrl":"mancınık.png"
 	},
-	{ 
-		"cardNumber":90,
+	{
+		"name":"manken",
 		"isFront":true,
-		"imageUrl":"90.png" 
+		"imageUrl":"manken.png"
 	},
-	{ 
-		"cardNumber":91,
+	{
+		"name":"mantar",
 		"isFront":true,
-		"imageUrl":"91.png" 
+		"imageUrl":"mantar.png"
 	},
-	{ 
-		"cardNumber":92,
+	{
+		"name":"maskeli kuş",
 		"isFront":true,
-		"imageUrl":"92.png" 
+		"imageUrl":"maskeli kuş.png"
 	},
-	{ 
-		"cardNumber":93,
+	{
+		"name":"maymun",
 		"isFront":true,
-		"imageUrl":"93.png" 
+		"imageUrl":"maymun.png"
 	},
-	{ 
-		"cardNumber":94,
+	{
+		"name":"mayonez",
 		"isFront":true,
-		"imageUrl":"94.png" 
+		"imageUrl":"mayonez.png"
 	},
-	{ 
-		"cardNumber":95,
+	{
+		"name":"mektup",
 		"isFront":true,
-		"imageUrl":"95.png" 
+		"imageUrl":"mektup.png"
 	},
-	{ 
-		"cardNumber":96,
+	{
+		"name":"merdane",
 		"isFront":true,
-		"imageUrl":"96.png" 
+		"imageUrl":"merdane.png"
 	},
-	{ 
-		"cardNumber":97,
+	{
+		"name":"meşale",
 		"isFront":true,
-		"imageUrl":"97.png" 
+		"imageUrl":"meşale.png"
 	},
-	{ 
-		"cardNumber":98,
+	{
+		"name":"meteor",
 		"isFront":true,
-		"imageUrl":"98.png" 
+		"imageUrl":"meteor.png"
 	},
-	{ 
-		"cardNumber":99,
+	{
+		"name":"mezar taşı",
 		"isFront":true,
-		"imageUrl":"99.png" 
+		"imageUrl":"mezar taşı.png"
 	},
-	{ 
-		"cardNumber":3,
+	{
+		"name":"mısır tarlası",
+		"isFront":true,
+		"imageUrl":"mısır tarlası.png"
+	},
+	{
+		"name":"muhafız",
+		"isFront":true,
+		"imageUrl":"muhafız.png"
+	},
+	{
+		"name":"muhendis",
+		"isFront":true,
+		"imageUrl":"muhendis.png"
+	},
+	{
+		"name":"mum",
+		"isFront":true,
+		"imageUrl":"mum.png"
+	},
+	{
+		"name":"mumya",
+		"isFront":true,
+		"imageUrl":"mumya.png"
+	},
+	{
+		"name":"musluk",
+		"isFront":true,
+		"imageUrl":"musluk.png"
+	},
+	{
+		"name":"müze",
+		"isFront":true,
+		"imageUrl":"müze.png"
+	},
+	{
+		"name":"nükleer reaktör",
+		"isFront":true,
+		"imageUrl":"nükleer reaktör.png"
+	},
+	{
+		"name":"ödül çeki",
+		"isFront":true,
+		"imageUrl":"ödül çeki.png"
+	},
+	{
+		"name":"oksijen tüpü",
+		"isFront":true,
+		"imageUrl":"oksijen tüpü.png"
+	},
+	{
+		"name":"okyanus",
+		"isFront":true,
+		"imageUrl":"okyanus.png"
+	},
+	{
+		"name":"olta",
+		"isFront":true,
+		"imageUrl":"olta.png"
+	},
+	{
+		"name":"örümcek ağı",
+		"isFront":true,
+		"imageUrl":"örümcek ağı.png"
+	},
+	{
+		"name":"oyuncak ayı",
+		"isFront":true,
+		"imageUrl":"oyuncak ayı.png"
+	},
+	{
+		"name":"palmiye",
+		"isFront":true,
+		"imageUrl":"palmiye.png"
+	},
+	{
+		"name":"palyaço",
+		"isFront":true,
+		"imageUrl":"palyaço.png"
+	},
+	{
+		"name":"pano",
+		"isFront":true,
+		"imageUrl":"pano.png"
+	},
+	{
+		"name":"papağan",
+		"isFront":true,
+		"imageUrl":"papağan.png"
+	},
+	{
+		"name":"papyon",
+		"isFront":true,
+		"imageUrl":"papyon.png"
+	},
+	{
+		"name":"para kesesi",
+		"isFront":true,
+		"imageUrl":"para kesesi.png"
+	},
+	{
+		"name":"parfüm",
+		"isFront":true,
+		"imageUrl":"parfüm.png"
+	},
+	{
+		"name":"parmaklık",
+		"isFront":true,
+		"imageUrl":"parmaklık.png"
+	},
+	{
+		"name":"parşömen",
+		"isFront":true,
+		"imageUrl":"parşömen.png"
+	},
+	{
+		"name":"paskalya yumurtası",
+		"isFront":true,
+		"imageUrl":"paskalya yumurtası.png"
+	},
+	{
+		"name":"patron",
+		"isFront":true,
+		"imageUrl":"patron.png"
+	},
+	{
+		"name":"pencere",
+		"isFront":true,
+		"imageUrl":"pencere.png"
+	},
+	{
+		"name":"perde",
+		"isFront":true,
+		"imageUrl":"perde.png"
+	},
+	{
+		"name":"peri asası",
+		"isFront":true,
+		"imageUrl":"peri asası.png"
+	},
+	{
+		"name":"pipet",
+		"isFront":true,
+		"imageUrl":"pipet.png"
+	},
+	{
+		"name":"piyano",
+		"isFront":true,
+		"imageUrl":"piyano.png"
+	},
+	{
+		"name":"pırlanta",
+		"isFront":true,
+		"imageUrl":"pırlanta.png"
+	},
+	{
+		"name":"polis",
+		"isFront":true,
+		"imageUrl":"polis.png"
+	},
+	{
+		"name":"posta güvercini",
+		"isFront":true,
+		"imageUrl":"posta güvercini.png"
+	},
+	{
+		"name":"posta kutusu",
+		"isFront":true,
+		"imageUrl":"posta kutusu.png"
+	},
+	{
+		"name":"prova mankeni",
+		"isFront":true,
+		"imageUrl":"prova mankeni.png"
+	},
+	{
+		"name":"radyasyon",
+		"isFront":true,
+		"imageUrl":"radyasyon.png"
+	},
+	{
+		"name":"sinyali",
+		"isFront":true,
+		"imageUrl":"sinyali.png"
+	},
+	{
+		"name":"ranza",
+		"isFront":true,
+		"imageUrl":"ranza.png"
+	},
+	{
+		"name":"rapor",
+		"isFront":true,
+		"imageUrl":"rapor.png"
+	},
+	{
+		"name":"reçel",
+		"isFront":true,
+		"imageUrl":"reçel.png"
+	},
+	{
+		"name":"resepsiyon",
+		"isFront":true,
+		"imageUrl":"resepsiyon.png"
+	},
+	{
+		"name":"resim sergisi",
+		"isFront":true,
+		"imageUrl":"resim sergisi.png"
+	},
+	{
+		"name":"ressam",
+		"isFront":true,
+		"imageUrl":"ressam.png"
+	},
+	{
+		"name":"robot",
+		"isFront":true,
+		"imageUrl":"robot.png"
+	},
+	{
+		"name":"ruj",
+		"isFront":true,
+		"imageUrl":"ruj.png"
+	},
+	{
+		"name":"saban",
+		"isFront":true,
+		"imageUrl":"saban.png"
+	},
+	{
+		"name":"sabun",
+		"isFront":true,
+		"imageUrl":"sabun.png"
+	},
+	{
+		"name":"şakacı bal kabağı",
+		"isFront":true,
+		"imageUrl":"şakacı bal kabağı.png"
+	},
+	{
+		"name":"salyangoz",
+		"isFront":true,
+		"imageUrl":"salyangoz.png"
+	},
+	{
+		"name":"saman balyası",
+		"isFront":true,
+		"imageUrl":"saman balyası.png"
+	},
+	{
+		"name":"samanlık",
+		"isFront":true,
+		"imageUrl":"samanlık.png"
+	},
+	{
+		"name":"sandal",
+		"isFront":true,
+		"imageUrl":"sandal.png"
+	},
+	{
+		"name":"şapka",
+		"isFront":true,
+		"imageUrl":"şapka.png"
+	},
+	{
+		"name":"satıcı",
+		"isFront":true,
+		"imageUrl":"satıcı.png"
+	},
+	{
+		"name":"sedye",
+		"isFront":true,
+		"imageUrl":"sedye.png"
+	},
+	{
+		"name":"şeker",
+		"isFront":true,
+		"imageUrl":"şeker.png"
+	},
+	{
+		"name":"sekreter",
+		"isFront":true,
+		"imageUrl":"sekreter.png"
+	},
+	{
+		"name":"şemsiye",
+		"isFront":true,
+		"imageUrl":"şemsiye.png"
+	},
+	{
+		"name":"serum",
+		"isFront":true,
+		"imageUrl":"serum.png"
+	},
+	{
+		"name":"sigara",
+		"isFront":true,
+		"imageUrl":"sigara.png"
+	},
+	{
+		"name":"sihirli küre",
+		"isFront":true,
+		"imageUrl":"sihirli küre.png"
+	},
+	{
+		"name":"silah deposu",
+		"isFront":true,
+		"imageUrl":"silah deposu.png"
+	},
+	{
+		"name":"silah",
+		"isFront":true,
+		"imageUrl":"silah.png"
+	},
+	{
+		"name":"şırınga",
+		"isFront":true,
+		"imageUrl":"şırınga.png"
+	},
+	{
+		"name":"soda",
+		"isFront":true,
+		"imageUrl":"soda.png"
+	},
+	{
+		"name":"soyguncu",
+		"isFront":true,
+		"imageUrl":"soyguncu.png"
+	},
+	{
+		"name":"steteskop",
+		"isFront":true,
+		"imageUrl":"steteskop.png"
+	},
+	{
+		"name":"suçlu",
+		"isFront":true,
+		"imageUrl":"suçlu.png"
+	},
+	{
+		"name":"su kuyusu",
+		"isFront":true,
+		"imageUrl":"su kuyusu.png"
+	},
+	{
+		"name":"su yansıması",
+		"isFront":true,
+		"imageUrl":"su yansıması.png"
+	},
+	{
+		"name":"tablo",
+		"isFront":true,
+		"imageUrl":"tablo.png"
+	},
+	{
+		"name":"tabure",
+		"isFront":true,
+		"imageUrl":"tabure.png"
+	},
+	{
+		"name":"tarak",
+		"isFront":true,
+		"imageUrl":"tarak.png"
+	},
+	{
+		"name":"tartışma",
+		"isFront":true,
+		"imageUrl":"tartışma.png"
+	},
+	{
+		"name":"teleskop",
+		"isFront":true,
+		"imageUrl":"teleskop.png"
+	},
+	{
+		"name":"televizyon",
+		"isFront":true,
+		"imageUrl":"televizyon.png"
+	},
+	{
+		"name":"telsiz",
+		"isFront":true,
+		"imageUrl":"telsiz.png"
+	},
+	{
+		"name":"temizlikçi",
+		"isFront":true,
+		"imageUrl":"temizlikçi.png"
+	},
+	{
+		"name":"tohum",
+		"isFront":true,
+		"imageUrl":"tohum.png"
+	},
+	{
+		"name":"toka",
+		"isFront":true,
+		"imageUrl":"toka.png"
+	},
+	{
+		"name":"toplantı salonu",
+		"isFront":true,
+		"imageUrl":"toplantı salonu.png"
+	},
+	{
+		"name":"topuklu ayakkabı",
+		"isFront":true,
+		"imageUrl":"topuklu ayakkabı.png"
+	},
+	{
+		"name":"traktör",
+		"isFront":true,
+		"imageUrl":"traktör.png"
+	},
+	{
+		"name":"tren garı",
+		"isFront":true,
+		"imageUrl":"tren garı.png"
+	},
+	{
+		"name":"tren",
+		"isFront":true,
+		"imageUrl":"tren.png"
+	},
+	{
+		"name":"turşu",
+		"isFront":true,
+		"imageUrl":"turşu.png"
+	},
+	{
+		"name":"tuvalet kağıdı",
+		"isFront":true,
+		"imageUrl":"tuvalet kağıdı.png"
+	},
+	{
+		"name":"tuzak",
+		"isFront":true,
+		"imageUrl":"tuzak.png"
+	},
+	{
+		"name":"uçan balon",
+		"isFront":true,
+		"imageUrl":"uçan balon.png"
+	},
+	{
+		"name":"uydu",
+		"isFront":true,
+		"imageUrl":"uydu.png"
+	},
+	{
+		"name":"uzay gemisi",
+		"isFront":true,
+		"imageUrl":"uzay gemisi.png"
+	},
+	{
+		"name":"uzay kapsulu",
+		"isFront":true,
+		"imageUrl":"uzay kapsulu.png"
+	},
+	{
+		"name":"uzaylı",
+		"isFront":true,
+		"imageUrl":"uzaylı.png"
+	},
+	{
+		"name":"yabani ot",
+		"isFront":true,
+		"imageUrl":"yabani ot.png"
+	},
+	{
+		"name":"yanardağ",
+		"isFront":true,
+		"imageUrl":"yanardağ.png"
+	},
+	{
+		"name":"yangın",
+		"isFront":true,
+		"imageUrl":"yangın.png"
+	},
+	{
+		"name":"adam",
+		"isFront":true,
+		"imageUrl":"adam.png"
+	},
+	{
+		"name":"yarasa",
+		"isFront":true,
+		"imageUrl":"yarasa.png"
+	},
+	{
+		"name":"yargıç",
+		"isFront":true,
+		"imageUrl":"yargıç.png"
+	},
+	{
+		"name":"yatak",
+		"isFront":true,
+		"imageUrl":"yatak.png"
+	},
+	{
+		"name":"yel değirmeni",
+		"isFront":true,
+		"imageUrl":"yel değirmeni.png"
+	},
+	{
+		"name":"yılan balığı",
+		"isFront":true,
+		"imageUrl":"yılan balığı.png"
+	},
+	{
+		"name":"yolcu gemisi",
+		"isFront":true,
+		"imageUrl":"yolcu gemisi.png"
+	},
+	{
+		"name":"yosun",
+		"isFront":true,
+		"imageUrl":"yosun.png"
+	},
+	{
+		"name":"yumak",
+		"isFront":true,
+		"imageUrl":"yumak.png"
+	},
+	{
+		"name":"zar",
+		"isFront":true,
+		"imageUrl":"zar.png"
+	},
+	{
+		"name":"zehirli mantar",
+		"isFront":true,
+		"imageUrl":"zehirli mantar.png"
+	},
+	{
+		"name":"zıpkın",
+		"isFront":true,
+		"imageUrl":"zıpkın.png"
+	},
+	{
+		"name":"zombi",
+		"isFront":true,
+		"imageUrl":"zombi.png"
+	},
+	{
+		"name":"arka kart",
 		"isFront":false,
-		"imageUrl":"3.png" 
+		"imageUrl":"arka kart.png"
 	},
-	{ 
-		"cardNumber":4,
+	{
+		"name":"arka kart2",
 		"isFront":false,
-		"imageUrl":"4.png" 
+		"imageUrl":"arka kart2.png"
 	},
-	{ 
-		"cardNumber":7,
+	{
+		"name":"arka kart3",
 		"isFront":false,
-		"imageUrl":"7.png" 
+		"imageUrl":"arka kart3.png"
 	}
+
+
 ]

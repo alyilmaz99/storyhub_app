@@ -100,7 +100,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const SplashScreenView(),
+      home: const AfterScenarioView(),
     );
   }
 }
