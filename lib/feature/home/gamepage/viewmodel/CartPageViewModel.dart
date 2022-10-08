@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/core/Service/SenaryoServise.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/Service/CardService.dart';
@@ -13,6 +14,7 @@ abstract class CartPageViewModel extends State<CardPage> {
   String? assetImageCardFront;
   bool isLoaded = false;
   CardService cardService = CardService();
+  SenaryoService senaryoService = SenaryoService();
 
   CartPageViewModel({
     Key? key,
@@ -42,10 +44,14 @@ abstract class CartPageViewModel extends State<CardPage> {
 
   void loadCards(Function callback) async {
     await cardService.initCards();
-    setState(() {
-      var cards = cardService.getCards();
+    await senaryoService.initSenaryolar();
 
-      newCard = cardService.createTappedCards(cards, callback);
+    setState(() {
+      // var cards = cardService.getCards();
+      var senaryolar = senaryoService.getSenaryolar();
+
+      newCard = cardService.randomScenaricCards(senaryolar, callback, 1, Difficulty.none);
+      // newCard = cardService.createTappedCards(cards, callback);
       isLoaded = true;
     });
   }

@@ -16,24 +16,26 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
   void initState() {
     super.initState();
     Provider.of<Player>(context, listen: false).textValueisEmpty.clear();
+    Provider.of<Player>(context, listen: false).playerList.clear();
   }
 
   var textFieldController = TextEditingController();
-  final List<TextEditingController> _textEditingControllers = [TextEditingController()];
+  final List<TextEditingController> _textEditingControllers = [
+    TextEditingController()
+  ];
 
   Future<void> additemtoList(int index, int maxnumber) async {
     while (index < maxnumber) {
       _textEditingControllers.add(TextEditingController());
       if (Provider.of<Player>(context, listen: false).textValueisEmpty.length <
           Provider.of<GameSettingsModel>(context, listen: false).playerCount) {
-        Provider.of<Player>(context, listen: false).textValueisEmpty.add(CreatePlayerViewModel.isEmpty);
+        Provider.of<Player>(context, listen: false)
+            .textValueisEmpty
+            .add(CreatePlayerViewModel.isEmpty);
       }
 
       index++;
     }
-    print("additemtoList : ${Provider.of<Player>(context, listen: false).textValueisEmpty.length}");
-    print("index: $index");
-    print("max: $maxnumber");
   }
 
   @override
@@ -47,13 +49,14 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     int? myRank = Provider.of<Player>(context).rank;
     String? myImageString = Provider.of<Player>(context).image;
     // int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
-    Map<dynamic, dynamic>? myPlayersMap = Provider.of<Player>(context).playersMap;
+    Map<dynamic, dynamic>? myPlayersMap =
+        Provider.of<Player>(context).playersMap;
     // Future<void> myEqualMap = Provider.of<Player>(context).equalMaps();
     // Future<String> writemaps(Map<dynamic, dynamic> writemap) async {
     //   return writemap.values.toString();
     // }
 
-    Future<String>? getImagePath(int number) async {
+    String getImagePath(int number) {
       String myImageString = 'assets/images/profiles/$number.png';
       return myImageString;
     }
@@ -64,7 +67,10 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
         decoration: const BoxDecoration(
           gradient: RadialGradient(
             radius: 0.7,
-            colors: [Color.fromRGBO(255, 149, 113, 1), Color.fromRGBO(216, 91, 47, 1)],
+            colors: [
+              Color.fromRGBO(255, 149, 113, 1),
+              Color.fromRGBO(216, 91, 47, 1)
+            ],
           ),
         ),
         child: SizedBox(
@@ -96,7 +102,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   child: Padding(
                     padding: EdgeInsets.only(top: screenHeight / 200),
                     child: ListView.builder(
-                      itemCount: Provider.of<GameSettingsModel>(context).playerCount,
+                      itemCount:
+                          Provider.of<GameSettingsModel>(context).playerCount,
                       itemBuilder: (context, index) {
                         additemtoList(
                           index,
@@ -106,7 +113,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                         //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
                         Provider.of<Player>(context).createPlayerfunc(
                           context,
-                          _textEditingControllers,
+                          _textEditingControllers[index].text,
                           myScore,
                           myRank,
                           getImagePath(index),
@@ -130,6 +137,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                 height: screenHeight / 30,
               ),
               buildFirstButton(
+                _textEditingControllers,
                 context,
                 isCheckOkay,
                 Provider.of<Player>(context, listen: false).playersMap,
@@ -154,18 +162,21 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
       child: Row(
         children: [
           Padding(
-            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 20),
+            padding:
+                EdgeInsets.only(left: MediaQuery.of(context).size.width / 20),
             child: SizedBox(
               width: 80,
               height: 80,
               child: Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                  image: AssetImage('assets/images/profiles/$numberforimages.png'),
+                  image:
+                      AssetImage('assets/images/profiles/$numberforimages.png'),
                   opacity: 1,
                   fit: BoxFit.fill,
                 )),
-                child: Provider.of<Player>(context, listen: false).textValueisEmpty[numberforimages - 1]
+                child: Provider.of<Player>(context, listen: false)
+                        .textValueisEmpty[numberforimages - 1]
                     ? const Center(
                         child: Text(
                           'HAZIR!',
@@ -188,7 +199,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
+            padding:
+                EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
             child: SizedBox(
                 height: 50,
                 width: 160,
@@ -199,7 +211,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   numberforimages,
                 )),
           ),
-          Provider.of<Player>(context, listen: false).textValueisEmpty[numberforimages - 1]
+          Provider.of<Player>(context, listen: false)
+                  .textValueisEmpty[numberforimages - 1]
               ? Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: IconButton(
