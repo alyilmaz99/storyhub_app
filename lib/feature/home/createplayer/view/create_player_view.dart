@@ -12,16 +12,28 @@ class CreatePlayerView extends StatefulWidget {
 }
 
 class _CreatePlayerViewState extends CreatePlayerViewModel {
+  @override
+  void initState() {
+    super.initState();
+    Provider.of<Player>(context, listen: false).textValueisEmpty.clear();
+  }
+
   var textFieldController = TextEditingController();
   final List<TextEditingController> _textEditingControllers = [TextEditingController()];
-  final List<bool> _textValueisEmpty = [];
 
   Future<void> additemtoList(int index, int maxnumber) async {
-    while (index <= maxnumber) {
+    while (index < maxnumber) {
       _textEditingControllers.add(TextEditingController());
-      _textValueisEmpty.add(CreatePlayerViewModel.isEmpty);
+      if (Provider.of<Player>(context, listen: false).textValueisEmpty.length <
+          Provider.of<GameSettingsModel>(context, listen: false).playerCount) {
+        Provider.of<Player>(context, listen: false).textValueisEmpty.add(CreatePlayerViewModel.isEmpty);
+      }
+
       index++;
     }
+    print("additemtoList : ${Provider.of<Player>(context, listen: false).textValueisEmpty.length}");
+    print("index: $index");
+    print("max: $maxnumber");
   }
 
   @override
@@ -34,7 +46,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     int? myScore = Provider.of<Player>(context).score;
     int? myRank = Provider.of<Player>(context).rank;
     String? myImageString = Provider.of<Player>(context).image;
-    int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
+    // int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
     Map<dynamic, dynamic>? myPlayersMap = Provider.of<Player>(context).playersMap;
     // Future<void> myEqualMap = Provider.of<Player>(context).equalMaps();
     // Future<String> writemaps(Map<dynamic, dynamic> writemap) async {
@@ -84,21 +96,23 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   child: Padding(
                     padding: EdgeInsets.only(top: screenHeight / 200),
                     child: ListView.builder(
-                      itemCount: userNumber,
+                      itemCount: Provider.of<GameSettingsModel>(context).playerCount,
                       itemBuilder: (context, index) {
                         additemtoList(
                           index,
-                          userNumber,
+                          Provider.of<GameSettingsModel>(context).playerCount,
                         );
+
                         //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
                         Provider.of<Player>(context).createPlayerfunc(
-                          userNumber,
+                          context,
                           _textEditingControllers,
                           myScore,
                           myRank,
                           getImagePath(index),
                           index,
                         );
+
                         //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
                         return Padding(
                             padding: EdgeInsets.only(bottom: screenHeight / 45),
@@ -118,7 +132,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
               buildFirstButton(
                 context,
                 isCheckOkay,
-                myPlayersMap,
+                Provider.of<Player>(context, listen: false).playersMap,
+                Provider.of<Player>(context, listen: false).textValueisEmpty,
               ),
             ],
           ),
@@ -150,7 +165,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   opacity: 1,
                   fit: BoxFit.fill,
                 )),
-                child: _textValueisEmpty[numberforimages]
+                child: Provider.of<Player>(context, listen: false).textValueisEmpty[numberforimages - 1]
                     ? const Center(
                         child: Text(
                           'HAZIR!',
@@ -180,11 +195,11 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                 child: playerNameCreateTextField(
                   context,
                   _textEditingControllers,
-                  _textValueisEmpty,
+                  Provider.of<Player>(context, listen: false).textValueisEmpty,
                   numberforimages,
                 )),
           ),
-          _textValueisEmpty[numberforimages]
+          Provider.of<Player>(context, listen: false).textValueisEmpty[numberforimages - 1]
               ? Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: IconButton(
