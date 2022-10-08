@@ -1,4 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
+
+import '../../../settings/model/game_settings_model.dart';
 
 class Player with ChangeNotifier {
   int? id;
@@ -6,72 +9,18 @@ class Player with ChangeNotifier {
   String? image;
   int? score;
   int? rank;
-  Map<dynamic, dynamic>? playersMap = <dynamic, dynamic>{};
-  Player({this.id, this.name, this.image, this.score, this.rank, this.playersMap});
-
+  final List<bool> textValueisEmpty = [];
+  Map<String, dynamic>? playersMap = <String, dynamic>{};
+  Map<dynamic, dynamic>? backupPlayersMap = <dynamic, dynamic>{};
+  Player({this.id, this.name, this.image, this.score, this.rank, this.playersMap, this.backupPlayersMap});
   Player.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     image = json['image'];
     score = json['score'];
     rank = json['rank'];
-  }
-
-  Future<Map<dynamic, dynamic>> createPlayerfunc(int userNumber, TextEditingController? textFieldController, int? score,
-      int? rank, String? imagepath, int? id) async {
-
-    for (var i = 1; i <= userNumber; i++) {
-      playersMap![i] = id;
-      playersMap!['name'] = textFieldController?.value.text;
-      playersMap!['image'] = imagepath;
-      playersMap!['score'] = score;
-      playersMap!['rank'] = rank;
-    }
-    return playersMap!;
-  }
-
-  Future<List> getPlayerName(int id) async {
-    var entryList = playersMap!.entries.toList();
-    List playerName = <String>[];
-    for (var element in entryList) {
-      if (element.key == 'name' && element.key['i'] == id) {
-        playerName.add(element.value);
-      }
-    }
-    return playerName;
-  }
-
-  Future<List> getPlayerImages(int id) async {
-    var entryList = playersMap!.entries.toList();
-    List playerImages = <String>[];
-    for (var element in entryList) {
-      if (element.key == 'image' && element.key['i'] == id) {
-        playerImages.add(element.value);
-      }
-    }
-    return playerImages;
-  }
-
-  Future<List> getPlayerScore(int id) async {
-    var entryList = playersMap!.entries.toList();
-    List playerScores = <String>[];
-    for (var element in entryList) {
-      if (element.key == 'score' && element.key['id'] == id) {
-        playerScores.add(element.value);
-      }
-    }
-    return playerScores;
-  }
-
-  Future<List> getPlayerRank(int id) async {
-    var entryList = playersMap!.entries.toList();
-    List playerRank = <String>[];
-    for (var element in entryList) {
-      if (element.key == 'rank' && element.key['id'] == id) {
-        playerRank.add(element.value);
-      }
-    }
-    return playerRank;
+    playersMap = json['playersMap'];
+    backupPlayersMap = json['backupPlayersMap'];
   }
 
   Map<String, dynamic> toJson() {
@@ -82,5 +31,42 @@ class Player with ChangeNotifier {
     data['score'] = score;
     data['rank'] = rank;
     return data;
+  }
+
+  Map<String, dynamic> createPlayerfunc(
+    BuildContext context,
+    List<TextEditingController> textEditingControllers,
+    int? score,
+    int? rank,
+    Future<String>? getimagepathfunc,
+    int id,
+  ) {
+    for (var i = 1; i <= Provider.of<GameSettingsModel>(context).playerCount; i++) {
+      id = i;
+      playersMap?['id'] = id;
+      playersMap?['name'] = textEditingControllers[i].toString();
+      playersMap?['image'] = getimagepathfunc;
+      playersMap?['score'] = score;
+      playersMap?['rank'] = rank;
+    }
+    return playersMap!;
+  }
+
+  Future<String> getimagePath(int? number) async {
+    image = 'assets/images/profiles/$number.png';
+    return image!;
+  }
+
+  Future<bool> arePlayerDone(List<bool> textValueisEmpty) async {
+    bool? isCheck;
+    for (var element in textValueisEmpty) {
+      if (element == true) {
+        isCheck = true;
+      } else if (element == false) {
+        isCheck = false;
+        break;
+      }
+    }
+    return isCheck!;
   }
 }

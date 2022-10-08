@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
-
+import '../../../settings/model/game_settings_model.dart';
 import '../view/create_player_view.dart';
 
 abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
+  static bool isEmpty = false;
+  static bool isReady = false;
+
   TextField playerNameCreateTextField(
     BuildContext context,
     List<TextEditingController>? textEditingControllers,
-    bool isEmpty,
+    List<bool>? textValueisEmpty,
     int? order,
   ) {
     return TextField(
       onChanged: (value) {
         setState(() {
           if (value.isEmpty) {
-            isEmpty = false;
+            textValueisEmpty![order! - 1] = false;
           } else {
-            isEmpty = true;
+            textValueisEmpty![order! - 1] = true;
           }
         });
       },
@@ -68,16 +72,35 @@ abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
   }
 }
 
-Widget buildFirstButton(BuildContext context, bool isCheck, Future function) {
+Widget buildFirstButton(
+  BuildContext context,
+  bool isCheck,
+  Map<String, dynamic>? myMap,
+  List<bool> myList,
+) {
+  bool checkIsChechk = false;
   return SizedBox(
     width: MediaQuery.of(context).size.width / 1.4,
     height: MediaQuery.of(context).size.height / 13,
     child: OutlinedButton(
       onPressed: () {
+        for (bool element in myList) {
+          if (element == true) {
+            checkIsChechk = true;
+          } else if (element == false) {
+            checkIsChechk = false;
+            break;
+          }
+        }
+        if (checkIsChechk == true) {
+          isCheck = true;
+        }
         if (isCheck == true) {
-          function;
           Navigator.push(context, MaterialPageRoute(builder: (context) => const SelectScenarioView()));
         }
+        print(myList);
+        print(checkIsChechk);
+        print(Provider.of<GameSettingsModel>(context, listen: false).playerCount);
       },
       style: ButtonStyle(
         elevation: MaterialStateProperty.all<double>(5),

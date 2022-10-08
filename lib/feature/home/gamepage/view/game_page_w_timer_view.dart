@@ -1,5 +1,6 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
@@ -62,6 +63,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 onPressed: () {
                   controller.pause();
                   //timer.stopEnable1 == false;
+
 
                   Navigator.of(context)
                       .push(FullScreenModal(controller2: controller));
