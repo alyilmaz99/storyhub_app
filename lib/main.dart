@@ -19,34 +19,26 @@ void main() {
      LİSTE GEREKLİ PARAMETLERE DIŞARIDAN VERİLİNCE BU KALDIRILACAK */
   List<PlayerSelectionModel> tempList = [
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human1.png", playerName: "Player 1"),
+        imgPath: "assets/images/profiles/1.png", playerName: "Player 1"),
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human2.png", playerName: "Player 2"),
+        imgPath: "assets/images/profiles/2.png", playerName: "Player 2"),
     PlayerSelectionModel(
-        imgPath: "assets/images/human/human3.png", playerName: "Player 3"),
-    PlayerSelectionModel(
-        imgPath: "assets/images/human/human1.png", playerName: "Player 4"),
-    PlayerSelectionModel(
-        imgPath: "assets/images/human/human2.png", playerName: "Player 5"),
-    PlayerSelectionModel(
-        imgPath: "assets/images/human/human3.png", playerName: "Player 6"),
-    PlayerSelectionModel(
-        imgPath: "assets/images/human/human2.png", playerName: "Player 7"),
-    PlayerSelectionModel(
-        imgPath: "assets/images/human/human3.png", playerName: "Player 8"),
-    PlayerSelectionModel(
-        imgPath: "assets/images/human/human3.png", playerName: "Player 9"),
+        imgPath: "assets/images/profiles/3.png", playerName: "Player 3"),
   ];
 
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider<PlayerCarouselViewModel>(
-            create: (BuildContext context) => PlayerCarouselViewModel(
-                playerList: tempList,
-                map: {},
-                choosenName: "isim",
-                choosenImgPath: "assets/images/blankPerson.jpg")),
+          create: (BuildContext context) => PlayerCarouselViewModel(
+            playerList: tempList,
+            map: {},
+            choosenName: "isim",
+            choosenImgPath: "assets/images/blankPerson.jpg",
+            index: 0,
+            countTour: 1,
+          ),
+        ),
         ChangeNotifierProvider<SelectScenarioModel>(
           create: (BuildContext context) => SelectScenarioModel(),
         ),
@@ -60,14 +52,16 @@ void main() {
                 roundCount: 3)),
         ChangeNotifierProvider<FinalPageViewModel>(
             create: (BuildContext context) => FinalPageViewModel(
+                isFinal: false,
                 playerList: tempList,
                 map: {},
                 choosenName: "isim",
                 choosenImgPath: "assets/images/blankPerson.jpg")),
         ChangeNotifierProvider<PlayerSelectionModel>(
             create: (BuildContext context) => PlayerSelectionModel(
-                imgPath: "assets/images/human/human1.png",
-                playerName: "Player 1")),
+                  imgPath: "assets/images/human/human1.png",
+                  playerName: "Player 1",
+                )),
         ChangeNotifierProvider<Player>(
             create: (BuildContext context) => Player()),
       ],

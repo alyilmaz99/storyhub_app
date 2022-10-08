@@ -7,12 +7,13 @@ class FinalPageViewModel with ChangeNotifier {
   String choosenName = "";
   String choosenImgPath = "";
   Map<int, bool> map;
-
+  bool isFinal;
   FinalPageViewModel({
     required this.playerList,
     required this.map,
     required this.choosenName,
     required this.choosenImgPath,
+    required this.isFinal,
   }) {
     playerList = [];
   }

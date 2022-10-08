@@ -18,7 +18,6 @@ class AfterScenarioView extends StatefulWidget {
 class _AfterScenarioViewState extends AfterScenarioViewModel {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Provider.of<PlayerCarouselViewModel>(context, listen: false).randomChoose();
   }

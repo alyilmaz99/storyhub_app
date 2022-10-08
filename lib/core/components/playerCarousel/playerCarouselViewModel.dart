@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../../../product/model/player_selection_model.dart';
 
 class PlayerCarouselViewModel with ChangeNotifier {
@@ -7,16 +8,41 @@ class PlayerCarouselViewModel with ChangeNotifier {
   String choosenName = "";
   String choosenImgPath = "";
   Map<int, bool> map;
-
+  int index;
+  int countTour;
   PlayerCarouselViewModel({
     required this.playerList,
     required this.map,
     required this.choosenName,
     required this.choosenImgPath,
-  }) {}
+    required this.index,
+    required this.countTour,
+  });
+  int useForTourCountChechk = 1;
+  int counter = 0;
+  void countCheck(context) {
+    print(counter.toString());
+    if (counter < 0) {
+      for (int i = counter; i < 0; i++) {
+        Provider.of<PlayerCarouselViewModel>(context, listen: false)
+            .carouselNext();
+      }
+    } else if (counter > 0) {
+      for (int i = counter; i > 0; i--) {
+        Provider.of<PlayerCarouselViewModel>(context, listen: false)
+            .carouselPrevious();
+      }
+    } else {
+      print("everthing is okay");
+    }
+    counter = 0;
+  }
+
+  List<PlayerSelectionModel> postPlayerList() {
+    return playerList;
+  }
 
   void carouselNext() {
-    int index = 0;
     for (int i = 0; i < map.length; i++) {
       if (map[i] == true) {
         index = i;
@@ -37,7 +63,6 @@ class PlayerCarouselViewModel with ChangeNotifier {
   }
 
   void carouselPrevious() {
-    int index = 0;
     for (int i = 0; i < map.length; i++) {
       if (map[i] == true) {
         index = i;
@@ -69,11 +94,12 @@ class PlayerCarouselViewModel with ChangeNotifier {
     map[random] = true;
     choosenName = playerList[random].playerName;
     choosenImgPath = playerList[random].imgPath;
-    notifyListeners();
+    Future.delayed(Duration.zero, () async {
+      notifyListeners();
+    });
   }
 
   int selectedIndex() {
-    int index = 0;
     for (int i = 0; i < map.length; i++) {
       if (map[i] == true) {
         index = i;
@@ -83,7 +109,6 @@ class PlayerCarouselViewModel with ChangeNotifier {
   }
 
   int firstIndex() {
-    int index = 0;
     for (int i = 0; i < map.length; i++) {
       if (map[i] == true) {
         index = i;
@@ -97,7 +122,6 @@ class PlayerCarouselViewModel with ChangeNotifier {
   }
 
   int thirdIndex() {
-    int index = 0;
     for (int i = 0; i < map.length; i++) {
       if (map[i] == true) {
         index = i;
