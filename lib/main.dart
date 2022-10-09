@@ -16,7 +16,6 @@ import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
 Future main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   /* GELİŞTİRME İÇİN GEÇİCİ LİSTE
      LİSTE GEREKLİ PARAMETLERE DIŞARIDAN VERİLİNCE BU KALDIRILACAK */
@@ -81,7 +80,9 @@ Future main() async {
           ),
         ),
       ],
-      child: MyApp( showMainPage: showMainPage,),
+      child: MyApp(
+        showMainPage: showMainPage,
+      ),
     ),
   );
 }
@@ -106,7 +107,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: showMainPage ? const MainPage() : const SplashScreenView(),
+      home: showMainPage ? const SplashScreenView() : const SplashScreenView(),
     );
   }
 }
