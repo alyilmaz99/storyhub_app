@@ -16,9 +16,12 @@ void main() {
   /* GELİŞTİRME İÇİN GEÇİCİ LİSTE
      LİSTE GEREKLİ PARAMETLERE DIŞARIDAN VERİLİNCE BU KALDIRILACAK */
   List<PlayerSelectionModel> tempList = [
-    PlayerSelectionModel(imgPath: "assets/images/profiles/1.png", playerName: "Player 1"),
-    PlayerSelectionModel(imgPath: "assets/images/profiles/2.png", playerName: "Player 2"),
-    PlayerSelectionModel(imgPath: "assets/images/profiles/3.png", playerName: "Player 3"),
+    PlayerSelectionModel(
+        imgPath: "assets/images/profiles/1.png", playerName: "Player 1"),
+    PlayerSelectionModel(
+        imgPath: "assets/images/profiles/2.png", playerName: "Player 2"),
+    PlayerSelectionModel(
+        imgPath: "assets/images/profiles/3.png", playerName: "Player 3"),
   ];
 
   runApp(
@@ -37,13 +40,14 @@ void main() {
         ChangeNotifierProvider<SelectScenarioModel>(
           create: (BuildContext context) => SelectScenarioModel(),
         ),
-
         ChangeNotifierProvider<SettingsModel>(
             create: (BuildContext context) => SettingsModel()),
-
         ChangeNotifierProvider<GameSettingsModel>(
-            create: (BuildContext context) =>
-                GameSettingsModel(playerCount: 3, timerValue: 20, roundSpeedValue: 1, roundCount: 3)),
+            create: (BuildContext context) => GameSettingsModel(
+                playerCount: 3,
+                timerValue: 20,
+                roundSpeedValue: 1,
+                roundCount: 3)),
         ChangeNotifierProvider<FinalPageViewModel>(
             create: (BuildContext context) => FinalPageViewModel(
                 isFinal: false,
@@ -94,9 +98,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-
-      home: const AfterScenarioView(),
-
+      home: const SplashScreenView(),
     );
   }
 }
