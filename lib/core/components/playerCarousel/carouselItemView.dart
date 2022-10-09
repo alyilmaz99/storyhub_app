@@ -19,18 +19,21 @@ Widget carouselItem(BuildContext context, String path, double width,
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-                side:
-                    BorderSide(width: 1, color: Colors.white.withOpacity(0.5)),
-              ),
-              shadowColor: Colors.transparent,
-              backgroundColor: Colors.transparent,
-              minimumSize: Size(MediaQuery.of(context).size.width / 5,
-                  MediaQuery.of(context).size.height / 30)),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              side: BorderSide(width: 1, color: Colors.white.withOpacity(0.5)),
+            ),
+            shadowColor: Colors.transparent,
+            backgroundColor: Colors.transparent,
+            minimumSize: Size(MediaQuery.of(context).size.width / 4.5,
+                MediaQuery.of(context).size.height / 30),
+            maximumSize: Size(MediaQuery.of(context).size.width / 4.5,
+                MediaQuery.of(context).size.height / 20),
+          ),
           child: Text(
+            textAlign: TextAlign.center,
             name,
-            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
           ),
         ),
       ],

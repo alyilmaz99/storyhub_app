@@ -59,6 +59,9 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
         ),
         child: Column(
           children: [
+            SizedBox(
+              height: screenHeight / 20,
+            ),
             carousel(context, screenHeight, (screenWidth / 5) * 3),
             SizedBox(
               height: screenHeight / 10,

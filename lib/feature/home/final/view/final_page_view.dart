@@ -209,7 +209,7 @@ class _FinalPageState extends State<FinalPageView> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => CardPage(),
+                        builder: (context) => GamePageWithTimer(),
                       ),
                     );
                   },

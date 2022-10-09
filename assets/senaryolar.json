@@ -20,7 +20,7 @@
 		"short-text":"Büyük bir şirket yöneticilerinini vergi kaçırması yüzünden zor zamanlar yaşıyordu. Çalışanların haklarını almak için eylem yaptıkları şirket binası önünde üzerilerine gelen şey hakları mıydı?",
 		"category":"Eglence",
 		"tip1": ["asansör.png","sekreter.png","bilinmeyen mesaj.png","kahve makinası.png","fotokopi makinesi.png","resepsiyon.png","toplantı salonu.png","pano.png","rapor.png","sunum.png"],
-		"tip2":["ankesörlü telefon.png","pencere.png","fikir.png","gözlük.png","ödül çeki.png","duvar saati.png","bowling.png","parfüm.png","sigara.png","fatura.png","gizli dosya.png","kahve makinası.png","hata kodu.png","tablo.png","mektup.png","posta kutusu.png","gazete.png","hizmetçi robot.png","posta güvercini.png","sanatçı.png","çiçekçi.png","başkan.png","resim sergisi.png","tartışma.png","karlı hava.png","antika.png","elektrik kablosu.png","radyo sinyali.png","posta kutusu.png","demir yolu.png","temizlikçi.png","avukat.png"]
+		"tip2":["ankesörlü telefon.png","pencere.png","fikir.png","gözlük.png","ödül çeki.png","duvar saati.png","bowling.png","parfüm.png","sigara.png","fatura.png","gizli dosya.png","kahve makinası.png","hata kodu.png","tablo.png","mektup.png","posta kutusu.png","gazete.png","hizmetçi robot.png","posta güvercini.png","çiçekçi.png","başkan.png","resim sergisi.png","tartışma.png","karlı hava.png","antika.png","elektrik kablosu.png","radyo sinyali.png","posta kutusu.png","demir yolu.png","temizlikçi.png","avukat.png"]
 	},
 
 	{
@@ -119,7 +119,7 @@
 			"iplik.png" ,"iğne.png" ,"papyon.png","havlu.png","toka.png","dikiş makinesi.png","yumak.png"
 		],
 		"tip2":[
-			"ayna.png","askılık.png" ,"cansız manken.png","pırlanta.png","şapka.png","parfüm.png","mum.png","ayna.png","pencere.png","abajur.png","askılık.png","gözlük.png","kurdele.png","havlu.png","sihirli küre.png","ödül çeki.png","akvrayum.png","duvar saati.png","parfüm.png","şemsiye.png","sigara.png","kül tablası.png","fatura.png","kaptan şapkası.png","uçan balon.png","yangın.png","tabure.png","posta kutusu.png","gazete.png","bilinmeyen resimler.png","sanatçı.png","polis.png","bilim insanı.png","başkan.png","asansör.png","tartışma.png","resim sergisi.png","yolcu gemisi.png","hapishane.png","manken.png","satıcı.png","avukat.png","kum saati.png","hediye.png","tablo.png"
+			"ayna.png","askılık.png" ,"cansız manken.png","pırlanta.png","şapka.png","parfüm.png","mum.png","ayna.png","pencere.png","abajur.png","askılık.png","gözlük.png","kurdele.png","havlu.png","sihirli küre.png","ödül çeki.png","akvrayum.png","duvar saati.png","parfüm.png","şemsiye.png","sigara.png","kül tablası.png","fatura.png","kaptan şapkası.png","uçan balon.png","yangın.png","tabure.png","posta kutusu.png","gazete.png","bilinmeyen resimler.png","polis.png","bilim insanı.png","başkan.png","asansör.png","tartışma.png","resim sergisi.png","yolcu gemisi.png","hapishane.png","manken.png","satıcı.png","avukat.png","kum saati.png","hediye.png","tablo.png"
 		]
 	},
 	{
@@ -203,7 +203,7 @@
 			"demir yolu.png","bilet.png","gazete.png","soyguncu.png","bavul.png","koltuk.png","fotoğraf.png","hediye.png"
 		],
 		"tip2":[
-			"köpek maması.png","pencere.png","ranza.png","kurdele.png","oyuncak ayı.png","zar.png","kase.png","soda.png","kül tablası.png","bayrak.png","kafes.png","kahve makinası.png","gizli dosya.png","telsiz.png","topuklu ayakkabı.png","kovboy şapkası.png","posta kutusu.png","gazete.png","demir yolu.png","çığlık.png","hizmetçi robot.png","kaptan.png","sanatçı.png","çiftçi.png","polis.png","başkan.png","köprü.png","tren garı.png","yel değirmeni.png","karavan.png","lunapark.png","fıçı.png","hediye.png","kaptan.png","kovboy.png","mühendis.png","temizlikçi.png","mısır tarlası.png","demir yolu.png","tuzak.png","flama.png","radyo sinyali.png"
+			"köpek maması.png","pencere.png","ranza.png","kurdele.png","oyuncak ayı.png","zar.png","kase.png","soda.png","kül tablası.png","bayrak.png","kafes.png","kahve makinası.png","gizli dosya.png","telsiz.png","topuklu ayakkabı.png","kovboy şapkası.png","posta kutusu.png","gazete.png","demir yolu.png","çığlık.png","hizmetçi robot.png","kaptan.png","çiftçi.png","polis.png","başkan.png","köprü.png","tren garı.png","yel değirmeni.png","karavan.png","lunapark.png","fıçı.png","hediye.png","kaptan.png","kovboy.png","mühendis.png","temizlikçi.png","mısır tarlası.png","demir yolu.png","tuzak.png","flama.png","radyo sinyali.png"
 		]
 	},
 	{
@@ -251,10 +251,10 @@
 		"short-text":"Sanat sergisisinde beklenmedik bir  gürültü duyuldu. Bağırışlar, koşuşturma, silah sesleri ve bir yakarış. Sanat eserlerinden gelmeyen insani bir çığlık…",
 		"category":"Dram",
 		"tip1":[
-			"sanatçı.png","heykel.png","müze.png","fotoğraf.png","resim atölyesi.png","atölye.png","boya.png","fırça.png","fotoğraf makinesi.png"
+			"heykel.png","müze.png","fotoğraf.png","resim atölyesi.png","atölye.png","boya.png","fırça.png","fotoğraf makinesi.png"
 		],
 		"tip2":[
-			"manken.png","su yansıması.png","ayna.png","bitki.png","abajur.png","askılık.png","ruj.png","yumak.png","iskambil.png","tablo.png","duvar saati.png","paskalya yumurtası.png","parfüm.png","pano.png","kokteyl.png","pipet.png","hediye.png","heykel.png","bilinmeyen resimler.png","gazete.png","sanatçı.png","soyguncu.png","asansör.png","bıçaklı gösteri.png","resim sergisi.png","toplantı salonu.png"
+			"manken.png","su yansıması.png","ayna.png","bitki.png","abajur.png","askılık.png","ruj.png","yumak.png","iskambil.png","tablo.png","duvar saati.png","paskalya yumurtası.png","parfüm.png","pano.png","kokteyl.png","pipet.png","hediye.png","heykel.png","bilinmeyen resimler.png","gazete.png","soyguncu.png","asansör.png","bıçaklı gösteri.png","resim sergisi.png","toplantı salonu.png"
 		]
 	},
 	{
