@@ -214,7 +214,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
           Provider.of<Player>(context, listen: false)
                   .textValueisEmpty[numberforimages - 1]
               ? Padding(
-                  padding: const EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 40),
                   child: IconButton(
                     onPressed: () {},
                     icon: const Image(
@@ -223,7 +224,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   ),
                 )
               : Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 40),
                   child: IconButton(
                     onPressed: () {},
                     icon: const Image(

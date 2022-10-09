@@ -34,7 +34,6 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
 
-    CountDownController controller = CountDownController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
@@ -61,11 +60,15 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               alignment: Alignment.centerRight,
               child: IconButton(
                 onPressed: () {
-                  controller.pause();
+                  Provider.of<PlayerCarouselViewModel>(context, listen: false)
+                      .controller2
+                      .pause();
                   //timer.stopEnable1 == false;
 
-                  Navigator.of(context)
-                      .push(FullScreenModal(controller2: controller));
+                  Navigator.of(context).push(FullScreenModal(
+                      controller2: Provider.of<PlayerCarouselViewModel>(context,
+                              listen: false)
+                          .controller2));
                 },
                 icon: const Icon(
                   Icons.menu,
@@ -146,7 +149,10 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                     builder: (context, value, child) {
                       return Center(
                         child: CircularCountDownTimer(
-                            controller: controller,
+                            controller: Provider.of<PlayerCarouselViewModel>(
+                                    context,
+                                    listen: false)
+                                .controller2,
                             isReverse: true,
                             width: screenWidth * 0.40,
                             height: screenWidth * 0.40,
