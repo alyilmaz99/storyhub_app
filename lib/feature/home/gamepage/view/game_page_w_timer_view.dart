@@ -116,7 +116,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                             1.0,
                             isFinalRouterName(
                                 Provider.of<FinalPageViewModel>(context)
-                                    .isFinal))
+                                    .isFinal),
+                          )
                         : carousel(
                             context, screenHeight, (screenWidth / 5) * 3),
                     SizedBox(
@@ -172,6 +173,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                             },
                             onComplete: () => {
                                   setState(() {
+                                    callback();
                                     if (Provider.of<FinalPageViewModel>(
                                       context,
                                       listen: false,

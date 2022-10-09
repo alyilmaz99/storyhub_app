@@ -1,10 +1,7 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers, unnecessary_getters_setters, prefer_typing_uninitialized_variables
 import 'dart:convert';
-// import 'dart:html';
 import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
-
 import '../../feature/home/gamepage/view/CardPAge.dart';
 import '../../feature/home/gamepage/view/tappedCard.dart';
 import '../components/card/CardGame.dart';
@@ -57,12 +54,15 @@ class CardService {
     return cards;
   }
 
-  T randomChoice<T>(Iterable<T> options, [ Iterable<double> weights = const [] ]) {
+  T randomChoice<T>(Iterable<T> options,
+      [Iterable<double> weights = const []]) {
     if (options.isEmpty) {
-      throw ArgumentError.value(options.toString(), 'options', 'must be non-empty');
+      throw ArgumentError.value(
+          options.toString(), 'options', 'must be non-empty');
     }
     if (weights.isNotEmpty && options.length != weights.length) {
-      throw ArgumentError.value(weights.toString(), 'weights', 'must be empty or match length of options');
+      throw ArgumentError.value(weights.toString(), 'weights',
+          'must be empty or match length of options');
     }
 
     if (weights.isEmpty) {
@@ -83,101 +83,97 @@ class CardService {
     return options.elementAt(i);
   }
 
-  CardGame randomCard(List<Senaryo> scenariosParam, int percentTip1, int percentTip2, int otherTips)
-   {
-
+  CardGame randomCard(List<Senaryo> scenariosParam, int percentTip1,
+      int percentTip2, int otherTips) {
     // String nameCard = scenariosParam[0].tip1![0] != null ? scenariosParam[1].tip1![0] : "asa.png" ;
     String nameImageCard = "asa.png";
 
-    String selectionrandomCard = randomChoice(['tip1', 'tip2','other'], [percentTip1/100, percentTip2/100, otherTips/100]);
+    String selectionrandomCard = randomChoice(['tip1', 'tip2', 'other'],
+        [percentTip1 / 100, percentTip2 / 100, otherTips / 100]);
 
-    final _random = new Random();
-    final _random2 = new Random();
+    final _random = Random();
+    final _random2 = Random();
 
-    if(selectionrandomCard == 'tip1')
-      {
-        int numrandom = _random.nextInt(scenariosParam.length);
-        int numrandom2 = _random2.nextInt(scenariosParam[numrandom].tip1.length);
-        nameImageCard = scenariosParam[numrandom].tip1[numrandom2];
-        // nameImageCard = scenariosParam[numrandom].tip1[numrandom2] != null ? scenariosParam[numrandom].tip1[numrandom2] : "asa.png" ;
-      }
-    if(selectionrandomCard == 'tip2')
-    {
+    if (selectionrandomCard == 'tip1') {
+      int numrandom = _random.nextInt(scenariosParam.length);
+      int numrandom2 = _random2.nextInt(scenariosParam[numrandom].tip1.length);
+      nameImageCard = scenariosParam[numrandom].tip1[numrandom2];
+      // nameImageCard = scenariosParam[numrandom].tip1[numrandom2] != null ? scenariosParam[numrandom].tip1[numrandom2] : "asa.png" ;
+    }
+    if (selectionrandomCard == 'tip2') {
       int numrandom = _random.nextInt(scenariosParam.length);
       int numrandom2 = _random2.nextInt(scenariosParam[numrandom].tip2.length);
       nameImageCard = scenariosParam[numrandom].tip2[numrandom2];
     }
-    if(selectionrandomCard == 'other')
-    {
-      String selectionrandomCard2 = randomChoice(['tip1', 'tip2'], [percentTip1/100, percentTip2/100]);
-      if(selectionrandomCard2 == 'tip1')
-        {
-          int numrandom = _random.nextInt(scenariosParam.length);
-          int numrandom2 = _random2.nextInt(scenariosParam[numrandom].tip2.length);
-          nameImageCard = scenariosParam[numrandom].tip2[numrandom2];
-        }
-      if(selectionrandomCard2 == 'tip2')
-        {
-          int numrandom = _random.nextInt(scenariosParam.length);
-          int numrandom2 = _random2.nextInt(scenariosParam[numrandom].tip2.length);
-          nameImageCard = scenariosParam[numrandom].tip2[numrandom2];
-        }
+    if (selectionrandomCard == 'other') {
+      String selectionrandomCard2 = randomChoice(
+          ['tip1', 'tip2'], [percentTip1 / 100, percentTip2 / 100]);
+      if (selectionrandomCard2 == 'tip1') {
+        int numrandom = _random.nextInt(scenariosParam.length);
+        int numrandom2 =
+            _random2.nextInt(scenariosParam[numrandom].tip2.length);
+        nameImageCard = scenariosParam[numrandom].tip2[numrandom2];
+      }
+      if (selectionrandomCard2 == 'tip2') {
+        int numrandom = _random.nextInt(scenariosParam.length);
+        int numrandom2 =
+            _random2.nextInt(scenariosParam[numrandom].tip2.length);
+        nameImageCard = scenariosParam[numrandom].tip2[numrandom2];
+      }
     }
 
-
     String nameCard = nameImageCard.replaceAll(RegExp('[.png]'), '');
-    return new CardGame(nameCard, true, nameImageCard);
+    return CardGame(nameCard, true, nameImageCard);
   }
 
-
-
-  TappedCard randomScenaricCards(List<Senaryo> scenariosParam, Function callback, int level, Difficulty difficulty ) {
-
-    if(difficulty == Difficulty.none)
+  TappedCard randomScenaricCards(List<Senaryo> scenariosParam,
+      Function callback, int level, Difficulty difficulty) {
+    if (difficulty == Difficulty.none) {
       difficulty = Difficulty.kolay;
+    }
 
     CardGame cardGame;
 
-    if(difficulty == Difficulty.kolay)
-      {
-        if(level == 1)
-          cardGame = randomCard(scenariosParam, 55,30,15) as CardGame;
-        else if(level == 2)
-          cardGame = randomCard(scenariosParam, 40, 40, 20) as CardGame;
-        else if(level == 3)
-          cardGame = randomCard(scenariosParam, 25, 45, 30) as CardGame;
+    if (difficulty == Difficulty.kolay) {
+      if (level == 1) {
+        cardGame = randomCard(scenariosParam, 55, 30, 15);
+      } else if (level == 2) {
+        cardGame = randomCard(scenariosParam, 40, 40, 20);
+      } else if (level == 3) {
+        cardGame = randomCard(scenariosParam, 25, 45, 30);
       }
-    else if(difficulty == Difficulty.orta)
-      {
-        if(level == 2)
-          cardGame = randomCard(scenariosParam, 40, 40, 20) as CardGame;
-        else if(level == 3)
-          cardGame = randomCard(scenariosParam, 25, 45, 30) as CardGame;
+    } else if (difficulty == Difficulty.orta) {
+      if (level == 2) {
+        cardGame = randomCard(scenariosParam, 40, 40, 20);
+      } else if (level == 3) {
+        cardGame = randomCard(scenariosParam, 25, 45, 30);
       }
-    else if(difficulty == Difficulty.zor)
-      {
-        if(level == 3)
-          cardGame = randomCard(scenariosParam, 25, 45, 30) as CardGame;
+    } else if (difficulty == Difficulty.zor) {
+      if (level == 3) {
+        cardGame = randomCard(scenariosParam, 25, 45, 30);
       }
+    }
 
-    if(level == 3)
-      cardGame = randomCard(scenariosParam, 25, 45, 30) as CardGame;
-    else if(level == 4)
-      cardGame = randomCard(scenariosParam, 10, 40, 50) as CardGame;
-    else if(level == 5)
-      cardGame = randomCard(scenariosParam, 10, 40, 50) as CardGame;
-    else if(level == 6)
-      cardGame = randomCard(scenariosParam, 0, 30, 70) as CardGame;
-    else if(level == 7)
-      cardGame = randomCard(scenariosParam, 0, 10, 90) as CardGame;
-    else
-      cardGame = randomCard(scenariosParam, 100, 100, 100) as CardGame;
+    if (level == 3) {
+      cardGame = randomCard(scenariosParam, 25, 45, 30);
+    } else if (level == 4) {
+      cardGame = randomCard(scenariosParam, 10, 40, 50);
+    } else if (level == 5) {
+      cardGame = randomCard(scenariosParam, 10, 40, 50);
+    } else if (level == 6) {
+      cardGame = randomCard(scenariosParam, 0, 30, 70);
+    } else if (level == 7) {
+      cardGame = randomCard(scenariosParam, 0, 10, 90);
+    } else {
+      cardGame = randomCard(scenariosParam, 100, 100, 100);
+    }
 
-    String backCardImageUrl = cards.firstWhere((element) => element.name == "arka kart").imageUrl;
+    String backCardImageUrl =
+        cards.firstWhere((element) => element.name == "arka kart").imageUrl;
 
     TappedCard newTappedCard = TappedCard(
-      assetImageCardBack: "assets/images/cards/" + backCardImageUrl,
-      assetImageCardFront: "assets/images/cards/" + cardGame.imageUrl,
+      assetImageCardBack: "assets/images/cards/$backCardImageUrl",
+      assetImageCardFront: "assets/images/cards/${cardGame.imageUrl}",
       routeToPage: CardPage(),
       callback: callback,
     );
@@ -186,15 +182,16 @@ class CardService {
   }
 
   TappedCard createTappedCards(List<CardGame> cardsParam, Function callback) {
-    final _random = new Random();
+    final _random = Random();
     var cardFront = cardsParam[_random.nextInt(cardsParam.length)];
 
-    String backCardImageUrl =
-        cardsParam.firstWhere((element) => element.name == "arka kart").imageUrl;
+    String backCardImageUrl = cardsParam
+        .firstWhere((element) => element.name == "arka kart")
+        .imageUrl;
 
     TappedCard newTappedCard = TappedCard(
-      assetImageCardBack: "assets/images/cards/" + backCardImageUrl,
-      assetImageCardFront: "assets/images/cards/" + cardFront.imageUrl,
+      assetImageCardBack: "assets/images/cards/$backCardImageUrl",
+      assetImageCardFront: "assets/images/cards/${cardFront.imageUrl}",
       routeToPage: CardPage(),
       callback: callback,
     );
