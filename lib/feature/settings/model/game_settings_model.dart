@@ -12,7 +12,7 @@ class GameSettingsModel with ChangeNotifier {
     required this.roundSpeedValue,
     required this.roundCount,
   }) {
-    playerCount = 2;
+    playerCount = 3;
     timerValue = 20;
     roundSpeedValue = 1;
     roundCount = 3;
@@ -41,7 +41,7 @@ class GameSettingsModel with ChangeNotifier {
   }
 
   void decrementPlayerCount() {
-    if (playerCount > 2) {
+    if (playerCount > 3) {
       playerCount--;
       notifyListeners();
     }

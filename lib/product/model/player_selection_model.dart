@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class PlayerSelectionModel with ChangeNotifier {
-  final String imgPath;
-  final String playerName;
+  String imgPath;
+  String playerName;
 
   PlayerSelectionModel({
     required this.imgPath,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:page_animation_transition/animations/fade_animation_transition.dart';
+import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
 import 'package:storyhub/feature/settings/viewmodel/game_settings_viewmodel.dart';
@@ -63,30 +65,66 @@ abstract class GamePageWithTimerViewModel extends State<GamePageWithTimer> {
     }
   }
 
-  void finishGame() {
-    Provider.of<FinalPageViewModel>(
-      context,
-      listen: false,
-    ).isFinal = false;
-    Provider.of<PlayerCarouselViewModel>(context, listen: false).countTour = 1;
-    Provider.of<PlayerCarouselViewModel>(context, listen: false)
-        .useForTourCountChechk = 1;
-    Navigator.pop(context);
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const MainPage(),
-      ),
-    );
+  void halfTimerChechk(String value, void Function() callback) {
+    if ((Provider.of<GameSettingsModel>(context).timerValue.toInt() / 2)
+                .toString() ==
+            ("$value.0") ||
+        (Provider.of<GameSettingsModel>(context).timerValue.toInt() / 2)
+                .toString() ==
+            ("$value.5")) {
+      Future.delayed(Duration.zero, () async {
+        setState(() {
+          callback();
+        });
+      });
+    }
+  }
+
+  void halfTimerChechk2(String value, void Function() callback) {
+    if ((Provider.of<GameSettingsModel>(context).timerValue.toInt())
+                .toString() ==
+            ("$value.0") ||
+        (Provider.of<GameSettingsModel>(context).timerValue.toInt())
+                .toString() ==
+            value) {
+      Future.delayed(Duration.zero, () async {
+        setState(() {
+          callback();
+        });
+      });
+    }
+  }
+
+  void finishGame(bool isFinish) {
+    if (isFinish == true) {
+      Provider.of<FinalPageViewModel>(
+        context,
+        listen: false,
+      ).isFinal = false;
+      Provider.of<PlayerCarouselViewModel>(context, listen: false).countTour =
+          1;
+      Provider.of<PlayerCarouselViewModel>(context, listen: false)
+          .useForTourCountChechk = 1;
+      Navigator.pop(context);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const MainPage(),
+        ),
+      );
+    }
   }
 
   void finalPageRoute() {
-    Navigator.pop(context);
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const FinalPageView(),
-      ),
+    Future.delayed(
+      const Duration(seconds: 0),
+      () {
+        Navigator.of(context).pushAndRemoveUntil(
+            PageAnimationTransition(
+                page: FinalPageView(),
+                pageAnimationType: FadeAnimationTransition()),
+            (Route<dynamic> route) => false);
+      },
     );
   }
 

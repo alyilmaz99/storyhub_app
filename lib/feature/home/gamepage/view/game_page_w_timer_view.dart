@@ -1,5 +1,8 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+
+import 'package:page_animation_transition/animations/fade_animation_transition.dart';
+import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
@@ -18,7 +21,6 @@ class GamePageWithTimer extends StatefulWidget {
 
 class _GamePageWithTimerState extends GamePageWithTimerViewModel {
   bool isFinish = false;
-
   void callback() {
     setState(() {
       isFinish = true;
@@ -114,7 +116,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                             1.0,
                             isFinalRouterName(
                                 Provider.of<FinalPageViewModel>(context)
-                                    .isFinal))
+                                    .isFinal),
+                          )
                         : carousel(
                             context, screenHeight, (screenWidth / 5) * 3),
                     SizedBox(
@@ -161,11 +164,25 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                               fontFamily: 'GamerStation',
                               fontSize: screenWidth / 5,
                             ),
+                            onChange: (value) {
+                              Provider.of<FinalPageViewModel>(context)
+                                          .isFinal ==
+                                      true
+                                  ? halfTimerChechk2(value, callback)
+                                  : halfTimerChechk(value, callback);
+                            },
                             onComplete: () => {
                                   setState(() {
                                     callback();
+                                    if (Provider.of<FinalPageViewModel>(
+                                      context,
+                                      listen: false,
+                                    ).isFinal) {
+                                      finishGame(isFinish);
+                                    } else {
+                                      nextPlayerFunctions(isFinish);
+                                    }
                                   }),
-                                  print(value.getTimerValue()),
                                 }),
                       );
                     },
@@ -181,14 +198,29 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               width: MediaQuery.of(context).size.width / 1.7,
               child: ElevatedButton(
                   onPressed: () {
-                    if (Provider.of<FinalPageViewModel>(
-                      context,
-                      listen: false,
-                    ).isFinal) {
-                      finishGame();
-                    } else {
-                      nextPlayerFunctions(isFinish);
-                    }
+                    setState(() {
+                      print(
+                        "Tur: ${Provider.of<PlayerCarouselViewModel>(context, listen: false).countTour}",
+                      );
+                      print(
+                        "isFinal: ${Provider.of<FinalPageViewModel>(
+                          context,
+                          listen: false,
+                        ).isFinal}",
+                      );
+                      print(
+                        "Tour game count: ${Provider.of<PlayerCarouselViewModel>(context, listen: false).useForTourCountChechk}",
+                      );
+
+                      if (Provider.of<FinalPageViewModel>(
+                        context,
+                        listen: false,
+                      ).isFinal) {
+                        finishGame(isFinish);
+                      } else {
+                        nextPlayerFunctions(isFinish);
+                      }
+                    });
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: isFinish

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
-import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
-import '../../home/scenario/view/selectscenarioview.dart';
 import 'package:provider/provider.dart';
 import '../model/game_settings_model.dart';
 
@@ -21,13 +19,13 @@ class _GameSettingsViewState extends State<GameSettingsView> {
   String roundSpeedName(roundSpeedValue) {
     switch (roundSpeedValue) {
       case 1:
-        return 'Yavaş';
+        return 'Kolay';
       case 2:
         return 'Orta';
       case 3:
-        return 'Hızlı';
+        return 'Zor';
       default:
-        return 'Yavaş';
+        return 'Kolay';
     }
   }
 
@@ -470,9 +468,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-
-                                const /*SelectScenarioView*/ SelectScenarioView()));
-
+                                const /*SelectScenarioView*/ CreatePlayerView()));
                   },
                   child: Container(
                     width: screenWidth / 2.2,

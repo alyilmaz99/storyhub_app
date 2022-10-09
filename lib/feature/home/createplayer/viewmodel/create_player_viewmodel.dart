@@ -1,22 +1,31 @@
-import 'package:flutter/material.dart';
-import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
+// ignore_for_file: unused_local_variable
 
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
+import 'package:storyhub/product/model/player_selection_model.dart';
+import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
+import '../../../settings/model/game_settings_model.dart';
+import '../model/player_model.dart';
 import '../view/create_player_view.dart';
 
 abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
+  static bool isEmpty = false;
+  static bool isReady = false;
+
   TextField playerNameCreateTextField(
     BuildContext context,
     List<TextEditingController>? textEditingControllers,
-    bool isEmpty,
+    List<bool>? textValueisEmpty,
     int? order,
   ) {
     return TextField(
       onChanged: (value) {
         setState(() {
           if (value.isEmpty) {
-            isEmpty = false;
+            textValueisEmpty![order! - 1] = false;
           } else {
-            isEmpty = true;
+            textValueisEmpty![order! - 1] = true;
           }
         });
       },
@@ -68,24 +77,74 @@ abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
   }
 }
 
-Widget buildFirstButton(BuildContext context, bool isCheck, Future function) {
+PlayerSelectionModel createPlayer(BuildContext context, int i) {
+  return PlayerSelectionModel(
+      imgPath: Provider.of<Player>(context, listen: false).playerList[i].image,
+      playerName:
+          Provider.of<Player>(context, listen: false).playerList[i].name);
+}
+
+Widget buildFirstButton(
+  List<TextEditingController> textEditingControllers,
+  BuildContext context,
+  bool isCheck,
+  Map<String, dynamic>? myMap,
+  List<bool> myList,
+) {
+  bool checkIsChechk = false;
   return SizedBox(
     width: MediaQuery.of(context).size.width / 1.4,
     height: MediaQuery.of(context).size.height / 13,
     child: OutlinedButton(
       onPressed: () {
-        if (isCheck == true) {
-          function;
-          Navigator.push(context, MaterialPageRoute(builder: (context) => const SelectScenarioView()));
+        Provider.of<Player>(context, listen: false)
+            .createList(context, textEditingControllers, 1, 1);
+        List<PlayerSelectionModel> tempList = <PlayerSelectionModel>[
+          for (int i = 0;
+              i <
+                  Provider.of<GameSettingsModel>(context, listen: false)
+                      .playerCount;
+              i++)
+            (createPlayer(context, i)),
+        ];
+        Provider.of<PlayerCarouselViewModel>(context, listen: false)
+            .playerList = tempList;
+
+        for (bool element in myList) {
+          if (element == true) {
+            checkIsChechk = true;
+          } else if (element == false) {
+            checkIsChechk = false;
+            break;
+          }
         }
+        if (checkIsChechk == true) {
+          isCheck = true;
+        }
+        if (isCheck == true) {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const SelectScenarioView()));
+        }
+        print(myMap);
+        print(Provider.of<Player>(context, listen: false).playerList[0].image);
+        print(Provider.of<Player>(context, listen: false).playerList[0].name);
+        print(Provider.of<Player>(context, listen: false).playerList.length);
+
+        print(myList);
+        print(checkIsChechk);
+        print(
+            Provider.of<GameSettingsModel>(context, listen: false).playerCount);
       },
       style: ButtonStyle(
         elevation: MaterialStateProperty.all<double>(5),
         shadowColor: MaterialStateProperty.all<Color>(
           const Color.fromRGBO(0, 82, 4, 1),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(
-            isCheck ? const Color.fromRGBO(143, 85, 203, 1) : const Color.fromRGBO(219, 96, 52, 1)),
+        backgroundColor: MaterialStateProperty.all<Color>(isCheck
+            ? const Color.fromRGBO(143, 85, 203, 1)
+            : const Color.fromRGBO(219, 96, 52, 1)),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),

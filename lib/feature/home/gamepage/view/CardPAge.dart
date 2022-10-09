@@ -1,6 +1,8 @@
 // ignore: file_names
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:page_animation_transition/animations/fade_animation_transition.dart';
+import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/GameContreller.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
@@ -126,6 +128,19 @@ class _CardPageState extends CartPageViewModel {
                                     strokeWidth: 6,
                                     isTimerTextShown: false,
                                     onComplete: () {
+                                      GameContreller().setCancelCard(false);
+                                      Future.delayed(
+                                        const Duration(seconds: 0),
+                                        () {
+                                          Navigator.of(context).pushAndRemoveUntil(
+                                              PageAnimationTransition(
+                                                  page:
+                                                      const GamePageWithTimer(),
+                                                  pageAnimationType:
+                                                      FadeAnimationTransition()),
+                                              (Route<dynamic> route) => false);
+                                        },
+                                      );
                                       setState(() {
                                         timeUp();
                                       });
