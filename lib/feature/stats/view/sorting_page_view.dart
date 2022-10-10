@@ -82,7 +82,7 @@ class SortingPageView extends SortingPageViewModel {
               style: ElevatedButton.styleFrom(
                   elevation: 5,
                   minimumSize: Size(screenWidth / 1.7, screenHeight / 15),
-                  backgroundColor: const Color.fromRGBO(216, 91, 47, 1),
+                  primary: const Color.fromRGBO(216, 91, 47, 1),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18),
                   )),

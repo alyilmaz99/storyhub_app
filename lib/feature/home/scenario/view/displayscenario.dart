@@ -8,6 +8,10 @@ import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
 
 class DisplayScenario extends StatefulWidget {
+  int senaryo;
+
+  DisplayScenario({required this.senaryo});
+
   @override
   State<DisplayScenario> createState() => _DisplayScenario();
 }
@@ -44,7 +48,7 @@ class _DisplayScenario extends State<DisplayScenario> {
                 onPressed: () {},
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 50),
+            SizedBox(height: MediaQuery.of(context).size.height / 70),
             SizedBox(
               width: MediaQuery.of(context).size.width / 1,
               height: MediaQuery.of(context).size.height / (1.3),
@@ -66,7 +70,13 @@ class _DisplayScenario extends State<DisplayScenario> {
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
                           var scenarioList = snapshot.data as List<Senaryo>;
-                          List.generate(scenarioList.length, (index) => index);
+                          int a = widget.senaryo;
+                          var scn = scenarioList
+                              .where((element) =>
+                                  element.senaryoNumber == widget.senaryo)
+                              .toList();
+
+                          //List.generate(scenarioList.length, (index) => index);
                           return Card(
                               color: Colors.transparent,
                               shadowColor: Colors.transparent,
@@ -82,17 +92,15 @@ class _DisplayScenario extends State<DisplayScenario> {
                                                   "assets/images/cards/emptycard.png"),
                                               fit: BoxFit.cover)),
                                       child: Container(
-                                        alignment: Alignment.bottomRight,
-                                        padding: const EdgeInsets.all(12),
-                                        child: Consumer<SelectScenarioModel>(
-                                            builder: (context, value, child) {
-                                          return Column(
+                                          alignment: Alignment.bottomRight,
+                                          padding: const EdgeInsets.all(12),
+                                          child: Column(
                                             children: [
                                               SizedBox(
                                                 height: MediaQuery.of(context)
                                                         .size
                                                         .height /
-                                                    9,
+                                                    10,
                                               ),
                                               Container(
                                                 margin:
@@ -102,9 +110,7 @@ class _DisplayScenario extends State<DisplayScenario> {
                                                   alignment:
                                                       Alignment.topCenter,
                                                   child: Text(
-                                                    scenarioList[
-                                                            value.getIndex()]
-                                                        .senaryoText,
+                                                    scn[0].senaryoText,
                                                     style: const TextStyle(
                                                         fontSize: 25,
                                                         fontFamily:
@@ -126,24 +132,19 @@ class _DisplayScenario extends State<DisplayScenario> {
                                                         horizontal: 35),
                                                 child: Align(
                                                   alignment: Alignment.center,
-                                                  child: Text(
-                                                      scenarioList[
-                                                              value.getIndex()]
-                                                          .longText,
+                                                  child: Text(scn[0].longText,
                                                       textAlign:
                                                           TextAlign.center,
                                                       style: const TextStyle(
                                                         fontWeight:
                                                             FontWeight.w500,
-                                                        fontSize: 15,
+                                                        fontSize: 12,
                                                         color: Colors.white,
                                                       )),
                                                 ),
                                               )
                                             ],
-                                          );
-                                        }),
-                                      ))));
+                                          )))));
                         } else {
                           return Container();
                         }

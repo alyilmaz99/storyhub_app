@@ -123,7 +123,7 @@ class _FinalPageState extends State<FinalPageView> {
                         width: screenWidth / 5,
                         child: TextButton(
                           style: TextButton.styleFrom(
-                            foregroundColor: Colors.white,
+                            primary: Colors.white,
                             textStyle: const TextStyle(fontSize: 30),
                           ),
                           onPressed: () {},

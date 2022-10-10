@@ -19,6 +19,7 @@ Widget carouselItem(BuildContext context, String path, double width,
         ElevatedButton(
           onPressed: () {},
           style: ElevatedButton.styleFrom(
+
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
               side: BorderSide(width: 1, color: Colors.white.withOpacity(0.5)),
