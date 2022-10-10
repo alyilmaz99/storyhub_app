@@ -10,8 +10,9 @@ class Player with ChangeNotifier {
   int? id;
   String name = '';
   String image = '';
-  int score = 1;
+  double score = 0;
   int rank = 1;
+  bool isVote = false;
   final List<bool> textValueisEmpty = [];
   Map<String, dynamic>? playersMap = <String, dynamic>{};
   Map<dynamic, dynamic>? backupPlayersMap = <dynamic, dynamic>{};
@@ -22,6 +23,7 @@ class Player with ChangeNotifier {
       required this.image,
       required this.score,
       required this.rank,
+      required this.isVote,
       this.playersMap,
       this.backupPlayersMap});
   Player.fromJson(Map<String, dynamic> json) {
@@ -47,14 +49,12 @@ class Player with ChangeNotifier {
   Map<String, dynamic> createPlayerfunc(
     BuildContext context,
     String text,
-    int? score,
+    double? score,
     int? rank,
     String getimagepathfunc,
     int id,
   ) {
-    for (var i = 1;
-        i <= Provider.of<GameSettingsModel>(context).playerCount;
-        i++) {
+    for (var i = 1; i <= Provider.of<GameSettingsModel>(context).playerCount; i++) {
       id = i;
       playersMap?['id'] = id;
       playersMap?['name'] = text;
@@ -65,18 +65,22 @@ class Player with ChangeNotifier {
     return playersMap!;
   }
 
-  void createList(BuildContext context,
-      List<TextEditingController> textEditingControllers, int rank, int score) {
-    for (int i = 1;
-        i <= Provider.of<GameSettingsModel>(context, listen: false).playerCount;
-        i++) {
+  void createList(
+    BuildContext context,
+    List<TextEditingController> textEditingControllers,
+    int rank,
+    double score,
+  ) {
+    for (int i = 1; i <= Provider.of<GameSettingsModel>(context, listen: false).playerCount; i++) {
       playerList.add(
         Player(
-            playerList: playerList,
-            image: getimagePath(i),
-            name: textEditingControllers[i].text,
-            rank: rank,
-            score: score),
+          playerList: playerList,
+          image: getimagePath(i),
+          name: textEditingControllers[i].text,
+          rank: rank,
+          score: score,
+          isVote: false,
+        ),
       );
     }
   }
@@ -84,18 +88,5 @@ class Player with ChangeNotifier {
   String getimagePath(int? number) {
     image = 'assets/images/profiles/$number.png';
     return image;
-  }
-
-  Future<bool> arePlayerDone(List<bool> textValueisEmpty) async {
-    bool? isCheck;
-    for (var element in textValueisEmpty) {
-      if (element == true) {
-        isCheck = true;
-      } else if (element == false) {
-        isCheck = false;
-        break;
-      }
-    }
-    return isCheck!;
   }
 }
