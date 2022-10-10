@@ -115,6 +115,12 @@ Widget buildFirstButton(
           isCheck = true;
         }
         if (isCheck == true) {
+          Provider.of<Player>(
+            context,
+            listen: false,
+          ).playerList.forEach((element) {
+            element.isVote = false;
+          });
           Navigator.push(context, MaterialPageRoute(builder: (context) => const VoteScreenView()));
         }
         print(myMap);
