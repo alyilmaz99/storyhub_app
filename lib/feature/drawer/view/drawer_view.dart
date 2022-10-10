@@ -56,13 +56,27 @@ class FullScreenModal extends DrawerViewModel {
                     ),
                     onSurface: Colors.white.withOpacity(0.9),
                     //disabledBackgroundColor: Colors.white.withOpacity(0.9),
-                    minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
-                child: const Text("DEVAM ET",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontFamily: 'GamerStation',
-                      color: Colors.white,
-                    )),
+                    minimumSize: Size(screenWidth / 1.3, screenHeight / 12)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: const  [
+                     Text("DEVAM ET",
+                     textAlign: TextAlign.center,
+                        style: TextStyle(
+                          
+                          fontSize: 30,
+                          fontFamily: 'GamerStation',
+                          color: Colors.white,
+                        )),
+                     Padding(
+                       padding: EdgeInsets.only(right :20),
+                       child: SizedBox(
+                        width: 20,
+                        child: Icon(Icons.play_arrow_sharp, color: Colors.white, size: 90,)),
+                     ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 70,

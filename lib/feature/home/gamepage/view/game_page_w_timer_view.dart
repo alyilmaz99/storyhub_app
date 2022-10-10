@@ -161,8 +161,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                     true
                                 ? value.getTimerValue() * 2
                                 : value.getTimerValue(),
-                            fillColor: Colors.red,
-                            ringColor: Colors.green,
+                            fillColor: Color.fromARGB(255, 244, 52, 38),
+                            ringColor: Color.fromARGB(255, 22, 182, 27),
                             strokeWidth: 16,
                             textStyle: TextStyle(
                               textBaseline: TextBaseline.alphabetic,
@@ -224,7 +224,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                       ).isFinal) {
                         finishGame(isFinish);
                       } else {
-                        nextPlayerFunctions(isFinish);
+                        nextPlayerFunctions(isFinish);                   
                       }
                     });
                   },
