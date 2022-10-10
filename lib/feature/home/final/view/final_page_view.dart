@@ -128,11 +128,8 @@ class _FinalPageState extends State<FinalPageView> {
                           ),
                           onPressed: () {},
                           child: IconButton(
-                            icon: const Icon(
-                              Icons.shuffle_outlined,
-                              color: Colors.white,
-                              size: 35.0,
-                            ),
+                            icon: Image.asset("assets/images/randomButton.png", ),
+                             
                             onPressed: () {
                               /* ----- Burada random bir kullanıcı seçiliyor----- */
                               Provider.of<FinalPageViewModel>(context,
