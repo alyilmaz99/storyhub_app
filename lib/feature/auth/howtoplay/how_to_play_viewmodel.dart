@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:storyhub/feature/auth/howtoplay/how_to_play_view.dart';
 
-import '../../../home/mainpage/view/main_page_view.dart';
-import '../view/sliderinformationview.dart';
+import '../../home/mainpage/view/main_page_view.dart';
 
 class OnboardingItem {
   final String title;
@@ -17,44 +17,37 @@ class OnboardingItem {
 
 class OnboardingItems {
   static List<OnboardingItem> loadOnboardingItem() {
-    const inf = <OnboardingItem>[
+    const hwplay = <OnboardingItem>[
       OnboardingItem(
-        title: "NEDİR?",
-        subtitle:
-            "Story Hub, grup halinde oynanan zincirleme hikaye yaratma oyunudur.",
-        image: "assets/images/slider/1.png",
+        title: "NASIL OYNANIR?",
+        subtitle: "Story Hub grup halinde oynanan bir oyundur",
+        image: "assets/images/slider/6.png",
       ),
       OnboardingItem(
-        title: "OYUN KURALLARI",
-        subtitle:
-            "Oyuncular verilen süre içerisinde kartları kullanarak bağlantılı bir şekilde hikayeyi devam ettirmelidirler.",
-        image: "assets/images/slider/2.png",
+        title: "NASIL OYNANIR?",
+        subtitle: "Bir kişi seçilen senaryoyu okuyarak oyunu başlatır.",
+        image: "assets/images/slider/7.png",
       ),
       OnboardingItem(
-        title: "OYUNCU SAYISI",
-        subtitle: "2 ila 8 kişi arasında gruplar halinde oynanır",
-        image: "assets/images/slider/3.png",
+        title: "NASIL OYNANIR?",
+        subtitle:
+            "Grup üyeleri kartlarda bulunan kelimelerle oyunu devam ettirir.",
+        image: "assets/images/slider/8.png",
       ),
       OnboardingItem(
-        title: "PUANLAMA TABLOSU",
+        title: "NASIL OYNANIR?",
         subtitle:
-            "Oylama sonucunda ek olarak kullanılan kartlar eklenir ve sıralama ile kazanan belirlenir.",
-        image: "assets/images/slider/4.png",
-      ),
-      OnboardingItem(
-        title: "KARTLAR",
-        subtitle:
-            "Oyunun içinde metinlere eklenerek senaryonun devamını sağlar",
-        image: "assets/images/slider/5.png",
+            "Oyun öncesinde belirlenen süre içinde anlatımın bitirilmesi gerekir.",
+        image: "assets/images/slider/9.png",
       ),
     ];
-    return inf;
+    return hwplay;
   }
 }
 
-abstract class SliderInformationViewModel extends State<SliderInformationView> {
+abstract class HowToPlayViewModel extends State<HowToPlayView> {
   final controller = PageController(initialPage: 0);
-  final int numPages = 4;
+  final int numPages = 3;
   int currentPage = 0;
 
   void onDonePress() {
@@ -74,7 +67,7 @@ abstract class SliderInformationViewModel extends State<SliderInformationView> {
   }
 
   void endSlide() {
-    controller.jumpToPage(4);
+    controller.jumpToPage(3);
   }
 }
 

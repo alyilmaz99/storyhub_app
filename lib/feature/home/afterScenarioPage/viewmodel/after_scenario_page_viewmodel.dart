@@ -17,8 +17,9 @@ Widget buildFirstButton(BuildContext context, String text, double height,
       onPressed: () {
         if (function == 1) {
           Navigator.pop(context);
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => DisplayScenario()));
+          // Navigator.push(context,
+          //     MaterialPageRoute(builder: (context) => DisplayScenario())
+          //     );
         } else {
           Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => CardPage()),

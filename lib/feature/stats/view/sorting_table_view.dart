@@ -75,7 +75,7 @@ class _SortingTableViewState extends State<SortingTableView> {
               style: ElevatedButton.styleFrom(
                   elevation: 5,
                   minimumSize: Size(screenWidth / 1.6, screenHeight / 12),
-                  backgroundColor: const Color.fromRGBO(143, 85, 203, 1),
+                  onPrimary: const Color.fromRGBO(143, 85, 203, 1),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18),
                   )),

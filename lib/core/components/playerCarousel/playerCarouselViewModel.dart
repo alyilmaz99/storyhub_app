@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../../product/model/player_selection_model.dart';
@@ -10,6 +11,8 @@ class PlayerCarouselViewModel with ChangeNotifier {
   Map<int, bool> map;
   int index;
   int countTour;
+  CountDownController controller2 = CountDownController();
+  String cardName = 'KART İSMİ';
   PlayerCarouselViewModel({
     required this.playerList,
     required this.map,

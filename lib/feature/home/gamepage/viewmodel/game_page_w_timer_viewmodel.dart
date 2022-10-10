@@ -167,7 +167,7 @@ Widget crateHeroImage(BuildContext context, String path, double width,
               side: BorderSide(width: 1, color: Colors.white.withOpacity(0.5)),
             ),
             shadowColor: Colors.transparent,
-            backgroundColor: Colors.transparent,
+            primary: Colors.transparent,
             minimumSize: Size(MediaQuery.of(context).size.width / 5,
                 MediaQuery.of(context).size.height / 30)),
         child: const Text(

@@ -8,6 +8,10 @@ import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
 
 class DisplayScenario extends StatefulWidget {
+  int senaryo;
+
+  DisplayScenario({required this.senaryo});
+
   @override
   State<DisplayScenario> createState() => _DisplayScenario();
 }
@@ -28,9 +32,9 @@ class _DisplayScenario extends State<DisplayScenario> {
             gradient: RadialGradient(
                 center: Alignment.center,
                 colors: [
-                  Color.fromRGBO(138, 97, 166, 1),
-                  Color.fromRGBO(58, 29, 88, 1),
-                  Color.fromRGBO(13, 5, 38, 1),
+                  Color.fromRGBO(59, 52, 114, 1),
+                  Color.fromRGBO(42, 37, 80, 1),
+                  Color.fromRGBO(37, 29, 58, 1),
                 ],
                 radius: 1,
                 tileMode: TileMode.clamp),
@@ -44,7 +48,7 @@ class _DisplayScenario extends State<DisplayScenario> {
                 onPressed: () {},
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 50),
+            SizedBox(height: MediaQuery.of(context).size.height / 90),
             SizedBox(
               width: MediaQuery.of(context).size.width / 1,
               height: MediaQuery.of(context).size.height / (1.3),
@@ -66,7 +70,13 @@ class _DisplayScenario extends State<DisplayScenario> {
                       builder: (context, snapshot) {
                         if (snapshot.hasData) {
                           var scenarioList = snapshot.data as List<Senaryo>;
-                          List.generate(scenarioList.length, (index) => index);
+                          int a = widget.senaryo;
+                          var scn = scenarioList
+                              .where((element) =>
+                                  element.senaryoNumber == widget.senaryo)
+                              .toList();
+
+                          //List.generate(scenarioList.length, (index) => index);
                           return Card(
                               color: Colors.transparent,
                               shadowColor: Colors.transparent,
@@ -82,29 +92,24 @@ class _DisplayScenario extends State<DisplayScenario> {
                                                   "assets/images/cards/emptycard.png"),
                                               fit: BoxFit.cover)),
                                       child: Container(
-                                        alignment: Alignment.bottomRight,
-                                        padding: const EdgeInsets.all(12),
-                                        child: Consumer<SelectScenarioModel>(
-                                            builder: (context, value, child) {
-                                          return Column(
+                                          alignment: Alignment.bottomRight,
+                                          padding: const EdgeInsets.all(12),
+                                          child: Column(
                                             children: [
                                               SizedBox(
                                                 height: MediaQuery.of(context)
                                                         .size
                                                         .height /
-                                                    9,
+                                                    10,
                                               ),
                                               Container(
                                                 margin:
                                                     const EdgeInsets.symmetric(
-                                                        horizontal: 15),
+                                                        horizontal: 30),
                                                 child: Align(
-                                                  alignment:
-                                                      Alignment.topCenter,
+                                                  alignment: Alignment.center,
                                                   child: Text(
-                                                    scenarioList[
-                                                            value.getIndex()]
-                                                        .senaryoText,
+                                                    scn[0].senaryoText,
                                                     style: const TextStyle(
                                                         fontSize: 25,
                                                         fontFamily:
@@ -113,12 +118,25 @@ class _DisplayScenario extends State<DisplayScenario> {
                                                   ),
                                                 ),
                                               ),
-                                              SizedBox(
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height /
-                                                    30,
-                                              ),
+                                              scn[0]
+                                                          .longText
+                                                          .characters
+                                                          .length >
+                                                      600
+                                                  ? SizedBox(
+                                                      height:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .height /
+                                                              20,
+                                                    )
+                                                  : SizedBox(
+                                                      height:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .height /
+                                                              15,
+                                                    ),
                                               Container(
                                                 color: Colors.transparent,
                                                 margin:
@@ -126,24 +144,25 @@ class _DisplayScenario extends State<DisplayScenario> {
                                                         horizontal: 35),
                                                 child: Align(
                                                   alignment: Alignment.center,
-                                                  child: Text(
-                                                      scenarioList[
-                                                              value.getIndex()]
-                                                          .longText,
+                                                  child: Text(scn[0].longText,
                                                       textAlign:
                                                           TextAlign.center,
-                                                      style: const TextStyle(
+                                                      style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.w500,
-                                                        fontSize: 15,
+                                                        fontSize: scn[0]
+                                                                    .longText
+                                                                    .characters
+                                                                    .length >
+                                                                600
+                                                            ? 13
+                                                            : 14,
                                                         color: Colors.white,
                                                       )),
                                                 ),
                                               )
                                             ],
-                                          );
-                                        }),
-                                      ))));
+                                          )))));
                         } else {
                           return Container();
                         }

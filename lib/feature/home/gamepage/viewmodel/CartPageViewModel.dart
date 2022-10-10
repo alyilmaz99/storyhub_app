@@ -50,7 +50,9 @@ abstract class CartPageViewModel extends State<CardPage> {
       // var cards = cardService.getCards();
       var senaryolar = senaryoService.getSenaryolar();
 
-      newCard = cardService.randomScenaricCards(senaryolar, callback, 1, Difficulty.none);
+      newCard = cardService.randomScenaricCards(
+          senaryolar, callback, 1, Difficulty.none, context);
+
       // newCard = cardService.createTappedCards(cards, callback);
       isLoaded = true;
     });

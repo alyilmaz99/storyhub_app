@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../../../../core/components/GameContreller.dart';
 
 import 'CardPAge.dart';
@@ -46,9 +48,13 @@ class _TappedCardState extends State<TappedCard> {
       flipOnTouch: !(GameContreller().cancelFlipCard),
       onFlipDone: (status) {
         print(status);
-
+        var secondNameForCount = assetImageCardFront!.split('.png');
+        var testF = secondNameForCount[0].split('assets/images/cards/');
+        print(secondNameForCount);
+        print(testF);
         GameContreller().setCancelCard(true);
-
+        Provider.of<PlayerCarouselViewModel>(context, listen: false).cardName =
+            testF[1].toUpperCase();
         setState(() {});
 
         // sleep(Duration(seconds:1));
