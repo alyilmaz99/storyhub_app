@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
-import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
-import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
+import 'package:storyhub/feature/home/voteScreen/model/vote_model.dart';
 import 'feature/home/createplayer/model/player_model.dart';
 import 'product/model/player_selection_model.dart';
 import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
@@ -37,10 +35,7 @@ void main() {
         ChangeNotifierProvider<SelectScenarioModel>(
           create: (BuildContext context) => SelectScenarioModel(),
         ),
-
-        ChangeNotifierProvider<SettingsModel>(
-            create: (BuildContext context) => SettingsModel()),
-
+        ChangeNotifierProvider<SettingsModel>(create: (BuildContext context) => SettingsModel()),
         ChangeNotifierProvider<GameSettingsModel>(
             create: (BuildContext context) =>
                 GameSettingsModel(playerCount: 3, timerValue: 20, roundSpeedValue: 1, roundCount: 3)),
@@ -66,7 +61,13 @@ void main() {
             name: '',
             playersMap: {},
             rank: 1,
-            score: 1,
+            score: 0,
+            isVote: false,
+          ),
+        ),
+        ChangeNotifierProvider<Vote>(
+          create: (BuildContext context) => Vote(
+            counter: 0,
           ),
         ),
       ],
@@ -87,16 +88,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarBrightness: Brightness.dark,
-            statusBarColor: Color.fromARGB(0, 189, 189, 189),
-            statusBarIconBrightness: Brightness.light,
-          ),
         ),
       ),
-
-      home: const AfterScenarioView(),
-
+      home: const SplashScreenView(),
     );
   }
 }
