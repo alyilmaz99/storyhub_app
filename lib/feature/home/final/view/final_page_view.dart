@@ -50,10 +50,9 @@ class _FinalPageState extends State<FinalPageView> {
               // Color.fromARGB(255, 36, 10, 63),
               // Color.fromARGB(255, 19, 6, 45),
               // Color.fromARGB(255, 13, 5, 38),
-              Color.fromARGB(255, 59, 52, 114),
-              Color.fromARGB(255, 59, 52, 114),
-              Color.fromARGB(255, 42, 37, 80),
-              Color.fromARGB(255, 37, 29, 58)
+              Color.fromRGBO(59, 52, 114, 1),
+              Color.fromRGBO(42, 37, 80, 1),
+              Color.fromRGBO(37, 29, 58, 1),
             ])),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -209,7 +208,7 @@ class _FinalPageState extends State<FinalPageView> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => CardPage(),
+                        builder: (context) => GamePageWithTimer(),
                       ),
                     );
                   },

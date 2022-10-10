@@ -65,6 +65,7 @@ class _CardPageState extends CartPageViewModel {
     var screenWidth = screenSize.width;
 
     loadCards(callback);
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Container(
@@ -73,6 +74,7 @@ class _CardPageState extends CartPageViewModel {
             radius: 0.8,
             colors: [
               Color.fromRGBO(59, 52, 114, 1),
+              Color.fromRGBO(42, 37, 80, 1),
               Color.fromRGBO(37, 29, 58, 1),
             ],
           ),
