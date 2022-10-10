@@ -4,44 +4,60 @@ import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
 import 'package:storyhub/feature/settings/model/game_settings_model.dart';
 
 class Vote with ChangeNotifier {
+  List<Player> playerList = [];
   int? headerPlayer = 0;
   int? counter = 0;
   String? headerImage;
-  List<String>? imageList;
-  List<Player>? secondPlayerList;
+  List<String> names = [];
   Vote({this.counter});
 
-  String getPlayerToHead(BuildContext context, List<Player> playerList) {
+  String getPlayerToHead(BuildContext context) {
     if (playerList[headerPlayer!].isVote == false) {
-      Provider.of<Vote>(context).headerImage = Provider.of<Player>(context).playerList[headerPlayer!].image;
-      Provider.of<Player>(context).playerList[headerPlayer!].isVote = true;
+      Provider.of<Vote>(context, listen: false).headerImage =
+          Provider.of<Player>(context).playerList[headerPlayer!].image;
+      // Provider.of<Player>(context).playerList[headerPlayer!].isVote = true;
     }
-    headerPlayer! + 1;
-    Future.delayed(Duration.zero, () async {
-      notifyListeners();
-    });
 
     return headerImage!;
   }
 
-  List<Player> addToSecondList(BuildContext context) {
-    secondPlayerList!.add(Provider.of<Player>(context).playerList[headerPlayer!]);
-    return secondPlayerList!;
+  void changeHead(BuildContext context) {
+    for (int i = 0; i < Provider.of<GameSettingsModel>(context, listen: false).playerCount; i++) {
+      if (playerList[0].isVote == false) {
+        Provider.of<Vote>(context, listen: false).headerImage =
+            Provider.of<Player>(context, listen: false).playerList[i].image;
+      }
+      break;
+    }
+    notifyListeners();
   }
 
-  List<String> getImageToList(BuildContext context) {
-    for (var i = 0; i < Provider.of<GameSettingsModel>(context).playerCount; i++) {
-      imageList!.add(Provider.of<Player>(context).playerList[i].image);
+  void setPlayerList(BuildContext context) {
+    playerList = Provider.of<Player>(context, listen: false).playerList;
+  }
+
+  String getPlayerName(BuildContext context, int index) {
+    names.clear();
+    for (int i = 0; i < Provider.of<GameSettingsModel>(context, listen: false).playerCount; i++) {
+      if (playerList[i].isVote == false) {
+        names.add(playerList[i].playerList[i].name);
+      } else if (playerList[i].isVote == true) {
+        names.remove(playerList[i].playerList[i].name);
+      }
     }
-    return imageList!;
+
+    Future.delayed(Duration.zero, () async {
+      notifyListeners();
+    });
+    print(names);
+    return names[index];
   }
 
   void buttonFunc(BuildContext context) {
-    for (var i = 0; i < Provider.of<GameSettingsModel>(context).playerCount; i++) {}
+    increaseHeaderPlayer(context);
   }
 
-  void increaseCounter() {
-    counter = counter! + 1;
-    notifyListeners();
+  void increaseHeaderPlayer(BuildContext context) {
+    Provider.of<Vote>(context, listen: false).headerPlayer! + 1;
   }
 }
