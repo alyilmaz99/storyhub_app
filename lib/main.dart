@@ -106,6 +106,6 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        home: SelectScenarioView());
+        home: SplashScreenView());
   }
 }

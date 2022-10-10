@@ -46,7 +46,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               alignment: Alignment.center,
               child: SizedBox(
                 // height: screenHeight / 10,
-                width: screenWidth / 4.5,
+                width: screenWidth / 4,
                 child: Image.asset(
                   'assets/images/LogoV1.png',
                   fit: BoxFit.fill,

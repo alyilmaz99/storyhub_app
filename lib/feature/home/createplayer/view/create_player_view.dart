@@ -78,6 +78,9 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
           width: screenWidth,
           child: Column(
             children: [
+              SizedBox(
+                height: screenHeight / 40,
+              ),
               Align(
                 alignment: Alignment.topCenter,
                 child: Padding(
@@ -94,7 +97,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
               ),
               Provider.of<GameSettingsModel>(context).playerCount <= 4
                   ? SizedBox(
-                      height: screenHeight / 17,
+                      height: screenHeight / 30,
                     )
                   : const SizedBox(height: 1),
               Scrollbar(

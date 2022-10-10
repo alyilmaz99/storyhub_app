@@ -34,7 +34,7 @@
 			"uzaylı.png","ışın kılıcı.png","gezegen.png","robot.png","uydu.png","bayrak.png","oksijen tüpü.png","uzay gemisi.png","meteor yağmuru.png"
 		],
 		"tip2":[
-			"keşif.png","ışınlanma.png","teleskop.png","astreoid.png","ayna.png","iksir.png","telsiz.png","paskalya yumurtası.png","teleskop.png","oksijen tüpü.png","uydu.png" ,"bayrak.png","güneş.png","radyasyon.png","rapor.png","keşif.png","meteor.png","teleskop.png","radyo sinyali.png","bilinmeyen mesaj.png","çığlık.png","hizmetçi robot.png","uzaylı.png","başkan.png"
+			"keşif.png","ışınlanma.png","teleskop.png","asteroid.png","ayna.png","iksir.png","telsiz.png","paskalya yumurtası.png","teleskop.png","oksijen tüpü.png","uydu.png" ,"bayrak.png","güneş.png","radyasyon.png","rapor.png","keşif.png","meteor.png","teleskop.png","radyo sinyali.png","bilinmeyen mesaj.png","çığlık.png","hizmetçi robot.png","uzaylı.png","başkan.png"
 		]
 	},
 	{
@@ -251,7 +251,7 @@
 		"short-text":"Sanat sergisisinde beklenmedik bir  gürültü duyuldu. Bağırışlar, koşuşturma, silah sesleri ve bir yakarış. Sanat eserlerinden gelmeyen insani bir çığlık…",
 		"category":"Dram",
 		"tip1":[
-			"heykel.png","müze.png","fotoğraf.png","resim atölyesi.png","atölye.png","boya.png","fırça.png","fotoğraf makinesi.png"
+			"heykel.png","müze.png","fotoğraf.png","resim atölyesi.png","atölye.png","boya.png","fotoğraf makinesi.png"
 		],
 		"tip2":[
 			"manken.png","su yansıması.png","ayna.png","bitki.png","abajur.png","askılık.png","ruj.png","yumak.png","iskambil.png","tablo.png","duvar saati.png","paskalya yumurtası.png","parfüm.png","pano.png","kokteyl.png","pipet.png","hediye.png","heykel.png","bilinmeyen resimler.png","gazete.png","soyguncu.png","asansör.png","bıçaklı gösteri.png","resim sergisi.png","toplantı salonu.png"

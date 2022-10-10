@@ -48,7 +48,7 @@ class _DisplayScenario extends State<DisplayScenario> {
                 onPressed: () {},
               ),
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 70),
+            SizedBox(height: MediaQuery.of(context).size.height / 90),
             SizedBox(
               width: MediaQuery.of(context).size.width / 1,
               height: MediaQuery.of(context).size.height / (1.3),
@@ -105,10 +105,9 @@ class _DisplayScenario extends State<DisplayScenario> {
                                               Container(
                                                 margin:
                                                     const EdgeInsets.symmetric(
-                                                        horizontal: 15),
+                                                        horizontal: 30),
                                                 child: Align(
-                                                  alignment:
-                                                      Alignment.topCenter,
+                                                  alignment: Alignment.center,
                                                   child: Text(
                                                     scn[0].senaryoText,
                                                     style: const TextStyle(
@@ -119,12 +118,25 @@ class _DisplayScenario extends State<DisplayScenario> {
                                                   ),
                                                 ),
                                               ),
-                                              SizedBox(
-                                                height: MediaQuery.of(context)
-                                                        .size
-                                                        .height /
-                                                    30,
-                                              ),
+                                              scn[0]
+                                                          .longText
+                                                          .characters
+                                                          .length >
+                                                      600
+                                                  ? SizedBox(
+                                                      height:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .height /
+                                                              20,
+                                                    )
+                                                  : SizedBox(
+                                                      height:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .height /
+                                                              15,
+                                                    ),
                                               Container(
                                                 color: Colors.transparent,
                                                 margin:
@@ -135,10 +147,16 @@ class _DisplayScenario extends State<DisplayScenario> {
                                                   child: Text(scn[0].longText,
                                                       textAlign:
                                                           TextAlign.center,
-                                                      style: const TextStyle(
+                                                      style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.w500,
-                                                        fontSize: 12,
+                                                        fontSize: scn[0]
+                                                                    .longText
+                                                                    .characters
+                                                                    .length >
+                                                                600
+                                                            ? 13
+                                                            : 14,
                                                         color: Colors.white,
                                                       )),
                                                 ),
