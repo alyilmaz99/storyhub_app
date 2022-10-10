@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
+import 'package:storyhub/feature/home/voteScreen/model/vote_model.dart';
 import 'package:storyhub/feature/home/voteScreen/viewmodel/vote_screen_viewmodel.dart';
 import 'package:storyhub/feature/settings/model/game_settings_model.dart';
 import 'package:storyhub/product/widgets/button/nasil_oylama_soru_isareti_button.dart';
@@ -19,8 +20,6 @@ class _VoteScreenViewState extends VoteScreenViewModel {
     var screenInfo = MediaQuery.of(context);
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
-
-    Map<String, dynamic>? getVoteMap = Provider.of<Player>(context).playersMap;
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(242, 128, 106, 1.0),
@@ -61,7 +60,11 @@ class _VoteScreenViewState extends VoteScreenViewModel {
               ),
             ),
             SizedBox(
-                height: screenHeight / 7, width: screenWidth / 3, child: Image.asset('assets/images/profiles/1.png')),
+                height: screenHeight / 7,
+                width: screenWidth / 3,
+                child: Image.asset(
+                  Provider.of<Vote>(context).getPlayerToHead(context, Provider.of<Player>(context).playerList),
+                )),
             Scrollbar(
               radius: const Radius.circular(20.0),
               thumbVisibility: true,
@@ -72,14 +75,16 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                 child: Padding(
                   padding: EdgeInsets.only(top: screenHeight / 50),
                   child: ListView.builder(
-                    itemCount: Provider.of<GameSettingsModel>(context).playerCount,
+                    itemCount: Provider.of<GameSettingsModel>(context).playerCount - 1,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: EdgeInsets.only(bottom: screenHeight / 20),
                         child: PlayerVoteRateContainer(
                           screenWidth: screenWidth / 10,
                           screenHeight: screenHeight / 8,
-                          name: 'Abdullah',
+                          name: Provider.of<Player>(context).playerList[index + 1].name,
+                          imagePath: Provider.of<Player>(context).playerList[index + 1].image,
+                          indexincontainer: index,
                         ),
                       );
                     },
@@ -87,10 +92,12 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                 ),
               ),
             ),
+            const Spacer(),
             SizedBox(
                 width: MediaQuery.of(context).size.width / 1.4,
                 height: MediaQuery.of(context).size.height / 13,
                 child: const VoteScreenContinueButton()),
+            const Spacer(),
           ],
         ),
       ),
@@ -131,17 +138,23 @@ class VoteScreenContinueButton extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class PlayerVoteRateContainer extends StatelessWidget {
-  const PlayerVoteRateContainer({
+  PlayerVoteRateContainer({
     Key? key,
     required this.screenWidth,
     required this.screenHeight,
     required this.name,
+    required this.imagePath,
+    required this.indexincontainer,
   }) : super(key: key);
 
   final double screenWidth;
   final double screenHeight;
   final String name;
+  double ratingstarincontainer = 0;
+  final String imagePath;
+  final int indexincontainer;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -152,7 +165,7 @@ class PlayerVoteRateContainer extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 20),
-            child: SizedBox(height: 75, width: 75, child: Image.asset('assets/images/profiles/2.png')),
+            child: SizedBox(height: 75, width: 75, child: Image.asset(imagePath)),
           ),
           Padding(
             padding: EdgeInsets.only(left: screenWidth / 2),
@@ -169,7 +182,9 @@ class PlayerVoteRateContainer extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: screenHeight / 10, left: screenWidth / 8),
-                  child: const RateStarWidget(),
+                  child: RateStarWidget(
+                    index: indexincontainer,
+                  ),
                 ),
               ],
             ),
@@ -180,24 +195,35 @@ class PlayerVoteRateContainer extends StatelessWidget {
   }
 }
 
+// ignore: must_be_immutable
 class RateStarWidget extends StatelessWidget {
-  const RateStarWidget({
+  RateStarWidget({
+    required this.index,
     Key? key,
   }) : super(key: key);
 
+  int index;
   @override
   Widget build(BuildContext context) {
-    return const RatingStars(
-      maxValue: 3,
+    return RatingStars(
+      value: Provider.of<Player>(context, listen: false).playerList[index + 1].score,
+      onValueChanged: (currentValue) {
+        // ignore: avoid_print
+        print("benim skor:$currentValue");
+        Provider.of<Player>(context, listen: false).playerList[index + 1].score =
+            Provider.of<Player>(context, listen: false).playerList[index + 1].score + currentValue;
+      },
+      maxValue: 5,
       maxValueVisibility: true,
       starCount: 3,
       starSize: 35,
-      valueLabelMargin: EdgeInsets.all(10),
-      valueLabelPadding: EdgeInsets.all(2),
-      valueLabelVisibility: false,
+      valueLabelMargin: const EdgeInsets.all(10),
+      valueLabelPadding: const EdgeInsets.all(2),
+      valueLabelVisibility: true,
       starSpacing: 15,
-      starColor: Color.fromRGBO(64, 13, 115, 1),
-      starOffColor: Color.fromRGBO(143, 87, 119, 1),
+      starColor: const Color.fromRGBO(64, 13, 115, 1),
+      valueLabelColor: Colors.black,
+      starOffColor: const Color.fromRGBO(143, 87, 119, 1),
     );
   }
 }
