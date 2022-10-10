@@ -65,6 +65,7 @@ class _CardPageState extends CartPageViewModel {
     var screenWidth = screenSize.width;
 
     loadCards(callback);
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Container(
@@ -73,6 +74,7 @@ class _CardPageState extends CartPageViewModel {
             radius: 0.8,
             colors: [
               Color.fromRGBO(59, 52, 114, 1),
+              Color.fromRGBO(42, 37, 80, 1),
               Color.fromRGBO(37, 29, 58, 1),
             ],
           ),
@@ -155,14 +157,13 @@ class _CardPageState extends CartPageViewModel {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              backgroundColor:
-                                  const Color.fromRGBO(251, 251, 251, 0.9),
-                              disabledForegroundColor: Colors.white
+                              primary: const Color.fromRGBO(251, 251, 251, 0.9),
+                              onSurface: Colors.white
                                   .withOpacity(0.38)
                                   .withOpacity(0.38),
-                              disabledBackgroundColor: Colors.white
-                                  .withOpacity(0.38)
-                                  .withOpacity(0.12),
+                              // disabledBackgroundColor: Colors.white
+                              //     .withOpacity(0.38)
+                              //     .withOpacity(0.12),
                               // disabledBackgroundColor:
                               //     Colors.white.withOpacity(0.12),
                               minimumSize:
@@ -227,7 +228,7 @@ class _CardPageState extends CartPageViewModel {
                                     }
                                 },
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: _isTimeUp
+                              primary: _isTimeUp
                                   ? const Color.fromRGBO(223, 105, 64, 1)
                                   : const Color.fromRGBO(251, 251, 251, 0.5),
                               shape: RoundedRectangleBorder(

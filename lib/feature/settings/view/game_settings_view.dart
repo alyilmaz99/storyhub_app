@@ -46,7 +46,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           children: [
             Container(
               padding: EdgeInsets.only(right: screenWidth / 7),
-              height: screenHeight / 17,
+              height: screenHeight / 15,
               child: const Image(
                 fit: BoxFit.cover,
                 image: AssetImage('assets/images/LogoV1.png'),
@@ -455,11 +455,12 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                 TextButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                        const Color.fromARGB(255, 19, 6, 45)),
+                        const Color.fromRGBO(91, 49, 134, 1)),
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
+                    
                     ),
                   ),
                   onPressed: () {
@@ -471,7 +472,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                 const /*SelectScenarioView*/ CreatePlayerView()));
                   },
                   child: Container(
-                    width: screenWidth / 2.2,
+                    width: screenWidth / 1.8,
                     height: screenHeight / 30,
                     alignment: Alignment.center,
                     child: const Text(

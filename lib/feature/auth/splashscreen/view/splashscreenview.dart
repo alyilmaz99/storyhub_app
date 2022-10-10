@@ -18,9 +18,9 @@ class _SplashScreenViewState extends SplashScreenViewModel {
           color: Color.fromRGBO(127, 188, 210, 1),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            const Text(
               "VESSAC",
               style: TextStyle(
                 fontFamily: 'SharyBold',
@@ -29,7 +29,7 @@ class _SplashScreenViewState extends SplashScreenViewModel {
               ),
               textAlign: TextAlign.center,
             ),
-            Text(
+            const Text(
               "GAME",
               style: TextStyle(
                 fontFamily: 'SharyBold',
@@ -38,7 +38,7 @@ class _SplashScreenViewState extends SplashScreenViewModel {
               ),
               textAlign: TextAlign.center,
             ),
-            Text(
+            const Text(
               "STUDIOS",
               style: TextStyle(
                 fontFamily: 'SharyBold',
@@ -46,6 +46,22 @@ class _SplashScreenViewState extends SplashScreenViewModel {
                 color: Colors.white,
               ),
               textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 3.5,
+            ),
+            Container(
+              margin: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).size.width / 9),
+              alignment: Alignment.bottomCenter,
+              width: MediaQuery.of(context).size.width / 9,
+              height: MediaQuery.of(context).size.height / 18,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/vessac.png'),
+                  fit: BoxFit.fill,
+                ),
+              ),
             ),
           ],
         ),

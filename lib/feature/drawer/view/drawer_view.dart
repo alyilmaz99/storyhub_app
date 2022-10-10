@@ -49,20 +49,34 @@ class FullScreenModal extends DrawerViewModel {
                   controller2.resume();
                 },
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white.withOpacity(0.38),
-                    backgroundColor: const Color.fromRGBO(223, 105, 64, 1),
+                    onPrimary: Colors.white.withOpacity(0.38),
+                    primary: const Color.fromRGBO(223, 105, 64, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    disabledForegroundColor: Colors.white.withOpacity(0.9),
-                    disabledBackgroundColor: Colors.white.withOpacity(0.9),
-                    minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
-                child: const Text("DEVAM ET",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontFamily: 'GamerStation',
-                      color: Colors.white,
-                    )),
+                    onSurface: Colors.white.withOpacity(0.9),
+                    //disabledBackgroundColor: Colors.white.withOpacity(0.9),
+                    minimumSize: Size(screenWidth / 1.3, screenHeight / 12)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
+                  children: const  [
+                     Text("DEVAM ET",
+                     textAlign: TextAlign.center,
+                        style: TextStyle(
+                          
+                          fontSize: 30,
+                          fontFamily: 'GamerStation',
+                          color: Colors.white,
+                        )),
+                     Padding(
+                       padding: EdgeInsets.only(right :20),
+                       child: SizedBox(
+                        width: 20,
+                        child: Icon(Icons.play_arrow_sharp, color: Colors.white, size: 90,)),
+                     ),
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 70,
@@ -78,13 +92,13 @@ class FullScreenModal extends DrawerViewModel {
                           builder: (context) => const MainPage()));
                 },
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white.withOpacity(0.38),
-                    backgroundColor: const Color.fromRGBO(177, 113, 199, 1),
+                    onPrimary: Colors.white.withOpacity(0.38),
+                    primary: const Color.fromRGBO(177, 113, 199, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    disabledForegroundColor: Colors.white,
-                    disabledBackgroundColor: Colors.white,
+                    onSurface: Colors.white,
+                    //disabledBackgroundColor: Colors.white,
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                 child: const Text(
                   "Yeni Oyun",

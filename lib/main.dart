@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
-import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
-import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
-import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
+import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
 import 'feature/home/createplayer/model/player_model.dart';
 import 'product/model/player_selection_model.dart';
@@ -16,7 +13,6 @@ import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 
 Future main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   /* GELİŞTİRME İÇİN GEÇİCİ LİSTE
      LİSTE GEREKLİ PARAMETLERE DIŞARIDAN VERİLİNCE BU KALDIRILACAK */
@@ -47,8 +43,10 @@ Future main() async {
         ChangeNotifierProvider<SelectScenarioModel>(
           create: (BuildContext context) => SelectScenarioModel(),
         ),
+
         ChangeNotifierProvider<SettingsModel>(
             create: (BuildContext context) => SettingsModel()),
+
         ChangeNotifierProvider<GameSettingsModel>(
             create: (BuildContext context) => GameSettingsModel(
                 playerCount: 3,
@@ -77,11 +75,19 @@ Future main() async {
             name: '',
             playersMap: {},
             rank: 1,
-            score: 1,
+            score: 0,
+            isVote: false,
+          ),
+        ),
+        ChangeNotifierProvider<Vote>(
+          create: (BuildContext context) => Vote(
+            counter: 0,
           ),
         ),
       ],
-      child: MyApp( showMainPage: showMainPage,),
+      child: MyApp(
+        showMainPage: showMainPage,
+      ),
     ),
   );
 }
@@ -95,18 +101,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
+
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           backgroundColor: Colors.transparent,
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarBrightness: Brightness.dark,
-            statusBarColor: Color.fromARGB(0, 189, 189, 189),
-            statusBarIconBrightness: Brightness.light,
-          ),
         ),
       ),
-      home: showMainPage ? const MainPage() : const SplashScreenView(),
+      home: const SplashScreenView(),
     );
+
   }
 }

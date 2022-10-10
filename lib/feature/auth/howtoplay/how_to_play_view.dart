@@ -141,7 +141,7 @@ class _HowToPlayViewState extends HowToPlayViewModel {
                                     },
                                     style: ElevatedButton.styleFrom(
                                       elevation: 7,
-                                      backgroundColor:
+                                      primary:
                                           const Color.fromRGBO(91, 49, 134, 1),
                                       shadowColor:
                                           const Color.fromRGBO(91, 49, 134, 1)

@@ -1,8 +1,5 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-
-import 'package:page_animation_transition/animations/fade_animation_transition.dart';
-import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
@@ -34,7 +31,6 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
 
-    CountDownController controller = CountDownController();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
@@ -50,7 +46,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               alignment: Alignment.center,
               child: SizedBox(
                 // height: screenHeight / 10,
-                width: screenWidth / 4.5,
+                width: screenWidth / 4,
                 child: Image.asset(
                   'assets/images/LogoV1.png',
                   fit: BoxFit.fill,
@@ -61,11 +57,15 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               alignment: Alignment.centerRight,
               child: IconButton(
                 onPressed: () {
-                  controller.pause();
+                  Provider.of<PlayerCarouselViewModel>(context, listen: false)
+                      .controller2
+                      .pause();
                   //timer.stopEnable1 == false;
 
-                  Navigator.of(context)
-                      .push(FullScreenModal(controller2: controller));
+                  Navigator.of(context).push(FullScreenModal(
+                      controller2: Provider.of<PlayerCarouselViewModel>(context,
+                              listen: false)
+                          .controller2));
                 },
                 icon: const Icon(
                   Icons.menu,
@@ -83,6 +83,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
             radius: 0.8,
             colors: [
               Color.fromRGBO(59, 52, 114, 1),
+              Color.fromRGBO(42, 37, 80, 1),
               Color.fromRGBO(37, 29, 58, 1),
             ],
           ),
@@ -96,9 +97,11 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               child: Center(
                 child: Column(
                   children: [
-                    const Text(
-                      "MEZAR TASI",
-                      style: TextStyle(
+                    Text(
+                      Provider.of<PlayerCarouselViewModel>(context,
+                              listen: false)
+                          .cardName,
+                      style: const TextStyle(
                         color: Colors.white,
                         fontFamily: 'GamerStation',
                         fontSize: 20,
@@ -146,7 +149,10 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                     builder: (context, value, child) {
                       return Center(
                         child: CircularCountDownTimer(
-                            controller: controller,
+                            controller: Provider.of<PlayerCarouselViewModel>(
+                                    context,
+                                    listen: false)
+                                .controller2,
                             isReverse: true,
                             width: screenWidth * 0.40,
                             height: screenWidth * 0.40,
@@ -155,8 +161,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                     true
                                 ? value.getTimerValue() * 2
                                 : value.getTimerValue(),
-                            fillColor: Colors.red,
-                            ringColor: Colors.green,
+                            fillColor: Color.fromARGB(255, 244, 52, 38),
+                            ringColor: Color.fromARGB(255, 22, 182, 27),
                             strokeWidth: 16,
                             textStyle: TextStyle(
                               textBaseline: TextBaseline.alphabetic,
@@ -218,12 +224,12 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                       ).isFinal) {
                         finishGame(isFinish);
                       } else {
-                        nextPlayerFunctions(isFinish);
+                        nextPlayerFunctions(isFinish);                   
                       }
                     });
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: isFinish
+                    primary: isFinish
                         ? const Color.fromRGBO(223, 105, 64, 1)
                         : const Color.fromRGBO(251, 251, 251, 0.4)
                             .withOpacity(0.5),

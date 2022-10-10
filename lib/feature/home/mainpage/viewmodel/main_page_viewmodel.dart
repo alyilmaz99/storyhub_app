@@ -49,10 +49,8 @@ abstract class MainPageViewModel extends State<MainPage> {
       height: MediaQuery.of(context).size.height / 17,
       child: OutlinedButton(
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const HowToPlayView()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const HowToPlayView()));
         },
         style: ButtonStyle(
           shadowColor: MaterialStateProperty.all<Color>(
@@ -88,7 +86,7 @@ abstract class MainPageViewModel extends State<MainPage> {
   Widget buildIcon() {
     return IconButton(
       icon: Image.asset("assets/images/LogoV1.png"),
-      iconSize: 100,
+      iconSize: 140,
       onPressed: () {},
     );
   }

@@ -10,8 +10,6 @@ abstract class SplashScreenViewModel extends State<SplashScreenView> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () async {
-      final prefs = await SharedPreferences.getInstance();
-      prefs.setBool('showMainPage', true);
       Navigator.of(context).pushReplacement(PageAnimationTransition(
           page: const GradientSplashScreen(),
           pageAnimationType: FadeAnimationTransition()));

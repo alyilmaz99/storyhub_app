@@ -1,7 +1,9 @@
-// ignore_for_file: no_leading_underscores_for_local_identifiers, unnecessary_getters_setters, prefer_typing_uninitialized_variables
 import 'dart:convert';
 import 'dart:math';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../../feature/home/gamepage/view/CardPAge.dart';
 import '../../feature/home/gamepage/view/tappedCard.dart';
 import '../components/card/CardGame.dart';
@@ -126,8 +128,12 @@ class CardService {
     return CardGame(nameCard, true, nameImageCard);
   }
 
-  TappedCard randomScenaricCards(List<Senaryo> scenariosParam,
-      Function callback, int level, Difficulty difficulty) {
+  TappedCard randomScenaricCards(
+      List<Senaryo> scenariosParam,
+      Function callback,
+      int level,
+      Difficulty difficulty,
+      BuildContext context) {
     if (difficulty == Difficulty.none) {
       difficulty = Difficulty.kolay;
     }

@@ -20,18 +20,14 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
   }
 
   var textFieldController = TextEditingController();
-  final List<TextEditingController> _textEditingControllers = [
-    TextEditingController()
-  ];
+  final List<TextEditingController> _textEditingControllers = [TextEditingController()];
 
   Future<void> additemtoList(int index, int maxnumber) async {
     while (index < maxnumber) {
       _textEditingControllers.add(TextEditingController());
       if (Provider.of<Player>(context, listen: false).textValueisEmpty.length <
           Provider.of<GameSettingsModel>(context, listen: false).playerCount) {
-        Provider.of<Player>(context, listen: false)
-            .textValueisEmpty
-            .add(CreatePlayerViewModel.isEmpty);
+        Provider.of<Player>(context, listen: false).textValueisEmpty.add(CreatePlayerViewModel.isEmpty);
       }
 
       index++;
@@ -45,12 +41,11 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     var screenHeight = screenInfo.size.height;
     var screenWidth = screenInfo.size.width;
     int? myId = Provider.of<Player>(context).id;
-    int? myScore = Provider.of<Player>(context).score;
+    double? myScore = Provider.of<Player>(context).score;
     int? myRank = Provider.of<Player>(context).rank;
     String? myImageString = Provider.of<Player>(context).image;
     // int userNumber = Provider.of<GameSettingsModel>(context).playerCount;
-    Map<dynamic, dynamic>? myPlayersMap =
-        Provider.of<Player>(context).playersMap;
+    Map<dynamic, dynamic>? myPlayersMap = Provider.of<Player>(context).playersMap;
     // Future<void> myEqualMap = Provider.of<Player>(context).equalMaps();
     // Future<String> writemaps(Map<dynamic, dynamic> writemap) async {
     //   return writemap.values.toString();
@@ -67,10 +62,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
         decoration: const BoxDecoration(
           gradient: RadialGradient(
             radius: 0.7,
-            colors: [
-              Color.fromRGBO(255, 149, 113, 1),
-              Color.fromRGBO(216, 91, 47, 1)
-            ],
+            colors: [Color.fromRGBO(255, 149, 113, 1), Color.fromRGBO(216, 91, 47, 1)],
           ),
         ),
         child: SizedBox(
@@ -78,13 +70,16 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
           width: screenWidth,
           child: Column(
             children: [
+              SizedBox(
+                height: screenHeight / 40,
+              ),
               Align(
                 alignment: Alignment.topCenter,
                 child: Padding(
                   padding: EdgeInsets.only(top: screenHeight / 20),
                   child: SizedBox(
-                    height: screenHeight / 16,
-                    width: screenWidth / 4.5,
+                    height: screenHeight / 14,
+                    width: screenWidth / 4,
                     child: Image.asset(
                       'assets/images/LogoV1.png',
                       fit: BoxFit.fill,
@@ -92,44 +87,51 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   ),
                 ),
               ),
+              Provider.of<GameSettingsModel>(context).playerCount <= 4
+                  ? SizedBox(
+                      height: screenHeight / 30,
+                    )
+                  : const SizedBox(height: 1),
               Scrollbar(
                 radius: const Radius.circular(20.0),
                 thumbVisibility: true,
                 thickness: 5,
                 child: SizedBox(
-                  height: screenHeight / 1.40,
+                  height:
+                      Provider.of<GameSettingsModel>(context).playerCount <= 4
+                          ? screenHeight / 1.6
+                          : screenHeight / 1.4,
                   width: screenWidth / 1.15,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: screenHeight / 200),
-                    child: ListView.builder(
-                      itemCount:
-                          Provider.of<GameSettingsModel>(context).playerCount,
-                      itemBuilder: (context, index) {
-                        additemtoList(
-                          index,
-                          Provider.of<GameSettingsModel>(context).playerCount,
-                        );
 
-                        //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
-                        Provider.of<Player>(context).createPlayerfunc(
-                          context,
-                          _textEditingControllers[index].text,
-                          myScore,
-                          myRank,
-                          getImagePath(index),
-                          index,
-                        );
+                  child: ListView.builder(
+                    itemCount:
+                        Provider.of<GameSettingsModel>(context).playerCount,
+                    itemBuilder: (context, index) {
+                      additemtoList(
+                        index,
+                        Provider.of<GameSettingsModel>(context).playerCount,
+                      );
 
-                        //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
-                        return Padding(
-                            padding: EdgeInsets.only(bottom: screenHeight / 45),
-                            child: playerNameCreateContainer(
-                              context,
-                              index + 1,
-                              isCheckOkay,
-                            ));
-                      },
-                    ),
+
+                      //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
+                      Provider.of<Player>(context).createPlayerfunc(
+                        context,
+                        _textEditingControllers[index].text,
+                        myScore,
+                        myRank,
+                        getImagePath(index),
+                        index,
+                      );
+
+                      //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
+                      return Padding(
+                          padding: EdgeInsets.only(bottom: screenHeight / 45),
+                          child: playerNameCreateContainer(
+                            context,
+                            index + 1,
+                            isCheckOkay,
+                          ));
+                    },
                   ),
                 ),
               ),
@@ -162,21 +164,18 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
       child: Row(
         children: [
           Padding(
-            padding:
-                EdgeInsets.only(left: MediaQuery.of(context).size.width / 20),
+            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 20),
             child: SizedBox(
-              width: 80,
-              height: 80,
+              width: MediaQuery.of(context).size.width / 5.2,
+              height: MediaQuery.of(context).size.width / 5.2,
               child: Container(
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                  image:
-                      AssetImage('assets/images/profiles/$numberforimages.png'),
+                  image: AssetImage('assets/images/profiles/$numberforimages.png'),
                   opacity: 1,
                   fit: BoxFit.fill,
                 )),
-                child: Provider.of<Player>(context, listen: false)
-                        .textValueisEmpty[numberforimages - 1]
+                child: Provider.of<Player>(context, listen: false).textValueisEmpty[numberforimages - 1]
                     ? const Center(
                         child: Text(
                           'HAZIR!',
@@ -199,8 +198,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
             ),
           ),
           Padding(
-            padding:
-                EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
+            padding: EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
             child: SizedBox(
                 height: 50,
                 width: 160,
@@ -211,10 +209,10 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   numberforimages,
                 )),
           ),
-          Provider.of<Player>(context, listen: false)
-                  .textValueisEmpty[numberforimages - 1]
+          Provider.of<Player>(context, listen: false).textValueisEmpty[numberforimages - 1]
               ? Padding(
-                  padding: const EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 40),
                   child: IconButton(
                     onPressed: () {},
                     icon: const Image(
@@ -223,7 +221,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   ),
                 )
               : Padding(
-                  padding: const EdgeInsets.only(left: 20),
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 40),
                   child: IconButton(
                     onPressed: () {},
                     icon: const Image(
