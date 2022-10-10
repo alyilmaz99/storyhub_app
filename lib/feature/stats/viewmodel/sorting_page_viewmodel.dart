@@ -4,10 +4,10 @@ abstract class SortingPageViewModel extends StatelessWidget {
   const SortingPageViewModel({super.key});
 }
 
-Widget buildContainer(
-    BuildContext context, Color color, String image, String secondImage) {
+Widget buildContainer(BuildContext context, Color color, String image, String secondImage, String name) {
   double screenHeight = MediaQuery.of(context).size.height;
   double screenWidth = MediaQuery.of(context).size.width;
+
   return Container(
     width: screenWidth / 1.15,
     height: screenHeight / 8,
@@ -39,14 +39,12 @@ Widget buildContainer(
         Container(
           width: screenWidth / 2.5,
           height: screenHeight / 25,
-          decoration: BoxDecoration(
-              border: Border.all(),
-              borderRadius: const BorderRadius.all(Radius.circular(25))),
-          child: const Center(
+          decoration: BoxDecoration(border: Border.all(), borderRadius: const BorderRadius.all(Radius.circular(25))),
+          child: Center(
             child: Text(
               textAlign: TextAlign.center,
-              'İsim',
-              style: TextStyle(color: Colors.black, fontSize: 20),
+              name,
+              style: const TextStyle(color: Colors.black, fontSize: 20),
             ),
           ),
         ),

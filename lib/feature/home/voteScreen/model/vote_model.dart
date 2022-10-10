@@ -10,17 +10,20 @@ class Vote with ChangeNotifier {
   List<String> names = [];
 
   ///FOR MY CODES
+  List<double> playerScores = [];
+  List<double> playerScoresOrdered = [];
+  List<String> playerNamesOrdered = [];
   List<Player> playerList = [];
   int counterForTour = 0;
   List<Player> playerList2 = [];
   List<Player> catcher = [];
   String firstImage = '';
   bool isFinishVote = false;
+  List<Player> playerListTemporary = [];
   Vote({this.counter});
 
   String getPlayerToHead(BuildContext context) {
-    if ((headerPlayer <
-        Provider.of<GameSettingsModel>(context, listen: false).playerCount)) {
+    if ((headerPlayer < Provider.of<GameSettingsModel>(context, listen: false).playerCount)) {
       if (playerList[headerPlayer].isVote == false) {
         Provider.of<Vote>(context, listen: false).headerImage =
             Provider.of<Player>(context).playerList[headerPlayer].image;
@@ -31,9 +34,7 @@ class Vote with ChangeNotifier {
   }
 
   void changeHead(BuildContext context) {
-    for (int i = 0;
-        i < Provider.of<GameSettingsModel>(context, listen: false).playerCount;
-        i++) {
+    for (int i = 0; i < Provider.of<GameSettingsModel>(context, listen: false).playerCount; i++) {
       if (playerList[0].isVote == false) {
         Provider.of<Vote>(context, listen: false).headerImage =
             Provider.of<Player>(context, listen: false).playerList[i].image;
@@ -45,9 +46,7 @@ class Vote with ChangeNotifier {
 
   String getPlayerName(BuildContext context, int index) {
     names.clear();
-    for (int i = 0;
-        i < Provider.of<GameSettingsModel>(context, listen: false).playerCount;
-        i++) {
+    for (int i = 0; i < Provider.of<GameSettingsModel>(context, listen: false).playerCount; i++) {
       if (playerList[i].isVote == false) {
         names.add(playerList[i].playerList[i].name);
       } else if (playerList[i].isVote == true) {
@@ -84,8 +83,7 @@ class Vote with ChangeNotifier {
       }
       playerList[0].isVote = true;
       firstImage = playerList[0].image;
-    } else if (counterForTour <
-        Provider.of<GameSettingsModel>(context, listen: false).playerCount) {
+    } else if (counterForTour < Provider.of<GameSettingsModel>(context, listen: false).playerCount) {
       for (int i = 0; i < playerList.length; i++) {
         if (playerList[i].isVote == true) {
           if (playerList2[i].isVote == false) {
@@ -108,14 +106,55 @@ class Vote with ChangeNotifier {
   }
 
   void isFinishVoteFunc(BuildContext context) {
-    if (counterForTour ==
-        Provider.of<GameSettingsModel>(context, listen: false).playerCount -
-            1) {
+    if (counterForTour == Provider.of<GameSettingsModel>(context, listen: false).playerCount - 1) {
       isFinishVote = true;
     }
   }
 
   String sendFirstImage() {
     return firstImage;
+  }
+
+  void getScoreToListandOrder(BuildContext context) {
+    for (var i = 0; i < Provider.of<Vote>(context, listen: false).playerList2.length; i++) {
+      Provider.of<Vote>(context, listen: false)
+          .playerScores
+          .add(Provider.of<Vote>(context, listen: false).playerList2[i].score);
+    }
+  }
+
+/*
+  List<String> getNameToListOrder(BuildContext context) {
+    for (var i = getScoreToListandOrder(context); i >= 0; i--) {
+      
+    }
+    return Provider.of<Vote>(context).playerNamesOrdered;
+  }
+*/
+  void selectionSort() {
+    if (playerList.isEmpty) return;
+    int n = playerList.length;
+    int i, steps;
+    for (steps = 0; steps < n; steps++) {
+      for (i = steps + 1; i < n; i++) {
+        if (playerList[steps].score > playerList[i].score) {
+          swap(playerList, steps, i);
+        }
+      }
+    }
+  }
+
+  void swap(List list, int steps, int i) {
+    int temp = list[steps];
+    list[steps] = list[i];
+    list[i] = temp;
+  }
+
+  void orderScore(BuildContext context) {
+    for (var i = 0; i < Provider.of<Vote>(context, listen: false).playerList.length; i++) {
+      Provider.of<Vote>(context, listen: false)
+          .playerScores
+          .add(Provider.of<Vote>(context, listen: false).playerList[i].score);
+    }
   }
 }
