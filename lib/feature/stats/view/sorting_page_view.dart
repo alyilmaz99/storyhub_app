@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
 import 'package:storyhub/feature/stats/viewmodel/sorting_page_viewmodel.dart';
 
 class SortingPageView extends SortingPageViewModel {
@@ -78,7 +79,10 @@ class SortingPageView extends SortingPageViewModel {
               height: screenHeight / 15,
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const MainPage()));
+              },
               style: ElevatedButton.styleFrom(
                   elevation: 5,
                   minimumSize: Size(screenWidth / 1.7, screenHeight / 15),
@@ -87,7 +91,7 @@ class SortingPageView extends SortingPageViewModel {
                     borderRadius: BorderRadius.circular(18),
                   )),
               child: const Text(
-                'SIRALAMA TABLOSU',
+                'ANA MENÜ',
                 style: TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.white,

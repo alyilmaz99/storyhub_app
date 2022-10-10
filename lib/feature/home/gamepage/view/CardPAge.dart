@@ -131,6 +131,7 @@ class _CardPageState extends CartPageViewModel {
                                     isTimerTextShown: false,
                                     onComplete: () {
                                       GameContreller().setCancelCard(false);
+
                                       Future.delayed(
                                         const Duration(seconds: 0),
                                         () {

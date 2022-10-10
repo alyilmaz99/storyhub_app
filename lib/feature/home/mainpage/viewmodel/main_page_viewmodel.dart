@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:storyhub/feature/auth/howtoplay/how_to_play_view.dart';
+import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../../../../core/const/text_const/textconst.dart';
 import '../../../auth/splashscreen/view/splashscreenview.dart';
 import '../view/main_page_view.dart';
@@ -15,6 +17,10 @@ abstract class MainPageViewModel extends State<MainPage> {
       height: MediaQuery.of(context).size.height / 12,
       child: OutlinedButton(
         onPressed: () {
+          Provider.of<PlayerCarouselViewModel>(context, listen: false)
+              .useForTourCountChechk = 1;
+          Provider.of<PlayerCarouselViewModel>(context, listen: false)
+              .countTour = 1;
           Navigator.push(
               context,
               MaterialPageRoute(

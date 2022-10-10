@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselView.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
+import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
 
 import '../../gamepage/view/CardPAge.dart';
 import '../../scenario/view/displayscenario.dart';
@@ -17,9 +19,14 @@ Widget buildFirstButton(BuildContext context, String text, double height,
       onPressed: () {
         if (function == 1) {
           Navigator.pop(context);
-          // Navigator.push(context,
-          //     MaterialPageRoute(builder: (context) => DisplayScenario())
-          //     );
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => DisplayScenario(
+                        senaryo: Provider.of<PlayerCarouselViewModel>(context,
+                                listen: false)
+                            .scenarioId,
+                      )));
         } else {
           Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(builder: (context) => CardPage()),

@@ -132,8 +132,10 @@ Widget buildFirstButton(
           });
           Provider.of<Vote>(context, listen: false).counterForTour = 0;
           Provider.of<Vote>(context, listen: false).isFinishVote = false;
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const VoteScreenView()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const SelectScenarioView()));
         }
         print(myMap);
         print(Provider.of<Player>(context, listen: false).playerList[0].image);
