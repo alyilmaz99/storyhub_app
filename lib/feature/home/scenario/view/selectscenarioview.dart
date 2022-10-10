@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluid_action_card/FluidActionCard/fluid_action_card.dart';
 import 'package:flutter/services.dart';
 import 'package:storyhub/core/Service/SenaryoServise.dart';
+import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
 import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
@@ -318,6 +319,13 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                                           20.0)),
                                                         ),
                                                         onPressed: () {
+                                                          Provider.of<PlayerCarouselViewModel>(
+                                                                      context,
+                                                                      listen: false)
+                                                                  .scenarioId =
+                                                              filteredList[
+                                                                      index]
+                                                                  .senaryoNumber;
                                                           Navigator.push(
                                                               context,
                                                               MaterialPageRoute(
