@@ -30,7 +30,7 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
     CountDownController controller2 = CountDownController();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
+        backgroundColor: Color.fromRGBO(37, 29, 58, 1),
         shadowColor: Colors.transparent,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -53,6 +53,7 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
             radius: 0.8,
             colors: [
               Color.fromRGBO(59, 52, 114, 1),
+              Color.fromRGBO(42, 37, 80, 1),
               Color.fromRGBO(37, 29, 58, 1),
             ],
           ),

@@ -1,8 +1,5 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
-
-import 'package:page_animation_transition/animations/fade_animation_transition.dart';
-import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
@@ -86,6 +83,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
             radius: 0.8,
             colors: [
               Color.fromRGBO(59, 52, 114, 1),
+              Color.fromRGBO(42, 37, 80, 1),
               Color.fromRGBO(37, 29, 58, 1),
             ],
           ),
@@ -99,9 +97,11 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               child: Center(
                 child: Column(
                   children: [
-                    const Text(
-                      "MEZAR TASI",
-                      style: TextStyle(
+                    Text(
+                      Provider.of<PlayerCarouselViewModel>(context,
+                              listen: false)
+                          .cardName,
+                      style: const TextStyle(
                         color: Colors.white,
                         fontFamily: 'GamerStation',
                         fontSize: 20,

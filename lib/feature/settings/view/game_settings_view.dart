@@ -46,7 +46,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           children: [
             Container(
               padding: EdgeInsets.only(right: screenWidth / 7),
-              height: screenHeight / 17,
+              height: screenHeight / 15,
               child: const Image(
                 fit: BoxFit.cover,
                 image: AssetImage('assets/images/LogoV1.png'),

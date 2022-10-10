@@ -38,7 +38,8 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                 setState(() {
                   //   timer.stopTimer();
                 });
-                Navigator.of(context).push(FullScreenModal(controller2: controller2));
+                Navigator.of(context)
+                    .push(FullScreenModal(controller2: controller2));
               },
               icon: const Icon(
                 Icons.menu,
@@ -55,6 +56,7 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
             radius: 0.8,
             colors: [
               Color.fromRGBO(59, 52, 114, 1),
+              Color.fromRGBO(42, 37, 80, 1),
               Color.fromRGBO(37, 29, 58, 1),
             ],
           ),
