@@ -49,13 +49,13 @@ class FullScreenModal extends DrawerViewModel {
                   controller2.resume();
                 },
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white.withOpacity(0.38),
-                    backgroundColor: const Color.fromRGBO(223, 105, 64, 1),
+                    onPrimary: Colors.white.withOpacity(0.38),
+                    primary: const Color.fromRGBO(223, 105, 64, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    disabledForegroundColor: Colors.white.withOpacity(0.9),
-                    disabledBackgroundColor: Colors.white.withOpacity(0.9),
+                    onSurface: Colors.white.withOpacity(0.9),
+                    //disabledBackgroundColor: Colors.white.withOpacity(0.9),
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                 child: const Text("DEVAM ET",
                     style: TextStyle(
@@ -78,13 +78,13 @@ class FullScreenModal extends DrawerViewModel {
                           builder: (context) => const MainPage()));
                 },
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.white.withOpacity(0.38),
-                    backgroundColor: const Color.fromRGBO(177, 113, 199, 1),
+                    onPrimary: Colors.white.withOpacity(0.38),
+                    primary: const Color.fromRGBO(177, 113, 199, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    disabledForegroundColor: Colors.white,
-                    disabledBackgroundColor: Colors.white,
+                    onSurface: Colors.white,
+                    //disabledBackgroundColor: Colors.white,
                     minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                 child: const Text(
                   "Yeni Oyun",

@@ -223,7 +223,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                     });
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: isFinish
+                    primary: isFinish
                         ? const Color.fromRGBO(223, 105, 64, 1)
                         : const Color.fromRGBO(251, 251, 251, 0.4)
                             .withOpacity(0.5),

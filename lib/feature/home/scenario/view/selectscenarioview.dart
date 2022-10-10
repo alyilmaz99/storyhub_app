@@ -34,195 +34,6 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
 
-    final List<String> titles = [
-      "DENİZ ALTI",
-      "ŞİRKET",
-      "MARS KOLONİSİ",
-      "UZAY",
-      "BEYAZ SARAY",
-      "AHIR",
-    ];
-
-    final List<Color> colors = [
-      Colors.blue,
-      Colors.green,
-      Colors.red,
-      Colors.blue,
-      Colors.green,
-      Colors.red
-    ];
-
-    final List<Widget> images = [
-      Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/denizalti.png"),
-              fit: BoxFit.fill,
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(20))),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: SizedBox(
-            width: w / 2.5,
-            child: OutlinedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      const Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
-              child: const Text(
-                "DENİZALTI",
-                style:
-                    TextStyle(fontFamily: "GamerStation", color: Colors.black),
-              ),
-            ),
-          ),
-        ),
-      ),
-      Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/sirket.png"),
-              fit: BoxFit.fill,
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(20))),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: SizedBox(
-            width: w / 2.5,
-            child: OutlinedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      const Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
-              child: const Text(
-                "ŞİRKET",
-                style:
-                    TextStyle(fontFamily: "GamerStation", color: Colors.black),
-              ),
-            ),
-          ),
-        ),
-      ),
-      Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/marskolonisi.png"),
-              fit: BoxFit.fill,
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(20))),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: SizedBox(
-            width: w / 2.5,
-            child: OutlinedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      const Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
-              child: const Text(
-                "MARS KOLONİSİ",
-                style:
-                    TextStyle(fontFamily: "GamerStation", color: Colors.black),
-              ),
-            ),
-          ),
-        ),
-      ),
-      Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/uzay.png"),
-              fit: BoxFit.fill,
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(20))),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: SizedBox(
-            width: w / 2.5,
-            child: OutlinedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      const Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
-              child: const Text(
-                "UZAY",
-                style:
-                    TextStyle(fontFamily: "GamerStation", color: Colors.black),
-              ),
-            ),
-          ),
-        ),
-      ),
-      Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/beyazsaray.png"),
-              fit: BoxFit.fill,
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(20))),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: SizedBox(
-            width: w / 2.5,
-            child: OutlinedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      const Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
-              child: const Text(
-                "BEYAZ SARAY",
-                style:
-                    TextStyle(fontFamily: "GamerStation", color: Colors.black),
-              ),
-            ),
-          ),
-        ),
-      ),
-      Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/images/ahir.png"),
-              fit: BoxFit.fill,
-            ),
-            borderRadius: BorderRadius.all(Radius.circular(20))),
-        child: Align(
-          alignment: Alignment.bottomCenter,
-          child: SizedBox(
-            width: w / 2.5,
-            child: OutlinedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      const Color.fromRGBO(217, 217, 217, 1)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0)))),
-              child: const Text(
-                "AHIR",
-                style:
-                    TextStyle(fontFamily: "GamerStation", color: Colors.black),
-              ),
-            ),
-          ),
-        ),
-      ),
-    ];
-
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -314,6 +125,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                             // Create a grid with 2 columns. If you change the scrollDirection to
                             // horizontal, this produces 2 rows.
                             crossAxisCount: 1,
+                            childAspectRatio: 5 / 4,
 
                             // Generate 100 widgets that display their index in the List.
                             children:
@@ -452,7 +264,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                   ),
                                                 ),
                                                 SizedBox(
-                                                  height: h / 35,
+                                                  height: h / 40,
                                                 ),
                                                 Container(
                                                   margin: const EdgeInsets
@@ -468,7 +280,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                         style: const TextStyle(
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          fontSize: 15,
+                                                          fontSize: 13,
                                                         )),
                                                   ),
                                                 ),
@@ -509,14 +321,15 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                           Navigator.push(
                                                               context,
                                                               MaterialPageRoute(
-                                                                  builder:
-                                                                      (context) =>
-                                                                          DisplayScenario()));
-                                                          Provider.of<SelectScenarioModel>(
-                                                                  context,
-                                                                  listen: false)
-                                                              .setScenarioIndex(
-                                                                  index);
+                                                                  builder: (context) =>
+                                                                      DisplayScenario(
+                                                                          senaryo:
+                                                                              filteredList[index].senaryoNumber)));
+                                                          // Provider.of<SelectScenarioModel>(
+                                                          //         context,
+                                                          //         listen: false)
+                                                          //     .setScenarioIndex(
+                                                          //         index);
                                                         },
                                                         child: Text(
                                                           "OYNA",

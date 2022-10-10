@@ -8,6 +8,7 @@ import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page
 import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
 import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
+import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
 import 'feature/home/createplayer/model/player_model.dart';
 import 'product/model/player_selection_model.dart';
@@ -96,18 +97,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.transparent,
-          systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarBrightness: Brightness.dark,
-            statusBarColor: Color.fromARGB(0, 189, 189, 189),
-            statusBarIconBrightness: Brightness.light,
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent,
+            systemOverlayStyle: SystemUiOverlayStyle(
+              statusBarBrightness: Brightness.dark,
+              statusBarColor: Color.fromARGB(0, 189, 189, 189),
+              statusBarIconBrightness: Brightness.light,
+            ),
           ),
         ),
-      ),
-      home: showMainPage ? const SplashScreenView() : const SplashScreenView(),
-    );
+        home: SelectScenarioView());
   }
 }
