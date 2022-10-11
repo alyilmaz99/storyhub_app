@@ -71,9 +71,9 @@ class SortingPageView extends SortingPageViewModel {
             buildContainer(
               context,
               const Color.fromRGBO(255, 221, 85, 1),
-              Provider.of<Vote>(context).playerList[0].image,
+              Provider.of<Vote>(context).showSortingImage(0),
               'assets/images/first.png',
-              Provider.of<Vote>(context).playerList[0].name,
+              Provider.of<Vote>(context).showSortingName(0),
             ),
             SizedBox(
               height: screenHeight / 25,
@@ -81,9 +81,9 @@ class SortingPageView extends SortingPageViewModel {
             buildContainer(
               context,
               const Color.fromRGBO(220, 229, 246, 1),
-              Provider.of<Vote>(context).playerList[0].image,
+              Provider.of<Vote>(context).showSortingImage(1),
               'assets/images/second.png',
-              Provider.of<Vote>(context).playerList[0].name,
+              Provider.of<Vote>(context).showSortingName(1),
             ),
             SizedBox(
               height: screenHeight / 25,
@@ -91,9 +91,9 @@ class SortingPageView extends SortingPageViewModel {
             buildContainer(
               context,
               const Color.fromRGBO(232, 93, 70, 1),
-              Provider.of<Vote>(context).playerList[0].image,
+              Provider.of<Vote>(context).showSortingImage(2),
               'assets/images/third.png',
-              Provider.of<Vote>(context).playerList[0].name,
+              Provider.of<Vote>(context).showSortingName(2),
             ),
             SizedBox(
               height: screenHeight / 15,

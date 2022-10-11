@@ -138,16 +138,42 @@ class Vote with ChangeNotifier {
     for (steps = 0; steps < n; steps++) {
       for (i = steps + 1; i < n; i++) {
         if (playerList[steps].score > playerList[i].score) {
-          swap(playerList, steps, i);
+          swap(steps, i);
         }
       }
     }
   }
 
-  void swap(List list, int steps, int i) {
-    int temp = list[steps];
-    list[steps] = list[i];
-    list[i] = temp;
+  void swap(int steps, int i) {
+    double temp = playerList[steps].score;
+    playerList[steps].score = playerList[i].score;
+    playerList[i].score = temp;
+  }
+
+  void printPlayerScoreList(BuildContext context) {
+    for (var i = 0; i < Provider.of<Vote>(context, listen: false).playerList.length; i++) {
+      print(Provider.of<Vote>(context, listen: false).playerList[i]);
+    }
+  }
+
+  void isEqual(BuildContext context) {
+    for (int i = 0; i < Provider.of<Vote>(context, listen: false).playerList.length; i++) {
+      int j = i + 1;
+      if (j < Provider.of<Vote>(context, listen: false).playerList.length) {
+        if (Provider.of<Vote>(context, listen: false).playerList[j].score ==
+            Provider.of<Vote>(context, listen: false).playerList[j - 1].score) {
+          Provider.of<Vote>(context, listen: false).playerList[j].score - 1;
+        }
+      }
+    }
+  }
+
+  String showSortingImage(int index) {
+    return playerList[playerList.length - index - 1].image;
+  }
+
+  String showSortingName(int index) {
+    return playerList[playerList.length - index - 1].name;
   }
 
   void orderScore(BuildContext context) {
