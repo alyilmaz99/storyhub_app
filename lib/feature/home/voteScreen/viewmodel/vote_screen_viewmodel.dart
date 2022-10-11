@@ -37,6 +37,9 @@ class RateStarWidget extends StatelessWidget {
         Provider.of<Player>(context, listen: false).playerList[index + 1].score =
             Provider.of<Player>(context, listen: false).playerList[index + 1].score = currentValue;
         Provider.of<Vote>(context, listen: false).playerScores[index] = currentValue;
+        (Provider.of<Vote>(context, listen: false).playerList2.forEach((element) {
+          print('score ${element.score}');
+        }));
       },
       valueLabelVisibility: false,
       maxValue: 3,
@@ -128,11 +131,10 @@ class VoteScreenContinueButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        for (int i = 0; i < Provider.of<Vote>(context).playerList2.length; i++) {
-          Provider.of<Vote>(context).playerList2[i].score += Provider.of<Vote>(context).playerScores[i];
-        }
-        Provider.of<Vote>(context).selectionSort();
+        Provider.of<Vote>(context, listen: false).selectionSort();
         Provider.of<Vote>(context, listen: false).counterForTour++;
+        Provider.of<Vote>(context, listen: false).isEqual(context);
+        Provider.of<Vote>(context, listen: false).printPlayerScoreList(context);
         Provider.of<Vote>(context, listen: false).isFinishVote
             ? Navigator.push(context, MaterialPageRoute(builder: (context) => const SortingPageView()))
             : Navigator.push(context, MaterialPageRoute(builder: (context) => const VoteScreenView()));
