@@ -13,6 +13,7 @@ class PlayerCarouselViewModel with ChangeNotifier {
   int countTour;
   CountDownController controller2 = CountDownController();
   String cardName = 'KART İSMİ';
+  int scenarioId = 0;
   PlayerCarouselViewModel({
     required this.playerList,
     required this.map,

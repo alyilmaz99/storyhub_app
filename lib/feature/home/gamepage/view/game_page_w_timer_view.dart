@@ -179,7 +179,6 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                             },
                             onComplete: () => {
                                   setState(() {
-                                    callback();
                                     if (Provider.of<FinalPageViewModel>(
                                       context,
                                       listen: false,
