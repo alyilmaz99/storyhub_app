@@ -20,25 +20,29 @@ abstract class VoteScreenViewModel extends State<VoteScreenView> {
 // ignore: must_be_immutable
 class RateStarWidget extends StatelessWidget {
   RateStarWidget({
-    required this.fun,
+    required this.fun2,
     required this.index,
     Key? key,
   }) : super(key: key);
-  Function fun;
+  Function fun2;
 
   int index;
   @override
   Widget build(BuildContext context) {
     return RatingStars(
-      value: 0, //Provider.of<Vote>(context, listen: false).playerList2[index].score,
+      //Provider.of<Vote>(context, listen: false).playerList2[index].score,
+
       onValueChanged: (currentValue) {
-        fun();
         print("benim skor:$currentValue");
-        Provider.of<Player>(context, listen: false).playerList[index + 1].score =
-            Provider.of<Player>(context, listen: false).playerList[index + 1].score = currentValue;
-        Provider.of<Vote>(context, listen: false).playerScores[index] = currentValue;
-        (Provider.of<Vote>(context, listen: false).playerList2.forEach((element) {
-          print('score ${element.score}');
+
+        /* Provider.of<Vote>(context, listen: false).playerScores[index] =
+            currentValue;*/
+        Provider.of<Vote>(context, listen: false).playerList2[index].score +=
+            currentValue;
+        (Provider.of<Vote>(context, listen: false)
+            .playerList
+            .forEach((element) {
+          print('score ${element.name}:  ${element.score}');
         }));
       },
       valueLabelVisibility: false,
@@ -66,14 +70,14 @@ BoxDecoration playerPlayerVoteContainerDecoration() {
 class PlayerVoteRateContainer extends StatelessWidget {
   PlayerVoteRateContainer({
     Key? key,
-    required this.fun,
+    required this.fun2,
     required this.screenWidth,
     required this.screenHeight,
     required this.name,
     required this.imagePath,
     required this.indexincontainer,
   }) : super(key: key);
-  Function fun;
+  Function fun2;
   final double screenWidth;
   final double screenHeight;
   final String name;
@@ -89,27 +93,43 @@ class PlayerVoteRateContainer extends StatelessWidget {
       child: Row(
         children: [
           Padding(
-            padding: EdgeInsets.only(left: screenHeight / 2.5),
-            child: SizedBox(height: 75, width: 75, child: Image.asset(imagePath)),
+            padding: EdgeInsets.only(left: screenHeight / 4),
+            child:
+                SizedBox(height: 75, width: 75, child: Image.asset(imagePath)),
           ),
           const Spacer(),
           Padding(
-            padding: EdgeInsets.only(right: screenHeight / 1.5, top: screenHeight / 10),
+            padding: EdgeInsets.only(
+                right: screenHeight / 3, top: screenHeight / 10),
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: screenWidth / 5, top: screenHeight / 40),
-                  child: Text(name,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            fontFamily: 'GamerStation',
-                            color: Colors.white,
-                            fontSize: 25.0,
-                          )),
+                  padding: EdgeInsets.only(
+                      left: screenWidth / 5, top: screenHeight / 15),
+                  child: Container(
+                    width: screenHeight / 0.45,
+                    height: screenHeight / 3.4,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        shape: BoxShape.rectangle,
+                        border: Border.all(
+                          color: Colors.white,
+                        )),
+                    child: Center(
+                      child: Text(name,
+                          style:
+                              Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                  )),
+                    ),
+                  ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: screenHeight / 10, left: screenWidth / 8),
+                  padding: EdgeInsets.only(
+                      top: screenHeight / 10, left: screenWidth / 8),
                   child: RateStarWidget(
-                    fun: fun,
+                    fun2: fun2,
                     index: indexincontainer,
                   ),
                 ),
@@ -131,21 +151,39 @@ class VoteScreenContinueButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Provider.of<Vote>(context, listen: false).selectionSort();
         Provider.of<Vote>(context, listen: false).counterForTour++;
-        Provider.of<Vote>(context, listen: false).isEqual(context);
+
         Provider.of<Vote>(context, listen: false).printPlayerScoreList(context);
         Provider.of<Vote>(context, listen: false).isFinishVote
-            ? Navigator.push(context, MaterialPageRoute(builder: (context) => const SortingPageView()))
-            : Navigator.push(context, MaterialPageRoute(builder: (context) => const VoteScreenView()));
+            ? Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const SortingPageView()))
+            : Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const VoteScreenView()));
         Provider.of<Vote>(context, listen: false).isFinishVoteFunc(context);
+        Provider.of<Vote>(context, listen: false).isFinishVote
+            ? Provider.of<Vote>(context, listen: false).isEqual(context)
+            : null;
+
+        Provider.of<Vote>(context, listen: false).isFinishVote
+            ? Provider.of<Vote>(context, listen: false).playerList3.sort()
+            : null;
+        (Provider.of<Vote>(context, listen: false)
+            .playerList
+            .forEach((element) {
+          print('score ${element.score}');
+        }));
       },
       style: ButtonStyle(
         elevation: MaterialStateProperty.all<double>(5),
         shadowColor: MaterialStateProperty.all<Color>(
           const Color.fromRGBO(0, 82, 4, 1),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(const Color.fromRGBO(219, 96, 52, 1)),
+        backgroundColor: MaterialStateProperty.all<Color>(
+            const Color.fromRGBO(219, 96, 52, 1)),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
@@ -153,7 +191,7 @@ class VoteScreenContinueButton extends StatelessWidget {
         ),
       ),
       child: Text(
-        Provider.of<Vote>(context).isFinishVote ? "BİTİR" : "DEVAM",
+        Provider.of<Vote>(context).isFinishVote ? "BİTİR" : "YILDIZLA",
         style: const TextStyle(
           fontFamily: 'GamerStation',
           color: Colors.white,

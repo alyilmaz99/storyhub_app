@@ -73,7 +73,8 @@ class SortingPageView extends SortingPageViewModel {
               const Color.fromRGBO(255, 221, 85, 1),
               Provider.of<Vote>(context).showSortingImage(0),
               'assets/images/first.png',
-              Provider.of<Vote>(context).showSortingName(0),
+              Provider.of<Vote>(context).showSortingName(0) +
+                  Provider.of<Vote>(context).showSortingScore(0),
             ),
             SizedBox(
               height: screenHeight / 25,
@@ -83,7 +84,8 @@ class SortingPageView extends SortingPageViewModel {
               const Color.fromRGBO(220, 229, 246, 1),
               Provider.of<Vote>(context).showSortingImage(1),
               'assets/images/second.png',
-              Provider.of<Vote>(context).showSortingName(1),
+              Provider.of<Vote>(context).showSortingName(1) +
+                  Provider.of<Vote>(context).showSortingScore(1),
             ),
             SizedBox(
               height: screenHeight / 25,
@@ -93,15 +95,20 @@ class SortingPageView extends SortingPageViewModel {
               const Color.fromRGBO(232, 93, 70, 1),
               Provider.of<Vote>(context).showSortingImage(2),
               'assets/images/third.png',
-              Provider.of<Vote>(context).showSortingName(2),
+              Provider.of<Vote>(context).showSortingName(2) +
+                  Provider.of<Vote>(context).showSortingScore(2),
             ),
             SizedBox(
               height: screenHeight / 15,
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const MainPage()));
+                Provider.of<Vote>(context, listen: false).playerList.clear();
+                Provider.of<Vote>(context, listen: false).playerList2.clear();
+                Provider.of<Vote>(context, listen: false).playerScores.clear();
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) => const MainPage()),
+                    (Route<dynamic> route) => false);
               },
               style: ElevatedButton.styleFrom(
                   elevation: 5,
@@ -111,13 +118,11 @@ class SortingPageView extends SortingPageViewModel {
                     borderRadius: BorderRadius.circular(18),
                   )),
               child: const Text(
-
                 'ANA MENÜ',
                 style: TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.white,
                     fontSize: 18),
-
               ),
             ),
           ],

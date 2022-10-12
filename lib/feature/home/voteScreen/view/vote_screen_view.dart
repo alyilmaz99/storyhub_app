@@ -25,7 +25,6 @@ class _VoteScreenViewState extends VoteScreenViewModel {
       listen: false,
     ).setPlayerSort(context);
     print(Provider.of<Vote>(context, listen: false).playerList2.length);
-    Provider.of<Vote>(context, listen: false).orderScore(context);
   }
 
   @override
@@ -40,7 +39,10 @@ class _VoteScreenViewState extends VoteScreenViewModel {
         decoration: const BoxDecoration(
           gradient: RadialGradient(
             radius: 0.7,
-            colors: [Color.fromRGBO(255, 149, 113, 1), Color.fromRGBO(216, 91, 47, 1)],
+            colors: [
+              Color.fromRGBO(255, 149, 113, 1),
+              Color.fromRGBO(216, 91, 47, 1)
+            ],
           ),
         ),
         child: Column(
@@ -51,7 +53,8 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                 Align(
                   alignment: Alignment.topCenter,
                   child: Padding(
-                    padding: EdgeInsets.only(top: screenHeight / 20, left: screenWidth / 2.6),
+                    padding: EdgeInsets.only(
+                        top: screenHeight / 20, left: screenWidth / 2.6),
                     child: SizedBox(
                       height: screenHeight / 16,
                       width: screenWidth / 4.5,
@@ -79,7 +82,7 @@ class _VoteScreenViewState extends VoteScreenViewModel {
               ],
             ),
             SizedBox(
-              height: screenHeight / 40,
+              height: screenHeight / 50,
             ),
             Stack(
               alignment: Alignment.center,
@@ -92,7 +95,8 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: screenWidth / 6, left: screenWidth / 6),
+                  margin: EdgeInsets.only(
+                      top: screenWidth / 6, left: screenWidth / 6),
                   width: 25,
                   height: 25,
                   decoration: const BoxDecoration(
@@ -120,27 +124,27 @@ class _VoteScreenViewState extends VoteScreenViewModel {
               child: SizedBox(
                 height: screenHeight / 1.8,
                 width: screenWidth / 1.05,
-                child: Padding(
-                  padding: EdgeInsets.only(top: screenHeight / 50),
-                  child: ListView.builder(
-                    itemCount: Provider.of<GameSettingsModel>(context).playerCount - 1,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: EdgeInsets.only(bottom: screenHeight / 40),
-                        child: PlayerVoteRateContainer(
-                          fun: () {
-                            setState(() {});
-                          },
-                          screenWidth: screenWidth / 10,
-                          screenHeight: screenHeight / 8,
-                          name: Provider.of<Vote>(context).playerList2[index].name,
-                          //Provider.of<Player>(context).playerList[index + 1].name
-                          imagePath: Provider.of<Vote>(context).playerList2[index].image,
-                          indexincontainer: index,
-                        ),
-                      );
-                    },
-                  ),
+                child: ListView.builder(
+                  itemCount:
+                      Provider.of<GameSettingsModel>(context).playerCount - 1,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: EdgeInsets.only(bottom: screenHeight / 40),
+                      child: PlayerVoteRateContainer(
+                        fun2: () {
+                          setState(() {});
+                        },
+                        screenWidth: screenWidth / 10,
+                        screenHeight: screenHeight / 8,
+                        name:
+                            Provider.of<Vote>(context).playerList2[index].name,
+                        //Provider.of<Player>(context).playerList[index + 1].name
+                        imagePath:
+                            Provider.of<Vote>(context).playerList2[index].image,
+                        indexincontainer: index,
+                      ),
+                    );
+                  },
                 ),
               ),
             ),
