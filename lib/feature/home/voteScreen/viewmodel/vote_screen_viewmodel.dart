@@ -33,6 +33,7 @@ class RateStarWidget extends StatelessWidget {
       //Provider.of<Vote>(context, listen: false).playerList2[index].score,
 
       onValueChanged: (currentValue) {
+        fun2();
         /* Provider.of<Vote>(context, listen: false).playerScores[index] =
             currentValue;*/
         for (var i = 0;

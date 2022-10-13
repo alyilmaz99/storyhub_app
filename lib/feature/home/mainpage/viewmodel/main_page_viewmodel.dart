@@ -28,7 +28,7 @@ abstract class MainPageViewModel extends State<MainPage> {
         },
         style: ButtonStyle(
           shadowColor: MaterialStateProperty.all<Color>(
-            const Color.fromRGBO(255, 255, 255, 1),
+            const Color.fromRGBO(0, 0, 0, 1),
           ),
           backgroundColor: MaterialStateProperty.all<Color>(
               const Color.fromRGBO(217, 82, 4, 1)),

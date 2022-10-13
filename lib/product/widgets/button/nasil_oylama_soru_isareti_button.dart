@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NasilOylamaSoruIsaretiButton extends StatelessWidget {
-  const NasilOylamaSoruIsaretiButton({Key? key, required this.myHeight, required this.myWidth}) : super(key: key);
+  const NasilOylamaSoruIsaretiButton(
+      {Key? key, required this.myHeight, required this.myWidth})
+      : super(key: key);
   final double myHeight;
   final double myWidth;
   @override
@@ -24,14 +26,20 @@ class NasilOylamaSoruIsaretiButton extends StatelessWidget {
                       const Spacer(),
                       Image.asset('assets/images/oylamanasılyapılır.png'),
                       const Spacer(),
-                      Text(
-                        "Nasıl Oylama Yapılır?", //Nasıl Oynanır?//
-                        maxLines: 6,
-                        style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                      Center(
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in ornare quam viverra orci?", //Nasıl Oynanır?//
+                          maxLines: 20,
+                          style: Theme.of(context)
+                              .textTheme
+                              .displayMedium
+                              ?.copyWith(
+                                color: Colors.white,
+                                fontSize: 16,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                        ),
                       ), //Nasıl Oynanır?
                       const Spacer(),
                     ],

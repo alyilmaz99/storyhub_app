@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/home/voteScreen/model/vote_model.dart';
 
 import 'package:flutter/src/widgets/container.dart';
@@ -73,8 +74,7 @@ class SortingPageView extends SortingPageViewModel {
               const Color.fromRGBO(255, 221, 85, 1),
               Provider.of<Vote>(context).showSortingImage(0),
               'assets/images/first.png',
-              Provider.of<Vote>(context).showSortingName(0) +
-                  Provider.of<Vote>(context).showSortingScore(0),
+              Provider.of<Vote>(context).showSortingName(0),
             ),
             SizedBox(
               height: screenHeight / 25,
@@ -84,8 +84,7 @@ class SortingPageView extends SortingPageViewModel {
               const Color.fromRGBO(220, 229, 246, 1),
               Provider.of<Vote>(context).showSortingImage(1),
               'assets/images/second.png',
-              Provider.of<Vote>(context).showSortingName(1) +
-                  Provider.of<Vote>(context).showSortingScore(1),
+              Provider.of<Vote>(context).showSortingName(1),
             ),
             SizedBox(
               height: screenHeight / 25,
@@ -95,8 +94,7 @@ class SortingPageView extends SortingPageViewModel {
               const Color.fromRGBO(232, 93, 70, 1),
               Provider.of<Vote>(context).showSortingImage(2),
               'assets/images/third.png',
-              Provider.of<Vote>(context).showSortingName(2) +
-                  Provider.of<Vote>(context).showSortingScore(2),
+              Provider.of<Vote>(context).showSortingName(2),
             ),
             SizedBox(
               height: screenHeight / 15,
@@ -107,6 +105,9 @@ class SortingPageView extends SortingPageViewModel {
                 Provider.of<Vote>(context, listen: false).playerList2.clear();
                 Provider.of<Vote>(context, listen: false).playerScores.clear();
                 Provider.of<Vote>(context, listen: false).playerList3.clear();
+                Provider.of<PlayerCarouselViewModel>(context, listen: false)
+                    .playerList
+                    .clear();
                 Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(builder: (context) => const MainPage()),
                     (Route<dynamic> route) => false);

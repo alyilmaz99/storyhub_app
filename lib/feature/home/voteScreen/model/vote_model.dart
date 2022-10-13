@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +14,7 @@ class Vote with ChangeNotifier {
   List<String> names = [];
 
   ///FOR MY CODES
+
   List<double> playerScores = [];
   List<double> playerScoresOrdered = [];
   List<String> playerNamesOrdered = [];
@@ -144,6 +146,24 @@ class Vote with ChangeNotifier {
     }
   }
 
+  String getScoreForVoteScreen(BuildContext context) {
+    String imageScore = "";
+    for (int i = 0;
+        i < Provider.of<Vote>(context, listen: false).playerList.length;
+        i++) {
+      if (Provider.of<Vote>(context, listen: false).playerList3[i].image ==
+          Provider.of<Vote>(context, listen: false).sendFirstImage()) {
+        imageScore = Provider.of<Vote>(context, listen: false)
+            .playerList3[i]
+            .score
+            .toString();
+      } else {
+        return "0";
+      }
+    }
+    return imageScore;
+  }
+
 /*
   List<String> getNameToListOrder(BuildContext context) {
     for (var i = getScoreToListandOrder(context); i >= 0; i--) {
@@ -174,7 +194,7 @@ class Vote with ChangeNotifier {
   }
 */
   void bubbleSort() {
-    if (playerList3 == null || playerList3.length == 0) return;
+    if (playerList3.isEmpty) return;
 
     int n = playerList3.length;
     int i, step;
@@ -197,7 +217,9 @@ class Vote with ChangeNotifier {
     for (var i = 0;
         i < Provider.of<Vote>(context, listen: false).playerList.length;
         i++) {
-      print(Provider.of<Vote>(context, listen: false).playerList[i]);
+      if (kDebugMode) {
+        print(Provider.of<Vote>(context, listen: false).playerList[i]);
+      }
     }
   }
 

@@ -460,7 +460,6 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
-                    
                     ),
                   ),
                   onPressed: () {
@@ -472,15 +471,25 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                 const /*SelectScenarioView*/ CreatePlayerView()));
                   },
                   child: Container(
-                    width: screenWidth / 1.8,
-                    height: screenHeight / 30,
+                    width: screenWidth / 1.4,
+                    height: screenHeight / 25,
                     alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          offset: Offset(0.2, 0.3),
+                          spreadRadius: 5,
+                          blurRadius: 7,
+                        ),
+                      ],
+                    ),
                     child: const Text(
                       "Başla",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontFamily: 'GamerStation',
-                          fontSize: 22,
+                          fontSize: 25,
                           fontWeight: FontWeight.w300,
                           color: Colors.white),
                     ),

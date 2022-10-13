@@ -54,7 +54,7 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                   alignment: Alignment.topCenter,
                   child: Padding(
                     padding: EdgeInsets.only(
-                        top: screenHeight / 20, left: screenWidth / 2.6),
+                        top: screenHeight / 20, left: screenWidth / 2.5),
                     child: SizedBox(
                       height: screenHeight / 16,
                       width: screenWidth / 4.5,
@@ -74,7 +74,7 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                       top: screenWidth / 9,
                     ),
                     child: NasilOylamaSoruIsaretiButton(
-                      myHeight: screenHeight / 2,
+                      myHeight: screenHeight / 2.7,
                       myWidth: screenWidth / 1.5,
                     ),
                   ),
@@ -103,12 +103,13 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                     shape: BoxShape.circle,
                     color: Colors.white,
                   ),
-                  child: const Padding(
-                    padding: EdgeInsets.only(top: 3.0),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 3.0),
                     child: Text(
                       textAlign: TextAlign.center,
-                      "0",
-                      style: TextStyle(
+                      Provider.of<Vote>(context, listen: false)
+                          .getScoreForVoteScreen(context),
+                      style: const TextStyle(
                         fontFamily: 'GamerStation',
                         fontSize: 20,
                       ),
