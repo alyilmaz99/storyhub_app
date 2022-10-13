@@ -33,14 +33,22 @@ class RateStarWidget extends StatelessWidget {
       //Provider.of<Vote>(context, listen: false).playerList2[index].score,
 
       onValueChanged: (currentValue) {
-        print("benim skor:$currentValue");
-
         /* Provider.of<Vote>(context, listen: false).playerScores[index] =
             currentValue;*/
-        Provider.of<Vote>(context, listen: false).playerList2[index].score +=
-            currentValue;
+        for (var i = 0;
+            i < Provider.of<Vote>(context, listen: false).playerList3.length;
+            i++) {
+          if (Provider.of<Vote>(context, listen: false)
+                  .playerList2[index]
+                  .name ==
+              Provider.of<Vote>(context, listen: false).playerList3[i].name) {
+            Provider.of<Vote>(context, listen: false).playerList3[i].score +=
+                currentValue;
+          }
+        }
+
         (Provider.of<Vote>(context, listen: false)
-            .playerList
+            .playerList3
             .forEach((element) {
           print('score ${element.name}:  ${element.score}');
         }));
@@ -169,7 +177,7 @@ class VoteScreenContinueButton extends StatelessWidget {
             : null;
 
         Provider.of<Vote>(context, listen: false).isFinishVote
-            ? Provider.of<Vote>(context, listen: false).playerList3.sort()
+            ? Provider.of<Vote>(context, listen: false).bubbleSort()
             : null;
         (Provider.of<Vote>(context, listen: false)
             .playerList

@@ -85,21 +85,21 @@ class Vote with ChangeNotifier {
 
   void setPlayerSort(BuildContext context) {
     if (counterForTour == 0) {
+      playerList3.add(playerList[0]);
       for (int i = 1; i < playerList.length; i++) {
         if (i + 1 <= playerList.length) {
           playerList2.add(playerList[i]);
+          if (playerList3.length < playerList.length) {
+            playerList3.add(playerList[i]);
+          }
         }
       }
-      playerList3.add(playerList[0]);
+
       playerList[0].isVote = true;
       firstImage = playerList[0].image;
     } else if (counterForTour <
         Provider.of<GameSettingsModel>(context, listen: false).playerCount) {
       for (int i = 0; i < playerList.length; i++) {
-        for (var j = 0; j < playerList2.length; j++) {
-          playerList3.add(playerList2[j]);
-        }
-
         if (playerList[i].isVote == true) {
           if (playerList2[i].isVote == false) {
             catcher.add(playerList[i]);
@@ -107,11 +107,7 @@ class Vote with ChangeNotifier {
             playerList2[i] = catcher[0];
 
             playerList[i].isVote = true;
-            (Provider.of<Vote>(context, listen: false)
-                .playerList
-                .forEach((element) {
-              print('scoresFromSet ${element.name}: ${element.score}');
-            }));
+
             catcher.clear();
             firstImage = playerList[i].image;
             break;
@@ -156,6 +152,7 @@ class Vote with ChangeNotifier {
     return Provider.of<Vote>(context).playerNamesOrdered;
   }
 */
+  /*
   void selectionSort() {
     if (playerList3.isEmpty) return;
     int n = playerList3.length;
@@ -174,6 +171,26 @@ class Vote with ChangeNotifier {
     double temp = playerList3[steps].score;
     playerList3[steps].score = playerList3[i].score;
     playerList3[i].score = temp;
+  }
+*/
+  void bubbleSort() {
+    if (playerList3 == null || playerList3.length == 0) return;
+
+    int n = playerList3.length;
+    int i, step;
+    for (step = 0; step < n; step++) {
+      for (i = 0; i < n - step - 1; i++) {
+        if (playerList3[i].score > playerList3[i + 1].score) {
+          swap(playerList3, i);
+        }
+      }
+    }
+  }
+
+  void swap(List list, int i) {
+    Player temp = list[i];
+    list[i] = list[i + 1];
+    list[i + 1] = temp;
   }
 
   void printPlayerScoreList(BuildContext context) {

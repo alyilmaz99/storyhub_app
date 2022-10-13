@@ -106,6 +106,7 @@ class SortingPageView extends SortingPageViewModel {
                 Provider.of<Vote>(context, listen: false).playerList.clear();
                 Provider.of<Vote>(context, listen: false).playerList2.clear();
                 Provider.of<Vote>(context, listen: false).playerScores.clear();
+                Provider.of<Vote>(context, listen: false).playerList3.clear();
                 Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(builder: (context) => const MainPage()),
                     (Route<dynamic> route) => false);
