@@ -105,6 +105,7 @@ class SortingPageView extends SortingPageViewModel {
                 Provider.of<Vote>(context, listen: false).playerList2.clear();
                 Provider.of<Vote>(context, listen: false).playerScores.clear();
                 Provider.of<Vote>(context, listen: false).playerList3.clear();
+                Provider.of<Vote>(context, listen: false).valueChanged.clear();
                 Provider.of<PlayerCarouselViewModel>(context, listen: false)
                     .playerList
                     .clear();

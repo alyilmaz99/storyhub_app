@@ -24,6 +24,7 @@ class _VoteScreenViewState extends VoteScreenViewModel {
       context,
       listen: false,
     ).setPlayerSort(context);
+    Provider.of<Vote>(context, listen: false).setPlayerScore(context);
     print(Provider.of<Vote>(context, listen: false).playerList2.length);
   }
 

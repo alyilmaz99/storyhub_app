@@ -33,9 +33,13 @@ class RateStarWidget extends StatelessWidget {
       //Provider.of<Vote>(context, listen: false).playerList2[index].score,
 
       onValueChanged: (currentValue) {
+        Provider.of<Vote>(context, listen: false).valueChanged[index] =
+            currentValue;
+
         fun2();
         /* Provider.of<Vote>(context, listen: false).playerScores[index] =
             currentValue;*/
+
         for (var i = 0;
             i < Provider.of<Vote>(context, listen: false).playerList3.length;
             i++) {
@@ -56,6 +60,7 @@ class RateStarWidget extends StatelessWidget {
       },
       valueLabelVisibility: false,
       maxValue: 3,
+      value: Provider.of<Vote>(context).valueChanged[index],
       starCount: 3,
       starSize: 35,
       valueLabelMargin: const EdgeInsets.all(10),
@@ -163,6 +168,9 @@ class VoteScreenContinueButton extends StatelessWidget {
         Provider.of<Vote>(context, listen: false).counterForTour++;
 
         Provider.of<Vote>(context, listen: false).printPlayerScoreList(context);
+
+        Provider.of<Vote>(context, listen: false).valueChanged.clear();
+
         Provider.of<Vote>(context, listen: false).isFinishVote
             ? Navigator.push(
                 context,

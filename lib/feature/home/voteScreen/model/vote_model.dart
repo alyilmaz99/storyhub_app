@@ -26,6 +26,7 @@ class Vote with ChangeNotifier {
   String firstImage = '';
   bool isFinishVote = false;
   List<Player> playerListTemporary = [];
+  List<double> valueChanged = [];
   Vote({this.counter});
 
   String getPlayerToHead(BuildContext context) {
@@ -83,6 +84,14 @@ class Vote with ChangeNotifier {
 
   void setPlayerList(BuildContext context) {
     playerList = Provider.of<Player>(context, listen: false).playerList;
+  }
+
+  void setPlayerScore(BuildContext context) {
+    for (int i = 0;
+        i < Provider.of<Vote>(context, listen: false).playerList.length;
+        i++) {
+      Provider.of<Vote>(context, listen: false).valueChanged.add(0);
+    }
   }
 
   void setPlayerSort(BuildContext context) {
