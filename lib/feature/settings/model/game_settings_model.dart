@@ -14,7 +14,7 @@ class GameSettingsModel with ChangeNotifier {
   }) {
     playerCount = 3;
     timerValue = 20;
-    roundSpeedValue = 1;
+    roundSpeedValue = 2;
     roundCount = 3;
   }
 

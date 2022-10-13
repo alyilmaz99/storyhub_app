@@ -161,8 +161,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                     true
                                 ? value.getTimerValue() * 2
                                 : value.getTimerValue(),
-                            fillColor: Color.fromARGB(255, 244, 52, 38),
-                            ringColor: Color.fromARGB(255, 22, 182, 27),
+                            fillColor: const Color.fromARGB(255, 244, 52, 38),
+                            ringColor: const Color.fromARGB(255, 22, 182, 27),
                             strokeWidth: 16,
                             textStyle: TextStyle(
                               textBaseline: TextBaseline.alphabetic,
@@ -223,7 +223,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                       ).isFinal) {
                         finishGame(isFinish);
                       } else {
-                        nextPlayerFunctions(isFinish);                   
+                        nextPlayerFunctions(isFinish);
                       }
                     });
                   },
@@ -237,23 +237,49 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
-                        "SONRAKİ",
-                        style: TextStyle(
-                            fontFamily: "GamerStation",
-                            fontSize: 23,
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromRGBO(251, 251, 251, 0.9)),
-                      ),
-                      Text(
-                        "OYUNCU",
-                        style: TextStyle(
-                            fontSize: 23,
-                            fontFamily: "GamerStation",
-                            fontWeight: FontWeight.w400,
-                            color: Color.fromRGBO(251, 251, 251, 0.9)),
-                      ),
+                    children: [
+                      Provider.of<FinalPageViewModel>(
+                                context,
+                                listen: false,
+                              ).isFinal !=
+                              true
+                          ? const Text(
+                              "SONRAKİ",
+                              style: TextStyle(
+                                  fontFamily: "GamerStation",
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromRGBO(251, 251, 251, 0.9)),
+                            )
+                          : const Text(
+                              "",
+                              style: TextStyle(
+                                  fontFamily: "GamerStation",
+                                  fontSize: 1,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromRGBO(251, 251, 251, 0.9)),
+                            ),
+                      Provider.of<FinalPageViewModel>(
+                                context,
+                                listen: false,
+                              ).isFinal !=
+                              true
+                          ? const Text(
+                              "OYUNCU",
+                              style: TextStyle(
+                                  fontSize: 23,
+                                  fontFamily: "GamerStation",
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromRGBO(251, 251, 251, 0.9)),
+                            )
+                          : const Text(
+                              "BİTİR",
+                              style: TextStyle(
+                                  fontSize: 29,
+                                  fontFamily: "GamerStation",
+                                  fontWeight: FontWeight.w400,
+                                  color: Color.fromRGBO(251, 251, 251, 0.9)),
+                            ),
                     ],
                   )),
             ),
