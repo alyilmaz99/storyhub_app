@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:im_animations/main.dart';
-import 'package:storyhub/feature/auth/howtoplay/how_to_play_viewmodel.dart';
+import 'package:storyhub/feature/auth/howtoplay/viewmodel/how_to_play_viewmodel.dart';
 
-import '../../home/mainpage/view/main_page_view.dart';
+import '../../../home/mainpage/view/main_page_view.dart';
 
 class HowToPlayView extends StatefulWidget {
   const HowToPlayView({Key? key}) : super(key: key);
@@ -42,7 +42,7 @@ class _HowToPlayViewState extends HowToPlayViewModel {
                   padding: EdgeInsets.only(top: screenHeight / 13),
                   child: SizedBox(
                     // height: screenHeight / 10,
-                    width: screenWidth / 4,
+                    width: screenWidth / 3.5,
                     height: screenWidth / 4,
                     child: SvgPicture.asset(
                       'assets/images/LogoV1.svg',
@@ -58,8 +58,7 @@ class _HowToPlayViewState extends HowToPlayViewModel {
                   ),
                   child: IconButton(
                     onPressed: endSlide,
-                    icon: const ImageIcon(
-                        AssetImage("assets/icons/fast_forward_icon.png"),
+                    icon: SvgPicture.asset("assets/icons/fast_forward_icon.svg",
                         color: Colors.white),
                   ),
                 ),
@@ -78,9 +77,7 @@ class _HowToPlayViewState extends HowToPlayViewModel {
                     OnboardingItem oi =
                         OnboardingItems.loadOnboardingItem()[index];
                     return Column(
-                      //mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
                       children: [
                         Text(
                           oi.title,
@@ -93,21 +90,33 @@ class _HowToPlayViewState extends HowToPlayViewModel {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            IconButton(
-                                onPressed: previousSlide,
-                                icon: const Icon(
-                                  Icons.arrow_back_ios,
-                                  color: Colors.white,
-                                )),
+                            index == 0
+                                ? const SizedBox(
+                                    width: 15,
+                                  )
+                                : IconButton(
+                                    onPressed: previousSlide,
+                                    icon: const Icon(
+                                      Icons.arrow_back_ios,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                             SizedBox(
-                                width: screenWidth / 1.7,
+                                width: screenWidth / 2,
                                 child: Image.asset(oi.image)),
-                            IconButton(
-                                onPressed: nextSlide,
-                                icon: const Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: Colors.white,
-                                )),
+                            index ==
+                                    OnboardingItems.loadOnboardingItem()
+                                            .length -
+                                        1
+                                ? const SizedBox(
+                                    width: 15,
+                                  )
+                                : IconButton(
+                                    onPressed: nextSlide,
+                                    icon: const Icon(
+                                      Icons.arrow_forward_ios,
+                                      color: Colors.white,
+                                    )),
                           ],
                         ),
                         SizedBox(
@@ -121,7 +130,6 @@ class _HowToPlayViewState extends HowToPlayViewModel {
                               child: Text(
                                 oi.subtitle,
                                 style: const TextStyle(
-                                  fontFamily: 'Montserrat',
                                   fontSize: 15,
                                   color: Colors.white,
                                 ),
@@ -142,7 +150,7 @@ class _HowToPlayViewState extends HowToPlayViewModel {
                                     },
                                     style: ElevatedButton.styleFrom(
                                       elevation: 7,
-                                      primary:
+                                      backgroundColor:
                                           const Color.fromRGBO(91, 49, 134, 1),
                                       shadowColor:
                                           const Color.fromRGBO(91, 49, 134, 1)

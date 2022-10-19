@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
+import 'package:storyhub/feature/auth/howtoplay/model/how_to_play_model.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
 import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
@@ -32,6 +33,8 @@ Future main() async {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider<HowToPlayModel>(
+            create: (BuildContext context) => HowToPlayModel()),
         ChangeNotifierProvider<PlayerCarouselViewModel>(
           create: (BuildContext context) => PlayerCarouselViewModel(
             playerList: tempList,

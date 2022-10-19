@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:storyhub/feature/auth/howtoplay/how_to_play_view.dart';
+import 'package:storyhub/feature/auth/howtoplay/view/how_to_play_view.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
-import '../../../../core/const/text_const/textconst.dart';
-import '../../../auth/splashscreen/view/splashscreenview.dart';
 import '../view/main_page_view.dart';
-
 import '../../../settings/view/game_settings_view.dart';
-import '../../howtopage/view/how_to_page_view.dart';
 
 abstract class MainPageViewModel extends State<MainPage> {
   Widget buildFirstButton() {

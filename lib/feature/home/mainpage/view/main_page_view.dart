@@ -53,7 +53,7 @@ class _MainPageState extends MainPageViewModel {
                         barrierColor: Colors.black.withOpacity(0.5),
                         pageBuilder: (context, animation1, animation2) =>
                             SettingsPopup(),
-                        transitionDuration: Duration(milliseconds: 250),
+                        transitionDuration: const Duration(milliseconds: 250),
                         transitionBuilder: (context, a1, a2, widget) {
                           return Transform.scale(
                             scale: a1.value,
