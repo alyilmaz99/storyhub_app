@@ -211,7 +211,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                 EdgeInsets.only(left: MediaQuery.of(context).size.width / 30),
             child: SizedBox(
                 height: 50,
-                width: 160,
+                width: 170,
                 child: playerNameCreateTextField(
                   context,
                   _textEditingControllers,
@@ -223,7 +223,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   .textValueisEmpty[numberforimages - 1]
               ? Padding(
                   padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width / 40),
+                      left: MediaQuery.of(context).size.width / 100),
                   child: IconButton(
                     onPressed: () {},
                     icon: const Image(
@@ -233,7 +233,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                 )
               : Padding(
                   padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width / 40),
+                      left: MediaQuery.of(context).size.width / 100),
                   child: IconButton(
                     onPressed: () {},
                     icon: const Image(

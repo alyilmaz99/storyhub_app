@@ -365,11 +365,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         color: Colors.white),
                                   ),
                                   IconButton(
-                                    icon: const Icon(
-                                      Icons.info,
-                                      color: Colors.white,
-                                      size: 20.0,
-                                    ),
+                                    iconSize: 35,
+                                    icon: SvgPicture.asset(
+                                        'assets/images/question.svg'),
                                     onPressed: () {
                                       showGeneralDialog(
                                         context: context,
@@ -407,9 +405,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     IconButton(
-                                      iconSize: 30,
-                                      icon:
-                                          Image.asset('assets/images/left.png'),
+                                      iconSize: 35,
+                                      icon: SvgPicture.asset(
+                                          'assets/images/right.svg'),
                                       onPressed: () {
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
@@ -431,8 +429,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                     ),
                                     IconButton(
                                       iconSize: 30,
-                                      icon: Image.asset(
-                                          'assets/images/right.png'),
+                                      icon: SvgPicture.asset(
+                                          'assets/images/left.svg'),
                                       onPressed: () {
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
