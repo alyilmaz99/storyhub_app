@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/home/voteScreen/model/vote_model.dart';
@@ -39,9 +40,8 @@ class SortingPageView extends SortingPageViewModel {
                     child: SizedBox(
                       // height: screenHeight / 10,
                       width: screenWidth / 4,
-                      child: Image.asset(
-                        'assets/images/LogoV1.png',
-                        fit: BoxFit.fill,
+                      child: SvgPicture.asset(
+                        'assets/images/LogoV1.svg',
                       ),
                     ),
                   ),

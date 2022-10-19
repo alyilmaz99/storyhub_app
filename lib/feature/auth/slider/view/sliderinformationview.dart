@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:im_animations/main.dart';
 import '../../../home/mainpage/view/main_page_view.dart';
 import '../viewmodel/sliderinformationviewmodel.dart';
@@ -42,9 +43,9 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                   child: SizedBox(
                     // height: screenHeight / 10,
                     width: screenWidth / 4,
-                    child: Image.asset(
-                      'assets/images/LogoV1.png',
-                      fit: BoxFit.fill,
+                    height: screenWidth / 4,
+                    child: SvgPicture.asset(
+                      'assets/images/LogoV1.svg',
                     ),
                   ),
                 ),

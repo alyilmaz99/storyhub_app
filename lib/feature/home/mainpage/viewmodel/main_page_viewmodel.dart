@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:storyhub/feature/auth/howtoplay/how_to_play_view.dart';
@@ -91,8 +92,10 @@ abstract class MainPageViewModel extends State<MainPage> {
 
   Widget buildIcon() {
     return IconButton(
-      icon: Image.asset("assets/images/LogoV1.png"),
-      iconSize: 140,
+      icon: SvgPicture.asset(
+        'assets/images/LogoV1.svg',
+      ),
+      iconSize: 150,
       onPressed: () {},
     );
   }

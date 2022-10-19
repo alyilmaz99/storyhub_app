@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:storyhub/feature/stats/viewmodel/sorting_table_viewmodel.dart';
 
 class SortingTableView extends StatefulWidget {
@@ -38,9 +39,8 @@ class _SortingTableViewState extends State<SortingTableView> {
                     child: SizedBox(
                       // height: screenHeight / 10,
                       width: screenWidth / 4,
-                      child: Image.asset(
-                        'assets/images/LogoV1.png',
-                        fit: BoxFit.fill,
+                      child: SvgPicture.asset(
+                        'assets/images/LogoV1.svg',
                       ),
                     ),
                   ),

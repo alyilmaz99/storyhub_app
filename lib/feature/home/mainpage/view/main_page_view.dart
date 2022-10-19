@@ -33,7 +33,7 @@ class _MainPageState extends MainPageViewModel {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            const SizedBox(height: 20),
+            SizedBox(height: MediaQuery.of(context).size.height / 17),
             Column(
               children: [
                 Padding(
@@ -84,7 +84,7 @@ class _MainPageState extends MainPageViewModel {
                 ),
               ],
             ),
-            SizedBox(height: MediaQuery.of(context).size.height / 15),
+            SizedBox(height: MediaQuery.of(context).size.height / 20),
             Column(
               children: [
                 Center(

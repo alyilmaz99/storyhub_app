@@ -1,5 +1,6 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
@@ -47,9 +48,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               child: SizedBox(
                 // height: screenHeight / 10,
                 width: screenWidth / 4,
-                child: Image.asset(
-                  'assets/images/LogoV1.png',
-                  fit: BoxFit.fill,
+                child: SvgPicture.asset(
+                  'assets/images/LogoV1.svg',
                 ),
               ),
             ),

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
@@ -381,7 +382,9 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
 
   Widget buildIcon() {
     return IconButton(
-      icon: Image.asset("assets/images/LogoV1.png"),
+      icon: SvgPicture.asset(
+        'assets/images/LogoV1.svg',
+      ),
       iconSize: 100,
       onPressed: () {},
     );

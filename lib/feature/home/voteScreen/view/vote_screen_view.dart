@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/voteScreen/model/vote_model.dart';
 import 'package:storyhub/feature/home/voteScreen/viewmodel/vote_screen_viewmodel.dart';
@@ -59,9 +60,8 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                     child: SizedBox(
                       height: screenHeight / 16,
                       width: screenWidth / 4.5,
-                      child: Image.asset(
-                        'assets/images/LogoV1.png',
-                        fit: BoxFit.fill,
+                      child: SvgPicture.asset(
+                        'assets/images/LogoV1.svg',
                       ),
                     ),
                   ),

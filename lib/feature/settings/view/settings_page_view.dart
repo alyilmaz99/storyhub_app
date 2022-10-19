@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import '../model/settings_model.dart';
 
@@ -26,18 +27,17 @@ class _SettingsPageState extends State<SettingsPageView> {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
+              SizedBox(
                 height: screenHeight / 20,
-                child: Image(
-                  fit: BoxFit.cover,
-                  image: AssetImage('assets/images/LogoV1.png'),
+                child: SvgPicture.asset(
+                  'assets/images/LogoV1.svg',
                 ),
               )
             ],
           ),
         ),
         body: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 gradient: RadialGradient(radius: 1, colors: [
               Color.fromARGB(255, 61, 16, 91),
               Color.fromARGB(255, 36, 10, 63),
@@ -62,7 +62,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                   height: screenHeight / 15,
                 ),
                 SliderTheme(
-                  data: SliderThemeData(
+                  data: const SliderThemeData(
                     thumbColor: Color.fromARGB(255, 255, 188, 165),
                     activeTrackColor: Color.fromARGB(255, 255, 188, 165),
                     inactiveTrackColor: Color.fromARGB(206, 255, 187, 165),
@@ -71,7 +71,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                         width: screenWidth / 1.2,
                         child: const Text(
                           "Oyun Sesi",
@@ -86,12 +86,12 @@ class _SettingsPageState extends State<SettingsPageView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.volume_off,
                             color: Color.fromARGB(255, 255, 188, 165),
                             size: 30.0,
                           ),
-                          Container(
+                          SizedBox(
                             width: screenWidth / 1.5,
                             child: Slider(
                               max: 1.0,
@@ -106,7 +106,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                               },
                             ),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.volume_up,
                             color: Color.fromARGB(255, 255, 188, 165),
                             size: 30.0,
@@ -120,7 +120,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                   height: screenHeight / 60,
                 ),
                 SliderTheme(
-                  data: SliderThemeData(
+                  data: const SliderThemeData(
                       thumbColor: Color.fromARGB(255, 255, 188, 165),
                       activeTrackColor: Color.fromARGB(255, 255, 188, 165),
                       inactiveTrackColor: Color.fromARGB(206, 255, 187, 165),
@@ -128,7 +128,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                         width: screenWidth / 1.2,
                         child: const Text(
                           "Buton Sesi",
@@ -143,12 +143,12 @@ class _SettingsPageState extends State<SettingsPageView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.volume_off,
                             color: Color.fromARGB(255, 255, 188, 165),
                             size: 30.0,
                           ),
-                          Container(
+                          SizedBox(
                             width: screenWidth / 1.5,
                             child: Slider(
                               max: 1.0,
@@ -163,7 +163,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                               },
                             ),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.volume_up,
                             color: Color.fromARGB(255, 255, 188, 165),
                             size: 30.0,
@@ -181,7 +181,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                   height: screenHeight / 60,
                 ),
                 SliderTheme(
-                  data: SliderThemeData(
+                  data: const SliderThemeData(
                     thumbColor: Color.fromARGB(255, 255, 188, 165),
                     activeTrackColor: Color.fromARGB(255, 255, 188, 165),
                     inactiveTrackColor: Color.fromARGB(206, 255, 187, 165),
@@ -190,7 +190,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
+                      SizedBox(
                         width: screenWidth / 1.2,
                         child: const Text(
                           "Arka Plan Müziği",
@@ -205,31 +205,31 @@ class _SettingsPageState extends State<SettingsPageView> {
                       SizedBox(
                         height: screenHeight / 80,
                       ),
-                      Container(
+                      SizedBox(
                         width: screenWidth / 1.2,
                         child: Text(
                           '${Provider.of<SettingsModel>(context).bgMusicName}',
                           textAlign: TextAlign.start,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 16,
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.bold,
                               color: Colors.white),
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         width: screenWidth / 1.4,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             IconButton(
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.skip_previous_outlined,
                                   color: Color.fromARGB(255, 255, 188, 165),
                                   size: 40.0,
                                 ),
                                 onPressed: () {}),
-                            Container(
+                            SizedBox(
                               width: screenWidth / 3.5,
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(16),
@@ -238,7 +238,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                                     Positioned.fill(
                                       child: Container(
                                         decoration: BoxDecoration(
-                                            gradient: RadialGradient(
+                                            gradient: const RadialGradient(
                                                 radius: 1,
                                                 colors: [
                                                   Color.fromARGB(
@@ -248,7 +248,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                                                 ]),
                                             borderRadius:
                                                 BorderRadius.circular(16.0),
-                                            color: Color.fromARGB(
+                                            color: const Color.fromARGB(
                                                 255, 255, 188, 165)),
                                       ),
                                     ),
@@ -259,9 +259,9 @@ class _SettingsPageState extends State<SettingsPageView> {
                                             const TextStyle(fontSize: 20),
                                       ),
                                       onPressed: () {},
-                                      child: Container(
+                                      child: SizedBox(
                                         width: screenWidth / 3,
-                                        child: Icon(
+                                        child: const Icon(
                                           Icons.play_circle_outline_outlined,
                                           color: Colors.white,
                                           size: 40.0,
@@ -273,7 +273,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                               ),
                             ),
                             IconButton(
-                                icon: Icon(
+                                icon: const Icon(
                                   Icons.skip_next_outlined,
                                   color: Color.fromARGB(255, 255, 188, 165),
                                   size: 40.0,
@@ -285,12 +285,12 @@ class _SettingsPageState extends State<SettingsPageView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.volume_off,
                             color: Color.fromARGB(255, 255, 188, 165),
                             size: 30.0,
                           ),
-                          Container(
+                          SizedBox(
                             width: screenWidth / 1.5,
                             child: Slider(
                               max: 1.0,
@@ -305,7 +305,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                               },
                             ),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.volume_up,
                             color: Color.fromARGB(255, 255, 188, 165),
                             size: 30.0,
@@ -322,7 +322,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                 SizedBox(
                   height: screenHeight / 20,
                 ),
-                Container(
+                SizedBox(
                   width: screenWidth / 1.2,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -341,8 +341,8 @@ class _SettingsPageState extends State<SettingsPageView> {
                           Provider.of<SettingsModel>(context, listen: false)
                               .setLanguage(value)
                         },
-                        color: Color.fromARGB(255, 255, 188, 165),
-                        shape: RoundedRectangleBorder(
+                        color: const Color.fromARGB(255, 255, 188, 165),
+                        shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(8.0),
                             bottomRight: Radius.circular(8.0),
@@ -350,7 +350,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                             topRight: Radius.circular(8.0),
                           ),
                         ),
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.language,
                           color: Color.fromARGB(255, 255, 188, 165),
                           size: 40.0,
@@ -363,7 +363,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text("TR"),
+                                    const Text("TR"),
                                     Container(
                                       child: Flag.fromCode(
                                         FlagsCode.TR,
@@ -379,7 +379,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("EN"),
+                                const Text("EN"),
                                 Container(
                                   child: Flag.fromCode(
                                     FlagsCode.GB,
@@ -395,7 +395,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("DE"),
+                                const Text("DE"),
                                 Container(
                                   child: Flag.fromCode(
                                     FlagsCode.DE,
@@ -411,7 +411,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text("FR"),
+                                const Text("FR"),
                                 Container(
                                   child: Flag.fromCode(
                                     FlagsCode.FR,
@@ -423,7 +423,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                             ),
                           ),
                         ],
-                        offset: Offset(0, 100),
+                        offset: const Offset(0, 100),
                         elevation: 2,
                       ),
                     ],

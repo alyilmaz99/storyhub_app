@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/senaryo/Senaryo.dart';
 import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
@@ -43,7 +44,9 @@ class _DisplayScenario extends State<DisplayScenario> {
             const SizedBox(height: 30),
             Center(
               child: IconButton(
-                icon: Image.asset("assets/images/LogoV1.png"),
+                icon: SvgPicture.asset(
+                  'assets/images/LogoV1.svg',
+                ),
                 iconSize: 100,
                 onPressed: () {},
               ),

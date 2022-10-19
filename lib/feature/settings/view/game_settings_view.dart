@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
 import 'package:provider/provider.dart';
 import '../model/game_settings_model.dart';
@@ -45,11 +46,11 @@ class _GameSettingsViewState extends State<GameSettingsView> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              padding: EdgeInsets.only(right: screenWidth / 7),
-              height: screenHeight / 15,
-              child: const Image(
-                fit: BoxFit.cover,
-                image: AssetImage('assets/images/LogoV1.png'),
+              padding: EdgeInsets.only(right: screenWidth / 7, top: 2),
+              height: screenHeight / 13,
+              child: SvgPicture.asset(
+                'assets/images/LogoV1.svg',
+                height: screenHeight / 10,
               ),
             )
           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
@@ -35,9 +36,8 @@ class _FinalPageState extends State<FinalPageView> {
             children: [
               SizedBox(
                 height: screenHeight / 15,
-                child: const Image(
-                  fit: BoxFit.cover,
-                  image: AssetImage('assets/images/LogoV1.png'),
+                child: SvgPicture.asset(
+                  'assets/images/LogoV1.svg',
                 ),
               )
             ],
@@ -128,8 +128,9 @@ class _FinalPageState extends State<FinalPageView> {
                           ),
                           onPressed: () {},
                           child: IconButton(
-                            icon: Image.asset("assets/images/randomButton.png", ),
-                             
+                            icon: Image.asset(
+                              "assets/images/randomButton.png",
+                            ),
                             onPressed: () {
                               /* ----- Burada random bir kullanıcı seçiliyor----- */
                               Provider.of<FinalPageViewModel>(context,

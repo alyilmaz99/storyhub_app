@@ -1,5 +1,6 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselView.dart';
 import 'package:storyhub/feature/home/gamepage/view/CardPAge.dart';
@@ -38,9 +39,8 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
             Container(
               padding: EdgeInsets.only(right: screenWidth / 7),
               height: screenHeight / 17,
-              child: const Image(
-                fit: BoxFit.cover,
-                image: AssetImage('assets/images/LogoV1.png'),
+              child: SvgPicture.asset(
+                'assets/images/LogoV1.svg',
               ),
             )
           ],

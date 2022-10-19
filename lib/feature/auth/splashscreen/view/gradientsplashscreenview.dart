@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:im_animations/im_animations.dart';
 
 import '../viewmodel/gradientsplashscreenviewmodel.dart';
@@ -28,7 +29,12 @@ class _GradientSplashScreenState extends GradientSplashScreenViewModel {
           tileMode: TileMode.clamp,
         ),
       ),
-      child: Image.asset('assets/images/LogoV1.png'),
+      child: Container(
+        width: MediaQuery.of(context).size.width / 2,
+        child: SvgPicture.asset(
+          'assets/images/LogoV1.svg',
+        ),
+      ),
     ));
   }
 }
