@@ -30,13 +30,16 @@ class _AboutUsViewState extends State<AboutUsView> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20, right: 20),
+              padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 19, right: 20),
               child: Align(
                 alignment: Alignment.topRight,
                 child: IconButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MainPage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MainPage()));
                   },
                   icon: const Icon(
                     Icons.arrow_back,
@@ -57,7 +60,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                 ),
                 IconButton(
                   icon: Image.asset("assets/images/LogoV1.png"),
-                  iconSize: 100,
+                  iconSize: 120,
                   onPressed: () => Navigator.pop(context),
                 ),
                 const Padding(

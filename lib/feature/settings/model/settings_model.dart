@@ -6,6 +6,7 @@ class SettingsModel with ChangeNotifier {
   double bgMusicVolumeVal = 0.0;
   String bgMusicName = "Fear";
   String language = "TR";
+  bool status = false;
 
   void setGameVolumeVal(double val) {
     gameVolumeVal = val;
