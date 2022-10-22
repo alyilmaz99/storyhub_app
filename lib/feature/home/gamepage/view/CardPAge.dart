@@ -1,16 +1,13 @@
 // ignore: file_names
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/GameContreller.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
-import 'package:storyhub/feature/home/gamepage/view/tappedCard.dart';
-
-import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
-import '../../scenario/view/selectscenarioview.dart';
 import '../viewmodel/CartPageViewModel.dart';
 
 class CardPage extends StatefulWidget {
@@ -35,15 +32,6 @@ class _CardPageState extends CartPageViewModel {
   @override
   void initState() {
     super.initState();
-
-    /*TappedCard tappedCard = TappedCard(
-      assetImageCardBack: assetImageCardBack,
-      assetImageCardFront: assetImageCardFront,
-      routeToPage: null,
-      callback: () => {callback()},
-    );*/
-
-    // currentPage = newCard;
   }
 
   void callback() {
@@ -124,12 +112,13 @@ class _CardPageState extends CartPageViewModel {
                                     isReverse: true,
                                     width: screenWidth / 4,
                                     height: screenHeight / 8,
-                                    duration: 5,
+                                    duration: 3,
                                     fillColor: Colors.red,
                                     ringColor: Colors.green,
                                     strokeWidth: 6,
                                     isTimerTextShown: false,
                                     onComplete: () {
+                                      HapticFeedback.lightImpact();
                                       GameContreller().setCancelCard(false);
 
                                       Future.delayed(
@@ -158,7 +147,8 @@ class _CardPageState extends CartPageViewModel {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              primary: const Color.fromRGBO(251, 251, 251, 0.9),
+                              backgroundColor:
+                                  const Color.fromRGBO(251, 251, 251, 0.9),
                               onSurface: Colors.white
                                   .withOpacity(0.38)
                                   .withOpacity(0.38),
@@ -213,7 +203,7 @@ class _CardPageState extends CartPageViewModel {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: SizedBox(
-                    width: MediaQuery.of(context).size.width / 1.4,
+                    width: MediaQuery.of(context).size.width / 1.3,
                     height: MediaQuery.of(context).size.height / 20,
                     child: _isCardTurned
                         ? ElevatedButton(
@@ -224,12 +214,12 @@ class _CardPageState extends CartPageViewModel {
                                       Navigator.of(context).pushAndRemoveUntil(
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  GamePageWithTimer()),
+                                                  const GamePageWithTimer()),
                                           (Route<dynamic> route) => false),
                                     }
                                 },
                             style: ElevatedButton.styleFrom(
-                              primary: _isTimeUp
+                              backgroundColor: _isTimeUp
                                   ? const Color.fromRGBO(223, 105, 64, 1)
                                   : const Color.fromRGBO(251, 251, 251, 0.5),
                               shape: RoundedRectangleBorder(
@@ -238,7 +228,7 @@ class _CardPageState extends CartPageViewModel {
                             child: const Text(
                               "Kartı kullanarak senaryoyu bağla.",
                               style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 15,
                                   fontWeight: FontWeight.w400,
                                   color: Color.fromRGBO(251, 251, 251, 0.9)),
                             ))

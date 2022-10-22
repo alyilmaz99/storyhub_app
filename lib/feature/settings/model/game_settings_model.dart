@@ -55,7 +55,7 @@ class GameSettingsModel with ChangeNotifier {
   }
 
   void decrementTimerValue() {
-    if (timerValue > 20) {
+    if (timerValue > 10) {
       timerValue = timerValue - 5;
       notifyListeners();
     }
@@ -83,7 +83,7 @@ class GameSettingsModel with ChangeNotifier {
   }
 
   void decrementRoundCount() {
-    if (roundCount > 3) {
+    if (roundCount > 1) {
       roundCount--;
       notifyListeners();
     }

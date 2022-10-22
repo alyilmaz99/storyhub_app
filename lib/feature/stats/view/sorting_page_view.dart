@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
@@ -40,6 +41,7 @@ class SortingPageView extends SortingPageViewModel {
                     child: SizedBox(
                       // height: screenHeight / 10,
                       width: screenWidth / 4,
+                      height: screenHeight / 15,
                       child: SvgPicture.asset(
                         'assets/images/LogoV1.svg',
                       ),
@@ -73,7 +75,7 @@ class SortingPageView extends SortingPageViewModel {
               context,
               const Color.fromRGBO(255, 221, 85, 1),
               Provider.of<Vote>(context).showSortingImage(0),
-              'assets/images/first.png',
+              'assets/images/first.svg',
               Provider.of<Vote>(context).showSortingName(0),
             ),
             SizedBox(
@@ -83,7 +85,7 @@ class SortingPageView extends SortingPageViewModel {
               context,
               const Color.fromRGBO(220, 229, 246, 1),
               Provider.of<Vote>(context).showSortingImage(1),
-              'assets/images/second.png',
+              'assets/images/second.svg',
               Provider.of<Vote>(context).showSortingName(1),
             ),
             SizedBox(
@@ -93,7 +95,7 @@ class SortingPageView extends SortingPageViewModel {
               context,
               const Color.fromRGBO(232, 93, 70, 1),
               Provider.of<Vote>(context).showSortingImage(2),
-              'assets/images/third.png',
+              'assets/images/third.svg',
               Provider.of<Vote>(context).showSortingName(2),
             ),
             SizedBox(
@@ -101,6 +103,7 @@ class SortingPageView extends SortingPageViewModel {
             ),
             ElevatedButton(
               onPressed: () {
+                HapticFeedback.lightImpact();
                 Provider.of<Vote>(context, listen: false).playerList.clear();
                 Provider.of<Vote>(context, listen: false).playerList2.clear();
                 Provider.of<Vote>(context, listen: false).playerScores.clear();

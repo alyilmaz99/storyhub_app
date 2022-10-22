@@ -38,7 +38,8 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
           children: [
             Container(
               padding: EdgeInsets.only(right: screenWidth / 7),
-              height: screenHeight / 17,
+              height: screenHeight / 14.3,
+              width: screenWidth / 1.5,
               child: SvgPicture.asset(
                 'assets/images/LogoV1.svg',
               ),

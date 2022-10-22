@@ -62,6 +62,7 @@ dependencies:
   shared_preferences: ^2.0.15
   flutter_svg: ^1.1.5
   flutter_switch: ^0.3.2
+  fullscreen: ^1.0.3
 
 dev_dependencies:
   flutter_test:

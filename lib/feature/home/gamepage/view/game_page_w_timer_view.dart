@@ -1,6 +1,8 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fullscreen/fullscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
@@ -68,6 +70,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                           .controller2));
                 },
                 icon: const Icon(
+                  size: 40,
                   Icons.menu,
                   color: Colors.white,
                 ),
@@ -76,7 +79,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
           ],
         ),
       ),
-      backgroundColor: Colors.transparent,
+      backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
       body: Container(
         decoration: const BoxDecoration(
           gradient: RadialGradient(
@@ -97,16 +100,25 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               child: Center(
                 child: Column(
                   children: [
-                    Text(
-                      Provider.of<PlayerCarouselViewModel>(context,
-                              listen: false)
-                          .cardName,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'GamerStation',
-                        fontSize: 20,
-                      ),
-                    ),
+                    Provider.of<FinalPageViewModel>(context).isFinal
+                        ? const Text(
+                            "FINALE BAGLA",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'GamerStation',
+                              fontSize: 20,
+                            ),
+                          )
+                        : Text(
+                            Provider.of<PlayerCarouselViewModel>(context,
+                                    listen: false)
+                                .cardName,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'GamerStation',
+                              fontSize: 20,
+                            ),
+                          ),
                     isFinalSizedBox(),
                     Provider.of<FinalPageViewModel>(context).isFinal == true
                         ? carouselItem(
@@ -178,6 +190,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                   : halfTimerChechk(value, callback);
                             },
                             onComplete: () => {
+                                  HapticFeedback.heavyImpact(),
                                   setState(() {
                                     if (Provider.of<FinalPageViewModel>(
                                       context,
@@ -203,6 +216,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               width: MediaQuery.of(context).size.width / 1.7,
               child: ElevatedButton(
                   onPressed: () {
+                    HapticFeedback.lightImpact();
                     setState(() {
                       print(
                         "Tur: ${Provider.of<PlayerCarouselViewModel>(context, listen: false).countTour}",

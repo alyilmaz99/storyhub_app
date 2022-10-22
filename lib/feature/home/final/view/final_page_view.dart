@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
@@ -36,6 +37,7 @@ class _FinalPageState extends State<FinalPageView> {
             children: [
               SizedBox(
                 height: screenHeight / 15,
+                width: screenWidth / 3.5,
                 child: SvgPicture.asset(
                   'assets/images/LogoV1.svg',
                 ),
@@ -78,6 +80,7 @@ class _FinalPageState extends State<FinalPageView> {
                             size: 30.0,
                           ),
                           onPressed: () {
+                            HapticFeedback.lightImpact();
                             showGeneralDialog(
                               context: context,
                               barrierDismissible: true,
@@ -200,13 +203,14 @@ class _FinalPageState extends State<FinalPageView> {
                     ),
                   ),
                   onPressed: () {
+                    HapticFeedback.lightImpact();
                     Provider.of<FinalPageViewModel>(context, listen: false)
                         .isFinal = true;
                     Navigator.pop(context);
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => GamePageWithTimer(),
+                        builder: (context) => const GamePageWithTimer(),
                       ),
                     );
                   },

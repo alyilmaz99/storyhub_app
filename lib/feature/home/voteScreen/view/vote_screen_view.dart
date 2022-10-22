@@ -58,8 +58,8 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                     padding: EdgeInsets.only(
                         top: screenHeight / 20, left: screenWidth / 2.5),
                     child: SizedBox(
-                      height: screenHeight / 16,
-                      width: screenWidth / 4.5,
+                      height: screenHeight / 14,
+                      width: screenWidth / 4,
                       child: SvgPicture.asset(
                         'assets/images/LogoV1.svg',
                       ),

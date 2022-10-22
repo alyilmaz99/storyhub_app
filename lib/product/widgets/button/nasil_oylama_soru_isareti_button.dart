@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class NasilOylamaSoruIsaretiButton extends StatelessWidget {
   const NasilOylamaSoruIsaretiButton(
@@ -24,7 +25,7 @@ class NasilOylamaSoruIsaretiButton extends StatelessWidget {
                   child: Column(
                     children: [
                       const Spacer(),
-                      Image.asset('assets/images/oylamanasılyapılır.png'),
+                      SvgPicture.asset("assets/images/question.svg"),
                       const Spacer(),
                       Center(
                         child: Text(
@@ -48,9 +49,7 @@ class NasilOylamaSoruIsaretiButton extends StatelessWidget {
               );
             });
       },
-      child: Image.asset(
-        'assets/images/soruisareti.png',
-      ),
+      child: SvgPicture.asset("assets/images/question.svg", width: 25),
     );
   }
 }

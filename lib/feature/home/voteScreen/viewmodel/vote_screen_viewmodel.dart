@@ -124,7 +124,8 @@ class PlayerVoteRateContainer extends StatelessWidget {
                     width: screenHeight / 0.45,
                     height: screenHeight / 3.4,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(20)),
                         shape: BoxShape.rectangle,
                         border: Border.all(
                           color: Colors.white,
@@ -174,12 +175,22 @@ class VoteScreenContinueButton extends StatelessWidget {
         Provider.of<Vote>(context, listen: false).isFinishVote
             ? Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) => const SortingPageView()))
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => const SortingPageView(),
+                  transitionDuration: Duration(seconds: (0.5).toInt()),
+                  transitionsBuilder: (_, a, __, c) =>
+                      FadeTransition(opacity: a, child: c),
+                ),
+              )
             : Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) => const VoteScreenView()));
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => const VoteScreenView(),
+                  transitionDuration: Duration(seconds: (0.5).toInt()),
+                  transitionsBuilder: (_, a, __, c) =>
+                      FadeTransition(opacity: a, child: c),
+                ),
+              );
         Provider.of<Vote>(context, listen: false).isFinishVoteFunc(context);
         Provider.of<Vote>(context, listen: false).isFinishVote
             ? Provider.of<Vote>(context, listen: false).isEqual(context)

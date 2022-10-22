@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/auth/howtoplay/view/how_to_play_view.dart';
@@ -13,6 +14,7 @@ abstract class MainPageViewModel extends State<MainPage> {
       height: MediaQuery.of(context).size.height / 12,
       child: OutlinedButton(
         onPressed: () {
+          HapticFeedback.lightImpact();
           Provider.of<PlayerCarouselViewModel>(context, listen: false)
               .useForTourCountChechk = 1;
           Provider.of<PlayerCarouselViewModel>(context, listen: false)
@@ -51,6 +53,7 @@ abstract class MainPageViewModel extends State<MainPage> {
       height: MediaQuery.of(context).size.height / 17,
       child: OutlinedButton(
         onPressed: () {
+          HapticFeedback.lightImpact();
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HowToPlayView()));
         },
