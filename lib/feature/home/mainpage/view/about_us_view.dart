@@ -1,5 +1,6 @@
 // ignore_for_file: deprecated_member_use
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -59,7 +60,9 @@ class _AboutUsViewState extends State<AboutUsView> {
                   ),
                 ),
                 IconButton(
-                  icon: Image.asset("assets/images/LogoV1.png"),
+                  icon: SvgPicture.asset(
+                    'assets/images/LogoV1.svg',
+                  ),
                   iconSize: 120,
                   onPressed: () => Navigator.pop(context),
                 ),

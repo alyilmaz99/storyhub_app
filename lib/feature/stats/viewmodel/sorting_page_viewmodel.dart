@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 abstract class SortingPageViewModel extends StatelessWidget {
   const SortingPageViewModel({super.key});
 }
 
-Widget buildContainer(BuildContext context, Color color, String image, String secondImage, String name) {
+Widget buildContainer(BuildContext context, Color color, String image,
+    String secondImage, String name) {
   double screenHeight = MediaQuery.of(context).size.height;
   double screenWidth = MediaQuery.of(context).size.width;
 
@@ -39,7 +41,9 @@ Widget buildContainer(BuildContext context, Color color, String image, String se
         Container(
           width: screenWidth / 2.5,
           height: screenHeight / 25,
-          decoration: BoxDecoration(border: Border.all(), borderRadius: const BorderRadius.all(Radius.circular(25))),
+          decoration: BoxDecoration(
+              border: Border.all(),
+              borderRadius: const BorderRadius.all(Radius.circular(25))),
           child: Center(
             child: Text(
               textAlign: TextAlign.center,
@@ -54,11 +58,7 @@ Widget buildContainer(BuildContext context, Color color, String image, String se
         Container(
           width: screenWidth / 10,
           height: screenHeight / 10,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(secondImage),
-            ),
-          ),
+          child: SvgPicture.asset(secondImage),
         ),
       ],
     ),

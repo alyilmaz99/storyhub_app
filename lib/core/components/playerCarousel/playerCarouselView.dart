@@ -27,7 +27,7 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                     icon: Icon(
                       Icons.arrow_back_ios,
                       color: Colors.grey,
-                      size: screenWidth / 15,
+                      size: screenWidth / 14,
                     )),
                 carouselItem(
                     context,
@@ -36,8 +36,8 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                             Provider.of<PlayerCarouselViewModel>(context)
                                 .firstIndex()]
                         .imgPath,
-                    MediaQuery.of(context).size.width / 6,
-                    MediaQuery.of(context).size.height / 12,
+                    MediaQuery.of(context).size.width / 6.5,
+                    MediaQuery.of(context).size.height / 13,
                     0.5,
                     Provider.of<PlayerCarouselViewModel>(context)
                         .playerList[
@@ -45,7 +45,7 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                                 .firstIndex()]
                         .playerName),
                 SizedBox(
-                  width: screenWidth / 23,
+                  width: screenWidth / 25,
                 ),
                 carouselItem(
                     context,
@@ -54,8 +54,8 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                             Provider.of<PlayerCarouselViewModel>(context)
                                 .selectedIndex()]
                         .imgPath,
-                    MediaQuery.of(context).size.width / 4,
-                    MediaQuery.of(context).size.height / 8,
+                    MediaQuery.of(context).size.width / 5,
+                    MediaQuery.of(context).size.height / 10,
                     1.0,
                     Provider.of<PlayerCarouselViewModel>(context)
                         .playerList[
@@ -63,7 +63,7 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                                 .selectedIndex()]
                         .playerName),
                 SizedBox(
-                  width: screenWidth / 23,
+                  width: screenWidth / 25,
                 ),
                 carouselItem(
                     context,
@@ -72,8 +72,8 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                             Provider.of<PlayerCarouselViewModel>(context)
                                 .thirdIndex()]
                         .imgPath,
-                    MediaQuery.of(context).size.width / 6,
-                    MediaQuery.of(context).size.height / 12,
+                    MediaQuery.of(context).size.width / 6.5,
+                    MediaQuery.of(context).size.height / 13,
                     0.5,
                     Provider.of<PlayerCarouselViewModel>(context)
                         .playerList[
@@ -97,7 +97,7 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
               ],
             ),
             SizedBox(
-              height: screenHeight / 40,
+              height: screenHeight / 50,
             ),
           ],
         ),
