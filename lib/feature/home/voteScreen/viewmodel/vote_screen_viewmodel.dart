@@ -35,6 +35,9 @@ class RateStarWidget extends StatelessWidget {
       onValueChanged: (currentValue) {
         Provider.of<Vote>(context, listen: false).valueChanged[index] =
             currentValue;
+        Provider.of<Vote>(context, listen: false)
+            .playerList3[0]
+            .playerVoteNumber -= currentValue;
 
         fun2();
         /* Provider.of<Vote>(context, listen: false).playerScores[index] =
@@ -55,7 +58,8 @@ class RateStarWidget extends StatelessWidget {
         (Provider.of<Vote>(context, listen: false)
             .playerList3
             .forEach((element) {
-          print('score ${element.name}:  ${element.score}');
+          print(
+              'score ${element.name}:  ${element.score} voteNUmber: ${element.playerVoteNumber}');
         }));
       },
       valueLabelVisibility: false,

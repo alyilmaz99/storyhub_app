@@ -130,12 +130,11 @@ Widget buildFirstButton(
           ).playerList.forEach((element) {
             element.isVote = false;
           });
+
           Provider.of<Vote>(context, listen: false).counterForTour = 0;
           Provider.of<Vote>(context, listen: false).isFinishVote = false;
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const SelectScenarioView()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const VoteScreenView()));
 
           //*******************TEST****************** */
           print(myMap);

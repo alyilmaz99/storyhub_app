@@ -41,6 +41,15 @@ class Vote with ChangeNotifier {
     return headerImage!;
   }
 
+  void setPlayerVoteNumber(BuildContext context) {
+    for (int i = 0; i < playerList.length; i++) {
+      playerList[i].playerVoteNumber = (playerList.length + 3);
+    }
+    Future.delayed(Duration.zero, () async {
+      notifyListeners();
+    });
+  }
+
   void changeHead(BuildContext context) {
     for (int i = 0;
         i < Provider.of<GameSettingsModel>(context, listen: false).playerCount;

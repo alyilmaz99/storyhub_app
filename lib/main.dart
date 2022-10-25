@@ -70,6 +70,7 @@ Future main() async {
         ),
         ChangeNotifierProvider<Player>(
           create: (BuildContext context) => Player(
+            playerVoteNumber: 3,
             playerList: [],
             backupPlayersMap: {},
             id: 1,

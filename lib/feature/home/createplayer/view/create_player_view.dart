@@ -127,6 +127,8 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                         myRank,
                         getImagePath(index),
                         index,
+                        (Provider.of<GameSettingsModel>(context).playerCount +
+                            3),
                       );
 
                       //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
