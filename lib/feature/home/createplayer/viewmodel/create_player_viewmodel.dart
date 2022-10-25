@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable
+// ignore_for_file: unused_local_variable, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -99,19 +99,6 @@ Widget buildFirstButton(
     height: MediaQuery.of(context).size.height / 13,
     child: OutlinedButton(
       onPressed: () {
-        Provider.of<Player>(context, listen: false)
-            .createList(context, textEditingControllers, 1, 1);
-        List<PlayerSelectionModel> tempList = <PlayerSelectionModel>[
-          for (int i = 0;
-              i <
-                  Provider.of<GameSettingsModel>(context, listen: false)
-                      .playerCount;
-              i++)
-            (createPlayer(context, i)),
-        ];
-        Provider.of<PlayerCarouselViewModel>(context, listen: false)
-            .playerList = tempList;
-
         for (bool element in myList) {
           if (element == true) {
             checkIsChechk = true;
@@ -124,6 +111,19 @@ Widget buildFirstButton(
           isCheck = true;
         }
         if (isCheck == true) {
+          Provider.of<Player>(context, listen: false)
+              .createList(context, textEditingControllers, 1, 1);
+          List<PlayerSelectionModel> tempList = <PlayerSelectionModel>[
+            for (int i = 0;
+                i <
+                    Provider.of<GameSettingsModel>(context, listen: false)
+                        .playerCount;
+                i++)
+              (createPlayer(context, i)),
+          ];
+          Provider.of<PlayerCarouselViewModel>(context, listen: false)
+              .playerList = tempList;
+
           Provider.of<Player>(
             context,
             listen: false,
@@ -136,16 +136,28 @@ Widget buildFirstButton(
               context,
               MaterialPageRoute(
                   builder: (context) => const SelectScenarioView()));
-        }
-        print(myMap);
-        print(Provider.of<Player>(context, listen: false).playerList[0].image);
-        print(Provider.of<Player>(context, listen: false).playerList[0].name);
-        print(Provider.of<Player>(context, listen: false).playerList.length);
 
-        print(myList);
-        print(checkIsChechk);
-        print(
-            Provider.of<GameSettingsModel>(context, listen: false).playerCount);
+          //*******************TEST****************** */
+          print(myMap);
+          print(
+            Provider.of<Player>(context, listen: false).playerList[0].image,
+          );
+          print(
+            Provider.of<Player>(context, listen: false).playerList[0].name,
+          );
+          print(
+            Provider.of<Player>(context, listen: false).playerList.length,
+          );
+          print(
+            myList,
+          );
+          print(
+            checkIsChechk,
+          );
+          print(
+            Provider.of<GameSettingsModel>(context, listen: false).playerCount,
+          );
+        }
       },
       style: ButtonStyle(
         elevation: MaterialStateProperty.all<double>(5),

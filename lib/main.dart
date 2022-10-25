@@ -6,6 +6,7 @@ import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.
 import 'package:storyhub/feature/auth/howtoplay/model/how_to_play_model.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
+import 'package:storyhub/feature/stats/view/sorting_table_view.dart';
 import 'feature/home/createplayer/model/player_model.dart';
 import 'feature/home/voteScreen/model/vote_model.dart';
 import 'product/model/player_selection_model.dart';

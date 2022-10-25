@@ -39,6 +39,7 @@ class _SortingTableViewState extends State<SortingTableView> {
                     child: SizedBox(
                       // height: screenHeight / 10,
                       width: screenWidth / 4,
+                      height: screenHeight / 10,
                       child: SvgPicture.asset(
                         'assets/images/LogoV1.svg',
                       ),
