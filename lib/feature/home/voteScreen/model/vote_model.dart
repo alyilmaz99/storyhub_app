@@ -27,6 +27,7 @@ class Vote with ChangeNotifier {
   bool isFinishVote = false;
   List<Player> playerListTemporary = [];
   List<double> valueChanged = [];
+  double currentValue = 0;
   Vote({this.counter});
 
   String getPlayerToHead(BuildContext context) {

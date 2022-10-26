@@ -27,33 +27,40 @@ class RateStarWidget extends StatelessWidget {
   Function fun2;
 
   int index;
+
   @override
   Widget build(BuildContext context) {
     return RatingStars(
-      //Provider.of<Vote>(context, listen: false).playerList2[index].score,
-
       onValueChanged: (currentValue) {
-        Provider.of<Vote>(context, listen: false).valueChanged[index] =
-            currentValue;
-        Provider.of<Vote>(context, listen: false)
-            .playerList3[0]
-            .playerVoteNumber -= currentValue;
-
-        fun2();
-        /* Provider.of<Vote>(context, listen: false).playerScores[index] =
-            currentValue;*/
-
-        for (var i = 0;
-            i < Provider.of<Vote>(context, listen: false).playerList3.length;
-            i++) {
-          if (Provider.of<Vote>(context, listen: false)
-                  .playerList2[index]
-                  .name ==
-              Provider.of<Vote>(context, listen: false).playerList3[i].name) {
-            Provider.of<Vote>(context, listen: false).playerList3[i].score +=
+        if (currentValue == 0) {
+          Provider.of<Vote>(context).currentValue = currentValue;
+          playerVoteCountController(context, index, currentValue);
+        } else if (currentValue != 0) {
+          if (Provider.of<Vote>(context, listen: false).currentValue <
+              currentValue) {
+            Provider.of<Vote>(context, listen: false)
+                    .playerList3[Provider.of<Vote>(context, listen: false)
+                        .counterForTour]
+                    .playerVoteNumber +=
+                Provider.of<Vote>(context, listen: false).currentValue;
+            Provider.of<Vote>(context, listen: false).currentValue =
                 currentValue;
+            playerVoteCountController(context, index, currentValue);
+          } else if (Provider.of<Vote>(context, listen: false).currentValue >
+              currentValue) {
+            Provider.of<Vote>(context, listen: false)
+                    .playerList3[Provider.of<Vote>(context, listen: false)
+                        .counterForTour]
+                    .playerVoteNumber +=
+                Provider.of<Vote>(context, listen: false).currentValue;
+            Provider.of<Vote>(context, listen: false).currentValue =
+                currentValue;
+
+            playerVoteCountController(context, index, currentValue);
           }
         }
+
+        fun2();
 
         (Provider.of<Vote>(context, listen: false)
             .playerList3
@@ -75,6 +82,53 @@ class RateStarWidget extends StatelessWidget {
       animationDuration: const Duration(milliseconds: 1),
     );
   }
+}
+
+void playerVoteCountController(
+    BuildContext context, int index, double currentValue) {
+  if (Provider.of<Vote>(context, listen: false)
+          .playerList3[Provider.of<Vote>(context, listen: false).counterForTour]
+          .playerVoteNumber >
+      0) {
+    Provider.of<Vote>(context, listen: false).valueChanged[index] =
+        currentValue;
+    Provider.of<Vote>(context, listen: false)
+        .playerList3[Provider.of<Vote>(context, listen: false).counterForTour]
+        .playerVoteNumber -= Provider.of<Vote>(context,
+            listen: false)
+        .currentValue;
+  }
+  playerVoteMinusController(context);
+  for (var i = 0;
+      i < Provider.of<Vote>(context, listen: false).playerList3.length;
+      i++) {
+    if (Provider.of<Vote>(context, listen: false).playerList2[index].name ==
+        Provider.of<Vote>(context, listen: false).playerList3[i].name) {
+      Provider.of<Vote>(context, listen: false).playerList3[i].score +=
+          currentValue;
+    }
+  }
+}
+
+void playerVoteMinusController(BuildContext context) {
+  Provider.of<Vote>(context, listen: false)
+              .playerList3[
+                  Provider.of<Vote>(context, listen: false).counterForTour]
+              .playerVoteNumber ==
+          -1
+      ? Provider.of<Vote>(context, listen: false)
+          .playerList3[Provider.of<Vote>(context, listen: false).counterForTour]
+          .playerVoteNumber++
+      : null;
+  Provider.of<Vote>(context, listen: false)
+              .playerList3[
+                  Provider.of<Vote>(context, listen: false).counterForTour]
+              .playerVoteNumber ==
+          -2
+      ? Provider.of<Vote>(context, listen: false)
+          .playerList3[Provider.of<Vote>(context, listen: false).counterForTour]
+          .playerVoteNumber++
+      : null;
 }
 
 BoxDecoration playerPlayerVoteContainerDecoration() {
@@ -175,7 +229,7 @@ class VoteScreenContinueButton extends StatelessWidget {
         Provider.of<Vote>(context, listen: false).printPlayerScoreList(context);
 
         Provider.of<Vote>(context, listen: false).valueChanged.clear();
-
+        Provider.of<Vote>(context, listen: false).currentValue = 0;
         Provider.of<Vote>(context, listen: false).isFinishVote
             ? Navigator.push(
                 context,
