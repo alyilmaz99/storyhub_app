@@ -44,7 +44,7 @@ class Vote with ChangeNotifier {
 
   void setPlayerVoteNumber(BuildContext context) {
     for (int i = 0; i < playerList.length; i++) {
-      playerList[i].playerVoteNumber = (playerList.length + 3);
+      playerList[i].playerVoteNumber = 3;
     }
     Future.delayed(Duration.zero, () async {
       notifyListeners();
@@ -168,16 +168,15 @@ class Vote with ChangeNotifier {
   String getScoreForVoteScreen(BuildContext context) {
     String imageScore = "";
     for (int i = 0;
-        i < Provider.of<Vote>(context, listen: false).playerList.length;
+        i < Provider.of<Vote>(context, listen: false).playerList3.length;
         i++) {
       if (Provider.of<Vote>(context, listen: false).playerList3[i].image ==
           Provider.of<Vote>(context, listen: false).sendFirstImage()) {
         imageScore = Provider.of<Vote>(context, listen: false)
             .playerList3[i]
-            .score
+            .playerVoteNumber
+            .toInt()
             .toString();
-      } else {
-        return "0";
       }
     }
     return imageScore;

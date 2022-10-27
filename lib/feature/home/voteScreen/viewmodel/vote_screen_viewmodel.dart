@@ -3,8 +3,6 @@ import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
 import 'package:storyhub/feature/stats/view/sorting_page_view.dart';
-
-import '../../createplayer/model/player_model.dart';
 import '../model/vote_model.dart';
 
 abstract class VoteScreenViewModel extends State<VoteScreenView> {
@@ -32,9 +30,27 @@ class RateStarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return RatingStars(
       onValueChanged: (currentValue) {
+        print(
+            "player vote number:  ${Provider.of<Vote>(context, listen: false).playerList3[Provider.of<Vote>(context, listen: false).counterForTour].playerVoteNumber}");
+        print("current value: $currentValue");
+        print(
+            "provider CurrrentValue: ${Provider.of<Vote>(context, listen: false).currentValue}");
+        /*
         if (currentValue == 0) {
           Provider.of<Vote>(context).currentValue = currentValue;
-          playerVoteCountController(context, index, currentValue);
+          if (Provider.of<Vote>(context, listen: false)
+                      .playerList3[Provider.of<Vote>(context, listen: false)
+                          .counterForTour]
+                      .playerVoteNumber >
+                  0 &&
+              Provider.of<Vote>(context, listen: false)
+                      .playerList3[Provider.of<Vote>(context, listen: false)
+                          .counterForTour]
+                      .playerVoteNumber >=
+                  currentValue) {
+            playerVoteCountController(context, index, currentValue);
+            fun2();
+          }
         } else if (currentValue != 0) {
           if (Provider.of<Vote>(context, listen: false).currentValue <
               currentValue) {
@@ -46,6 +62,7 @@ class RateStarWidget extends StatelessWidget {
             Provider.of<Vote>(context, listen: false).currentValue =
                 currentValue;
             playerVoteCountController(context, index, currentValue);
+            fun2();
           } else if (Provider.of<Vote>(context, listen: false).currentValue >
               currentValue) {
             Provider.of<Vote>(context, listen: false)
@@ -57,10 +74,10 @@ class RateStarWidget extends StatelessWidget {
                 currentValue;
 
             playerVoteCountController(context, index, currentValue);
+            fun2();
           }
         }
-
-        fun2();
+        */
 
         (Provider.of<Vote>(context, listen: false)
             .playerList3
