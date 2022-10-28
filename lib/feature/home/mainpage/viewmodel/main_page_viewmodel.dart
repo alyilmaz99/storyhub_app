@@ -6,6 +6,7 @@ import 'package:storyhub/feature/auth/howtoplay/view/how_to_play_view.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../view/main_page_view.dart';
 import '../../../settings/view/game_settings_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 abstract class MainPageViewModel extends State<MainPage> {
   Widget buildFirstButton() {
@@ -36,7 +37,7 @@ abstract class MainPageViewModel extends State<MainPage> {
             ),
           ),
         ),
-        child: const Text(
+        child: Text(
           "Giriş",
           style: TextStyle(
             color: Colors.white,

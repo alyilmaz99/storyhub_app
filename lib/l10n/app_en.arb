@@ -1,0 +1,6 @@
+{
+  "helloWorld": "Enter",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  }
+}
