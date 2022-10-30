@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
 import '../viewmodel/create_player_viewmodel.dart';
 import '../../../settings/model/game_settings_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CreatePlayerView extends StatefulWidget {
   const CreatePlayerView({Key? key}) : super(key: key);
@@ -187,9 +188,9 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                 )),
                 child: Provider.of<Player>(context, listen: false)
                         .textValueisEmpty[numberforimages - 1]
-                    ? const Center(
+                    ? Center(
                         child: Text(
-                          'HAZIR!',
+                          AppLocalizations.of(context)!.createPlayerReady,
                           style: TextStyle(
                             shadows: [
                               Shadow(

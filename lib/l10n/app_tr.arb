@@ -1,3 +1,75 @@
 {
-  "helloWorld": "Giriş"
+  "mainPageTimeToCreateaStory" : "HİKAYE YARATMA ZAMANU",
+  "mainPageEnter" : "Giriş",
+  "mainPageHowToPlay" : "Nasıl Oynanır?",
+
+  "gameSettingsGameSettings" : "OYUN AYARLARI",
+  "gameSettingsGamerNumber" : "Oyuncu Sayısı",
+  "gameSettingsTime" : "Süre",
+  "gameSettingsNumberOfLaps" : "Tur Sayısı",
+  "gameSettingsDifficulty" : "Zorluk",
+  "gameSettingsPlay" : "Başla",
+
+  "createPlayerName" : "İsim",
+  "createPlayerContinue" : "DEVAM",
+  "createPlayerReady" : "HAZIR",
+
+  "voteScreenWithStar" : "YILDIZLA",
+  "voteScreenFinish" : "BİTİR",
+
+  "sortingPageArrangement" : "SIRALAMA",
+  "sortingPageMainMenu" : "ANA MENÜ",
+
+
+  "settingsGameSettings" : "Ayarlar",
+  "settingsGameGameSound" : "Oyun Sesi",
+  "settingsGameButtonSound" : "Buton Sesi",
+  "settingsGameGameSound" : "Oyun Sesi",
+
+  "settingPopupSettings" : "Ayarlar",
+  "settingPopupGameSound" : "Oyun Sesi",
+  "settingPopupButtonSound" : "Buton Sesi",
+  "settingPopupGameSound" : "Oyun Sesi",
+  "settingPopupVibration" : "Titresim",
+
+  "howToPlayHowToPlay" : "Nasıl Oynanır",
+  "howToPlayItem1Text" : "Story Hub grup halinde oynanan bir oyundur",
+  "howToPlayItem2Text" : "Bir kişi seçilen senaryoyu okuyarak oyunu başlatır.",
+  "howToPlayItem3Text" : "Grup üyeleri kartlarda bulunan kelimelerle oyunu devam ettirir.",
+  "howToPlayItem4Text" : "Oyun öncesinde belirlenen süre içinde anlatımın bitirilmesi gerekir.",
+
+
+
+  "splashScreenAppText" : "STORY HUB",
+  "selectscenarioAppBarTitleText" : "SENARYO SEÇ",
+  "howToPageTitleRule" : "Oyun Kuralları",
+  "howToPageTitleGamer" : "Oyuncu Sayısı",
+  "howToPageTitleDetail" : "Kart Detayları",
+  "howToPageTitlePoint" : "Puanlama Sistemi",
+  "howToPageTitlePlay" : "Nasıl Oynanır?",
+
+  "cardOne" : "Card1",
+  "cardTwo" : "Card2",
+  "cardThree" : "Card3",
+  "cardFour" : "Card4",
+  "cardFive" : "Card5",
+  "cardSix" : "Card6",
+  "buttonText" : "SELECT CARD",
+
+
+  "aboutUs" : "Hakkımızda",
+  "aboutUsDetail" : "Vessac Software ekibinin ilk oyunu olan Storyhub, çocukluğumuzda oynadığımız kulaktan kulağa hikaye devam ettirme oyunlarının dijital hali niteliğinde. Grup halinde oynanan, her yaştan kesime hitap eden bu oyunu oynarken yaratıcılığınız ve hayalgücünüzle çok eğleneceğinize emin olabilirsiniz. Oyuna katkı sağlamak ve kendi isteğiniz kartları yaratmak için iletişime geçebilirsiniz. sosyal medya hesaplarımızdan oyunu takip edebilir ve yeniliklerden haberdar olabilirsiniz. Hikaye yaratma zamanı! Vessac Software tarafından geliştirilmiştir tüm hakları saklıdır",
+
+  "contactUs" : "Bize Ulaşabilirsin!",
+  "ourLinkedin" : "vessac-software",
+  "ourInstaUserName" : "@vessac.software",
+  "ourMailAddress" : "contact@vessac.com",
+  "ourWebSite" : "vessac.com",
+
+
+  "timeInfo" : "Geçen Süre",
+  "tourInfo" : "Tur Sayısı",
+  "gamerInfo" : "Oyuncusu Sayısı",
+  "scenarioInfo" : "Seçilen Senaryo",
+  "levelInfo" : "Zorluk Seviyesi"
 }

@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
 import 'package:storyhub/feature/stats/view/sorting_page_view.dart';
 import '../model/vote_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 abstract class VoteScreenViewModel extends State<VoteScreenView> {
   BoxDecoration playerPlayerVoteContainerDecoration() {
@@ -294,7 +295,7 @@ class VoteScreenContinueButton extends StatelessWidget {
         ),
       ),
       child: Text(
-        Provider.of<Vote>(context).isFinishVote ? "BİTİR" : "YILDIZLA",
+        Provider.of<Vote>(context).isFinishVote ? AppLocalizations.of(context)!.voteScreenFinish : AppLocalizations.of(context)!.voteScreenWithStar,
         style: const TextStyle(
           fontFamily: 'GamerStation',
           color: Colors.white,

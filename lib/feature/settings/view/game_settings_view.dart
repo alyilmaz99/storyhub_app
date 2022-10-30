@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
 import 'package:provider/provider.dart';
 import '../model/game_settings_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../core/components/popup/DifficultyPopup.dart';
 
@@ -74,9 +75,9 @@ class _GameSettingsViewState extends State<GameSettingsView> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
-                  "Oyun Ayarları",
+                  AppLocalizations.of(context)!.gameSettingsGameSettings,
                   style: TextStyle(
                       fontFamily: 'GamerStation',
                       fontSize: 22,
@@ -111,8 +112,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                const Text(
-                                  "Oyuncu Sayısı",
+                                 Text(
+                                  AppLocalizations.of(context)!.gameSettingsGamerNumber,
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                       fontSize: 17,
@@ -192,8 +193,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                           children: [
                             RichText(
                                 textAlign: TextAlign.center,
-                                text: const TextSpan(
-                                  text: "Süre",
+                                text: TextSpan(
+                                  text: AppLocalizations.of(context)!.gameSettingsTime,
                                   style: TextStyle(
                                       fontSize: 17,
                                       fontWeight: FontWeight.w300,
@@ -275,7 +276,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            const Text("Tur Sayısı",
+                            Text(
+                                AppLocalizations.of(context)!.gameSettingsNumberOfLaps,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 17,
@@ -356,8 +358,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  const Text(
-                                    "Zorluk",
+                                  Text(
+                                    AppLocalizations.of(context)!.gameSettingsDifficulty,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         fontSize: 17,
@@ -483,8 +485,8 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                         ),
                       ],
                     ),
-                    child: const Text(
-                      "Başla",
+                    child: Text(
+                      AppLocalizations.of(context)!.gameSettingsPlay,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontFamily: 'GamerStation',
