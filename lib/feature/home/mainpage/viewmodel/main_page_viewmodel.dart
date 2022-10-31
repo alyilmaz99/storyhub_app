@@ -11,8 +11,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 abstract class MainPageViewModel extends State<MainPage> {
   Widget buildFirstButton() {
     return SizedBox(
-      width: MediaQuery.of(context).size.width / 1.2,
-      height: MediaQuery.of(context).size.height / 12,
+      width: MediaQuery.of(context).size.width / 1.4,
+      height: MediaQuery.of(context).size.height / 10,
       child: OutlinedButton(
         onPressed: () {
           HapticFeedback.lightImpact();
@@ -39,9 +39,10 @@ abstract class MainPageViewModel extends State<MainPage> {
         ),
         child: Text(
           AppLocalizations.of(context)!.mainPageEnter,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 35,
+            fontFamily: 'GamerStation',
           ),
         ),
       ),
@@ -50,8 +51,8 @@ abstract class MainPageViewModel extends State<MainPage> {
 
   Widget buildSecondButton(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width / 1.2,
-      height: MediaQuery.of(context).size.height / 17,
+      width: MediaQuery.of(context).size.width / 1.4,
+      height: MediaQuery.of(context).size.height / 14,
       child: OutlinedButton(
         onPressed: () {
           HapticFeedback.lightImpact();
@@ -69,9 +70,10 @@ abstract class MainPageViewModel extends State<MainPage> {
         ),
         child: Text(
           AppLocalizations.of(context)!.mainPageHowToPlay,
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 20,
+            fontFamily: 'GamerStation',
           ),
         ),
       ),
@@ -81,7 +83,7 @@ abstract class MainPageViewModel extends State<MainPage> {
   Widget buildText() {
     return Text(
       AppLocalizations.of(context)!.mainPageTimeToCreateaStory,
-      style: TextStyle(
+      style: const TextStyle(
         fontSize: 19,
         fontFamily: "GamerStation",
         color: Colors.white,

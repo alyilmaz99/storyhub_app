@@ -3,7 +3,9 @@
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
+import '../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../viewmodel/drawer_viewmodel.dart';
 import '../../home/mainpage/view/main_page_view.dart';
 
@@ -44,7 +46,7 @@ class FullScreenModal extends DrawerViewModel {
                       fontFamily: 'GamerStation'),
                 ),
                 SizedBox(
-                  height: screenHeight / 8,
+                  height: screenHeight / 20,
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -85,7 +87,45 @@ class FullScreenModal extends DrawerViewModel {
                   ),
                 ),
                 const SizedBox(
-                  height: 70,
+                  height: 50,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Provider.of<FinalPageViewModel>(context, listen: false)
+                        .isFinal = false;
+                    Navigator.pop(context);
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AfterScenarioView()));
+                    Provider.of<FinalPageViewModel>(
+                      context,
+                      listen: false,
+                    ).isFinal = false;
+                    Provider.of<PlayerCarouselViewModel>(context, listen: false)
+                        .countTour = 1;
+                    Provider.of<PlayerCarouselViewModel>(context, listen: false)
+                        .useForTourCountChechk = 1;
+                  },
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white.withOpacity(0.38),
+                      backgroundColor: const Color.fromRGBO(177, 113, 199, 1),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      onSurface: Colors.white,
+                      //disabledBackgroundColor: Colors.white,
+                      minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
+                  child: const Text(
+                    "Sıfırla",
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontFamily: 'GamerStation',
+                        color: Colors.white),
+                  ),
+                ),
+                const SizedBox(
+                  height: 50,
                 ),
                 ElevatedButton(
                   onPressed: () {
