@@ -13,6 +13,8 @@ import 'product/model/player_selection_model.dart';
 import 'feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -115,6 +117,16 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
+      localizationsDelegates: [
+        AppLocalizations.delegate, // Add this line
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', ''), // English, no country code
+        Locale('tr', ''), // Spanish, no country code
+      ],
       home: const SplashScreenView(),
     );
   }

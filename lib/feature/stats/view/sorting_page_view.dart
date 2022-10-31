@@ -9,6 +9,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
 import 'package:storyhub/feature/stats/viewmodel/sorting_page_viewmodel.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SortingPageView extends SortingPageViewModel {
   const SortingPageView({super.key});
@@ -54,7 +55,7 @@ class SortingPageView extends SortingPageViewModel {
               height: screenHeight / 20,
             ),
             Text(
-              'SIRALAMA',
+              AppLocalizations.of(context)!.sortingPageArrangement,
               style: TextStyle(
                 fontFamily: 'GamerStation',
                 fontSize: 40,
@@ -123,8 +124,8 @@ class SortingPageView extends SortingPageViewModel {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18),
                   )),
-              child: const Text(
-                'ANA MENÜ',
+              child: Text(
+                AppLocalizations.of(context)!.sortingPageMainMenu,
                 style: TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.white,

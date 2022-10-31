@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:storyhub/feature/auth/howtoplay/view/how_to_play_view.dart';
 
 import '../../../home/mainpage/view/main_page_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OnboardingItem {
   final String title;
