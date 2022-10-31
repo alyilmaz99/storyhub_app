@@ -11,6 +11,7 @@ import '../../../settings/model/game_settings_model.dart';
 import '../../voteScreen/model/vote_model.dart';
 import '../model/player_model.dart';
 import '../view/create_player_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
   static bool isEmpty = false;
@@ -41,7 +42,7 @@ abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
       cursorColor: Colors.white,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.all(0),
-        hintText: "İsim",
+        hintText: AppLocalizations.of(context)!.createPlayerName,
         hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.w500,
@@ -175,8 +176,8 @@ Widget buildFirstButton(
           ),
         ),
       ),
-      child: const Text(
-        "DEVAM",
+      child: Text(
+        AppLocalizations.of(context)!.createPlayerContinue,
         style: TextStyle(
           fontFamily: 'GamerStation',
           color: Colors.white,

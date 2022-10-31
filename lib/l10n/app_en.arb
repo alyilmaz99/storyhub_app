@@ -1,0 +1,74 @@
+{
+  "mainPageTimeToCreateaStory" : "TIME TO CREATE A STORY",
+  "mainPageEnter" : "Enter",
+  "mainPageHowToPlay" : "How to play?",
+
+  "gameSettingsGameSettings" : "GAME SETTINGS",
+  "gameSettingsGamerNumber" : "Number of player",
+  "gameSettingsTime" : "Time",
+  "gameSettingsNumberOfLaps" : "Number of Rounds",
+  "gameSettingsDifficulty" : "Difficulty",
+  "gameSettingsPlay" : "Start",
+
+  "createPlayerName" : "Name",
+  "createPlayerContinue" : "CONTINUE",
+  "createPlayerReady" : "READY",
+
+  "voteScreenWithStar" : "START",
+  "voteScreenFinish" : "fINISH",
+
+  "sortingPageArrangement" : "ARRANGEMENT",
+  "sortingPageMainMenu" : "MAIN MENU",
+
+
+  "settingsGameSettings" : "Settings",
+  "settingsGameGameSound" : "Game Sound",
+  "settingsGameButtonSound" : "Button Sound",
+  "settingsGameGameSound" : "Game Sound",
+
+  "settingPopupSettings" : "Settings",
+  "settingPopupGameSound" : "Game Sounds",
+  "settingPopupButtonSound" : "Button Sounds",
+  "settingPopupVibration" : "Vibration",
+
+  "howToPlayHowToPlay" : "How to play",
+  "howToPlayItem1Text" : "Story Hub is a group game",
+  "howToPlayItem2Text" : "One person starts the game by reading the selected scenario.",
+  "howToPlayItem3Text" : "Group members continue the game with the words on the cards.",
+  "howToPlayItem4Text" : "The narration must be completed within the specified time before the game.",
+
+
+
+  "splashScreenAppText" : "STORY HUB",
+  "selectscenarioAppBarTitleText" : "SELECT SCENARIO",
+  "howToPageTitleRule" : "Game Rules",
+  "howToPageTitleGamer" : "Number of player",
+  "howToPageTitleDetail" : "Card Details",
+  "howToPageTitlePoint" : "Scoring System",
+  "howToPageTitlePlay" : "How to play?",
+
+  "cardOne" : "Card1",
+  "cardTwo" : "Card2",
+  "cardThree" : "Card3",
+  "cardFour" : "Card4",
+  "cardFive" : "Card5",
+  "cardSix" : "Card6",
+  "buttonText" : "SELECT CARD",
+
+
+  "aboutUs" : "About Us",
+  "aboutUsDetail" : "Storyhub, the first game of the Vessac Software team, is the digital version of the word-of-mouth story continuation games we played in our childhood. You can be sure that you will have a lot of fun with your creativity and imagination while playing this game, which is played in groups and appeals to all ages. You can contact us to contribute to the game and create your own cards. You can follow the game on our social media accounts and be informed about innovations. Time to create a story! Developed by Vessac Software all rights reserved.",
+
+  "contactUs" : "You can contact us!",
+  "ourLinkedin" : "vessac-software",
+  "ourInstaUserName" : "@vessac.software",
+  "ourMailAddress" : "contact@vessac.com",
+  "ourWebSite" : "vessac.com",
+
+
+  "timeInfo" : "Geçen Süre",
+  "tourInfo" : "Tur Sayısı",
+  "gamerInfo" : "Oyuncusu Sayısı",
+  "scenarioInfo" : "Seçilen Senaryo",
+  "levelInfo" : "Zorluk Seviyesi"
+}

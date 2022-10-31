@@ -6,6 +6,7 @@ import 'package:storyhub/feature/auth/howtoplay/view/how_to_play_view.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../view/main_page_view.dart';
 import '../../../settings/view/game_settings_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 abstract class MainPageViewModel extends State<MainPage> {
   Widget buildFirstButton() {
@@ -36,8 +37,8 @@ abstract class MainPageViewModel extends State<MainPage> {
             ),
           ),
         ),
-        child: const Text(
-          "Giriş",
+        child: Text(
+          AppLocalizations.of(context)!.mainPageEnter,
           style: TextStyle(
             color: Colors.white,
             fontSize: 35,
@@ -66,8 +67,8 @@ abstract class MainPageViewModel extends State<MainPage> {
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16.0))),
         ),
-        child: const Text(
-          "Nasıl Oynanır?",
+        child: Text(
+          AppLocalizations.of(context)!.mainPageHowToPlay,
           style: TextStyle(
             color: Colors.white,
             fontSize: 20,
@@ -78,8 +79,8 @@ abstract class MainPageViewModel extends State<MainPage> {
   }
 
   Widget buildText() {
-    return const Text(
-      "HİKAYE YARATMA ZAMANI!",
+    return Text(
+      AppLocalizations.of(context)!.mainPageTimeToCreateaStory,
       style: TextStyle(
         fontSize: 19,
         fontFamily: "GamerStation",
