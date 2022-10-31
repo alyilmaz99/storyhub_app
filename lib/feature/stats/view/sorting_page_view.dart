@@ -4,15 +4,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/home/voteScreen/model/vote_model.dart';
-
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
 import 'package:storyhub/feature/stats/viewmodel/sorting_page_viewmodel.dart';
 
 class SortingPageView extends SortingPageViewModel {
   const SortingPageView({super.key});
-
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;

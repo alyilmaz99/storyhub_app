@@ -144,28 +144,28 @@ class CardService {
       if (level == 1) {
         cardGame = randomCard(scenariosParam, 55, 30, 15);
       } else if (level == 2) {
-        cardGame = randomCard(scenariosParam, 40, 40, 20);
+        cardGame = randomCard(scenariosParam, 20, 50, 30);
       } else if (level == 3) {
-        cardGame = randomCard(scenariosParam, 25, 45, 30);
+        cardGame = randomCard(scenariosParam, 10, 50, 40);
       }
     } else if (difficulty == Difficulty.orta) {
       if (level == 2) {
-        cardGame = randomCard(scenariosParam, 40, 40, 20);
+        cardGame = randomCard(scenariosParam, 20, 50, 30);
       } else if (level == 3) {
-        cardGame = randomCard(scenariosParam, 25, 45, 30);
+        cardGame = randomCard(scenariosParam, 10, 50, 40);
       }
     } else if (difficulty == Difficulty.zor) {
       if (level == 3) {
-        cardGame = randomCard(scenariosParam, 25, 45, 30);
+        cardGame = randomCard(scenariosParam, 10, 50, 40);
       }
     }
 
     if (level == 3) {
-      cardGame = randomCard(scenariosParam, 25, 45, 30);
+      cardGame = randomCard(scenariosParam, 10, 40, 50);
     } else if (level == 4) {
-      cardGame = randomCard(scenariosParam, 10, 40, 50);
+      cardGame = randomCard(scenariosParam, 5, 30, 65);
     } else if (level == 5) {
-      cardGame = randomCard(scenariosParam, 10, 40, 50);
+      cardGame = randomCard(scenariosParam, 0, 35, 65);
     } else if (level == 6) {
       cardGame = randomCard(scenariosParam, 0, 30, 70);
     } else if (level == 7) {
