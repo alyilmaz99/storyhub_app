@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/home/voteScreen/model/vote_model.dart';
-import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
+import 'package:storyhub/feature/stats/view/sorting_table_view.dart';
 import 'package:storyhub/feature/stats/viewmodel/sorting_page_viewmodel.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -101,16 +101,10 @@ class SortingPageView extends SortingPageViewModel {
             ElevatedButton(
               onPressed: () {
                 HapticFeedback.lightImpact();
-                Provider.of<Vote>(context, listen: false).playerList.clear();
-                Provider.of<Vote>(context, listen: false).playerList2.clear();
-                Provider.of<Vote>(context, listen: false).playerScores.clear();
-                Provider.of<Vote>(context, listen: false).playerList3.clear();
-                Provider.of<Vote>(context, listen: false).valueChanged.clear();
-                Provider.of<PlayerCarouselViewModel>(context, listen: false)
-                    .playerList
-                    .clear();
+
                 Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) => const MainPage()),
+                    MaterialPageRoute(
+                        builder: (context) => const SortingTableView()),
                     (Route<dynamic> route) => false);
               },
               style: ElevatedButton.styleFrom(
@@ -122,7 +116,7 @@ class SortingPageView extends SortingPageViewModel {
                   )),
               child: Text(
                 AppLocalizations.of(context)!.sortingPageMainMenu,
-                style: TextStyle(
+                style: const TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.white,
                     fontSize: 18),
