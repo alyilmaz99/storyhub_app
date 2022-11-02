@@ -31,7 +31,7 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
     CountDownController controller2 = CountDownController();
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(37, 29, 58, 1),
+        backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
         shadowColor: Colors.transparent,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -64,7 +64,7 @@ class _AfterScenarioViewState extends AfterScenarioViewModel {
             SizedBox(
               height: screenHeight / 20,
             ),
-            carousel(context, screenHeight, (screenWidth / 5) * 3),
+            carousel(context, screenHeight, (screenWidth / 5) * 3, false),
             SizedBox(
               height: screenHeight / 10,
             ),

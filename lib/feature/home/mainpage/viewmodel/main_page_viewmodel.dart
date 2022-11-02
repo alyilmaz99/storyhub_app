@@ -51,8 +51,8 @@ abstract class MainPageViewModel extends State<MainPage> {
 
   Widget buildSecondButton(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width / 1.4,
-      height: MediaQuery.of(context).size.height / 14,
+      width: MediaQuery.of(context).size.width / 1.7,
+      height: MediaQuery.of(context).size.height / 16,
       child: OutlinedButton(
         onPressed: () {
           HapticFeedback.lightImpact();

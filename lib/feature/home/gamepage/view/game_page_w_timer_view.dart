@@ -134,7 +134,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                     .isFinal),
                           )
                         : carousel(
-                            context, screenHeight, (screenWidth / 5) * 3),
+                            context, screenHeight, (screenWidth / 5) * 3, true),
                     SizedBox(
                       height: screenHeight / 70,
                     ),
