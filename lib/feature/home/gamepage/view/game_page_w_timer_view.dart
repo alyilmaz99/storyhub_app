@@ -190,6 +190,11 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                       true
                                   ? halfTimerChechk2(value, callback)
                                   : halfTimerChechk(value, callback);
+                              if (int.parse(value) > 5) {
+                                playTikTik();
+                              } else {
+                                playDatDat();
+                              }
                             },
                             onComplete: () => {
                                   HapticFeedback.heavyImpact(),
