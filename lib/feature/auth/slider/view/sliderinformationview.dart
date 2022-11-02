@@ -1,11 +1,7 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:im_animations/main.dart';
 import '../../../home/mainpage/view/main_page_view.dart';
 import '../viewmodel/sliderinformationviewmodel.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SliderInformationView extends StatefulWidget {
   const SliderInformationView({Key? key}) : super(key: key);
@@ -135,6 +131,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                   SizedBox(height: screenHeight / 20),
                                   ElevatedButton(
                                     onPressed: () {
+                                      sound.playButtonSound(context);
                                       Navigator.of(context).pushReplacement(
                                           MaterialPageRoute(
                                               builder: (context) =>

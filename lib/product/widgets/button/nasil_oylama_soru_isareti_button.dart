@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../model/button_sound.dart';
+
 class NasilOylamaSoruIsaretiButton extends StatelessWidget {
   const NasilOylamaSoruIsaretiButton(
       {Key? key, required this.myHeight, required this.myWidth})
       : super(key: key);
   final double myHeight;
   final double myWidth;
+  
   @override
   Widget build(BuildContext context) {
+    ButtonSound sound = ButtonSound();
     return GestureDetector(
       onTap: () {
+        sound.playButtonSound(context);
         showDialog(
             context: context,
             builder: (BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/product/model/button_sound.dart';
 import '../model/game_settings_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -17,7 +18,7 @@ class GameSettingsView extends StatefulWidget {
 class _GameSettingsViewState extends State<GameSettingsView> {
   var roundSpeedString = '';
   var diffuciltyValue = 0;
-
+  ButtonSound sound = ButtonSound();
   String roundSpeedName(roundSpeedValue) {
     switch (roundSpeedValue) {
       case 1:
@@ -78,7 +79,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
               children: [
                 Text(
                   AppLocalizations.of(context)!.gameSettingsGameSettings,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontFamily: 'GamerStation',
                       fontSize: 22,
                       fontWeight: FontWeight.w400,
@@ -112,10 +113,11 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                 Text(
-                                  AppLocalizations.of(context)!.gameSettingsGamerNumber,
+                                Text(
+                                  AppLocalizations.of(context)!
+                                      .gameSettingsGamerNumber,
                                   textAlign: TextAlign.center,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       fontSize: 17,
                                       fontWeight: FontWeight.w300,
                                       color: Colors.white),
@@ -133,6 +135,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                             size: 35.0,
                                           ),
                                           onPressed: () {
+                                            sound.playButtonSound(context);
                                             Provider.of<GameSettingsModel>(
                                                     context,
                                                     listen: false)
@@ -160,6 +163,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                             size: 35.0,
                                           ),
                                           onPressed: () {
+                                            sound.playButtonSound(context);
                                             Provider.of<GameSettingsModel>(
                                                     context,
                                                     listen: false)
@@ -194,12 +198,13 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                             RichText(
                                 textAlign: TextAlign.center,
                                 text: TextSpan(
-                                  text: AppLocalizations.of(context)!.gameSettingsTime,
-                                  style: TextStyle(
+                                  text: AppLocalizations.of(context)!
+                                      .gameSettingsTime,
+                                  style: const TextStyle(
                                       fontSize: 17,
                                       fontWeight: FontWeight.w300,
                                       color: Colors.white),
-                                  children: <TextSpan>[
+                                  children: const <TextSpan>[
                                     TextSpan(
                                       text: ' (sn.)',
                                       style: TextStyle(
@@ -222,6 +227,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         size: 35.0,
                                       ),
                                       onPressed: () {
+                                        sound.playButtonSound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .decrementTimerValue();
@@ -246,6 +252,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         size: 35.0,
                                       ),
                                       onPressed: () {
+                                        sound.playButtonSound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .incrementTimerValue();
@@ -277,9 +284,10 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                                AppLocalizations.of(context)!.gameSettingsNumberOfLaps,
+                                AppLocalizations.of(context)!
+                                    .gameSettingsNumberOfLaps,
                                 textAlign: TextAlign.center,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 17,
                                     fontWeight: FontWeight.w300,
                                     color: Colors.white)),
@@ -296,6 +304,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         size: 35.0,
                                       ),
                                       onPressed: () {
+                                        sound.playButtonSound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .decrementRoundCount();
@@ -320,6 +329,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         size: 35.0,
                                       ),
                                       onPressed: () {
+                                        sound.playButtonSound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .incrementRoundCount();
@@ -359,9 +369,10 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    AppLocalizations.of(context)!.gameSettingsDifficulty,
+                                    AppLocalizations.of(context)!
+                                        .gameSettingsDifficulty,
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         fontSize: 17,
                                         fontWeight: FontWeight.w300,
                                         color: Colors.white),
@@ -371,6 +382,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                     icon: SvgPicture.asset(
                                         'assets/images/question.svg'),
                                     onPressed: () {
+                                      sound.playButtonSound(context);
                                       showGeneralDialog(
                                         context: context,
                                         barrierDismissible: true,
@@ -411,6 +423,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       icon: SvgPicture.asset(
                                           'assets/images/right.svg'),
                                       onPressed: () {
+                                        sound.playButtonSound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .decrementRoundSpeedValue();
@@ -434,6 +447,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       icon: SvgPicture.asset(
                                           'assets/images/left.svg'),
                                       onPressed: () {
+                                        sound.playButtonSound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .incrementRoundSpeedValue();
@@ -464,6 +478,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                     ),
                   ),
                   onPressed: () {
+                    sound.playButtonSound(context);
                     Navigator.pop(context);
                     Navigator.push(
                         context,
@@ -488,7 +503,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                     child: Text(
                       AppLocalizations.of(context)!.gameSettingsPlay,
                       textAlign: TextAlign.center,
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontFamily: 'GamerStation',
                           fontSize: 25,
                           fontWeight: FontWeight.w300,

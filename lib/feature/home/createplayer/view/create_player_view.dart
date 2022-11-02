@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
+import '../../../../product/model/button_sound.dart';
 import '../viewmodel/create_player_viewmodel.dart';
 import '../../../settings/model/game_settings_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -191,7 +192,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                     ? Center(
                         child: Text(
                           AppLocalizations.of(context)!.createPlayerReady,
-                          style: TextStyle(
+                          style: const TextStyle(
                             shadows: [
                               Shadow(
                                 color: Colors.black,

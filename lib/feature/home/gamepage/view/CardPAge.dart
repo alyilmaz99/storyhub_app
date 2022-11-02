@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/GameContreller.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
+import '../../../../product/model/button_sound.dart';
 import '../viewmodel/CartPageViewModel.dart';
 
 class CardPage extends StatefulWidget {
@@ -48,6 +49,7 @@ class _CardPageState extends CartPageViewModel {
 
   @override
   Widget build(BuildContext context) {
+    ButtonSound sound = ButtonSound();
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
@@ -210,6 +212,7 @@ class _CardPageState extends CartPageViewModel {
                             onPressed: () => {
                                   if (_isTimeUp)
                                     {
+                                      sound.playButtonSound(context),
                                       GameContreller().setCancelCard(false),
                                       Navigator.of(context).pushAndRemoveUntil(
                                           MaterialPageRoute(

@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 import '../../../../core/components/popup/FinalPopup.dart';
+import '../../../../product/model/button_sound.dart';
 import '../../../../product/model/player_selection_model.dart';
 import '../../gamepage/view/CardPAge.dart';
 import '../viewmodel/final_page_viewmodel.dart';
@@ -22,7 +23,7 @@ class _FinalPageState extends State<FinalPageView> {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-
+    ButtonSound sound = ButtonSound();
     Provider.of<FinalPageViewModel>(context).setPlayerList(
         Provider.of<PlayerCarouselViewModel>(context).postPlayerList());
 
@@ -80,6 +81,7 @@ class _FinalPageState extends State<FinalPageView> {
                             size: 30.0,
                           ),
                           onPressed: () {
+                            sound.playButtonSound(context);
                             HapticFeedback.lightImpact();
                             showGeneralDialog(
                               context: context,
@@ -135,6 +137,7 @@ class _FinalPageState extends State<FinalPageView> {
                               "assets/images/randomButton.png",
                             ),
                             onPressed: () {
+                              sound.playButtonSound(context);
                               /* ----- Burada random bir kullanıcı seçiliyor----- */
                               Provider.of<FinalPageViewModel>(context,
                                       listen: false)
@@ -203,6 +206,7 @@ class _FinalPageState extends State<FinalPageView> {
                     ),
                   ),
                   onPressed: () {
+                    sound.playButtonSound(context);
                     HapticFeedback.lightImpact();
                     Provider.of<FinalPageViewModel>(context, listen: false)
                         .isFinal = true;

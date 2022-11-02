@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
 import 'package:storyhub/feature/settings/model/game_settings_model.dart';
 import 'package:storyhub/feature/stats/view/sorting_page_view.dart';
+import '../../../../product/model/button_sound.dart';
 import '../model/vote_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -276,11 +277,13 @@ class VoteScreenContinueButton extends StatelessWidget {
   const VoteScreenContinueButton({
     Key? key,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
+     ButtonSound sound = ButtonSound();
     return ElevatedButton(
       onPressed: () {
+        sound.playButtonSound(context);
         Provider.of<Vote>(context, listen: false).counterForTour++;
 
         Provider.of<Vote>(context, listen: false).printPlayerScoreList(context);
