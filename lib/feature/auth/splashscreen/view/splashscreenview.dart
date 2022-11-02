@@ -54,8 +54,8 @@ class _SplashScreenViewState extends SplashScreenViewModel {
               margin: EdgeInsets.only(
                   bottom: MediaQuery.of(context).size.width / 9),
               alignment: Alignment.bottomCenter,
-              width: MediaQuery.of(context).size.width / 9,
-              height: MediaQuery.of(context).size.height / 18,
+              width: MediaQuery.of(context).size.width / 5,
+              height: MediaQuery.of(context).size.height / 10,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/vessac2.png'),

@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 
-Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
+Widget carousel(BuildContext context, double screenHeight, double screenWidth,
+    bool isOpen) {
   return SafeArea(
     child: Padding(
       padding: EdgeInsets.only(
@@ -17,12 +18,14 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
               children: [
                 IconButton(
                     onPressed: () {
-                      Provider.of<PlayerCarouselViewModel>(context,
-                              listen: false)
-                          .carouselPrevious();
-                      Provider.of<PlayerCarouselViewModel>(context,
-                              listen: false)
-                          .counter--;
+                      if (isOpen) {
+                        Provider.of<PlayerCarouselViewModel>(context,
+                                listen: false)
+                            .carouselPrevious();
+                        Provider.of<PlayerCarouselViewModel>(context,
+                                listen: false)
+                            .counter--;
+                      }
                     },
                     icon: Icon(
                       Icons.arrow_back_ios,
@@ -82,12 +85,14 @@ Widget carousel(BuildContext context, double screenHeight, double screenWidth) {
                         .playerName),
                 IconButton(
                     onPressed: () {
-                      Provider.of<PlayerCarouselViewModel>(context,
-                              listen: false)
-                          .carouselNext();
-                      Provider.of<PlayerCarouselViewModel>(context,
-                              listen: false)
-                          .counter++;
+                      if (isOpen) {
+                        Provider.of<PlayerCarouselViewModel>(context,
+                                listen: false)
+                            .carouselNext();
+                        Provider.of<PlayerCarouselViewModel>(context,
+                                listen: false)
+                            .counter++;
+                      }
                     },
                     icon: Icon(
                       Icons.arrow_forward_ios,
