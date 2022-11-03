@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/auth/howtoplay/model/how_to_play_model.dart';
 import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
+import 'package:storyhub/feature/home/final/view/final_page_view.dart';
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
 import 'package:storyhub/feature/stats/view/sorting_table_view.dart';
 import 'feature/home/createplayer/model/player_model.dart';
@@ -127,7 +128,7 @@ class MyApp extends StatelessWidget {
         Locale('en', ''), // English, no country code
         Locale('tr', ''), // Spanish, no country code
       ],
-      home: const SplashScreenView(),
+      home: const FinalPageView(),
     );
   }
 }
