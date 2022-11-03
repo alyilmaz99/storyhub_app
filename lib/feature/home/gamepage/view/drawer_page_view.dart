@@ -6,11 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:storyhub/feature/settings/view/game_settings_view.dart';
 import 'package:storyhub/feature/settings/view/main_page_settings.dart';
 
+import '../../../../product/model/button_sound.dart';
+
 class DrawerPage extends StatelessWidget {
   const DrawerPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    ButtonSound sound = ButtonSound();
     //Size( MediaQuery.of(context).size.width/ 1.4,MediaQuery.of(context).size.height/ 13);
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -25,6 +28,7 @@ class DrawerPage extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {
+                sound.playButtonSound(context);
                 Navigator.pop(context);
                 Navigator.push(
                     context,
@@ -53,6 +57,7 @@ class DrawerPage extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {
+                sound.playButtonSound(context);
                 Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
@@ -77,6 +82,7 @@ class DrawerPage extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {
+                sound.playButtonSound(context);
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -103,7 +109,10 @@ class DrawerPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 1.4,
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
-              onPressed: () => exit(0),
+              onPressed: () {
+                sound.playButtonSound(context);
+                exit(0);
+              },
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 shape: RoundedRectangleBorder(

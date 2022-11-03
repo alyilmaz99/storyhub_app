@@ -106,7 +106,7 @@ class _SettingsPopupState extends State<SettingsPopup> {
                   child: Text(
                     AppLocalizations.of(context)!.settingsGameButtonSound,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
@@ -159,7 +159,7 @@ class _SettingsPopupState extends State<SettingsPopup> {
                 Text(
                   AppLocalizations.of(context)!.settingPopupVibration,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w500,

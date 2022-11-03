@@ -45,6 +45,7 @@ class _MainPageState extends MainPageViewModel {
                       size: 35.0,
                     ),
                     onPressed: () {
+                      sound.playButtonSound(context);
                       showGeneralDialog(
                         context: context,
                         barrierDismissible: true,
@@ -71,6 +72,7 @@ class _MainPageState extends MainPageViewModel {
                   padding: const EdgeInsets.only(right: 20),
                   child: IconButton(
                       onPressed: () {
+                        sound.playButtonSound(context);
                         Navigator.push(
                             context,
                             MaterialPageRoute(

@@ -8,6 +8,7 @@ import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import '../../../../core/components/playerCarousel/playerCarouselView.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
+import '../../../../product/model/button_sound.dart';
 import '../../../settings/model/game_settings_model.dart';
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
@@ -33,7 +34,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-
+    ButtonSound sound = ButtonSound();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(37, 29, 58, 1),
@@ -59,6 +60,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               alignment: Alignment.centerRight,
               child: IconButton(
                 onPressed: () {
+                  sound.playButtonSound(context);
                   Provider.of<PlayerCarouselViewModel>(context, listen: false)
                       .controller2
                       .pause();
@@ -188,6 +190,11 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                       true
                                   ? halfTimerChechk2(value, callback)
                                   : halfTimerChechk(value, callback);
+                              if (int.parse(value) > 5) {
+                                playTikTik();
+                              } else {
+                                playDatDat();
+                              }
                             },
                             onComplete: () => {
                                   HapticFeedback.heavyImpact(),
@@ -216,6 +223,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
               width: MediaQuery.of(context).size.width / 1.7,
               child: ElevatedButton(
                   onPressed: () {
+                    sound.playButtonSound(context);
                     HapticFeedback.lightImpact();
                     setState(() {
                       print(

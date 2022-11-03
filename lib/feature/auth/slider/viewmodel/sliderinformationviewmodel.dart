@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:storyhub/product/model/button_sound.dart';
 import '../../../home/mainpage/view/main_page_view.dart';
 import '../view/sliderinformationview.dart';
 
@@ -56,24 +56,28 @@ abstract class SliderInformationViewModel extends State<SliderInformationView> {
   final controller = PageController(initialPage: 0);
   final int numPages = 4;
   int currentPage = 0;
-
+ ButtonSound sound = ButtonSound();
   void onDonePress() {
+    sound.playButtonSound(context);
     // Do what you want
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const MainPage()));
   }
 
   void previousSlide() {
+    sound.playButtonSound(context);
     controller.previousPage(
         duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
   }
 
   void nextSlide() {
+    sound.playButtonSound(context);
     controller.nextPage(
         duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
   }
 
   void endSlide() {
+    sound.playButtonSound(context);
     controller.jumpToPage(4);
   }
 }

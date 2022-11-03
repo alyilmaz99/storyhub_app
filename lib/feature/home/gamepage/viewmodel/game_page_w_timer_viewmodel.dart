@@ -1,9 +1,11 @@
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
+import 'package:storyhub/feature/settings/model/settings_model.dart';
 import 'package:storyhub/feature/settings/viewmodel/game_settings_viewmodel.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../../../settings/model/game_settings_model.dart';
@@ -143,6 +145,19 @@ abstract class GamePageWithTimerViewModel extends State<GamePageWithTimer> {
       ),
     );
   }
+  playTikTik() {
+    AssetsAudioPlayer.newPlayer().open(Audio("assets/audios/tiktik.mp3"),
+          volume: Provider.of<SettingsModel>(context, listen: false).buttonVolumeVal,
+          autoStart: true,
+          showNotification: true);
+   }
+   playDatDat() {
+    AssetsAudioPlayer.newPlayer().open(Audio("assets/audios/datdat.mp3"),
+          volume: Provider.of<SettingsModel>(context, listen: false).buttonVolumeVal,
+          autoStart: true,
+          showNotification: true);
+   }
+
 }
 
 Widget crateHeroImage(BuildContext context, String path, double width,

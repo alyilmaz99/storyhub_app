@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import '../../../core/components/playerCarousel/playerCarouselViewModel.dart';
+import '../../../product/model/button_sound.dart';
 import '../viewmodel/drawer_viewmodel.dart';
 import '../../home/mainpage/view/main_page_view.dart';
 
@@ -14,6 +15,7 @@ class FullScreenModal extends DrawerViewModel {
   CountDownController controller2;
   CircularCountDownTimer? timer;
   FullScreenModal({required this.controller2, this.timer});
+  ButtonSound sound = ButtonSound();
 
   @override
   Widget buildPage(
@@ -50,6 +52,7 @@ class FullScreenModal extends DrawerViewModel {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    sound.playButtonSound(context);
                     Navigator.pop(context);
                     controller2.resume();
                   },
@@ -91,6 +94,7 @@ class FullScreenModal extends DrawerViewModel {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    sound.playButtonSound(context);
                     Provider.of<FinalPageViewModel>(context, listen: false)
                         .isFinal = false;
                     Navigator.pop(context);
@@ -129,6 +133,7 @@ class FullScreenModal extends DrawerViewModel {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    sound.playButtonSound(context);
                     Provider.of<FinalPageViewModel>(context, listen: false)
                         .isFinal = false;
                     Navigator.pop(context);

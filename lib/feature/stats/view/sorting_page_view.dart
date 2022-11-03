@@ -8,10 +8,13 @@ import 'package:storyhub/feature/stats/view/sorting_table_view.dart';
 import 'package:storyhub/feature/stats/viewmodel/sorting_page_viewmodel.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+import '../../../product/model/button_sound.dart';
+
 class SortingPageView extends SortingPageViewModel {
   const SortingPageView({super.key});
   @override
   Widget build(BuildContext context) {
+    ButtonSound sound = ButtonSound();
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -100,6 +103,7 @@ class SortingPageView extends SortingPageViewModel {
             ),
             ElevatedButton(
               onPressed: () {
+                sound.playButtonSound(context);
                 HapticFeedback.lightImpact();
 
                 Navigator.of(context).pushAndRemoveUntil(

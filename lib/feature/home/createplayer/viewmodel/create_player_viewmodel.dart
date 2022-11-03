@@ -6,6 +6,7 @@ import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
 import 'package:storyhub/product/model/player_selection_model.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
+import '../../../../product/model/button_sound.dart';
 import '../../../settings/model/game_settings_model.dart';
 import '../../voteScreen/model/vote_model.dart';
 import '../model/player_model.dart';
@@ -95,11 +96,14 @@ Widget buildFirstButton(
   List<bool> myList,
 ) {
   bool checkIsChechk = false;
+  ButtonSound sound = ButtonSound();
   return SizedBox(
     width: MediaQuery.of(context).size.width / 1.4,
     height: MediaQuery.of(context).size.height / 13,
     child: OutlinedButton(
       onPressed: () {
+        
+        sound.playButtonSound(context);
         for (bool element in myList) {
           if (element == true) {
             checkIsChechk = true;
