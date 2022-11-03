@@ -34,46 +34,10 @@ class _FinalPageState extends State<FinalPageView> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                height: screenHeight / 15,
-                width: screenWidth / 3.5,
-                child: SvgPicture.asset(
-                  'assets/images/LogoV1.svg',
-                ),
-              )
-            ],
-          ),
-        ),
-        body: Container(
-            decoration: const BoxDecoration(
-                gradient: RadialGradient(radius: 1, colors: [
-              // Color.fromARGB(255, 61, 16, 91), Eski renkler
-              // Color.fromARGB(255, 36, 10, 63),
-              // Color.fromARGB(255, 19, 6, 45),
-              // Color.fromARGB(255, 13, 5, 38),
-              Color.fromRGBO(59, 52, 114, 1),
-              Color.fromRGBO(42, 37, 80, 1),
-              Color.fromRGBO(37, 29, 58, 1),
-            ])),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(padding: EdgeInsets.only(top: screenHeight / 7)),
-                CircleAvatar(
-                  radius: screenHeight / 15,
-                  backgroundImage: AssetImage(
-                      /* ----- Seçilen kullanıcının profil resmi ----- */
-                      Provider.of<FinalPageViewModel>(context).choosenImgPath),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(5.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        width: screenWidth / 5,
+                        width: screenWidth / 10,
                         child: IconButton(
                           icon: const Icon(
                             Icons.info_outline,
@@ -105,6 +69,48 @@ class _FinalPageState extends State<FinalPageView> {
                             );
                           },
                         ),
+                      ),
+              SizedBox(
+                height: screenHeight / 15,
+                width: (screenWidth / 10)*5,
+                child: SvgPicture.asset(
+                  'assets/images/LogoV1.svg',
+                ),
+              ),
+              SizedBox(
+                width: screenWidth / 10,
+              ),
+            ],
+          ),
+        ),
+        body: Container(
+            decoration: const BoxDecoration(
+                gradient: RadialGradient(radius: 1, colors: [
+              // Color.fromARGB(255, 61, 16, 91), Eski renkler
+              // Color.fromARGB(255, 36, 10, 63),
+              // Color.fromARGB(255, 19, 6, 45),
+              // Color.fromARGB(255, 13, 5, 38),
+              Color.fromRGBO(59, 52, 114, 1),
+              Color.fromRGBO(42, 37, 80, 1),
+              Color.fromRGBO(37, 29, 58, 1),
+            ])),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(padding: EdgeInsets.only(top: screenHeight / 7)),
+                CircleAvatar(
+                  radius: screenHeight / 15,
+                  backgroundImage: AssetImage(
+                      /* ----- Seçilen kullanıcının profil resmi ----- */
+                      Provider.of<FinalPageViewModel>(context).choosenImgPath),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: screenWidth / 5,
                       ),
                       Container(
                         width: (screenWidth / 5) * 2,
