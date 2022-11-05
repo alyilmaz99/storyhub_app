@@ -41,9 +41,10 @@ abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
       controller: textEditingControllers![order!],
       cursorColor: Colors.white,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.all(0),
-        hintText: AppLocalizations.of(context)!.createPlayerName,
-        hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+        contentPadding: const EdgeInsets.all(10),
+        labelText: AppLocalizations.of(context)!.createPlayerName,
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+        labelStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.w500,
             ),

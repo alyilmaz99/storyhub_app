@@ -56,189 +56,207 @@ class _CardPageState extends CartPageViewModel {
 
     loadCards(callback);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: RadialGradient(
-            radius: 0.8,
-            colors: [
-              Color.fromRGBO(59, 52, 114, 1),
-              Color.fromRGBO(42, 37, 80, 1),
-              Color.fromRGBO(37, 29, 58, 1),
-            ],
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          //mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: screenWidth / 25),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(child: Container()),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  left: screenWidth / 18,
-                  top: screenHeight / 10,
-                  right: screenWidth / 12),
-              child: Center(
-                child: Column(
-                  children: [
-                    Column(
-                      children: [
-                        Stack(children: [
-                          Center(
-                            child: Container(
-                              width: screenWidth / 4,
-                              height: screenHeight / 8,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: AssetImage(isFinalRouter(
-                                      Provider.of<FinalPageViewModel>(context)
-                                          .isFinal)),
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Center(
-                            child: _isCardTurned
-                                ? CircularCountDownTimer(
-                                    autoStart: true,
-                                    isReverse: true,
-                                    width: screenWidth / 4,
-                                    height: screenHeight / 8,
-                                    duration: 3,
-                                    fillColor: Colors.red,
-                                    ringColor: Colors.green,
-                                    strokeWidth: 6,
-                                    isTimerTextShown: false,
-                                    onComplete: () {
-                                      HapticFeedback.lightImpact();
-                                      GameContreller().setCancelCard(false);
+    Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
+    context: context,
+    builder: (context) =>  AlertDialog(
+      title: Text("Do u want to exit app?"),
+      actions: [
+        ElevatedButton(onPressed: () => Navigator.pop(context,false), child: Text("No")),
+        ElevatedButton(onPressed: () => Navigator.pop(context,true), child: Text("Yes")),
+      ],
+    )
+  );
 
-                                      Future.delayed(
-                                        const Duration(seconds: 0),
-                                        () {
-                                          Navigator.of(context).pushAndRemoveUntil(
-                                              PageAnimationTransition(
-                                                  page:
-                                                      const GamePageWithTimer(),
-                                                  pageAnimationType:
-                                                      FadeAnimationTransition()),
-                                              (Route<dynamic> route) => false);
-                                        },
-                                      );
-                                      setState(() {
-                                        timeUp();
-                                      });
-                                    },
-                                  )
-                                : Container(),
-                          ),
-                        ]),
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              backgroundColor:
-                                  const Color.fromRGBO(251, 251, 251, 0.9),
-                              onSurface: Colors.white
-                                  .withOpacity(0.38)
-                                  .withOpacity(0.38),
-                              // disabledBackgroundColor: Colors.white
-                              //     .withOpacity(0.38)
-                              //     .withOpacity(0.12),
-                              // disabledBackgroundColor:
-                              //     Colors.white.withOpacity(0.12),
-                              minimumSize:
-                                  Size(screenWidth / 4, screenHeight / 40)),
-                          child: Text(
-                            isFinalRouterName(Provider.of<FinalPageViewModel>(
-                                    context,
-                                    listen: false)
-                                .isFinal),
-                            style: const TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                                color: Color.fromRGBO(19, 6, 5, 1)),
-                          ),
-                        ),
-                      ],
-                    ),
-                    _isCardTurned == false
-                        ? const Text(
-                            "Kart Seçimi",
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.white),
-                          )
-                        : const SizedBox()
+    return WillPopScope(
+      onWillPop: () async {
+        print("Back button pressed1 ");
+        final shouldPop = await showWarning(context);
+        return shouldPop ?? false;
+      },
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: RadialGradient(
+              radius: 0.8,
+              colors: [
+                Color.fromRGBO(59, 52, 114, 1),
+                Color.fromRGBO(42, 37, 80, 1),
+                Color.fromRGBO(37, 29, 58, 1),
+              ],
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            //mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: screenWidth / 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(child: Container()),
                   ],
                 ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(
-                  top: screenWidth / 20, bottom: screenWidth / 20),
-              child: SizedBox(
-                width: screenWidth / 1.6,
-                height: screenHeight / 2,
-                child: isLoaded ? newCard : Container(),
-              ),
-            ),
-            /*
-              SizedBox(
-              height: screenHeight / 10,
-            ),*/
-            Padding(
-              padding: const EdgeInsets.only(top: 8.0),
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: SizedBox(
-                    width: MediaQuery.of(context).size.width / 1.3,
-                    height: MediaQuery.of(context).size.height / 20,
-                    child: _isCardTurned
-                        ? ElevatedButton(
-                            onPressed: () => {
-                                  if (_isTimeUp)
-                                    {
-                                      sound.playButtonSound(context),
-                                      GameContreller().setCancelCard(false),
-                                      Navigator.of(context).pushAndRemoveUntil(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const GamePageWithTimer()),
-                                          (Route<dynamic> route) => false),
-                                    }
-                                },
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: _isTimeUp
-                                  ? const Color.fromRGBO(223, 105, 64, 1)
-                                  : const Color.fromRGBO(251, 251, 251, 0.5),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(7.0)),
+              Padding(
+                padding: EdgeInsets.only(
+                    left: screenWidth / 18,
+                    top: screenHeight / 10,
+                    right: screenWidth / 12),
+                child: Center(
+                  child: Column(
+                    children: [
+                      Column(
+                        children: [
+                          Stack(children: [
+                            Center(
+                              child: Container(
+                                width: screenWidth / 4,
+                                height: screenHeight / 8,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage(isFinalRouter(
+                                        Provider.of<FinalPageViewModel>(context)
+                                            .isFinal)),
+                                    fit: BoxFit.fill,
+                                  ),
+                                ),
+                              ),
                             ),
-                            child: const Text(
-                              "Kartı kullanarak senaryoyu bağla.",
-                              style: TextStyle(
+                            Center(
+                              child: _isCardTurned
+                                  ? CircularCountDownTimer(
+                                      autoStart: true,
+                                      isReverse: true,
+                                      width: screenWidth / 4,
+                                      height: screenHeight / 8,
+                                      duration: 3,
+                                      fillColor: Colors.red,
+                                      ringColor: Colors.green,
+                                      strokeWidth: 6,
+                                      isTimerTextShown: false,
+                                      onComplete: () {
+                                        HapticFeedback.lightImpact();
+                                        GameContreller().setCancelCard(false);
+    
+                                        Future.delayed(
+                                          const Duration(seconds: 0),
+                                          () {
+                                            Navigator.of(context).pushAndRemoveUntil(
+                                                PageAnimationTransition(
+                                                    page:
+                                                        const GamePageWithTimer(),
+                                                    pageAnimationType:
+                                                        FadeAnimationTransition()),
+                                                (Route<dynamic> route) => false);
+                                          },
+                                        );
+                                        setState(() {
+                                          timeUp();
+                                        });
+                                      },
+                                    )
+                                  : Container(),
+                            ),
+                          ]),
+                          ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                backgroundColor:
+                                    const Color.fromRGBO(251, 251, 251, 0.9),
+                                onSurface: Colors.white
+                                    .withOpacity(0.38)
+                                    .withOpacity(0.38),
+                                // disabledBackgroundColor: Colors.white
+                                //     .withOpacity(0.38)
+                                //     .withOpacity(0.12),
+                                // disabledBackgroundColor:
+                                //     Colors.white.withOpacity(0.12),
+                                minimumSize:
+                                    Size(screenWidth / 4, screenHeight / 40)),
+                            child: Text(
+                              isFinalRouterName(Provider.of<FinalPageViewModel>(
+                                      context,
+                                      listen: false)
+                                  .isFinal),
+                              style: const TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w400,
-                                  color: Color.fromRGBO(251, 251, 251, 0.9)),
-                            ))
-                        : const SizedBox()),
+                                  color: Color.fromRGBO(19, 6, 5, 1)),
+                            ),
+                          ),
+                        ],
+                      ),
+                      _isCardTurned == false
+                          ? const Text(
+                              "Kart Seçimi",
+                              style: TextStyle(
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.normal,
+                                  color: Colors.white),
+                            )
+                          : const SizedBox()
+                    ],
+                  ),
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.only(
+                    top: screenWidth / 20, bottom: screenWidth / 20),
+                child: SizedBox(
+                  width: screenWidth / 1.6,
+                  height: screenHeight / 2,
+                  child: isLoaded ? newCard : Container(),
+                ),
+              ),
+              /*
+                SizedBox(
+                height: screenHeight / 10,
+              ),*/
+              Padding(
+                padding: const EdgeInsets.only(top: 8.0),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width / 1.3,
+                      height: MediaQuery.of(context).size.height / 20,
+                      child: _isCardTurned
+                          ? ElevatedButton(
+                              onPressed: () => {
+                                    if (_isTimeUp)
+                                      {
+                                        sound.playButtonSound(context),
+                                        GameContreller().setCancelCard(false),
+                                        Navigator.of(context).pushAndRemoveUntil(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    const GamePageWithTimer()),
+                                            (Route<dynamic> route) => false),
+                                      }
+                                  },
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: _isTimeUp
+                                    ? const Color.fromRGBO(223, 105, 64, 1)
+                                    : const Color.fromRGBO(251, 251, 251, 0.5),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(7.0)),
+                              ),
+                              child: const Text(
+                                "Kartı kullanarak senaryoyu bağla.",
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w400,
+                                    color: Color.fromRGBO(251, 251, 251, 0.9)),
+                              ))
+                          : const SizedBox()),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
