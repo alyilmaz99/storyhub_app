@@ -97,7 +97,7 @@ abstract class HowToPlayViewModel extends State<HowToPlayView> {
 
   void endSlide() {
     // //sound.playButton//sound(context);
-    controller.jumpToPage(3);
+    controller.jumpToPage(5);
   }
 }
 
