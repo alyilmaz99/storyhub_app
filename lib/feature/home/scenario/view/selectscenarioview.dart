@@ -24,7 +24,7 @@ class SelectScenarioView extends StatefulWidget {
 
 class _SelectScenarioViewState extends State<SelectScenarioView> {
   String category = "All";
-  ButtonSound sound = ButtonSound();
+  //Button//sound //sound = Button//sound();
   Future<List<Senaryo>> readJsonData() async {
     final jsondata = await rootBundle.loadString("assets/senaryolar.json");
     final list = json.decode(jsondata) as List<dynamic>;
@@ -36,7 +36,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
   Widget build(BuildContext context) {
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
-   
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -95,7 +95,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                 if (snapshot.hasData) {
                   var items = snapshot.data as List<Senaryo>;
                   List<Senaryo> filteredList = snapshot.data as List<Senaryo>;
-                 
+
                   if (category == "Korku") {
                     filteredList = items
                         .where((element) => element.category == "Korku")
@@ -328,7 +328,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                                           20.0)),
                                                         ),
                                                         onPressed: () {
-                                                          sound.playButtonSound(context);
+                                                          //sound.playButton//sound(context);
                                                           Provider.of<PlayerCarouselViewModel>(
                                                                       context,
                                                                       listen: false)
@@ -414,7 +414,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
       ),
       iconSize: 50,
       onPressed: () {
-        sound.playButtonSound(context);
+        //sound.playButton//sound(context);
         selectCategory();
       },
     );

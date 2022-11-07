@@ -25,7 +25,7 @@ class _SettingsPopupState extends State<SettingsPopup> {
           const SizedBox(height: 20),
           Text(
             AppLocalizations.of(context)!.settingsGameSettings,
-            style: TextStyle(
+            style: const TextStyle(
                 fontFamily: 'GamerStation',
                 fontSize: 30,
                 fontWeight: FontWeight.w500,
@@ -49,7 +49,7 @@ class _SettingsPopupState extends State<SettingsPopup> {
                   child: Text(
                     AppLocalizations.of(context)!.settingPopupGameSound,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontFamily: 'Montserrat',
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -104,7 +104,7 @@ class _SettingsPopupState extends State<SettingsPopup> {
                 SizedBox(
                   width: screenWidth / 1.2,
                   child: Text(
-                    AppLocalizations.of(context)!.settingsGameButtonSound,
+                    AppLocalizations.of(context)!.settingPopupGameSound,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                       fontSize: 16,

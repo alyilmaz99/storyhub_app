@@ -218,6 +218,7 @@ class Vote with ChangeNotifier {
       for (i = 0; i < n - step - 1; i++) {
         if (playerList3[i].score > playerList3[i + 1].score) {
           swap(playerList3, i);
+          print("sorting is worked");
         }
       }
     }
@@ -249,8 +250,7 @@ class Vote with ChangeNotifier {
             Provider.of<Vote>(context, listen: false)
                 .playerList3[j - 1]
                 .score) {
-          Provider.of<Vote>(context, listen: false).playerList3[j - 1].score -
-              1;
+          Provider.of<Vote>(context, listen: false).playerList3[j].score - 1;
         }
       }
     }

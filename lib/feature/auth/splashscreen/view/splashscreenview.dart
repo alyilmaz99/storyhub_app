@@ -67,40 +67,5 @@ class _SplashScreenViewState extends SplashScreenViewModel {
         ),
       ),
     );
-
-    /* Container(
-      height: screenHeight,
-      width: screenWidth,
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Colors.yellow,
-            Colors.blue,
-          ],
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-        ),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(
-              margin: EdgeInsets.only(
-                top: screenHeight / 5,
-              ),
-              // color: Colors.red,
-              child: LoadingAnimationWidget.inkDrop(color: Colors.white, size: 50.0)),
-          Text(
-            TextConst.splashScreenAppText,
-            style: Theme.of(context).textTheme.headline1?.copyWith(
-                  color: Colors.white,
-                  letterSpacing: 1.5,
-                  fontSize: 50.0,
-                  fontWeight: FontWeight.w300,
-                ),
-          ),
-        ],
-      ),
-    );*/
   }
 }

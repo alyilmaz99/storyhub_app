@@ -9,18 +9,17 @@ import '../../../settings/view/game_settings_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:storyhub/product/model/button_sound.dart';
 
-
 abstract class MainPageViewModel extends State<MainPage> {
-  ButtonSound sound = ButtonSound();
+  //Button//sound //sound = Button//sound();
   Widget buildFirstButton() {
     return SizedBox(
       width: MediaQuery.of(context).size.width / 1.4,
       height: MediaQuery.of(context).size.height / 10,
       child: OutlinedButton(
         onPressed: () {
-          sound.playButtonSound(context);
+          //sound.playButton//sound(context);
           HapticFeedback.lightImpact();
-          SystemSound.play(SystemSoundType.click);
+          //System//sound.play(System//soundType.click);
           Provider.of<PlayerCarouselViewModel>(context, listen: false)
               .useForTourCountChechk = 1;
           Provider.of<PlayerCarouselViewModel>(context, listen: false)
@@ -60,7 +59,7 @@ abstract class MainPageViewModel extends State<MainPage> {
       height: MediaQuery.of(context).size.height / 16,
       child: OutlinedButton(
         onPressed: () {
-          sound.playButtonSound(context);
+          //sound.playButton//sound(context);
           HapticFeedback.lightImpact();
           Navigator.push(context,
               MaterialPageRoute(builder: (context) => const HowToPlayView()));

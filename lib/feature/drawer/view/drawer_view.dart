@@ -15,7 +15,7 @@ class FullScreenModal extends DrawerViewModel {
   CountDownController controller2;
   CircularCountDownTimer? timer;
   FullScreenModal({required this.controller2, this.timer});
-  ButtonSound sound = ButtonSound();
+  //Button//sound //sound = Button//sound();
 
   @override
   Widget buildPage(
@@ -52,7 +52,7 @@ class FullScreenModal extends DrawerViewModel {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    sound.playButtonSound(context);
+                    //sound.playButton//sound(context);
                     Navigator.pop(context);
                     controller2.resume();
                   },
@@ -94,7 +94,7 @@ class FullScreenModal extends DrawerViewModel {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    sound.playButtonSound(context);
+                    //sound.playButton//sound(context);
                     Provider.of<FinalPageViewModel>(context, listen: false)
                         .isFinal = false;
                     Navigator.pop(context);
@@ -133,7 +133,7 @@ class FullScreenModal extends DrawerViewModel {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    sound.playButtonSound(context);
+                    //sound.playButton//sound(context);
                     Provider.of<FinalPageViewModel>(context, listen: false)
                         .isFinal = false;
                     Navigator.pop(context);

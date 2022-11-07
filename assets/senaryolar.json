@@ -30,7 +30,7 @@
         "short-text": "Uzayın derinliklerinde yanlış giden bir şeyler olduğunun farkındaydılar. Zor da olsa bilinmeyen bu gezegene iniş yapılmıştı. Fakat bu gezegende daha önce hiç görmedikleri bir şeyler vardı.",
         "category": "Fantastik",
         "tip1": [
-            "uzaylı.png", "ışın kılıcı.png", "gezegen.png", "robot.png", "uydu.png", "bayrak.png", "oksijen tüpü.png", "uzay gemisi.png", "meteor yağmuru.png"
+            "uzaylı.png", "ışın kılıcı.png", "gezegen.png", "robot.png", "uydu.png", "bayrak.png", "oksijen tüpü.png", "uzay gemisi.png"
         ],
         "tip2": [
             "keşif.png", "ışınlanma.png", "teleskop.png", "asteroid.png", "ayna.png", "iksir.png", "telsiz.png", "paskalya yumurtası.png", "teleskop.png", "oksijen tüpü.png", "uydu.png", "bayrak.png", "güneş.png", "radyasyon.png", "rapor.png", "keşif.png", "meteor.png", "teleskop.png", "radyo sinyali.png", "bilinmeyen mesaj.png", "çığlık.png", "hizmetçi robot.png", "uzaylı.png", "başkan.png"
@@ -104,7 +104,7 @@
             "elektrik kablosu.png", "muhendis.png", "robot.png", "bilim insanı.png", "kullanım kılavuzu.png", "hata kodu.png", "arıza.png", "yangın.png"
         ],
         "tip2": [
-            "ayna.png", "ankesörlü telefon.png", "kanca.png", "silah.png", "parşömen.png", "diş fırçası.png", "ödül çeki.png", "tablo.png", "kullanım kılavuzu.png", "arıza.png", "uzay gemisi.png", "uydu.png", "fatura.png", "radyasyon.png", "dans etmek.png", "hata kodu.png", "gizli dosya.png", "rapor.png", "ataç.png", "elektrik kablosu.png", "yangın.png", "radyo sinyali.png", "halat.png", "hizmetçi robot.png", "uzaylı.png", "güvenlik.png", "muhendis.png", "bilim insanı.png", "başkan.png", "bilinmeyen mesaj.png", "nükleer reaktör.png", "gezegen.png", "ışınlama.png", "yolcu gemisi.png", "okyanus.png"
+            "ayna.png", "ankesörlü telefon.png", "kanca.png", "silah.png", "parşömen.png", "diş fırçası.png", "ödül çeki.png", "tablo.png", "kullanım kılavuzu.png", "arıza.png", "uzay gemisi.png", "uydu.png", "fatura.png", "radyasyon.png", "dans etmek.png", "hata kodu.png", "gizli dosya.png", "rapor.png", "ataç.png", "elektrik kablosu.png", "yangın.png", "radyo sinyali.png", "halat.png", "hizmetçi robot.png", "uzaylı.png", "güvenlik.png", "muhendis.png", "bilim insanı.png", "başkan.png", "bilinmeyen mesaj.png", "nükleer reaktör.png", "gezegen.png", "yolcu gemisi.png", "okyanus.png"
         ]
     },
     {
@@ -146,7 +146,7 @@
             "korsan.png", "mürettbat.png", "flama.png", "filika.png", "kaptan.png", "okyanus.png", "hazine.png", "batan gemi.png", "kılıç.png"
         ],
         "tip2": [
-            "deniz canavarı.png", "sahil köyü.png", "su yansıması.png", "deniz kabuğu kolye.png", "kürek.png", "can simidi.png", "yılan balığı.png", "havuz filesi.png", "çamurlu bot.png", "banyo ördeği.png", "havlu.png", "maymun.png", "güldürme büyüsü.png", "olta.png", "oksijen tüpü.png", "kibrit.png", "hazine.png", "güneş.png", "flama.png", "zıpkın.png", "gaz lambası.png", "sandal.png", "meşale.png", "yabani ot.png", "çığlık.png", "posta güvercini.png", "deniz kızı.png", "deniz canavarı.png", "korsan.png", "kaptan.png", "deniz altı.png", "bilinmeyen mesaj.png", "tartışma.png", "batan gemi.png", "okyanus.png", "yolcu gemisi.png"
+            "deniz canavarı.png", "su yansıması.png", "deniz kabuğu kolye.png", "kürek.png", "can simidi.png", "yılan balığı.png", "havuz filesi.png", "çamurlu bot.png", "banyo ördeği.png", "havlu.png", "maymun.png", "güldürme büyüsü.png", "olta.png", "oksijen tüpü.png", "kibrit.png", "hazine.png", "güneş.png", "flama.png", "zıpkın.png", "gaz lambası.png", "sandal.png", "meşale.png", "yabani ot.png", "çığlık.png", "posta güvercini.png", "deniz kızı.png", "deniz canavarı.png", "korsan.png", "kaptan.png", "deniz altı.png", "bilinmeyen mesaj.png", "tartışma.png", "batan gemi.png", "okyanus.png", "yolcu gemisi.png"
         ]
     },
     {
@@ -237,7 +237,7 @@
         "short-text": "Kralın şehirine gelenler satacak mallar dışında kötü dedikodular da getiriyordu. Ormandan geceleri duyulun garip sesler ve ışıklar kralın muhafızlarına bela getirecek gibiydi.",
         "category": "Macera",
         "tip1": [
-            "mağara.png", "canavar.png", "köy bilgesi.png", "güldürme büyüsü.png", "yanardağ.png", "ayak izi.png", "çığlık.png", "meşale.png", "tuzak.png"
+            "mağara.png", "köy bilgesi.png", "güldürme büyüsü.png", "yanardağ.png", "ayak izi.png", "çığlık.png", "meşale.png", "tuzak.png"
         ],
         "tip2": [
             "halat.png", "bilinmeyen resimler.png", "kuş yuvası.png", "mezar taşı.png", "mum.png", "kürek.png", "idam sehpası.png", "mantar.png", "iksir.png", "madenci kaskı.png", "tohum.png", "parşömen.png", "çamurlu bot.png", "sihirli küre.png", "güldürme büyüsü.png", "kemik.png", "kılıç.png", "fıçı.png", "kafes.png", "gaz lambası.png", "büyü kitabı.png", "el arabası.png", "meşale.png", "yabani ot.png", "çit.png", "heykel.png", "çığlık.png", "köy bilgesi.png", "soyguncu.png", "köylü fare.png", "posta güvercini.png", "ejderha.png", "konuşan kaya.png", "büyücü.png", "muhafız.png", "çiftçi.png", "labirent.png", "bıçaklı gösteri.png", "samanlık.png", "mısır tarlası.png", "baraka.png"

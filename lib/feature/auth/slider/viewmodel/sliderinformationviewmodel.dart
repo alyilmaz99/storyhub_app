@@ -56,28 +56,28 @@ abstract class SliderInformationViewModel extends State<SliderInformationView> {
   final controller = PageController(initialPage: 0);
   final int numPages = 4;
   int currentPage = 0;
- ButtonSound sound = ButtonSound();
+  //Button//sound //sound = Button//sound();
   void onDonePress() {
-    sound.playButtonSound(context);
+    //sound.playButton//sound(context);
     // Do what you want
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const MainPage()));
   }
 
   void previousSlide() {
-    sound.playButtonSound(context);
+    //sound.playButton//sound(context);
     controller.previousPage(
         duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
   }
 
   void nextSlide() {
-    sound.playButtonSound(context);
+    //sound.playButton//sound(context);
     controller.nextPage(
         duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
   }
 
   void endSlide() {
-    sound.playButtonSound(context);
+    //sound.playButton//sound(context);
     controller.jumpToPage(4);
   }
 }

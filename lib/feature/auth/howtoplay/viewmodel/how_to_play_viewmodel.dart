@@ -57,31 +57,31 @@ abstract class HowToPlayViewModel extends State<HowToPlayView> {
 
   final int numPages = 3;
   int currentPage = 0;
-  ButtonSound sound = ButtonSound();
+  //Button//sound //sound = Button//sound();
   void onDonePress() {
     // Do what you want
-    sound.playButtonSound(context);
+    // //sound.playButton//sound(context);
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const MainPage()));
     currentPage = 0;
   }
 
   void previousSlide() {
-    sound.playButtonSound(context);
+    ////sound.playButton//sound(context);
     controller.previousPage(
         duration: const Duration(milliseconds: 100), curve: Curves.easeIn);
     currentPage--;
   }
 
   void nextSlide() {
-    sound.playButtonSound(context);
+    // //sound.playButton//sound(context);
     controller.nextPage(
         duration: const Duration(milliseconds: 100), curve: Curves.easeIn);
     currentPage++;
   }
 
   void endSlide() {
-    sound.playButtonSound(context);
+    // //sound.playButton//sound(context);
     controller.jumpToPage(3);
   }
 }

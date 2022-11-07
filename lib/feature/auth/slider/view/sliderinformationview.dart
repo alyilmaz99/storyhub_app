@@ -131,7 +131,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                                   SizedBox(height: screenHeight / 20),
                                   ElevatedButton(
                                     onPressed: () {
-                                      sound.playButtonSound(context);
+                                      //  //sound.playButton//sound(context);
                                       Navigator.of(context).pushReplacement(
                                           MaterialPageRoute(
                                               builder: (context) =>
