@@ -101,9 +101,13 @@ class _HowToPlayViewState extends HowToPlayViewModel {
                                       color: Colors.white,
                                     ),
                                   ),
-                            SizedBox(
-                                width: screenWidth / 2,
-                                child: Image.asset(oi.image)),
+                            index == numPages
+                                ? SizedBox(
+                                    width: 15,
+                                  )
+                                : SizedBox(
+                                    width: screenWidth / 1.5,
+                                    child: Image.asset(oi.image)),
                             index ==
                                     OnboardingItems.loadOnboardingItem()
                                             .length -
@@ -119,12 +123,8 @@ class _HowToPlayViewState extends HowToPlayViewModel {
                                     )),
                           ],
                         ),
-                        SizedBox(
-                          height: screenHeight / 20,
-                        ),
                         TextArea(
                             myWidth: screenWidth / 1.2,
-                            myHeight: screenWidth / 5,
                             textPadding: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Text(
