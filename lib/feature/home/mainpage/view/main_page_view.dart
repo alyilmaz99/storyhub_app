@@ -1,7 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import '../../../../core/components/popup/SettingsPopup.dart';
 import 'about_us_view.dart';
-import '../../../../product/widgets/container/background_dark_gradient.dart';
 import '../viewmodel/main_page_viewmodel.dart';
 
 class MainPage extends StatefulWidget {
@@ -19,63 +20,72 @@ class _MainPageState extends MainPageViewModel {
       builder: (context) => AlertDialog(
             backgroundColor: const Color.fromARGB(255, 143, 85, 203),
             title: const Text(
-              "Çıkmak İstediğinizden Emin Misiniz?",
+              "Çıkmak İstediğinizden",
               style: TextStyle(
                 color: Colors.white,
                 fontFamily: 'GamerStation',
-                fontSize: 15,
+                fontSize: 20,
               ),
             ),
             actions: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              Column(
                 children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        side: BorderSide(
-                            width: 1, color: Colors.white.withOpacity(0.5)),
-                      ),
-                      shadowColor: Colors.transparent,
-                      backgroundColor: Colors.blueAccent,
-                      minimumSize: Size(MediaQuery.of(context).size.width / 4.5,
-                          MediaQuery.of(context).size.height / 30),
-                      maximumSize: Size(MediaQuery.of(context).size.width / 4.5,
-                          MediaQuery.of(context).size.height / 20),
-                    ),
-                    onPressed: () => Navigator.pop(context, false),
-                    child: const Text(
-                      "No",
-                      style: TextStyle(
-                        color: Colors.black,
-                      ),
-                    ),
+                  Row(
+                    children: [
+                      Image.asset("assets/images/exitpopupimage.png"),
+                      const Text(
+                        "Emin Misiniz?",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'GamerStation',
+                          fontSize: 20,
+                        ),
+                      )
+                    ],
                   ),
-                  const SizedBox(
-                    width: 50,
-                  ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        side: BorderSide(
-                            width: 1, color: Colors.white.withOpacity(0.5)),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          shadowColor: Colors.transparent,
+                          backgroundColor: const Color.fromRGBO(255, 0, 0, 20),
+                          minimumSize:
+                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
+                          maximumSize:
+                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                        ),
+                        onPressed: () => exit(0),
+                        child: const Text(
+                          "Yes",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 143, 85, 203),
+                            fontFamily: 'GamerStation',
+                          ),
+                        ),
                       ),
-                      shadowColor: Colors.transparent,
-                      backgroundColor: Colors.red,
-                      minimumSize: Size(MediaQuery.of(context).size.width / 4.5,
-                          MediaQuery.of(context).size.height / 30),
-                      maximumSize: Size(MediaQuery.of(context).size.width / 4.5,
-                          MediaQuery.of(context).size.height / 20),
-                    ),
-                    onPressed: () => Navigator.pop(context, true),
-                    child: const Text(
-                      "Yes",
-                      style: TextStyle(
-                        color: Colors.black,
+                      const SizedBox(
+                        width: 50,
                       ),
-                    ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          shadowColor: Colors.transparent,
+                          backgroundColor: const Color.fromRGBO(0, 255, 25, 100),
+                          minimumSize:
+                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
+                          maximumSize:
+                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                        ),
+                        onPressed: () => Navigator.pop(context, true),
+                        child: const Text(
+                          "No",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 143, 85, 203),
+                            fontFamily: 'GamerStation',
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -123,11 +133,9 @@ class _MainPageState extends MainPageViewModel {
                         showGeneralDialog(
                           context: context,
                           barrierDismissible: true,
-                          barrierLabel: MaterialLocalizations.of(context)
-                              .modalBarrierDismissLabel,
+                          barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
                           barrierColor: Colors.black.withOpacity(0.5),
-                          pageBuilder: (context, animation1, animation2) =>
-                              SettingsPopup(),
+                          pageBuilder: (context, animation1, animation2) => SettingsPopup(),
                           transitionDuration: const Duration(milliseconds: 250),
                           transitionBuilder: (context, a1, a2, widget) {
                             return Transform.scale(
@@ -147,10 +155,7 @@ class _MainPageState extends MainPageViewModel {
                     child: IconButton(
                         onPressed: () {
                           //sound.playButton//sound(context);
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const AboutUsView()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutUsView()));
                         },
                         icon: const Icon(
                           Icons.info,
@@ -171,11 +176,9 @@ class _MainPageState extends MainPageViewModel {
                         buildIcon(),
                         const SizedBox(height: 10),
                         buildText(),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height / 8),
+                        SizedBox(height: MediaQuery.of(context).size.height / 8),
                         buildFirstButton(),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height / 15),
+                        SizedBox(height: MediaQuery.of(context).size.height / 15),
                         buildSecondButton(context),
                       ],
                     ),

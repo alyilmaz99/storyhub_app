@@ -1,4 +1,6 @@
 // ignore: file_names
+import 'dart:io';
+
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -8,7 +10,6 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/GameContreller.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
-import '../../../../product/model/button_sound.dart';
 import '../viewmodel/CartPageViewModel.dart';
 
 class CardPage extends StatefulWidget {
@@ -24,7 +25,7 @@ class CardPage extends StatefulWidget {
 }
 
 class _CardPageState extends CartPageViewModel {
-  _CardPageState({Key? key}) : super();
+  _CardPageState() : super();
 
   Widget? currentPage;
   bool _isCardTurned = false;
@@ -55,18 +56,80 @@ class _CardPageState extends CartPageViewModel {
     var screenWidth = screenSize.width;
 
     loadCards(callback);
-
     Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text("Do u want to exit app?"),
+              backgroundColor: const Color.fromARGB(255, 143, 85, 203),
+              title: const Text(
+                "Çıkmak İstediğinizden",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'GamerStation',
+                  fontSize: 20,
+                ),
+              ),
               actions: [
-                ElevatedButton(
-                    onPressed: () => Navigator.pop(context, false),
-                    child: Text("No")),
-                ElevatedButton(
-                    onPressed: () => Navigator.pop(context, true),
-                    child: Text("Yes")),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        Image.asset("assets/images/exitpopupimage.png"),
+                        const Text(
+                          "Emin Misiniz?",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'GamerStation',
+                            fontSize: 20,
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shadowColor: Colors.transparent,
+                            backgroundColor: const Color.fromRGBO(255, 0, 0, 20),
+                            minimumSize:
+                                Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
+                            maximumSize:
+                                Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                          ),
+                          onPressed: () => exit(0),
+                          child: const Text(
+                            "Yes",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 143, 85, 203),
+                              fontFamily: 'GamerStation',
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 50,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shadowColor: Colors.transparent,
+                            backgroundColor: const Color.fromRGBO(0, 255, 25, 100),
+                            minimumSize:
+                                Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
+                            maximumSize:
+                                Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                          ),
+                          onPressed: () => Navigator.pop(context, true),
+                          child: const Text(
+                            "No",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 143, 85, 203),
+                              fontFamily: 'GamerStation',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ));
 
@@ -103,10 +166,7 @@ class _CardPageState extends CartPageViewModel {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(
-                    left: screenWidth / 18,
-                    top: screenHeight / 10,
-                    right: screenWidth / 12),
+                padding: EdgeInsets.only(left: screenWidth / 18, top: screenHeight / 10, right: screenWidth / 12),
                 child: Center(
                   child: Column(
                     children: [
@@ -119,9 +179,7 @@ class _CardPageState extends CartPageViewModel {
                                 height: screenHeight / 8,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: AssetImage(isFinalRouter(
-                                        Provider.of<FinalPageViewModel>(context)
-                                            .isFinal)),
+                                    image: AssetImage(isFinalRouter(Provider.of<FinalPageViewModel>(context).isFinal)),
                                     fit: BoxFit.fill,
                                   ),
                                 ),
@@ -148,12 +206,9 @@ class _CardPageState extends CartPageViewModel {
                                           () {
                                             Navigator.of(context).pushAndRemoveUntil(
                                                 PageAnimationTransition(
-                                                    page:
-                                                        const GamePageWithTimer(),
-                                                    pageAnimationType:
-                                                        FadeAnimationTransition()),
-                                                (Route<dynamic> route) =>
-                                                    false);
+                                                    page: const GamePageWithTimer(),
+                                                    pageAnimationType: FadeAnimationTransition()),
+                                                (Route<dynamic> route) => false);
                                           },
                                         );
                                         setState(() {
@@ -170,27 +225,21 @@ class _CardPageState extends CartPageViewModel {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),
-                                backgroundColor:
-                                    const Color.fromRGBO(251, 251, 251, 0.9),
-                                onSurface: Colors.white
-                                    .withOpacity(0.38)
-                                    .withOpacity(0.38),
+                                backgroundColor: const Color.fromRGBO(251, 251, 251, 0.9),
+                                disabledForegroundColor:
+                                    Colors.white.withOpacity(0.38).withOpacity(0.38).withOpacity(0.38),
+                                disabledBackgroundColor:
+                                    Colors.white.withOpacity(0.38).withOpacity(0.38).withOpacity(0.12),
                                 // disabledBackgroundColor: Colors.white
                                 //     .withOpacity(0.38)
                                 //     .withOpacity(0.12),
                                 // disabledBackgroundColor:
                                 //     Colors.white.withOpacity(0.12),
-                                minimumSize:
-                                    Size(screenWidth / 4, screenHeight / 40)),
+                                minimumSize: Size(screenWidth / 4, screenHeight / 40)),
                             child: Text(
-                              isFinalRouterName(Provider.of<FinalPageViewModel>(
-                                      context,
-                                      listen: false)
-                                  .isFinal),
+                              isFinalRouterName(Provider.of<FinalPageViewModel>(context, listen: false).isFinal),
                               style: const TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w400,
-                                  color: Color.fromRGBO(19, 6, 5, 1)),
+                                  fontSize: 15, fontWeight: FontWeight.w400, color: Color.fromRGBO(19, 6, 5, 1)),
                             ),
                           ),
                         ],
@@ -198,10 +247,7 @@ class _CardPageState extends CartPageViewModel {
                       _isCardTurned == false
                           ? const Text(
                               "Kart Seçimi",
-                              style: TextStyle(
-                                  fontSize: 25,
-                                  fontWeight: FontWeight.normal,
-                                  color: Colors.white),
+                              style: TextStyle(fontSize: 25, fontWeight: FontWeight.normal, color: Colors.white),
                             )
                           : const SizedBox()
                     ],
@@ -209,8 +255,7 @@ class _CardPageState extends CartPageViewModel {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(
-                    top: screenWidth / 20, bottom: screenWidth / 20),
+                padding: EdgeInsets.only(top: screenWidth / 20, bottom: screenWidth / 20),
                 child: SizedBox(
                   width: screenWidth / 1.6,
                   height: screenHeight / 2,
@@ -236,9 +281,7 @@ class _CardPageState extends CartPageViewModel {
                                         //sound.playButton//sound(context),
                                         GameContreller().setCancelCard(false),
                                         Navigator.of(context).pushAndRemoveUntil(
-                                            MaterialPageRoute(
-                                                builder: (context) =>
-                                                    const GamePageWithTimer()),
+                                            MaterialPageRoute(builder: (context) => const GamePageWithTimer()),
                                             (Route<dynamic> route) => false),
                                       }
                                   },
@@ -246,8 +289,7 @@ class _CardPageState extends CartPageViewModel {
                                 backgroundColor: _isTimeUp
                                     ? const Color.fromRGBO(223, 105, 64, 1)
                                     : const Color.fromRGBO(251, 251, 251, 0.5),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(7.0)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.0)),
                               ),
                               child: const Text(
                                 "Kartı kullanarak senaryoyu bağla.",
