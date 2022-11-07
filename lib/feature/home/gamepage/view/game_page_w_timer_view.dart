@@ -1,14 +1,14 @@
+import 'dart:io';
+
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fullscreen/fullscreen.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
 import 'package:storyhub/feature/home/final/viewmodel/final_page_viewmodel.dart';
 import '../../../../core/components/playerCarousel/playerCarouselView.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
-import '../../../../product/model/button_sound.dart';
 import '../../../settings/model/game_settings_model.dart';
 import '../viewmodel/game_page_w_timer_viewmodel.dart';
 import '../../../drawer/view/drawer_view.dart';
@@ -39,14 +39,77 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
     Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
         context: context,
         builder: (context) => AlertDialog(
-              title: Text("Do u want to exit app?"),
+              backgroundColor: const Color.fromARGB(255, 143, 85, 203),
+              title: const Text(
+                "Çıkmak İstediğinizden",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontFamily: 'GamerStation',
+                  fontSize: 20,
+                ),
+              ),
               actions: [
-                ElevatedButton(
-                    onPressed: () => Navigator.pop(context, false),
-                    child: Text("No")),
-                ElevatedButton(
-                    onPressed: () => Navigator.pop(context, true),
-                    child: Text("Yes")),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        Image.asset("assets/images/exitpopupimage.png"),
+                        const Text(
+                          "Emin Misiniz?",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'GamerStation',
+                            fontSize: 20,
+                          ),
+                        )
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shadowColor: Colors.transparent,
+                            backgroundColor: const Color.fromRGBO(255, 0, 0, 20),
+                            minimumSize:
+                                Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
+                            maximumSize:
+                                Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                          ),
+                          onPressed: () => exit(0),
+                          child: const Text(
+                            "Yes",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 143, 85, 203),
+                              fontFamily: 'GamerStation',
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 50,
+                        ),
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            shadowColor: Colors.transparent,
+                            backgroundColor: const Color.fromRGBO(0, 255, 25, 100),
+                            minimumSize:
+                                Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
+                            maximumSize:
+                                Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                          ),
+                          onPressed: () => Navigator.pop(context, true),
+                          child: const Text(
+                            "No",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 143, 85, 203),
+                              fontFamily: 'GamerStation',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ));
     return WillPopScope(
@@ -81,16 +144,11 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 child: IconButton(
                   onPressed: () {
                     //sound.playButton//sound(context);
-                    Provider.of<PlayerCarouselViewModel>(context, listen: false)
-                        .controller2
-                        .pause();
+                    Provider.of<PlayerCarouselViewModel>(context, listen: false).controller2.pause();
                     //timer.stopEnable1 == false;
 
                     Navigator.of(context).push(FullScreenModal(
-                        controller2: Provider.of<PlayerCarouselViewModel>(
-                                context,
-                                listen: false)
-                            .controller2));
+                        controller2: Provider.of<PlayerCarouselViewModel>(context, listen: false).controller2));
                   },
                   icon: const Icon(
                     size: 40,
@@ -133,9 +191,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                               ),
                             )
                           : Text(
-                              Provider.of<PlayerCarouselViewModel>(context,
-                                      listen: false)
-                                  .cardName,
+                              Provider.of<PlayerCarouselViewModel>(context, listen: false).cardName,
                               style: const TextStyle(
                                 color: Colors.white,
                                 fontFamily: 'GamerStation',
@@ -146,18 +202,13 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                       Provider.of<FinalPageViewModel>(context).isFinal == true
                           ? carouselItem(
                               context,
-                              isFinalRouter(
-                                  Provider.of<FinalPageViewModel>(context)
-                                      .isFinal),
+                              isFinalRouter(Provider.of<FinalPageViewModel>(context).isFinal),
                               MediaQuery.of(context).size.width / 4,
                               MediaQuery.of(context).size.height / 8,
                               1.0,
-                              isFinalRouterName(
-                                  Provider.of<FinalPageViewModel>(context)
-                                      .isFinal),
+                              isFinalRouterName(Provider.of<FinalPageViewModel>(context).isFinal),
                             )
-                          : carousel(context, screenHeight,
-                              (screenWidth / 5) * 3, true),
+                          : carousel(context, screenHeight, (screenWidth / 5) * 3, true),
                       SizedBox(
                         height: screenHeight / 70,
                       ),
@@ -178,22 +229,16 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 ),
                 Center(
                   child: Padding(
-                    padding: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height / 11.5),
+                    padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 11.5),
                     child: Consumer<GameSettingsModel>(
                       builder: (context, value, child) {
                         return Center(
                           child: CircularCountDownTimer(
-                              controller: Provider.of<PlayerCarouselViewModel>(
-                                      context,
-                                      listen: false)
-                                  .controller2,
+                              controller: Provider.of<PlayerCarouselViewModel>(context, listen: false).controller2,
                               isReverse: true,
                               width: screenWidth * 0.40,
                               height: screenWidth * 0.40,
-                              duration: Provider.of<FinalPageViewModel>(context)
-                                          .isFinal ==
-                                      true
+                              duration: Provider.of<FinalPageViewModel>(context).isFinal == true
                                   ? value.getTimerValue() * 2
                                   : value.getTimerValue(),
                               fillColor: const Color.fromARGB(255, 244, 52, 38),
@@ -206,9 +251,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                 fontSize: screenWidth / 5,
                               ),
                               onChange: (value) {
-                                Provider.of<FinalPageViewModel>(context)
-                                            .isFinal ==
-                                        true
+                                Provider.of<FinalPageViewModel>(context).isFinal == true
                                     ? halfTimerChechk2(value, callback)
                                     : halfTimerChechk(value, callback);
                                 /*
@@ -273,12 +316,10 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                       });
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: isFinish
+                      backgroundColor: isFinish
                           ? const Color.fromRGBO(223, 105, 64, 1)
-                          : const Color.fromRGBO(251, 251, 251, 0.4)
-                              .withOpacity(0.5),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(7.0)),
+                          : const Color.fromRGBO(251, 251, 251, 0.4).withOpacity(0.5),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.0)),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -335,10 +376,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 Provider.of<FinalPageViewModel>(context).isFinal == true
                     ? 'FINAL TURU'
                     : 'TUR ${Provider.of<PlayerCarouselViewModel>(context, listen: false).countTour}',
-                style: const TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 20,
-                    color: Colors.white),
+                style: const TextStyle(fontFamily: 'Montserrat', fontSize: 20, color: Colors.white),
               ),
             ],
           ),
