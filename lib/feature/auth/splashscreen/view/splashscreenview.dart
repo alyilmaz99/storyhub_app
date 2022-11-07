@@ -48,14 +48,14 @@ class _SplashScreenViewState extends SplashScreenViewModel {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 3.5,
+              height: MediaQuery.of(context).size.height / 5,
             ),
             Container(
               margin: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).size.width / 9),
+                  bottom: MediaQuery.of(context).size.width / 4),
               alignment: Alignment.bottomCenter,
-              width: MediaQuery.of(context).size.width / 5,
-              height: MediaQuery.of(context).size.height / 10,
+              width: MediaQuery.of(context).size.width / 3.5,
+              height: MediaQuery.of(context).size.height / 7,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/images/vessac2.png'),

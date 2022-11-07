@@ -105,18 +105,37 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key, required this.showMainPage}) : super(key: key);
 
   Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
-    context: context,
-    builder: (context) =>  AlertDialog(
-      title: Text("Do u want to exit app?"),
-      actions: [
-        ElevatedButton(onPressed: () => Navigator.pop(context,false), child: Text("No")),
-        ElevatedButton(onPressed: () => Navigator.pop(context,true), child: Text("Yes")),
-      ],
-    )
-  );
+      context: context,
+      builder: (context) => AlertDialog(
+            backgroundColor: Colors.amber,
+            title: const Text("Do u want to exit app?"),
+            actions: [
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      side: BorderSide(
+                        width: 1,
+                        color: Colors.white.withOpacity(0.5),
+                      ),
+                    ),
+                    shadowColor: Colors.transparent,
+                    backgroundColor: Colors.transparent,
+                    minimumSize: Size(MediaQuery.of(context).size.width / 4.5,
+                        MediaQuery.of(context).size.height / 30),
+                    maximumSize: Size(MediaQuery.of(context).size.width / 4.5,
+                        MediaQuery.of(context).size.height / 20),
+                  ),
+                  onPressed: () => Navigator.pop(context, false),
+                  child: const Text("No")),
+              ElevatedButton(
+                  onPressed: () => Navigator.pop(context, true),
+                  child: const Text("Yes")),
+            ],
+          ));
 
   // This widget is the root of your application.
-  @override  
+  @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
     return WillPopScope(
@@ -137,17 +156,17 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        localizationsDelegates: [
+        localizationsDelegates: const [
           AppLocalizations.delegate, // Add this line
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
           GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [
+        supportedLocales: const [
           Locale('en', ''), // English, no country code
           Locale('tr', ''), // Spanish, no country code
         ],
-        home: const MainPage(),
+        home: const SplashScreenView(),
       ),
     );
   }
