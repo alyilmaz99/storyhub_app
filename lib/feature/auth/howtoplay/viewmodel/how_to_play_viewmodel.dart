@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:storyhub/feature/auth/howtoplay/view/how_to_play_view.dart';
 
+import '../../../../product/model/button_sound.dart';
 import '../../../home/mainpage/view/main_page_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OnboardingItem {
   final String title;
@@ -55,27 +57,31 @@ abstract class HowToPlayViewModel extends State<HowToPlayView> {
 
   final int numPages = 3;
   int currentPage = 0;
-
+  //Button//sound //sound = Button//sound();
   void onDonePress() {
     // Do what you want
+    // //sound.playButton//sound(context);
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => const MainPage()));
     currentPage = 0;
   }
 
   void previousSlide() {
+    ////sound.playButton//sound(context);
     controller.previousPage(
         duration: const Duration(milliseconds: 100), curve: Curves.easeIn);
     currentPage--;
   }
 
   void nextSlide() {
+    // //sound.playButton//sound(context);
     controller.nextPage(
         duration: const Duration(milliseconds: 100), curve: Curves.easeIn);
     currentPage++;
   }
 
   void endSlide() {
+    // //sound.playButton//sound(context);
     controller.jumpToPage(3);
   }
 }

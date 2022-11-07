@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
 import '../../../feature/settings/model/settings_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsPopup extends StatefulWidget {
   @override
@@ -22,9 +23,9 @@ class _SettingsPopupState extends State<SettingsPopup> {
       child: SingleChildScrollView(
         child: Column(children: [
           const SizedBox(height: 20),
-          const Text(
-            "Ayarlar",
-            style: TextStyle(
+          Text(
+            AppLocalizations.of(context)!.settingsGameSettings,
+            style: const TextStyle(
                 fontFamily: 'GamerStation',
                 fontSize: 30,
                 fontWeight: FontWeight.w500,
@@ -45,10 +46,10 @@ class _SettingsPopupState extends State<SettingsPopup> {
               children: [
                 SizedBox(
                   width: screenWidth / 1.2,
-                  child: const Text(
-                    "Oyun Sesi",
+                  child: Text(
+                    AppLocalizations.of(context)!.settingPopupGameSound,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontFamily: 'Montserrat',
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -102,10 +103,10 @@ class _SettingsPopupState extends State<SettingsPopup> {
               children: [
                 SizedBox(
                   width: screenWidth / 1.2,
-                  child: const Text(
-                    "Buton Sesi",
+                  child: Text(
+                    AppLocalizations.of(context)!.settingPopupGameSound,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w500,
@@ -155,10 +156,10 @@ class _SettingsPopupState extends State<SettingsPopup> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  "Titresim:",
+                Text(
+                  AppLocalizations.of(context)!.settingPopupVibration,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontFamily: 'Montserrat',
                     fontWeight: FontWeight.w500,

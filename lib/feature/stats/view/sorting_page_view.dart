@@ -4,17 +4,17 @@ import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/home/voteScreen/model/vote_model.dart';
-
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
+import 'package:storyhub/feature/stats/view/sorting_table_view.dart';
 import 'package:storyhub/feature/stats/viewmodel/sorting_page_viewmodel.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
+import '../../../product/model/button_sound.dart';
 
 class SortingPageView extends SortingPageViewModel {
   const SortingPageView({super.key});
-
   @override
   Widget build(BuildContext context) {
+    //Button//sound //sound = Button//sound();
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -54,7 +54,7 @@ class SortingPageView extends SortingPageViewModel {
               height: screenHeight / 20,
             ),
             Text(
-              'SIRALAMA',
+              AppLocalizations.of(context)!.sortingPageArrangement,
               style: TextStyle(
                 fontFamily: 'GamerStation',
                 fontSize: 40,
@@ -103,17 +103,12 @@ class SortingPageView extends SortingPageViewModel {
             ),
             ElevatedButton(
               onPressed: () {
+                //sound.playButton//sound(context);
                 HapticFeedback.lightImpact();
-                Provider.of<Vote>(context, listen: false).playerList.clear();
-                Provider.of<Vote>(context, listen: false).playerList2.clear();
-                Provider.of<Vote>(context, listen: false).playerScores.clear();
-                Provider.of<Vote>(context, listen: false).playerList3.clear();
-                Provider.of<Vote>(context, listen: false).valueChanged.clear();
-                Provider.of<PlayerCarouselViewModel>(context, listen: false)
-                    .playerList
-                    .clear();
+
                 Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) => const MainPage()),
+                    MaterialPageRoute(
+                        builder: (context) => const SortingTableView()),
                     (Route<dynamic> route) => false);
               },
               style: ElevatedButton.styleFrom(
@@ -123,9 +118,9 @@ class SortingPageView extends SortingPageViewModel {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18),
                   )),
-              child: const Text(
-                'ANA MENÜ',
-                style: TextStyle(
+              child: Text(
+                AppLocalizations.of(context)!.sortingPageMainMenu,
+                style: const TextStyle(
                     fontFamily: 'Montserrat',
                     color: Colors.white,
                     fontSize: 18),

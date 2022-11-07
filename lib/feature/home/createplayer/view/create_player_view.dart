@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
+import '../../../../product/model/button_sound.dart';
 import '../viewmodel/create_player_viewmodel.dart';
 import '../../../settings/model/game_settings_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CreatePlayerView extends StatefulWidget {
   const CreatePlayerView({Key? key}) : super(key: key);
@@ -62,98 +64,107 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
       return myImageString;
     }
 
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: RadialGradient(
-            radius: 0.7,
-            colors: [
-              Color.fromRGBO(255, 149, 113, 1),
-              Color.fromRGBO(216, 91, 47, 1)
-            ],
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+
+        if (!currentFocus.hasPrimaryFocus) {
+          currentFocus.unfocus();
+        }
+      },
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: RadialGradient(
+              radius: 0.7,
+              colors: [
+                Color.fromRGBO(255, 149, 113, 1),
+                Color.fromRGBO(216, 91, 47, 1)
+              ],
+            ),
           ),
-        ),
-        child: SizedBox(
-          height: screenHeight,
-          width: screenWidth,
-          child: Column(
-            children: [
-              SizedBox(
-                height: screenHeight / 40,
-              ),
-              Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: EdgeInsets.only(top: screenHeight / 20),
-                  child: SizedBox(
-                    height: screenHeight / 14,
-                    width: screenWidth / 4,
-                    child: SvgPicture.asset(
-                      'assets/images/LogoV1.svg',
+          child: SizedBox(
+            height: screenHeight,
+            width: screenWidth,
+            child: Column(
+              children: [
+                SizedBox(
+                  height: screenHeight / 40,
+                ),
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: screenHeight / 20),
+                    child: SizedBox(
+                      height: screenHeight / 14,
+                      width: screenWidth / 4,
+                      child: SvgPicture.asset(
+                        'assets/images/LogoV1.svg',
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Provider.of<GameSettingsModel>(context).playerCount <= 4
-                  ? SizedBox(
-                      height: screenHeight / 30,
-                    )
-                  : const SizedBox(height: 1),
-              Scrollbar(
-                radius: const Radius.circular(20.0),
-                thumbVisibility: true,
-                thickness: 5,
-                child: SizedBox(
-                  height:
-                      Provider.of<GameSettingsModel>(context).playerCount <= 4
-                          ? screenHeight / 1.6
-                          : screenHeight / 1.4,
-                  width: screenWidth / 1.15,
-                  child: ListView.builder(
-                    itemCount:
-                        Provider.of<GameSettingsModel>(context).playerCount,
-                    itemBuilder: (context, index) {
-                      additemtoList(
-                        index,
-                        Provider.of<GameSettingsModel>(context).playerCount,
-                      );
+                Provider.of<GameSettingsModel>(context).playerCount <= 4
+                    ? SizedBox(
+                        height: screenHeight / 30,
+                      )
+                    : const SizedBox(height: 1),
+                Scrollbar(
+                  radius: const Radius.circular(20.0),
+                  thumbVisibility: true,
+                  thickness: 5,
+                  child: SizedBox(
+                    height:
+                        Provider.of<GameSettingsModel>(context).playerCount <= 4
+                            ? screenHeight / 1.6
+                            : screenHeight / 1.4,
+                    width: screenWidth / 1.15,
+                    child: ListView.builder(
+                      itemCount:
+                          Provider.of<GameSettingsModel>(context).playerCount,
+                      itemBuilder: (context, index) {
+                        additemtoList(
+                          index,
+                          Provider.of<GameSettingsModel>(context).playerCount,
+                        );
 
-                      //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
-                      Provider.of<Player>(context).createPlayerfunc(
-                        context,
-                        _textEditingControllers[index].text,
-                        myScore,
-                        myRank,
-                        getImagePath(index),
-                        index,
-                        (Provider.of<GameSettingsModel>(context).playerCount +
-                            3),
-                      );
+                        //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
+                        Provider.of<Player>(context).createPlayerfunc(
+                          context,
+                          _textEditingControllers[index].text,
+                          myScore,
+                          myRank,
+                          getImagePath(index),
+                          index,
+                          (Provider.of<GameSettingsModel>(context).playerCount +
+                              3),
+                        );
 
-                      //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
-                      return Padding(
-                          padding: EdgeInsets.only(bottom: screenHeight / 45),
-                          child: playerNameCreateContainer(
-                            context,
-                            index + 1,
-                            isCheckOkay,
-                          ));
-                    },
+                        //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
+                        return Padding(
+                            padding: EdgeInsets.only(bottom: screenHeight / 45),
+                            child: playerNameCreateContainer(
+                              context,
+                              index + 1,
+                              isCheckOkay,
+                            ));
+                      },
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: screenHeight / 30,
-              ),
-              buildFirstButton(
-                _textEditingControllers,
-                context,
-                isCheckOkay,
-                Provider.of<Player>(context, listen: false).playersMap,
-                Provider.of<Player>(context, listen: false).textValueisEmpty,
-              ),
-            ],
+                SizedBox(
+                  height: screenHeight / 30,
+                ),
+                buildFirstButton(
+                  _textEditingControllers,
+                  context,
+                  isCheckOkay,
+                  Provider.of<Player>(context, listen: false).playersMap,
+                  Provider.of<Player>(context, listen: false).textValueisEmpty,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -187,10 +198,10 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                 )),
                 child: Provider.of<Player>(context, listen: false)
                         .textValueisEmpty[numberforimages - 1]
-                    ? const Center(
+                    ? Center(
                         child: Text(
-                          'HAZIR!',
-                          style: TextStyle(
+                          AppLocalizations.of(context)!.createPlayerReady,
+                          style: const TextStyle(
                             shadows: [
                               Shadow(
                                 color: Colors.black,

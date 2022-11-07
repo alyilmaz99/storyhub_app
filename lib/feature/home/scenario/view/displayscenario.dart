@@ -5,6 +5,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:storyhub/core/components/senaryo/Senaryo.dart';
 import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
 
+import '../../../../product/model/button_sound.dart';
+
 class DisplayScenario extends StatefulWidget {
   int senaryo;
 
@@ -15,6 +17,7 @@ class DisplayScenario extends StatefulWidget {
 }
 
 class _DisplayScenario extends State<DisplayScenario> {
+  //Button//sound //sound = Button//sound();
   Future<List<Senaryo>> readJsonData() async {
     final jsondata = await rootBundle.loadString("assets/senaryolar.json");
     final list = json.decode(jsondata) as List<dynamic>;
@@ -55,6 +58,7 @@ class _DisplayScenario extends State<DisplayScenario> {
               height: MediaQuery.of(context).size.height / (1.3),
               child: InkWell(
                 onTap: () {
+                  //sound.playButton//sound(context);
                   Navigator.push(
                     context,
                     MaterialPageRoute(

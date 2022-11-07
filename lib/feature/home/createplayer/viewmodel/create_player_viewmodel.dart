@@ -6,10 +6,12 @@ import 'package:storyhub/feature/home/scenario/view/selectscenarioview.dart';
 import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
 import 'package:storyhub/product/model/player_selection_model.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
+import '../../../../product/model/button_sound.dart';
 import '../../../settings/model/game_settings_model.dart';
 import '../../voteScreen/model/vote_model.dart';
 import '../model/player_model.dart';
 import '../view/create_player_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
   static bool isEmpty = false;
@@ -39,9 +41,10 @@ abstract class CreatePlayerViewModel extends State<CreatePlayerView> {
       controller: textEditingControllers![order!],
       cursorColor: Colors.white,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.all(0),
-        hintText: "İsim",
-        hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
+        contentPadding: const EdgeInsets.all(10),
+        labelText: AppLocalizations.of(context)!.createPlayerName,
+        floatingLabelBehavior: FloatingLabelBehavior.never,
+        labelStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.w500,
             ),
@@ -94,11 +97,13 @@ Widget buildFirstButton(
   List<bool> myList,
 ) {
   bool checkIsChechk = false;
+  //Button//sound //sound = Button//sound();
   return SizedBox(
     width: MediaQuery.of(context).size.width / 1.4,
     height: MediaQuery.of(context).size.height / 13,
     child: OutlinedButton(
       onPressed: () {
+        //sound.playButton//sound(context);
         for (bool element in myList) {
           if (element == true) {
             checkIsChechk = true;
@@ -133,8 +138,10 @@ Widget buildFirstButton(
 
           Provider.of<Vote>(context, listen: false).counterForTour = 0;
           Provider.of<Vote>(context, listen: false).isFinishVote = false;
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const VoteScreenView()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const SelectScenarioView()));
 
           //*******************TEST****************** */
           print(myMap);
@@ -172,9 +179,9 @@ Widget buildFirstButton(
           ),
         ),
       ),
-      child: const Text(
-        "DEVAM",
-        style: TextStyle(
+      child: Text(
+        AppLocalizations.of(context)!.createPlayerContinue,
+        style: const TextStyle(
           fontFamily: 'GamerStation',
           color: Colors.white,
           fontSize: 35,

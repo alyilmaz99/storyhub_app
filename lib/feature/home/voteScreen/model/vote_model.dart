@@ -5,8 +5,6 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
 import 'package:storyhub/feature/settings/model/game_settings_model.dart';
 
-import '../../gamepage/view/CardPAge.dart';
-
 class Vote with ChangeNotifier {
   int headerPlayer = 0;
   int? counter = 0;
@@ -27,7 +25,7 @@ class Vote with ChangeNotifier {
   bool isFinishVote = false;
   List<Player> playerListTemporary = [];
   List<double> valueChanged = [];
-  double currentValue = 0;
+  List<double> currentValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   Vote({this.counter});
 
   String getPlayerToHead(BuildContext context) {
@@ -220,6 +218,7 @@ class Vote with ChangeNotifier {
       for (i = 0; i < n - step - 1; i++) {
         if (playerList3[i].score > playerList3[i + 1].score) {
           swap(playerList3, i);
+          print("sorting is worked");
         }
       }
     }
@@ -251,8 +250,7 @@ class Vote with ChangeNotifier {
             Provider.of<Vote>(context, listen: false)
                 .playerList3[j - 1]
                 .score) {
-          Provider.of<Vote>(context, listen: false).playerList3[j - 1].score -
-              1;
+          Provider.of<Vote>(context, listen: false).playerList3[j].score - 1;
         }
       }
     }

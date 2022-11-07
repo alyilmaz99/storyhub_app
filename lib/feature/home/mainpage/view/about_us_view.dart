@@ -6,6 +6,7 @@ import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'main_page_view.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutUsView extends StatefulWidget {
   const AboutUsView({super.key});
@@ -52,10 +53,10 @@ class _AboutUsViewState extends State<AboutUsView> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Padding(
+                 Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    TextConst.aboutUs,
+                    AppLocalizations.of(context)!.aboutUs,
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ),
@@ -66,16 +67,16 @@ class _AboutUsViewState extends State<AboutUsView> {
                   iconSize: 120,
                   onPressed: () => Navigator.pop(context),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(10.0),
                   child: Text(
-                    TextConst.aboutUsDetail,
+                    AppLocalizations.of(context)!.aboutUsDetail,
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.white, fontSize: 15),
                   ),
                 ),
-                const Text(
-                  TextConst.contactUs,
+                Text(
+                  AppLocalizations.of(context)!.contactUs,
                   style: TextStyle(color: Colors.amberAccent, fontSize: 15),
                   textAlign: TextAlign.center,
                 ),

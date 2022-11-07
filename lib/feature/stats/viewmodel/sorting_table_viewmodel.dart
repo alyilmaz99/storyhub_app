@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../home/voteScreen/model/vote_model.dart';
 import '../view/sorting_table_view.dart';
 
 abstract class SortingTableViewmodel extends State<SortingTableView> {}
 
-Widget buildContainers(BuildContext context, String image, String secondImage) {
+Widget buildContainers(
+    BuildContext context, String image, String secondImage, int index) {
   double screenHeight = MediaQuery.of(context).size.height;
   double screenWidth = MediaQuery.of(context).size.width;
   return Container(
@@ -33,11 +36,14 @@ Widget buildContainers(BuildContext context, String image, String secondImage) {
           decoration: BoxDecoration(
               border: Border.all(color: Colors.white),
               borderRadius: const BorderRadius.all(Radius.circular(25))),
-          child: const Center(
+          child: Center(
             child: Text(
               textAlign: TextAlign.center,
-              'İsim',
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              Provider.of<Vote>(context, listen: false).playerList3[index].name,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
             ),
           ),
         ),
@@ -58,9 +64,10 @@ Widget buildContainers(BuildContext context, String image, String secondImage) {
         ),
         Padding(
           padding: EdgeInsets.only(top: screenHeight / 90),
-          child: const Text(
-            'x' + '6',
-            style: TextStyle(
+          child: Text(
+            'x'
+            "${Provider.of<Vote>(context, listen: false).playerList3[index].score.toInt()}",
+            style: const TextStyle(
               color: Color.fromRGBO(42, 37, 80, 1),
               fontSize: 30,
               fontFamily: 'GamerStation',

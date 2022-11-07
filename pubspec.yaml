@@ -29,6 +29,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations: # Add this line
+    sdk: flutter         # Add this line
     #loading animations
   loading_animation_widget:
     ^1.2.0+2
@@ -72,6 +74,9 @@ flutter_icons:
   image_path_ios: "assets/appicons/iOSicons/iosicon.png"
   image_path_android: "assets/appicons/androidicons/androidicon.png"
 
+  vibration: ^1.7.6
+  assets_audio_player: ^3.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -88,6 +93,7 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true # Add this line
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -99,7 +105,6 @@ flutter:
     - assets/images/icons/
     - assets/images/splash/
     - assets/images/cards/
-    - assets/images/human/
     - assets/images/slider/
     - assets/images/profiles/
     #   - images/a_dot_ham.jpeg
@@ -109,6 +114,9 @@ flutter:
     - assets/icons/
     - assets/senaryolar.json
     - assets/images/senaryolar/
+    - assets/button22.mp3
+    - assets/audios/tiktik.mp3
+    - assets/audios/datdat.mp3
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

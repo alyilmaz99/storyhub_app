@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/home/gamepage/view/game_page_w_timer_view.dart';
 import '../../../../core/components/popup/FinalPopup.dart';
+import '../../../../product/model/button_sound.dart';
 import '../../../../product/model/player_selection_model.dart';
 import '../../gamepage/view/CardPAge.dart';
 import '../viewmodel/final_page_viewmodel.dart';
@@ -22,7 +23,7 @@ class _FinalPageState extends State<FinalPageView> {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-
+    //Button//sound //sound = Button//sound();
     Provider.of<FinalPageViewModel>(context).setPlayerList(
         Provider.of<PlayerCarouselViewModel>(context).postPlayerList());
 
@@ -33,15 +34,51 @@ class _FinalPageState extends State<FinalPageView> {
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
+                width: screenWidth / 10,
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.info_outline,
+                    color: Colors.white,
+                    size: 30.0,
+                  ),
+                  onPressed: () {
+                    //sound.playButton//sound(context);
+                    HapticFeedback.lightImpact();
+                    showGeneralDialog(
+                      context: context,
+                      barrierDismissible: true,
+                      barrierLabel: MaterialLocalizations.of(context)
+                          .modalBarrierDismissLabel,
+                      barrierColor: Colors.black.withOpacity(0.5),
+                      pageBuilder: (context, animation1, animation2) =>
+                          FinalPopup(),
+                      transitionDuration: const Duration(milliseconds: 250),
+                      transitionBuilder: (context, a1, a2, widget) {
+                        return Transform.scale(
+                          scale: a1.value,
+                          child: Opacity(
+                            opacity: a1.value,
+                            child: widget,
+                          ),
+                        );
+                      },
+                    );
+                  },
+                ),
+              ),
+              SizedBox(
                 height: screenHeight / 15,
-                width: screenWidth / 3.5,
+                width: (screenWidth / 10) * 5,
                 child: SvgPicture.asset(
                   'assets/images/LogoV1.svg',
                 ),
-              )
+              ),
+              SizedBox(
+                width: screenWidth / 10,
+              ),
             ],
           ),
         ),
@@ -73,36 +110,6 @@ class _FinalPageState extends State<FinalPageView> {
                     children: [
                       SizedBox(
                         width: screenWidth / 5,
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.info_outline,
-                            color: Colors.white,
-                            size: 30.0,
-                          ),
-                          onPressed: () {
-                            HapticFeedback.lightImpact();
-                            showGeneralDialog(
-                              context: context,
-                              barrierDismissible: true,
-                              barrierLabel: MaterialLocalizations.of(context)
-                                  .modalBarrierDismissLabel,
-                              barrierColor: Colors.black.withOpacity(0.5),
-                              pageBuilder: (context, animation1, animation2) =>
-                                  FinalPopup(),
-                              transitionDuration:
-                                  const Duration(milliseconds: 250),
-                              transitionBuilder: (context, a1, a2, widget) {
-                                return Transform.scale(
-                                  scale: a1.value,
-                                  child: Opacity(
-                                    opacity: a1.value,
-                                    child: widget,
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                        ),
                       ),
                       Container(
                         width: (screenWidth / 5) * 2,
@@ -135,6 +142,7 @@ class _FinalPageState extends State<FinalPageView> {
                               "assets/images/randomButton.png",
                             ),
                             onPressed: () {
+                              //sound.playButton//sound(context);
                               /* ----- Burada random bir kullanıcı seçiliyor----- */
                               Provider.of<FinalPageViewModel>(context,
                                       listen: false)
@@ -203,6 +211,7 @@ class _FinalPageState extends State<FinalPageView> {
                     ),
                   ),
                   onPressed: () {
+                    //sound.playButton//sound(context);
                     HapticFeedback.lightImpact();
                     Provider.of<FinalPageViewModel>(context, listen: false)
                         .isFinal = true;

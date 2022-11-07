@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 import '../model/settings_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsPageView extends StatefulWidget {
   const SettingsPageView({Key? key}) : super(key: key);
@@ -50,9 +51,9 @@ class _SettingsPageState extends State<SettingsPageView> {
                 SizedBox(
                   height: screenHeight / 10,
                 ),
-                const Text(
-                  "Ayarlar",
-                  style: TextStyle(
+                Text(
+                  AppLocalizations.of(context)!.settingPopupSettings,
+                  style: const TextStyle(
                       fontFamily: 'GamerStation',
                       fontSize: 35,
                       fontWeight: FontWeight.w500,
@@ -73,10 +74,10 @@ class _SettingsPageState extends State<SettingsPageView> {
                     children: [
                       SizedBox(
                         width: screenWidth / 1.2,
-                        child: const Text(
-                          "Oyun Sesi",
+                        child: Text(
+                          AppLocalizations.of(context)!.settingPopupGameSound,
                           textAlign: TextAlign.start,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontFamily: 'Montserrat',
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -130,10 +131,10 @@ class _SettingsPageState extends State<SettingsPageView> {
                     children: [
                       SizedBox(
                         width: screenWidth / 1.2,
-                        child: const Text(
-                          "Buton Sesi",
+                        child: Text(
+                          AppLocalizations.of(context)!.settingPopupButtonSound,
                           textAlign: TextAlign.start,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 16,
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w500,

@@ -17,6 +17,18 @@ class _VoteScreenViewState extends VoteScreenViewModel {
   @override
   void initState() {
     super.initState();
+    if (Provider.of<Vote>(context, listen: false).counterForTour ==
+        Provider.of<GameSettingsModel>(context, listen: false).playerCount) {
+      for (int i = 0;
+          i <
+              Provider.of<GameSettingsModel>(context, listen: false)
+                  .playerCount;
+          i++) {
+        Provider.of<Vote>(context, listen: false)
+            .playerList3[i]
+            .playerVoteNumber = 3;
+      }
+    }
     Provider.of<Vote>(
       context,
       listen: false,
