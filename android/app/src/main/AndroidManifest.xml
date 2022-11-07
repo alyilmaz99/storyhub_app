@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.storyhub">
    <application
-        android:label="storyhub"
+        android:label="StoryHub"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
