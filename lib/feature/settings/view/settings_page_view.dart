@@ -53,7 +53,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                 ),
                 Text(
                   AppLocalizations.of(context)!.settingPopupSettings,
-                  style: TextStyle(
+                  style: const TextStyle(
                       fontFamily: 'GamerStation',
                       fontSize: 35,
                       fontWeight: FontWeight.w500,
@@ -77,7 +77,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                         child: Text(
                           AppLocalizations.of(context)!.settingPopupGameSound,
                           textAlign: TextAlign.start,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontFamily: 'Montserrat',
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -134,7 +134,7 @@ class _SettingsPageState extends State<SettingsPageView> {
                         child: Text(
                           AppLocalizations.of(context)!.settingPopupButtonSound,
                           textAlign: TextAlign.start,
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 16,
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w500,

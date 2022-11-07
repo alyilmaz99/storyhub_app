@@ -34,18 +34,21 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-    ButtonSound sound = ButtonSound();
+    //Button//sound //sound = Button//sound();
 
-     Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
-    context: context,
-    builder: (context) =>  AlertDialog(
-      title: Text("Do u want to exit app?"),
-      actions: [
-        ElevatedButton(onPressed: () => Navigator.pop(context,false), child: Text("No")),
-        ElevatedButton(onPressed: () => Navigator.pop(context,true), child: Text("Yes")),
-      ],
-    )
-  );
+    Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text("Do u want to exit app?"),
+              actions: [
+                ElevatedButton(
+                    onPressed: () => Navigator.pop(context, false),
+                    child: Text("No")),
+                ElevatedButton(
+                    onPressed: () => Navigator.pop(context, true),
+                    child: Text("Yes")),
+              ],
+            ));
     return WillPopScope(
       onWillPop: () async {
         print("Back button pressed1 ");
@@ -77,14 +80,15 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 alignment: Alignment.centerRight,
                 child: IconButton(
                   onPressed: () {
-                    sound.playButtonSound(context);
+                    //sound.playButton//sound(context);
                     Provider.of<PlayerCarouselViewModel>(context, listen: false)
                         .controller2
                         .pause();
                     //timer.stopEnable1 == false;
-    
+
                     Navigator.of(context).push(FullScreenModal(
-                        controller2: Provider.of<PlayerCarouselViewModel>(context,
+                        controller2: Provider.of<PlayerCarouselViewModel>(
+                                context,
                                 listen: false)
                             .controller2));
                   },
@@ -152,8 +156,8 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                   Provider.of<FinalPageViewModel>(context)
                                       .isFinal),
                             )
-                          : carousel(
-                              context, screenHeight, (screenWidth / 5) * 3, true),
+                          : carousel(context, screenHeight,
+                              (screenWidth / 5) * 3, true),
                       SizedBox(
                         height: screenHeight / 70,
                       ),
@@ -207,11 +211,13 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                                         true
                                     ? halfTimerChechk2(value, callback)
                                     : halfTimerChechk(value, callback);
+                                /*
                                 if (int.parse(value) > 5) {
                                   playTikTik();
                                 } else {
                                   playDatDat();
                                 }
+                                */
                               },
                               onComplete: () => {
                                     HapticFeedback.heavyImpact(),
@@ -240,7 +246,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                 width: MediaQuery.of(context).size.width / 1.7,
                 child: ElevatedButton(
                     onPressed: () {
-                      sound.playButtonSound(context);
+                      //sound.playButton//sound(context);
                       HapticFeedback.lightImpact();
                       setState(() {
                         print(
@@ -255,7 +261,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                         print(
                           "Tour game count: ${Provider.of<PlayerCarouselViewModel>(context, listen: false).useForTourCountChechk}",
                         );
-    
+
                         if (Provider.of<FinalPageViewModel>(
                           context,
                           listen: false,
@@ -330,7 +336,9 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                     ? 'FINAL TURU'
                     : 'TUR ${Provider.of<PlayerCarouselViewModel>(context, listen: false).countTour}',
                 style: const TextStyle(
-                    fontFamily: 'Montserrat', fontSize: 20, color: Colors.white),
+                    fontFamily: 'Montserrat',
+                    fontSize: 20,
+                    color: Colors.white),
               ),
             ],
           ),

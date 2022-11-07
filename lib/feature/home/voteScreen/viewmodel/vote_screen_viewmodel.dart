@@ -277,13 +277,13 @@ class VoteScreenContinueButton extends StatelessWidget {
   const VoteScreenContinueButton({
     Key? key,
   }) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
-     ButtonSound sound = ButtonSound();
+    // Button//sound //sound = Button//sound();
     return ElevatedButton(
       onPressed: () {
-        sound.playButtonSound(context);
+        //sound.playButton//sound(context);
         Provider.of<Vote>(context, listen: false).counterForTour++;
 
         Provider.of<Vote>(context, listen: false).printPlayerScoreList(context);
@@ -325,7 +325,6 @@ class VoteScreenContinueButton extends StatelessWidget {
         Provider.of<Vote>(context, listen: false).isFinishVote
             ? Provider.of<Vote>(context, listen: false).isEqual(context)
             : null;
-
         Provider.of<Vote>(context, listen: false).isFinishVote
             ? Provider.of<Vote>(context, listen: false).bubbleSort()
             : null;
@@ -350,7 +349,9 @@ class VoteScreenContinueButton extends StatelessWidget {
         ),
       ),
       child: Text(
-        Provider.of<Vote>(context).isFinishVote ? AppLocalizations.of(context)!.voteScreenFinish : AppLocalizations.of(context)!.voteScreenWithStar,
+        Provider.of<Vote>(context).isFinishVote
+            ? AppLocalizations.of(context)!.voteScreenFinish
+            : AppLocalizations.of(context)!.voteScreenWithStar,
         style: const TextStyle(
           fontFamily: 'GamerStation',
           color: Colors.white,

@@ -14,7 +14,7 @@ class SortingPageView extends SortingPageViewModel {
   const SortingPageView({super.key});
   @override
   Widget build(BuildContext context) {
-    ButtonSound sound = ButtonSound();
+    //Button//sound //sound = Button//sound();
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -103,7 +103,7 @@ class SortingPageView extends SortingPageViewModel {
             ),
             ElevatedButton(
               onPressed: () {
-                sound.playButtonSound(context);
+                //sound.playButton//sound(context);
                 HapticFeedback.lightImpact();
 
                 Navigator.of(context).pushAndRemoveUntil(

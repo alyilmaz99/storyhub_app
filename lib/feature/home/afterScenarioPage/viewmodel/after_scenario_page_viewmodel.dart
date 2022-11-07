@@ -13,13 +13,13 @@ abstract class AfterScenarioViewModel extends State<AfterScenarioView> {}
 
 Widget buildFirstButton(BuildContext context, String text, double height,
     double width, Color color, int function) {
-  ButtonSound sound = ButtonSound();
+  // Button//sound //sound = Button//sound();
   return SizedBox(
     width: width,
     height: height,
     child: OutlinedButton(
       onPressed: () {
-        sound.playButtonSound(context);
+        //sound.playButton//sound(context);
         if (function == 1) {
           Navigator.pop(context);
           Navigator.push(

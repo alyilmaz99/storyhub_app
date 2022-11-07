@@ -18,7 +18,7 @@ class GameSettingsView extends StatefulWidget {
 class _GameSettingsViewState extends State<GameSettingsView> {
   var roundSpeedString = '';
   var diffuciltyValue = 0;
-  ButtonSound sound = ButtonSound();
+  //Button//sound //sound = Button//sound();
   String roundSpeedName(roundSpeedValue) {
     switch (roundSpeedValue) {
       case 1:
@@ -135,7 +135,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                             size: 35.0,
                                           ),
                                           onPressed: () {
-                                            sound.playButtonSound(context);
+                                            //sound.playButton//sound(context);
                                             Provider.of<GameSettingsModel>(
                                                     context,
                                                     listen: false)
@@ -163,7 +163,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                             size: 35.0,
                                           ),
                                           onPressed: () {
-                                            sound.playButtonSound(context);
+                                            //sound.playButton//sound(context);
                                             Provider.of<GameSettingsModel>(
                                                     context,
                                                     listen: false)
@@ -227,7 +227,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         size: 35.0,
                                       ),
                                       onPressed: () {
-                                        sound.playButtonSound(context);
+                                        //sound.playButton//sound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .decrementTimerValue();
@@ -252,7 +252,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         size: 35.0,
                                       ),
                                       onPressed: () {
-                                        sound.playButtonSound(context);
+                                        //sound.playButton//sound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .incrementTimerValue();
@@ -304,7 +304,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         size: 35.0,
                                       ),
                                       onPressed: () {
-                                        sound.playButtonSound(context);
+                                        //sound.playButton//sound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .decrementRoundCount();
@@ -329,7 +329,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                         size: 35.0,
                                       ),
                                       onPressed: () {
-                                        sound.playButtonSound(context);
+                                        //sound.playButton//sound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .incrementRoundCount();
@@ -382,7 +382,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                     icon: SvgPicture.asset(
                                         'assets/images/question.svg'),
                                     onPressed: () {
-                                      sound.playButtonSound(context);
+                                      //sound.playButton//sound(context);
                                       showGeneralDialog(
                                         context: context,
                                         barrierDismissible: true,
@@ -423,7 +423,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       icon: SvgPicture.asset(
                                           'assets/images/right.svg'),
                                       onPressed: () {
-                                        sound.playButtonSound(context);
+                                        //sound.playButton//sound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .decrementRoundSpeedValue();
@@ -447,7 +447,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                                       icon: SvgPicture.asset(
                                           'assets/images/left.svg'),
                                       onPressed: () {
-                                        sound.playButtonSound(context);
+                                        //sound.playButton//sound(context);
                                         Provider.of<GameSettingsModel>(context,
                                                 listen: false)
                                             .incrementRoundSpeedValue();
@@ -478,7 +478,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                     ),
                   ),
                   onPressed: () {
-                    sound.playButtonSound(context);
+                    //sound.playButton//sound(context);
                     Navigator.pop(context);
                     Navigator.push(
                         context,

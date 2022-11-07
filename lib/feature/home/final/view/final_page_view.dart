@@ -23,7 +23,7 @@ class _FinalPageState extends State<FinalPageView> {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
-    ButtonSound sound = ButtonSound();
+    //Button//sound //sound = Button//sound();
     Provider.of<FinalPageViewModel>(context).setPlayerList(
         Provider.of<PlayerCarouselViewModel>(context).postPlayerList());
 
@@ -37,42 +37,41 @@ class _FinalPageState extends State<FinalPageView> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
-                        width: screenWidth / 10,
-                        child: IconButton(
-                          icon: const Icon(
-                            Icons.info_outline,
-                            color: Colors.white,
-                            size: 30.0,
+                width: screenWidth / 10,
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.info_outline,
+                    color: Colors.white,
+                    size: 30.0,
+                  ),
+                  onPressed: () {
+                    //sound.playButton//sound(context);
+                    HapticFeedback.lightImpact();
+                    showGeneralDialog(
+                      context: context,
+                      barrierDismissible: true,
+                      barrierLabel: MaterialLocalizations.of(context)
+                          .modalBarrierDismissLabel,
+                      barrierColor: Colors.black.withOpacity(0.5),
+                      pageBuilder: (context, animation1, animation2) =>
+                          FinalPopup(),
+                      transitionDuration: const Duration(milliseconds: 250),
+                      transitionBuilder: (context, a1, a2, widget) {
+                        return Transform.scale(
+                          scale: a1.value,
+                          child: Opacity(
+                            opacity: a1.value,
+                            child: widget,
                           ),
-                          onPressed: () {
-                            sound.playButtonSound(context);
-                            HapticFeedback.lightImpact();
-                            showGeneralDialog(
-                              context: context,
-                              barrierDismissible: true,
-                              barrierLabel: MaterialLocalizations.of(context)
-                                  .modalBarrierDismissLabel,
-                              barrierColor: Colors.black.withOpacity(0.5),
-                              pageBuilder: (context, animation1, animation2) =>
-                                  FinalPopup(),
-                              transitionDuration:
-                                  const Duration(milliseconds: 250),
-                              transitionBuilder: (context, a1, a2, widget) {
-                                return Transform.scale(
-                                  scale: a1.value,
-                                  child: Opacity(
-                                    opacity: a1.value,
-                                    child: widget,
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                        ),
-                      ),
+                        );
+                      },
+                    );
+                  },
+                ),
+              ),
               SizedBox(
                 height: screenHeight / 15,
-                width: (screenWidth / 10)*5,
+                width: (screenWidth / 10) * 5,
                 child: SvgPicture.asset(
                   'assets/images/LogoV1.svg',
                 ),
@@ -143,7 +142,7 @@ class _FinalPageState extends State<FinalPageView> {
                               "assets/images/randomButton.png",
                             ),
                             onPressed: () {
-                              sound.playButtonSound(context);
+                              //sound.playButton//sound(context);
                               /* ----- Burada random bir kullanıcı seçiliyor----- */
                               Provider.of<FinalPageViewModel>(context,
                                       listen: false)
@@ -212,7 +211,7 @@ class _FinalPageState extends State<FinalPageView> {
                     ),
                   ),
                   onPressed: () {
-                    sound.playButtonSound(context);
+                    //sound.playButton//sound(context);
                     HapticFeedback.lightImpact();
                     Provider.of<FinalPageViewModel>(context, listen: false)
                         .isFinal = true;

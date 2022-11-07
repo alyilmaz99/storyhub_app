@@ -66,7 +66,7 @@ Widget buildContainers(
           padding: EdgeInsets.only(top: screenHeight / 90),
           child: Text(
             'x'
-            "${Provider.of<Vote>(context, listen: false).playerList[index].score.toInt()}",
+            "${Provider.of<Vote>(context, listen: false).playerList3[index].score.toInt()}",
             style: const TextStyle(
               color: Color.fromRGBO(42, 37, 80, 1),
               fontSize: 30,

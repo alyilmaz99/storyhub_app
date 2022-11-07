@@ -49,7 +49,7 @@ class _CardPageState extends CartPageViewModel {
 
   @override
   Widget build(BuildContext context) {
-    ButtonSound sound = ButtonSound();
+    //Button//sound //sound = Button//sound();
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
@@ -57,15 +57,18 @@ class _CardPageState extends CartPageViewModel {
     loadCards(callback);
 
     Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
-    context: context,
-    builder: (context) =>  AlertDialog(
-      title: Text("Do u want to exit app?"),
-      actions: [
-        ElevatedButton(onPressed: () => Navigator.pop(context,false), child: Text("No")),
-        ElevatedButton(onPressed: () => Navigator.pop(context,true), child: Text("Yes")),
-      ],
-    )
-  );
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text("Do u want to exit app?"),
+              actions: [
+                ElevatedButton(
+                    onPressed: () => Navigator.pop(context, false),
+                    child: Text("No")),
+                ElevatedButton(
+                    onPressed: () => Navigator.pop(context, true),
+                    child: Text("Yes")),
+              ],
+            ));
 
     return WillPopScope(
       onWillPop: () async {
@@ -139,7 +142,7 @@ class _CardPageState extends CartPageViewModel {
                                       onComplete: () {
                                         HapticFeedback.lightImpact();
                                         GameContreller().setCancelCard(false);
-    
+
                                         Future.delayed(
                                           const Duration(seconds: 0),
                                           () {
@@ -149,7 +152,8 @@ class _CardPageState extends CartPageViewModel {
                                                         const GamePageWithTimer(),
                                                     pageAnimationType:
                                                         FadeAnimationTransition()),
-                                                (Route<dynamic> route) => false);
+                                                (Route<dynamic> route) =>
+                                                    false);
                                           },
                                         );
                                         setState(() {
@@ -229,7 +233,7 @@ class _CardPageState extends CartPageViewModel {
                               onPressed: () => {
                                     if (_isTimeUp)
                                       {
-                                        sound.playButtonSound(context),
+                                        //sound.playButton//sound(context),
                                         GameContreller().setCancelCard(false),
                                         Navigator.of(context).pushAndRemoveUntil(
                                             MaterialPageRoute(

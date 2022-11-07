@@ -97,14 +97,13 @@ Widget buildFirstButton(
   List<bool> myList,
 ) {
   bool checkIsChechk = false;
-  ButtonSound sound = ButtonSound();
+  //Button//sound //sound = Button//sound();
   return SizedBox(
     width: MediaQuery.of(context).size.width / 1.4,
     height: MediaQuery.of(context).size.height / 13,
     child: OutlinedButton(
       onPressed: () {
-        
-        sound.playButtonSound(context);
+        //sound.playButton//sound(context);
         for (bool element in myList) {
           if (element == true) {
             checkIsChechk = true;

@@ -128,7 +128,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                           index,
                           Provider.of<GameSettingsModel>(context).playerCount,
                         );
-    
+
                         //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
                         Provider.of<Player>(context).createPlayerfunc(
                           context,
@@ -140,7 +140,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                           (Provider.of<GameSettingsModel>(context).playerCount +
                               3),
                         );
-    
+
                         //burada player oluşturulabilir*-*-*-*-*-*-*-*-*
                         return Padding(
                             padding: EdgeInsets.only(bottom: screenHeight / 45),

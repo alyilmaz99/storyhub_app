@@ -9,13 +9,13 @@ class NasilOylamaSoruIsaretiButton extends StatelessWidget {
       : super(key: key);
   final double myHeight;
   final double myWidth;
-  
+
   @override
   Widget build(BuildContext context) {
-    ButtonSound sound = ButtonSound();
+    //Button//sound //sound = Button//sound();
     return GestureDetector(
       onTap: () {
-        sound.playButtonSound(context);
+        //sound.playButton//sound(context);
         showDialog(
             context: context,
             builder: (BuildContext context) {

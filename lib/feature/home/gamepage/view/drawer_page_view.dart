@@ -13,7 +13,7 @@ class DrawerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ButtonSound sound = ButtonSound();
+    //Button//sound //sound = Button//sound();
     //Size( MediaQuery.of(context).size.width/ 1.4,MediaQuery.of(context).size.height/ 13);
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -28,7 +28,7 @@ class DrawerPage extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {
-                sound.playButtonSound(context);
+                //sound.playButton//sound(context);
                 Navigator.pop(context);
                 Navigator.push(
                     context,
@@ -57,7 +57,7 @@ class DrawerPage extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {
-                sound.playButtonSound(context);
+                //sound.playButton//sound(context);
                 Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
@@ -82,7 +82,7 @@ class DrawerPage extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {
-                sound.playButtonSound(context);
+                //sound.playButton//sound(context);
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -110,7 +110,7 @@ class DrawerPage extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 13,
             child: ElevatedButton(
               onPressed: () {
-                sound.playButtonSound(context);
+                //sound.playButton//sound(context);
                 exit(0);
               },
               style: ElevatedButton.styleFrom(
