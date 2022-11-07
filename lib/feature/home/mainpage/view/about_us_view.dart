@@ -96,7 +96,7 @@ class _AboutUsViewState extends State<AboutUsView> {
                     IconButton(
                       onPressed: () {
                         const url =
-                            'https://www.instagram.com/vessac.software/';
+                            'https://www.instagram.com/vessac.gamestudios/';
                         launchURL(url);
                       },
                       icon: const Icon(

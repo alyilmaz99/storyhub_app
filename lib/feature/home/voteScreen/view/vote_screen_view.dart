@@ -97,7 +97,7 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                       top: screenWidth / 9,
                     ),
                     child: NasilOylamaSoruIsaretiButton(
-                      myHeight: screenHeight / 2.7,
+                      myHeight: screenHeight / 8,
                       myWidth: screenWidth / 1.5,
                     ),
                   ),

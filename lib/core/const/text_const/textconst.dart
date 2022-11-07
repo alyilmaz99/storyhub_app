@@ -27,7 +27,7 @@ Vessac Software tarafından geliştirilmiştir tüm hakları saklıdır""";
 
   static const String contactUs = "Bize Ulaşabilirsin!";
   static const String ourLinkedin = "vessac-software";
-  static const String ourInstaUserName = "@vessac.software";
+  static const String ourInstaUserName = "@vessac.gamestudios";
   static const String ourMailAddress = "contact@vessac.com";
   static const String ourWebSite = "vessac.com";
   //STATS PAGE

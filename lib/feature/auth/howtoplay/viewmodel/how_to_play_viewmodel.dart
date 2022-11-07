@@ -36,16 +36,31 @@ class OnboardingItems {
       OnboardingItem(
         title: "NASIL OYNANIR?",
         subtitle:
-            "Grup üyeleri kartlarda bulunan kelimelerle oyunu devam ettirir.",
+            " Oyuncular okunan senaryonun devamını verilen kartları da kullanarak belirlenen süre bitene kadar devam ettirmeye çalışır ",
         image: "assets/images/slider/cards.png",
         number: 2,
       ),
       OnboardingItem(
         title: "NASIL OYNANIR?",
         subtitle:
-            "Oyun öncesinde belirlenen süre içinde anlatımın bitirilmesi gerekir.",
-        image: "assets/images/slider/9.png",
+            "Son tur da tamamlandığında belirlenen ya da rastgele bir oyuncu oyunu finale bağlar",
+        image: "assets/images/slider/bayrak.png",
         number: 3,
+      ),
+
+      OnboardingItem(
+        title: "NASIL OYNANIR?",
+        subtitle:
+            "Tüm oyuncular yıldızlar ile oylanır ve en iyi anlatıcı belirlenir",
+        image: "assets/images/slider/cakbeslik.png",
+        number: 4,
+      ),
+      OnboardingItem(
+        title: "NASIL OYNANIR?",
+        subtitle:
+            "En iyi anlatıcıyı belirleme zamanı",
+        image: "assets/images/slider/bosluk.png",
+        number: 4,
       ),
     ];
     return hwplay;
@@ -55,7 +70,7 @@ class OnboardingItems {
 abstract class HowToPlayViewModel extends State<HowToPlayView> {
   final controller = PageController(initialPage: 0);
 
-  final int numPages = 3;
+  final int numPages = 5;
   int currentPage = 0;
   //Button//sound //sound = Button//sound();
   void onDonePress() {
@@ -82,7 +97,7 @@ abstract class HowToPlayViewModel extends State<HowToPlayView> {
 
   void endSlide() {
     // //sound.playButton//sound(context);
-    controller.jumpToPage(3);
+    controller.jumpToPage(5);
   }
 }
 
