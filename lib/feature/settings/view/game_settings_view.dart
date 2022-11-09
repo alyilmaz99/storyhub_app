@@ -102,7 +102,7 @@ class _GameSettingsViewState extends State<GameSettingsView> {
                         // Container(
                         //   child: Image(
                         //     image:
-                        //         AssetImage('assets/images/human/human1.png'),
+                        //         AssetImage('assets/images/human/human1.jpg'),
                         //     fit: BoxFit.cover,
                         //     height: screenHeight / 10,
                         //   ),

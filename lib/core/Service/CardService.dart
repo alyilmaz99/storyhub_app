@@ -87,8 +87,8 @@ class CardService {
 
   CardGame randomCard(List<Senaryo> scenariosParam, int percentTip1,
       int percentTip2, int otherTips) {
-    // String nameCard = scenariosParam[0].tip1![0] != null ? scenariosParam[1].tip1![0] : "asa.png" ;
-    String nameImageCard = "asa.png";
+    // String nameCard = scenariosParam[0].tip1![0] != null ? scenariosParam[1].tip1![0] : "asa.jpg" ;
+    String nameImageCard = "asa.jpg";
 
     String selectionrandomCard = randomChoice(['tip1', 'tip2', 'other'],
         [percentTip1 / 100, percentTip2 / 100, otherTips / 100]);
@@ -100,7 +100,7 @@ class CardService {
       int numrandom = _random.nextInt(scenariosParam.length);
       int numrandom2 = _random2.nextInt(scenariosParam[numrandom].tip1.length);
       nameImageCard = scenariosParam[numrandom].tip1[numrandom2];
-      // nameImageCard = scenariosParam[numrandom].tip1[numrandom2] != null ? scenariosParam[numrandom].tip1[numrandom2] : "asa.png" ;
+      // nameImageCard = scenariosParam[numrandom].tip1[numrandom2] != null ? scenariosParam[numrandom].tip1[numrandom2] : "asa.jpg" ;
     }
     if (selectionrandomCard == 'tip2') {
       int numrandom = _random.nextInt(scenariosParam.length);
@@ -124,7 +124,7 @@ class CardService {
       }
     }
 
-    String nameCard = nameImageCard.replaceAll(RegExp('[.png]'), '');
+    String nameCard = nameImageCard.replaceAll(RegExp('[.jpg]'), '');
     return CardGame(nameCard, true, nameImageCard);
   }
 

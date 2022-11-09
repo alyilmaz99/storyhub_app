@@ -58,7 +58,7 @@ class _SplashScreenViewState extends SplashScreenViewModel {
               height: MediaQuery.of(context).size.height / 7,
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/vessac2.png'),
+                  image: AssetImage('assets/images/vessac2.jpg'),
                   fit: BoxFit.fill,
                 ),
               ),

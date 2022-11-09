@@ -76,7 +76,7 @@ class _SortingTableViewState extends State<SortingTableView> {
                           Provider.of<Vote>(context, listen: false)
                               .playerList3[index]
                               .image,
-                          'assets/images/third.png',
+                          'assets/images/third.jpg',
                           index),
                     );
                   },

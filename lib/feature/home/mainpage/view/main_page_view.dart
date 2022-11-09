@@ -32,7 +32,7 @@ class _MainPageState extends MainPageViewModel {
                 children: [
                   Row(
                     children: [
-                      Image.asset("assets/images/exitpopupimage.png"),
+                      Image.asset("assets/images/exitpopupimage.jpg"),
                       const Text(
                         "Emin Misiniz?",
                         style: TextStyle(

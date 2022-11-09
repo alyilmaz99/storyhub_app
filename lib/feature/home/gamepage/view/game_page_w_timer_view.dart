@@ -53,7 +53,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                   children: [
                     Row(
                       children: [
-                        Image.asset("assets/images/exitpopupimage.png"),
+                        Image.asset("assets/images/exitpopupimage.jpg"),
                         const Text(
                           "Emin Misiniz?",
                           style: TextStyle(
@@ -222,7 +222,7 @@ class _GamePageWithTimerState extends GamePageWithTimerViewModel {
                     height: screenHeight / 2.7,
                     //width: screenHeight /2.2,
                     child: Image.asset(
-                      'assets/images/timerlast.png',
+                      'assets/images/timerlast.jpg',
                       fit: BoxFit.fill,
                     ),
                   ),

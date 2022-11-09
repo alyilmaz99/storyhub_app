@@ -41,7 +41,7 @@ Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
               children: [
                 Row(
                   children: [
-                    Image.asset("assets/images/exitpopupimage.png"),
+                    Image.asset("assets/images/exitpopupimage.jpg"),
                     const Text(
                       "Emin Misiniz?",
                       style: TextStyle(

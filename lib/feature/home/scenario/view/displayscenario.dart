@@ -87,7 +87,7 @@ class _DisplayScenario extends State<DisplayScenario> {
                             decoration: const BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage(
-                                      "assets/images/cards/emptycard.png"),
+                                      "assets/images/cards/emptycard.jpg"),
                                   fit: BoxFit.cover),
                             ),
                             child: Container(
