@@ -139,7 +139,7 @@ class _FinalPageState extends State<FinalPageView> {
                           onPressed: () {},
                           child: IconButton(
                             icon: Image.asset(
-                              "assets/images/randomButton.png",
+                              "assets/images/randomButton.jpg",
                             ),
                             onPressed: () {
                               //sound.playButton//sound(context);

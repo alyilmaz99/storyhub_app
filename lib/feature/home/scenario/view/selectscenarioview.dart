@@ -144,7 +144,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                           decoration: BoxDecoration(
                                               image: DecorationImage(
                                                 image: AssetImage(
-                                                    "assets/images/senaryolar/${filteredList[index].senaryoNumber}.png"),
+                                                    "assets/images/senaryolar/${filteredList[index].senaryoNumber}.jpg"),
                                                 fit: BoxFit.fill,
                                               ),
                                               borderRadius:
@@ -401,7 +401,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
 
   Widget buildIcon1() {
     return IconButton(
-      icon: Image.asset("assets/images/Frame.png"),
+      icon: Image.asset("assets/images/Frame.jpg"),
       iconSize: 50,
       onPressed: () {},
     );

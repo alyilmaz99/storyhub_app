@@ -22,7 +22,7 @@ class NasilOynanirSoruIsaretiButton extends StatelessWidget {
                   child: Column(
                     children: [
                       const Spacer(),
-                      Image.asset('assets/images/oylamanasılyapılır.png'),
+                      Image.asset('assets/images/oylamanasılyapılır.jpg'),
                       const Spacer(),
                       Text(
                         "Nasıl Oynanır?", //Nasıl Oynanır?//
@@ -41,7 +41,7 @@ class NasilOynanirSoruIsaretiButton extends StatelessWidget {
             });
       },
       child: Image.asset(
-        'assets/images/soruisareti.png',
+        'assets/images/soruisareti.jpg',
       ),
     );
   }

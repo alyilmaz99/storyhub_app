@@ -55,7 +55,7 @@ class _CountdownTimerState extends CountdownTimerViewModel {
       height: screenHeight / 5,
       child: Stack(children: [
         Image.asset(
-          'assets/images/timer.png',
+          'assets/images/timer.jpg',
           fit: BoxFit.fill,
         ),
             Positioned(

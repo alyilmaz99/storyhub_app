@@ -77,7 +77,7 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                         height: screenHeight / 10,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage('assets/images/human/human3.png'),
+                            image: AssetImage('assets/images/human/human3.jpg'),
                             fit: BoxFit.fill,
                           ),
                         ),

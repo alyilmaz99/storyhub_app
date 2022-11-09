@@ -48,7 +48,7 @@ class _TappedCardState extends State<TappedCard> {
       flipOnTouch: !(GameContreller().cancelFlipCard),
       onFlipDone: (status) {
         print(status);
-        var secondNameForCount = assetImageCardFront!.split('.png');
+        var secondNameForCount = assetImageCardFront!.split('.jpg');
         var testF = secondNameForCount[0].split('assets/images/cards/');
         print(secondNameForCount);
         print(testF);

@@ -41,7 +41,7 @@ class _GameScreenState extends GameScreenViewModel {
                                   color: Colors.white,
                                 ),
                       ),
-                      Image.asset("assets/images/front.png"),
+                      Image.asset("assets/images/front.jpg"),
                       NormalButton(
                         myFunction: () {
                           setState(() {
@@ -92,7 +92,7 @@ class _GameScreenState extends GameScreenViewModel {
                                   color: Colors.white,
                                 ),
                       ),
-                      Image.asset("assets/images/front.png"),
+                      Image.asset("assets/images/front.jpg"),
                       NormalButton(
                         myFunction: () {
                           setState(() {

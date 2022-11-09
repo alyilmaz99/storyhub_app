@@ -55,7 +55,7 @@ Widget buildContainers(
           height: screenHeight / 10,
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/start.png'),
+              image: AssetImage('assets/images/start.jpg'),
             ),
           ),
         ),
