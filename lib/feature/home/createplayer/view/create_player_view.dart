@@ -60,7 +60,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
     // }
 
     String getImagePath(int number) {
-      String myImageString = 'assets/images/profiles/$number.jpg';
+      String myImageString = 'assets/images/profiles/$number.png';
       return myImageString;
     }
 
@@ -192,7 +192,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                 decoration: BoxDecoration(
                     image: DecorationImage(
                   image:
-                      AssetImage('assets/images/profiles/$numberforimages.jpg'),
+                      AssetImage('assets/images/profiles/$numberforimages.png'),
                   opacity: 1,
                   fit: BoxFit.fill,
                 )),
@@ -240,7 +240,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   child: IconButton(
                     onPressed: () {},
                     icon: const Image(
-                      image: AssetImage('assets/images/check1.jpg'),
+                      image: AssetImage('assets/images/check1.png'),
                     ),
                   ),
                 )
@@ -250,7 +250,7 @@ class _CreatePlayerViewState extends CreatePlayerViewModel {
                   child: IconButton(
                     onPressed: () {},
                     icon: const Image(
-                      image: AssetImage('assets/images/check0.jpg'),
+                      image: AssetImage('assets/images/check0.png'),
                     ),
                   ),
                 ),

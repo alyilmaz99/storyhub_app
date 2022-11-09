@@ -23,9 +23,12 @@ Future main() async {
   /* GELİŞTİRME İÇİN GEÇİCİ LİSTE
      LİSTE GEREKLİ PARAMETLERE DIŞARIDAN VERİLİNCE BU KALDIRILACAK */
   List<PlayerSelectionModel> tempList = [
-    PlayerSelectionModel(imgPath: "assets/images/profiles/1.png", playerName: "Player 1"),
-    PlayerSelectionModel(imgPath: "assets/images/profiles/2.png", playerName: "Player 2"),
-    PlayerSelectionModel(imgPath: "assets/images/profiles/3.png", playerName: "Player 3"),
+    PlayerSelectionModel(
+        imgPath: "assets/images/profiles/1.png", playerName: "Player 1"),
+    PlayerSelectionModel(
+        imgPath: "assets/images/profiles/2.png", playerName: "Player 2"),
+    PlayerSelectionModel(
+        imgPath: "assets/images/profiles/3.png", playerName: "Player 3"),
   ];
   final prefs = await SharedPreferences.getInstance();
   final showMainPage = prefs.getBool('showMainPage') ?? false;
@@ -33,13 +36,14 @@ Future main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider<HowToPlayModel>(create: (BuildContext context) => HowToPlayModel()),
+        ChangeNotifierProvider<HowToPlayModel>(
+            create: (BuildContext context) => HowToPlayModel()),
         ChangeNotifierProvider<PlayerCarouselViewModel>(
           create: (BuildContext context) => PlayerCarouselViewModel(
             playerList: tempList,
             map: {},
             choosenName: "isim",
-            choosenImgPath: "assets/images/blankPerson.jpg",
+            choosenImgPath: "assets/images/blankPerson.png",
             index: 0,
             countTour: 1,
           ),
@@ -47,17 +51,21 @@ Future main() async {
         ChangeNotifierProvider<SelectScenarioModel>(
           create: (BuildContext context) => SelectScenarioModel(),
         ),
-        ChangeNotifierProvider<SettingsModel>(create: (BuildContext context) => SettingsModel()),
+        ChangeNotifierProvider<SettingsModel>(
+            create: (BuildContext context) => SettingsModel()),
         ChangeNotifierProvider<GameSettingsModel>(
-            create: (BuildContext context) =>
-                GameSettingsModel(playerCount: 3, timerValue: 20, roundSpeedValue: 1, roundCount: 3)),
+            create: (BuildContext context) => GameSettingsModel(
+                playerCount: 3,
+                timerValue: 20,
+                roundSpeedValue: 1,
+                roundCount: 3)),
         ChangeNotifierProvider<FinalPageViewModel>(
             create: (BuildContext context) => FinalPageViewModel(
                 isFinal: false,
                 playerList: tempList,
                 map: {},
                 choosenName: "isim",
-                choosenImgPath: "assets/images/blankPerson.jpg")),
+                choosenImgPath: "assets/images/blankPerson.png")),
         ChangeNotifierProvider<PlayerSelectionModel>(
           create: (BuildContext context) => PlayerSelectionModel(
             imgPath: "assets/images/human/human1.png",
@@ -133,10 +141,12 @@ class MyApp extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           shadowColor: Colors.transparent,
                           backgroundColor: const Color.fromRGBO(255, 0, 0, 20),
-                          minimumSize:
-                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
-                          maximumSize:
-                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                          minimumSize: Size(
+                              MediaQuery.of(context).size.width / 4.5,
+                              MediaQuery.of(context).size.height / 30),
+                          maximumSize: Size(
+                              MediaQuery.of(context).size.width / 4.5,
+                              MediaQuery.of(context).size.height / 20),
                         ),
                         onPressed: () => exit(0),
                         child: const Text(
@@ -153,11 +163,14 @@ class MyApp extends StatelessWidget {
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           shadowColor: Colors.transparent,
-                          backgroundColor: const Color.fromRGBO(0, 255, 25, 100),
-                          minimumSize:
-                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
-                          maximumSize:
-                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                          backgroundColor:
+                              const Color.fromRGBO(0, 255, 25, 100),
+                          minimumSize: Size(
+                              MediaQuery.of(context).size.width / 4.5,
+                              MediaQuery.of(context).size.height / 30),
+                          maximumSize: Size(
+                              MediaQuery.of(context).size.width / 4.5,
+                              MediaQuery.of(context).size.height / 20),
                         ),
                         onPressed: () => Navigator.pop(context, true),
                         child: const Text(

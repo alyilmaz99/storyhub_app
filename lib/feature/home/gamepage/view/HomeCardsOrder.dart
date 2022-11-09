@@ -77,7 +77,7 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                         height: screenHeight / 10,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage('assets/images/human/human3.jpg'),
+                            image: AssetImage('assets/images/human/human3.png'),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -92,8 +92,8 @@ class _HomeCardsOrderState extends HomeCardsOrderViewModel {
                             primary: const Color.fromRGBO(216, 91, 47, 0.7),
                             minimumSize:
                                 Size(screenWidth / 4, screenHeight / 40)),
-                        child: const Text("İsim",
-                          
+                        child: const Text(
+                          "İsim",
                           style: TextStyle(
                               fontSize: 15, fontWeight: FontWeight.w400),
                         ),

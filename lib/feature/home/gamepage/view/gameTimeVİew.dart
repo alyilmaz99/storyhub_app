@@ -4,13 +4,11 @@ import 'package:flutter/material.dart';
 
 import '../viewmodel/gameTİmeViewModel.dart';
 
-
 class CountdownTimer extends StatefulWidget {
-
   int startTimerFrom;
   String? pageText;
 
-  stopTime(){}
+  stopTime() {}
 
   CountdownTimer({
     Key? key,
@@ -19,16 +17,16 @@ class CountdownTimer extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<CountdownTimer> createState() => _CountdownTimerState(startTimerFrom: this.startTimerFrom, pageText: this.pageText);
+  State<CountdownTimer> createState() => _CountdownTimerState(
+      startTimerFrom: this.startTimerFrom, pageText: this.pageText);
 }
 
 class _CountdownTimerState extends CountdownTimerViewModel {
-  _CountdownTimerState({required super.startTimerFrom,required super.pageText});
+  _CountdownTimerState(
+      {required super.startTimerFrom, required super.pageText});
 
   @override
   CountdownTimer get widget => super.widget;
-
-
 
   @override
   void initState() {
@@ -38,7 +36,6 @@ class _CountdownTimerState extends CountdownTimerViewModel {
 
   @override
   Widget build(BuildContext context) {
-
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
@@ -55,16 +52,15 @@ class _CountdownTimerState extends CountdownTimerViewModel {
       height: screenHeight / 5,
       child: Stack(children: [
         Image.asset(
-          'assets/images/timer.jpg',
+          'assets/images/timer.png',
           fit: BoxFit.fill,
         ),
-            Positioned(
+        Positioned(
             bottom: 75,
             right: 60,
             child: Text(
               '$seconds',
-              style: TextStyle(
-                  fontSize: 25, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             )),
       ]),
     );

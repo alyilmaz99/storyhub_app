@@ -98,7 +98,7 @@ class Player with ChangeNotifier {
   }
 
   String getimagePath(int? number) {
-    image = 'assets/images/profiles/$number.jpg';
+    image = 'assets/images/profiles/$number.png';
     return image;
   }
 }

@@ -32,7 +32,7 @@ class _MainPageState extends MainPageViewModel {
                 children: [
                   Row(
                     children: [
-                      Image.asset("assets/images/exitpopupimage.jpg"),
+                      Image.asset("assets/images/exitpopupimage.png"),
                       const Text(
                         "Emin Misiniz?",
                         style: TextStyle(
@@ -50,10 +50,12 @@ class _MainPageState extends MainPageViewModel {
                         style: ElevatedButton.styleFrom(
                           shadowColor: Colors.transparent,
                           backgroundColor: const Color.fromRGBO(255, 0, 0, 20),
-                          minimumSize:
-                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
-                          maximumSize:
-                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                          minimumSize: Size(
+                              MediaQuery.of(context).size.width / 4.5,
+                              MediaQuery.of(context).size.height / 30),
+                          maximumSize: Size(
+                              MediaQuery.of(context).size.width / 4.5,
+                              MediaQuery.of(context).size.height / 20),
                         ),
                         onPressed: () => exit(0),
                         child: const Text(
@@ -70,11 +72,14 @@ class _MainPageState extends MainPageViewModel {
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           shadowColor: Colors.transparent,
-                          backgroundColor: const Color.fromRGBO(0, 255, 25, 100),
-                          minimumSize:
-                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
-                          maximumSize:
-                              Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                          backgroundColor:
+                              const Color.fromRGBO(0, 255, 25, 100),
+                          minimumSize: Size(
+                              MediaQuery.of(context).size.width / 4.5,
+                              MediaQuery.of(context).size.height / 30),
+                          maximumSize: Size(
+                              MediaQuery.of(context).size.width / 4.5,
+                              MediaQuery.of(context).size.height / 20),
                         ),
                         onPressed: () => Navigator.pop(context, true),
                         child: const Text(
@@ -133,9 +138,11 @@ class _MainPageState extends MainPageViewModel {
                         showGeneralDialog(
                           context: context,
                           barrierDismissible: true,
-                          barrierLabel: MaterialLocalizations.of(context).modalBarrierDismissLabel,
+                          barrierLabel: MaterialLocalizations.of(context)
+                              .modalBarrierDismissLabel,
                           barrierColor: Colors.black.withOpacity(0.5),
-                          pageBuilder: (context, animation1, animation2) => SettingsPopup(),
+                          pageBuilder: (context, animation1, animation2) =>
+                              SettingsPopup(),
                           transitionDuration: const Duration(milliseconds: 250),
                           transitionBuilder: (context, a1, a2, widget) {
                             return Transform.scale(
@@ -155,7 +162,10 @@ class _MainPageState extends MainPageViewModel {
                     child: IconButton(
                         onPressed: () {
                           //sound.playButton//sound(context);
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutUsView()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const AboutUsView()));
                         },
                         icon: const Icon(
                           Icons.info,
@@ -176,9 +186,11 @@ class _MainPageState extends MainPageViewModel {
                         buildIcon(),
                         const SizedBox(height: 10),
                         buildText(),
-                        SizedBox(height: MediaQuery.of(context).size.height / 8),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 8),
                         buildFirstButton(),
-                        SizedBox(height: MediaQuery.of(context).size.height / 15),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 15),
                         buildSecondButton(context),
                       ],
                     ),

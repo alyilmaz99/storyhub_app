@@ -401,7 +401,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
 
   Widget buildIcon1() {
     return IconButton(
-      icon: Image.asset("assets/images/Frame.jpg"),
+      icon: Image.asset("assets/images/Frame.png"),
       iconSize: 50,
       onPressed: () {},
     );
