@@ -59,10 +59,12 @@ Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
                       style: ElevatedButton.styleFrom(
                         shadowColor: Colors.transparent,
                         backgroundColor: const Color.fromRGBO(255, 0, 0, 20),
-                        minimumSize:
-                            Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
-                        maximumSize:
-                            Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                        minimumSize: Size(
+                            MediaQuery.of(context).size.width / 4.5,
+                            MediaQuery.of(context).size.height / 30),
+                        maximumSize: Size(
+                            MediaQuery.of(context).size.width / 4.5,
+                            MediaQuery.of(context).size.height / 20),
                       ),
                       onPressed: () => exit(0),
                       child: const Text(
@@ -80,12 +82,14 @@ Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
                       style: ElevatedButton.styleFrom(
                         shadowColor: Colors.transparent,
                         backgroundColor: const Color.fromRGBO(0, 255, 25, 100),
-                        minimumSize:
-                            Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 30),
-                        maximumSize:
-                            Size(MediaQuery.of(context).size.width / 4.5, MediaQuery.of(context).size.height / 20),
+                        minimumSize: Size(
+                            MediaQuery.of(context).size.width / 4.5,
+                            MediaQuery.of(context).size.height / 30),
+                        maximumSize: Size(
+                            MediaQuery.of(context).size.width / 4.5,
+                            MediaQuery.of(context).size.height / 20),
                       ),
-                      onPressed: () => Navigator.pop(context, true),
+                      onPressed: () => Navigator.pop(context),
                       child: const Text(
                         "No",
                         style: TextStyle(

@@ -172,7 +172,7 @@ class MyApp extends StatelessWidget {
                               MediaQuery.of(context).size.width / 4.5,
                               MediaQuery.of(context).size.height / 20),
                         ),
-                        onPressed: () => Navigator.pop(context, true),
+                        onPressed: () => Navigator.pop(context),
                         child: const Text(
                           "No",
                           style: TextStyle(

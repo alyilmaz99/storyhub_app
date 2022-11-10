@@ -24,42 +24,40 @@ class OnboardingItems {
       OnboardingItem(
         title: "NASIL OYNANIR?",
         subtitle: "Story Hub grup halinde oynanan bir oyundur",
-        image: "assets/images/slider/6.jpg",
+        image: "assets/images/slider/6.png",
         number: 0,
       ),
       OnboardingItem(
         title: "NASIL OYNANIR?",
         subtitle: "Bir kişi seçilen senaryoyu okuyarak oyunu başlatır.",
-        image: "assets/images/slider/card.jpg",
+        image: "assets/images/slider/card.png",
         number: 1,
       ),
       OnboardingItem(
         title: "NASIL OYNANIR?",
         subtitle:
             " Oyuncular okunan senaryonun devamını verilen kartları da kullanarak belirlenen süre bitene kadar devam ettirmeye çalışır ",
-        image: "assets/images/slider/cards.jpg",
+        image: "assets/images/slider/cards.png",
         number: 2,
       ),
       OnboardingItem(
         title: "NASIL OYNANIR?",
         subtitle:
             "Son tur da tamamlandığında belirlenen ya da rastgele bir oyuncu oyunu finale bağlar",
-        image: "assets/images/slider/bayrak.jpg",
+        image: "assets/images/slider/bayrak.png",
         number: 3,
       ),
-
       OnboardingItem(
         title: "NASIL OYNANIR?",
         subtitle:
             "Tüm oyuncular yıldızlar ile oylanır ve en iyi anlatıcı belirlenir",
-        image: "assets/images/slider/cakbeslik.jpg",
+        image: "assets/images/slider/cakbeslik.png",
         number: 4,
       ),
       OnboardingItem(
         title: "NASIL OYNANIR?",
-        subtitle:
-            "En iyi anlatıcıyı belirleme zamanı",
-        image: "assets/images/slider/bosluk.jpg",
+        subtitle: "En iyi anlatıcıyı belirleme zamanı",
+        image: "assets/images/slider/bosluk.png",
         number: 4,
       ),
     ];

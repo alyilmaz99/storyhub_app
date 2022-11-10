@@ -84,15 +84,19 @@ class _FinalPageState extends State<FinalPageView> {
         ),
         body: Container(
             decoration: const BoxDecoration(
-                gradient: RadialGradient(radius: 1, colors: [
-              // Color.fromARGB(255, 61, 16, 91), Eski renkler
-              // Color.fromARGB(255, 36, 10, 63),
-              // Color.fromARGB(255, 19, 6, 45),
-              // Color.fromARGB(255, 13, 5, 38),
-              Color.fromRGBO(59, 52, 114, 1),
-              Color.fromRGBO(42, 37, 80, 1),
-              Color.fromRGBO(37, 29, 58, 1),
-            ])),
+              gradient: RadialGradient(
+                radius: 1,
+                colors: [
+                  // Color.fromARGB(255, 61, 16, 91), Eski renkler
+                  // Color.fromARGB(255, 36, 10, 63),
+                  // Color.fromARGB(255, 19, 6, 45),
+                  // Color.fromARGB(255, 13, 5, 38),
+                  Color.fromRGBO(59, 52, 114, 1),
+                  Color.fromRGBO(42, 37, 80, 1),
+                  Color.fromRGBO(37, 29, 58, 1),
+                ],
+              ),
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
