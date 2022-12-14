@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../../../../core/components/popup/SettingsPopup.dart';
 import 'about_us_view.dart';
 import '../viewmodel/main_page_viewmodel.dart';
@@ -192,6 +193,13 @@ class _MainPageState extends MainPageViewModel {
                         SizedBox(
                             height: MediaQuery.of(context).size.height / 15),
                         buildSecondButton(context),
+                        Container(
+                          child: AdWidget(
+                            ad: staticAd!,
+                          ),
+                          width: staticAd!.size.width.toDouble(),
+                          height: staticAd!.size.height.toDouble(),
+                        ),
                       ],
                     ),
                   ),

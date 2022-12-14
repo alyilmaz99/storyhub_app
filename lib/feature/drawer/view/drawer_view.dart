@@ -121,7 +121,7 @@ class FullScreenModal extends DrawerViewModel {
                       //disabledBackgroundColor: Colors.white,
                       minimumSize: Size(screenWidth / 1.8, screenHeight / 14)),
                   child: const Text(
-                    "Sıfırla",
+                    "Yeniden Baslat",
                     style: TextStyle(
                         fontSize: 30,
                         fontFamily: 'GamerStation',
