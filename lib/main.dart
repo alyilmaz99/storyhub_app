@@ -17,6 +17,8 @@ import 'feature/settings/model/game_settings_model.dart';
 import 'feature/settings/model/settings_model.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +34,10 @@ Future main() async {
   ];
   final prefs = await SharedPreferences.getInstance();
   final showMainPage = prefs.getBool('showMainPage') ?? false;
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(
     MultiProvider(

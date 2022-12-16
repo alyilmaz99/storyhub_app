@@ -43,7 +43,7 @@ abstract class CartPageViewModel extends State<CardPage> {
   }
 
   void loadCards(Function callback) async {
-    await cardService.initCards();
+    await cardService.initCardFromFirebase();
     await senaryoService.initSenaryolar();
 
     setState(() {

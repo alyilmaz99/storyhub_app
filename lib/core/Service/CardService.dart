@@ -8,6 +8,7 @@ import '../../feature/home/gamepage/view/CardPAge.dart';
 import '../../feature/home/gamepage/view/tappedCard.dart';
 import '../components/card/CardGame.dart';
 import '../components/senaryo/Senaryo.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 enum Difficulty { kolay, orta, zor, none }
 
@@ -48,9 +49,36 @@ class CardService {
     return true;
   }
 
+  Future<bool> initCardFromFirebase() async {
+
+    Iterable iterateCards = new Iterable.empty();
+
+    final storageRef = FirebaseStorage.instance.ref();
+    Reference? pathReference = storageRef.child("cards.json");
+
+    try {
+      const oneMegabyte = 1024 * 1024;
+      final Uint8List? data = await pathReference.getData(oneMegabyte);
+      String dataString =String.fromCharCodes(data ?? []);
+      iterateCards = json.decode(dataString);
+      // Data for "images/island.jpg" is returned, use this as needed.
+    } on FirebaseException catch (e) {
+      // Handle any errors.
+    }
+
+    // jsonst = await rootBundle.loadString('assets/cards.json');
+
+    cards = List<CardGame>.from(
+        iterateCards.map((model) => CardGame.fromJson(model)));
+
+    isLoadedCards = true;
+
+    return true;
+  }
+
   List<CardGame> getCards() {
     if (cards.isEmpty) {
-      initCards();
+      initCardFromFirebase();
     }
 
     return cards;
