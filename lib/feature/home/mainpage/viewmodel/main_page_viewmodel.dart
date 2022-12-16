@@ -1,16 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:storyhub/feature/auth/howtoplay/view/how_to_play_view.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../view/main_page_view.dart';
 import '../../../settings/view/game_settings_view.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:storyhub/product/model/button_sound.dart';
 
 abstract class MainPageViewModel extends State<MainPage> {
-  //Button//sound //sound = Button//sound();
+  BannerAd? staticAd;
+  BannerAd? inlineAd;
+  bool staticAdloaded = false;
+  bool inlineAdloaded = false;
+  static const AdRequest request = AdRequest();
+  @override
+  void initState() {
+    loadStaticBannerAd();
+    super.initState();
+  }
+
+  void loadStaticBannerAd() {
+    staticAd = BannerAd(
+      adUnitId: 'ca-app-pub-3940256099942544~3347511713',
+      size: AdSize.banner,
+      request: request,
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          setState(
+            () {
+              staticAdloaded = true;
+            },
+          );
+        },
+        onAdFailedToLoad: (ad, error) {
+          ad.dispose();
+          print('failed ${error.message}');
+        },
+      ),
+    );
+    staticAd!.load();
+  }
+
+//Button//sound //sound = Button//sound();
   Widget buildFirstButton() {
     return SizedBox(
       width: MediaQuery.of(context).size.width / 1.4,
