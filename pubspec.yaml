@@ -68,6 +68,8 @@ dependencies:
   assets_audio_player: ^3.0.5
   #for icons
   flutter_launcher_icons: ^0.10.0
+  firebase_core: ^2.4.0
+  firebase_storage: ^11.0.8
   google_mobile_ads: ^2.3.0
 
 flutter_icons:
