@@ -33,6 +33,7 @@ class _CardPageState extends CartPageViewModel {
 
   @override
   void initState() {
+    loadCards(callback);
     super.initState();
   }
 
@@ -55,7 +56,6 @@ class _CardPageState extends CartPageViewModel {
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
 
-    loadCards(callback);
     Future<bool?> showWarning(BuildContext context) async => showDialog<bool>(
         context: context,
         builder: (context) => AlertDialog(

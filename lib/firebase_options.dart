@@ -63,7 +63,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '1070059352583',
     projectId: 'storyhub-fd8a4',
     storageBucket: 'storyhub-fd8a4.appspot.com',
-    iosClientId: '1070059352583-e7kciuvjh2sjb5lc1f4rsdc5o8c8933u.apps.googleusercontent.com',
+    iosClientId:
+        '1070059352583-e7kciuvjh2sjb5lc1f4rsdc5o8c8933u.apps.googleusercontent.com',
     iosBundleId: 'com.example.storyhub',
   );
 }
