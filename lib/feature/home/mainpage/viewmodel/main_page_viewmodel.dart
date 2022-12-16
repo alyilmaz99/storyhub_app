@@ -1,3 +1,5 @@
+// ignore_for_file: unused_field
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,16 +16,31 @@ abstract class MainPageViewModel extends State<MainPage> {
   BannerAd? inlineAd;
   bool staticAdloaded = false;
   bool inlineAdloaded = false;
+  InterstitialAd? _interstitialAd;
+  bool _isAdLoaded = false;
+
   static const AdRequest request = AdRequest();
   @override
   void initState() {
     loadStaticBannerAd();
+    _initAd();
     super.initState();
+  }
+
+  void _initAd() {
+    InterstitialAd.load(
+      adUnitId: 'ca-app-pub-3940256099942544/8691691433',
+      request: AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: onAdLoaded,
+        onAdFailedToLoad: (error) {},
+      ),
+    );
   }
 
   void loadStaticBannerAd() {
     staticAd = BannerAd(
-      adUnitId: 'ca-app-pub-3940256099942544~3347511713',
+      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
       size: AdSize.banner,
       request: request,
       listener: BannerAdListener(
@@ -36,7 +53,7 @@ abstract class MainPageViewModel extends State<MainPage> {
         },
         onAdFailedToLoad: (ad, error) {
           ad.dispose();
-          print('failed ${error.message}');
+          print('=========failed ${error.message}');
         },
       ),
     );
@@ -50,7 +67,11 @@ abstract class MainPageViewModel extends State<MainPage> {
       height: MediaQuery.of(context).size.height / 10,
       child: OutlinedButton(
         onPressed: () {
-          //sound.playButton//sound(context);
+          if (_isAdLoaded) {
+            print('==================================yuklendi');
+            _interstitialAd?.show();
+          }
+
           HapticFeedback.lightImpact();
           //System//sound.play(System//soundType.click);
           Provider.of<PlayerCarouselViewModel>(context, listen: false)
@@ -61,6 +82,8 @@ abstract class MainPageViewModel extends State<MainPage> {
               context,
               MaterialPageRoute(
                   builder: (context) => const GameSettingsView()));
+
+          //sound.playButton//sound(context);
         },
         style: ButtonStyle(
           shadowColor: MaterialStateProperty.all<Color>(
@@ -137,5 +160,18 @@ abstract class MainPageViewModel extends State<MainPage> {
       iconSize: 150,
       onPressed: () {},
     );
+  }
+
+  void onAdLoaded(InterstitialAd ad) {
+    _interstitialAd = ad;
+    _isAdLoaded = true;
+    _interstitialAd!.fullScreenContentCallback =
+        FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
+      _interstitialAd?.dispose();
+      _interstitialAd = null;
+    }, onAdFailedToShowFullScreenContent: (ad, error) {
+      _interstitialAd?.dispose();
+      _interstitialAd = null;
+    });
   }
 }
