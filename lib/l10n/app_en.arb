@@ -15,10 +15,10 @@
   "createPlayerReady" : "READY",
 
   "voteScreenWithStar" : "START",
-  "voteScreenFinish" : "fINISH",
+  "voteScreenFinish" : "FINISH",
 
   "sortingPageArrangement" : "ARRANGEMENT",
-  "sortingPageMainMenu" : "MAIN MENU",
+  "sortingPageMainMenu" : "SORTING TABLE",
 
 
   "settingsGameSettings" : "Settings",

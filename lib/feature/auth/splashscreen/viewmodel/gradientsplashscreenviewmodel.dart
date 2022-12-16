@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:page_animation_transition/animations/fade_animation_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
+
+import '../../../home/mainpage/view/main_page_view.dart';
 import '../../slider/view/sliderinformationview.dart';
 import '../view/gradientsplashscreenview.dart';
 

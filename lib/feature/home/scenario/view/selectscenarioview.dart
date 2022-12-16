@@ -5,7 +5,8 @@ import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:fluid_action_card/FluidActionCard/fluid_action_card.dart';
 import 'package:flutter/services.dart';
-import 'package:storyhub/core/Service/SenaryoServise.dart';
+import '../../../../core/Service/SenaryoServise.dart';
+import 'package:storyhub/core/Service/ad_mob_service.dart';
 import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'package:storyhub/feature/home/gamepage/view/HomeCardsOrder.dart';
 import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
@@ -13,7 +14,6 @@ import 'package:storyhub/feature/home/scenario/view/displayscenario.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
 
 import '../../../../core/components/senaryo/Senaryo.dart';
-import '../../../../product/model/button_sound.dart';
 
 class SelectScenarioView extends StatefulWidget {
   const SelectScenarioView({Key? key}) : super(key: key);
@@ -23,6 +23,12 @@ class SelectScenarioView extends StatefulWidget {
 }
 
 class _SelectScenarioViewState extends State<SelectScenarioView> {
+  @override
+  void initState() {
+    Provider.of<AdMobService>(context, listen: false).initAd();
+    super.initState();
+  }
+
   String category = "All";
   //Button//sound //sound = Button//sound();
   Future<List<Senaryo>> readJsonData() async {
@@ -328,6 +334,11 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                                           20.0)),
                                                         ),
                                                         onPressed: () {
+                                                          Provider.of<AdMobService>(
+                                                                  context,
+                                                                  listen: false)
+                                                              .showAdInterstitialAd();
+
                                                           //sound.playButton//sound(context);
                                                           Provider.of<PlayerCarouselViewModel>(
                                                                       context,

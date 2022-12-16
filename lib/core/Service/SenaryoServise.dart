@@ -1,7 +1,7 @@
 import 'dart:convert';
-import 'dart:math';
 
 import 'package:flutter/services.dart';
+
 import '../components/senaryo/Senaryo.dart';
 
 class SenaryoService {
@@ -41,5 +41,4 @@ class SenaryoService {
 
     return senaryolar;
   }
-
 }

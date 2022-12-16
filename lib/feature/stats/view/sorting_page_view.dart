@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
-import 'package:storyhub/feature/home/voteScreen/model/vote_model.dart';
-import 'package:storyhub/feature/stats/view/sorting_table_view.dart';
-import 'package:storyhub/feature/stats/viewmodel/sorting_page_viewmodel.dart';
+import 'package:storyhub/core/Service/ad_mob_service.dart';
+import '../../../core/components/playerCarousel/playerCarouselViewModel.dart';
+import '../../home/voteScreen/model/vote_model.dart';
+import 'sorting_table_view.dart';
+import '../viewmodel/sorting_page_viewmodel.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../../product/model/button_sound.dart';
@@ -14,6 +15,7 @@ class SortingPageView extends SortingPageViewModel {
   const SortingPageView({super.key});
   @override
   Widget build(BuildContext context) {
+    Provider.of<AdMobService>(context, listen: false).initAd();
     //Button//sound //sound = Button//sound();
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
@@ -104,6 +106,8 @@ class SortingPageView extends SortingPageViewModel {
             ElevatedButton(
               onPressed: () {
                 //sound.playButton//sound(context);
+                Provider.of<AdMobService>(context, listen: false)
+                    .showAdInterstitialAd();
                 HapticFeedback.lightImpact();
 
                 Navigator.of(context).pushAndRemoveUntil(

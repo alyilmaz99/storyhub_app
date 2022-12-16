@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/voteScreen/model/vote_model.dart';
-import 'package:storyhub/feature/home/voteScreen/viewmodel/vote_screen_viewmodel.dart';
-import 'package:storyhub/feature/settings/model/game_settings_model.dart';
-import 'package:storyhub/product/widgets/button/nasil_oylama_soru_isareti_button.dart';
+import '../../../../core/Service/ad_mob_service.dart';
+import '../model/vote_model.dart';
+import '../viewmodel/vote_screen_viewmodel.dart';
+import '../../../settings/model/game_settings_model.dart';
+import '../../../../product/widgets/button/nasil_oylama_soru_isareti_button.dart';
 
 class VoteScreenView extends StatefulWidget {
   const VoteScreenView({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class VoteScreenView extends StatefulWidget {
 class _VoteScreenViewState extends VoteScreenViewModel {
   @override
   void initState() {
+    Provider.of<AdMobService>(context, listen: false).initAd();
     super.initState();
     if (Provider.of<Vote>(context, listen: false).counterForTour ==
         Provider.of<GameSettingsModel>(context, listen: false).playerCount) {

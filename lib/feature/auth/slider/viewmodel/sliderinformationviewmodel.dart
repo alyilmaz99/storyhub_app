@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:storyhub/product/model/button_sound.dart';
+import '../../../../product/model/button_sound.dart';
 import '../../../home/mainpage/view/main_page_view.dart';
 import '../view/sliderinformationview.dart';
 

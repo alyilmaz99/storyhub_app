@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+
 import '../../../core/components/color/background_gradient_core.dart';
 
 class BackgroundDarkGradient extends BackgroundGradient {

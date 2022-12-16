@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
+import '../components/playerCarousel/playerCarouselViewModel.dart';
 import '../../feature/home/gamepage/view/CardPAge.dart';
 import '../../feature/home/gamepage/view/tappedCard.dart';
 import '../components/card/CardGame.dart';
@@ -50,7 +50,6 @@ class CardService {
   }
 
   Future<bool> initCardFromFirebase() async {
-
     Iterable iterateCards = new Iterable.empty();
 
     final storageRef = FirebaseStorage.instance.ref();
@@ -59,7 +58,7 @@ class CardService {
     try {
       const oneMegabyte = 1024 * 1024;
       final Uint8List? data = await pathReference.getData(oneMegabyte);
-      String dataString =String.fromCharCodes(data ?? []);
+      String dataString = String.fromCharCodes(data ?? []);
       iterateCards = json.decode(dataString);
       // Data for "images/island.jpg" is returned, use this as needed.
     } on FirebaseException catch (e) {

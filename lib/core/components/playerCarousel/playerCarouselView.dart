@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/core/components/playerCarousel/carouselItemView.dart';
-import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
+import 'carouselItemView.dart';
+import 'playerCarouselViewModel.dart';
 
 Widget carousel(BuildContext context, double screenHeight, double screenWidth,
     bool isOpen) {

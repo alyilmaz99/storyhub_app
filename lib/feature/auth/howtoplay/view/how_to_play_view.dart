@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:im_animations/main.dart';
-import 'package:storyhub/feature/auth/howtoplay/viewmodel/how_to_play_viewmodel.dart';
+import '../viewmodel/how_to_play_viewmodel.dart';
 
 import '../../../home/mainpage/view/main_page_view.dart';
 

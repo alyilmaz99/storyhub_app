@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/voteScreen/view/vote_screen_view.dart';
-import 'package:storyhub/feature/settings/model/game_settings_model.dart';
-import 'package:storyhub/feature/stats/view/sorting_page_view.dart';
+import 'package:storyhub/core/Service/ad_mob_service.dart';
+import '../view/vote_screen_view.dart';
+import '../../../settings/model/game_settings_model.dart';
+import '../../../stats/view/sorting_page_view.dart';
 import '../../../../product/model/button_sound.dart';
 import '../model/vote_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
 import '../../../home/mainpage/view/main_page_view.dart';
 import '../viewmodel/sliderinformationviewmodel.dart';
 

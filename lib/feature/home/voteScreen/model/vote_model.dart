@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
-import 'package:storyhub/feature/settings/model/game_settings_model.dart';
+import '../../createplayer/model/player_model.dart';
+import '../../../settings/model/game_settings_model.dart';
 
 class Vote with ChangeNotifier {
   int headerPlayer = 0;

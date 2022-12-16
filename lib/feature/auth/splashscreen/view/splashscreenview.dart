@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../viewmodel/splashscreenviewmodel.dart';
 
 class SplashScreenView extends StatefulWidget {

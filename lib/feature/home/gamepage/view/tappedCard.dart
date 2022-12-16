@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
+import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../../../../core/components/GameContreller.dart';
 
 import 'CardPAge.dart';

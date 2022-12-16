@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
+import 'package:storyhub/core/Service/ad_mob_service.dart';
 import 'package:storyhub/feature/auth/howtoplay/view/how_to_play_view.dart';
 import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../view/main_page_view.dart';
@@ -22,8 +23,11 @@ abstract class MainPageViewModel extends State<MainPage> {
   static const AdRequest request = AdRequest();
   @override
   void initState() {
+    Future.delayed(const Duration(milliseconds: 500), () async {
+      Provider.of<AdMobService>(context, listen: false).initAd();
+    });
     loadStaticBannerAd();
-    _initAd();
+
     super.initState();
   }
 
@@ -67,11 +71,18 @@ abstract class MainPageViewModel extends State<MainPage> {
       height: MediaQuery.of(context).size.height / 10,
       child: OutlinedButton(
         onPressed: () {
+          /*
+          if (_interstitialAd == null) {
+            _initAd();
+            _interstitialAd?.show();
+          }
           if (_isAdLoaded) {
             print('==================================yuklendi');
             _interstitialAd?.show();
           }
-
+          */
+          Provider.of<AdMobService>(context, listen: false)
+              .showAdInterstitialAd();
           HapticFeedback.lightImpact();
           //System//sound.play(System//soundType.click);
           Provider.of<PlayerCarouselViewModel>(context, listen: false)

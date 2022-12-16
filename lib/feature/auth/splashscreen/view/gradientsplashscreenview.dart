@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:im_animations/im_animations.dart';
 
 import '../viewmodel/gradientsplashscreenviewmodel.dart';
 

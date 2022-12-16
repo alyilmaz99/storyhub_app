@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:storyhub/feature/home/createplayer/view/create_player_view.dart';
+import '../../home/createplayer/view/create_player_view.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/product/model/button_sound.dart';
+import '../../../product/model/button_sound.dart';
 import '../model/game_settings_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 

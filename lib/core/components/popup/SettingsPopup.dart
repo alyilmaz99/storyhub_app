@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:provider/provider.dart';
+
 import '../../../feature/settings/model/settings_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsPopup extends StatefulWidget {
   @override

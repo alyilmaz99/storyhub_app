@@ -158,6 +158,9 @@ class _MainPageState extends MainPageViewModel {
                       },
                     ),
                   ),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(right: 20),
                     child: IconButton(
@@ -176,7 +179,6 @@ class _MainPageState extends MainPageViewModel {
                   ),
                 ],
               ),
-              SizedBox(height: MediaQuery.of(context).size.height / 20),
               Column(
                 children: [
                   Center(
@@ -193,12 +195,14 @@ class _MainPageState extends MainPageViewModel {
                         SizedBox(
                             height: MediaQuery.of(context).size.height / 15),
                         buildSecondButton(context),
-                        Container(
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 7),
+                        SizedBox(
+                          width: staticAd!.size.width.toDouble(),
+                          height: staticAd!.size.height.toDouble(),
                           child: AdWidget(
                             ad: staticAd!,
                           ),
-                          width: staticAd!.size.width.toDouble(),
-                          height: staticAd!.size.height.toDouble(),
                         ),
                       ],
                     ),

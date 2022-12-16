@@ -5,11 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
-import 'package:storyhub/core/lifecycle/life_cycle_manager.dart';
-import 'package:storyhub/feature/auth/howtoplay/model/how_to_play_model.dart';
-import 'package:storyhub/feature/auth/splashscreen/view/splashscreenview.dart';
-import 'package:storyhub/feature/home/scenario/model/select_scenerio_model.dart';
+import 'core/Service/ad_mob_service.dart';
+import 'core/components/playerCarousel/playerCarouselViewModel.dart';
+import 'core/lifecycle/life_cycle_manager.dart';
+import 'feature/auth/howtoplay/model/how_to_play_model.dart';
+import 'feature/auth/splashscreen/view/splashscreenview.dart';
+import 'feature/home/scenario/model/select_scenerio_model.dart';
 import 'feature/home/createplayer/model/player_model.dart';
 import 'feature/home/voteScreen/model/vote_model.dart';
 import 'product/model/player_selection_model.dart';
@@ -102,6 +103,9 @@ Future main() async {
         ),
         ChangeNotifierProvider<LifeCycleManager>(
           create: (BuildContext context) => LifeCycleManager(),
+        ),
+        ChangeNotifierProvider<AdMobService>(
+          create: (BuildContext context) => AdMobService(),
         ),
       ],
       child: MyApp(

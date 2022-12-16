@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../model/button_sound.dart';
-
 class NasilOylamaSoruIsaretiButton extends StatelessWidget {
   const NasilOylamaSoruIsaretiButton(
       {Key? key, required this.myHeight, required this.myWidth})

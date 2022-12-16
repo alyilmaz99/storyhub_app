@@ -1,12 +1,12 @@
 // ignore_for_file: deprecated_member_use
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'main_page_view.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutUsView extends StatefulWidget {
   const AboutUsView({super.key});
@@ -53,7 +53,7 @@ class _AboutUsViewState extends State<AboutUsView> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                 Padding(
+                Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
                     AppLocalizations.of(context)!.aboutUs,

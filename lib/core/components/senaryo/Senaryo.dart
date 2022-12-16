@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class Senaryo {
   final int senaryoNumber;
   final String senaryoText;
@@ -22,8 +20,8 @@ class Senaryo {
         longText = json['long-text'],
         shortText = json['short-text'],
         category = json['category'],
-        tip1 =((json['tip1'] ?? []) as List),
-        tip2 =((json['tip2'] ?? []) as List);
+        tip1 = ((json['tip1'] ?? []) as List),
+        tip2 = ((json['tip2'] ?? []) as List);
 
   Map<String, dynamic> toJson() => {
         'senaryoNumber': senaryoNumber,

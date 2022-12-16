@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/feature/home/mainpage/view/main_page_view.dart';
-import 'package:storyhub/feature/stats/viewmodel/sorting_table_viewmodel.dart';
+import 'package:storyhub/core/Service/ad_mob_service.dart';
+import '../../home/mainpage/view/main_page_view.dart';
+import '../viewmodel/sorting_table_viewmodel.dart';
 
 import '../../../core/components/playerCarousel/playerCarouselViewModel.dart';
 import '../../home/voteScreen/model/vote_model.dart';
@@ -17,7 +18,13 @@ class SortingTableView extends StatefulWidget {
 
 class _SortingTableViewState extends State<SortingTableView> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    Provider.of<AdMobService>(context, listen: false).initAd();
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
@@ -88,6 +95,8 @@ class _SortingTableViewState extends State<SortingTableView> {
             ),
             ElevatedButton(
               onPressed: () {
+                Provider.of<AdMobService>(context, listen: false)
+                    .showAdInterstitialAd();
                 Provider.of<Vote>(context, listen: false).playerList.clear();
                 Provider.of<Vote>(context, listen: false).playerList2.clear();
                 Provider.of<Vote>(context, listen: false).playerScores.clear();

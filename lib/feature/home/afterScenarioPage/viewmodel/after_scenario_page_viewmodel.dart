@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:storyhub/core/components/playerCarousel/playerCarouselView.dart';
-import 'package:storyhub/core/components/playerCarousel/playerCarouselViewModel.dart';
-import 'package:storyhub/feature/home/createplayer/model/player_model.dart';
+import '../../../../core/components/playerCarousel/playerCarouselView.dart';
+import '../../../../core/components/playerCarousel/playerCarouselViewModel.dart';
+import '../../createplayer/model/player_model.dart';
 
 import '../../../../product/model/button_sound.dart';
 import '../../gamepage/view/CardPAge.dart';

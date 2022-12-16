@@ -2,8 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:storyhub/core/components/senaryo/Senaryo.dart';
-import 'package:storyhub/feature/home/afterScenarioPage/view/after_scenario_page_view.dart';
+import '../../../../core/components/senaryo/Senaryo.dart';
+import '../../afterScenarioPage/view/after_scenario_page_view.dart';
 
 import '../../../../product/model/button_sound.dart';
 

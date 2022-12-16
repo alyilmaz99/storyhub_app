@@ -1,10 +1,10 @@
-import 'dart:ffi';
 import 'package:flag/flag.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+
 import '../model/settings_model.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsPageView extends StatefulWidget {
   const SettingsPageView({Key? key}) : super(key: key);
