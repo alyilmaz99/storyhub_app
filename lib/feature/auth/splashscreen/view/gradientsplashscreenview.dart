@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
+import '../../../../core/Service/CardService.dart';
 import '../viewmodel/gradientsplashscreenviewmodel.dart';
 
 class GradientSplashScreen extends StatefulWidget {
-  const GradientSplashScreen({super.key});
+  GradientSplashScreen({super.key, BuildContext? context}) {
+    Provider.of<CardService>(context!, listen: false).initCardFromFirebase();
+  }
 
   @override
   State<GradientSplashScreen> createState() => _GradientSplashScreenState();

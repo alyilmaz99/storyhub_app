@@ -9,6 +9,7 @@ abstract class SortingPageViewModel extends StatelessWidget {
 
 Widget buildContainer(BuildContext context, Color color, String image,
     String secondImage, String name) {
+  Provider.of<AdMobService>(context, listen: false).initAd();
   double screenHeight = MediaQuery.of(context).size.height;
   double screenWidth = MediaQuery.of(context).size.width;
 

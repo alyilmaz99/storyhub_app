@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:storyhub/core/Service/CardService.dart';
 import 'package:storyhub/feature/auth/howtoplay/view/how_to_play_view.dart';
 import 'package:storyhub/feature/auth/slider/view/sliderinformationview.dart';
 import 'package:storyhub/feature/stats/view/sorting_page_view.dart';
@@ -111,6 +112,9 @@ Future main() async {
         ),
         ChangeNotifierProvider<AdMobService>(
           create: (BuildContext context) => AdMobService(),
+        ),
+        ChangeNotifierProvider<CardService>(
+          create: (BuildContext context) => CardService(),
         ),
       ],
       child: MyApp(

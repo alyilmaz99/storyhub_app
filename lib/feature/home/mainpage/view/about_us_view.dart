@@ -104,9 +104,16 @@ class _AboutUsViewState extends State<AboutUsView> {
                         color: Colors.white,
                       ),
                     ),
-                    const Text(
-                      TextConst.ourInstaUserName,
-                      style: TextStyle(color: Colors.white),
+                    GestureDetector(
+                      onTap: () {
+                        const url =
+                            'https://www.instagram.com/vessac.gamestudios/';
+                        launchURL(url);
+                      },
+                      child: const Text(
+                        TextConst.ourInstaUserName,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),
@@ -123,9 +130,15 @@ class _AboutUsViewState extends State<AboutUsView> {
                         color: Colors.white,
                       ),
                     ),
-                    const Text(
-                      "vessac_software",
-                      style: TextStyle(color: Colors.white),
+                    GestureDetector(
+                      onTap: () {
+                        const url = 'https://twitter.com/vessac_software';
+                        launchURL(url);
+                      },
+                      child: const Text(
+                        "vessac_software",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),
@@ -143,9 +156,16 @@ class _AboutUsViewState extends State<AboutUsView> {
                         color: Colors.white,
                       ),
                     ),
-                    const Text(
-                      TextConst.ourLinkedin,
-                      style: TextStyle(color: Colors.white),
+                    GestureDetector(
+                      onTap: () {
+                        const url =
+                            'https://www.linkedin.com/company/vessac-software/';
+                        launchURL(url);
+                      },
+                      child: const Text(
+                        TextConst.ourLinkedin,
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),

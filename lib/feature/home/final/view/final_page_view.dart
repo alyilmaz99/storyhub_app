@@ -19,13 +19,22 @@ class FinalPageView extends StatefulWidget {
 
 class _FinalPageState extends State<FinalPageView> {
   @override
+  void initState() {
+    Provider.of<FinalPageViewModel>(context, listen: false).setPlayerList(
+        Provider.of<PlayerCarouselViewModel>(context, listen: false)
+            .postPlayerList());
+
+    Provider.of<FinalPageViewModel>(context, listen: false).randomChoose();
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
     //Button//sound //sound = Button//sound();
-    Provider.of<FinalPageViewModel>(context).setPlayerList(
-        Provider.of<PlayerCarouselViewModel>(context).postPlayerList());
 
     return Scaffold(
         extendBodyBehindAppBar: true,

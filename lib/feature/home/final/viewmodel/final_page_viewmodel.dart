@@ -41,7 +41,9 @@ class FinalPageViewModel with ChangeNotifier {
     map[random] = true;
     choosenName = playerList[random].playerName;
     choosenImgPath = playerList[random].imgPath;
-    notifyListeners();
+    Future.delayed(Duration.zero, () async {
+      notifyListeners();
+    });
   }
 
   void changeMap(int index) {

@@ -17,7 +17,6 @@ class VoteScreenView extends StatefulWidget {
 class _VoteScreenViewState extends VoteScreenViewModel {
   @override
   void initState() {
-    Provider.of<AdMobService>(context, listen: false).initAd();
     super.initState();
     if (Provider.of<Vote>(context, listen: false).counterForTour ==
         Provider.of<GameSettingsModel>(context, listen: false).playerCount) {
@@ -117,28 +116,6 @@ class _VoteScreenViewState extends VoteScreenViewModel {
                   width: screenWidth / 3,
                   child: Image.asset(
                     Provider.of<Vote>(context, listen: false).sendFirstImage(),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(
-                      top: screenWidth / 6, left: screenWidth / 6),
-                  width: 25,
-                  height: 25,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 3.0),
-                    child: Text(
-                      textAlign: TextAlign.center,
-                      Provider.of<Vote>(context, listen: false)
-                          .getScoreForVoteScreen(context),
-                      style: const TextStyle(
-                        fontFamily: 'GamerStation',
-                        fontSize: 20,
-                      ),
-                    ),
                   ),
                 ),
               ],

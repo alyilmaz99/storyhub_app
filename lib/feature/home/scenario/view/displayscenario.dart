@@ -106,8 +106,14 @@ class _DisplayScenario extends State<DisplayScenario> {
                                       alignment: Alignment.center,
                                       child: Text(
                                         scn[0].senaryoText,
-                                        style: const TextStyle(
-                                            fontSize: 25,
+                                        style: TextStyle(
+                                            fontSize: scn[0]
+                                                        .senaryoText
+                                                        .characters
+                                                        .length >
+                                                    10
+                                                ? 21
+                                                : 25,
                                             fontFamily: "GamerStation",
                                             color: Colors.white),
                                       ),

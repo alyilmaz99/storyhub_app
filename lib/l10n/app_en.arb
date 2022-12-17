@@ -14,10 +14,10 @@
   "createPlayerContinue" : "CONTINUE",
   "createPlayerReady" : "READY",
 
-  "voteScreenWithStar" : "START",
-  "voteScreenFinish" : "FINISH",
+  "voteScreenWithStar" : "VOTE",
+  "voteScreenFinish" : "SCORE BOARD",
 
-  "sortingPageArrangement" : "ARRANGEMENT",
+  "sortingPageArrangement" : "LEADERBOARD",
   "sortingPageMainMenu" : "SORTING TABLE",
 
 

@@ -12,7 +12,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 
 enum Difficulty { kolay, orta, zor, none }
 
-class CardService {
+class CardService extends ChangeNotifier {
   var jsonst;
   var jsonst2;
   late List<CardGame> _cards;
@@ -162,41 +162,41 @@ class CardService {
       Difficulty difficulty,
       BuildContext context) {
     if (difficulty == Difficulty.none) {
-      difficulty = Difficulty.kolay;
+      difficulty = Difficulty.zor;
     }
 
     CardGame cardGame;
 
     if (difficulty == Difficulty.kolay) {
       if (level == 1) {
-        cardGame = randomCard(scenariosParam, 55, 30, 15);
+        cardGame = randomCard(scenariosParam, 20, 10, 70);
       } else if (level == 2) {
-        cardGame = randomCard(scenariosParam, 20, 50, 30);
+        cardGame = randomCard(scenariosParam, 5, 25, 70);
       } else if (level == 3) {
-        cardGame = randomCard(scenariosParam, 10, 50, 40);
+        cardGame = randomCard(scenariosParam, 0, 10, 90);
       }
     } else if (difficulty == Difficulty.orta) {
       if (level == 2) {
-        cardGame = randomCard(scenariosParam, 20, 50, 30);
+        cardGame = randomCard(scenariosParam, 5, 15, 80);
       } else if (level == 3) {
-        cardGame = randomCard(scenariosParam, 10, 50, 40);
+        cardGame = randomCard(scenariosParam, 0, 10, 90);
       }
     } else if (difficulty == Difficulty.zor) {
       if (level == 3) {
-        cardGame = randomCard(scenariosParam, 10, 50, 40);
+        cardGame = randomCard(scenariosParam, 0, 0, 90);
       }
     }
 
     if (level == 3) {
-      cardGame = randomCard(scenariosParam, 10, 40, 50);
+      cardGame = randomCard(scenariosParam, 0, 0, 100);
     } else if (level == 4) {
-      cardGame = randomCard(scenariosParam, 5, 30, 65);
+      cardGame = randomCard(scenariosParam, 0, 0, 100);
     } else if (level == 5) {
-      cardGame = randomCard(scenariosParam, 0, 35, 65);
+      cardGame = randomCard(scenariosParam, 0, 0, 100);
     } else if (level == 6) {
-      cardGame = randomCard(scenariosParam, 0, 30, 70);
+      cardGame = randomCard(scenariosParam, 0, 0, 100);
     } else if (level == 7) {
-      cardGame = randomCard(scenariosParam, 0, 10, 90);
+      cardGame = randomCard(scenariosParam, 0, 0, 100);
     } else {
       cardGame = randomCard(scenariosParam, 100, 100, 100);
     }

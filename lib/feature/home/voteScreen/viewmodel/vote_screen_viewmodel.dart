@@ -356,7 +356,7 @@ class VoteScreenContinueButton extends StatelessWidget {
         style: const TextStyle(
           fontFamily: 'GamerStation',
           color: Colors.white,
-          fontSize: 35,
+          fontSize: 30,
         ),
       ),
     );

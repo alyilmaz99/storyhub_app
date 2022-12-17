@@ -25,7 +25,7 @@ class Vote with ChangeNotifier {
   bool isFinishVote = false;
   List<Player> playerListTemporary = [];
   List<double> valueChanged = [];
-  List<double> currentValue = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  List<double> currentValue = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
   Vote({this.counter});
 
   String getPlayerToHead(BuildContext context) {
@@ -42,7 +42,7 @@ class Vote with ChangeNotifier {
 
   void setPlayerVoteNumber(BuildContext context) {
     for (int i = 0; i < playerList.length; i++) {
-      playerList[i].playerVoteNumber = 3;
+      playerList[i].playerVoteNumber = 3 * (playerList.length.toDouble() - 1);
     }
     Future.delayed(Duration.zero, () async {
       notifyListeners();
