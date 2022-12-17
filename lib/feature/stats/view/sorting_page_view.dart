@@ -125,9 +125,9 @@ class SortingPageView extends SortingPageViewModel {
               child: Text(
                 AppLocalizations.of(context)!.sortingPageMainMenu,
                 style: const TextStyle(
-                    fontFamily: 'Montserrat',
+                    fontFamily: 'GamerStation',
                     color: Colors.white,
-                    fontSize: 18),
+                    fontSize: 20),
               ),
             ),
           ],
