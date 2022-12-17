@@ -56,7 +56,7 @@ class _SliderInformationViewState extends SliderInformationViewModel {
                   child: IconButton(
                     onPressed: endSlide,
                     icon: const ImageIcon(
-                        AssetImage("assets/icons/fast_forward_icon.jpg"),
+                        AssetImage("assets/icons/fast_forward_icon.png"),
                         color: Colors.white),
                   ),
                 ),

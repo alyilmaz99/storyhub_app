@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, avoid_print
+
 import 'dart:math';
 import 'package:circular_countdown_timer/circular_countdown_timer.dart';
 import 'package:flutter/material.dart';

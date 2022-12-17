@@ -22,30 +22,29 @@ class OnboardingItems {
         title: "NEDİR?",
         subtitle:
             "Story Hub, grup halinde oynanan zincirleme hikaye yaratma oyunudur.",
-        image: "assets/images/slider/1.jpg",
+        image: "assets/images/slider/1.png",
+      ),
+      OnboardingItem(
+        title: "OYUNCU SAYISI",
+        subtitle: "2 ila 9 kişi arasında gruplar halinde oynanır",
+        image: "assets/images/slider/3.png",
       ),
       OnboardingItem(
         title: "OYUN KURALLARI",
         subtitle:
             "Oyuncular verilen süre içerisinde kartları kullanarak bağlantılı bir şekilde hikayeyi devam ettirmelidirler.",
-        image: "assets/images/slider/2.jpg",
-      ),
-      OnboardingItem(
-        title: "OYUNCU SAYISI",
-        subtitle: "2 ila 8 kişi arasında gruplar halinde oynanır",
-        image: "assets/images/slider/3.jpg",
-      ),
-      OnboardingItem(
-        title: "PUANLAMA TABLOSU",
-        subtitle:
-            "Oylama sonucunda ek olarak kullanılan kartlar eklenir ve sıralama ile kazanan belirlenir.",
-        image: "assets/images/slider/4.jpg",
+        image: "assets/images/slider/2.png",
       ),
       OnboardingItem(
         title: "KARTLAR",
         subtitle:
-            "Oyunun içinde metinlere eklenerek senaryonun devamını sağlar",
-        image: "assets/images/slider/5.jpg",
+            "Oyuncu kartlardaki kelimeleri kullanarak zincire ekleme yapar.",
+        image: "assets/images/slider/5.png",
+      ),
+      OnboardingItem(
+        title: "PUANLAMA TABLOSU",
+        subtitle: "Oylama sonucu alınan yıldızlarla sıralama belırlenir.",
+        image: "assets/images/slider/4.png",
       ),
     ];
     return inf;

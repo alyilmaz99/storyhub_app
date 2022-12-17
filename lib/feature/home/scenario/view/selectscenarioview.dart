@@ -285,7 +285,7 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                 Container(
                                                   margin: const EdgeInsets
                                                           .symmetric(
-                                                      horizontal: 10.0),
+                                                      horizontal: 25.0),
                                                   child: Align(
                                                     alignment: Alignment.center,
                                                     child: Text(
@@ -293,10 +293,16 @@ class _SelectScenarioViewState extends State<SelectScenarioView> {
                                                             TextAlign.center,
                                                         filteredList[index]
                                                             .shortText,
-                                                        style: const TextStyle(
+                                                        style: TextStyle(
                                                           fontWeight:
                                                               FontWeight.w500,
-                                                          fontSize: 13,
+                                                          fontSize: filteredList[
+                                                                          index]
+                                                                      .shortText
+                                                                      .length <=
+                                                                  190
+                                                              ? 15
+                                                              : 14,
                                                         )),
                                                   ),
                                                 ),

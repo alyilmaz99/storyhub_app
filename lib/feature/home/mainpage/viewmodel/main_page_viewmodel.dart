@@ -23,9 +23,7 @@ abstract class MainPageViewModel extends State<MainPage> {
   static const AdRequest request = AdRequest();
   @override
   void initState() {
-    Future.delayed(const Duration(milliseconds: 500), () async {
-      Provider.of<AdMobService>(context, listen: false).initAd();
-    });
+    Provider.of<AdMobService>(context, listen: false).initAd();
     loadStaticBannerAd();
 
     super.initState();
@@ -81,8 +79,11 @@ abstract class MainPageViewModel extends State<MainPage> {
             _interstitialAd?.show();
           }
           */
-          Provider.of<AdMobService>(context, listen: false)
-              .showAdInterstitialAd();
+          setState(() {
+            Provider.of<AdMobService>(context, listen: false)
+                .showAdInterstitialAd();
+          });
+
           HapticFeedback.lightImpact();
           //System//sound.play(System//soundType.click);
           Provider.of<PlayerCarouselViewModel>(context, listen: false)

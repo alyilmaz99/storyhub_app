@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../viewmodel/splashscreenviewmodel.dart';
 
@@ -49,19 +50,16 @@ class _SplashScreenViewState extends SplashScreenViewModel {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height / 5,
+              height: MediaQuery.of(context).size.height / 4,
             ),
             Container(
               margin: EdgeInsets.only(
-                  bottom: MediaQuery.of(context).size.width / 4),
+                  bottom: MediaQuery.of(context).size.width / 10),
               alignment: Alignment.bottomCenter,
-              width: MediaQuery.of(context).size.width / 3.5,
-              height: MediaQuery.of(context).size.height / 7,
-              decoration: const BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/vessac2.png'),
-                  fit: BoxFit.fill,
-                ),
+              child: SvgPicture.asset(
+                width: MediaQuery.of(context).size.width / 5,
+                height: MediaQuery.of(context).size.height / 14,
+                'assets/images/vessac2.svg',
               ),
             ),
           ],

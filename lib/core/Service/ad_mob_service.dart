@@ -55,10 +55,10 @@ class AdMobService extends ChangeNotifier {
     _isAdLoaded = true;
     _interstitialAd!.fullScreenContentCallback =
         FullScreenContentCallback(onAdDismissedFullScreenContent: (ad) {
-      _interstitialAd?.dispose();
+      _interstitialAd!.dispose();
       _interstitialAd = null;
     }, onAdFailedToShowFullScreenContent: (ad, error) {
-      _interstitialAd?.dispose();
+      _interstitialAd!.dispose();
       _interstitialAd = null;
     });
   }
@@ -70,6 +70,7 @@ class AdMobService extends ChangeNotifier {
     }
     if (_isAdLoaded) {
       print('==================================yuklendi');
+
       _interstitialAd?.show();
     }
   }
