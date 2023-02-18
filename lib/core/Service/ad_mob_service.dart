@@ -14,7 +14,7 @@ class AdMobService extends ChangeNotifier {
 
   static String? get bannerAdUnitId {
     if (Platform.isAndroid) {
-      return '';
+      return 'ca-app-pub-2763655103678935~5594934462';
     } else if (Platform.isIOS) {
       return '';
     }
@@ -23,7 +23,7 @@ class AdMobService extends ChangeNotifier {
 
   static String? get interstitialAdUnitID {
     if (Platform.isAndroid) {
-      return '';
+      return 'ca-app-pub-2763655103678935~5594934462';
     } else if (Platform.isIOS) {
       return '';
     }
@@ -32,7 +32,7 @@ class AdMobService extends ChangeNotifier {
 
   static String? get rewardedAdUnitId {
     if (Platform.isAndroid) {
-      return '';
+      return 'ca-app-pub-2763655103678935~5594934462';
     } else if (Platform.isIOS) {
       return '';
     }
@@ -41,7 +41,7 @@ class AdMobService extends ChangeNotifier {
 
   void initAd() {
     InterstitialAd.load(
-      adUnitId: 'ca-app-pub-3940256099942544/8691691433',
+      adUnitId: 'ca-app-pub-2763655103678935/5076059712',
       request: AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: onAdLoaded,

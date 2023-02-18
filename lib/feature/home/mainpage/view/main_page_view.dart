@@ -195,6 +195,8 @@ class _MainPageState extends MainPageViewModel {
                         SizedBox(
                             height: MediaQuery.of(context).size.height / 15),
                         buildSecondButton(context),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height / 15),
                         Container(
                           alignment: Alignment.bottomCenter,
                           width: staticAd!.size.width.toDouble(),

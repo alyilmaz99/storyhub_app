@@ -31,7 +31,7 @@ abstract class MainPageViewModel extends State<MainPage> {
 
   void _initAd() {
     InterstitialAd.load(
-      adUnitId: 'ca-app-pub-3940256099942544/8691691433',
+      adUnitId: 'ca-app-pub-2763655103678935/5076059712',
       request: AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: onAdLoaded,
@@ -42,7 +42,7 @@ abstract class MainPageViewModel extends State<MainPage> {
 
   void loadStaticBannerAd() {
     staticAd = BannerAd(
-      adUnitId: 'ca-app-pub-3940256099942544/6300978111',
+      adUnitId: 'ca-app-pub-2763655103678935/6793280075',
       size: AdSize.banner,
       request: request,
       listener: BannerAdListener(

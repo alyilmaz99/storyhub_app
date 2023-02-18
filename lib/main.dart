@@ -1,16 +1,11 @@
 import 'dart:io';
 
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:storyhub/core/Service/CardService.dart';
-import 'package:storyhub/feature/auth/howtoplay/view/how_to_play_view.dart';
-import 'package:storyhub/feature/auth/slider/view/sliderinformationview.dart';
-import 'package:storyhub/feature/stats/view/sorting_page_view.dart';
-import 'package:storyhub/feature/stats/view/sorting_table_view.dart';
 import 'core/Service/ad_mob_service.dart';
 import 'core/components/playerCarousel/playerCarouselViewModel.dart';
 import 'core/lifecycle/life_cycle_manager.dart';
