@@ -2,8 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:storyhub/core/const/text_const/textconst.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'main_page_view.dart';
@@ -54,10 +52,10 @@ class _AboutUsViewState extends State<AboutUsView> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: Text(
                     AppLocalizations.of(context)!.aboutUs,
-                    style: TextStyle(color: Colors.white, fontSize: 25),
+                    style: const TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ),
                 IconButton(
@@ -67,107 +65,25 @@ class _AboutUsViewState extends State<AboutUsView> {
                   iconSize: 120,
                   onPressed: () => Navigator.pop(context),
                 ),
+                const SizedBox(
+                  height: 50,
+                ),
                 Padding(
-                  padding: EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(10.0),
                   child: Text(
                     AppLocalizations.of(context)!.aboutUsDetail,
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white, fontSize: 15),
+                    style: const TextStyle(color: Colors.white, fontSize: 15),
                   ),
+                ),
+                const SizedBox(
+                  height: 50,
                 ),
                 Text(
                   AppLocalizations.of(context)!.contactUs,
-                  style: TextStyle(color: Colors.amberAccent, fontSize: 15),
+                  style:
+                      const TextStyle(color: Colors.amberAccent, fontSize: 15),
                   textAlign: TextAlign.center,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    const url = TextConst.ourMailAddress;
-                    launchURL('mailto:url?');
-                  },
-                  child: const Text(
-                    TextConst.ourMailAddress,
-                    style: TextStyle(color: Colors.amberAccent),
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        const url =
-                            'https://www.instagram.com/vessac.gamestudios/';
-                        launchURL(url);
-                      },
-                      icon: const Icon(
-                        FontAwesomeIcons.instagram,
-                        color: Colors.white,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        const url =
-                            'https://www.instagram.com/vessac.gamestudios/';
-                        launchURL(url);
-                      },
-                      child: const Text(
-                        TextConst.ourInstaUserName,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        const url = 'https://twitter.com/vessac_software';
-                        launchURL(url);
-                      },
-                      icon: const Icon(
-                        FontAwesomeIcons.twitter,
-                        color: Colors.white,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        const url = 'https://twitter.com/vessac_software';
-                        launchURL(url);
-                      },
-                      child: const Text(
-                        "vessac_software",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      onPressed: () {
-                        const url =
-                            'https://www.linkedin.com/company/vessac-software/';
-                        launchURL(url);
-                      },
-                      icon: const Icon(
-                        FontAwesomeIcons.linkedin,
-                        color: Colors.white,
-                      ),
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        const url =
-                            'https://www.linkedin.com/company/vessac-software/';
-                        launchURL(url);
-                      },
-                      child: const Text(
-                        TextConst.ourLinkedin,
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),
